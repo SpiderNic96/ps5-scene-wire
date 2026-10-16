@@ -186,8 +186,9 @@ export async function collect({ fetchImpl = globalThis.fetch, token = process.en
     rateLimited: state.rateLimited,
     catalog,
     categories: CATEGORIES,
-    releases: releases.slice(0, MAX_HEADLINES),
-    apps
+    // Apps first: shorter, and readable even when a client truncates the response.
+    apps,
+    releases: releases.slice(0, MAX_HEADLINES)
   };
 }
 
