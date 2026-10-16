@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PS5 Scene Wire</title>
+<meta name="description" content="PS5 jailbreak and homebrew headlines: exploits, firmware, emulators and app releases.">
+<meta name="theme-color" content="#1E2128">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231E2128'/%3E%3Crect x='14' y='5' width='4' height='22' rx='2' fill='%233B8CFF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --shell: #EEF1F5;
+    --panel: #FFFFFF;
+    --ink: #161A22;
+    --muted: #586172;
+    --rule: #D5DBE4;
+    --link: #1250C4;
+    --core: #1E2128;
+    --core-2: #2A2E37;
+    --core-ink: #E8ECF2;
+    --core-muted: #9AA3B2;
+    --led: #3B8CFF;
+    --led-soft: rgba(59, 140, 255, .28);
+    --stop: #FF7468;
+    --t-exploit: #1250C4;
+    --t-firmware: #9A5300;
+    --t-emulator: #0B7765;
+    --t-scene: #5E4BB0;
+    --t-release: #586172;
+    --focus: #3B8CFF;
+    --wide: 125;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --shell: #181B21;
+      --panel: #20242C;
+      --ink: #E6EAF0;
+      --muted: #9AA3B2;
+      --rule: #333945;
+      --link: #7DB2FF;
+      --core: #0F1115;
+      --core-2: #1E2229;
+      --t-exploit: #7DB2FF;
+      --t-firmware: #F0A94B;
+      --t-emulator: #4FD1B5;
+      --t-scene: #B5A6FF;
+      --t-release: #9AA3B2;
+      color-scheme: dark;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--shell);
+    color: var(--ink);
+    font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .day, .facts dd, .ruler, .apps .when, .checked { font-variant-numeric: tabular-nums; }
+  a { color: var(--link); text-underline-offset: 2px; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 3px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+
+  /* Masthead */
+  .masthead { padding: 22px 0 18px; }
+  .masthead .wrap { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 6px 24px; }
+  .brand { margin: 0; font-size: clamp(1.6rem, 6vw, 2.3rem); line-height: 1; font-weight: 850; font-stretch: 125%; letter-spacing: -0.02em; }
+  .brand a { color: inherit; text-decoration: none; }
+  .brand .bar { display: inline-block; width: .16em; height: .82em; margin-right: .22em; border-radius: 99px; background: var(--led); vertical-align: -0.04em; box-shadow: 0 0 12px var(--led-soft); }
+  .tagline { margin: 6px 0 0; color: var(--muted); font-size: .95rem; }
+  .checked { margin: 0; color: var(--muted); font-size: .85rem; }
+
+  /* Firmware band: the console's black core */
+  .core { background: var(--core); color: var(--core-ink); padding: 26px 0 22px; }
+  .core h2 { margin: 0; font-size: 1.15rem; font-weight: 700; font-stretch: 112%; }
+  .facts { display: flex; flex-wrap: wrap; gap: 4px 28px; margin: 8px 0 22px; padding: 0; }
+  .facts div { display: flex; align-items: baseline; gap: 8px; }
+  .facts dt { color: var(--core-muted); font-size: .88rem; }
+  .facts dd { margin: 0; font-weight: 800; font-stretch: 125%; font-size: 1.05rem; }
+  .facts dd.hi { color: var(--led); }
+
+  .ruler { position: relative; height: 128px; margin: 0 4px; }
+  .lane { position: absolute; left: 0; right: 0; height: 26px; }
+  .lane.l1 { top: 22px; }
+  .lane.l2 { top: 60px; }
+  .seg {
+    position: absolute; top: 0; height: 26px; border-radius: 6px;
+    background: var(--led); color: #fff; font-size: .8rem; font-weight: 700;
+    display: flex; align-items: center; padding: 0 10px; white-space: nowrap; overflow: hidden;
+    box-shadow: 0 0 18px var(--led-soft), inset 0 0 0 1px rgba(255,255,255,.18);
+    border: 0; cursor: pointer; font-family: inherit; text-align: left;
+    transform-origin: left center;
+  }
+  .dot { position: absolute; top: 7px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; border: 2px solid var(--led); background: var(--core); }
+  @media (min-width: 640px) { .dot { top: 6px; width: 14px; height: 14px; margin-left: -7px; } }
+  .dot-label {
+    position: absolute; top: 0; height: 26px; display: flex; align-items: center; justify-content: flex-end;
+    color: var(--core-ink); font-size: .8rem; font-weight: 600; white-space: nowrap; padding-right: 14px;
+    background: none; border: 0; cursor: pointer; font-family: inherit;
+  }
+  .gap-zone { position: absolute; top: 14px; bottom: 26px; border-left: 1px dashed var(--core-muted); opacity: .45; }
+  .mark { position: absolute; top: 0; bottom: 22px; width: 0; }
+  .mark::before { content: ""; position: absolute; top: 20px; bottom: 0; left: -1px; width: 2px; border-radius: 2px; background: var(--stop); }
+  .mark.latest::before { background: var(--core-ink); }
+  .mark span {
+    position: absolute; top: 0; transform: translateX(-50%); font-size: .78rem; font-weight: 800; font-stretch: 112%;
+    color: var(--stop); white-space: nowrap;
+  }
+  .mark.latest span { color: var(--core-ink); }
+  .axis { position: absolute; left: 0; right: 0; bottom: 0; height: 18px; border-top: 1px solid var(--core-2); }
+  .axis span { position: absolute; top: 3px; transform: translateX(-50%); font-size: .72rem; color: var(--core-muted); }
+  .axis .brk { color: var(--core-muted); letter-spacing: -2px; }
+
+  .legend { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 2px; }
+  @media (min-width: 760px) { .legend { grid-template-columns: 1fr 1fr; column-gap: 40px; } }
+  .legend button {
+    width: 100%; display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 2px 10px; align-items: start;
+    padding: 8px 8px; margin: 0 -8px; border-radius: 8px; background: none; border: 0; color: inherit;
+    font: inherit; text-align: left; cursor: pointer;
+  }
+  .legend button:hover { background: var(--core-2); }
+  .key { width: 14px; height: 14px; margin-top: 4px; border-radius: 4px; }
+  .key.public { background: var(--led); box-shadow: 0 0 10px var(--led-soft); }
+  .key.dev { border: 2px solid var(--led); border-radius: 50%; }
+  .key.stop { background: var(--stop); width: 4px; margin-left: 5px; border-radius: 2px; }
+  .key.latest { background: var(--core-ink); width: 4px; margin-left: 5px; border-radius: 2px; }
+  .legend strong { font-weight: 700; }
+  .legend .range { color: var(--core-muted); font-weight: 400; margin-left: 6px; }
+  .legend .note { grid-column: 2; color: var(--core-muted); font-size: .9rem; }
+  .footnote { margin: 12px 0 0; color: var(--core-muted); font-size: .85rem; }
+
+  /* Main */
+  .main { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; padding: 26px 0 48px; }
+  @media (min-width: 900px) { .main { grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; } }
+
+  .filters { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; }
+  .filters button {
+    font: inherit; font-size: .9rem; font-weight: 600; padding: 7px 14px; border-radius: 99px;
+    border: 1px solid var(--rule); background: var(--panel); color: var(--ink); cursor: pointer;
+  }
+  .filters button[aria-pressed="true"] { background: var(--core); border-color: var(--core); color: var(--core-ink); }
+
+  .feed { list-style: none; margin: 0; padding: 0; background: var(--panel); border-radius: 14px; border: 1px solid var(--rule); }
+  .row { display: grid; grid-template-columns: minmax(0, 1fr); padding: 16px 16px 15px; border-top: 1px solid var(--rule); }
+  .row:first-child { border-top: 0; }
+  @media (min-width: 640px) {
+    .row { grid-template-columns: 76px minmax(0, 1fr); column-gap: 16px; padding: 18px 22px 17px; }
+  }
+  .day { color: var(--muted); font-size: .85rem; font-weight: 600; padding-top: 3px; }
+  .day:empty { display: none; }
+  @media (min-width: 640px) { .day:empty { display: block; } }
+  .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; font-size: .82rem; color: var(--muted); }
+  .tag { font-weight: 700; }
+  .tag.Exploit { color: var(--t-exploit); }
+  .tag.Firmware { color: var(--t-firmware); }
+  .tag.Emulator { color: var(--t-emulator); }
+  .tag.Scene { color: var(--t-scene); }
+  .tag.Release { color: var(--t-release); }
+  .pre { border: 1px solid var(--rule); border-radius: 5px; padding: 0 6px; font-size: .75rem; }
+
+  .story h3 { margin: 4px 0 4px; font-size: 1.2rem; line-height: 1.28; font-weight: 750; font-stretch: 112%; letter-spacing: -0.005em; }
+  .story details > summary { list-style: none; cursor: pointer; }
+  .story details > summary::-webkit-details-marker { display: none; }
+  .story .summary { margin: 0; color: var(--muted); max-width: 68ch; }
+  .story .more { display: inline-block; margin-top: 6px; font-size: .88rem; font-weight: 600; color: var(--link); }
+  .story details[open] .more { display: none; }
+  .story .body { margin-top: 12px; max-width: 68ch; }
+  .story .body p { margin: 0 0 12px; }
+  .story .sources { font-size: .9rem; color: var(--muted); margin: 0; }
+  .story .sources a { margin-right: 10px; white-space: nowrap; }
+  .story .actions { margin-top: 10px; display: flex; gap: 14px; font-size: .88rem; }
+  .story .actions button { font: inherit; font-weight: 600; background: none; border: 0; padding: 0; color: var(--link); cursor: pointer; }
+
+  .release h3 { margin: 3px 0 2px; font-size: 1rem; line-height: 1.35; font-weight: 700; }
+  .release h3 a { color: var(--ink); text-decoration: none; }
+  .release h3 a:hover { color: var(--link); text-decoration: underline; }
+  .release .ver { font-stretch: 112%; }
+  .release .notes { margin: 0; font-size: .9rem; color: var(--muted); max-width: 68ch; overflow-wrap: anywhere; }
+
+  .status { padding: 18px 22px; color: var(--muted); font-size: .92rem; }
+
+  /* Sidebar */
+  aside h2 { margin: 0 0 4px; font-size: 1.05rem; font-weight: 700; font-stretch: 112%; }
+  aside .sub { margin: 0 0 12px; color: var(--muted); font-size: .88rem; }
+  .apps { list-style: none; margin: 0; padding: 0; }
+  .apps li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 10px; padding: 9px 0; border-top: 1px solid var(--rule); }
+  .apps li:first-child { border-top: 0; }
+  .apps a.name { font-weight: 650; color: var(--ink); text-decoration: none; }
+  .apps a.name:hover { color: var(--link); text-decoration: underline; }
+  .apps a.name { grid-row: 1; grid-column: 1; }
+  .apps .about { grid-row: 2; grid-column: 1; color: var(--muted); font-size: .82rem; }
+  .apps .v { grid-row: 1; grid-column: 2; text-align: right; font-size: .85rem; font-weight: 600; font-stretch: 112%; }
+  .apps .when { grid-row: 2; grid-column: 2; text-align: right; color: var(--muted); font-size: .78rem; }
+  .apps .none { color: var(--muted); font-weight: 400; font-stretch: 100%; }
+
+  footer { border-top: 1px solid var(--rule); padding: 20px 0 36px; color: var(--muted); font-size: .88rem; }
+  footer p { margin: 0 0 6px; max-width: 70ch; }
+
+  .toast {
+    position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); background: var(--core); color: var(--core-ink);
+    padding: 9px 16px; border-radius: 99px; font-size: .9rem; opacity: 0; pointer-events: none; transition: opacity .2s;
+  }
+  .toast.show { opacity: 1; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .seg.charge { animation: charge 900ms cubic-bezier(.2, .7, .2, 1) both; }
+    @keyframes charge { from { transform: scaleX(0); opacity: .4; } to { transform: scaleX(1); opacity: 1; } }
+  }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <div>
+      <h1 class="brand"><a href="/"><span class="bar" aria-hidden="true"></span>PS5 Scene Wire</a></h1>
+      <p class="tagline">Jailbreak, firmware and homebrew headlines for PS5</p>
+    </div>
+    <p class="checked" id="checked">Checking app releases…</p>
+  </div>
+</header>
+
+<section class="core" aria-labelledby="fw-title">
+  <div class="wrap">
+    <h2 id="fw-title">Where each firmware stands</h2>
+    <dl class="facts" id="facts"></dl>
+    <div class="ruler" id="ruler" role="img" aria-label="Firmware coverage chart"></div>
+    <ul class="legend" id="legend"></ul>
+    <p class="footnote" id="footnote"></p>
+  </div>
+</section>
+
+<div class="wrap main">
+  <section aria-labelledby="feed-title">
+    <h2 id="feed-title" class="visually-hidden" style="position:absolute;left:-9999px">Headlines</h2>
+    <div class="filters" role="group" aria-label="Show">
+      <button type="button" data-filter="all" aria-pressed="true">Everything</button>
+      <button type="button" data-filter="story" aria-pressed="false">Stories</button>
+      <button type="button" data-filter="release" aria-pressed="false">App releases</button>
+    </div>
+    <ol class="feed" id="feed"><li class="status">Loading headlines…</li></ol>
+  </section>
+
+  <aside aria-labelledby="apps-title">
+    <h2 id="apps-title">Tracked apps</h2>
+    <p class="sub">Latest version of each, straight from its GitHub releases.</p>
+    <ul class="apps" id="apps"><li class="status" style="padding:9px 0">Checking GitHub…</li></ul>
+  </aside>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Stories are short write-ups that link to their sources. App releases come straight from each project's GitHub page.</p>
+    <p>No piracy links are posted here. Back up games you own.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  const toDate = (d) => /^\d{4}-\d{2}-\d{2}$/.test(d) ? new Date(d + 'T12:00:00') : new Date(d);
+  const dayKey = (d) => { const x = toDate(d); return x.getFullYear() + '-' + x.getMonth() + '-' + x.getDate(); };
+  const dayLabel = (d) => {
+    const x = toDate(d), now = new Date();
+    const label = x.getDate() + ' ' + MONTHS[x.getMonth()];
+    return x.getFullYear() === now.getFullYear() ? label : label + ' ' + x.getFullYear();
+  };
+  const ago = (d) => {
+    const s = (Date.now() - toDate(d).getTime()) / 1000;
+    if (s < 90) return 'just now';
+    if (s < 3600) return Math.round(s / 60) + ' min ago';
+    if (s < 86400) return Math.round(s / 3600) + ' h ago';
+    const days = Math.round(s / 86400);
+    if (days < 31) return days + (days === 1 ? ' day ago' : ' days ago');
+    return dayLabel(d);
+  };
+
+  let stories = [];
+  let releases = [];
+  let filter = 'all';
+
+  // ---------- Firmware band ----------
+  // 7.00–13.99 fills the left 72%, then the axis breaks and 14.xx gets its own room.
+  const num = (v) => { const [a, b = '0'] = String(v).split('.'); return { major: +a, minor: +(b.padEnd(2, '0')) / 100 }; };
+  function pos(v) {
+    const { major, minor } = num(v);
+    if (major < 14) return ((major + minor - 7) / 7) * 72;
+    return 80 + Math.round(minor * 10) * 14;
+  }
+
+  function renderFirmware(fw) {
+    const pub = fw.coverage.find((c) => c.kind === 'public');
+    $('#facts').innerHTML =
+      `<div><dt>Highest with a public jailbreak</dt><dd class="hi">${esc(pub ? pub.to : 'None')}</dd></div>` +
+      `<div><dt>Latest from Sony</dt><dd>${esc(fw.latest)}</dd></div>`;
+
+    let html = '';
+    fw.coverage.forEach((c, i) => {
+      const lane = i === 0 ? 'l1' : 'l2';
+      if (c.from) {
+        const l = pos(c.from), r = pos(c.to);
+        html += `<div class="lane ${lane}"><button class="seg charge" style="left:${l}%;width:${r - l}%" data-story="${esc(c.story)}" aria-label="${esc(c.label)}, ${esc(c.from)} to ${esc(c.to)}">${esc(c.label)}</button></div>`;
+      } else if (c.versions) {
+        const first = pos(c.versions[0]);
+        html += `<div class="lane ${lane}"><button class="dot-label" style="left:0;width:${first}%" data-story="${esc(c.story)}">${esc(c.label)}</button>` +
+          c.versions.map((v) => `<span class="dot" style="left:${pos(v)}%" title="${esc(v)}"></span>`).join('') + '</div>';
+      }
+    });
+    fw.marks.forEach((m) => {
+      const latest = m.version === fw.latest;
+      html += `<div class="mark${latest ? ' latest' : ''}" style="left:${pos(m.version)}%"><span>${esc(m.version)}</span></div>`;
+    });
+    html += '<div class="axis">' + fw.axis.ticks.filter((t) => t < 14).map((t) => `<span style="left:${pos(t + '.00')}%">${t}</span>`).join('') +
+      `<span class="brk" style="left:76%">//</span></div>`;
+    $('#ruler').innerHTML = html;
+    $('#ruler').setAttribute('aria-label',
+      fw.coverage.map((c) => c.label + ' covers ' + (c.from ? c.from + ' to ' + c.to : c.versions.join(' and '))).join('. ') +
+      '. ' + fw.marks.map((m) => m.version + ': ' + m.note).join(' '));
+
+    const legend = [
+      ...fw.coverage.map((c) => ({ key: c.kind, label: c.label, range: c.from ? `${c.from} to ${c.to}` : c.versions.join(' and '), note: c.note, story: c.story })),
+      ...fw.marks.map((m) => ({ key: m.version === fw.latest ? 'latest' : 'stop', label: m.version, range: '', note: m.note, story: m.story }))
+    ];
+    $('#legend').innerHTML = legend.map((x) =>
+      `<li><button type="button" data-story="${esc(x.story)}"><span class="key ${x.key}" aria-hidden="true"></span>` +
+      `<span><strong>${esc(x.label)}</strong>${x.range ? `<span class="range">${esc(x.range)}</span>` : ''}</span>` +
+      `<span class="note">${esc(x.note)}</span></button></li>`).join('');
+    $('#footnote').textContent = fw.footnote || '';
+  }
+
+  // ---------- Feed ----------
+  function storyHtml(s) {
+    const src = (s.sources || []).map((x) => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name)}</a>`).join('');
+    return `<details id="${esc(s.id)}"><summary><div class="meta"><span class="tag ${esc(s.tag)}">${esc(s.tag)}</span></div>` +
+      `<h3>${esc(s.title)}</h3><p class="summary">${esc(s.summary)}</p><span class="more">Read more</span></summary>` +
+      `<div class="body">${(s.body || []).map((p) => `<p>${esc(p)}</p>`).join('')}` +
+      (src ? `<p class="sources">Sources: ${src}</p>` : '') +
+      `<div class="actions"><button type="button" data-copy="${esc(s.id)}">Copy link</button></div></div></details>`;
+  }
+
+  function releaseHtml(r) {
+    const named = r.title && r.title !== r.tag && !r.title.includes(r.tag) && r.title.length < 90 ? r.title : '';
+    const notes = [named, r.notes].filter(Boolean);
+    return `<div class="meta"><span class="tag Release">Release</span>${r.prerelease ? '<span class="pre">Pre-release</span>' : ''}<span>${esc(r.repo)}</span></div>` +
+      `<h3><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.app)} <span class="ver">${esc(r.tag || r.title)}</span></a></h3>` +
+      (notes.length ? `<p class="notes">${named ? `<strong>${esc(named)}.</strong> ` : ''}${esc(r.notes)}</p>` : '');
+  }
+
+  function renderFeed() {
+    const items = [
+      ...stories.map((s) => ({ kind: 'story', date: s.date, s })),
+      ...releases.map((r) => ({ kind: 'release', date: r.date, r }))
+    ].filter((x) => filter === 'all' || x.kind === filter)
+     .sort((a, b) => toDate(b.date) - toDate(a.date) || (a.kind === 'story' ? -1 : 1));
+
+    if (!items.length) {
+      $('#feed').innerHTML = `<li class="status">${filter === 'release' ? 'No app releases to show right now. Check back once the feed has loaded.' : 'No headlines yet.'}</li>`;
+      return;
+    }
+    let last = '';
+    $('#feed').innerHTML = items.map((x) => {
+      const k = dayKey(x.date);
+      const day = k !== last ? dayLabel(x.date) : '';
+      last = k;
+      return `<li class="row ${x.kind}"><div class="day">${esc(day)}</div><div>${x.kind === 'story' ? storyHtml(x.s) : releaseHtml(x.r)}</div></li>`;
+    }).join('');
+    openFromHash(false);
+  }
+
+  function renderApps(apps) {
+    const sorted = apps.filter((a) => a.status !== 'missing').sort((a, b) =>
+      (b.latest ? toDate(b.latest.date) : 0) - (a.latest ? toDate(a.latest.date) : 0) || a.name.localeCompare(b.name));
+    $('#apps').innerHTML = sorted.map((a) => {
+      const v = a.latest
+        ? `<span class="v">${esc(a.latest.tag)}</span><span class="when">${esc(ago(a.latest.date))}</span>`
+        : `<span class="v none">${a.status === 'unavailable' ? 'Couldn’t reach' : 'No releases yet'}</span>`;
+      return `<li><a class="name" href="${esc(a.latest ? a.latest.url : a.releasesUrl)}" target="_blank" rel="noopener">${esc(a.name)}</a>${v}<span class="about">${esc(a.about)}</span></li>`;
+    }).join('');
+  }
+
+  // ---------- Permalinks ----------
+  function openStory(id, scroll = true) {
+    if (!id) return;
+    if (filter === 'release') { setFilter('all'); }
+    const el = document.getElementById(id);
+    if (!el || el.tagName !== 'DETAILS') return;
+    el.open = true;
+    if (scroll) el.closest('.row').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+    history.replaceState(null, '', '#' + id);
+  }
+  let hashHandled = false;
+  function openFromHash(force) {
+    if (hashHandled && !force) return;
+    const id = decodeURIComponent(location.hash.slice(1));
+    if (id && document.getElementById(id)) { hashHandled = true; openStory(id); }
+  }
+  window.addEventListener('hashchange', () => openFromHash(true));
+
+  function toast(msg) {
+    const t = $('#toast'); t.textContent = msg; t.classList.add('show');
+    clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove('show'), 1800);
+  }
+
+  document.addEventListener('click', async (e) => {
+    const go = e.target.closest('[data-story]');
+    if (go) { openStory(go.dataset.story); return; }
+    const copy = e.target.closest('[data-copy]');
+    if (copy) {
+      const url = location.origin + location.pathname + '#' + copy.dataset.copy;
+      try { await navigator.clipboard.writeText(url); toast('Link copied'); }
+      catch { history.replaceState(null, '', '#' + copy.dataset.copy); toast('Link is in the address bar'); }
+    }
+  });
+
+  function setFilter(f) {
+    filter = f;
+    document.querySelectorAll('.filters button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.filter === f)));
+    renderFeed();
+  }
+  document.querySelectorAll('.filters button').forEach((b) => b.addEventListener('click', () => setFilter(b.dataset.filter)));
+
+  // ---------- Load ----------
+  const getJSON = (u) => fetch(u, { cache: 'no-cache' }).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); });
+
+  getJSON('/data/firmware.json').then(renderFirmware).catch(() => {
+    $('#facts').innerHTML = ''; $('#ruler').hidden = true;
+    $('#footnote').textContent = 'Firmware status couldn’t load. Refresh to try again.';
+  });
+
+  getJSON('/data/stories.json').then((s) => { stories = s; renderFeed(); }).catch(() => {
+    $('#feed').innerHTML = '<li class="status">Stories couldn’t load. Refresh to try again.</li>';
+  });
+
+  getJSON('/api/releases').then((d) => {
+    releases = d.releases || [];
+    renderApps(d.apps || []);
+    $('#checked').textContent = 'App releases checked ' + ago(d.fetchedAt);
+    renderFeed();
+  }).catch(() => {
+    $('#checked').textContent = 'App releases couldn’t load right now';
+    $('#apps').innerHTML = '<li class="status" style="padding:9px 0">GitHub didn’t respond. Stories are unaffected. Refresh in a few minutes.</li>';
+  });
+})();
+</script>
+</body>
+</html>

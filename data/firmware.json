@@ -1,0 +1,35 @@
+{
+  "updated": "2026-10-16",
+  "latest": "14.10",
+  "axis": { "from": 7, "to": 14.4, "ticks": [7, 8, 9, 10, 11, 12, 13, 14] },
+  "coverage": [
+    {
+      "label": "Relapse",
+      "kind": "public",
+      "from": "7.00",
+      "to": "13.60",
+      "note": "Kernel jailbreak from the browser. Tethered.",
+      "story": "relapse-release"
+    },
+    {
+      "label": "Byepervisor Reborn",
+      "kind": "dev",
+      "versions": ["13.20", "13.60"],
+      "note": "Hypervisor bypass for developers. Not a full jailbreak.",
+      "story": "byepervisor-reborn"
+    }
+  ],
+  "marks": [
+    {
+      "version": "14.00",
+      "note": "No public exploit. Locked out of PSN.",
+      "story": "psn-locked-below-1410"
+    },
+    {
+      "version": "14.10",
+      "note": "Latest firmware. No public exploit.",
+      "story": "firmware-1410"
+    }
+  ],
+  "footnote": "Older than 7.00? Earlier chains cover those firmwares and aren't shown here."
+}

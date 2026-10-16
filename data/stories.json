@@ -1,0 +1,144 @@
+[
+  {
+    "id": "psn-locked-below-1410",
+    "date": "2026-10-15",
+    "tag": "Firmware",
+    "title": "PSN now requires firmware 14.10",
+    "summary": "Consoles still on 14.00 or older can no longer sign in to PlayStation Network, so staying exploitable now means staying offline.",
+    "body": [
+      "Reports from Notebookcheck and GBAtemp say Sony has made 14.10 the minimum firmware for signing in to PSN. Consoles left on 14.00 are locked out, and anything older is in the same position.",
+      "This doesn't change what the exploits can do. Relapse still needs 13.60 or lower. What changes is the trade-off: a jailbreakable console is now an offline console, which affects online multiplayer, the PlayStation Store and licence checks for some digital games.",
+      "Neither report describes a workaround. Spoofing the firmware version on a jailbroken console was raised in the GBAtemp thread as likely to risk a ban."
+    ],
+    "sources": [
+      { "name": "Notebookcheck", "url": "https://www.notebookcheck.net/Sony-blocks-PS5-console-jailbreak-from-PSN-requiring-firmware-update-14-10.1424308.0.html" },
+      { "name": "GBAtemp", "url": "https://gbatemp.net/threads/sony-blocks-psn-sign-in-on-firmware-below-14-00-now-requires-14-10.685382/" }
+    ]
+  },
+  {
+    "id": "byepervisor-reborn",
+    "date": "2026-10-14",
+    "tag": "Exploit",
+    "title": "Byepervisor Reborn brings a hypervisor bypass to 13.20 and 13.60",
+    "summary": "A developer-focused hypervisor exploit that opens the kernel for dumping and patching. It isn't a jailbreak you can run on its own.",
+    "body": [
+      "Byepervisor Reborn abuses the way the PS5 wakes from rest mode to reach the hypervisor's memory. From there, developers can switch off the execute-only protection on kernel memory, which means the kernel can be dumped and patched.",
+      "Firmware 13.20 and 13.60 are supported. A 13.00 configuration is included but untested. The vulnerability may reach back further, but the release doesn't cover that range.",
+      "It ships without the payloads a player-ready jailbreak needs, and it doesn't bring Linux to these firmwares by itself. The developers describe it as a tool for other developers. There's no build for 14.00, and Notebookcheck reports that 14.00 ended its run."
+    ],
+    "sources": [
+      { "name": "Digital Citizen", "url": "https://www.digitalcitizen.life/ps5-hypervisor-exploit-reaches-firmware-13-60-but-it-is-not-a-full-jailbreak-yet/" },
+      { "name": "Notebookcheck", "url": "https://www.notebookcheck.net/Sony-blocks-PS5-console-jailbreak-from-PSN-requiring-firmware-update-14-10.1424308.0.html" }
+    ]
+  },
+  {
+    "id": "ps5sx2-disc-support",
+    "date": "2026-10-10",
+    "tag": "Emulator",
+    "title": "PS5SX2 can now play original PS2 discs",
+    "summary": "The PCSX2-based emulator reads PS2 DVDs from the console's own drive, with up to 6x internal resolution and 4K output.",
+    "body": [
+      "PS5SX2, a PCSX2 port by homebrew developer Sword, added support for reading PS2 discs from the PS5's drive. The first time a disc goes in, it's copied to a file, and later launches skip the copy.",
+      "Supported games can run at up to 6x internal resolution with 4K output, plus widescreen and frame-rate patches.",
+      "The drive only reads DVDs, so PS2 games released on CD won't work. External USB drives are supported but experimental. Asked about PS3 discs, Sword replied that it will happen, with no timeline given."
+    ],
+    "sources": [
+      { "name": "Notebookcheck (German)", "url": "https://www.notebookcheck.com/PS5-spielt-originale-PS2-DVDs-ab-aber-mit-einem-Haken.1421866.0.html" },
+      { "name": "Held Games", "url": "https://heldgames.com/guides/ps5-homebrew-emulation-switch-ps3" }
+    ]
+  },
+  {
+    "id": "gta-vi-1410",
+    "date": "2026-10-03",
+    "tag": "Firmware",
+    "title": "GTA VI will reportedly need firmware 14.10",
+    "summary": "A datamine says the launch build won't boot below 14.10, which puts it out of reach of 13.60 jailbroken consoles.",
+    "body": [
+      "The datamining account PlayStation Game Size reports that GTA VI's launch build needs firmware 14.10 or newer.",
+      "Relapse tops out at 13.60, so a jailbroken console won't boot the game at launch. Updating to 14.10 to play it removes access to the jailbreak.",
+      "Neither Rockstar nor Sony has confirmed the requirement."
+    ],
+    "sources": [
+      { "name": "TweakTown", "url": "https://www.tweaktown.com/rss/click/news/113907/?c=news-mf" },
+      { "name": "Notebookcheck", "url": "https://www.notebookcheck.net/1414828.html" }
+    ]
+  },
+  {
+    "id": "firmware-1410",
+    "date": "2026-10-01",
+    "tag": "Firmware",
+    "title": "Firmware 14.10 is out with unlisted security fixes",
+    "summary": "Sony's October update follows 14.00 by two weeks. There's no public exploit for either version.",
+    "body": [
+      "Sony released system software 14.10 on 1 October. The patch notes only mention security fixes and stability improvements.",
+      "It lands two weeks after 14.00, which arrived on 16 September and had already closed the window for Relapse and Byepervisor Reborn.",
+      "If your console is on 13.60 or lower and you want to keep it exploitable, leave automatic system updates off."
+    ],
+    "sources": [
+      { "name": "PlayStation LifeStyle", "url": "https://www.playstationlifestyle.net/2026/10/01/ps5-system-update-rolled-out-to-ring-in-october-2026" },
+      { "name": "Notebookcheck", "url": "https://www.notebookcheck.net/1414828.html" }
+    ]
+  },
+  {
+    "id": "relapse-release",
+    "date": "2026-09-29",
+    "tag": "Exploit",
+    "title": "Relapse jailbreak lands for firmware 7.00 to 13.60",
+    "summary": "A browser-based WebKit and kernel chain for PS5 and PS5 Pro. It loads the usual payloads and has to be rerun after every reboot.",
+    "body": [
+      "Developer Nathan Fargo released Relapse, an exploit chain that starts in the console's built-in browser and ends with kernel access. It works on the original PS5 and the PS5 Pro, disc and digital, from 7.00 up to 13.60.",
+      "Once it runs, an ELF loader is available, so the usual homebrew payloads load. The previous public kernel jailbreak stopped at 12.70.",
+      "It's tethered, so a full restart returns the console to stock. There's no hypervisor exploit in the chain, so Linux isn't possible on 13.60 through Relapse. The source is on GitHub under the MIT licence."
+    ],
+    "sources": [
+      { "name": "Relapse on GitHub", "url": "https://github.com/ntfargo/Relapse-Exploit" },
+      { "name": "Decrypt", "url": "https://decrypt.co/379583/sony-ps5-jailbreak-digital-games-ownership" },
+      { "name": "Kotaku", "url": "https://kotaku.com/new-ps5-jailbreak-exploit-works-on-systems-running-july-2026-firmware-2000738283" },
+      { "name": "GuruGamer", "url": "https://gurugamer.com/pc-console/new-ps5-jailbreak-unlocks-firmware-7-00-to-13-60-including-pro-27369" }
+    ]
+  },
+  {
+    "id": "prosperoeden-switch",
+    "date": "2026-09-29",
+    "tag": "Emulator",
+    "title": "ProsperoEden puts a Switch emulator on jailbroken PS5",
+    "summary": "A native PS5 port of the Eden emulator, built with the payload SDK. It's an early alpha.",
+    "body": [
+      "ProsperoEden is an unofficial port of Eden, a Yuzu fork, that runs as native PS5 homebrew with no Linux layer in between.",
+      "The README calls it an early alpha. Video, audio, DualSense input and saves are confirmed working.",
+      "The original repository has been archived as ProsperoEden-Legacy, and development moved to a new repository on 30 September. It builds on recent PS5 Vulkan and Mesa graphics work from the same scene."
+    ],
+    "sources": [
+      { "name": "Held Games", "url": "https://heldgames.com/guides/ps5-homebrew-emulation-switch-ps3" }
+    ]
+  },
+  {
+    "id": "sony-licence-court",
+    "date": "2026-08-21",
+    "tag": "Scene",
+    "title": "Sony tells a US court that digital games are licensed, not owned",
+    "summary": "Sony's filing in a California class action adds fuel to the backup and preservation argument around PS5 homebrew.",
+    "body": [
+      "In a class action in the Northern District of California, Sony argued that reasonable buyers wouldn't believe they were getting ownership of digital games, pointing to licence terms that say the software is licensed rather than sold.",
+      "Sony's main request is to move the dispute into private arbitration. The judge hadn't ruled on that at the time of reporting.",
+      "The filing landed in the same stretch as Sony's plan to stop shipping new games on disc, and both get cited in the scene as reasons to keep backups of games you own."
+    ],
+    "sources": [
+      { "name": "Decrypt", "url": "https://decrypt.co/379583/sony-ps5-jailbreak-digital-games-ownership" }
+    ]
+  },
+  {
+    "id": "disc-exit-2028",
+    "date": "2026-07-05",
+    "tag": "Scene",
+    "title": "Sony's disc exit is pushing more players to look at jailbreaking",
+    "summary": "New PlayStation games stop shipping on disc from January 2028, and searches for PS5 jailbreak terms went up after the news.",
+    "body": [
+      "Sony confirmed that from January 2028, new titles won't ship on disc. Polygon reported that searches for PS5 jailbreak and piracy terms rose after the announcement.",
+      "Within the homebrew scene, the case is mostly about preservation: keeping working backups of games you already own once physical copies are gone."
+    ],
+    "sources": [
+      { "name": "Notebookcheck", "url": "https://www.notebookcheck.net/Interest-in-PS5-jailbreak-and-piracy-rises-after-PlayStation-drops-physical-games.1335383.0.html" }
+    ]
+  }
+]
