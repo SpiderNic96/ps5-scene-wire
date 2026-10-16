@@ -1,1260 +1,100 @@
 [
   {
-    "id": "app-lapy-jb-daemon",
-    "date": "2026-10-17",
-    "tag": "Loader",
-    "title": "Lapy JB Daemon v1.2: standalone jailbreak service for homebrew apps",
-    "summary": "Lapy JB Daemon gives homebrew apps jailbreak-on-demand access without relying on etaHEN, supporting firmware 3.00 through 12.00.",
-    "body": [
-      "Lapy JB Daemon by ArkSama is a standalone PS5 daemon that replaces etaHEN's jailbreak-on-demand function. When a homebrew app needs elevated access, it writes a request file and the daemon handles it automatically. Version 1.2 added multi-firmware support covering firmware 3.00 to 12.00, up from the original v1.0 which only supported 9.40.",
-      "It runs without etaHEN — just kstuff and a homebrew launcher. Launch it from HBL or add it to your autoload.txt to start it at boot. It logs activity to klog for debugging. Built on libhijacker and ps5-payload-sdk, it's a lightweight alternative for apps that need jailbreak privileges."
-    ],
-    "sources": [
-      {
-        "name": "Lapy JB Daemon on GitHub",
-        "url": "https://github.com/ArkSama/PS5-Lapy-JB-Daemon"
-      }
-    ]
-  },
-  {
-    "id": "app-legacyjb",
-    "date": "2026-10-17",
-    "tag": "Loader",
-    "title": "LegacyJB: jailbreak service on port 9028 for homebrew apps",
-    "summary": "LegacyJB opens a TCP jailbreak service on port 9028, providing jailbreak access to supported homebrew apps like Homebrew Store and Itemzflow.",
-    "body": [
-      "LegacyJB by Phoenixx1202 is a PS5 payload that runs a jailbreak service on TCP port 9028. Like Lapy JB Daemon, it monitors file-based requests from supported applications and provides elevated access when needed. It's built for compatibility with Homebrew Store and Itemzflow.",
-      "It logs its activity to /user/data/legacy_jb.log with automatic log rotation. Built and tested with PS5 Payload SDK v0.43. It's a developer-focused tool — no GitHub releases are published, so grab the latest from the repository source."
-    ],
-    "sources": [
-      {
-        "name": "LegacyJB on GitHub",
-        "url": "https://github.com/Phoenixx1202/LegacyJB"
-      }
-    ]
-  },
-  {
-    "id": "app-ps5upload",
-    "date": "2026-10-17",
+    "id": "ps5lm-llm-on-ps5",
+    "date": "2026-10-16",
     "tag": "Tool",
-    "title": "PS5 Upload: the full-featured package manager for jailbroken PS5",
-    "summary": "PS5 Upload transfers games, apps and homebrew from your computer to your PS5 with resume support, archive extraction, NAS browsing and a web interface.",
+    "title": "PS5LM brings large language models to jailbroken PS5",
+    "summary": "A new project runs llama.cpp natively on the PS5, hitting 20 tokens per second with a 27-billion-parameter model on the console's GPU.",
     "body": [
-      "PS5 Upload by PhantomPtr is a desktop and web tool for moving games, apps and homebrew to a jailbroken PS5. It uses a custom binary protocol with BLAKE3 verification, supports resume after disconnects, and can extract .zip, .7z and .rar archives on the fly during transfer. It also mounts .exfat and .ffpkg images, browses and manages files on the console, sends payloads (.elf, .bin, .js, .lua, .jar), and handles PKG installs. NAS and SMB share support is built in.",
-      "Available on Windows 10+, macOS 11+, Linux (Ubuntu 24.04+), and Android. The web interface lets you manage the PS5 from any browser on your LAN, or run it in Docker. It supports firmware 1.00 to 13.60 and includes hardware info, screenshot browsing, and 18 UI languages. The payload targets the ps5-payload-dev SDK v0.42."
+      "PS5LM by cobanov ports llama.cpp to the PS5, letting a jailbroken console run large language models locally. The project supports any GGUF model file and uses the PS5's GPU for inference. Early benchmarks show Qwen 2.5 27B running at roughly 20 tokens per second, which is fast enough for real conversations.",
+      "The repo has picked up over 300 stars since appearing on GitHub. It currently targets Qwen 3 8B out of the box but supports swapping in other models. It's an unusual use of the PS5 hardware and one of the first projects to put the console's GPU to work on something other than games or emulation."
     ],
     "sources": [
-      {
-        "name": "PS5 Upload on GitHub",
-        "url": "https://github.com/phantomptr/ps5upload"
-      }
+      { "name": "PS5LM on GitHub", "url": "https://github.com/cobanov/PS5LM" }
     ]
   },
   {
-    "id": "app-shadowpkg",
-    "date": "2026-10-17",
+    "id": "ps5vr-psvr2-player",
+    "date": "2026-10-16",
+    "tag": "Media",
+    "title": "PS5VR: native VR video player for PSVR2 on jailbroken PS5",
+    "summary": "A homebrew VR video player supports 8K, 180° and 360° video, 3D side-by-side, and spatial audio through a jailbroken PS5 and PSVR2 headset.",
+    "body": [
+      "PS5VR by theghostonline is a native VR video player that runs on a jailbroken PS5 with a PSVR2 headset. It plays local video files in 180° and 360° formats, supports 3D side-by-side and over-under layouts, handles resolutions up to 8K, and includes spatial audio.",
+      "This is notable because Sony's official PSVR2 software has no general-purpose VR video player. The homebrew fills a gap that commercial firmware doesn't, giving PSVR2 owners a way to watch VR content stored locally on the console."
+    ],
+    "sources": [
+      { "name": "PS5VR on GitHub", "url": "https://github.com/theghostonline/PS5VR" }
+    ]
+  },
+  {
+    "id": "skate3-recomp-ps5",
+    "date": "2026-10-16",
+    "tag": "Port",
+    "title": "Skate 3 recompiled and running natively on PS5",
+    "summary": "An Xbox 360 recompilation brings Skate 3 to jailbroken PS5. Available through RecompStore.",
+    "body": [
+      "Skate 3, the 2010 Xbox 360 skateboarding game, now runs natively on a jailbroken PS5 through a static recompilation by elripalda. Like other recent Xbox 360 recomps, it translates the original PowerPC code to x86-64 at build time so the game runs without emulation overhead.",
+      "The port is built on mchughalex's Skate 3 recompiler and is available through RecompStore, so you can install it directly from the console. You'll need your own copy of the game. It joins a growing list of Xbox 360 recomps alongside Sonic Unleashed, FIFA Street, and WWE '13."
+    ],
+    "sources": [
+      { "name": "skate3-ps5 on GitHub", "url": "https://github.com/elripalda/skate3-ps5" }
+    ]
+  },
+  {
+    "id": "ps5-firmware-pin",
+    "date": "2026-10-16",
     "tag": "Tool",
-    "title": "ShadowPKG: self-hosted PKG library manager for PS5",
-    "summary": "ShadowPKG is a self-hosted web app that lets you browse, search and send .pkg files to a jailbroken PS5 from any device on your network.",
+    "title": "ps5-firmware-pin: block forced firmware updates on jailbroken PS5",
+    "summary": "A utility that prevents a jailbroken PS5 from downloading or installing firmware updates, keeping you on a vulnerable firmware version.",
     "body": [
-      "ShadowPKG by NotSoTypicalGamer is a self-hosted Node.js web package manager for jailbroken PS5 and PS4. It reads title, content ID, version and type from each PKG file, groups games with their updates and DLC, and flags duplicates. You can browse, search, rename, delete, and send packages to one or more saved consoles with queue management.",
-      "It runs as just server.js and index.html on Node.js 18+ or Docker. It supports HTTP range downloads so consoles can resume, reads packages inside uncompressed .rar archives without extracting, and handles FTP-connected consoles. Requires a DPI v2 payload (Elf Arsenal or etaHEN) on the PS5. Features themes, cover art, a live activity log, and a setup panel."
+      "ps5-firmware-pin by lvndry is a tool that stops a jailbroken PS5 from updating its firmware. It blocks the console's update checks so you stay on whichever firmware your jailbreak supports. The developer has tested it on 13.60 with the Relapse exploit.",
+      "Firmware updates are one of the main risks for jailbroken consoles, since Sony patches the vulnerabilities that exploits rely on. This tool automates what people used to do manually with DNS blocking or router rules, and it runs directly on the console as a payload."
     ],
     "sources": [
-      {
-        "name": "ShadowPKG on GitHub",
-        "url": "https://github.com/NotSoTypicalGamer/ShadowPKG"
-      }
+      { "name": "ps5-firmware-pin on GitHub", "url": "https://github.com/lvndry/ps5-firmware-pin" }
     ]
   },
   {
-    "id": "app-retroarch-ps5",
-    "date": "2026-10-17",
-    "tag": "Emulator",
-    "title": "RetroArch for PS5: multi-system emulation with five cores",
-    "summary": "A native RetroArch port running on PS5 with Vulkan output and cores for NES, SNES, GBA, Mega Drive and arcade systems.",
-    "body": [
-      "PS5 RetroArch by mihawk-99 is a native port of RetroArch that renders through PS5's Vulkan GPU driver. It ships with five emulator cores: FCEUmm (NES/Famicom), mGBA (Game Boy, GBC, GBA), Snes9x (SNES), FinalBurn Neo (arcade including Neo Geo and Sega System 16/32), and Genesis Plus GX (Mega Drive, Master System, Game Gear, SG-1000, Sega CD). The default menu is XMB with RGUI as an alternative.",
-      "It supports controller remapping, analog stick navigation, stereo PCM audio, and configuration save/load. An active development project — save state persistence, networking, shaders, and 4K/VRR/HDR are not yet validated. Copy the PPSA99169 folder to /data/homebrew/ on your jailbroken PS5. Supply your own ROMs and BIOS files. Based on RetroArch 1.22.2."
-    ],
-    "sources": [
-      {
-        "name": "PS5 RetroArch on GitHub",
-        "url": "https://github.com/mihawk-99/PS5_RetroArch"
-      }
-    ]
-  },
-  {
-    "id": "app-mupen64plus-ps5",
-    "date": "2026-10-17",
-    "tag": "Emulator",
-    "title": "mupen64plus for PS5: dedicated Nintendo 64 emulation",
-    "summary": "A standalone N64 emulator for PS5 based on mupen64plus, offering dedicated N64 emulation outside of RetroArch.",
-    "body": [
-      "mupen64plus for PS5 by TheRealRetro brings dedicated Nintendo 64 emulation to the console as a native homebrew app. Based on the mupen64plus emulator, it focuses specifically on N64 compatibility rather than being a multi-system solution like RetroArch.",
-      "Install it as a homebrew app through your loader. Supply your own N64 ROMs. For a more integrated multi-system approach, RetroArch also includes N64 support, but this standalone build may offer better compatibility or performance for specific titles."
-    ],
-    "sources": [
-      {
-        "name": "mupen64plus-ps5 on GitHub",
-        "url": "https://github.com/TheRealRetro/mupen64plus-ps5"
-      }
-    ]
-  },
-  {
-    "id": "app-silverbirch",
-    "date": "2026-10-17",
-    "tag": "Emulator",
-    "title": "SilverBirch: Nintendo DS emulation on PS5 via melonDS",
-    "summary": "SilverBirch brings melonDS-based Nintendo DS emulation to PS5 as a native homebrew app.",
-    "body": [
-      "SilverBirch by BaZZtian is a Nintendo DS emulator for PS5 based on melonDS. It emulates both screens of the DS, with the PS5's display handling the dual-screen layout. DS games with touch controls use the controller's analog sticks or touchpad for input.",
-      "Install it as a homebrew app and supply your own DS ROMs and optionally the DS BIOS files. The melonDS core is known for strong compatibility with the DS library. This is one of the more niche emulators in the PS5 homebrew scene, filling the gap for anyone who wants to revisit their DS library on the big screen."
-    ],
-    "sources": [
-      {
-        "name": "SilverBirch on GitHub",
-        "url": "https://github.com/BaZZtian/SilverBirch"
-      }
-    ]
-  },
-  {
-    "id": "app-psxs5",
-    "date": "2026-10-17",
-    "tag": "Emulator",
-    "title": "PSXS5: PS1 emulation on PS5 through PCSX-ReARMed",
-    "summary": "PSXS5 is a PS1 emulator for PS5 based on PCSX-ReARMed, offering original PlayStation game compatibility.",
-    "body": [
-      "PSXS5 by SynoPiia brings PS1 emulation to the PS5 through a native port of PCSX-ReARMed. It's one of two PS1 emulator options for the console, alongside SwanStation. PCSX-ReARMed is known for its broad compatibility across the PS1 library.",
-      "Supply your own PS1 disc images (BIN/CUE or ISO) and the PS1 BIOS. Install as a homebrew app through your loader. Also available through ProsperoStore for easy installation. For an alternative PS1 emulator experience, SwanStationPS5 uses a different codebase."
-    ],
-    "sources": [
-      {
-        "name": "PSXS5 on GitHub",
-        "url": "https://github.com/SynoPiia/PSXS5"
-      }
-    ]
-  },
-  {
-    "id": "app-stremio-ps5",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "Stremio for PS5: unofficial streaming client",
-    "summary": "An unofficial native Stremio port for PS5 that brings the add-on-based streaming platform to the console.",
-    "body": [
-      "Stremio for PS5 by Sp9nky is an unofficial native port of the Stremio streaming platform. Stremio uses community add-ons to aggregate content from various streaming sources, and this port brings that to the PS5 as a homebrew app.",
-      "Install as a homebrew app and sign in with your Stremio account to sync your add-ons and library. Also available through ProsperoStore. For an alternative Stremio experience, StremiBrew and Stremio Plus offer different implementations of the same platform."
-    ],
-    "sources": [
-      {
-        "name": "Stremio PS5 on GitHub",
-        "url": "https://github.com/Sp9nky/unofficial-stremio-ps5-port"
-      }
-    ]
-  },
-  {
-    "id": "app-stremibrew",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "StremiBrew: another native Stremio port for PS5",
-    "summary": "StremiBrew is an independent native Stremio client for PS5, offering an alternative to Sp9nky's port.",
-    "body": [
-      "StremiBrew by stupiditytries is another native Stremio client for jailbroken PS5. Like the Sp9nky port, it brings the add-on-based streaming platform to the console, but with its own implementation and potentially different feature support.",
-      "Install through ProsperoStore or manually as a homebrew app. Sign in with your Stremio account to access your library and add-ons. The PS5 homebrew scene now has three Stremio options: this one, Sp9nky's port, and Stremio Plus by LoZazaMastro."
-    ],
-    "sources": [
-      {
-        "name": "StremiBrew on GitHub",
-        "url": "https://github.com/stupiditytries/StremiBrew"
-      }
-    ]
-  },
-  {
-    "id": "app-emby5",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "Emby5: native Emby media server client for PS5",
-    "summary": "Emby5 is a native Emby client for jailbroken PS5, connecting to your Emby media server.",
-    "body": [
-      "Emby5 by bornaradusin is a native Emby client for PS5. If you run an Emby media server at home, this homebrew app connects to it and lets you browse and play your media library directly on the console without needing the web browser.",
-      "Install as a homebrew app or through ProsperoStore. Point it at your Emby server's address on your local network. For Jellyfin users (the open-source Emby fork), Jelly5 and Mortalfin are the alternatives."
-    ],
-    "sources": [
-      {
-        "name": "Emby5 on GitHub",
-        "url": "https://github.com/bornaradusin/Emby5"
-      }
-    ]
-  },
-  {
-    "id": "app-jelly5",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "Jelly5: native Jellyfin client for PS5",
-    "summary": "Jelly5 connects a jailbroken PS5 to your Jellyfin media server as a native homebrew app.",
-    "body": [
-      "Jelly5 by 02dnot is a native Jellyfin client for PS5. Jellyfin is the free, open-source media server (an Emby fork), and this app connects your PS5 directly to it for browsing and playing your media library. It also works with Emby servers.",
-      "Install as a homebrew app or through ProsperoStore. Enter your Jellyfin server's URL and sign in. For a different Jellyfin experience, Mortalfin is another native client in beta. For Emby-only users, Emby5 is the dedicated option."
-    ],
-    "sources": [
-      {
-        "name": "Jelly5 on GitHub",
-        "url": "https://github.com/02dnot/Jelly5"
-      }
-    ]
-  },
-  {
-    "id": "app-vlc-ps5",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "VLC for PS5: the iconic media player comes to homebrew",
-    "summary": "A native port of VLC media player for PS5, playing virtually any video or audio format from local storage or network sources.",
-    "body": [
-      "VLC for PS5 by ZiZc3 brings the legendary open-source media player to the console as a native homebrew app. Known for playing virtually any media format without codec packs, VLC handles video, audio, and streaming from local files, USB drives, and network sources.",
-      "Install through ProsperoStore or manually as a homebrew app. Drop media files onto a USB drive or access network shares. VLC's codec library means you won't need to worry about format compatibility — it plays what the PS5's built-in player won't."
-    ],
-    "sources": [
-      {
-        "name": "VLC PS5 on GitHub",
-        "url": "https://github.com/ZiZc3/VLC"
-      }
-    ]
-  },
-  {
-    "id": "app-sonic-unleashed-ps5",
-    "date": "2026-10-17",
-    "tag": "Port",
-    "title": "Sonic Unleashed Recompiled: the Xbox 360 classic runs natively on PS5",
-    "summary": "A static recompilation of Sonic Unleashed from Xbox 360, running natively on PS5 with Vulkan rendering at up to 4K.",
-    "body": [
-      "Sonic Unleashed Recompiled by Nazky is a PS5 port of the Xbox 360 Sonic Unleashed, using static recompilation to convert the game's code and shaders for native execution. It renders through Vulkan at up to 4K (3840x2160), with DualSense support including touchpad navigation on the World Map. Auto-detects language from PS5 system settings, with in-game language and voice switching.",
-      "You must supply your own legally obtained Xbox 360 copy of Sonic Unleashed (US or EU retail plus the Title Update). Built from the community hedge-dev UnleashedRecomp project. Known issues include occasional frame drops in heavy scenes and minor input lag. Build requires Linux with clang/lld 18+."
-    ],
-    "sources": [
-      {
-        "name": "Sonic Unleashed Recompiled on GitHub",
-        "url": "https://github.com/Nazky/UnleashedRecomp-Prospero"
-      }
-    ]
-  },
-  {
-    "id": "app-simpsons-game-ps5",
-    "date": "2026-10-17",
-    "tag": "Port",
-    "title": "The Simpsons Game: Xbox 360 recomp builder for PS5",
-    "summary": "A builder that converts your Xbox 360 copy of The Simpsons Game into a PS5 homebrew package using static recompilation.",
-    "body": [
-      "The Simpsons Game PS5 Builder by LoZazaMastro takes your Xbox 360 copy of The Simpsons Game and builds a PS5 homebrew folder from it using static recompilation. It converts the game's executable and assets so they run natively on the console.",
-      "You need your own Xbox 360 game files to build the package. Available through ProsperoStore for the builder itself. The resulting package runs as a native PS5 homebrew title through ShadowMountPlus. Part of the growing wave of Xbox 360 recomps hitting the PS5 scene."
-    ],
-    "sources": [
-      {
-        "name": "The Simpsons Game PS5 on GitHub",
-        "url": "https://github.com/LoZazaMastro/TheSimpsonsGame-PS5-Builder"
-      }
-    ]
-  },
-  {
-    "id": "app-spiderman-edge-of-time-ps5",
-    "date": "2026-10-17",
-    "tag": "Port",
-    "title": "Spider-Man: Edge of Time recompiled for PS5",
-    "summary": "An unofficial Xbox 360 recompilation of Spider-Man: Edge of Time running natively on PS5 with Vulkan rendering.",
-    "body": [
-      "Spider-Man: Edge of Time for PS5 by KongaTime uses EdgeOfTimeRecomp and the ReXGlue SDK to run this Xbox 360 classic natively on the console. It renders through Vulkan via RADV on the PS5 display. The game features Spider-Man 2099 and Amazing Spider-Man in a time-travel storyline.",
-      "You need your own Xbox 360 game files: Default.xex, GameLogic.dll, and the disc data with the Title Update. The build uses ReXGlue nightly 20261002 and requires the PS5 development stack (PS5_Vulkan, PS5_Mesa, PS5_PayloadSDK). Includes a test mode for verifying display, memory and audio before running the game. Tested on console as of October 2026."
-    ],
-    "sources": [
-      {
-        "name": "Spider-Man: Edge of Time PS5 on GitHub",
-        "url": "https://github.com/KongaTime/PS5_EdgeOfTimeTitle"
-      }
-    ]
-  },
-  {
-    "id": "app-fifa-street-ps5",
-    "date": "2026-10-17",
-    "tag": "Port",
-    "title": "FIFA Street (2012): Xbox 360 recomp for PS5",
-    "summary": "An Xbox 360 recompilation of FIFA Street (2012) that runs natively on jailbroken PS5.",
-    "body": [
-      "FIFA Street for PS5 by elripalda is a static recompilation of the Xbox 360 version of FIFA Street (2012), the arcade-style street football game. It converts the game's code to run natively on the PS5 through the recomp toolchain.",
-      "Supply your own Xbox 360 copy of FIFA Street. Install the built package as a homebrew title through ShadowMountPlus. Part of elripalda's collection of Xbox 360 sports recomps for PS5, alongside WWE '13."
-    ],
-    "sources": [
-      {
-        "name": "FIFA Street PS5 on GitHub",
-        "url": "https://github.com/elripalda/fifastreet-ps5"
-      }
-    ]
-  },
-  {
-    "id": "app-wwe13-ps5",
-    "date": "2026-10-17",
-    "tag": "Port",
-    "title": "WWE '13: Xbox 360 recomp for PS5",
-    "summary": "An Xbox 360 recompilation of WWE '13 running natively on jailbroken PS5.",
-    "body": [
-      "WWE '13 for PS5 by elripalda is a static recompilation of the Xbox 360 wrestling game. It brings the Attitude Era mode, Universe mode, and the full roster of WWE '13 to the PS5 as a native homebrew title.",
-      "Supply your own Xbox 360 copy of WWE '13 to build and run the package. Install through ShadowMountPlus. Another Xbox 360 sports recomp from elripalda, who also ported FIFA Street (2012) to the PS5."
-    ],
-    "sources": [
-      {
-        "name": "WWE '13 PS5 on GitHub",
-        "url": "https://github.com/elripalda/wwe13-ps5"
-      }
-    ]
-  },
-  {
-    "id": "app-wind-waker-hd-ps5",
-    "date": "2026-10-17",
-    "tag": "Port",
-    "title": "Wind Waker HD recompiled for PS5",
-    "summary": "The Wii U version of The Legend of Zelda: The Wind Waker HD, recompiled to run natively on PS5.",
-    "body": [
-      "Wind Waker HD for PS5 by griches is a recompilation of the Wii U HD remaster of The Legend of Zelda: The Wind Waker. Unlike the GameCube version (via SwitchWaker), this is the enhanced HD version with improved lighting, faster sailing, and quality-of-life changes from the Wii U release.",
-      "Bring your own Wii U dump of Wind Waker HD. Install through ShadowMountPlus. If you only have the GameCube original, the SwitchWaker port handles that version instead. Both are available as separate homebrew titles."
-    ],
-    "sources": [
-      {
-        "name": "Wind Waker HD PS5 on GitHub",
-        "url": "https://github.com/griches/PS5_WindWakerHD"
-      }
-    ]
-  },
-  {
-    "id": "app-olise-player",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "OliSe Player: tracker music streaming on PS5",
-    "summary": "OliSe Player streams tracker music module files on PS5, bringing chiptune and demoscene audio to the console.",
-    "body": [
-      "OliSe Player by Marice is a tracker music radio app for PS5 that streams module files — the chiptune and demoscene audio formats like .mod, .xm, .s3m and .it. If you grew up on Amiga or demoscene music, this is your player.",
-      "Install through ProsperoStore or as a homebrew app. It streams from online module archives, so you don't need to supply your own files. A niche but beloved format gets its own dedicated player on PS5."
-    ],
-    "sources": [
-      {
-        "name": "OliSe Player on GitHub",
-        "url": "https://github.com/Marice/OliSePlayer"
-      }
-    ]
-  },
-  {
-    "id": "app-symphonystation5",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "SymphonyStation5: Navidrome music client for PS5",
-    "summary": "A native Navidrome client for PS5 that connects to your self-hosted music server.",
-    "body": [
-      "SymphonyStation5 by TsvetomirGT is a native Navidrome music client for PS5. Navidrome is a self-hosted music streaming server, and this app lets you browse and play your music library directly on the console.",
-      "Point it at your Navidrome server URL and sign in. Install through ProsperoStore or manually. If you run a Navidrome instance at home, this gives you a dedicated music player on your PS5."
-    ],
-    "sources": [
-      {
-        "name": "SymphonyStation5 on GitHub",
-        "url": "https://github.com/TsvetomirGT/SymphonyStation5"
-      }
-    ]
-  },
-  {
-    "id": "app-xashps5",
-    "date": "2026-10-17",
-    "tag": "Port",
-    "title": "XashPS5: Half-Life comes to PS5 via Xash3D",
-    "summary": "A native port of the Xash3D engine that runs Half-Life on PS5. Bring your own game data.",
-    "body": [
-      "XashPS5 by GordonProsperoMan ports the Xash3D engine to PS5, letting you play the original Half-Life as a native homebrew title. Xash3D is an open-source GoldSrc engine reimplementation with broad Half-Life mod support.",
-      "Supply your own Half-Life game data (valve/ folder from your Steam install). Install through ProsperoStore. Half-Life mods that work with Xash3D should be compatible. One of the classic FPS ports joining the PS5 homebrew library."
-    ],
-    "sources": [
-      {
-        "name": "XashPS5 on GitHub",
-        "url": "https://github.com/GordonProsperoMan/xash3d-ps5"
-      }
-    ]
-  },
-  {
-    "id": "app-medieval-tennis",
-    "date": "2026-10-17",
-    "tag": "Port",
-    "title": "Middle Ages Ping Pong: medieval-themed game on PS5",
-    "summary": "A medieval-themed ping pong game running natively on PS5 as homebrew.",
-    "body": [
-      "Middle Ages Ping Pong by STL1te is a medieval-themed table tennis game running as a native PS5 homebrew title. It's a lightweight arcade game with a quirky medieval spin on classic ping pong.",
-      "Install through ProsperoStore. No external game files needed — it's a self-contained homebrew game. One of the small indie-style games in the PS5 homebrew catalogue."
-    ],
-    "sources": [
-      {
-        "name": "Middle Ages Ping Pong on GitHub",
-        "url": "https://github.com/STL1te/MedievalTennis"
-      }
-    ]
-  },
-  {
-    "id": "app-vita5",
-    "date": "2026-10-17",
+    "id": "ps5-patchdl",
+    "date": "2026-10-16",
     "tag": "Tool",
-    "title": "VITA5: stream your PS Vita to PS5 over USB",
-    "summary": "VITA5 streams a PS Vita's display to the PS5 over a USB connection.",
+    "title": "PatchDL: download official game updates directly on PS5",
+    "summary": "PatchDL finds and downloads the latest official patches for every installed game, with parallel downloads and resume support.",
     "body": [
-      "VITA5 by StonedModder streams your PS Vita's display to the PS5 over USB. If you want to play Vita games on the big screen without a capture card, this homebrew app turns your PS5 into a Vita display.",
-      "Connect your Vita to the PS5 via USB and launch the app. Install through ProsperoStore. Requires a jailbroken PS5. A unique utility that bridges two PlayStation generations."
+      "ps5-patchdl by knutwurst is a homebrew tool that runs on the PS5 and downloads official game updates for every installed title. It scans your library, checks for the newest patch version, and downloads updates with parallel connections and the ability to resume interrupted transfers.",
+      "The tool is useful for jailbroken consoles that can't safely connect to PSN for updates. It pulls official patch files without needing a PSN sign-in, so you can keep games up to date without risking your jailbreak. The project has over 130 stars on GitHub."
     ],
     "sources": [
-      {
-        "name": "VITA5 on GitHub",
-        "url": "https://github.com/StonedModder/VITA5"
-      }
+      { "name": "ps5-patchdl on GitHub", "url": "https://github.com/knutwurst/ps5-patchdl" }
     ]
   },
   {
-    "id": "app-syobon-action",
-    "date": "2026-10-17",
-    "tag": "Port",
-    "title": "Syobon Action: Cat Mario comes to PS5",
-    "summary": "A port of the infamous unfair platformer Syobon Action (Cat Mario) for PS5.",
-    "body": [
-      "Syobon Action for PS5 by kvaps is a port of the cult classic unfair platformer, also known as Cat Mario. The game looks like a Mario clone but is designed to trick and kill you at every turn with invisible blocks, fake floors, and surprise enemies.",
-      "Install through ProsperoStore. No external files needed. If you enjoy rage games and practical joke platformers, this is your kind of challenge."
-    ],
-    "sources": [
-      {
-        "name": "Syobon Action PS5 on GitHub",
-        "url": "https://github.com/kvaps/syobon-action-ps5"
-      }
-    ]
-  },
-  {
-    "id": "app-ccleste",
-    "date": "2026-10-17",
-    "tag": "Port",
-    "title": "ccleste: PICO-8 Celeste port for PS5",
-    "summary": "A C port of the PICO-8 version of Celeste running natively on PS5.",
-    "body": [
-      "ccleste by darkxex is a C port of the original PICO-8 Celeste for PS5. This is the small, original version of Celeste that was made in PICO-8 before the full commercial release — a tight, challenging platformer about climbing a mountain.",
-      "Install through ProsperoStore. Self-contained, no external files needed. A great pick-up-and-play platformer that runs natively on the PS5."
-    ],
-    "sources": [
-      {
-        "name": "ccleste PS5 on GitHub",
-        "url": "https://github.com/darkxex/PS5_Celeste"
-      }
-    ]
-  },
-  {
-    "id": "app-ruffle-flash",
-    "date": "2026-10-17",
-    "tag": "Emulator",
-    "title": "Ruffle Flash: Flash emulator for PS5",
-    "summary": "A port of the Ruffle Flash emulator for PS5, bringing Flash games and content back to life.",
-    "body": [
-      "Ruffle Flash for PS5 by ZiZc3 ports the Ruffle Flash emulator to the console. Ruffle is an open-source Flash Player emulator written in Rust, bringing back the Flash games and animations that disappeared when Adobe killed Flash in 2020.",
-      "Install through ProsperoStore and load your .swf Flash files. Compatibility varies — Ruffle handles ActionScript 2 well and ActionScript 3 support is improving. A nostalgia trip for anyone who misses Newgrounds-era Flash games."
-    ],
-    "sources": [
-      {
-        "name": "Ruffle Flash PS5 on GitHub",
-        "url": "https://github.com/ZiZc3/Ruffle-Flash-PS5"
-      }
-    ]
-  },
-  {
-    "id": "app-screentester5",
-    "date": "2026-10-17",
+    "id": "ps4mount-usb",
+    "date": "2026-10-16",
     "tag": "Tool",
-    "title": "ScreenTester5: dead pixel and display test for PS5",
-    "summary": "ScreenTester5 displays test patterns on your PS5 to check for dead pixels, colour accuracy and screen uniformity.",
+    "title": "ps4mount: run PS4 games from USB without installing them",
+    "summary": "Mount and play PS4 PKG games directly from a USB drive on jailbroken PS5, skipping the install step entirely.",
     "body": [
-      "ScreenTester5 by Marice is a display testing utility for PS5. It shows various test patterns — solid colours, gradients, grids — to help you spot dead pixels, backlight bleed, colour accuracy issues, and screen uniformity problems on your TV or monitor.",
-      "Install through ProsperoStore. Useful when setting up a new display or troubleshooting screen issues. A simple but practical utility."
+      "ps4mount by gasb07 lets you mount PS4 PKG game files from a USB external drive on a jailbroken PS5 without copying or installing them to internal storage. The games show up and run as if they were installed, but the data stays on the USB drive.",
+      "This solves a storage problem: PS5 internal storage fills up fast, and the console normally requires PS4 games to be installed before playing. With ps4mount you can keep a library of PS4 games on an external drive and swap between them. The project has over 120 stars."
     ],
     "sources": [
-      {
-        "name": "ScreenTester5 on GitHub",
-        "url": "https://github.com/Marice/ScreenTester5"
-      }
+      { "name": "ps4mount on GitHub", "url": "https://github.com/gasb07/ps4mount" }
     ]
   },
   {
-    "id": "app-stremio-plus",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "Stremio Plus: third Stremio client for PS5",
-    "summary": "Stremio Plus by LoZazaMastro is another unofficial native Stremio client for PS5.",
-    "body": [
-      "Stremio Plus by LoZazaMastro is the third Stremio client available for PS5, alongside Sp9nky's port and StremiBrew. It provides its own implementation of the add-on-based streaming platform as a native homebrew app.",
-      "Install through ProsperoStore. Sign in with your Stremio account. Having three options means you can try each and stick with whichever works best for your setup and add-on configuration."
-    ],
-    "sources": [
-      {
-        "name": "Stremio Plus on GitHub",
-        "url": "https://github.com/LoZazaMastro/Stremio-Plus"
-      }
-    ]
-  },
-  {
-    "id": "app-rommps",
-    "date": "2026-10-17",
+    "id": "fps-overlay-ps5",
+    "date": "2026-10-16",
     "tag": "Tool",
-    "title": "RommPS: sync saves with a RomM server from PS5",
-    "summary": "RommPS connects your PS5 to a RomM server to sync save data across devices.",
+    "title": "Common-FPS: a real-time FPS counter for PS4 and PS5 games",
+    "summary": "A universal framerate overlay that works across PS4 and PS5 titles, available as a standalone payload or etaHEN plugin.",
     "body": [
-      "RommPS by s0liton syncs save data between your PS5 and a RomM server. RomM is a self-hosted ROM management platform, and this app bridges your console's saves to it for backup and cross-device syncing.",
-      "Install through ProsperoStore. Point it at your RomM server address. Useful for keeping saves in sync across multiple emulators or devices that connect to the same RomM instance."
+      "Common-FPS-for-PS5 adds a real-time FPS counter overlay to any PS4 or PS5 game running on a jailbroken PS5. It shows the current framerate on screen while you play, similar to what Steam or Xbox offer on their platforms. It ships as both a standalone ELF payload and an etaHEN plugin.",
+      "The tool is useful for checking whether games hit their target framerate, testing performance after patches, or just satisfying curiosity. The etaHEN plugin version loads automatically with your jailbreak chain so you don't need to launch it separately each time."
     ],
     "sources": [
-      {
-        "name": "RommPS on GitHub",
-        "url": "https://github.com/s0liton/RommPS"
-      }
-    ]
-  },
-  {
-    "id": "app-capy-mobile",
-    "date": "2026-10-17",
-    "tag": "Emulator",
-    "title": "Capy Mobile: Java phone game emulator for PS5",
-    "summary": "Capy Mobile emulates J2ME (Java ME) mobile phone games on PS5, bringing classic pre-smartphone games back.",
-    "body": [
-      "Capy Mobile by khalifa007 emulates J2ME (Java ME) phone games on PS5. Before smartphones, thousands of games ran on Java-powered feature phones — this emulator brings those classics to the big screen.",
-      "Install through ProsperoStore and supply your own .jar Java ME game files. Compatibility varies across the J2ME library. A deep-cut emulator for anyone nostalgic for the Nokia and early mobile gaming era."
-    ],
-    "sources": [
-      {
-        "name": "Capy Mobile on GitHub",
-        "url": "https://github.com/khalifa007/CapyMobile"
-      }
-    ]
-  },
-  {
-    "id": "app-raptor-ps5",
-    "date": "2026-10-17",
-    "tag": "Port",
-    "title": "Raptor: Call of the Shadows ported to PS5",
-    "summary": "A native port of the classic DOS shoot-em-up Raptor: Call of the Shadows for PS5.",
-    "body": [
-      "Raptor: Call of the Shadows for PS5 by ChaDea1 is a native port of the 1994 DOS vertical scrolling shooter. Fly through waves of enemies, collect power-ups, and buy upgrades between missions in this classic Apogee shoot-em-up.",
-      "Install through ProsperoStore. The shareware episode data may be included; for the full game supply your own registered data files. A retro classic running natively on modern hardware."
-    ],
-    "sources": [
-      {
-        "name": "Raptor PS5 on GitHub",
-        "url": "https://github.com/ChaDea1/RaptorPS5"
-      }
-    ]
-  },
-  {
-    "id": "app-cd-player",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "CD Player: play audio CDs on your PS5",
-    "summary": "CD Player by LoZazaMastro reads and plays audio CDs through the PS5's disc drive and USB audio.",
-    "body": [
-      "CD Player by LoZazaMastro brings audio CD playback to PS5. The console can't play CDs natively, but this homebrew app reads audio CDs through the disc drive and plays them. Also supports USB-connected drives.",
-      "Install through ProsperoStore. Insert an audio CD and play. A simple utility that fills a gap Sony left — the PS5 plays Blu-ray and DVD movies but not CDs out of the box."
-    ],
-    "sources": [
-      {
-        "name": "CD Player on GitHub",
-        "url": "https://github.com/LoZazaMastro/CD-Player"
-      }
-    ]
-  },
-  {
-    "id": "app-swanstationps5",
-    "date": "2026-10-17",
-    "tag": "Emulator",
-    "title": "SwanStationPS5: alternative PS1 emulator for PS5",
-    "summary": "SwanStationPS5 is a PS1 emulator for PS5 based on the SwanStation core, offering an alternative to PSXS5.",
-    "body": [
-      "SwanStationPS5 by darkxex is a PS1 emulator for PS5 using the SwanStation core (a DuckStation fork). It's an alternative to PSXS5 (PCSX-ReARMed based) with different compatibility and performance characteristics.",
-      "Install through ProsperoStore. Supply your own PS1 disc images and BIOS. PSSwanStation by Press5elect is yet another SwanStation-based PS1 emulator, so you have options to test which works best for your games."
-    ],
-    "sources": [
-      {
-        "name": "SwanStationPS5 on GitHub",
-        "url": "https://github.com/darkxex/SwanStationPS5"
-      }
-    ]
-  },
-  {
-    "id": "app-driftcheck",
-    "date": "2026-10-17",
-    "tag": "Tool",
-    "title": "DriftCheck: controller stick drift tester for PS5",
-    "summary": "DriftCheck tests your DualSense for stick drift, showing real-time input data on screen.",
-    "body": [
-      "DriftCheck by felipemelchior is a controller testing utility for PS5 that checks for stick drift. It displays real-time analog stick input data so you can see if your DualSense has drift issues and how severe they are.",
-      "Install through ProsperoStore. Useful for diagnosing controller problems before deciding whether to repair or replace. A simple tool that phone repair techs and gamers will both appreciate."
-    ],
-    "sources": [
-      {
-        "name": "DriftCheck on GitHub",
-        "url": "https://github.com/felipemelchior/driftcheck5"
-      }
-    ]
-  },
-  {
-    "id": "app-prosperoradio",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "ProsperoRadio: internet radio on PS5",
-    "summary": "ProsperoRadio is a native internet radio player for PS5 by blackbearreloaded.",
-    "body": [
-      "ProsperoRadio by blackbearreloaded is an internet radio player for PS5. Browse stations by genre or search for specific ones, and stream live radio directly on the console.",
-      "Install through ProsperoStore. Part of blackbearreloaded's growing suite of Prospero-branded PS5 apps, which also includes ProsperoTV, ProsperoLight, ProsperoAI and ProsperoStore itself."
-    ],
-    "sources": [
-      {
-        "name": "ProsperoRadio on GitHub",
-        "url": "https://github.com/blackbearreloaded/ProsperoRadio"
-      }
-    ]
-  },
-  {
-    "id": "app-prosperolight",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "ProsperoLight: Moonlight game streaming on PS5",
-    "summary": "An unofficial Moonlight port for PS5, streaming games from your PC with an NVIDIA GPU to the console.",
-    "body": [
-      "ProsperoLight by blackbearreloaded ports Moonlight to the PS5, letting you stream PC games from a computer with an NVIDIA GPU (or Sunshine on any GPU) to the console. Moonlight is an open-source GameStream client known for low-latency streaming.",
-      "Install through ProsperoStore. Your PC needs NVIDIA GeForce Experience / GameStream or Sunshine running. Connect both devices to the same network for best results. An alternative to Sony's own Remote Play for streaming from your own PC."
-    ],
-    "sources": [
-      {
-        "name": "ProsperoLight on GitHub",
-        "url": "https://github.com/blackbearreloaded/ProsperoLight"
-      }
-    ]
-  },
-  {
-    "id": "app-prosperotv",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "ProsperoTV: native IPTV client for PS5",
-    "summary": "ProsperoTV is a native IPTV client for PS5, playing live TV channels from M3U playlists.",
-    "body": [
-      "ProsperoTV by blackbearreloaded is a native IPTV client for PS5. Load an M3U playlist and watch live TV channels directly on the console without needing the web browser or a streaming box.",
-      "Install through ProsperoStore. Supply your own M3U playlist URL from your IPTV provider. Part of blackbearreloaded's Prospero app suite for PS5."
-    ],
-    "sources": [
-      {
-        "name": "ProsperoTV on GitHub",
-        "url": "https://github.com/blackbearreloaded/ProsperoTV"
-      }
-    ]
-  },
-  {
-    "id": "app-prosperoai",
-    "date": "2026-10-17",
-    "tag": "Tool",
-    "title": "ProsperoAI: run a local LLM chat on PS5",
-    "summary": "ProsperoAI runs a local language model chatbot on PS5, no internet required.",
-    "body": [
-      "ProsperoAI by blackbearreloaded runs a local large language model on the PS5 for chat. No internet connection needed — the model runs entirely on the console's hardware. A novelty that shows off what PS5 homebrew can do.",
-      "Install through ProsperoStore. Performance depends on the model size and the PS5's available resources. Don't expect GPT-level responses, but it's an impressive tech demo of AI running on console hardware."
-    ],
-    "sources": [
-      {
-        "name": "ProsperoAI on GitHub",
-        "url": "https://github.com/blackbearreloaded/ProsperoAI"
-      }
-    ]
-  },
-  {
-    "id": "app-ps5-opengl-showcase",
-    "date": "2026-10-17",
-    "tag": "Tool",
-    "title": "PS5 OpenGL Showcase: graphics demo on PS5",
-    "summary": "An OpenGL graphics demonstration app for PS5, showing what the homebrew graphics stack can do.",
-    "body": [
-      "PS5 OpenGL Showcase by blackbearreloaded is a graphics demo that runs OpenGL rendering on the PS5. It demonstrates the homebrew community's OpenGL implementation on the console's hardware.",
-      "Install through ProsperoStore. A tech demo rather than a practical app — useful for developers testing the PS5 homebrew graphics pipeline and for anyone curious about what custom rendering looks like on the console."
-    ],
-    "sources": [
-      {
-        "name": "PS5 OpenGL Showcase on GitHub",
-        "url": "https://github.com/blackbearreloaded/ps5-opengl"
-      }
-    ]
-  },
-  {
-    "id": "app-prosperopuzzles",
-    "date": "2026-10-17",
-    "tag": "Port",
-    "title": "ProsperoPuzzles: puzzle game collection for PS5",
-    "summary": "A collection of puzzle games running natively on PS5 as homebrew.",
-    "body": [
-      "ProsperoPuzzles by blackbearreloaded is a puzzle game collection for PS5. Multiple puzzle game modes in one homebrew app, no external files needed.",
-      "Install through ProsperoStore. A casual gaming option for when you want something lighter between sessions. Part of blackbearreloaded's Prospero homebrew suite."
-    ],
-    "sources": [
-      {
-        "name": "ProsperoPuzzles on GitHub",
-        "url": "https://github.com/blackbearreloaded/ProsperoPuzzles"
-      }
-    ]
-  },
-  {
-    "id": "app-yamagi-quake2",
-    "date": "2026-10-17",
-    "tag": "Port",
-    "title": "Yamagi Quake II: native Quake II port for PS5",
-    "summary": "A native port of Yamagi Quake II for PS5, running the classic shooter with modern engine improvements.",
-    "body": [
-      "Yamagi Quake II for PS5 by blackbearreloaded ports the Yamagi Quake II engine to the console. Yamagi is a modern, maintained Quake II source port with bug fixes, widescreen support, and quality-of-life improvements over the original.",
-      "Supply your own Quake II game data (baseq2/ folder). Install through ProsperoStore. Joins Quake III and Doom 3 in the growing id Software classics available on PS5 homebrew."
-    ],
-    "sources": [
-      {
-        "name": "Yamagi Quake II PS5 on GitHub",
-        "url": "https://github.com/blackbearreloaded/ps5-yamagi-quake2"
-      }
-    ]
-  },
-  {
-    "id": "app-prosperolicheess",
-    "date": "2026-10-17",
-    "tag": "Port",
-    "title": "ProsperoLichess: play chess on PS5 through Lichess",
-    "summary": "A native Lichess client for PS5, bringing free online chess to the console.",
-    "body": [
-      "ProsperoLichess by blackbearreloaded is a native Lichess chess client for PS5. Lichess is the free, open-source chess platform, and this app lets you play online games, solve puzzles, and study openings directly on the console.",
-      "Install through ProsperoStore. Sign in with your Lichess account or play anonymously. Navigate the board with the DualSense controller. Part of blackbearreloaded's Prospero app suite."
-    ],
-    "sources": [
-      {
-        "name": "ProsperoLichess on GitHub",
-        "url": "https://github.com/blackbearreloaded/ProsperoLichess"
-      }
-    ]
-  },
-  {
-    "id": "app-vkquake-ps5",
-    "date": "2026-10-17",
-    "tag": "Port",
-    "title": "vkQuake for PS5: Vulkan-powered Quake",
-    "summary": "A Vulkan-rendered port of the original Quake for PS5, using the vkQuake engine.",
-    "body": [
-      "vkQuake for PS5 by mihawk-99 ports the Vulkan-powered Quake engine to the console. vkQuake modernises the original Quake with Vulkan rendering while keeping the classic gameplay intact.",
-      "Supply your own Quake game data (id1/ folder from your Steam or GOG install). Install through ProsperoStore. With Quake II (Yamagi) and Quake III also available, the full id Software trilogy now runs on PS5 homebrew."
-    ],
-    "sources": [
-      {
-        "name": "vkQuake PS5 on GitHub",
-        "url": "https://github.com/mihawk-99/PS5_vkQuake"
-      }
-    ]
-  },
-  {
-    "id": "app-ps5-fsr4",
-    "date": "2026-10-17",
-    "tag": "Tool",
-    "title": "PS5 FSR4 Showcase: AMD upscaling demo on PS5",
-    "summary": "A demo of AMD FSR 4 upscaling technology running on PS5 homebrew.",
-    "body": [
-      "PS5 FSR4 Showcase by blackbearreloaded demonstrates AMD's FidelityFX Super Resolution 4 upscaling on the PS5. It's a technical showcase of the upscaling pipeline running on the console's RDNA 2 GPU.",
-      "Install through ProsperoStore. A developer-focused demo showing that FSR 4 can run in the PS5 homebrew stack. Interesting for the homebrew development community as emulators and ports could potentially integrate FSR upscaling."
-    ],
-    "sources": [
-      {
-        "name": "PS5 FSR4 Showcase on GitHub",
-        "url": "https://github.com/blackbearreloaded/ps5-fsr4"
-      }
-    ]
-  },
-  {
-    "id": "app-mpc-ps5",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "Media Player Classic PS5: MPC comes to the console",
-    "summary": "A port of Media Player Classic for PS5 with FFmpeg-based codec support.",
-    "body": [
-      "Media Player Classic PS5 by MisterTemaki ports the classic Windows media player to the PS5 with FFmpeg-based decoding. It handles a wide range of video and audio formats with the familiar MPC interface.",
-      "Install through ProsperoStore. An alternative to VLC for users who prefer the MPC interface and playback characteristics. Supports local files and USB storage."
-    ],
-    "sources": [
-      {
-        "name": "Media Player Classic PS5 on GitHub",
-        "url": "https://github.com/MisterTemaki/MediaPlayerClassicPS5"
-      }
-    ]
-  },
-  {
-    "id": "app-evo-player",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "EVO Player: hardware-accelerated video player for PS5",
-    "summary": "EVO Player uses the PS5's hardware video decoder for smooth playback of video files.",
-    "body": [
-      "EVO Player by sainsaji is a video player for PS5 that leverages the console's hardware video decoding for smooth, efficient playback. It's designed to use the PS5's media engine rather than software decoding.",
-      "Install through ProsperoStore. Play video files from USB or local storage. The hardware decoding means better performance and lower power usage compared to software-decoded players."
-    ],
-    "sources": [
-      {
-        "name": "EVO Player on GitHub",
-        "url": "https://github.com/sainsaji/EVO-PLAYER-PS5"
-      }
-    ]
-  },
-  {
-    "id": "app-homebrew-ui-lab",
-    "date": "2026-10-17",
-    "tag": "Tool",
-    "title": "Homebrew UI Lab: PS5 UI design gallery",
-    "summary": "A gallery of homebrew UI designs and components for PS5 developers to reference.",
-    "body": [
-      "Homebrew UI Lab by blackbearreloaded is a gallery showcasing UI designs and components for PS5 homebrew apps. It's a developer resource showing different layout, theming, and interaction patterns that work on the console.",
-      "Install through ProsperoStore. Useful for homebrew developers looking for UI inspiration or testing how different designs look on the PS5. Not an end-user app, but a dev tool."
-    ],
-    "sources": [
-      {
-        "name": "Homebrew UI Lab on GitHub",
-        "url": "https://github.com/blackbearreloaded/ps5-homebrew-ui"
-      }
-    ]
-  },
-  {
-    "id": "app-surround-sound-studio",
-    "date": "2026-10-17",
-    "tag": "Tool",
-    "title": "Surround Sound Studio: audio passthrough test for PS5",
-    "summary": "Tests and demonstrates surround sound and audio passthrough on PS5, showing speaker channel routing.",
-    "body": [
-      "Surround Sound Studio by sainsaji tests and demonstrates audio passthrough and surround sound on PS5. It shows which audio channels are active and lets you test individual speakers in your surround setup.",
-      "Install through ProsperoStore. Useful for verifying your PS5's audio output configuration, testing speaker placement, and confirming that passthrough is working correctly with your AV receiver."
-    ],
-    "sources": [
-      {
-        "name": "Surround Sound Studio on GitHub",
-        "url": "https://github.com/sainsaji/PS5-Audio-Passthrough-Research"
-      }
-    ]
-  },
-  {
-    "id": "app-spot5",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "Spot5: unofficial Spotify player for PS5",
-    "summary": "Spot5 is an unofficial Spotify client for PS5. Requires a Spotify Premium account.",
-    "body": [
-      "Spot5 by abhi245y is an unofficial Spotify player for PS5. It connects to Spotify's service and plays your library, playlists, and podcasts on the console. Requires a Spotify Premium account for playback.",
-      "Install through ProsperoStore. Sign in with your Spotify credentials. A native music player option beyond the console's built-in Spotify app — useful on jailbroken setups where the official app may be restricted."
-    ],
-    "sources": [
-      {
-        "name": "Spot5 on GitHub",
-        "url": "https://github.com/abhi245y/spot5"
-      }
-    ]
-  },
-  {
-    "id": "app-opennow-ps5",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "OpenNOW PS5: experimental GeForce NOW client",
-    "summary": "A prototype GeForce NOW cloud gaming client for PS5, in early experimental stages.",
-    "body": [
-      "OpenNOW PS5 by Portablelle is an experimental GeForce NOW client for PS5. It aims to bring NVIDIA's cloud gaming service to the console, letting you stream your PC game library from NVIDIA's servers.",
-      "Install through ProsperoStore. This is a prototype and may not fully work yet. Cloud gaming on PS5 is a growing area, with PSBox (Xbox Cloud) and Playden (Steam) also available."
-    ],
-    "sources": [
-      {
-        "name": "OpenNOW PS5 on GitHub",
-        "url": "https://github.com/Portablelle/OpenNOW-PS5"
-      }
-    ]
-  },
-  {
-    "id": "app-prospero-explorer",
-    "date": "2026-10-17",
-    "tag": "Tool",
-    "title": "Prospero Explorer: file manager for PS5",
-    "summary": "Prospero Explorer is a file manager and archive tool for PS5, browsing the console's filesystem.",
-    "body": [
-      "Prospero Explorer by SvenGDK is a file manager for PS5 that lets you browse the console's filesystem, manage files, and handle archives. Copy, move, delete and extract files directly on the console.",
-      "Install through ProsperoStore. Part of SvenGDK's Prospero utility suite, alongside Prospero Multi Tools and Prospero Vibrate. A fundamental utility for anyone managing homebrew files."
-    ],
-    "sources": [
-      {
-        "name": "Prospero Explorer on GitHub",
-        "url": "https://github.com/SvenGDK/Prospero-Explorer"
-      }
-    ]
-  },
-  {
-    "id": "app-prospero-multi-tools",
-    "date": "2026-10-17",
-    "tag": "Tool",
-    "title": "Prospero Multi Tools: backup manager for retro formats",
-    "summary": "A multi-format backup manager for PS5, handling retro game formats and disc images.",
-    "body": [
-      "Prospero Multi Tools by SvenGDK is a backup manager for PS5 that handles various retro game and disc image formats. It organises, manages, and prepares files for use with emulators and other homebrew apps.",
-      "Install through ProsperoStore. Part of SvenGDK's Prospero utility suite. Useful for organising your retro game library across the various emulators available on PS5."
-    ],
-    "sources": [
-      {
-        "name": "Prospero Multi Tools on GitHub",
-        "url": "https://github.com/SvenGDK/Prospero-Multi-Tools"
-      }
-    ]
-  },
-  {
-    "id": "app-mortalfin",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "Mortalfin: Jellyfin client in beta for PS5",
-    "summary": "Mortalfin is a native Jellyfin client for PS5 in beta, offering another option alongside Jelly5.",
-    "body": [
-      "Mortalfin by mortaljinx is a native Jellyfin client for PS5 currently in beta. It's the second dedicated Jellyfin client for the console, alongside Jelly5, giving Jellyfin users another option.",
-      "Install through ProsperoStore. Point it at your Jellyfin server URL. Being in beta, some features may be incomplete. If stability is your priority, Jelly5 is the more established alternative."
-    ],
-    "sources": [
-      {
-        "name": "Mortalfin on GitHub",
-        "url": "https://github.com/mortaljinx/mortalfin"
-      }
-    ]
-  },
-  {
-    "id": "app-ps5vr",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "PS5VR: VR video player for PS VR2",
-    "summary": "PS5VR plays VR video content through the PS VR2 headset on a jailbroken PS5.",
-    "body": [
-      "PS5VR by theghostonline is a VR video player for PS5 that outputs to the PS VR2 headset. Watch 360-degree and VR video content through the headset as a native homebrew app.",
-      "Install through ProsperoStore. Supply your own VR video files. Requires a PS VR2 headset connected to the PS5. One of the few homebrew apps that takes advantage of PS VR2 hardware."
-    ],
-    "sources": [
-      {
-        "name": "PS5VR on GitHub",
-        "url": "https://github.com/theghostonline/PS5VR"
-      }
-    ]
-  },
-  {
-    "id": "app-psswanstation",
-    "date": "2026-10-17",
-    "tag": "Emulator",
-    "title": "PSSwanStation: yet another PS1 emulator for PS5",
-    "summary": "PSSwanStation is a third PS1 emulator option for PS5, also based on the SwanStation core.",
-    "body": [
-      "PSSwanStation by Press5elect is another PS1 emulator for PS5 based on the SwanStation core. The PS5 now has three PS1 emulator options: PSXS5 (PCSX-ReARMed), SwanStationPS5 (darkxex), and this one.",
-      "Install through ProsperoStore. Supply your own PS1 disc images and BIOS. Different builds can have different compatibility and performance, so try each to see which works best for your games."
-    ],
-    "sources": [
-      {
-        "name": "PSSwanStation on GitHub",
-        "url": "https://github.com/Press5elect/PSSwanStation"
-      }
-    ]
-  },
-  {
-    "id": "app-nuvio-maxd",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "Nuvio Max'd: unofficial Nuvio TV client for PS5",
-    "summary": "An unofficial Nuvio client for PS5 with enhanced features.",
-    "body": [
-      "Nuvio Max'd by HandshakeHackin is an unofficial Nuvio TV client for PS5 with extra features beyond the basic client. Nuvio is an IPTV service, and this enhanced version aims to provide a better viewing experience.",
-      "Install through ProsperoStore. Requires a Nuvio subscription. An alternative to the standard Nuvio PS5 client by bilawalriaz, with the 'Max'd' version offering additional features."
-    ],
-    "sources": [
-      {
-        "name": "Nuvio Max'd on GitHub",
-        "url": "https://github.com/HandshakeHackin/Nuvio-maxd-releases"
-      }
-    ]
-  },
-  {
-    "id": "app-soh-vulkan-ps5",
-    "date": "2026-10-17",
-    "tag": "Port",
-    "title": "Ship of Harkinian (Vulkan): OoT with Vulkan rendering on PS5",
-    "summary": "A Vulkan-powered build of Ship of Harkinian (Ocarina of Time) for PS5, separate from the standard port.",
-    "body": [
-      "Ship of Harkinian (Vulkan) by damiantw is an alternative build of the Ocarina of Time PC port for PS5, rendering through Vulkan instead of the standard graphics backend. It may offer different performance or visual characteristics.",
-      "Supply your own Ocarina of Time ROM to generate the assets. Install through ProsperoStore. For the standard Ship of Harkinian build, mshivam019's version is the other option."
-    ],
-    "sources": [
-      {
-        "name": "Ship of Harkinian Vulkan on GitHub",
-        "url": "https://github.com/damiantw/PS5_Shipwright"
-      }
-    ]
-  },
-  {
-    "id": "app-steam-remote-play",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "Steam Remote Play: stream Steam games to PS5",
-    "summary": "An unofficial Steam Remote Play (Steam Link) client for PS5, streaming your Steam library to the console.",
-    "body": [
-      "Steam Remote Play for PS5 by jmelovich is an unofficial Steam Link client that streams games from your PC's Steam library to the PS5. It uses Valve's Remote Play protocol for low-latency game streaming.",
-      "Install through ProsperoStore. Your PC needs Steam running with Remote Play enabled. Connect both devices to the same network. An alternative to Playden for streaming Steam games — Remote Play streams the video, while Playden runs the games locally through Wine."
-    ],
-    "sources": [
-      {
-        "name": "Steam Remote Play PS5 on GitHub",
-        "url": "https://github.com/jmelovich/Steam-Link-PS5"
-      }
-    ]
-  },
-  {
-    "id": "app-ps5mc",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "PS5MC: Kodi 22 media center on PS5",
-    "summary": "A native Kodi 22 port for PS5, turning the console into a full media center.",
-    "body": [
-      "PS5MC by VivaLaVent ports Kodi 22 to the PS5, turning the console into a full-featured media center. Kodi is the go-to open-source media center with support for add-ons, libraries, and virtually every media format.",
-      "Install through ProsperoStore. Configure your media sources, add-ons, and library. If you've used Kodi on any other platform, you know what to expect. The most comprehensive media center option on PS5."
-    ],
-    "sources": [
-      {
-        "name": "PS5MC on GitHub",
-        "url": "https://github.com/VivaLaVent/PS5MC"
-      }
-    ]
-  },
-  {
-    "id": "app-twispero",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "Twispero: Twitch client for PS5",
-    "summary": "A native Twitch client for PS5, watching live streams on the console.",
-    "body": [
-      "Twispero by unicxrn is a native Twitch client for PS5. Watch live streams, browse channels, and follow your favourite streamers directly on the console without needing the web browser.",
-      "Install through ProsperoStore. Sign in with your Twitch account or browse anonymously. A dedicated app experience rather than using Twitch through the console's web browser."
-    ],
-    "sources": [
-      {
-        "name": "Twispero on GitHub",
-        "url": "https://github.com/unicxrn/twispero"
-      }
-    ]
-  },
-  {
-    "id": "app-gyroaim",
-    "date": "2026-10-17",
-    "tag": "Tool",
-    "title": "GyroAim: add gyro aiming to any PS5 game",
-    "summary": "GyroAim adds DualSense gyroscope aiming to any game on a jailbroken PS5.",
-    "body": [
-      "GyroAim by jmelovich adds gyroscope-based aiming to any game on a jailbroken PS5. It intercepts controller input and translates DualSense motion data into aim movement, giving you Splatoon-style gyro aiming in games that don't natively support it.",
-      "Install through ProsperoStore. Configure sensitivity and dead zones to your preference. A game-changer for FPS games that don't offer built-in gyro aiming."
-    ],
-    "sources": [
-      {
-        "name": "GyroAim on GitHub",
-        "url": "https://github.com/jmelovich/ps5-gyroaim"
-      }
-    ]
-  },
-  {
-    "id": "app-regie5",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "Régie5: media stack remote control for PS5",
-    "summary": "Régie5 is a remote control app for managing media playback and sources on PS5.",
-    "body": [
-      "Régie5 by viviandsx is a media stack remote control for PS5. It helps you manage and switch between different media apps and sources from a single interface.",
-      "Install through ProsperoStore. A utility for users running multiple media apps (VLC, Kodi, Jellyfin, etc.) who want a unified control point."
-    ],
-    "sources": [
-      {
-        "name": "Régie5 on GitHub",
-        "url": "https://github.com/viviandsx/regie5"
-      }
-    ]
-  },
-  {
-    "id": "app-ps5lm-plus",
-    "date": "2026-10-17",
-    "tag": "Tool",
-    "title": "PS5LM Plus: run GGUF language models on PS5",
-    "summary": "PS5LM Plus runs local GGUF-format language models on PS5 for offline AI chat.",
-    "body": [
-      "PS5LM Plus by abhi245y runs local GGUF-format language models on the PS5. It loads quantised models and runs inference entirely on the console — no internet needed. Similar to ProsperoAI but using the GGUF model format.",
-      "Install through ProsperoStore. Supply your own .gguf model files. Performance depends on model size — smaller quantised models will run more smoothly. A tech showcase of local AI on console hardware."
-    ],
-    "sources": [
-      {
-        "name": "PS5LM Plus on GitHub",
-        "url": "https://github.com/abhi245y/PS5LM"
-      }
-    ]
-  },
-  {
-    "id": "app-cloud-play",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "Cloud Play: Chiaki-based game streaming for PS5",
-    "summary": "Cloud Play is a Chiaki-based cloud game streaming client for PS5.",
-    "body": [
-      "Cloud Play by tertiumndatur is a game streaming client for PS5 built on the Chiaki framework. Chiaki is an open-source implementation of Sony's Remote Play protocol, and this app repurposes it for cloud-based game streaming.",
-      "Install through ProsperoStore. Configure your streaming source and connect. Adds to the PS5's growing cloud gaming options alongside PSBox (Xbox Cloud), ProsperoLight (Moonlight/GeForce), and Steam Remote Play."
-    ],
-    "sources": [
-      {
-        "name": "Cloud Play on GitHub",
-        "url": "https://github.com/tertiumndatur/ps5-cloud-play"
-      }
-    ]
-  },
-  {
-    "id": "app-morrowind-ps5",
-    "date": "2026-10-17",
-    "tag": "Port",
-    "title": "Morrowind on PS5: OpenMW port",
-    "summary": "An OpenMW port that runs The Elder Scrolls III: Morrowind natively on PS5.",
-    "body": [
-      "Morrowind for PS5 by mshivam019 ports the OpenMW engine to the console, letting you play The Elder Scrolls III: Morrowind as a native homebrew title. OpenMW is the open-source engine reimplementation known for bug fixes and mod support.",
-      "Supply your own Morrowind game data (from your Steam or GOG copy). Install through ProsperoStore. One of the larger RPG ports available on PS5 homebrew, joining the Zelda and Mario titles."
-    ],
-    "sources": [
-      {
-        "name": "Morrowind PS5 on GitHub",
-        "url": "https://github.com/mshivam019/morrowind-ps5"
-      }
-    ]
-  },
-  {
-    "id": "app-doom-native-ps5",
-    "date": "2026-10-17",
-    "tag": "Port",
-    "title": "DOOM Native Port: the original DOOM on PS5",
-    "summary": "A native source port of the original 1993 DOOM for PS5.",
-    "body": [
-      "DOOM Native Port by lowbit is a source port of the original 1993 DOOM for PS5. It runs the classic id Software shooter natively on the console — the shareware WAD or your own DOOM/DOOM II WAD files.",
-      "Install through ProsperoStore. Supply your own WAD files for the full game. With this, Quake, Quake II, Quake III, and Doom 3, the full classic id Software catalogue now runs on PS5 homebrew."
-    ],
-    "sources": [
-      {
-        "name": "DOOM PS5 on GitHub",
-        "url": "https://github.com/lowbit/ps5-doom"
-      }
-    ]
-  },
-  {
-    "id": "app-openrct2-ps5",
-    "date": "2026-10-17",
-    "tag": "Port",
-    "title": "OpenRCT2: RollerCoaster Tycoon 2 on PS5",
-    "summary": "A port of OpenRCT2 for PS5, running the RollerCoaster Tycoon 2 engine natively.",
-    "body": [
-      "OpenRCT2 for PS5 by lowbit ports the open-source RollerCoaster Tycoon 2 engine to the console. Build and manage your own theme park with the classic RCT2 gameplay, now on the big screen.",
-      "Supply your own RollerCoaster Tycoon 2 game data. Install through ProsperoStore. OpenRCT2 adds multiplayer, UI improvements, and new features to the original game. Controller navigation handles the mouse-driven interface."
-    ],
-    "sources": [
-      {
-        "name": "OpenRCT2 PS5 on GitHub",
-        "url": "https://github.com/lowbit/ps5-openrct2"
-      }
-    ]
-  },
-  {
-    "id": "app-pshare",
-    "date": "2026-10-17",
-    "tag": "Tool",
-    "title": "PShare: send media to multiple destinations from PS5",
-    "summary": "PShare sends media files from the PS5 to multiple destinations at once.",
-    "body": [
-      "PShare by StonedModder is a media sharing tool for PS5 that sends files to multiple destinations simultaneously. It handles screenshots, video clips, and other media from the console.",
-      "Install through ProsperoStore. Configure your destinations and share media without needing to transfer files one at a time to individual devices."
-    ],
-    "sources": [
-      {
-        "name": "PShare on GitHub",
-        "url": "https://github.com/StonedModder/PShare"
-      }
-    ]
-  },
-  {
-    "id": "app-pico8-ps5",
-    "date": "2026-10-17",
-    "tag": "Emulator",
-    "title": "PICO-8 for PS5: fantasy console on the big screen",
-    "summary": "A loader for PICO-8 on PS5, running the fantasy console's vast game library.",
-    "body": [
-      "PICO-8 for PS5 by RafaelNGP loads and runs the PICO-8 fantasy console on PS5. PICO-8 has thousands of small games made by indie developers — puzzle games, platformers, RPGs, demoscene experiments.",
-      "Install through ProsperoStore. You need your own PICO-8 build (a licensed copy from Lexaloffle). Load .p8 cartridge files and play. A great way to explore the massive PICO-8 game library on your TV."
-    ],
-    "sources": [
-      {
-        "name": "PICO-8 PS5 on GitHub",
-        "url": "https://github.com/RafaelNGP/pico8-ps5"
-      }
-    ]
-  },
-  {
-    "id": "app-prospero-vibrate",
-    "date": "2026-10-17",
-    "tag": "Tool",
-    "title": "Prospero Vibrate: DualSense vibration studio",
-    "summary": "A vibration and haptic testing tool for the DualSense controller on PS5.",
-    "body": [
-      "Prospero Vibrate by SvenGDK is a DualSense vibration and haptic testing studio for PS5. Test different vibration patterns, intensity levels, and haptic feedback on your controller.",
-      "Install through ProsperoStore. Part of SvenGDK's Prospero utility suite. Useful for developers testing haptic feedback and for users checking their controller's vibration motors."
-    ],
-    "sources": [
-      {
-        "name": "Prospero Vibrate on GitHub",
-        "url": "https://github.com/SvenGDK/Prospero-Vibrate"
-      }
-    ]
-  },
-  {
-    "id": "app-forwarder-manager",
-    "date": "2026-10-17",
-    "tag": "Tool",
-    "title": "Forwarder Manager: home screen emulator launchers for PS5",
-    "summary": "Creates home screen shortcuts that launch specific games in emulators, like having each ROM as its own app.",
-    "body": [
-      "Forwarder Manager by heydemoura creates home screen launcher shortcuts for emulated games on PS5. Instead of opening an emulator and browsing for a ROM, each game gets its own icon on the home screen that launches directly into it.",
-      "Install through ProsperoStore. Select an emulator and a ROM, and it creates a home screen shortcut. A quality-of-life tool that makes the PS5 feel like a retro game console with each game as a first-class app."
-    ],
-    "sources": [
-      {
-        "name": "Forwarder Manager on GitHub",
-        "url": "https://github.com/heydemoura/ps5-forwarder-manager"
-      }
-    ]
-  },
-  {
-    "id": "app-nuvio-ps5",
-    "date": "2026-10-17",
-    "tag": "Media",
-    "title": "Nuvio PS5: standard Nuvio TV client",
-    "summary": "A native Nuvio IPTV client for PS5 by bilawalriaz.",
-    "body": [
-      "Nuvio PS5 by bilawalriaz is a native Nuvio TV client for jailbroken PS5. Nuvio is an IPTV service, and this app provides the standard client experience on the console.",
-      "Install through ProsperoStore. Requires a Nuvio subscription. For an enhanced version with extra features, Nuvio Max'd by HandshakeHackin is the alternative."
-    ],
-    "sources": [
-      {
-        "name": "Nuvio PS5 on GitHub",
-        "url": "https://github.com/bilawalriaz/nuvio-ps5-homebrew"
-      }
-    ]
-  },
-  {
-    "id": "app-pokemmo-prospero",
-    "date": "2026-10-17",
-    "tag": "PC & Linux",
-    "title": "PokeMMO Prospero: alternative PokeMMO client for PS5",
-    "summary": "A second PokeMMO client build for PS5, running through the Linux compatibility layer.",
-    "body": [
-      "PokeMMO Prospero by Shabbypenguin is another PokeMMO client for PS5, running the Linux version of the Pokémon MMO. It's a separate build from bizkut's ps5-pokemmo, offering a different approach to getting PokeMMO running on the console.",
-      "Install through ProsperoStore. You need the game's ROM files from your own Pokémon cartridges. For the other PokeMMO option that runs through Wine, see the bizkut build."
-    ],
-    "sources": [
-      {
-        "name": "PokeMMO Prospero on GitHub",
-        "url": "https://github.com/Shabbypenguin/PokeMMO-Prospero"
-      }
+      { "name": "Common-FPS-for-PS5 on GitHub", "url": "https://github.com/Starter-ps5/Common-FPS-for-PS5" }
     ]
   },
   {
@@ -1265,14 +105,10 @@
     "summary": "etaHEN is the primary homebrew enabler for jailbroken PS5. It unlocks JIT, debug settings and the ability to run unsigned code.",
     "body": [
       "etaHEN is the go-to homebrew enabler that most PS5 homebrew apps depend on. Once loaded, it patches the kernel to allow unsigned ELF payloads, enables JIT compilation that emulators need, and adds debug settings to the console's menus. Most homebrew READMEs list etaHEN as a requirement.",
-      "It runs as a payload through your exploit chain. After a reboot you need to re-run it, since all current PS5 exploits are tethered. etaHEN maintains a jailbreak list that controls which apps get elevated privileges, and several newer tools like Lapy JB Daemon offer alternative ways to grant that access.",
-      "Latest release: etaHEN 2.5B (December 25, 2025) — adds the option to choose your cheats repo and an unpause kstuff toggle."
+      "It runs as a payload through your exploit chain. After a reboot you need to re-run it, since all current PS5 exploits are tethered. etaHEN maintains a jailbreak list that controls which apps get elevated privileges, and several newer tools like Lapy JB Daemon offer alternative ways to grant that access."
     ],
     "sources": [
-      {
-        "name": "etaHEN on GitHub",
-        "url": "https://github.com/etaHEN/etaHEN"
-      }
+      { "name": "etaHEN on GitHub", "url": "https://github.com/etaHEN/etaHEN" }
     ]
   },
   {
@@ -1286,10 +122,7 @@
       "It's a drop-in alternative to etaHEN. Load it as a payload through your exploit chain. Some homebrew apps specifically check for etaHEN, so compatibility may vary. Check the README for supported firmware versions."
     ],
     "sources": [
-      {
-        "name": "OnionHEN on GitHub",
-        "url": "https://github.com/aydencharles/onionHEN"
-      }
+      { "name": "OnionHEN on GitHub", "url": "https://github.com/aydencharles/onionHEN" }
     ]
   },
   {
@@ -1300,14 +133,10 @@
     "summary": "kstuff patches the PS5 kernel for homebrew compatibility. Nearly every emulator and advanced tool lists it as a requirement.",
     "body": [
       "kstuff by EchoStretch is a kernel patch payload that most PS5 homebrew depends on. It patches the running kernel to allow features that emulators, file managers and ports need to function. If a homebrew app's README says it needs kstuff, this is the one.",
-      "Load it as a payload after your exploit chain runs. There's also kstuff lite, a lighter version with a smaller footprint, and a fork by drakmor. Note that kstuff 1.13 DR test6, a development build by drakmor, is only shared through X posts and forum downloads, not on GitHub.",
-      "Latest release: kstuff v1.6.7 (January 4, 2026) — supports firmware 3.00 through 10.01."
+      "Load it as a payload after your exploit chain runs. There's also kstuff lite, a lighter version with a smaller footprint, and a fork by drakmor. Note that kstuff 1.13 DR test6, a development build by drakmor, is only shared through X posts and forum downloads, not on GitHub."
     ],
     "sources": [
-      {
-        "name": "kstuff on GitHub",
-        "url": "https://github.com/EchoStretch/kstuff"
-      }
+      { "name": "kstuff on GitHub", "url": "https://github.com/EchoStretch/kstuff" }
     ]
   },
   {
@@ -1318,18 +147,11 @@
     "summary": "A smaller version of kstuff with a lighter footprint. Available in the original and a drakmor fork.",
     "body": [
       "kstuff lite strips down the full kstuff payload to the essentials. It patches the kernel for homebrew compatibility without the overhead of the full version. Some apps like Playden specifically ask for kstuff lite rather than the full version.",
-      "There are two versions: EchoStretch's original and drakmor's fork. Both work the same way, loaded as a payload after your exploit chain. The drakmor fork may include additional patches or fixes.",
-      "Latest release: kstuff lite v1.11 (September 20, 2026) — beta supporting firmware 1.00 through 13.60."
+      "There are two versions: EchoStretch's original and drakmor's fork. Both work the same way, loaded as a payload after your exploit chain. The drakmor fork may include additional patches or fixes."
     ],
     "sources": [
-      {
-        "name": "kstuff lite on GitHub",
-        "url": "https://github.com/EchoStretch/kstuff-lite"
-      },
-      {
-        "name": "kstuff lite (drakmor) on GitHub",
-        "url": "https://github.com/drakmor/kstuff-lite"
-      }
+      { "name": "kstuff lite on GitHub", "url": "https://github.com/EchoStretch/kstuff-lite" },
+      { "name": "kstuff lite (drakmor) on GitHub", "url": "https://github.com/drakmor/kstuff-lite" }
     ]
   },
   {
@@ -1340,14 +162,10 @@
     "summary": "Y2JB uses the PlayStation's YouTube app as a WebKit entry point to trigger the exploit chain.",
     "body": [
       "Y2JB by Gezine turns the YouTube app on PS5 into a jailbreak entry point. It exploits a WebKit vulnerability in the app's embedded browser to gain initial code execution, which then loads the kernel exploit.",
-      "It's the base that the Y2JB Autoloader builds on. The Autoloader adds automatic payload loading and Relapse integration, making the process one-tap. If you're using the Autoloader, you don't need to run Y2JB separately.",
-      "Latest release: Y2JB 1.6 (June 9, 2026) — adds firmware 12.60+ support."
+      "It's the base that the Y2JB Autoloader builds on. The Autoloader adds automatic payload loading and Relapse integration, making the process one-tap. If you're using the Autoloader, you don't need to run Y2JB separately."
     ],
     "sources": [
-      {
-        "name": "Y2JB on GitHub",
-        "url": "https://github.com/Gezine/Y2JB"
-      }
+      { "name": "Y2JB on GitHub", "url": "https://github.com/Gezine/Y2JB" }
     ]
   },
   {
@@ -1358,14 +176,10 @@
     "summary": "An autoloader that uses the PS5's built-in web browser as the entry point instead of YouTube.",
     "body": [
       "The WebKit Autoloader by itsPLK is the browser-based counterpart to the Y2JB Autoloader. Instead of going through YouTube, it uses the PS5's built-in web browser to trigger the WebKit exploit and load your payloads.",
-      "It works with the same autoload.txt system as the Y2JB version. Configure your payloads once and they load automatically each time you visit the exploit page. It's an option for consoles where the YouTube app method doesn't work or you prefer the browser route.",
-      "Latest release: WebKit Autoloader v0.6.1 (October 8, 2026) — fixes Poops support for firmware 9.05, 11.40, and 11.60."
+      "It works with the same autoload.txt system as the Y2JB version. Configure your payloads once and they load automatically each time you visit the exploit page. It's an option for consoles where the YouTube app method doesn't work or you prefer the browser route."
     ],
     "sources": [
-      {
-        "name": "WebKit Autoloader on GitHub",
-        "url": "https://github.com/itsPLK/ps5-webkit-autoloader"
-      }
+      { "name": "WebKit Autoloader on GitHub", "url": "https://github.com/itsPLK/ps5-webkit-autoloader" }
     ]
   },
   {
@@ -1379,10 +193,7 @@
       "Load it as a payload after jailbreaking, then open the IP address in a browser on the same network. Type or paste a Lua script and it executes on the console. It's aimed at developers and tinkerers rather than everyday use."
     ],
     "sources": [
-      {
-        "name": "Remote Lua Loader on GitHub",
-        "url": "https://github.com/shahrilnet/remote_lua_loader"
-      }
+      { "name": "Remote Lua Loader on GitHub", "url": "https://github.com/shahrilnet/remote_lua_loader" }
     ]
   },
   {
@@ -1393,14 +204,10 @@
     "summary": "A payload that listens on port 9021 and loads ELF binaries sent to it. Many homebrew tools expect it to be running.",
     "body": [
       "elfldr from ps5-payload-dev is a standard ELF loader that listens on TCP port 9021. When a tool like PS5 Upload or ShadowMountPlus wants to launch a homebrew app, it sends the ELF binary to this port. ProsperoStore, RecompStore and many other homebrew apps list it as a requirement.",
-      "It's part of the ps5-payload-dev SDK ecosystem. Load it as a payload after jailbreaking and it stays resident in the background. It's one of the foundational pieces of the PS5 homebrew stack.",
-      "Latest release: elfldr v0.26 (August 29, 2026) — simplified makefile."
+      "It's part of the ps5-payload-dev SDK ecosystem. Load it as a payload after jailbreaking and it stays resident in the background. It's one of the foundational pieces of the PS5 homebrew stack."
     ],
     "sources": [
-      {
-        "name": "elfldr on GitHub",
-        "url": "https://github.com/ps5-payload-dev/elfldr"
-      }
+      { "name": "elfldr on GitHub", "url": "https://github.com/ps5-payload-dev/elfldr" }
     ]
   },
   {
@@ -1414,10 +221,7 @@
       "It doesn't publish GitHub releases, so check the repository page for the latest code. It's part of drakmor's broader work on PS5 kernel tooling, alongside nanoDNS and the kstuff lite fork."
     ],
     "sources": [
-      {
-        "name": "ppr-patch on GitHub",
-        "url": "https://github.com/drakmor/ppr-patch"
-      }
+      { "name": "ppr-patch on GitHub", "url": "https://github.com/drakmor/ppr-patch" }
     ]
   },
   {
@@ -1431,10 +235,7 @@
       "It's useful for keeping a jailbroken console from accidentally checking for firmware updates. Like ppr-patch, it doesn't publish GitHub releases. Check the repo for the latest code."
     ],
     "sources": [
-      {
-        "name": "nanoDNS on GitHub",
-        "url": "https://github.com/drakmor/nanoDNS"
-      }
+      { "name": "nanoDNS on GitHub", "url": "https://github.com/drakmor/nanoDNS" }
     ]
   },
   {
@@ -1448,10 +249,7 @@
       "It pairs with the Y2JB Autoloader: when no autoload.txt is configured, the Autoloader opens Payload Manager by default so you can pick what to load. It also supports drag-and-drop importing and one-tap loading from the browser."
     ],
     "sources": [
-      {
-        "name": "Payload Manager on GitHub",
-        "url": "https://github.com/itsPLK/ps5-payload-manager"
-      }
+      { "name": "Payload Manager on GitHub", "url": "https://github.com/itsPLK/ps5-payload-manager" }
     ]
   },
   {
@@ -1462,14 +260,10 @@
     "summary": "Automatically registers homebrew apps and game dumps on the PS5 home screen. Nearly every homebrew tool depends on it.",
     "body": [
       "ShadowMountPlus by drakmor is the glue that makes homebrew apps appear on your PS5's home screen. It monitors the /data/homebrew directory and automatically mounts anything it finds as a native title, complete with icons.",
-      "Almost every homebrew app lists ShadowMountPlus as a requirement. Version 1.7 beta 5 is the minimum for newer tools like Playden and RecompStore. It needs kstuff and an ELF loader on port 9021 to function.",
-      "Latest release: ShadowMountPlus 1.7-beta5fix1 (October 10, 2026) — adds per-game fakelib modes and removes legacy kstuff auto-pause."
+      "Almost every homebrew app lists ShadowMountPlus as a requirement. Version 1.7 beta 5 is the minimum for newer tools like Playden and RecompStore. It needs kstuff and an ELF loader on port 9021 to function."
     ],
     "sources": [
-      {
-        "name": "ShadowMountPlus on GitHub",
-        "url": "https://github.com/drakmor/ShadowMountPlus"
-      }
+      { "name": "ShadowMountPlus on GitHub", "url": "https://github.com/drakmor/ShadowMountPlus" }
     ]
   },
   {
@@ -1483,10 +277,7 @@
       "It's an alternative to PS5 Upload for users who want a lighter tool. Check the GitHub page for supported firmware versions and setup instructions."
     ],
     "sources": [
-      {
-        "name": "PS5-Suite on GitHub",
-        "url": "https://github.com/manos555555/PS5-Suite"
-      }
+      { "name": "PS5-Suite on GitHub", "url": "https://github.com/manos555555/PS5-Suite" }
     ]
   },
   {
@@ -1497,14 +288,10 @@
     "summary": "Compresses PS5 game dumps to save storage space and transfers them between internal and external drives.",
     "body": [
       "PS5 Game Compressor by juma-sayeh shrinks game dumps so they take less space on your drive. It can also move compressed dumps between internal and external storage.",
-      "Useful when you're running low on space with multiple homebrew apps and game backups installed. It works alongside ShadowMountPlus to keep your games accessible after compression.",
-      "Latest release: PS5 Game Compressor v1.0.4 (August 21, 2026) — adds multilingual UI."
+      "Useful when you're running low on space with multiple homebrew apps and game backups installed. It works alongside ShadowMountPlus to keep your games accessible after compression."
     ],
     "sources": [
-      {
-        "name": "PS5 Game Compressor on GitHub",
-        "url": "https://github.com/juma-sayeh/PS5-Game-Compressor"
-      }
+      { "name": "PS5 Game Compressor on GitHub", "url": "https://github.com/juma-sayeh/PS5-Game-Compressor" }
     ]
   },
   {
@@ -1518,10 +305,7 @@
       "Save management is important on a jailbroken console since you can't rely on PS Plus cloud saves while staying offline. MacheteSVG gives you local control over your save data."
     ],
     "sources": [
-      {
-        "name": "MacheteSVG on GitHub",
-        "url": "https://github.com/VenezuelanBiggie24/MacheteSVG-PS5-Save-Manager"
-      }
+      { "name": "MacheteSVG on GitHub", "url": "https://github.com/VenezuelanBiggie24/MacheteSVG-PS5-Save-Manager" }
     ]
   },
   {
@@ -1532,14 +316,10 @@
     "summary": "A visual game launcher that manages your installed games and homebrew apps with cover art and organisation features.",
     "body": [
       "Itemzflow by LightningMods is a game launcher and manager for jailbroken PS5. It gives you a visual interface for browsing and launching your installed games and homebrew, with cover art, sorting and filtering.",
-      "It's one of the more established PS5 homebrew tools, offering features like app installation, a built-in FTP client and background music. It needs a jailbreak service like etaHEN or LegacyJB for full functionality.",
-      "Latest release: Itemzflow 1.08 (May 31, 2026) — adds Fuse support for firmware 12.50 through 13.02."
+      "It's one of the more established PS5 homebrew tools, offering features like app installation, a built-in FTP client and background music. It needs a jailbreak service like etaHEN or LegacyJB for full functionality."
     ],
     "sources": [
-      {
-        "name": "Itemzflow on GitHub",
-        "url": "https://github.com/LightningMods/Itemzflow"
-      }
+      { "name": "Itemzflow on GitHub", "url": "https://github.com/LightningMods/Itemzflow" }
     ]
   },
   {
@@ -1550,14 +330,10 @@
     "summary": "Opens an FTP server on port 2121 so you can browse and transfer files to the console from any FTP client.",
     "body": [
       "ftpsrv from ps5-payload-dev starts an FTP server on port 2121 when loaded as a payload. Connect with any FTP client like FileZilla or WinSCP to browse the console's filesystem and transfer files.",
-      "It's part of the ps5-payload-dev SDK. Useful for copying game dumps, installing homebrew manually, or exploring the filesystem. It gives read and write access, so be careful with system directories.",
-      "Latest release: ftpsrv v0.21.1 (August 20, 2026)."
+      "It's part of the ps5-payload-dev SDK. Useful for copying game dumps, installing homebrew manually, or exploring the filesystem. It gives read and write access, so be careful with system directories."
     ],
     "sources": [
-      {
-        "name": "ftpsrv on GitHub",
-        "url": "https://github.com/ps5-payload-dev/ftpsrv"
-      }
+      { "name": "ftpsrv on GitHub", "url": "https://github.com/ps5-payload-dev/ftpsrv" }
     ]
   },
   {
@@ -1571,10 +347,7 @@
       "Like ftpsrv and elfldr, it's part of the payload SDK ecosystem. Load it as a payload after jailbreaking and access it from any browser on the same network."
     ],
     "sources": [
-      {
-        "name": "websrv on GitHub",
-        "url": "https://github.com/ps5-payload-dev/websrv"
-      }
+      { "name": "websrv on GitHub", "url": "https://github.com/ps5-payload-dev/websrv" }
     ]
   },
   {
@@ -1585,14 +358,10 @@
     "summary": "The development toolkit for building PS5 payloads. Most homebrew apps are built with this SDK.",
     "body": [
       "The PS5 Payload SDK from ps5-payload-dev is the development toolkit that homebrew developers use to build ELF payloads for the PS5. It provides headers, libraries and build scripts for compiling code that runs on a jailbroken console.",
-      "It's the foundation of the PS5 homebrew ecosystem. Tools like elfldr, ftpsrv and websrv are all built with it. If you're a developer looking to write PS5 homebrew, this is where you start.",
-      "Latest release: PS5 Payload SDK v0.44 (October 10, 2026) — ships LLVM 23 and adds libSceAgc."
+      "It's the foundation of the PS5 homebrew ecosystem. Tools like elfldr, ftpsrv and websrv are all built with it. If you're a developer looking to write PS5 homebrew, this is where you start."
     ],
     "sources": [
-      {
-        "name": "PS5 Payload SDK on GitHub",
-        "url": "https://github.com/ps5-payload-dev/sdk"
-      }
+      { "name": "PS5 Payload SDK on GitHub", "url": "https://github.com/ps5-payload-dev/sdk" }
     ]
   },
   {
@@ -1606,10 +375,7 @@
       "Load your own ROM files and it handles the rest. It's also available as a core in the PS5 RetroArch port if you prefer everything in one launcher. Needs etaHEN and ShadowMountPlus."
     ],
     "sources": [
-      {
-        "name": "Snes9x PS5 on GitHub",
-        "url": "https://github.com/MisterTemaki/snes9xPS5"
-      }
+      { "name": "Snes9x PS5 on GitHub", "url": "https://github.com/MisterTemaki/snes9xPS5" }
     ]
   },
   {
@@ -1623,10 +389,7 @@
       "Like the other MisterTemaki ports, it runs natively without RetroArch. Supply your own ROM sets. It's also available as a core in RetroArch if you prefer a unified launcher."
     ],
     "sources": [
-      {
-        "name": "FinalBurn Neo PS5 on GitHub",
-        "url": "https://github.com/MisterTemaki/fbneo-ps5"
-      }
+      { "name": "FinalBurn Neo PS5 on GitHub", "url": "https://github.com/MisterTemaki/fbneo-ps5" }
     ]
   },
   {
@@ -1640,10 +403,7 @@
       "It handles the full range of Sega's classic consoles in one app. Supply your own ROM files. Also available as a RetroArch core if you want it alongside other systems."
     ],
     "sources": [
-      {
-        "name": "Genesis Plus GX PS5 on GitHub",
-        "url": "https://github.com/MisterTemaki/genplusgxPS5"
-      }
+      { "name": "Genesis Plus GX PS5 on GitHub", "url": "https://github.com/MisterTemaki/genplusgxPS5" }
     ]
   },
   {
@@ -1657,10 +417,7 @@
       "It's based on the Mednafen core, known for high accuracy. Supply your own ROM or disc image files. Available standalone or as a RetroArch core."
     ],
     "sources": [
-      {
-        "name": "Beetle PCE PS5 on GitHub",
-        "url": "https://github.com/MisterTemaki/beetlepcePS5"
-      }
+      { "name": "Beetle PCE PS5 on GitHub", "url": "https://github.com/MisterTemaki/beetlepcePS5" }
     ]
   },
   {
@@ -1674,10 +431,7 @@
       "PPSSPP is one of the most mature emulators around, so compatibility should be strong. Supply your own PSP ISO or CSO files. It needs etaHEN, kstuff and ShadowMountPlus."
     ],
     "sources": [
-      {
-        "name": "psp5 on GitHub",
-        "url": "https://github.com/tsuramatsu1/psp5"
-      }
+      { "name": "psp5 on GitHub", "url": "https://github.com/tsuramatsu1/psp5" }
     ]
   },
   {
@@ -1691,10 +445,7 @@
       "Once Linux is running, you can install Steam, run PC games through Proton, and use the PS5 as a regular Linux desktop. It's the foundation that Playden, PokeMMO and other PC-on-PS5 projects build on. pLinux5-NG is the newer project trying to bring this to higher firmware through Byepervisor Reborn."
     ],
     "sources": [
-      {
-        "name": "ps5-linux on GitHub",
-        "url": "https://github.com/ps5-linux/ps5-linux-loader"
-      }
+      { "name": "ps5-linux on GitHub", "url": "https://github.com/ps5-linux/ps5-linux-loader" }
     ]
   },
   {
@@ -1708,10 +459,7 @@
       "Playden uses it to run Steam games, and PokeMMO uses it to run the Windows PokeMMO client. It includes DXVK for DirectX 8-11 and Zink for OpenGL translation. It's a developer library rather than an end-user app."
     ],
     "sources": [
-      {
-        "name": "prospero-win on GitHub",
-        "url": "https://github.com/mpereiraesaa/prospero-win"
-      }
+      { "name": "prospero-win on GitHub", "url": "https://github.com/mpereiraesaa/prospero-win" }
     ]
   },
   {
@@ -1725,10 +473,7 @@
       "Like the Xbox 360 recomps, you need your own copy of the game. It's installed through ShadowMountPlus and appears on your home screen as a native title."
     ],
     "sources": [
-      {
-        "name": "Ecco PS5 on GitHub",
-        "url": "https://github.com/cherryduck/PS5_EccoDefender"
-      }
+      { "name": "Ecco PS5 on GitHub", "url": "https://github.com/cherryduck/PS5_EccoDefender" }
     ]
   },
   {
@@ -1742,10 +487,7 @@
       "You need your own ROM. Install through ShadowMountPlus. It joins Rush 2 and Super Mario 64 in the N64 recomp lineup for PS5."
     ],
     "sources": [
-      {
-        "name": "Wave Race 64 PS5 on GitHub",
-        "url": "https://github.com/Marice/wave-race-64-ps5"
-      }
+      { "name": "Wave Race 64 PS5 on GitHub", "url": "https://github.com/Marice/wave-race-64-ps5" }
     ]
   },
   {
@@ -1759,10 +501,7 @@
       "You need your own Ocarina of Time ROM to generate the game data. It's part of a set that includes Majora's Mask (2 Ship 2 Harkinian) and Link's Awakening from the same developer."
     ],
     "sources": [
-      {
-        "name": "Ship of Harkinian PS5 on GitHub",
-        "url": "https://github.com/mshivam019/oot64-ps5"
-      }
+      { "name": "Ship of Harkinian PS5 on GitHub", "url": "https://github.com/mshivam019/oot64-ps5" }
     ]
   },
   {
@@ -1776,10 +515,7 @@
       "Supply your own Majora's Mask ROM. It's installed through ShadowMountPlus alongside the other Zelda ports. All three Zelda titles from this developer share the same setup requirements."
     ],
     "sources": [
-      {
-        "name": "Majora's Mask PS5 on GitHub",
-        "url": "https://github.com/mshivam019/tmm64-ps5"
-      }
+      { "name": "Majora's Mask PS5 on GitHub", "url": "https://github.com/mshivam019/tmm64-ps5" }
     ]
   },
   {
@@ -1793,10 +529,7 @@
       "Part of the same Zelda port collection as Ocarina of Time and Majora's Mask. Supply your own ROM and install through ShadowMountPlus."
     ],
     "sources": [
-      {
-        "name": "Link's Awakening PS5 on GitHub",
-        "url": "https://github.com/mshivam019/la-ps5"
-      }
+      { "name": "Link's Awakening PS5 on GitHub", "url": "https://github.com/mshivam019/la-ps5" }
     ]
   },
   {
@@ -1810,10 +543,7 @@
       "It's one of several Nintendo ports from griches, alongside Wind Waker HD, Wind Waker, Super Mario Sunshine and Dusklight (Twilight Princess). All are installed through ShadowMountPlus."
     ],
     "sources": [
-      {
-        "name": "Super Mario 64 PS5 on GitHub",
-        "url": "https://github.com/griches/PS5_Ghostship"
-      }
+      { "name": "Super Mario 64 PS5 on GitHub", "url": "https://github.com/griches/PS5_Ghostship" }
     ]
   },
   {
@@ -1827,10 +557,7 @@
       "You need your own GameCube dump. It joins a growing collection of Nintendo ports from the same developer, all using Vulkan rendering through RADV on the PS5."
     ],
     "sources": [
-      {
-        "name": "Wind Waker (GC) PS5 on GitHub",
-        "url": "https://github.com/griches/PS5_SwitchWaker"
-      }
+      { "name": "Wind Waker (GC) PS5 on GitHub", "url": "https://github.com/griches/PS5_SwitchWaker" }
     ]
   },
   {
@@ -1844,10 +571,7 @@
       "You need your own GameCube dump to generate the game data. Install through ShadowMountPlus. Part of griches' Nintendo port collection."
     ],
     "sources": [
-      {
-        "name": "Super Mario Sunshine PS5 on GitHub",
-        "url": "https://github.com/griches/PS5_Sunshine"
-      }
+      { "name": "Super Mario Sunshine PS5 on GitHub", "url": "https://github.com/griches/PS5_Sunshine" }
     ]
   },
   {
@@ -1861,10 +585,7 @@
       "You need your own disc image. Like the other griches ports, install through ShadowMountPlus. It appears on your home screen as a native PS5 title."
     ],
     "sources": [
-      {
-        "name": "Dusklight PS5 on GitHub",
-        "url": "https://github.com/griches/PS5_Dusklight"
-      }
+      { "name": "Dusklight PS5 on GitHub", "url": "https://github.com/griches/PS5_Dusklight" }
     ]
   },
   {
@@ -1878,10 +599,7 @@
       "You need your own copy of Doom 3 BFG Edition for the game data. The engine is open source but the assets aren't. Install through ShadowMountPlus."
     ],
     "sources": [
-      {
-        "name": "Doom 3 PS5 on GitHub",
-        "url": "https://github.com/griches/PS5_Doom3"
-      }
+      { "name": "Doom 3 PS5 on GitHub", "url": "https://github.com/griches/PS5_Doom3" }
     ]
   },
   {
@@ -1895,10 +613,7 @@
       "You need your own Quake III Arena pak files. The engine is open source. Install through ShadowMountPlus like the other id Software ports."
     ],
     "sources": [
-      {
-        "name": "Quake III PS5 on GitHub",
-        "url": "https://github.com/griches/PS5_Quake3e"
-      }
+      { "name": "Quake III PS5 on GitHub", "url": "https://github.com/griches/PS5_Quake3e" }
     ]
   },
   {
@@ -1912,10 +627,7 @@
       "You need your own N64 ROM. It's part of the growing wave of N64 static recompilations alongside Wave Race 64 and Super Mario 64. Install through ShadowMountPlus."
     ],
     "sources": [
-      {
-        "name": "Rush 2 PS5 on GitHub",
-        "url": "https://github.com/Marice/rush2-ps5"
-      }
+      { "name": "Rush 2 PS5 on GitHub", "url": "https://github.com/Marice/rush2-ps5" }
     ]
   },
   {
@@ -1929,10 +641,7 @@
       "It's a full 3D kart racer with single-player and local multiplayer modes. Install through ShadowMountPlus. One of the few ports that's truly free to play without owning another copy."
     ],
     "sources": [
-      {
-        "name": "SuperTuxKart PS5 on GitHub",
-        "url": "https://github.com/Marice/stk-ps5"
-      }
+      { "name": "SuperTuxKart PS5 on GitHub", "url": "https://github.com/Marice/stk-ps5" }
     ]
   },
   {
@@ -1946,10 +655,7 @@
       "You need your own copy of Mario Kart Wii. As a recomp it should run more efficiently than emulation since the code is translated to native x86-64. Install through ShadowMountPlus."
     ],
     "sources": [
-      {
-        "name": "Mario Kart Wii PS5 on GitHub",
-        "url": "https://github.com/hollamhide/hollamhide.github.io"
-      }
+      { "name": "Mario Kart Wii PS5 on GitHub", "url": "https://github.com/hollamhide/hollamhide.github.io" }
     ]
   },
   {
@@ -1964,26 +670,11 @@
       "FIFA Street (2012) and WWE '13 recomps followed from the RecompStore developer on 16 October. Expect early builds, and check each README for what files you need to supply."
     ],
     "sources": [
-      {
-        "name": "Sonic Unleashed Recompiled for PS5",
-        "url": "https://github.com/Nazky/UnleashedRecomp-Prospero"
-      },
-      {
-        "name": "The Simpsons Game builder",
-        "url": "https://github.com/LoZazaMastro/TheSimpsonsGame-PS5-Builder"
-      },
-      {
-        "name": "Spider-Man: Edge of Time",
-        "url": "https://github.com/KongaTime/PS5_EdgeOfTimeTitle"
-      },
-      {
-        "name": "FIFA Street",
-        "url": "https://github.com/elripalda/fifastreet-ps5"
-      },
-      {
-        "name": "WWE '13",
-        "url": "https://github.com/elripalda/wwe13-ps5"
-      }
+      { "name": "Sonic Unleashed Recompiled for PS5", "url": "https://github.com/Nazky/UnleashedRecomp-Prospero" },
+      { "name": "The Simpsons Game builder", "url": "https://github.com/LoZazaMastro/TheSimpsonsGame-PS5-Builder" },
+      { "name": "Spider-Man: Edge of Time", "url": "https://github.com/KongaTime/PS5_EdgeOfTimeTitle" },
+      { "name": "FIFA Street", "url": "https://github.com/elripalda/fifastreet-ps5" },
+      { "name": "WWE '13", "url": "https://github.com/elripalda/wwe13-ps5" }
     ]
   },
   {
@@ -1998,26 +689,11 @@
       "For game streaming, ProsperoLight ports Moonlight, Steam Remote Play is available, and PSBox covers Xbox Cloud Gaming."
     ],
     "sources": [
-      {
-        "name": "Stremio for PS5",
-        "url": "https://github.com/Sp9nky/unofficial-stremio-ps5-port"
-      },
-      {
-        "name": "StremiBrew",
-        "url": "https://github.com/stupiditytries/StremiBrew"
-      },
-      {
-        "name": "Emby5",
-        "url": "https://github.com/bornaradusin/Emby5"
-      },
-      {
-        "name": "Jelly5",
-        "url": "https://github.com/02dnot/Jelly5"
-      },
-      {
-        "name": "homebrew.page catalogue",
-        "url": "https://homebrew.page"
-      }
+      { "name": "Stremio for PS5", "url": "https://github.com/Sp9nky/unofficial-stremio-ps5-port" },
+      { "name": "StremiBrew", "url": "https://github.com/stupiditytries/StremiBrew" },
+      { "name": "Emby5", "url": "https://github.com/bornaradusin/Emby5" },
+      { "name": "Jelly5", "url": "https://github.com/02dnot/Jelly5" },
+      { "name": "homebrew.page catalogue", "url": "https://homebrew.page" }
     ]
   },
   {
@@ -2032,14 +708,8 @@
       "Neither project uses GitHub releases, so check their pages for updates."
     ],
     "sources": [
-      {
-        "name": "Lapy JB Daemon",
-        "url": "https://github.com/ArkSama/PS5-Lapy-JB-Daemon"
-      },
-      {
-        "name": "LegacyJB",
-        "url": "https://github.com/Phoenixx1202/LegacyJB"
-      }
+      { "name": "Lapy JB Daemon", "url": "https://github.com/ArkSama/PS5-Lapy-JB-Daemon" },
+      { "name": "LegacyJB", "url": "https://github.com/Phoenixx1202/LegacyJB" }
     ]
   },
   {
@@ -2054,22 +724,10 @@
       "PS1 is covered by PSXS5, based on PCSX-ReARMed, and PSP by psp5, a PPSSPP port. There are standalone Snes9x, Genesis Plus GX, Beetle PCE and FinalBurn Neo ports too. None of them include games or BIOS files, so you supply your own."
     ],
     "sources": [
-      {
-        "name": "PS5 RetroArch",
-        "url": "https://github.com/mihawk-99/PS5_RetroArch"
-      },
-      {
-        "name": "mupen64plus-ps5",
-        "url": "https://github.com/TheRealRetro/mupen64plus-ps5"
-      },
-      {
-        "name": "SilverBirch",
-        "url": "https://github.com/BaZZtian/SilverBirch"
-      },
-      {
-        "name": "PSXS5",
-        "url": "https://github.com/SynoPiia/PSXS5"
-      }
+      { "name": "PS5 RetroArch", "url": "https://github.com/mihawk-99/PS5_RetroArch" },
+      { "name": "mupen64plus-ps5", "url": "https://github.com/TheRealRetro/mupen64plus-ps5" },
+      { "name": "SilverBirch", "url": "https://github.com/BaZZtian/SilverBirch" },
+      { "name": "PSXS5", "url": "https://github.com/SynoPiia/PSXS5" }
     ]
   },
   {
@@ -2084,10 +742,7 @@
       "It edits the console's app databases to make these changes. The README doesn't include backup steps, so back up first and be ready to undo changes by hand."
     ],
     "sources": [
-      {
-        "name": "TabShifter on GitHub",
-        "url": "https://github.com/xvvulcanvx/PS5-TabShifter"
-      }
+      { "name": "TabShifter on GitHub", "url": "https://github.com/xvvulcanvx/PS5-TabShifter" }
     ]
   },
   {
@@ -2102,10 +757,7 @@
       "It needs kstuff, a payload loader on port 9021 such as etaHEN or elfldr, and ShadowMountPlus 1.7 beta 5 or newer. The installer checks its download against GitHub's SHA-256 before installing."
     ],
     "sources": [
-      {
-        "name": "RecompStore on GitHub",
-        "url": "https://github.com/elripalda/RecompStore"
-      }
+      { "name": "RecompStore on GitHub", "url": "https://github.com/elripalda/RecompStore" }
     ]
   },
   {
@@ -2120,14 +772,8 @@
       "Unlike most of the scene, Mihawk OS isn't open source. There's no release date yet."
     ],
     "sources": [
-      {
-        "name": "Windows Central",
-        "url": "https://www.windowscentral.com/gaming/mihawk-os-homebrew-windows-games-on-ps5"
-      },
-      {
-        "name": "Lowyat.NET",
-        "url": "https://www.lowyat.net/2026/407036/modders-have-successfully-gotten-xbox-cloud-gaming-and-windows-games-running-on-the-ps5/"
-      }
+      { "name": "Windows Central", "url": "https://www.windowscentral.com/gaming/mihawk-os-homebrew-windows-games-on-ps5" },
+      { "name": "Lowyat.NET", "url": "https://www.lowyat.net/2026/407036/modders-have-successfully-gotten-xbox-cloud-gaming-and-windows-games-running-on-the-ps5/" }
     ]
   },
   {
@@ -2142,18 +788,9 @@
       "Linux is what lets Steam and PC games run on the lower-firmware consoles, so this is the one to watch if you're on 13.60."
     ],
     "sources": [
-      {
-        "name": "pLinux5-NG on GitHub",
-        "url": "https://github.com/pLabs5/pLinux5-NG"
-      },
-      {
-        "name": "ps5-linux loader",
-        "url": "https://github.com/ps5-linux/ps5-linux-loader"
-      },
-      {
-        "name": "Held Games",
-        "url": "https://heldgames.com/guides/ps5-homebrew-emulation-switch-ps3"
-      }
+      { "name": "pLinux5-NG on GitHub", "url": "https://github.com/pLabs5/pLinux5-NG" },
+      { "name": "ps5-linux loader", "url": "https://github.com/ps5-linux/ps5-linux-loader" },
+      { "name": "Held Games", "url": "https://heldgames.com/guides/ps5-homebrew-emulation-switch-ps3" }
     ]
   },
   {
@@ -2168,18 +805,9 @@
       "PS5X360's README warns that reaching a menu doesn't mean a game is playable. Games, BIOS files and keys aren't included."
     ],
     "sources": [
-      {
-        "name": "Windows Central",
-        "url": "https://www.windowscentral.com/gaming/xbox/xbox-360-and-og-xbox-games-are-now-running-on-ps5-thanks-to-a-new-emulator"
-      },
-      {
-        "name": "PS5X360 on GitHub",
-        "url": "https://github.com/BrinooTk/PS5X360"
-      },
-      {
-        "name": "XPSemu on GitHub",
-        "url": "https://github.com/ZiZc3/XPSemu"
-      }
+      { "name": "Windows Central", "url": "https://www.windowscentral.com/gaming/xbox/xbox-360-and-og-xbox-games-are-now-running-on-ps5-thanks-to-a-new-emulator" },
+      { "name": "PS5X360 on GitHub", "url": "https://github.com/BrinooTk/PS5X360" },
+      { "name": "XPSemu on GitHub", "url": "https://github.com/ZiZc3/XPSemu" }
     ]
   },
   {
@@ -2194,14 +822,8 @@
       "Separately, Kotaku reports that Swordpdf, who made PS5SX2, has shown RPS5S3 booting Gran Turismo 5 from a real PS3 disc. It's only in test builds on the PS5SX2 Discord so far, with no public repository."
     ],
     "sources": [
-      {
-        "name": "KB-RPCS3 on GitHub",
-        "url": "https://github.com/kamb205/KB-RPCS3"
-      },
-      {
-        "name": "Kotaku",
-        "url": "https://kotaku.com/the-physical-revolution-on-jailbroken-ps5s-now-has-people-emulating-ps3-discs-2000744606"
-      }
+      { "name": "KB-RPCS3 on GitHub", "url": "https://github.com/kamb205/KB-RPCS3" },
+      { "name": "Kotaku", "url": "https://kotaku.com/the-physical-revolution-on-jailbroken-ps5s-now-has-people-emulating-ps3-discs-2000744606" }
     ]
   },
   {
@@ -2216,14 +838,8 @@
       "It's alpha software that reads and writes Steam Cloud saves, so a bug could overwrite a good save. Your Steam login token is stored on the console unencrypted."
     ],
     "sources": [
-      {
-        "name": "Playden on GitHub",
-        "url": "https://github.com/leolobato/playden-ps5"
-      },
-      {
-        "name": "prospero-win",
-        "url": "https://github.com/mpereiraesaa/prospero-win"
-      }
+      { "name": "Playden on GitHub", "url": "https://github.com/leolobato/playden-ps5" },
+      { "name": "prospero-win", "url": "https://github.com/mpereiraesaa/prospero-win" }
     ]
   },
   {
@@ -2237,14 +853,8 @@
       "It's one of the few ways to play newer games on a console that has to stay offline from PSN to keep its jailbreak."
     ],
     "sources": [
-      {
-        "name": "Lowyat.NET",
-        "url": "https://www.lowyat.net/2026/407036/modders-have-successfully-gotten-xbox-cloud-gaming-and-windows-games-running-on-the-ps5/"
-      },
-      {
-        "name": "PSBox on GitHub",
-        "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5"
-      }
+      { "name": "Lowyat.NET", "url": "https://www.lowyat.net/2026/407036/modders-have-successfully-gotten-xbox-cloud-gaming-and-windows-games-running-on-the-ps5/" },
+      { "name": "PSBox on GitHub", "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5" }
     ]
   },
   {
@@ -2259,22 +869,10 @@
       "Rush 2 Recompiled has also arrived as a native PS5 title using RT64. RecompStore is aiming to make installing ports like these a one-step job."
     ],
     "sources": [
-      {
-        "name": "Super Mario 64 port",
-        "url": "https://github.com/griches/PS5_Ghostship"
-      },
-      {
-        "name": "Wind Waker HD port",
-        "url": "https://github.com/griches/PS5_WindWakerHD"
-      },
-      {
-        "name": "Dusklight port",
-        "url": "https://github.com/griches/PS5_Dusklight"
-      },
-      {
-        "name": "Rush 2 Recompiled",
-        "url": "https://github.com/Marice/rush2-ps5"
-      }
+      { "name": "Super Mario 64 port", "url": "https://github.com/griches/PS5_Ghostship" },
+      { "name": "Wind Waker HD port", "url": "https://github.com/griches/PS5_WindWakerHD" },
+      { "name": "Dusklight port", "url": "https://github.com/griches/PS5_Dusklight" },
+      { "name": "Rush 2 Recompiled", "url": "https://github.com/Marice/rush2-ps5" }
     ]
   },
   {
@@ -2289,18 +887,9 @@
       "For the original handheld games, mGBA in the PS5 RetroArch port covers Game Boy to Game Boy Advance, and SilverBirch is an early Nintendo DS option."
     ],
     "sources": [
-      {
-        "name": "ps5-pokemmo on GitHub",
-        "url": "https://github.com/bizkut/ps5-pokemmo"
-      },
-      {
-        "name": "PS5 RetroArch",
-        "url": "https://github.com/mihawk-99/PS5_RetroArch"
-      },
-      {
-        "name": "SilverBirch",
-        "url": "https://github.com/BaZZtian/SilverBirch"
-      }
+      { "name": "ps5-pokemmo on GitHub", "url": "https://github.com/bizkut/ps5-pokemmo" },
+      { "name": "PS5 RetroArch", "url": "https://github.com/mihawk-99/PS5_RetroArch" },
+      { "name": "SilverBirch", "url": "https://github.com/BaZZtian/SilverBirch" }
     ]
   },
   {
@@ -2315,14 +904,8 @@
       "1.0.1 and 1.0.2 followed on 13 and 14 October with fixes, including firmware 7.xx support for Relapse."
     ],
     "sources": [
-      {
-        "name": "Y2JB Autoloader releases",
-        "url": "https://github.com/itsPLK/ps5-y2jb-autoloader/releases"
-      },
-      {
-        "name": "Payload Manager",
-        "url": "https://github.com/itsPLK/ps5-payload-manager"
-      }
+      { "name": "Y2JB Autoloader releases", "url": "https://github.com/itsPLK/ps5-y2jb-autoloader/releases" },
+      { "name": "Payload Manager", "url": "https://github.com/itsPLK/ps5-payload-manager" }
     ]
   },
   {
@@ -2337,14 +920,8 @@
       "PS5 Upload also notes that fake-package installs only work up to firmware 11.60."
     ],
     "sources": [
-      {
-        "name": "ShadowPKG on GitHub",
-        "url": "https://github.com/NotSoTypicalGamer/ShadowPKG"
-      },
-      {
-        "name": "PS5 Upload 5.40.0",
-        "url": "https://newreleases.io/project/github/phantomptr/ps5upload/release/v5.40.0"
-      }
+      { "name": "ShadowPKG on GitHub", "url": "https://github.com/NotSoTypicalGamer/ShadowPKG" },
+      { "name": "PS5 Upload 5.40.0", "url": "https://newreleases.io/project/github/phantomptr/ps5upload/release/v5.40.0" }
     ]
   },
   {
@@ -2359,14 +936,8 @@
       "It needs etaHEN, and the app has to be on etaHEN's jailbreak list for JIT. Without it, Wii U games fall back to a much slower interpreter. You need your own dumps, plus keys from your own console for encrypted ones."
     ],
     "sources": [
-      {
-        "name": "TweakTown",
-        "url": "https://www.tweaktown.com/news/113956/the-legend-of-zelda-breath-of-the-wild-is-now-playable-in-4k-on-playstation-5-consoles/index.html"
-      },
-      {
-        "name": "PS5CEMU-HAR on GitHub",
-        "url": "https://github.com/premohq/PS5CEMU-HAR"
-      }
+      { "name": "TweakTown", "url": "https://www.tweaktown.com/news/113956/the-legend-of-zelda-breath-of-the-wild-is-now-playable-in-4k-on-playstation-5-consoles/index.html" },
+      { "name": "PS5CEMU-HAR on GitHub", "url": "https://github.com/premohq/PS5CEMU-HAR" }
     ]
   },
   {
@@ -2381,10 +952,7 @@
       "It needs etaHEN and kstuff, plus ShadowMountPlus or another way to register homebrew. From version 1.1 it can update itself from its settings menu."
     ],
     "sources": [
-      {
-        "name": "Porpoise on GitHub",
-        "url": "https://github.com/elripalda/Porpoise-Dolphin-Emulator-for-PS5"
-      }
+      { "name": "Porpoise on GitHub", "url": "https://github.com/elripalda/Porpoise-Dolphin-Emulator-for-PS5" }
     ]
   },
   {
@@ -2399,10 +967,7 @@
       "It needs a homebrew enabler such as etaHEN or OnionHEN. The README doesn't list supported firmware versions, so check before relying on it on 13.60."
     ],
     "sources": [
-      {
-        "name": "Omega on GitHub",
-        "url": "https://github.com/TheCriicom/omega-dashboard"
-      }
+      { "name": "Omega on GitHub", "url": "https://github.com/TheCriicom/omega-dashboard" }
     ]
   },
   {
@@ -2417,14 +982,8 @@
       "Its author has tested installs on firmware 6.02 and 12.70. Anything else, 13.60 included, is marked experimental."
     ],
     "sources": [
-      {
-        "name": "ProsperoStore on GitHub",
-        "url": "https://github.com/blackbearreloaded/ProsperoStore"
-      },
-      {
-        "name": "homebrew.page",
-        "url": "https://homebrew.page"
-      }
+      { "name": "ProsperoStore on GitHub", "url": "https://github.com/blackbearreloaded/ProsperoStore" },
+      { "name": "homebrew.page", "url": "https://homebrew.page" }
     ]
   },
   {
@@ -2436,18 +995,11 @@
     "body": [
       "Developer Sword released PS5SX2, a port of PCSX2 that runs entirely on the PS5 and PS5 Pro. It scales internal resolution from 1x to 6x with 4K output, and has FSR and a CRT filter.",
       "You change settings from a web page on your phone by scanning a QR code. It also supports widescreen and 60 FPS patches, save states, texture replacements and a cover-flow library.",
-      "At launch it had only been tested on a PS5 Pro on firmware 11.40. It needs kstuff, ShadowMountPlus and its own helper payload, plus your own BIOS and game files.",
-      "Latest updates bring up to 6x native resolution rendering, FSR upscaling, a 3D cover-flow shelf for browsing your PS2 library, widescreen and 60fps patches, and experimental online play — SOCOM II lobbies have been tested. Disc support and PS5 standard (non-Pro) compatibility have been added. The project has 79 commits."
+      "At launch it had only been tested on a PS5 Pro on firmware 11.40. It needs kstuff, ShadowMountPlus and its own helper payload, plus your own BIOS and game files."
     ],
     "sources": [
-      {
-        "name": "PC Games Hardware (German)",
-        "url": "https://www.pcgameshardware.de/Playstation-5-Konsolen-265878/News/PS2-Emulator-PS5SX2-Jailbreak-PCSX2-1555250/"
-      },
-      {
-        "name": "PS5SX2 on GitHub",
-        "url": "https://github.com/Swordpdf/PS5SX2"
-      }
+      { "name": "PC Games Hardware (German)", "url": "https://www.pcgameshardware.de/Playstation-5-Konsolen-265878/News/PS2-Emulator-PS5SX2-Jailbreak-PCSX2-1555250/" },
+      { "name": "PS5SX2 on GitHub", "url": "https://github.com/Swordpdf/PS5SX2" }
     ]
   },
   {
@@ -2462,14 +1014,8 @@
       "Neither report describes a workaround. Spoofing the firmware version on a jailbroken console was raised in the GBAtemp thread as likely to risk a ban."
     ],
     "sources": [
-      {
-        "name": "Notebookcheck",
-        "url": "https://www.notebookcheck.net/Sony-blocks-PS5-console-jailbreak-from-PSN-requiring-firmware-update-14-10.1424308.0.html"
-      },
-      {
-        "name": "GBAtemp",
-        "url": "https://gbatemp.net/threads/sony-blocks-psn-sign-in-on-firmware-below-14-00-now-requires-14-10.685382/"
-      }
+      { "name": "Notebookcheck", "url": "https://www.notebookcheck.net/Sony-blocks-PS5-console-jailbreak-from-PSN-requiring-firmware-update-14-10.1424308.0.html" },
+      { "name": "GBAtemp", "url": "https://gbatemp.net/threads/sony-blocks-psn-sign-in-on-firmware-below-14-00-now-requires-14-10.685382/" }
     ]
   },
   {
@@ -2484,14 +1030,8 @@
       "It ships without the payloads a player-ready jailbreak needs, and it doesn't bring Linux to these firmwares by itself. The developers describe it as a tool for other developers. There's no build for 14.00, and Notebookcheck reports that 14.00 ended its run."
     ],
     "sources": [
-      {
-        "name": "Digital Citizen",
-        "url": "https://www.digitalcitizen.life/ps5-hypervisor-exploit-reaches-firmware-13-60-but-it-is-not-a-full-jailbreak-yet/"
-      },
-      {
-        "name": "Notebookcheck",
-        "url": "https://www.notebookcheck.net/Sony-blocks-PS5-console-jailbreak-from-PSN-requiring-firmware-update-14-10.1424308.0.html"
-      }
+      { "name": "Digital Citizen", "url": "https://www.digitalcitizen.life/ps5-hypervisor-exploit-reaches-firmware-13-60-but-it-is-not-a-full-jailbreak-yet/" },
+      { "name": "Notebookcheck", "url": "https://www.notebookcheck.net/Sony-blocks-PS5-console-jailbreak-from-PSN-requiring-firmware-update-14-10.1424308.0.html" }
     ]
   },
   {
@@ -2506,14 +1046,8 @@
       "The drive only reads DVDs, so PS2 games released on CD won't work. External USB drives are supported but experimental. Asked about PS3 discs, Sword replied that it will happen, with no timeline given."
     ],
     "sources": [
-      {
-        "name": "Notebookcheck (German)",
-        "url": "https://www.notebookcheck.com/PS5-spielt-originale-PS2-DVDs-ab-aber-mit-einem-Haken.1421866.0.html"
-      },
-      {
-        "name": "Held Games",
-        "url": "https://heldgames.com/guides/ps5-homebrew-emulation-switch-ps3"
-      }
+      { "name": "Notebookcheck (German)", "url": "https://www.notebookcheck.com/PS5-spielt-originale-PS2-DVDs-ab-aber-mit-einem-Haken.1421866.0.html" },
+      { "name": "Held Games", "url": "https://heldgames.com/guides/ps5-homebrew-emulation-switch-ps3" }
     ]
   },
   {
@@ -2528,14 +1062,8 @@
       "Neither Rockstar nor Sony has confirmed the requirement."
     ],
     "sources": [
-      {
-        "name": "TweakTown",
-        "url": "https://www.tweaktown.com/rss/click/news/113907/?c=news-mf"
-      },
-      {
-        "name": "Notebookcheck",
-        "url": "https://www.notebookcheck.net/1414828.html"
-      }
+      { "name": "TweakTown", "url": "https://www.tweaktown.com/rss/click/news/113907/?c=news-mf" },
+      { "name": "Notebookcheck", "url": "https://www.notebookcheck.net/1414828.html" }
     ]
   },
   {
@@ -2550,14 +1078,8 @@
       "If your console is on 13.60 or lower and you want to keep it exploitable, leave automatic system updates off."
     ],
     "sources": [
-      {
-        "name": "PlayStation LifeStyle",
-        "url": "https://www.playstationlifestyle.net/2026/10/01/ps5-system-update-rolled-out-to-ring-in-october-2026"
-      },
-      {
-        "name": "Notebookcheck",
-        "url": "https://www.notebookcheck.net/1414828.html"
-      }
+      { "name": "PlayStation LifeStyle", "url": "https://www.playstationlifestyle.net/2026/10/01/ps5-system-update-rolled-out-to-ring-in-october-2026" },
+      { "name": "Notebookcheck", "url": "https://www.notebookcheck.net/1414828.html" }
     ]
   },
   {
@@ -2572,22 +1094,10 @@
       "It's tethered, so a full restart returns the console to stock. There's no hypervisor exploit in the chain, so Linux isn't possible on 13.60 through Relapse. The source is on GitHub under the MIT licence."
     ],
     "sources": [
-      {
-        "name": "Relapse on GitHub",
-        "url": "https://github.com/ntfargo/Relapse-Exploit"
-      },
-      {
-        "name": "Decrypt",
-        "url": "https://decrypt.co/379583/sony-ps5-jailbreak-digital-games-ownership"
-      },
-      {
-        "name": "Kotaku",
-        "url": "https://kotaku.com/new-ps5-jailbreak-exploit-works-on-systems-running-july-2026-firmware-2000738283"
-      },
-      {
-        "name": "GuruGamer",
-        "url": "https://gurugamer.com/pc-console/new-ps5-jailbreak-unlocks-firmware-7-00-to-13-60-including-pro-27369"
-      }
+      { "name": "Relapse on GitHub", "url": "https://github.com/ntfargo/Relapse-Exploit" },
+      { "name": "Decrypt", "url": "https://decrypt.co/379583/sony-ps5-jailbreak-digital-games-ownership" },
+      { "name": "Kotaku", "url": "https://kotaku.com/new-ps5-jailbreak-exploit-works-on-systems-running-july-2026-firmware-2000738283" },
+      { "name": "GuruGamer", "url": "https://gurugamer.com/pc-console/new-ps5-jailbreak-unlocks-firmware-7-00-to-13-60-including-pro-27369" }
     ]
   },
   {
@@ -2602,10 +1112,7 @@
       "The original repository has been archived as ProsperoEden-Legacy, and development moved to a new repository on 30 September. It builds on recent PS5 Vulkan and Mesa graphics work from the same scene."
     ],
     "sources": [
-      {
-        "name": "Held Games",
-        "url": "https://heldgames.com/guides/ps5-homebrew-emulation-switch-ps3"
-      }
+      { "name": "Held Games", "url": "https://heldgames.com/guides/ps5-homebrew-emulation-switch-ps3" }
     ]
   },
   {
@@ -2620,10 +1127,7 @@
       "The filing landed in the same stretch as Sony's plan to stop shipping new games on disc, and both get cited in the scene as reasons to keep backups of games you own."
     ],
     "sources": [
-      {
-        "name": "Decrypt",
-        "url": "https://decrypt.co/379583/sony-ps5-jailbreak-digital-games-ownership"
-      }
+      { "name": "Decrypt", "url": "https://decrypt.co/379583/sony-ps5-jailbreak-digital-games-ownership" }
     ]
   },
   {
@@ -2637,10 +1141,7 @@
       "Within the homebrew scene, the case is mostly about preservation: keeping working backups of games you already own once physical copies are gone."
     ],
     "sources": [
-      {
-        "name": "Notebookcheck",
-        "url": "https://www.notebookcheck.net/Interest-in-PS5-jailbreak-and-piracy-rises-after-PlayStation-drops-physical-games.1335383.0.html"
-      }
+      { "name": "Notebookcheck", "url": "https://www.notebookcheck.net/Interest-in-PS5-jailbreak-and-piracy-rises-after-PlayStation-drops-physical-games.1335383.0.html" }
     ]
   },
   {
@@ -2655,10 +1156,7 @@
       "All emulators need your own game files and typically require etaHEN, kstuff and ShadowMountPlus. Check each app's page for specific firmware compatibility."
     ],
     "sources": [
-      {
-        "name": "ProsperoStore catalogue",
-        "url": "https://homebrew.page"
-      }
+      { "name": "ProsperoStore catalogue", "url": "https://homebrew.page" }
     ]
   },
   {
@@ -2673,10 +1171,7 @@
       "Most media apps are simpler to set up than emulators and don't need kstuff. Check each app's README for network requirements, since a jailbroken console typically stays off PSN."
     ],
     "sources": [
-      {
-        "name": "ProsperoStore catalogue",
-        "url": "https://homebrew.page"
-      }
+      { "name": "ProsperoStore catalogue", "url": "https://homebrew.page" }
     ]
   },
   {
@@ -2691,10 +1186,7 @@
       "New tools are added to the catalogue regularly. This site syncs the full catalogue every hour, so anything added to ProsperoStore shows up here automatically."
     ],
     "sources": [
-      {
-        "name": "ProsperoStore catalogue",
-        "url": "https://homebrew.page"
-      }
+      { "name": "ProsperoStore catalogue", "url": "https://homebrew.page" }
     ]
   },
   {
@@ -2709,14 +1201,8 @@
       "RecompStore makes installing many of these a one-step process from your disc image. New ports appear in the catalogue regularly as the recompilation scene keeps growing."
     ],
     "sources": [
-      {
-        "name": "ProsperoStore catalogue",
-        "url": "https://homebrew.page"
-      },
-      {
-        "name": "RecompStore",
-        "url": "https://github.com/elripalda/RecompStore"
-      }
+      { "name": "ProsperoStore catalogue", "url": "https://homebrew.page" },
+      { "name": "RecompStore", "url": "https://github.com/elripalda/RecompStore" }
     ]
   }
 ]
