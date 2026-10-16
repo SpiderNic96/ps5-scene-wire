@@ -29,7 +29,7 @@ export function defaultQueries(now = Date.now()) {
 // Things that match "ps5" but aren't console homebrew.
 const NOISE = /dualsense|controller|stock|restock|price|bot\b|discord|availability|scalper|remote ?play|chiaki|wallpaper|emulator for (pc|windows|android)|on pc\b|anyps5|kyty|sharpemu|cheat|aimbot|\besp\b/i;
 // Anything that looks like a commercial-game catalogue is left out of the public list.
-const GAME_CATALOGUE = /free games|\d[\d,.]*\+?\s*(ps4 |ps5 )?games|game store|games? catalog|catalog browsing|download manager|game library|dlcs?\b|overdrive|orbit[ -]?store|google drive|patches the game/i;
+const GAME_CATALOGUE = /free games|\d[\d,.]*\+?\s*(ps4 |ps5 )?games|game store|games? catalog|catalog browsing|download manager|game library|dlcs?\b|overdrive|orbit[ -]?store|google drive|patches the game|store front-?end/i;
 // The repo has to look like PS5 console software.
 const PS5ISH = /ps5|playstation ?5|jailbr|homebrew|payload|etahen|kstuff|elfldr|shadowmount/i;
 
