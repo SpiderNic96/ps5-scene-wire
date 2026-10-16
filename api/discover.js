@@ -2,7 +2,7 @@
 // GET /api/discover?q=<search> -> one custom GitHub repository search (same output shape)
 // Unauthenticated GitHub search allows 10 requests a minute, so results are cached for an hour.
 
-import { SOURCES } from './_sources.js';
+import { allSources } from './_catalog.js';
 
 const DAYS = 90;
 const TIMEOUT_MS = 8000;
@@ -15,23 +15,26 @@ function since(days) {
 export function defaultQueries(now = Date.now()) {
   const d = new Date(now - DAYS * 86400000).toISOString().slice(0, 10);
   const recent = `fork:false pushed:>${d}`;
+  // GitHub allows 10 unauthenticated searches a minute, so keep this list at 9 or fewer.
   return [
     `topic:ps5-homebrew ${recent}`,
     `topic:ps5-payload ${recent}`,
-    `topic:ps5 topic:homebrew ${recent}`,
     `ps5 payload in:name,description ${recent}`,
     `ps5 homebrew in:name,description ${recent}`,
+    `"jailbroken ps5" in:description ${recent}`,
+    `ps5 port in:name,description ${recent}`,
+    `prospero in:name ${recent}`,
     `"13.60" ps5 in:readme ${recent}`,
     `etaHEN in:readme,description ${recent}`
   ];
 }
 
 // Things that match "ps5" but aren't console homebrew.
-const NOISE = /dualsense|controller|stock|restock|price|bot\b|discord|availability|scalper|remote ?play|chiaki|wallpaper|emulator for (pc|windows|android)|on pc\b|anyps5|kyty|sharpemu|cheat|aimbot|\besp\b/i;
+const NOISE = /dualsense|controller|stock|restock|price|bot\b|availability|scalper|chiaki|wallpaper|emulator for (pc|windows|android)|on pc\b|anyps5|kyty|sharpemu|cheat|aimbot|\besp\b/i;
 // Anything that looks like a commercial-game catalogue is left out of the public list.
 const GAME_CATALOGUE = /free games|\d[\d,.]*\+?\s*(ps4 |ps5 )?games|game store|games? catalog|catalog browsing|download manager|game library|dlcs?\b|overdrive|orbit[ -]?store|google drive|patches the game|store front-?end/i;
 // The repo has to look like PS5 console software.
-const PS5ISH = /ps5|playstation ?5|jailbr|homebrew|payload|etahen|kstuff|elfldr|shadowmount/i;
+const PS5ISH = /ps5|playstation ?5|prospero|jailbr|homebrew|payload|etahen|kstuff|elfldr|shadowmount/i;
 
 export function shape(repo, matched) {
   const text = `${repo.name} ${repo.description || ''} ${(repo.topics || []).join(' ')}`;
@@ -61,7 +64,8 @@ async function search(q, { fetchImpl, token }) {
   return { ok: true, items: data.items || [] };
 }
 
-export async function discover({ q, fetchImpl = globalThis.fetch, token = process.env.GITHUB_TOKEN, sources = SOURCES, now = Date.now() } = {}) {
+export async function discover({ q, fetchImpl = globalThis.fetch, token = process.env.GITHUB_TOKEN, sources, now = Date.now() } = {}) {
+  if (!sources) ({ sources } = await allSources({ fetchImpl }));
   const queries = q ? [q] : defaultQueries(now);
   const tracked = new Set(sources.map((s) => s.repo.toLowerCase()));
   const found = new Map();

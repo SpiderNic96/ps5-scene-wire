@@ -4,12 +4,13 @@
 // Without one it reads each repo's public releases.atom feed first, because the
 // unauthenticated API only allows 60 calls an hour. Cached on Vercel for an hour.
 
-import { SOURCES, CATEGORIES } from './_sources.js';
+import { CATEGORIES } from './_sources.js';
+import { allSources } from './_catalog.js';
 
 const PER_REPO = 3;
 const TIMEOUT_MS = 8000;
-const CONCURRENCY = 8;
-const MAX_HEADLINES = 120;
+const CONCURRENCY = 12;
+const MAX_HEADLINES = 220;
 const UA = 'ps5-scene-wire';
 
 const ENTITIES = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", '#39': "'", nbsp: ' ' };
@@ -149,7 +150,9 @@ async function pool(list, limit, fn) {
   return out;
 }
 
-export async function collect({ fetchImpl = globalThis.fetch, token = process.env.GITHUB_TOKEN, sources = SOURCES } = {}) {
+export async function collect({ fetchImpl = globalThis.fetch, token = process.env.GITHUB_TOKEN, sources } = {}) {
+  let catalog = { ok: false, count: 0, skipped: true };
+  if (!sources) ({ sources, catalog } = await allSources({ fetchImpl }));
   const state = { rateLimited: false };
   const results = await pool(sources, CONCURRENCY, (src) => loadRepo(src, { fetchImpl, token }, state));
 
@@ -167,6 +170,7 @@ export async function collect({ fetchImpl = globalThis.fetch, token = process.en
       repo: src.repo,
       name: src.name,
       about: src.about || '',
+      inStore: !!src.inStore,
       status: status === 'ok' && !latest ? 'no-releases' : status,
       repoUrl: `https://github.com/${src.repo}`,
       releasesUrl: `https://github.com/${src.repo}/releases`,
@@ -180,6 +184,7 @@ export async function collect({ fetchImpl = globalThis.fetch, token = process.en
     fetchedAt: new Date().toISOString(),
     usingToken: !!token,
     rateLimited: state.rateLimited,
+    catalog,
     categories: CATEGORIES,
     releases: releases.slice(0, MAX_HEADLINES),
     apps

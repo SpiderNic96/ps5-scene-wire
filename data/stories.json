@@ -1,5 +1,59 @@
 [
   {
+    "id": "xbox-360-recomps",
+    "date": "2026-10-16",
+    "tag": "Port",
+    "title": "Xbox 360 recomps reach PS5: Sonic Unleashed, The Simpsons Game and Spider-Man",
+    "summary": "Static recompilations of Xbox 360 games are now running natively, all built from your own copy of the game.",
+    "body": [
+      "Sonic Unleashed Recompiled for PS5 is a fork of hedge-dev's UnleashedRecomp, the project that brought the Xbox 360 version to PC. It needs your own US or EU Xbox 360 copy plus its title update, and ships no game files.",
+      "The Simpsons Game arrives as a Windows 11 builder that turns your own Xbox 360 files into a PS5 title folder. It's based on TheSimpsonsGameRecomp and the ReXGlue recompilation runtime, and it's listed in ProsperoStore. Spider-Man: Edge of Time uses the same ReXGlue approach with a PS5 target. Its developer says a test build first ran at 4K on 12 October and that they've played through the whole game.",
+      "FIFA Street (2012) and WWE '13 recomps followed from the RecompStore developer on 16 October. Expect early builds, and check each README for what files you need to supply."
+    ],
+    "sources": [
+      { "name": "Sonic Unleashed Recompiled for PS5", "url": "https://github.com/Nazky/UnleashedRecomp-Prospero" },
+      { "name": "The Simpsons Game builder", "url": "https://github.com/LoZazaMastro/TheSimpsonsGame-PS5-Builder" },
+      { "name": "Spider-Man: Edge of Time", "url": "https://github.com/KongaTime/PS5_EdgeOfTimeTitle" },
+      { "name": "FIFA Street", "url": "https://github.com/elripalda/fifastreet-ps5" },
+      { "name": "WWE '13", "url": "https://github.com/elripalda/wwe13-ps5" }
+    ]
+  },
+  {
+    "id": "streaming-apps",
+    "date": "2026-10-09",
+    "tag": "Media",
+    "title": "Stremio, Emby and Jellyfin clients fill out the media shelf",
+    "summary": "Two native Stremio ports, Emby5 and Jelly5 join VLC, Moonlight and Steam Remote Play in ProsperoStore.",
+    "body": [
+      "An unofficial Stremio client arrived on 5 October, and StremiBrew, a second native Stremio port, followed on 9 October. Stremio Plus is in ProsperoStore too.",
+      "For your own media server there's Emby5, plus Jelly5, which handles both Jellyfin and Emby with hardware-decoded 4K HDR. VLC and Media Player Classic are also on the console now.",
+      "For game streaming, ProsperoLight ports Moonlight, Steam Remote Play is available, and PSBox covers Xbox Cloud Gaming."
+    ],
+    "sources": [
+      { "name": "Stremio for PS5", "url": "https://github.com/Sp9nky/unofficial-stremio-ps5-port" },
+      { "name": "StremiBrew", "url": "https://github.com/stupiditytries/StremiBrew" },
+      { "name": "Emby5", "url": "https://github.com/bornaradusin/Emby5" },
+      { "name": "Jelly5", "url": "https://github.com/02dnot/Jelly5" },
+      { "name": "homebrew.page catalogue", "url": "https://homebrew.page" }
+    ]
+  },
+  {
+    "id": "jailbreak-daemons",
+    "date": "2026-09-28",
+    "tag": "Loader",
+    "title": "Lapy JB Daemon and LegacyJB give homebrew apps jailbreak access without etaHEN",
+    "summary": "Two small payloads that answer the jailbreak requests apps would normally send to etaHEN.",
+    "body": [
+      "Some homebrew apps ask etaHEN to lift their privileges when they start. Lapy JB Daemon is a standalone payload that copies that jailbreak-on-demand behaviour, so those apps work without etaHEN. It needs kstuff, and its README lists firmware 3.00 to 12.00. Version 1.2 is dated 7 May in its changelog.",
+      "LegacyJB does a similar job. It opens a jailbreak service on port 9028, watches for requests from supported apps, and says it enables Homebrew Store and Itemzflow compatibility. Its firmware target is set when you build it, and it doesn't publish a support list.",
+      "Neither project uses GitHub releases, so check their pages for updates."
+    ],
+    "sources": [
+      { "name": "Lapy JB Daemon", "url": "https://github.com/ArkSama/PS5-Lapy-JB-Daemon" },
+      { "name": "LegacyJB", "url": "https://github.com/Phoenixx1202/LegacyJB" }
+    ]
+  },
+  {
     "id": "retro-emulators-wave",
     "date": "2026-10-16",
     "tag": "Emulator",
@@ -8,7 +62,7 @@
     "body": [
       "The PS5 RetroArch port runs as a native homebrew title. Its README lists mGBA for Game Boy, Game Boy Color and Game Boy Advance, alongside Snes9x, FCEUmm, FinalBurn Neo and Genesis Plus GX. N64 and PS1 cores are on its roadmap, and the repo description now advertises a much bigger core list, so check its page for the current set.",
       "For Nintendo 64 there's a standalone mupen64plus port with a dynarec, DualSense rumble and a cover shelf. SilverBirch is a new Nintendo DS runtime built on the melonDS interpreter. It's at version 0.2.2, and its author says the public build hasn't been tested on a real PS5 yet.",
-      "PS1 is covered by PSXS5, based on PCSX-ReARMed, and there are standalone Snes9x and FinalBurn Neo ports too. None of them include games or BIOS files, so you supply your own."
+      "PS1 is covered by PSXS5, based on PCSX-ReARMed, and PSP by psp5, a PPSSPP port. There are standalone Snes9x, Genesis Plus GX, Beetle PCE and FinalBurn Neo ports too. None of them include games or BIOS files, so you supply your own."
     ],
     "sources": [
       { "name": "PS5 RetroArch", "url": "https://github.com/mihawk-99/PS5_RetroArch" },

@@ -33,6 +33,7 @@
     --t-port: #A3266B;
     --t-store: #2F6F1F;
     --t-tool: #7A4E2D;
+    --t-media: #00658F;
     --t-release: #586172;
     --focus: #3B8CFF;
     --wide: 125;
@@ -56,6 +57,7 @@
       --t-port: #F28CC0;
       --t-store: #9BD67E;
       --t-tool: #E0A97F;
+      --t-media: #6CC8EE;
       --t-release: #9AA3B2;
       color-scheme: dark;
     }
@@ -177,6 +179,8 @@
   .tag.t-store { color: var(--t-store); }
   .tag.t-tool { color: var(--t-tool); }
   .tag.t-scene { color: var(--t-scene); }
+  .tag.t-loader { color: var(--t-exploit); }
+  .tag.t-media { color: var(--t-media); }
   .tag.t-release { color: var(--t-release); }
   .more-btn {
     display: block; width: 100%; padding: 14px; border: 0; border-top: 1px solid var(--rule); background: none;
@@ -293,7 +297,7 @@
   <aside>
     <section class="side-block" aria-labelledby="apps-title">
       <h2 id="apps-title">Tracked apps</h2>
-      <p class="sub">Latest version of each, straight from its GitHub releases.</p>
+      <p class="sub" id="apps-sub">Latest version of each, straight from its GitHub releases. Everything in the ProsperoStore catalogue is included and synced hourly.</p>
       <div id="apps"><p class="status" style="padding:9px 0">Checking GitHub…</p></div>
     </section>
     <section class="side-block" aria-labelledby="found-title">
@@ -346,13 +350,14 @@
 
   const CATS = [
     { id: 'jailbreak', short: 'Jailbreak', name: 'Jailbreak and loaders' },
-    { id: 'tools', short: 'Tools', name: 'Managers and tools' },
+    { id: 'tools', short: 'Apps and tools', name: 'Apps and tools' },
     { id: 'stores', short: 'Stores', name: 'Homebrew stores' },
     { id: 'emulators', short: 'Emulators', name: 'Emulators' },
-    { id: 'pc', short: 'PC and Linux', name: 'PC, Linux and Steam' },
-    { id: 'ports', short: 'Ports', name: 'Recomps and ports' }
+    { id: 'ports', short: 'Recomps and ports', name: 'Recomps, ports and games' },
+    { id: 'media', short: 'Media', name: 'Media and streaming' },
+    { id: 'pc', short: 'PC and Linux', name: 'PC, Linux and Steam' }
   ];
-  const TAG_CAT = { Exploit: 'jailbreak', Firmware: 'jailbreak', Tool: 'tools', Store: 'stores', Emulator: 'emulators', 'PC & Linux': 'pc', Port: 'ports' };
+  const TAG_CAT = { Exploit: 'jailbreak', Firmware: 'jailbreak', Loader: 'jailbreak', Tool: 'tools', Store: 'stores', Emulator: 'emulators', Port: 'ports', Media: 'media', 'PC & Linux': 'pc' };
   const slug = (s) => 't-' + String(s).toLowerCase().replace(/&/g, ' ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
   // ---------- Firmware band ----------
@@ -568,6 +573,10 @@
     releases = d.releases || [];
     trackedRepos = new Set((d.apps || []).map((a) => a.repo.toLowerCase()));
     renderApps(d.apps || []);
+    const live = (d.apps || []).filter((a) => a.status !== 'missing');
+    const inStore = live.filter((a) => a.inStore).length;
+    $('#apps-sub').textContent = `${live.length} apps, with the latest version of each straight from its GitHub releases.` +
+      (d.catalog && d.catalog.ok ? ` Includes all ${inStore} GitHub-hosted apps in the ProsperoStore catalogue, synced hourly.` : ' The ProsperoStore catalogue couldn’t be reached this hour.');
     $('#checked').textContent = 'App releases checked ' + ago(d.fetchedAt);
     renderFeed();
   }).catch(() => {

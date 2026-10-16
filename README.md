@@ -11,7 +11,9 @@ data/firmware.json    the firmware chart: coverage bars, 14.xx marks, latest ver
 api/releases.js       GET /api/releases, pulls GitHub releases, cached 1 hour on Vercel
 api/discover.js       GET /api/discover, searches GitHub for new PS5 homebrew repos, cached 1 hour
                       (/api/discover?q=<search> runs one custom search)
-api/_sources.js       the tracked app repos, grouped by category
+api/_sources.js       hand-picked app repos, grouped by category
+api/_catalog.js       adds every GitHub-hosted app in the ProsperoStore catalogue
+                      (homebrew.page/catalog/v1.json), sorted into categories by keyword
 ```
 
 ## Put it online
@@ -50,11 +52,11 @@ Add an object to `data/stories.json`:
 }
 ```
 
-Tags: `Exploit`, `Firmware`, `Tool`, `Store`, `Emulator`, `PC & Linux`, `Port`, `Scene`. Each tag except `Scene` maps to a topic filter. Each story gets a permalink at `/#<id>`.
+Tags: `Exploit`, `Firmware`, `Loader`, `Tool`, `Store`, `Emulator`, `Port`, `Media`, `PC & Linux`, `Scene`. Each tag except `Scene` maps to a topic filter. Each story gets a permalink at `/#<id>`.
 
 ## Track another app
 
-Add a line to `api/_sources.js` with a category (`J`, `T`, `S`, `E`, `P`, `R`) and the GitHub `owner/repo`. Repos that don't exist are hidden; repos with no releases show "No releases yet".
+Anything added to the ProsperoStore catalogue shows up on its own within an hour. For anything else, add a line to `api/_sources.js` with a category (`J`, `T`, `S`, `E`, `R`, `M`, `P`) and the GitHub `owner/repo`. A line here also overrides a catalogue entry's name and category. Repos that don't exist are hidden; repos with no releases show "No releases yet".
 
 ## Update the firmware chart
 
