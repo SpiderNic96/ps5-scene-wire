@@ -1,5 +1,295 @@
 [
   {
+    "id": "retro-emulators-wave",
+    "date": "2026-10-16",
+    "tag": "Emulator",
+    "title": "GBA, N64, DS and PS1 emulators are all arriving as native apps",
+    "summary": "RetroArch, mupen64plus, a melonDS-based DS runtime and a PS1 emulator now run as homebrew titles. Most are early builds.",
+    "body": [
+      "The PS5 RetroArch port runs as a native homebrew title. Its README lists mGBA for Game Boy, Game Boy Color and Game Boy Advance, alongside Snes9x, FCEUmm, FinalBurn Neo and Genesis Plus GX. N64 and PS1 cores are on its roadmap, and the repo description now advertises a much bigger core list, so check its page for the current set.",
+      "For Nintendo 64 there's a standalone mupen64plus port with a dynarec, DualSense rumble and a cover shelf. SilverBirch is a new Nintendo DS runtime built on the melonDS interpreter. It's at version 0.2.2, and its author says the public build hasn't been tested on a real PS5 yet.",
+      "PS1 is covered by PSXS5, based on PCSX-ReARMed, and there are standalone Snes9x and FinalBurn Neo ports too. None of them include games or BIOS files, so you supply your own."
+    ],
+    "sources": [
+      { "name": "PS5 RetroArch", "url": "https://github.com/mihawk-99/PS5_RetroArch" },
+      { "name": "mupen64plus-ps5", "url": "https://github.com/TheRealRetro/mupen64plus-ps5" },
+      { "name": "SilverBirch", "url": "https://github.com/BaZZtian/SilverBirch" },
+      { "name": "PSXS5", "url": "https://github.com/SynoPiia/PSXS5" }
+    ]
+  },
+  {
+    "id": "tabshifter",
+    "date": "2026-10-14",
+    "tag": "Tool",
+    "title": "TabShifter moves apps between the Games and Media tabs",
+    "summary": "A small payload that re-sorts your home screen and can hide the PSN apps that don't work offline. Its author lists 12.xx to 13.60 as supported.",
+    "body": [
+      "TabShifter is a standalone ELF payload. Run it from Payload Manager or your loader and it can move any app between the Games and Media tabs, then reload the home screen in about a second and a half without a reboot.",
+      "It can also hide apps that are useless on an offline console, such as the PlayStation Store, PlayStation Plus and Remote Play. It installs its own home screen tile, which you can uninstall from the console.",
+      "It edits the console's app databases to make these changes. The README doesn't include backup steps, so back up first and be ready to undo changes by hand."
+    ],
+    "sources": [
+      { "name": "TabShifter on GitHub", "url": "https://github.com/xvvulcanvx/PS5-TabShifter" }
+    ]
+  },
+  {
+    "id": "recompstore",
+    "date": "2026-10-13",
+    "tag": "Store",
+    "title": "RecompStore installs recompiled game ports from your own discs",
+    "summary": "A homebrew store for native ports of recompiled games. It hosts no game files and builds each install from your disc image.",
+    "body": [
+      "RecompStore installs and updates native PS5 ports of recompiled games. You give it your own disc image and it copies the game's files into place, refreshes ShadowMountPlus and launches the port.",
+      "Its README says no game files are hosted in the store or in anything it links to. The list of available ports lives on recompstore.com.",
+      "It needs kstuff, a payload loader on port 9021 such as etaHEN or elfldr, and ShadowMountPlus 1.7 beta 5 or newer. The installer checks its download against GitHub's SHA-256 before installing."
+    ],
+    "sources": [
+      { "name": "RecompStore on GitHub", "url": "https://github.com/elripalda/RecompStore" }
+    ]
+  },
+  {
+    "id": "mihawk-ps5-proton",
+    "date": "2026-10-13",
+    "tag": "PC & Linux",
+    "title": "Mihawk is building PS5 Proton and a Windows-style Mihawk OS",
+    "summary": "A translation layer aimed at 32-bit and 64-bit Windows games on jailbroken PS5. It's closed source and there's no release date.",
+    "body": [
+      "Developer Mihawk, who also ported the RADV Vulkan driver that many PS5 homebrew apps use, is working on PS5 Proton. It's a translation layer for running Windows games on the console, with a Windows 11-style shell called Mihawk OS planned on top.",
+      "Windows Central reports Hades has apparently been shown running, but no other games are confirmed. A Linux compatibility layer is also planned.",
+      "Unlike most of the scene, Mihawk OS isn't open source. There's no release date yet."
+    ],
+    "sources": [
+      { "name": "Windows Central", "url": "https://www.windowscentral.com/gaming/mihawk-os-homebrew-windows-games-on-ps5" },
+      { "name": "Lowyat.NET", "url": "https://www.lowyat.net/2026/407036/modders-have-successfully-gotten-xbox-cloud-gaming-and-windows-games-running-on-the-ps5/" }
+    ]
+  },
+  {
+    "id": "plinux5-ng",
+    "date": "2026-10-13",
+    "tag": "PC & Linux",
+    "title": "pLinux5-NG starts bringing Linux to higher firmware",
+    "summary": "A port of the ps5-linux loader that uses Byepervisor Reborn. Only 13.20 works for now, and 13.60 isn't confirmed.",
+    "body": [
+      "The original ps5-linux loader covers firmware 3.00 to 7.61 on older models. pLinux5-NG ports it to the Byepervisor Reborn hypervisor escape so it can work on higher firmware.",
+      "The project aims for 8.xx to 13.60, but its notice says only 13.20 is supported until offsets for other firmware are found. It describes itself as very much a work in progress.",
+      "Linux is what lets Steam and PC games run on the lower-firmware consoles, so this is the one to watch if you're on 13.60."
+    ],
+    "sources": [
+      { "name": "pLinux5-NG on GitHub", "url": "https://github.com/pLabs5/pLinux5-NG" },
+      { "name": "ps5-linux loader", "url": "https://github.com/ps5-linux/ps5-linux-loader" },
+      { "name": "Held Games", "url": "https://heldgames.com/guides/ps5-homebrew-emulation-switch-ps3" }
+    ]
+  },
+  {
+    "id": "ps5x360-xpsemu",
+    "date": "2026-10-12",
+    "tag": "Emulator",
+    "title": "Xbox 360 and original Xbox games now run on jailbroken PS5",
+    "summary": "PS5X360 ports Xenia Canary, and XPSemu ports xemu. Both are early, and compatibility varies a lot.",
+    "body": [
+      "PS5X360 is an Xbox 360 emulator built on Xenia Canary, with native DualSense input, audio and RADV Vulkan graphics. It's at v0.1.0-preview. Its developer used firmware 13.60 with etaHEN, ShadowMountPlus and kstuff.",
+      "For the original Xbox there's XPSemu, a port of xemu. Windows Central reports Halo 2 and Forza running on it, and Gears of War 2 and 3 on PS5X360.",
+      "PS5X360's README warns that reaching a menu doesn't mean a game is playable. Games, BIOS files and keys aren't included."
+    ],
+    "sources": [
+      { "name": "Windows Central", "url": "https://www.windowscentral.com/gaming/xbox/xbox-360-and-og-xbox-games-are-now-running-on-ps5-thanks-to-a-new-emulator" },
+      { "name": "PS5X360 on GitHub", "url": "https://github.com/BrinooTk/PS5X360" },
+      { "name": "XPSemu on GitHub", "url": "https://github.com/ZiZc3/XPSemu" }
+    ]
+  },
+  {
+    "id": "ps3-on-ps5",
+    "date": "2026-10-12",
+    "tag": "Emulator",
+    "title": "PS3 emulation reaches the console: KB-RPCS3 and RPS5S3",
+    "summary": "An RPCS3 port is out as source code, and the PS5SX2 developer is testing disc-based PS3 builds.",
+    "body": [
+      "KB-RPCS3 is an unofficial RPCS3 port that runs as a native PS5 homebrew title. It's an alpha 0.1.0 source release with no ready-made download, so you have to build it yourself. It was tested on a PS5 Slim on 13.60 with etaHEN, kstuff lite and ShadowMountPlus.",
+      "LIMBO and WWE '12 are listed as playable. GTA IV runs at roughly 13 to 27 FPS while driving. The CPU is the bottleneck, and you need your own PS3 firmware file.",
+      "Separately, Kotaku reports that Swordpdf, who made PS5SX2, has shown RPS5S3 booting Gran Turismo 5 from a real PS3 disc. It's only in test builds on the PS5SX2 Discord so far, with no public repository."
+    ],
+    "sources": [
+      { "name": "KB-RPCS3 on GitHub", "url": "https://github.com/kamb205/KB-RPCS3" },
+      { "name": "Kotaku", "url": "https://kotaku.com/the-physical-revolution-on-jailbroken-ps5s-now-has-people-emulating-ps3-discs-2000744606" }
+    ]
+  },
+  {
+    "id": "playden-steam",
+    "date": "2026-10-12",
+    "tag": "PC & Linux",
+    "title": "Playden runs your Steam library's Windows games on 13.60",
+    "summary": "An alpha Steam client that downloads your games and runs each one through Wine for PS5. It signs in to your real Steam account.",
+    "body": [
+      "Playden talks to Steam's servers directly, downloads a game from your library and hands it to a separate PS5 app built for that game. That app runs it through prospero-win, a port of Wine, with DXVK for Direct3D 8 to 11 and Zink for OpenGL.",
+      "It's built for jailbroken 13.60 consoles with kstuff lite, ShadowMountPlus 1.7-beta5fix1 and elfldr. You also need a computer with Python 3 on the same network.",
+      "It's alpha software that reads and writes Steam Cloud saves, so a bug could overwrite a good save. Your Steam login token is stored on the console unencrypted."
+    ],
+    "sources": [
+      { "name": "Playden on GitHub", "url": "https://github.com/leolobato/playden-ps5" },
+      { "name": "prospero-win", "url": "https://github.com/mpereiraesaa/prospero-win" }
+    ]
+  },
+  {
+    "id": "psbox-cloud",
+    "date": "2026-10-12",
+    "tag": "PC & Linux",
+    "title": "PSBox brings Xbox Cloud Gaming to jailbroken PS5",
+    "summary": "A homebrew client for Microsoft's cloud gaming service, running on the console.",
+    "body": [
+      "PSBox Cloud Gaming, by RafaelNGP, adds Xbox Cloud Gaming as a way to play on a jailbroken PS5. It's not officially supported by Microsoft or Sony.",
+      "It's one of the few ways to play newer games on a console that has to stay offline from PSN to keep its jailbreak."
+    ],
+    "sources": [
+      { "name": "Lowyat.NET", "url": "https://www.lowyat.net/2026/407036/modders-have-successfully-gotten-xbox-cloud-gaming-and-windows-games-running-on-the-ps5/" },
+      { "name": "PSBox on GitHub", "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5" }
+    ]
+  },
+  {
+    "id": "nintendo-ports-wave",
+    "date": "2026-10-12",
+    "tag": "Port",
+    "title": "Mario 64, Wind Waker HD and Twilight Princess ports land on PS5",
+    "summary": "A run of native ports built on the PS5 Vulkan stack. Each one needs your own copy of the game.",
+    "body": [
+      "Developer griches has put out a string of PS5 builds of existing PC ports. Super Mario 64 uses HarbourMasters' Ghostship and first ran on a PS5 at 4K on 12 October. There's Wind Waker HD from the ZeldaWWHDRecomp project, the GameCube Wind Waker through SwitchWaker, Super Mario Sunshine, and Dusklight for Twilight Princess.",
+      "None of them include game data. Super Mario 64 checks your US or JP ROM against known hashes, and the others are built from your own dump or disc image.",
+      "Rush 2 Recompiled has also arrived as a native PS5 title using RT64. RecompStore is aiming to make installing ports like these a one-step job."
+    ],
+    "sources": [
+      { "name": "Super Mario 64 port", "url": "https://github.com/griches/PS5_Ghostship" },
+      { "name": "Wind Waker HD port", "url": "https://github.com/griches/PS5_WindWakerHD" },
+      { "name": "Dusklight port", "url": "https://github.com/griches/PS5_Dusklight" },
+      { "name": "Rush 2 Recompiled", "url": "https://github.com/Marice/rush2-ps5" }
+    ]
+  },
+  {
+    "id": "pokemon-on-ps5",
+    "date": "2026-10-11",
+    "tag": "PC & Linux",
+    "title": "Pokémon on PS5: a PokeMMO port, plus GBA and DS emulators",
+    "summary": "PokeMMO's Windows client now runs locally through Wine. The handheld Pokémon games work through the new emulators.",
+    "body": [
+      "ps5-pokemmo runs the official Windows PokeMMO client on a jailbroken PS5 through Wine, with no streaming. You download the client separately and need your own Pokémon Black or White ROM, with FireRed, Emerald, Platinum and HeartGold or SoulSilver optional.",
+      "It's experimental. Startup and 1080p display are tested, but login and full gameplay haven't been fully verified yet.",
+      "For the original handheld games, mGBA in the PS5 RetroArch port covers Game Boy to Game Boy Advance, and SilverBirch is an early Nintendo DS option."
+    ],
+    "sources": [
+      { "name": "ps5-pokemmo on GitHub", "url": "https://github.com/bizkut/ps5-pokemmo" },
+      { "name": "PS5 RetroArch", "url": "https://github.com/mihawk-99/PS5_RetroArch" },
+      { "name": "SilverBirch", "url": "https://github.com/BaZZtian/SilverBirch" }
+    ]
+  },
+  {
+    "id": "y2jb-autoloader-relapse",
+    "date": "2026-10-09",
+    "tag": "Exploit",
+    "title": "Y2JB Autoloader 1.0 uses Relapse for firmware 8.00 to 13.60",
+    "summary": "The YouTube-based autoloader now picks Relapse as its kernel exploit and launches Payload Manager by default.",
+    "body": [
+      "itsPLK's Y2JB Autoloader is a fork of Y2JB that loads a kernel exploit and then your payloads automatically. Version 1.0.0 made Relapse the preferred exploit on 8.00 to 13.60, except 9.05 and 11.40, as long as the console has a network connection. It falls back to Lapse on 10.01 and below.",
+      "Without an autoload list, it opens Payload Manager, a web dashboard for importing payloads and choosing what loads at startup. With an autoload.txt, it loads your list in order instead.",
+      "1.0.1 and 1.0.2 followed on 13 and 14 October with fixes, including firmware 7.xx support for Relapse."
+    ],
+    "sources": [
+      { "name": "Y2JB Autoloader releases", "url": "https://github.com/itsPLK/ps5-y2jb-autoloader/releases" },
+      { "name": "Payload Manager", "url": "https://github.com/itsPLK/ps5-payload-manager" }
+    ]
+  },
+  {
+    "id": "pkg-managers",
+    "date": "2026-10-09",
+    "tag": "Tool",
+    "title": "ShadowPKG and PS5 Upload make managing packages from your PC easier",
+    "summary": "A self-hosted web package manager is new, and PS5 Upload's 5.40 notes say it's tested on 13.60.",
+    "body": [
+      "ShadowPKG is a self-hosted web app that reads the .pkg files in folders you choose, lets you browse and search them, and sends them to a console over your network. It runs on Node or Docker and works from a phone browser. It doesn't supply any games.",
+      "PS5 Upload covers more ground: sending games and homebrew, mounting images, save backups and launching apps from a computer, phone or browser. Its 5.40.0 notes say it was tested on 13.60 on a standard PS5 and a PS5 Pro.",
+      "PS5 Upload also notes that fake-package installs only work up to firmware 11.60."
+    ],
+    "sources": [
+      { "name": "ShadowPKG on GitHub", "url": "https://github.com/NotSoTypicalGamer/ShadowPKG" },
+      { "name": "PS5 Upload 5.40.0", "url": "https://newreleases.io/project/github/phantomptr/ps5upload/release/v5.40.0" }
+    ]
+  },
+  {
+    "id": "cemu-azahar",
+    "date": "2026-10-07",
+    "tag": "Emulator",
+    "title": "PS5CEMU-HAR runs Wii U and 3DS games, with Breath of the Wild at 4K",
+    "summary": "One app bundles Cemu for Wii U and Azahar for 3DS, both on the PS5 port of the RADV Vulkan driver.",
+    "body": [
+      "TweakTown reports Breath of the Wild running at native 4K and 30 FPS. The author says most Wii U games tried are playable, with video, controls, sound and saves working.",
+      "3DS support through Azahar arrived in version 2.0.0 and has had little testing on real hardware. It renders at up to 10x internal resolution.",
+      "It needs etaHEN, and the app has to be on etaHEN's jailbreak list for JIT. Without it, Wii U games fall back to a much slower interpreter. You need your own dumps, plus keys from your own console for encrypted ones."
+    ],
+    "sources": [
+      { "name": "TweakTown", "url": "https://www.tweaktown.com/news/113956/the-legend-of-zelda-breath-of-the-wild-is-now-playable-in-4k-on-playstation-5-consoles/index.html" },
+      { "name": "PS5CEMU-HAR on GitHub", "url": "https://github.com/premohq/PS5CEMU-HAR" }
+    ]
+  },
+  {
+    "id": "porpoise-dolphin",
+    "date": "2026-10-04",
+    "tag": "Emulator",
+    "title": "Porpoise brings Dolphin to PS5 for GameCube and Wii",
+    "summary": "A native Dolphin-based emulator with a cover-flow library and memory card manager. Wii support is experimental.",
+    "body": [
+      "Porpoise runs Dolphin's libretro core as a native PS5 app, using Dolphin's x86-64 JIT and Vulkan through RADV. It has its own TV launcher with box art, a memory card manager and per-game settings.",
+      "It reads .iso, .rvz, .wbfs and other common formats from your own backups. Wii support is experimental, and Wii Remote emulation on the DualSense is in beta.",
+      "It needs etaHEN and kstuff, plus ShadowMountPlus or another way to register homebrew. From version 1.1 it can update itself from its settings menu."
+    ],
+    "sources": [
+      { "name": "Porpoise on GitHub", "url": "https://github.com/elripalda/Porpoise-Dolphin-Emulator-for-PS5" }
+    ]
+  },
+  {
+    "id": "omega-dashboard",
+    "date": "2026-10-03",
+    "tag": "Tool",
+    "title": "Omega offers an open-source replacement home screen",
+    "summary": "A dashboard that can take over as your home screen, with a homebrew store, music playback and system tools.",
+    "body": [
+      "Omega is an open-source dashboard for jailbroken PS5s that asks on first launch whether you want it to be your home screen. It combines installed games and homebrew on one row and adds a store of open-source homebrew.",
+      "It also has music that keeps playing during games, a phone remote on port 9095, system tools for temperatures, fans and storage, and community features like chat.",
+      "It needs a homebrew enabler such as etaHEN or OnionHEN. The README doesn't list supported firmware versions, so check before relying on it on 13.60."
+    ],
+    "sources": [
+      { "name": "Omega on GitHub", "url": "https://github.com/TheCriicom/omega-dashboard" }
+    ]
+  },
+  {
+    "id": "prosperostore",
+    "date": "2026-10-02",
+    "tag": "Store",
+    "title": "ProsperoStore puts the homebrew.page catalog on the console",
+    "summary": "A native store for browsing, installing and updating community homebrew with the controller.",
+    "body": [
+      "ProsperoStore is a native app for the homebrew.page catalog, with Apps, Games and Tools sections and a list of new and updated entries. It's an alpha, version 01.000.000.",
+      "It needs ShadowMountPlus, with 1.7beta4 recommended, and an ELF loader on port 9021. You copy its folder into /data/homebrew and it appears on the home screen.",
+      "Its author has tested installs on firmware 6.02 and 12.70. Anything else, 13.60 included, is marked experimental."
+    ],
+    "sources": [
+      { "name": "ProsperoStore on GitHub", "url": "https://github.com/blackbearreloaded/ProsperoStore" },
+      { "name": "homebrew.page", "url": "https://homebrew.page" }
+    ]
+  },
+  {
+    "id": "ps5sx2-launch",
+    "date": "2026-09-29",
+    "tag": "Emulator",
+    "title": "PS5SX2 1.00 launches, porting PCSX2 to PS5",
+    "summary": "A native PS2 emulator with up to 6x internal resolution, settings from your phone and widescreen patches.",
+    "body": [
+      "Developer Sword released PS5SX2, a port of PCSX2 that runs entirely on the PS5 and PS5 Pro. It scales internal resolution from 1x to 6x with 4K output, and has FSR and a CRT filter.",
+      "You change settings from a web page on your phone by scanning a QR code. It also supports widescreen and 60 FPS patches, save states, texture replacements and a cover-flow library.",
+      "At launch it had only been tested on a PS5 Pro on firmware 11.40. It needs kstuff, ShadowMountPlus and its own helper payload, plus your own BIOS and game files."
+    ],
+    "sources": [
+      { "name": "PC Games Hardware (German)", "url": "https://www.pcgameshardware.de/Playstation-5-Konsolen-265878/News/PS2-Emulator-PS5SX2-Jailbreak-PCSX2-1555250/" },
+      { "name": "PS5SX2 on GitHub", "url": "https://github.com/Swordpdf/PS5SX2" }
+    ]
+  },
+  {
     "id": "psn-locked-below-1410",
     "date": "2026-10-15",
     "tag": "Firmware",

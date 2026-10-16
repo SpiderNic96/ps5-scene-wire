@@ -8,8 +8,10 @@ No build step: a static `index.html`, two JSON files, and one Vercel function.
 index.html            the whole front end
 data/stories.json     written stories (newest first is fine, the page sorts by date)
 data/firmware.json    the firmware chart: coverage bars, 14.xx marks, latest version
-api/releases.js       GET /api/releases, pulls GitHub releases, cached 30 min on Vercel
-api/_sources.js       the list of tracked app repos
+api/releases.js       GET /api/releases, pulls GitHub releases, cached 1 hour on Vercel
+api/discover.js       GET /api/discover, searches GitHub for new PS5 homebrew repos, cached 1 hour
+                      (/api/discover?q=<search> runs one custom search)
+api/_sources.js       the tracked app repos, grouped by category
 ```
 
 ## Put it online
@@ -27,7 +29,7 @@ Every push to `main` redeploys.
 
 ### Optional: stop GitHub rate limits
 
-Without a token, GitHub allows 60 API calls an hour from Vercel's shared IPs, and the feed falls back to slower release feeds when that runs out. To avoid it:
+Without a token, the feed reads each repo's public release feed instead of the API (GitHub only allows 60 API calls an hour without one). That works, but pre-release flags are guessed from the tag name. With a token it uses the API for all 55 apps:
 
 1. GitHub, Settings, Developer settings, Fine-grained tokens, Generate new token. Public repositories, read-only. No extra permissions.
 2. Vercel project, Settings, Environment Variables: add `GITHUB_TOKEN` with that value, then redeploy.
@@ -48,11 +50,11 @@ Add an object to `data/stories.json`:
 }
 ```
 
-Tags with colours: `Exploit`, `Firmware`, `Emulator`, `Scene`. Each story gets a permalink at `/#<id>`.
+Tags: `Exploit`, `Firmware`, `Tool`, `Store`, `Emulator`, `PC & Linux`, `Port`, `Scene`. Each tag except `Scene` maps to a topic filter. Each story gets a permalink at `/#<id>`.
 
 ## Track another app
 
-Add a line to `api/_sources.js` with the GitHub `owner/repo`. Repos that don't exist are hidden; repos with no releases show "No releases yet".
+Add a line to `api/_sources.js` with a category (`J`, `T`, `S`, `E`, `P`, `R`) and the GitHub `owner/repo`. Repos that don't exist are hidden; repos with no releases show "No releases yet".
 
 ## Update the firmware chart
 

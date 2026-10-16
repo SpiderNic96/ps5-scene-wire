@@ -28,7 +28,11 @@
     --t-exploit: #1250C4;
     --t-firmware: #9A5300;
     --t-emulator: #0B7765;
-    --t-scene: #5E4BB0;
+    --t-scene: #586172;
+    --t-pc: #5E4BB0;
+    --t-port: #A3266B;
+    --t-store: #2F6F1F;
+    --t-tool: #7A4E2D;
     --t-release: #586172;
     --focus: #3B8CFF;
     --wide: 125;
@@ -47,7 +51,11 @@
       --t-exploit: #7DB2FF;
       --t-firmware: #F0A94B;
       --t-emulator: #4FD1B5;
-      --t-scene: #B5A6FF;
+      --t-scene: #9AA3B2;
+      --t-pc: #B5A6FF;
+      --t-port: #F28CC0;
+      --t-store: #9BD67E;
+      --t-tool: #E0A97F;
       --t-release: #9AA3B2;
       color-scheme: dark;
     }
@@ -141,7 +149,9 @@
   .main { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; padding: 26px 0 48px; }
   @media (min-width: 900px) { .main { grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; } }
 
-  .filters { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; }
+  .filters { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; }
+  .filters.cats { margin-bottom: 14px; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
+  .filters.cats button { flex: none; font-weight: 500; padding: 5px 12px; font-size: .86rem; }
   .filters button {
     font: inherit; font-size: .9rem; font-weight: 600; padding: 7px 14px; border-radius: 99px;
     border: 1px solid var(--rule); background: var(--panel); color: var(--ink); cursor: pointer;
@@ -159,11 +169,20 @@
   @media (min-width: 640px) { .day:empty { display: block; } }
   .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; font-size: .82rem; color: var(--muted); }
   .tag { font-weight: 700; }
-  .tag.Exploit { color: var(--t-exploit); }
-  .tag.Firmware { color: var(--t-firmware); }
-  .tag.Emulator { color: var(--t-emulator); }
-  .tag.Scene { color: var(--t-scene); }
-  .tag.Release { color: var(--t-release); }
+  .tag.t-exploit { color: var(--t-exploit); }
+  .tag.t-firmware { color: var(--t-firmware); }
+  .tag.t-emulator { color: var(--t-emulator); }
+  .tag.t-pc-linux { color: var(--t-pc); }
+  .tag.t-port { color: var(--t-port); }
+  .tag.t-store { color: var(--t-store); }
+  .tag.t-tool { color: var(--t-tool); }
+  .tag.t-scene { color: var(--t-scene); }
+  .tag.t-release { color: var(--t-release); }
+  .more-btn {
+    display: block; width: 100%; padding: 14px; border: 0; border-top: 1px solid var(--rule); background: none;
+    font: inherit; font-weight: 600; color: var(--link); cursor: pointer; border-radius: 0 0 14px 14px;
+  }
+  .more-btn:hover { background: var(--shell); }
   .pre { border: 1px solid var(--rule); border-radius: 5px; padding: 0 6px; font-size: .75rem; }
 
   .story h3 { margin: 4px 0 4px; font-size: 1.2rem; line-height: 1.28; font-weight: 750; font-stretch: 112%; letter-spacing: -0.005em; }
@@ -200,6 +219,27 @@
   .apps .v { grid-row: 1; grid-column: 2; text-align: right; font-size: .85rem; font-weight: 600; font-stretch: 112%; }
   .apps .when { grid-row: 2; grid-column: 2; text-align: right; color: var(--muted); font-size: .78rem; }
   .apps .none { color: var(--muted); font-weight: 400; font-stretch: 100%; }
+  .group { border-top: 1px solid var(--rule); }
+  .group:first-of-type { border-top: 0; }
+  .group > summary {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 11px 0; cursor: pointer;
+    font-weight: 700; list-style: none;
+  }
+  .group > summary::-webkit-details-marker { display: none; }
+  .group > summary::before { content: "+"; width: 1em; color: var(--muted); font-weight: 600; }
+  .group[open] > summary::before { content: "\2212"; }
+  .group > summary .gname { flex: 1; }
+  .group > summary .gmeta { color: var(--muted); font-size: .82rem; font-weight: 500; }
+  .group .apps { padding: 0 0 8px 1.3em; }
+  .side-block + .side-block { margin-top: 32px; }
+  .found { list-style: none; margin: 0; padding: 0; }
+  .found li { padding: 10px 0; border-top: 1px solid var(--rule); }
+  .found li:first-child { border-top: 0; }
+  .found a { font-weight: 650; color: var(--ink); text-decoration: none; overflow-wrap: anywhere; }
+  .found a:hover { color: var(--link); text-decoration: underline; }
+  .found .desc { margin: 2px 0 0; color: var(--muted); font-size: .85rem; overflow-wrap: anywhere; }
+  .found .fmeta { margin: 2px 0 0; color: var(--muted); font-size: .78rem; font-variant-numeric: tabular-nums; }
+  .found .badge { color: var(--t-emulator); font-weight: 700; }
 
   footer { border-top: 1px solid var(--rule); padding: 20px 0 36px; color: var(--muted); font-size: .88rem; }
   footer p { margin: 0 0 6px; max-width: 70ch; }
@@ -245,19 +285,28 @@
       <button type="button" data-filter="story" aria-pressed="false">Stories</button>
       <button type="button" data-filter="release" aria-pressed="false">App releases</button>
     </div>
+    <div class="filters cats" role="group" aria-label="Topic" id="cats"></div>
     <ol class="feed" id="feed"><li class="status">Loading headlines…</li></ol>
+    <button type="button" class="more-btn" id="more" hidden>Show more headlines</button>
   </section>
 
-  <aside aria-labelledby="apps-title">
-    <h2 id="apps-title">Tracked apps</h2>
-    <p class="sub">Latest version of each, straight from its GitHub releases.</p>
-    <ul class="apps" id="apps"><li class="status" style="padding:9px 0">Checking GitHub…</li></ul>
+  <aside>
+    <section class="side-block" aria-labelledby="apps-title">
+      <h2 id="apps-title">Tracked apps</h2>
+      <p class="sub">Latest version of each, straight from its GitHub releases.</p>
+      <div id="apps"><p class="status" style="padding:9px 0">Checking GitHub…</p></div>
+    </section>
+    <section class="side-block" aria-labelledby="found-title">
+      <h2 id="found-title">New on GitHub</h2>
+      <p class="sub">PS5 homebrew repos created in the last 30 days, found by searching GitHub. These haven't been reviewed, so read each README before running anything.</p>
+      <ul class="found" id="found"><li class="status" style="padding:9px 0">Searching GitHub…</li></ul>
+    </section>
   </aside>
 </div>
 
 <footer>
   <div class="wrap">
-    <p>Stories are short write-ups that link to their sources. App releases come straight from each project's GitHub page.</p>
+    <p>Stories are short write-ups that link to their sources. App releases come straight from each project's GitHub page, and New on GitHub is an automatic search.</p>
     <p>No piracy links are posted here. Back up games you own.</p>
   </div>
 </footer>
@@ -289,7 +338,22 @@
 
   let stories = [];
   let releases = [];
+  let trackedRepos = new Set();
   let filter = 'all';
+  let cat = 'all';
+  const PAGE = 40;
+  let shown = PAGE;
+
+  const CATS = [
+    { id: 'jailbreak', short: 'Jailbreak', name: 'Jailbreak and loaders' },
+    { id: 'tools', short: 'Tools', name: 'Managers and tools' },
+    { id: 'stores', short: 'Stores', name: 'Homebrew stores' },
+    { id: 'emulators', short: 'Emulators', name: 'Emulators' },
+    { id: 'pc', short: 'PC and Linux', name: 'PC, Linux and Steam' },
+    { id: 'ports', short: 'Ports', name: 'Recomps and ports' }
+  ];
+  const TAG_CAT = { Exploit: 'jailbreak', Firmware: 'jailbreak', Tool: 'tools', Store: 'stores', Emulator: 'emulators', 'PC & Linux': 'pc', Port: 'ports' };
+  const slug = (s) => 't-' + String(s).toLowerCase().replace(/&/g, ' ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
   // ---------- Firmware band ----------
   // 7.00–13.99 fills the left 72%, then the axis breaks and 14.xx gets its own room.
@@ -343,7 +407,7 @@
   // ---------- Feed ----------
   function storyHtml(s) {
     const src = (s.sources || []).map((x) => `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.name)}</a>`).join('');
-    return `<details id="${esc(s.id)}"><summary><div class="meta"><span class="tag ${esc(s.tag)}">${esc(s.tag)}</span></div>` +
+    return `<details id="${esc(s.id)}"><summary><div class="meta"><span class="tag ${slug(s.tag)}">${esc(s.tag)}</span></div>` +
       `<h3>${esc(s.title)}</h3><p class="summary">${esc(s.summary)}</p><span class="more">Read more</span></summary>` +
       `<div class="body">${(s.body || []).map((p) => `<p>${esc(p)}</p>`).join('')}` +
       (src ? `<p class="sources">Sources: ${src}</p>` : '') +
@@ -353,47 +417,94 @@
   function releaseHtml(r) {
     const named = r.title && r.title !== r.tag && !r.title.includes(r.tag) && r.title.length < 90 ? r.title : '';
     const notes = [named, r.notes].filter(Boolean);
-    return `<div class="meta"><span class="tag Release">Release</span>${r.prerelease ? '<span class="pre">Pre-release</span>' : ''}<span>${esc(r.repo)}</span></div>` +
+    return `<div class="meta"><span class="tag t-release">Release</span>${r.prerelease ? '<span class="pre">Pre-release</span>' : ''}<span>${esc(r.repo)}</span></div>` +
       `<h3><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.app)} <span class="ver">${esc(r.tag || r.title)}</span></a></h3>` +
       (notes.length ? `<p class="notes">${named ? `<strong>${esc(named)}.</strong> ` : ''}${esc(r.notes)}</p>` : '');
   }
 
+  function renderCats() {
+    $('#cats').innerHTML = [{ id: 'all', short: 'All topics' }, ...CATS].map((c) =>
+      `<button type="button" data-cat="${c.id}" aria-pressed="${String(c.id === cat)}">${esc(c.short)}</button>`).join('');
+  }
+
   function renderFeed() {
     const items = [
-      ...stories.map((s) => ({ kind: 'story', date: s.date, s })),
-      ...releases.map((r) => ({ kind: 'release', date: r.date, r }))
-    ].filter((x) => filter === 'all' || x.kind === filter)
+      ...stories.map((s) => ({ kind: 'story', date: s.date, cat: TAG_CAT[s.tag] || null, s })),
+      ...releases.map((r) => ({ kind: 'release', date: r.date, cat: r.cat, r }))
+    ].filter((x) => (filter === 'all' || x.kind === filter) && (cat === 'all' || x.cat === cat))
      .sort((a, b) => toDate(b.date) - toDate(a.date) || (a.kind === 'story' ? -1 : 1));
 
+    // Keep a story reached by permalink visible even past the first page.
+    const hashId = decodeURIComponent(location.hash.slice(1));
+    const hashAt = hashId ? items.findIndex((x) => x.kind === 'story' && x.s.id === hashId) : -1;
+    if (hashAt >= shown) shown = hashAt + 1;
+
     if (!items.length) {
-      $('#feed').innerHTML = `<li class="status">${filter === 'release' ? 'No app releases to show right now. Check back once the feed has loaded.' : 'No headlines yet.'}</li>`;
+      const what = filter === 'release' ? 'app releases' : filter === 'story' ? 'stories' : 'headlines';
+      $('#feed').innerHTML = `<li class="status">No ${what} in this topic yet. Pick another topic or choose All topics.</li>`;
+      $('#more').hidden = true;
       return;
     }
     let last = '';
-    $('#feed').innerHTML = items.map((x) => {
+    $('#feed').innerHTML = items.slice(0, shown).map((x) => {
       const k = dayKey(x.date);
       const day = k !== last ? dayLabel(x.date) : '';
       last = k;
       return `<li class="row ${x.kind}"><div class="day">${esc(day)}</div><div>${x.kind === 'story' ? storyHtml(x.s) : releaseHtml(x.r)}</div></li>`;
     }).join('');
+    const left = items.length - shown;
+    $('#more').hidden = left <= 0;
+    $('#more').textContent = `Show ${Math.min(PAGE, left)} more of ${left}`;
     openFromHash(false);
   }
 
+  function appRow(a) {
+    const v = a.latest
+      ? `<span class="v">${esc(a.latest.tag)}</span><span class="when">${esc(ago(a.latest.date))}</span>`
+      : `<span class="v none">${a.status === 'unavailable' ? 'Couldn’t reach' : 'No releases yet'}</span>`;
+    return `<li><a class="name" href="${esc(a.latest ? a.latest.url : a.repoUrl || a.releasesUrl)}" target="_blank" rel="noopener">${esc(a.name)}</a>${v}<span class="about">${esc(a.about)}</span></li>`;
+  }
+
   function renderApps(apps) {
-    const sorted = apps.filter((a) => a.status !== 'missing').sort((a, b) =>
-      (b.latest ? toDate(b.latest.date) : 0) - (a.latest ? toDate(a.latest.date) : 0) || a.name.localeCompare(b.name));
-    $('#apps').innerHTML = sorted.map((a) => {
-      const v = a.latest
-        ? `<span class="v">${esc(a.latest.tag)}</span><span class="when">${esc(ago(a.latest.date))}</span>`
-        : `<span class="v none">${a.status === 'unavailable' ? 'Couldn’t reach' : 'No releases yet'}</span>`;
-      return `<li><a class="name" href="${esc(a.latest ? a.latest.url : a.releasesUrl)}" target="_blank" rel="noopener">${esc(a.name)}</a>${v}<span class="about">${esc(a.about)}</span></li>`;
+    const live = apps.filter((a) => a.status !== 'missing');
+    const newest = (a) => (a.latest ? toDate(a.latest.date).getTime() : 0);
+    $('#apps').innerHTML = CATS.map((c, i) => {
+      const list = live.filter((a) => a.cat === c.id).sort((a, b) => newest(b) - newest(a) || a.name.localeCompare(b.name));
+      if (!list.length) return '';
+      return `<details class="group"${i === 0 ? ' open' : ''}><summary><span class="gname">${esc(c.name)}</span><span class="gmeta">${list.length} apps</span></summary>` +
+        `<ul class="apps">${list.map(appRow).join('')}</ul></details>`;
     }).join('');
+  }
+
+  function renderFound(d) {
+    const cutoff = Date.now() - 30 * 86400000;
+    const list = (d.repos || [])
+      .filter((r) => !r.tracked && !trackedRepos.has(r.repo.toLowerCase()) && toDate(r.createdAt).getTime() >= cutoff)
+      .slice(0, 15);
+    if (!list.length) {
+      $('#found').innerHTML = '<li class="status" style="padding:9px 0">Nothing new in the last 30 days. Check back later.</li>';
+      return;
+    }
+    $('#found').innerHTML = list.map((r) =>
+      `<li><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.repo)}</a>` +
+      `<p class="desc">${esc(r.description)}</p>` +
+      `<p class="fmeta">Created ${esc(ago(r.createdAt))}, ${r.stars} ${r.stars === 1 ? 'star' : 'stars'}${r.mentions1360 ? ', <span class="badge">mentions 13.60</span>' : ''}</p></li>`).join('');
   }
 
   // ---------- Permalinks ----------
   function openStory(id, scroll = true) {
     if (!id) return;
-    if (filter === 'release') { setFilter('all'); }
+    if (filter === 'release' || cat !== 'all') {
+      filter = 'all'; cat = 'all'; shown = PAGE;
+      document.querySelectorAll('[data-filter]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.filter === 'all')));
+      document.querySelectorAll('[data-cat]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.cat === 'all')));
+      renderFeed();
+    }
+    if (!document.getElementById(id)) {
+      // Story is past the current page: show everything up to it.
+      shown = stories.length + releases.length;
+      renderFeed();
+    }
     const el = document.getElementById(id);
     if (!el || el.tagName !== 'DETAILS') return;
     el.open = true;
@@ -426,10 +537,20 @@
 
   function setFilter(f) {
     filter = f;
-    document.querySelectorAll('.filters button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.filter === f)));
+    shown = PAGE;
+    document.querySelectorAll('[data-filter]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.filter === f)));
     renderFeed();
   }
-  document.querySelectorAll('.filters button').forEach((b) => b.addEventListener('click', () => setFilter(b.dataset.filter)));
+  function setCat(c) {
+    cat = c;
+    shown = PAGE;
+    document.querySelectorAll('[data-cat]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.cat === c)));
+    renderFeed();
+  }
+  document.querySelectorAll('[data-filter]').forEach((b) => b.addEventListener('click', () => setFilter(b.dataset.filter)));
+  renderCats();
+  $('#cats').addEventListener('click', (e) => { const b = e.target.closest('[data-cat]'); if (b) setCat(b.dataset.cat); });
+  $('#more').addEventListener('click', () => { shown += PAGE; renderFeed(); });
 
   // ---------- Load ----------
   const getJSON = (u) => fetch(u, { cache: 'no-cache' }).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); });
@@ -443,14 +564,19 @@
     $('#feed').innerHTML = '<li class="status">Stories couldn’t load. Refresh to try again.</li>';
   });
 
-  getJSON('/api/releases').then((d) => {
+  const releasesLoaded = getJSON('/api/releases').then((d) => {
     releases = d.releases || [];
+    trackedRepos = new Set((d.apps || []).map((a) => a.repo.toLowerCase()));
     renderApps(d.apps || []);
     $('#checked').textContent = 'App releases checked ' + ago(d.fetchedAt);
     renderFeed();
   }).catch(() => {
     $('#checked').textContent = 'App releases couldn’t load right now';
-    $('#apps').innerHTML = '<li class="status" style="padding:9px 0">GitHub didn’t respond. Stories are unaffected. Refresh in a few minutes.</li>';
+    $('#apps').innerHTML = '<p class="status" style="padding:9px 0">GitHub didn’t respond. Stories are unaffected. Refresh in a few minutes.</p>';
+  });
+
+  Promise.all([getJSON('/api/discover'), releasesLoaded]).then(([d]) => renderFound(d)).catch(() => {
+    $('#found').innerHTML = '<li class="status" style="padding:9px 0">GitHub search didn’t respond. Refresh in a few minutes.</li>';
   });
 })();
 </script>

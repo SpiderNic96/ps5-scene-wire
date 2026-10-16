@@ -28,7 +28,11 @@ export function defaultQueries(now = Date.now()) {
 }
 
 // Things that match "ps5" but aren't console homebrew.
-const NOISE = /dualsense|controller|stock|restock|price|bot|discord|availability|scalper|tracker for ps5 stock|remote ?play|chiaki|ps5-?(theme|wallpaper)/i;
+const NOISE = /dualsense|controller|stock|restock|price|bot\b|discord|availability|scalper|remote ?play|chiaki|wallpaper|emulator for (pc|windows|android)|on pc\b|anyps5|kyty|sharpemu|cheat|aimbot|\besp\b/i;
+// Anything that looks like a commercial-game catalogue is left out of the public list.
+const GAME_CATALOGUE = /free games|\d[\d,.]*\+?\s*(ps4 |ps5 )?games|game store|games? catalog|download manager|game library|dlcs?\b/i;
+// The repo has to look like PS5 console software.
+const PS5ISH = /ps5|playstation ?5|jailbr|homebrew|payload|etahen|kstuff|elfldr|shadowmount/i;
 
 export function shape(repo, matched) {
   const text = `${repo.name} ${repo.description || ''} ${(repo.topics || []).join(' ')}`;
@@ -43,7 +47,7 @@ export function shape(repo, matched) {
     topics: repo.topics || [],
     mentions1360: /13\.6\d?/.test(text) || matched.includes('13.60'),
     archived: !!repo.archived,
-    noise: NOISE.test(text)
+    noise: NOISE.test(text) || GAME_CATALOGUE.test(text) || !PS5ISH.test(text) || !(repo.description || '').trim()
   };
 }
 
@@ -83,7 +87,7 @@ export async function discover({ q, fetchImpl = globalThis.fetch, token = proces
   }
 
   const repos = [...found.values()]
-    .filter((r) => !r.archived && (q || !r.noise))
+    .filter((r) => !r.archived && !GAME_CATALOGUE.test(`${r.name} ${r.description}`) && (q || (!r.noise && r.stars >= 3)))
     .map((r) => ({ ...r, tracked: tracked.has(r.repo.toLowerCase()) }))
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
