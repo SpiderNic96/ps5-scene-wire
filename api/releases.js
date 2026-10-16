@@ -127,7 +127,9 @@ export async function collect({ fetchImpl = globalThis.fetch, token = process.en
 
   const releases = [];
   const apps = sources.map((src, i) => {
-    const { status, items } = results[i];
+    const { status } = results[i];
+    // GitHub lists releases by creation date, not publish date, so re-sort before picking "latest".
+    const items = [...results[i].items].sort((a, b) => new Date(b.date) - new Date(a.date));
     for (const it of items) {
       releases.push({ kind: 'release', repo: src.repo, app: src.name, ...it });
     }
