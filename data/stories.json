@@ -1,5 +1,22 @@
 [
   {
+    "id": "prospero-menu",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "ProsperoMenu: Tesla-style overlay menu for jailbroken PS5",
+    "summary": "ProsperoMenu brings a community-expandable overlay system to jailbroken PS5 consoles, drawn natively by ShellUI and accessible anywhere with L3 + R3.",
+    "body": [
+      "ProsperoMenu is a new overlay menu for jailbroken PS5 inspired by the Switch's Tesla Menu. It docks to the left edge of the screen and is drawn by the PS5's own ShellUI, so it appears over the home screen, inside apps and during gameplay. Press L3 + R3 to open it; while open the game is paused and your controller is captured by the menu. Entries are community overlays: folders in /data/ProsperoMenu/overlays/ that anyone can write in C with the SDK or as a simple menu.json file and share by copying the folder. Built-in overlays include fan control, console tools and a games launcher. ProsperoMenu also supports custom boot animations (MP4 clips played on console start) and includes ProsperoSettings for theme colours, a colour picker, overlay management and a file browser.",
+      "ProsperoMenu is tested on firmware 13.60 and requires a jailbroken PS5 with an ELF loader. It does not carry its own kstuff or ShadowMount — it finds the copies your autoloader already started. It also includes Elf-Updater to keep kstuff-lite, ShadowMountPlus and zftpd up to date from GitHub, and runs an FTP share on port 2122 for file transfers."
+    ],
+    "sources": [
+      {
+        "name": "ProsperoMenu on GitHub",
+        "url": "https://github.com/StonedModder/Prospero-Menu"
+      }
+    ]
+  },
+  {
     "id": "shadowpkg-v1056",
     "date": "2026-10-17",
     "tag": "Tool",
