@@ -1,5 +1,39 @@
 [
   {
+    "id": "prospero-themes",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "Prospero Themes: a theme manager for the PS5 home screen",
+    "summary": "Prospero Themes by Darkatek7 is a native homebrew app that lets you browse, download and apply theme packs to the PS5 home screen, with a community store and USB import.",
+    "body": [
+      "Prospero Themes is a new PS5 homebrew app (PPSA90210) by Darkatek7 that manages theme packs for the home screen. A Library tab holds your installed .p5theme packs with fullscreen previews. The Community tab connects to themes.darkatek7.com where you can browse, sort by rating or downloads, and like community-made themes. USB Import checks a drive for packs and copies them into the library. Themes can change the home-screen background (including behind system tiles like Game Library and Media Gallery), app tile backgrounds, system icons and system tile icons. The app always starts from defaults before applying a theme, so they never stack, and a Restore Defaults option in the System tab puts every original file back.",
+      "The app requires a jailbroken PS5 on firmware 13.00, ShadowMountPlus to register apps from /data/homebrew/, and an ELF loader on port 9021. Install by downloading PPSA90210.zip from the GitHub release, extracting the folder to /data/homebrew/ on the console, and letting ShadowMountPlus register it. Your library, backups and settings are stored in /data/prospero-themes/ so updating the app keeps them. A web-based theme creator at themes.darkatek7.com lets you build and publish your own packs."
+    ],
+    "sources": [
+      {
+        "name": "ProsperoThemes on GitHub",
+        "url": "https://github.com/Darkatek7/ProsperoThemes"
+      }
+    ]
+  },
+  {
+    "id": "shadowpkg-v1043",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "ShadowPKG v1.0.43: fixes console discovery on port 8888",
+    "summary": "ShadowPKG v1.0.43 adds port 8888 to the FTP probe fallback list so profiles whose port drifted can rediscover a zhttp-only console automatically.",
+    "body": [
+      "ShadowPKG v1.0.43 fixes a connectivity issue with zhttp-only consoles. When a console binds its HTTP API on port 8888, ShadowPKG's port probe could not find it because 8888 was missing from the ftpPortsOf fallback list. A profile whose saved port had drifted away from 8888 would never reconnect on its own. This update adds 8888 to the probe list so discovery self-corrects.",
+      "ShadowPKG is a self-hosted web app that reads .pkg files from folders you choose, lets you browse and search them from a phone or PC browser, and sends them to a PS5 over the network. It runs on Node or Docker. Update by pulling the latest release from GitHub."
+    ],
+    "sources": [
+      {
+        "name": "ShadowPKG v1.0.43 release",
+        "url": "https://github.com/NotSoTypicalGamer/ShadowPKG/releases/tag/v1.0.43"
+      }
+    ]
+  },
+  {
     "id": "seedee5-v120",
     "date": "2026-10-17",
     "tag": "Emulator",

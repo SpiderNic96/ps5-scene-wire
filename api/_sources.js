@@ -62,6 +62,7 @@ export const SOURCES = [
   { cat: T, repo: 'Starter-ps5/Common-FPS-for-PS5', name: 'Common-FPS', about: 'Real-time FPS overlay' },
   { cat: T, repo: 'hebiii994/ps5-solobridge', name: 'ps5-solobridge', about: 'USB audio to Focusrite Scarlett Solo' },
   { cat: T, repo: 'psksuffsmp/ps5-stream8', name: 'Stream8', about: 'Hardware H.264 streaming to browser' },
+  { cat: T, repo: 'Darkatek7/ProsperoThemes', name: 'Prospero Themes', about: 'Theme manager for the PS5 home screen' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },
