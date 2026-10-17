@@ -292,6 +292,13 @@
       (info && info.note ? `<span class="note">${esc(info.note)}</span>` : '') + '</li>';
   }
 
+  // Sections start collapsed; remember which ones the viewer opened while they switch firmware.
+  const openCats = new Set();
+  $('#dir').addEventListener('toggle', (e) => {
+    const d = e.target; if (!d.classList || !d.classList.contains('cat')) return;
+    d.open ? openCats.add(d.dataset.cat) : openCats.delete(d.dataset.cat);
+  }, true);
+
   function renderDir() {
     const hasJb = jailbreakFor(fw).length > 0;
     const html = CATS.map((c, i) => {
@@ -305,7 +312,7 @@
       // Things that explicitly name a range/tests show first among the maybes.
       maybe.sort((x, y) => (!!y.info - !!x.info) || x.a.name.localeCompare(y.a.name));
       if (!ok.length && !maybe.length) return '';
-      return `<details class="cat glass"${i < 4 || ok.length ? ' open' : ''}>` +
+      return `<details class="cat glass" data-cat="${c.id}"${openCats.has(c.id) ? ' open' : ''}>` +
         `<summary>${icon(c.id)}<span class="cname">${esc(c.name)}</span><span class="count"><b>${ok.length}</b> confirmed${maybe.length ? ` · ${maybe.length} not confirmed` : ''}</span></summary>` +
         (ok.length ? `<p class="tier ok">Confirmed on ${esc(fw)}</p><ul class="list">${ok.map((x) => row(x.a, x.info, x.vd)).join('')}</ul>`
                    : `<p class="empty">Nothing here names ${esc(fw)} yet.</p>`) +
