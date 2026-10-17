@@ -228,12 +228,22 @@ export async function collect({ fetchImpl = globalThis.fetch, token = process.en
   };
 }
 
+// Reuse a recent result in this server instance, so URLs with junk query strings
+// (which skip Vercel's cache) can't trigger fresh GitHub calls on every request.
+const MEMO_MS = 15 * 60 * 1000;
+let memo = null;
+
 export default async function handler(req, res) {
   let body;
   let code = 200;
   try {
-    body = await collect();
+    if (memo && Date.now() - memo.at < MEMO_MS) body = await memo.body;
+    else {
+      memo = { at: Date.now(), body: collect() };
+      body = await memo.body;
+    }
   } catch (err) {
+    memo = null;
     code = 502;
     body = { error: 'Release feed failed to load', detail: String(err?.message || err) };
   }

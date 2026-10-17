@@ -1,5 +1,5 @@
 // GET /api/discover            -> PS5 homebrew repos found by searching GitHub, newest first
-// GET /api/discover?q=<search> -> one custom GitHub repository search (same output shape)
+// Custom ?q= searches are not accepted from visitors, so nobody can spend the GitHub token's search quota.
 // Unauthenticated GitHub search allows 10 requests a minute, so results are cached for an hour.
 
 import { allSources } from './_catalog.js';
@@ -105,14 +105,22 @@ export async function discover({ q, fetchImpl = globalThis.fetch, token = proces
   };
 }
 
+// Reuse a recent result in this server instance, so URLs with junk query strings
+// (which skip Vercel's cache) can't trigger fresh GitHub calls on every request.
+const MEMO_MS = 15 * 60 * 1000;
+let memo = null;
+
 export default async function handler(req, res) {
-  const url = new URL(req.url || '/', 'http://localhost');
-  const q = (url.searchParams.get('q') || '').slice(0, 200).trim() || undefined;
   let body;
   let code = 200;
   try {
-    body = await discover({ q });
+    if (memo && Date.now() - memo.at < MEMO_MS) body = await memo.body;
+    else {
+      memo = { at: Date.now(), body: discover() };
+      body = await memo.body;
+    }
   } catch (err) {
+    memo = null;
     code = 502;
     body = { error: 'GitHub scan failed', detail: String(err?.message || err) };
   }

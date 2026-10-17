@@ -10,7 +10,6 @@ data/stories.json     written stories (newest first is fine, the page sorts by d
 data/firmware.json    the firmware chart: coverage bars, 14.xx marks, latest version
 api/releases.js       GET /api/releases, pulls GitHub releases, cached 1 hour on Vercel
 api/discover.js       GET /api/discover, searches GitHub for new PS5 homebrew repos, cached 1 hour
-                      (/api/discover?q=<search> runs one custom search)
 api/_sources.js       hand-picked app repos, grouped by category
 api/_catalog.js       adds every GitHub-hosted app in the ProsperoStore catalogue
                       (homebrew.page/catalog/v1.json), sorted into categories by keyword
