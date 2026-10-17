@@ -1,5 +1,73 @@
 [
   {
+    "id": "shadowpkg-v1052",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "ShadowPKG v1.0.52: drives view, CPU temp chip and zhttp installer detection",
+    "summary": "ShadowPKG v1.0.50–1.0.52 replaces the file tree with a drives view in the System dialog, shows CPU temperature beside the selected console, and recognises zhttp-based installers in diagnostics.",
+    "body": [
+      "ShadowPKG v1.0.50 reworks the System dialog to display drives instead of the raw file tree, and adds more patient temperature polling so the readout arrives reliably. Version 1.0.51 promotes the CPU temp chip to the header row beside the selected console, giving it a permanent spot without opening the System dialog. Version 1.0.52 tweaks diagnostics: a console whose DPI host is not answering but that runs zftpd's zhttp build is now correctly counted as having an installer, matching the recognition the /api/status endpoint already applies.",
+      "ShadowPKG is a self-hosted PKG manager that discovers and installs packages on jailbroken PS5 consoles over the local network. Update through your existing ShadowPKG instance or grab the release from GitHub."
+    ],
+    "sources": [
+      {
+        "name": "ShadowPKG v1.0.52 release",
+        "url": "https://github.com/NotSoTypicalGamer/ShadowPKG/releases/tag/v1.0.52"
+      }
+    ]
+  },
+  {
+    "id": "prospero-themes-v01000005",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "Prospero Themes 01.000.005: FW 13.40+ fix and app-background placement choice",
+    "summary": "Prospero Themes 01.000.004–005 fix the theme helper on firmware 13.40, 13.42 and 13.60, and let you choose whether an app-tile background applies to all apps or only those without their own image.",
+    "body": [
+      "Version 01.000.004 fixes a critical bug that prevented the theme helper from starting on firmware 13.40 and later. The startup code inherited from SharpProspero was hard-coded to the 13.00 kernel offset for the process list; on 13.40, 13.42 and 13.60 it silently failed. The fix has been submitted upstream as SvenGDK/SharpProspero#6. Version 01.000.005 adds a placement prompt when applying a theme that includes an app-tile background: press X to apply the background only to apps without their own image, or Triangle to apply it to every app tile. Your choice is saved as the background scope on the System tab.",
+      "Install or update by extracting PPSA90210.zip and copying the PPSA90210 folder to /data/homebrew/ on the console. ShadowMountPlus registers it automatically. Your library, backups and settings in /data/prospero-themes/ are preserved. Requires a jailbroken PS5 and an ELF loader on port 9021. The FW 13.40+ fix is not yet hardware-verified — report results in the GitHub issue."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Themes 01.000.005 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.005"
+      }
+    ]
+  },
+  {
+    "id": "swanstation-ps5-141",
+    "date": "2026-10-17",
+    "tag": "Emulator",
+    "title": "SwanStationPS5 1.4.1: NFS timeout tuning, reconnect retry and Nostalgia mode",
+    "summary": "SwanStationPS5 1.4.1 adds a configurable NFS timeout, automatic reconnect on read failures, NFS share setup from the settings web page, and a new Nostalgia mode that silences all system overlays during gameplay.",
+    "body": [
+      "SwanStationPS5 1.4.1 brings several NFS improvements: a new NFS timeout setting (5–30 seconds, default 15) replaces the old fixed 5-second limit, and a failed or stalled read is now retried on a fresh connection — the game pauses while reconnecting and a notice appears. NFS shares can also be configured from the settings web page. Text fields throughout the app now support up to 511 characters with scrolling and L1/R1 cursor movement. The headline addition is Nostalgia mode (Screen > Picture, off by default): while enabled, the emulator suppresses all sounds, trophies, notices and progress cards during gameplay, leaving only the game itself.",
+      "SwanStationPS5 is a Vulkan-based PS1 emulator for jailbroken PS5 consoles with RetroAchievements support. Update by downloading the latest release from GitHub and copying the app folder to /data/homebrew/ on the console."
+    ],
+    "sources": [
+      {
+        "name": "SwanStationPS5 1.4.1 release",
+        "url": "https://github.com/darkxex/SwanStationPS5/releases/tag/1.4.1"
+      }
+    ]
+  },
+  {
+    "id": "seedee5-v121",
+    "date": "2026-10-17",
+    "tag": "Emulator",
+    "title": "Seedee5 v1.21: new logo and safer download redirects",
+    "summary": "Seedee5 v1.21 gives the CD-i emulator a new S5 app icon and tightens download security by restricting redirect targets to trusted domains.",
+    "body": [
+      "Seedee5 v1.21 introduces a new S5 logo that appears on the PS5 home screen, at the top left of the game wheel and on the project page. The other change is a security improvement: when downloading cover art or game information, Seedee5 now only follows HTTP redirects within the same site or to Wikipedia, GitHub and libretro. Redirects to any other address — including devices on your home network — are blocked, preventing potential abuse of open-redirect URLs in metadata sources.",
+      "Seedee5 is a native Philips CD-i emulator for jailbroken PS5 consoles (PPSA99142). Update by downloading Seedee5-1.21.zip, extracting the PPSA99142 folder and copying it over FTP to /data/homebrew/ on your PS5. Do not delete the old folder first — your saves and settings are preserved."
+    ],
+    "sources": [
+      {
+        "name": "Seedee5 v1.21 release",
+        "url": "https://github.com/mortaljinx/Seedee5/releases/tag/v1.21"
+      }
+    ]
+  },
+  {
     "id": "prosperostore-v1000080",
     "date": "2026-10-17",
     "tag": "Store",
