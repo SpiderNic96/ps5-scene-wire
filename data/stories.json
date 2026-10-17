@@ -1,5 +1,39 @@
 [
   {
+    "id": "007-first-light-online",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "007 First Light online on jailbroken PS5, from the same developer as the Hitman revival",
+    "summary": "A payload patches 007 First Light to talk to a local backend server instead of IOI's, restoring TacSim escalations, leaderboards and online unlocks on jailbroken consoles.",
+    "body": [
+      "theghostonline, who recently brought HITMAN World of Assassination online on jailbroken PS5, has done the same for 007 First Light. The project works the same way: a small ELF payload patches the running game in memory so it connects to a backend server on your local network instead of the official IOI servers. TacSim menus, escalations with their tiers, the Intel shop, challenges and leaderboards all load through the self-hosted backend. Finishing TacSim missions awards XP, Intel rewards and tier unlocks, and your scores appear on the leaderboard.",
+      "The payload requires a jailbroken PS5 that loads payloads through etaHEN (tested on firmware 13.60) and game version 01.018.000 — the disc version stays offline, the online features only activate from the update onward. The backend runs on Windows, macOS or Linux on the same network. The project appeared on 16 October with five stars and is licensed under AGPL-3.0."
+    ],
+    "sources": [
+      {
+        "name": "007-First-Light-PS5 on GitHub",
+        "url": "https://github.com/theghostonline/007-First-Light-PS5"
+      }
+    ]
+  },
+  {
+    "id": "jobeeslair-download-manager",
+    "date": "2026-10-17",
+    "tag": "Store",
+    "title": "Jobee’sLair: an independent homebrew download manager with its own catalog feeds",
+    "summary": "A content-neutral download manager that pulls from user-configured feeds and installs homebrew directly to the console, separate from ProsperoStore.",
+    "body": [
+      "Jobee’sLair by JVK3R is an open-source homebrew download manager for the PS5 that takes a different approach from ProsperoStore. Rather than shipping with a fixed catalog, it lets you point it at your own feeds — the project includes a feed specification so anyone can publish a catalog — and it downloads content directly to the console. The app runs as a native homebrew title (PPSA99058) and reached version 0.2.3 within a day of appearing on GitHub.",
+      "The developer describes it as content-neutral: the app itself doesn’t host or distribute any copyrighted content and its README carries a clear warning that users are responsible for what they download. Written in C++, the project picked up eighteen stars and a fork in its first day. It sits alongside ProsperoStore and RecompStore as a third option for managing homebrew installs on the console."
+    ],
+    "sources": [
+      {
+        "name": "Jobee’sLair on GitHub",
+        "url": "https://github.com/JVK3R/JobeesLair"
+      }
+    ]
+  },
+  {
     "id": "hitman-ps5-online",
     "date": "2026-10-17",
     "tag": "Tool",
