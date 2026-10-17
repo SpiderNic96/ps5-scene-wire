@@ -201,6 +201,7 @@
   <div class="wrap">
     <p><b>Confirmed</b> means the developer's README names a supported range that includes your firmware, or says it was tested on it. <b>Not confirmed</b> means the README doesn't name a limit, or it was only tested on other firmware. It may well work, so read the README first.</p>
     <p>Every link goes to the project's own GitHub release or repo. No piracy links. Back up games you own.</p>
+    <p id="checked-on"></p>
   </div>
 </footer>
 
@@ -388,6 +389,7 @@
 
   getJSON('/data/compat.json').then((c) => {
     C = c;
+    if (C.updated) $('#checked-on').textContent = `Compatibility info last updated ${C.updated}. App versions come live from GitHub.`;
     const fromHash = decodeURIComponent(location.hash.slice(1));
     const start = C.firmwares.includes(fromHash) ? fromHash : '13.60';
     apps = [];

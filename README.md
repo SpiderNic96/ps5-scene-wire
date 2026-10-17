@@ -8,6 +8,9 @@ No build step: a static `index.html`, two JSON files, and one Vercel function.
 index.html            the whole front end
 data/stories.json     written stories (newest first is fine, the page sorts by date)
 data/firmware.json    the firmware chart: coverage bars, 14.xx marks, latest version
+firmware.html         /firmware, the firmware directory: pick a firmware, see what runs on it
+data/compat.json      firmware compatibility for /firmware (entry points + per-app range/tested/only/needs)
+scripts/compat-check.mjs  validates compat.json; --missing lists tracked apps not reviewed yet
 api/releases.js       GET /api/releases, pulls GitHub releases, cached 1 hour on Vercel
 api/discover.js       GET /api/discover, searches GitHub for new PS5 homebrew repos, cached 1 hour
 api/_sources.js       hand-picked app repos, grouped by category
@@ -60,3 +63,15 @@ Anything added to the ProsperoStore catalogue shows up on its own within an hour
 ## Update the firmware chart
 
 Edit `data/firmware.json`. `coverage` entries with `from`/`to` draw a bar, entries with `versions` draw dots. `marks` are the vertical lines for 14.xx. Change `latest` when Sony ships a new firmware.
+
+## Firmware directory
+
+`/firmware` reads `data/compat.json` and the live app list from `/api/releases`. Only record what a project's README or release notes say:
+
+- `range: ["FROM", "TO"]` the developer states a supported range
+- `tested: [...]` firmwares it was actually run on
+- `only: [...]` hard-locked to these firmwares
+- `any: true` the developer says it isn't tied to a firmware
+- `needs: [...]`, `note: "..."` prerequisites and one-line caveats
+
+Apps whose README names no PS5 firmware go in `unstated` and show as not confirmed. Run `node scripts/compat-check.mjs` before pushing; it exits with an error if the file is broken.
