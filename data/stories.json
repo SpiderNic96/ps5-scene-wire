@@ -1,5 +1,22 @@
 [
   {
+    "id": "prospero-themes-v01000006",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "Prospero Themes 01.000.006: full UI redesign with glass panels and dialog prompts",
+    "summary": "Prospero Themes 01.000.006 redesigns every screen with antialiased controls, glass-panel backgrounds, readable cards and dialog-based apply and restore prompts.",
+    "body": [
+      "Prospero Themes 01.000.006 is a major visual overhaul. Buttons, badges and symbols are now antialiased, thumbnails are rounded and sharp, and every screen uses glass panels over a blurred background with a consistent focus ring and type scale. The header spaces tabs evenly with L1/R1 indicators and shows a spinner while the app works. The Library displays larger titles and descriptions with a \"what it changes\" line, an Applied badge on the active theme and a smoothly scrolling card row. The Details view fixes the old overlapping title and replaces raw file paths with a grouped list of what the theme changes (Background, App background, Icons, Tile icons and more). Apply and Restore now ask in a dialog with D-pad selection, X to confirm and Circle to cancel; themes with an app background prompt whether to apply it to apps without their own image or to all tiles. The Community tab gets readable cards with a sort control, scrolling grid and heart icons for liked themes. The System tab is reorganised into a PS5-style settings list.",
+      "Prospero Themes requires a jailbroken PS5 with an ELF loader on port 9021 (elfldr). Update by extracting PPSA90210.zip and copying the PPSA90210 folder to /data/homebrew/ on the console; ShadowMountPlus registers it. Your library, backups and settings in /data/prospero-themes/ are preserved. Tested on firmware 13.00 at 60 fps; the theme-helper fix for 13.40 and later from 01.000.004 is included."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Themes 01.000.006 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.006"
+      }
+    ]
+  },
+  {
     "id": "prospero-menu",
     "date": "2026-10-17",
     "tag": "Tool",
