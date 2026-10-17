@@ -1,5 +1,43 @@
 [
   {
+    "id": "prosperostore-v1000080",
+    "date": "2026-10-17",
+    "tag": "Store",
+    "title": "ProsperoStore v1.000.080: catalog now sorted into categories",
+    "summary": "ProsperoStore v1.000.080 adds eleven browsable categories to the app catalog, splitting apps across shelves like Console game ports, Emulators, Music & audio and more.",
+    "body": [
+      "ProsperoStore v1.000.080 introduces category browsing to the homebrew app catalog. Every listed app is now tagged with one of eleven categories: Console game ports, PC game ports, Homebrew games, Emulators, Game streaming, Video & TV, Music & audio, AI, Utilities, Tools & tests and Showcases. The Discover page shows a shelf per category in place of the old Apps, Games and Tools shelves, and inside each section you can press L2/R2 to step through the categories it holds. A separate \"New in the catalog\" shelf highlights apps listed in the last thirty days, while \"Recently updated\" now only flags apps whose developer has published a newer release after listing.",
+      "Update from inside the store when prompted on launch, or install manually by unzipping PPSA99000.zip and replacing the PPSA99000 folder on the console. If the console reports error CE-107750-0 after updating, consult the Install section in the project README. Requires a jailbroken PS5 with ShadowMountPlus. This is still an alpha release — report issues on GitHub."
+    ],
+    "sources": [
+      {
+        "name": "ProsperoStore v1.000.080 release",
+        "url": "https://github.com/blackbearreloaded/ProsperoStore/releases/tag/v1.000.080"
+      }
+    ]
+  },
+  {
+    "id": "prospero-themes-v01000003",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "Prospero Themes 01.000.003: multi-firmware support and firmware reports",
+    "summary": "Prospero Themes 01.000.002–003 remove the firmware 13.00 restriction, add safe per-file validation before writing, and generate a firmware report for easier debugging on untested firmwares.",
+    "body": [
+      "Prospero Themes 01.000.002 drops the hard dependency on firmware 13.00. Before writing any file, the app now backs up and compares every file a theme replaces against the console's own copy — checking texture size, format and image dimensions. Files that do not match are skipped and listed, never written; icons the console does not have are also skipped. When a system update replaces backed-up files, the app notices and adopts the new copies as defaults (old backups move to /data/prospero-themes/backup/replaced/), so \"Restore defaults\" never puts an outdated firmware file back. The System tab now shows the running firmware version.",
+      "Release 01.000.003 follows up with a firmware report that works even when the theme helper fails to start: the System tab's Options still saves /data/prospero-themes/reports/firmware-<version>.json, marking unreadable files rather than omitting them, so you can attach the report to an issue for Darkatek7. Install or update by extracting PPSA90210.zip to /data/homebrew/ on the console. Requires ShadowMountPlus and an ELF loader on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Themes 01.000.002 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.002"
+      },
+      {
+        "name": "Prospero Themes 01.000.003 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.003"
+      }
+    ]
+  },
+  {
     "id": "prospero-themes-v01000001",
     "date": "2026-10-17",
     "tag": "Tool",
