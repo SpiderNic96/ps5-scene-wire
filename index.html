@@ -437,7 +437,8 @@
       ...stories.map((s) => ({ kind: 'story', date: s.date, cat: TAG_CAT[s.tag] || null, s })),
       ...releases.map((r) => ({ kind: 'release', date: r.date, cat: r.cat, r }))
     ].filter((x) => (filter === 'all' || x.kind === filter) && (cat === 'all' || x.cat === cat))
-     .sort((a, b) => toDate(b.date) - toDate(a.date) || (a.kind === 'story' ? -1 : 1));
+     // Same-date ties: stories before releases, otherwise keep file order (newest stories sit at the top of stories.json).
+     .sort((a, b) => toDate(b.date) - toDate(a.date) || (a.kind === b.kind ? 0 : a.kind === 'story' ? -1 : 1));
 
     // Keep a story reached by permalink visible even past the first page.
     const hashId = decodeURIComponent(location.hash.slice(1));
