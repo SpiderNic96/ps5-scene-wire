@@ -109,15 +109,34 @@
   .dir { display: grid; gap: 12px; padding-bottom: 18px; }
   @media (min-width: 980px) { .dir { grid-template-columns: 1fr 1fr; align-items: start; } }
   .cat { padding: 6px 18px 10px; }
-  .cat > summary { display: flex; align-items: center; gap: 10px; padding: 12px 0; cursor: pointer; list-style: none; font-weight: 600; }
-  .cat > summary::-webkit-details-marker { display: none; }
-  .cat > summary::before { content: ""; width: 8px; height: 8px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(-45deg); transition: transform .2s; margin: 0 4px 0 2px; }
-  .cat[open] > summary::before { transform: rotate(45deg); }
-  .cat svg { width: 22px; height: 22px; flex: none; }
-  .cat .cname { flex: 1; }
-  .cat .count { color: var(--dim); font-size: .8rem; font-weight: 500; font-variant-numeric: tabular-nums; }
-  .cat .count b { color: var(--ok); font-weight: 700; }
-  @media (max-width: 560px) { .cat > summary { flex-wrap: wrap; } .cat .count { flex-basis: 100%; padding-left: 50px; } }
+  .cat-head { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; margin: 0; padding: 12px 0 6px; font-size: 1.05rem; font-weight: 600; }
+  @media (max-width: 560px) { .cat-head .count { flex-basis: 100%; padding-left: 32px; } }
+  .cat-head svg { width: 22px; height: 22px; flex: none; }
+  .cat-head .cname { flex: 1; }
+  .cat-head .count { color: var(--dim); font-size: .8rem; font-weight: 500; font-variant-numeric: tabular-nums; }
+  .cat-head .count b { color: var(--ok); font-weight: 700; }
+  .dir.one { grid-template-columns: minmax(0, 1fr) !important; }
+
+  /* XMB category row, same as the homepage */
+  .xmb {
+    display: flex; gap: 4px; margin: 0 -16px 8px; padding: 10px 16px 12px; overflow-x: auto;
+    scroll-snap-type: x proximity; scroll-padding-inline: 16px; scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent);
+  }
+  .xmb::-webkit-scrollbar { display: none; }
+  @media (min-width: 900px) { .xmb { margin: 0 0 10px; padding: 10px 0 12px; -webkit-mask-image: none; mask-image: none; flex-wrap: wrap; } }
+  .xmb button {
+    flex: none; scroll-snap-align: start; display: flex; flex-direction: column; align-items: center; gap: 6px;
+    min-width: 78px; padding: 10px 8px 8px; border-radius: 16px; border: 1px solid transparent;
+    background: none; color: var(--muted); font: inherit; font-size: .74rem; font-weight: 500; cursor: pointer;
+    transition: color .2s, background .2s, border-color .2s, transform .2s;
+  }
+  .xmb svg { width: 28px; height: 28px; transition: transform .25s cubic-bezier(.2,.8,.2,1), filter .25s; }
+  .xmb button:hover { color: var(--ink); background: var(--glass); }
+  .xmb button[aria-pressed="true"] { color: var(--ink); background: var(--glass-2); border-color: rgba(255,255,255,.35); font-weight: 600; }
+  .xmb button[aria-pressed="true"] svg { transform: scale(1.18); filter: drop-shadow(0 0 8px rgba(255,255,255,.7)); }
+  .xmb .n { font-size: .68rem; font-weight: 700; color: var(--ok); font-variant-numeric: tabular-nums; margin-top: -3px; }
+  .xmb .n.zero { color: var(--dim); }
   .tier { margin: 6px 0 2px; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
   .tier.ok { color: var(--ok); }
   .tier.maybe { color: var(--warn); }
@@ -172,6 +191,7 @@
     <p class="chips-legend"><span><i style="background:var(--led)"></i>Public jailbreak tracked</span><span><i style="background:var(--stop)"></i>None tracked</span></p>
   </section>
 
+  <div class="xmb" role="group" aria-label="Category" id="cats"></div>
   <div class="dir" id="dir"></div>
 
   <section class="verdict glass" id="verdict" aria-live="polite"><p class="status">Loading the directory…</p></section>
@@ -192,15 +212,16 @@
   const inRange = (fw, r) => r && n(fw) >= n(r[0]) && n(fw) <= n(r[1]);
 
   const CATS = [
-    { id: 'jailbreak', name: 'Jailbreak and loaders' },
-    { id: 'tools', name: 'Apps and tools' },
-    { id: 'stores', name: 'Homebrew stores' },
-    { id: 'emulators', name: 'Emulators' },
-    { id: 'ports', name: 'Recomps, ports and games' },
-    { id: 'media', name: 'Media and streaming' },
-    { id: 'pc', name: 'PC, Linux and Steam' }
+    { id: 'jailbreak', short: 'Jailbreak', name: 'Jailbreak and loaders' },
+    { id: 'tools', short: 'Apps and tools', name: 'Apps and tools' },
+    { id: 'stores', short: 'Stores', name: 'Homebrew stores' },
+    { id: 'emulators', short: 'Emulators', name: 'Emulators' },
+    { id: 'ports', short: 'Recomps and ports', name: 'Recomps, ports and games' },
+    { id: 'media', short: 'Media', name: 'Media and streaming' },
+    { id: 'pc', short: 'PC and Linux', name: 'PC, Linux and Steam' }
   ];
   const ICONS = {
+    all: '<path d="M4 11.5 12 5l8 6.5V20a1 1 0 0 1-1 1h-4.5v-6h-5v6H5a1 1 0 0 1-1-1z"/>',
     jailbreak: '<rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 6.8-1.2"/><circle cx="12" cy="15.5" r="1.4"/>',
     tools: '<path d="M14.7 6.3a4 4 0 0 0-5.2 5.2L4.5 16.5a1.8 1.8 0 0 0 2.5 2.5l5-5a4 4 0 0 0 5.2-5.2l-2.6 2.6-2.3-.6-.6-2.3z"/>',
     stores: '<path d="M5 8h14l-1.2 11.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/>',
@@ -292,16 +313,16 @@
       (info && info.note ? `<span class="note">${esc(info.note)}</span>` : '') + '</li>';
   }
 
-  // Sections start collapsed; remember which ones the viewer opened while they switch firmware.
-  const openCats = new Set();
-  $('#dir').addEventListener('toggle', (e) => {
-    const d = e.target; if (!d.classList || !d.classList.contains('cat')) return;
-    d.open ? openCats.add(d.dataset.cat) : openCats.delete(d.dataset.cat);
-  }, true);
+  // Which XMB category is selected; kept while the viewer switches firmware.
+  let cat = 'jailbreak';
+  $('#cats').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-cat]'); if (!b) return;
+    cat = b.dataset.cat; renderDir();
+  });
 
-  function renderDir() {
+  function groups() {
     const hasJb = jailbreakFor(fw).length > 0;
-    const html = CATS.map((c, i) => {
+    return CATS.map((c) => {
       const list = apps.filter((a) => a.cat === c.id).map((a) => {
         const info = infoFor(a.repo);
         return { a, info, vd: verdict(info, fw) };
@@ -309,17 +330,40 @@
       const ok = list.filter((x) => x.vd.tier === 'ok');
       // With no jailbreak, "might work" is meaningless, so only list confirmed entries.
       const maybe = hasJb ? list.filter((x) => x.vd.tier === 'maybe') : [];
-      // Things that explicitly name a range/tests show first among the maybes.
+      // Things that name a range or tests show first among the maybes.
       maybe.sort((x, y) => (!!y.info - !!x.info) || x.a.name.localeCompare(y.a.name));
-      if (!ok.length && !maybe.length) return '';
-      return `<details class="cat glass" data-cat="${c.id}"${openCats.has(c.id) ? ' open' : ''}>` +
-        `<summary>${icon(c.id)}<span class="cname">${esc(c.name)}</span><span class="count"><b>${ok.length}</b> confirmed${maybe.length ? ` · ${maybe.length} not confirmed` : ''}</span></summary>` +
-        (ok.length ? `<p class="tier ok">Confirmed on ${esc(fw)}</p><ul class="list">${ok.map((x) => row(x.a, x.info, x.vd)).join('')}</ul>`
-                   : `<p class="empty">Nothing here names ${esc(fw)} yet.</p>`) +
-        (maybe.length ? `<details class="more-maybe"${ok.length ? '' : ' open'}><summary>${maybe.length} not confirmed for ${esc(fw)}</summary><ul class="list">${maybe.map((x) => row(x.a, x.info, x.vd)).join('')}</ul></details>` : '') +
-        '</details>';
+      return { c, ok, maybe };
+    });
+  }
+
+  function panel(g, head) {
+    const { c, ok, maybe } = g;
+    return `<section class="cat glass">` +
+      (head ? `<h3 class="cat-head">${icon(c.id)}<span class="cname">${esc(c.name)}</span><span class="count"><b>${ok.length}</b> confirmed${maybe.length ? ` · ${maybe.length} not confirmed` : ''}</span></h3>` : '') +
+      (ok.length ? `<p class="tier ok">Confirmed on ${esc(fw)}</p><ul class="list">${ok.map((x) => row(x.a, x.info, x.vd)).join('')}</ul>`
+                 : `<p class="empty">Nothing in ${esc(c.name.toLowerCase())} names ${esc(fw)} yet.</p>`) +
+      (maybe.length ? `<details class="more-maybe"${ok.length ? '' : ' open'}><summary>${maybe.length} not confirmed for ${esc(fw)}</summary><ul class="list">${maybe.map((x) => row(x.a, x.info, x.vd)).join('')}</ul></details>` : '') +
+      '</section>';
+  }
+
+  function renderDir() {
+    const gs = groups();
+    const total = gs.reduce((t, g) => t + g.ok.length, 0);
+    $('#cats').innerHTML = [{ id: 'all', short: 'All topics' }, ...CATS].map((c) => {
+      const k = c.id === 'all' ? total : gs.find((g) => g.c.id === c.id).ok.length;
+      return `<button type="button" data-cat="${c.id}" aria-pressed="${c.id === cat}">${icon(c.id)}<span>${esc(c.short)}</span>` +
+        `<span class="n${k ? '' : ' zero'}" aria-label="${k} confirmed">${k} ✓</span></button>`;
     }).join('');
-    $('#dir').innerHTML = html || `<p class="status glass">Nothing tracked names ${esc(fw)} yet.</p>`;
+    $('#cats').hidden = false;
+    const dir = $('#dir');
+    if (cat === 'all') {
+      const shown = gs.filter((g) => g.ok.length || g.maybe.length);
+      dir.classList.remove('one');
+      dir.innerHTML = shown.length ? shown.map((g) => panel(g, true)).join('') : `<p class="status glass">Nothing tracked names ${esc(fw)} yet.</p>`;
+    } else {
+      dir.classList.add('one');
+      dir.innerHTML = panel(gs.find((g) => g.c.id === cat), true);
+    }
   }
 
   function setFw(v, push = true) {
@@ -348,11 +392,13 @@
     const start = C.firmwares.includes(fromHash) ? fromHash : '13.60';
     apps = [];
     setFw(start, false);
+    $('#cats').hidden = true;
     $('#dir').innerHTML = '<p class="status glass">Loading tracked apps from GitHub…</p>';
     return getJSON('/api/releases').then((d) => {
       apps = (d.apps || []).filter((a) => a.status !== 'missing');
       renderDir();
     }).catch(() => {
+      $('#cats').hidden = true;
       $('#dir').innerHTML = '<p class="status glass">Tracked apps couldn’t load from GitHub right now. The jailbreak list above still applies. Refresh in a few minutes.</p>';
     });
   }).catch(() => {
