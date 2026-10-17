@@ -60,6 +60,7 @@ export const SOURCES = [
   { cat: T, repo: 'knutwurst/ps5-patchdl', name: 'PatchDL', about: 'Download official game updates' },
   { cat: T, repo: 'gasb07/ps4mount', name: 'ps4mount', about: 'Run PS4 games from USB' },
   { cat: T, repo: 'Starter-ps5/Common-FPS-for-PS5', name: 'Common-FPS', about: 'Real-time FPS overlay' },
+  { cat: T, repo: 'hebiii994/ps5-solobridge', name: 'ps5-solobridge', about: 'USB audio to Focusrite Scarlett Solo' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },
@@ -72,6 +73,7 @@ export const SOURCES = [
   { cat: E, repo: 'blackbearreloaded/ProsperoEden', name: 'ProsperoEden', about: 'Switch, based on Eden' },
   { cat: E, repo: 'elripalda/Porpoise-Dolphin-Emulator-for-PS5', name: 'Porpoise', about: 'GameCube and Wii, based on Dolphin' },
   { cat: E, repo: 'premohq/PS5CEMU-HAR', name: 'PS5CEMU-HAR', about: 'Wii U and 3DS, Cemu and Azahar' },
+  { cat: E, repo: 'mortaljinx/Seedee5', name: 'Seedee5', about: 'Philips CD-i, based on MAME SAME_CDI' },
   { cat: E, repo: 'BrinooTk/PS5X360', name: 'PS5X360', about: 'Xbox 360, based on Xenia' },
   { cat: E, repo: 'ZiZc3/XPSemu', name: 'XPSemu', about: 'Original Xbox, based on xemu' },
   { cat: E, repo: 'mihawk-99/PS5_RetroArch', name: 'RetroArch', about: 'Multi-system, includes GBA' },

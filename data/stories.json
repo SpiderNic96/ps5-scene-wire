@@ -1,5 +1,73 @@
 [
   {
+    "id": "seedee5",
+    "date": "2026-10-17",
+    "tag": "Emulator",
+    "title": "Seedee5: Philips CD-i emulator for PS5",
+    "summary": "Seedee5 brings the SAME_CDI core (based on MAME) to the PS5 as a native homebrew title, with a cover-wheel library, game info cards, NAS support and picture filters for FMV games.",
+    "body": [
+      "Seedee5 by mortaljinx is a native PS5 homebrew emulator for the Philips CD-i, built on the SAME_CDI core from MAME. It features a cover-wheel game browser with box art sorted A–Z, game info cards with review scores and playtime, and support for games stored on the console, a USB drive, or a NAS over NFS. Supported formats include .chd, .cue/.bin, .iso, and .7z archives. Games on a NAS are copied to the console when launched.",
+      "No games, BIOS files or keys are included — you need your own CD-i library. The emulator also includes picture filters designed for the CD-i’s full-motion-video titles. A jailbroken PS5 running homebrew is required."
+    ],
+    "sources": [
+      {
+        "name": "Seedee5 on GitHub",
+        "url": "https://github.com/mortaljinx/Seedee5"
+      }
+    ]
+  },
+  {
+    "id": "machetesvg-v130",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "MacheteSVG v1.3.0: native kernel SPRX loader and pre-format save injection",
+    "summary": "MacheteSVG v1.3.0 fixes PS5 save restoration after a console format, adds a native kernel SPRX loader, and resolves PS4 backwards-compatible save loading.",
+    "body": [
+      "MacheteSVG v1.3.0 (Build #55) resolves key edge cases in save management on real PS5 hardware running firmware 12.40. A SAMU key-decryption fix removes a false-negative check that was discarding valid AES PFS keys for PS5 sdimg containers, and the console’s OpenPSID is now retrieved directly from libkernel. The new native kernel SPRX loader uses sceKernelLoadStartModule and sceKernelDlsym directly from libkernel after privilege elevation, bypassing sandbox dlopen restrictions.",
+      "This release also adds PS5 pre-format save dummy injection, letting you restore backups that were created before the console was formatted. PS4 backwards-compatible saves now load inside games without triggering an error. Requires a jailbroken PS5 with homebrew support."
+    ],
+    "sources": [
+      {
+        "name": "MacheteSVG v1.3.0 release",
+        "url": "https://github.com/VenezuelanBiggie24/MacheteSVG-PS5-Save-Manager/releases/tag/v1.3.0"
+      }
+    ]
+  },
+  {
+    "id": "patchdl-v021",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "PatchDL v0.2.1: clear download failure messages and sideloaded app protection",
+    "summary": "PatchDL v0.2.1 shows plain-language reasons when a download fails and leaves sideloaded apps alone by default.",
+    "body": [
+      "PatchDL v0.2.1 improves error handling when game update downloads fail. The game card now shows exactly why a download could not start — server not found, connection failed, or a Sony server error — alongside a Details link that runs a connection check and produces a copyable report for GitHub issues. On the PS5 itself, a QR code lets you scan and copy the report on your phone.",
+      "The update also adds sideloaded app detection. Apps that are Sony-signed but installed outside the Store are now marked as Sideloaded with updates switched off by default, so Update All leaves them untouched. You can still enable updates for individual sideloaded apps if you want the newer version. Runs on firmware 1.00 to 13.60."
+    ],
+    "sources": [
+      {
+        "name": "PatchDL v0.2.1 release",
+        "url": "https://github.com/knutwurst/ps5-patchdl/releases/tag/v0.2.1"
+      }
+    ]
+  },
+  {
+    "id": "ps5-solobridge",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "ps5-solobridge: route PS5 audio to a Focusrite Scarlett Solo over USB",
+    "summary": "ps5-solobridge is a resident payload that sends the PS5’s game and system audio to a Focusrite Scarlett Solo 3rd-gen USB audio interface, bypassing the console’s UAC1-only restriction.",
+    "body": [
+      "ps5-solobridge by hebiii994 is a resident payload for jailbroken PS5 that routes both game and system audio to a Focusrite Scarlett Solo 3rd-gen connected over USB. The PS5 normally only accepts USB Audio Class 1 devices, but the Scarlett Solo is UAC2-only, so the console ignores it. This payload drives the Solo directly through FreeBSD’s /dev/ugen interface and captures the console mix from the system capture service, adding roughly 16–40 ms of latency.",
+      "The payload is resident, surviving unplugs and game switches. Audio keeps playing on HDMI simultaneously. A TCP control port provides status and stop commands. Tested on firmware 13.60 with a Scarlett Solo 3rd gen. Install by sending solobridge.elf to your ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "ps5-solobridge on GitHub",
+        "url": "https://github.com/hebiii994/ps5-solobridge"
+      }
+    ]
+  },
+  {
     "id": "prosperoeden-v1004",
     "date": "2026-10-17",
     "tag": "Emulator",
@@ -10,7 +78,10 @@
       "The headline technical change is how the emulator handles the emulated console's memory. RAM is now allocated only where a game writes it and released where the game frees it or leaves it zeroed, saving 644 to 1,956 MiB in two tested games. An optional Compact Memory setting reclaims a further 100 to 300 MiB by giving back mostly-empty pages, though it can cause stuttering in games that keep rewriting them. Other improvements include game language detection from packed updates, scrollable public rooms, self-updating launcher packs and crash reports that name the allocation that failed."
     ],
     "sources": [
-      { "name": "ProsperoEden v1.004.000 release", "url": "https://github.com/blackbearreloaded/ProsperoEden/releases/tag/v1.004.000" }
+      {
+        "name": "ProsperoEden v1.004.000 release",
+        "url": "https://github.com/blackbearreloaded/ProsperoEden/releases/tag/v1.004.000"
+      }
     ]
   },
   {
@@ -24,7 +95,10 @@
       "On PS5, this release fixes a microphone gain bug where the 50% setting silently muted the mic and 150% gave double the expected volume. Under the hood, the app core is now shared across every platform. The PS5 app behaviour is unchanged and was verified on console across every screen and during streaming. DualSense features on Linux need read/write access to the controller's hidraw device, which most desktop environments grant by default."
     ],
     "sources": [
-      { "name": "PSBox Cloud Gaming v1.1.0 release", "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5/releases/tag/v1.1.0" }
+      {
+        "name": "PSBox Cloud Gaming v1.1.0 release",
+        "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5/releases/tag/v1.1.0"
+      }
     ]
   },
   {
@@ -38,7 +112,10 @@
       "The fix applies when uploading a game folder and when using Convert's game-folder and .ffpkg outputs. Each affected file is quietly renamed to the spelling the game expects. The original copy on your computer is left unchanged, and Convert's checks list what was renamed. The developer confirmed the fix on a PS5 Pro running firmware 13.60."
     ],
     "sources": [
-      { "name": "PS5 Upload v7.0.34 release", "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.0.34" }
+      {
+        "name": "PS5 Upload v7.0.34 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.0.34"
+      }
     ]
   },
   {
@@ -52,7 +129,10 @@
       "You need your own copy of the original game data (DIABDAT.MPQ) and optionally the Hellfire expansion files. Hellfire support is included but hasn't been fully verified yet. Multiplayer is compiled out for now. The port was tested on firmware 13.60 and confirmed working through the intro, character creation, Tristram exploration, inventory management and saving. Building from source requires macOS with a Linux VM plus the PS5 Vulkan, Mesa and Payload SDK toolchains."
     ],
     "sources": [
-      { "name": "PS5_DevilutionX on GitHub", "url": "https://github.com/griches/PS5_DevilutionX" }
+      {
+        "name": "PS5_DevilutionX on GitHub",
+        "url": "https://github.com/griches/PS5_DevilutionX"
+      }
     ]
   },
   {
@@ -66,7 +146,10 @@
       "The interface ships in 16 languages — English, Arabic, Chinese (Simplified), French, German, Italian, Japanese, Korean, Persian, Polish, Brazilian Portuguese, Russian, Spanish, Thai, Turkish and Ukrainian — with right-to-left layouts for Arabic and Persian. Experimental features include changing the foreground user's display name and avatar. The project has picked up 23 stars on GitHub. It requires etaHEN or another jailbreak and a compatible ELF loader."
     ],
     "sources": [
-      { "name": "ProsperoMgr on GitHub", "url": "https://github.com/notmaj0r/ProsperoMgr" }
+      {
+        "name": "ProsperoMgr on GitHub",
+        "url": "https://github.com/notmaj0r/ProsperoMgr"
+      }
     ]
   },
   {
@@ -80,7 +163,10 @@
       "The app also finds and installs PKG files, launches installed titles by ID, and runs a file server with optional authentication and read-only mode. System readings for memory, storage and display are available from the interface. The developer describes the project as exercising most of the SharpProspero SDK end to end, making it useful for verifying that a toolchain build works on real hardware. It has 26 stars on GitHub and is licensed under GPL-3.0."
     ],
     "sources": [
-      { "name": "Prospero-Explorer on GitHub", "url": "https://github.com/SvenGDK/Prospero-Explorer" }
+      {
+        "name": "Prospero-Explorer on GitHub",
+        "url": "https://github.com/SvenGDK/Prospero-Explorer"
+      }
     ]
   },
   {
@@ -94,7 +180,10 @@
       "The controller layout is now fully customizable. Every DualSense button — Cross, Circle, Square, Triangle, L1, R1, L2, R2, OPTIONS, the D-pad and right stick — can be mapped to any N64 button or left unbound. Per-game layouts are supported: change the mapping from the pause menu and it sticks to that game only. The update also includes a new home screen icon and background. It requires etaHEN and ShadowMountPlus."
     ],
     "sources": [
-      { "name": "mupen64plus-ps5 0.7.4 release", "url": "https://github.com/TheRealRetro/mupen64plus-ps5/releases/tag/0.7.4" }
+      {
+        "name": "mupen64plus-ps5 0.7.4 release",
+        "url": "https://github.com/TheRealRetro/mupen64plus-ps5/releases/tag/0.7.4"
+      }
     ]
   },
   {
@@ -108,7 +197,10 @@
       "The update also fixes install verification for packages that land as the app itself rather than in the updates folder. The About screen now links to the project website at ps5upload.phantomptr.com. Version 7.0.32, released an hour earlier, fixed rest-mode detection on Macs connected over both Wi-Fi and Ethernet."
     ],
     "sources": [
-      { "name": "PS5 Upload v7.0.33 release", "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.0.33" }
+      {
+        "name": "PS5 Upload v7.0.33 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.0.33"
+      }
     ]
   },
   {
@@ -122,7 +214,10 @@
       "The app is closed source and currently Windows-only, with Linux and macOS planned once Windows testing is stable. It builds on earlier work by Nazky (Auto-Backpork), BestPig (BackPork) and drakmor (Backport Helper). An experimental Console Logs tab can stream live klogs from a jailbroken console with an ELF loader on port 9021, and automatically download crash dumps. The project picked up 28 stars and four forks within hours of appearing on GitHub."
     ],
     "sources": [
-      { "name": "PS5-Backport-GUI on GitHub", "url": "https://github.com/kerrdec97/PS5-Backport-GUI" }
+      {
+        "name": "PS5-Backport-GUI on GitHub",
+        "url": "https://github.com/kerrdec97/PS5-Backport-GUI"
+      }
     ]
   },
   {
@@ -187,7 +282,10 @@
       "The developer, who also built the PS5VR video player, describes this as a proof of concept. It runs as a payload through etaHEN and the backend server runs separately on a PC on the same network. The project has nine stars on GitHub since appearing on 15 October and is being actively developed."
     ],
     "sources": [
-      { "name": "Hitman-PS5 on GitHub", "url": "https://github.com/theghostonline/Hitman-PS5" }
+      {
+        "name": "Hitman-PS5 on GitHub",
+        "url": "https://github.com/theghostonline/Hitman-PS5"
+      }
     ]
   },
   {
@@ -201,7 +299,10 @@
       "It's built with PS5 React and runs as a homebrew title through ShadowMountPlus. It's a companion to TabShifter, which moves apps between the Games and Media tabs — Lineup handles the order within a tab. The project has ten stars on GitHub since appearing on 15 October."
     ],
     "sources": [
-      { "name": "Lineup on GitHub", "url": "https://github.com/bps2414/lineup" }
+      {
+        "name": "Lineup on GitHub",
+        "url": "https://github.com/bps2414/lineup"
+      }
     ]
   },
   {
@@ -215,7 +316,10 @@
       "It needs no capture card hardware and doesn't use Remote Play. The payload runs on the console and the driver installs on a Windows PC on the same network. It's written in C and has picked up four stars since appearing on 15 October."
     ],
     "sources": [
-      { "name": "PSCapture on GitHub", "url": "https://github.com/fstat13/PSCapture" }
+      {
+        "name": "PSCapture on GitHub",
+        "url": "https://github.com/fstat13/PSCapture"
+      }
     ]
   },
   {
@@ -229,7 +333,10 @@
       "The repo has picked up over 300 stars since appearing on GitHub. It currently targets Qwen 3 8B out of the box but supports swapping in other models. It's an unusual use of the PS5 hardware and one of the first projects to put the console's GPU to work on something other than games or emulation."
     ],
     "sources": [
-      { "name": "PS5LM on GitHub", "url": "https://github.com/cobanov/PS5LM" }
+      {
+        "name": "PS5LM on GitHub",
+        "url": "https://github.com/cobanov/PS5LM"
+      }
     ]
   },
   {
@@ -243,7 +350,10 @@
       "This is notable because Sony's official PSVR2 software has no general-purpose VR video player. The homebrew fills a gap that commercial firmware doesn't, giving PSVR2 owners a way to watch VR content stored locally on the console."
     ],
     "sources": [
-      { "name": "PS5VR on GitHub", "url": "https://github.com/theghostonline/PS5VR" }
+      {
+        "name": "PS5VR on GitHub",
+        "url": "https://github.com/theghostonline/PS5VR"
+      }
     ]
   },
   {
@@ -257,7 +367,10 @@
       "The port is built on mchughalex's Skate 3 recompiler and is available through RecompStore, so you can install it directly from the console. You'll need your own copy of the game. It joins a growing list of Xbox 360 recomps alongside Sonic Unleashed, FIFA Street, and WWE '13."
     ],
     "sources": [
-      { "name": "skate3-ps5 on GitHub", "url": "https://github.com/elripalda/skate3-ps5" }
+      {
+        "name": "skate3-ps5 on GitHub",
+        "url": "https://github.com/elripalda/skate3-ps5"
+      }
     ]
   },
   {
@@ -271,7 +384,10 @@
       "Firmware updates are one of the main risks for jailbroken consoles, since Sony patches the vulnerabilities that exploits rely on. This tool automates what people used to do manually with DNS blocking or router rules, and it runs directly on the console as a payload."
     ],
     "sources": [
-      { "name": "ps5-firmware-pin on GitHub", "url": "https://github.com/lvndry/ps5-firmware-pin" }
+      {
+        "name": "ps5-firmware-pin on GitHub",
+        "url": "https://github.com/lvndry/ps5-firmware-pin"
+      }
     ]
   },
   {
@@ -285,7 +401,10 @@
       "The tool is useful for jailbroken consoles that can't safely connect to PSN for updates. It pulls official patch files without needing a PSN sign-in, so you can keep games up to date without risking your jailbreak. The project has over 130 stars on GitHub."
     ],
     "sources": [
-      { "name": "ps5-patchdl on GitHub", "url": "https://github.com/knutwurst/ps5-patchdl" }
+      {
+        "name": "ps5-patchdl on GitHub",
+        "url": "https://github.com/knutwurst/ps5-patchdl"
+      }
     ]
   },
   {
@@ -299,7 +418,10 @@
       "This solves a storage problem: PS5 internal storage fills up fast, and the console normally requires PS4 games to be installed before playing. With ps4mount you can keep a library of PS4 games on an external drive and swap between them. The project has over 120 stars."
     ],
     "sources": [
-      { "name": "ps4mount on GitHub", "url": "https://github.com/gasb07/ps4mount" }
+      {
+        "name": "ps4mount on GitHub",
+        "url": "https://github.com/gasb07/ps4mount"
+      }
     ]
   },
   {
@@ -313,7 +435,10 @@
       "The tool is useful for checking whether games hit their target framerate, testing performance after patches, or just satisfying curiosity. The etaHEN plugin version loads automatically with your jailbreak chain so you don't need to launch it separately each time."
     ],
     "sources": [
-      { "name": "Common-FPS-for-PS5 on GitHub", "url": "https://github.com/Starter-ps5/Common-FPS-for-PS5" }
+      {
+        "name": "Common-FPS-for-PS5 on GitHub",
+        "url": "https://github.com/Starter-ps5/Common-FPS-for-PS5"
+      }
     ]
   },
   {
