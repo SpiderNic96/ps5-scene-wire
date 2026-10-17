@@ -1,5 +1,47 @@
 [
   {
+    "id": "prosperoeden-v1004",
+    "date": "2026-10-17",
+    "tag": "Emulator",
+    "title": "ProsperoEden v1.004.000: post-processing looks, custom wallpapers and smarter memory",
+    "summary": "The Switch emulator for PS5 adds six ReShade-based visual presets, user-importable wallpapers, and a memory system that frees hundreds of megabytes during gameplay.",
+    "body": [
+      "ProsperoEden v1.004.000 adds a post-processing pipeline built on ReShade FX effects. Six presets ship with the app — Anime, Cinematic, Clean, Dreamy, Retro and Vivid — and you can drop your own presets and shaders into the user folders over FTP. A new wallpaper setting lets you place your own PNG or JPEG behind the launcher screens. The emulator also now keeps the graphics driver's compiled shaders between launches, so games with thousands of pipelines no longer stall during loading and start faster on every subsequent run.",
+      "The headline technical change is how the emulator handles the emulated console's memory. RAM is now allocated only where a game writes it and released where the game frees it or leaves it zeroed, saving 644 to 1,956 MiB in two tested games. An optional Compact Memory setting reclaims a further 100 to 300 MiB by giving back mostly-empty pages, though it can cause stuttering in games that keep rewriting them. Other improvements include game language detection from packed updates, scrollable public rooms, self-updating launcher packs and crash reports that name the allocation that failed."
+    ],
+    "sources": [
+      { "name": "ProsperoEden v1.004.000 release", "url": "https://github.com/blackbearreloaded/ProsperoEden/releases/tag/v1.004.000" }
+    ]
+  },
+  {
+    "id": "psbox-v110",
+    "date": "2026-10-17",
+    "tag": "Media",
+    "title": "PSBox Cloud Gaming v1.1.0: Linux preview and PS5 microphone fix",
+    "summary": "The Xbox Cloud Gaming client ships a Linux build for the first time, alongside a fix for the PS5 microphone gain that was silencing players at the default setting.",
+    "body": [
+      "PSBox Cloud Gaming v1.1.0 adds a preview Linux build for x86-64 desktops. The Linux version supports fullscreen and windowed modes, DualSense adaptive triggers, light bar, gyro aiming and touchpad, plus Xbox and generic controllers with Xbox button glyphs. Keyboard, mouse, sound and microphone all work. The picture filters — FSR, Anime4K, sharpening and block smoothing — are not yet available on Linux.",
+      "On PS5, this release fixes a microphone gain bug where the 50% setting silently muted the mic and 150% gave double the expected volume. Under the hood, the app core is now shared across every platform. The PS5 app behaviour is unchanged and was verified on console across every screen and during streaming. DualSense features on Linux need read/write access to the controller's hidraw device, which most desktop environments grant by default."
+    ],
+    "sources": [
+      { "name": "PSBox Cloud Gaming v1.1.0 release", "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5/releases/tag/v1.1.0" }
+    ]
+  },
+  {
+    "id": "ps5upload-v7034",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "PS5 Upload v7.0.34: Unity games no longer crash when uploaded as folders",
+    "summary": "A case-sensitivity fix stops Unity-based games from crashing seconds after launch when they're uploaded or converted as folders instead of exFAT images.",
+    "body": [
+      "PS5 Upload v7.0.34 fixes a crash that hit Unity-based games running from folders on the PS5's internal storage. Some game dumps spell a key file as Il2cppUserAssemblies.prx, but the game engine loads it as Il2CppUserAssemblies.prx with different capitalisation. An exFAT image ignores the difference, so these games worked fine from a .exfat file. The console's internal filesystem does not — the same game uploaded as a folder, or converted to one, crashed within a second of launching.",
+      "The fix applies when uploading a game folder and when using Convert's game-folder and .ffpkg outputs. Each affected file is quietly renamed to the spelling the game expects. The original copy on your computer is left unchanged, and Convert's checks list what was renamed. The developer confirmed the fix on a PS5 Pro running firmware 13.60."
+    ],
+    "sources": [
+      { "name": "PS5 Upload v7.0.34 release", "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.0.34" }
+    ]
+  },
+  {
     "id": "ps5-devilutionx",
     "date": "2026-10-17",
     "tag": "Port",
