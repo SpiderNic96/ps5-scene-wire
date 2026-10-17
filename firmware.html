@@ -70,20 +70,24 @@
   h2.kicker { margin: 0; font-size: .78rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
   .picker { padding: 20px 18px 16px; margin: 14px 0 18px; }
   @media (min-width: 640px) { .picker { padding: 24px 28px 20px; } }
-  .hint { margin: 4px 0 8px; color: var(--muted); font-size: .88rem; }
+  .hint { margin: 2px 0 8px; color: var(--muted); font-size: .8rem; }
   .hint b { color: var(--ink); font-weight: 600; }
-  .warn { margin: 0 0 12px; padding: 9px 12px; border-radius: 12px; border: 1px solid rgba(255,107,107,.45); background: rgba(255,107,107,.1); color: #FFD6D6; font-size: .86rem; }
+  .notes { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 10px; }
+  .warn, .howto > summary { font-size: .76rem; line-height: 1.4; padding: 5px 11px; border-radius: 99px; }
+  .warn { margin: 0; border: 1px solid rgba(255,107,107,.4); background: rgba(255,107,107,.09); color: #FFD6D6; }
   .warn b { color: var(--stop); font-weight: 700; }
-  .howto { margin: 0 0 14px; border-radius: 12px; border: 1px solid rgba(255,196,107,.4); background: rgba(255,196,107,.07); }
-  .howto > summary { cursor: pointer; list-style: none; padding: 9px 12px; color: var(--warn); font-size: .86rem; font-weight: 600; }
+  .howto { margin: 0; }
+  .howto[open] { flex-basis: 100%; }
+  .howto > summary { display: inline-block; }
+  .howto > summary { cursor: pointer; list-style: none; border: 1px solid rgba(255,196,107,.4); background: rgba(255,196,107,.07); color: var(--warn); font-weight: 600; }
   .howto > summary::-webkit-details-marker { display: none; }
   .howto > summary::before { content: "+ "; }
   .howto[open] > summary::before { content: "− "; }
-  .howto-body { padding: 0 12px 10px; font-size: .86rem; color: #DCE3F5; }
-  .howto-body ol { margin: 6px 0 0; padding-left: 20px; display: grid; gap: 6px; }
+  .howto-body { margin-top: 6px; padding: 10px 12px; font-size: .8rem; color: #DCE3F5; border-radius: 14px; border: 1px solid rgba(255,196,107,.3); background: rgba(255,196,107,.05); }
+  .howto-body ol { margin: 6px 0 0; padding-left: 18px; display: grid; gap: 5px; }
   .howto-body b { color: var(--ink); }
-  .howto-body code { font-size: .82rem; background: rgba(255,255,255,.08); padding: 0 5px; border-radius: 5px; }
-  .fpkg-cut { margin: 0; padding: 8px 10px; border-radius: 10px; background: rgba(255,107,107,.1); border: 1px solid rgba(255,107,107,.4); color: #FFD6D6; }
+  .howto-body code { font-size: .76rem; background: rgba(255,255,255,.08); padding: 0 5px; border-radius: 5px; }
+  .fpkg-cut { margin: 0; padding: 7px 10px; border-radius: 10px; background: rgba(255,107,107,.1); border: 1px solid rgba(255,107,107,.4); color: #FFD6D6; }
   .fpkg-cut:empty { display: none; }
   .fpkg-cut b { color: var(--stop); }
   .fpkg-line { margin: 10px 0 0; font-size: .92rem; }
@@ -203,10 +207,11 @@
 <main class="wrap">
   <section class="picker glass" aria-labelledby="pick-title">
     <h2 class="kicker" id="pick-title">Pick your firmware</h2>
-    <p class="hint">Check it under Settings › System › System Software › <b>Console Information</b>. That screen only shows your version and doesn't change anything.</p>
-    <p class="warn"><b>Don't update your console.</b> Skip "System Software Update", turn off automatic updates, and say no to any update prompt. Updating can take you past the last firmware with a public jailbreak, and you usually can't go back.</p>
+    <p class="hint">Find yours in Settings › System › System Software › <b>Console Information</b> (view only, changes nothing).</p>
+    <div class="notes">
+    <p class="warn"><b>Don't update.</b> Skip update prompts and keep auto-updates off. You usually can't go back down.</p>
     <details class="howto">
-      <summary>Need to move to a specific firmware instead?</summary>
+      <summary>Moving to a specific firmware?</summary>
       <div class="howto-body">
         <p class="fpkg-cut" id="fpkg-cut"></p>
         <ol>
@@ -220,6 +225,7 @@
         </ol>
       </div>
     </details>
+    </div>
     <div class="chips" id="majors" role="group" aria-label="Firmware family"></div>
     <div class="chips minor" id="minors" role="group" aria-label="Exact firmware"></div>
     <p class="chips-legend"><span><i style="background:var(--led)"></i>Public jailbreak tracked</span><span><i style="background:var(--stop)"></i>None tracked</span></p>
