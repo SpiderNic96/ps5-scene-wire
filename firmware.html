@@ -70,7 +70,10 @@
   h2.kicker { margin: 0; font-size: .78rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
   .picker { padding: 20px 18px 16px; margin: 14px 0 18px; }
   @media (min-width: 640px) { .picker { padding: 24px 28px 20px; } }
-  .hint { margin: 4px 0 12px; color: var(--muted); font-size: .88rem; }
+  .hint { margin: 4px 0 8px; color: var(--muted); font-size: .88rem; }
+  .hint b { color: var(--ink); font-weight: 600; }
+  .warn { margin: 0 0 12px; padding: 9px 12px; border-radius: 12px; border: 1px solid rgba(255,107,107,.45); background: rgba(255,107,107,.1); color: #FFD6D6; font-size: .86rem; }
+  .warn b { color: var(--stop); font-weight: 700; }
 
   /* Firmware chips, XMB style */
   .chips { display: flex; gap: 6px; overflow-x: auto; padding: 4px 2px 10px; scrollbar-width: none; }
@@ -185,7 +188,8 @@
 <main class="wrap">
   <section class="picker glass" aria-labelledby="pick-title">
     <h2 class="kicker" id="pick-title">Pick your firmware</h2>
-    <p class="hint">Find it on the console under Settings › System › System Software › System Software Update and Settings.</p>
+    <p class="hint">Check it under Settings › System › System Software › <b>Console Information</b>. That screen only shows your version and doesn't change anything.</p>
+    <p class="warn"><b>Don't update your console.</b> Skip "System Software Update", turn off automatic updates, and say no to any update prompt. Updating can take you past the last firmware with a public jailbreak, and you usually can't go back.</p>
     <div class="chips" id="majors" role="group" aria-label="Firmware family"></div>
     <div class="chips minor" id="minors" role="group" aria-label="Exact firmware"></div>
     <p class="chips-legend"><span><i style="background:var(--led)"></i>Public jailbreak tracked</span><span><i style="background:var(--stop)"></i>None tracked</span></p>
