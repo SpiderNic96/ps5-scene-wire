@@ -1,5 +1,22 @@
 [
   {
+    "id": "shadowpkg-v1056",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "ShadowPKG v1.0.56: game covers on by default and CPU-temp toggle",
+    "summary": "ShadowPKG v1.0.53–v1.0.56 add a CPU-temperature toggle, refine its scope and switch the Installed-list game covers on by default.",
+    "body": [
+      "Four quick-fire updates land for the ShadowPKG package manager. Version 1.0.54 introduces a HEADER_TEMP console setting that lets you hide the CPU-temperature chip from the header and list; v1.0.55 narrows the toggle so only the header chip is hidden while the console list always displays it. Version 1.0.56 flips the covers toggle to on by default, so the Installed list shows each game’s icon out of the box without needing to opt in. A minor v1.0.53 tweak also moves the Settings button next to Done in the setup dialog header.",
+      "Update by downloading the latest release ZIP from GitHub and copying the extracted PPSA90211 folder to /data/homebrew/ on a jailbroken PS5 with an ELF loader on port 9021. ShadowMountPlus registers it automatically. Existing settings and library data are preserved."
+    ],
+    "sources": [
+      {
+        "name": "ShadowPKG v1.0.56 release",
+        "url": "https://github.com/NotSoTypicalGamer/ShadowPKG/releases/tag/v1.0.56"
+      }
+    ]
+  },
+  {
     "id": "shadowpkg-v1052",
     "date": "2026-10-17",
     "tag": "Tool",
