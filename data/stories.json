@@ -1,5 +1,47 @@
 [
   {
+    "id": "ps5-devilutionx",
+    "date": "2026-10-17",
+    "tag": "Port",
+    "title": "DevilutionX brings Diablo and Hellfire to PS5 with Vulkan rendering",
+    "summary": "An unofficial PS5 build of the DevilutionX source port runs Diablo and its Hellfire expansion natively on jailbroken consoles, with DualSense button prompts and resolutions up to 1080p.",
+    "body": [
+      "DevilutionX, the open-source reverse-engineered port of Blizzard's original Diablo, now runs on jailbroken PS5 as an installed homebrew title. Built by griches — the developer behind Ghostship (Super Mario 64), Wind Waker HD, Super Mario Sunshine, Dusklight (Twilight Princess), Doom 3 BFG and Quake III ports — it uses SDL3's Vulkan renderer through the PS5's RADV driver stack. The game supports controller, keyboard and mouse input, with DualSense button prompts shown in-game. Resolution options include 1080p, 720p, 540p and 480p, defaulting to 960×540. Save and load work, and settings persist between sessions.",
+      "You need your own copy of the original game data (DIABDAT.MPQ) and optionally the Hellfire expansion files. Hellfire support is included but hasn't been fully verified yet. Multiplayer is compiled out for now. The port was tested on firmware 13.60 and confirmed working through the intro, character creation, Tristram exploration, inventory management and saving. Building from source requires macOS with a Linux VM plus the PS5 Vulkan, Mesa and Payload SDK toolchains."
+    ],
+    "sources": [
+      { "name": "PS5_DevilutionX on GitHub", "url": "https://github.com/griches/PS5_DevilutionX" }
+    ]
+  },
+  {
+    "id": "prosperomgr",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "ProsperoMgr: a web-based all-in-one PS5 manager with 16-language support",
+    "summary": "A new single-ELF homebrew manager serves a full web UI on port 7070, covering file management, PKG installation, save backups, payload autoloading, thermal monitoring and more in 16 languages.",
+    "body": [
+      "ProsperoMgr by notmaj0r is a web-based homebrew manager that runs as a single ELF on a jailbroken PS5 and serves its interface over HTTP at port 7070. It packs a long list of features into one payload: a file manager with multi-select and background transfers across internal, USB and extended storage; ZIP archive creation and extraction with streaming and path-traversal protection; a payload library with favourites, enable and disable controls, and a configurable autoloader with boot sequences, delays and retry logic; a PKG installer that works from local storage or a direct URL; per-title save backups with optional auto-backup; a process inspector; and live thermal readings for the CPU, SoC and M.2 drive with adjustable fan thresholds.",
+      "The interface ships in 16 languages — English, Arabic, Chinese (Simplified), French, German, Italian, Japanese, Korean, Persian, Polish, Brazilian Portuguese, Russian, Spanish, Thai, Turkish and Ukrainian — with right-to-left layouts for Arabic and Persian. Experimental features include changing the foreground user's display name and avatar. The project has picked up 23 stars on GitHub. It requires etaHEN or another jailbreak and a compatible ELF loader."
+    ],
+    "sources": [
+      { "name": "ProsperoMgr on GitHub", "url": "https://github.com/notmaj0r/ProsperoMgr" }
+    ]
+  },
+  {
+    "id": "prospero-explorer",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "Prospero Explorer: a full-featured file explorer built on the SharpProspero SDK",
+    "summary": "A C# homebrew file explorer for PS5 handles browsing, archives, media playback, text and hex editing, image conversion, PKG installation and a built-in file server.",
+    "body": [
+      "Prospero Explorer by SvenGDK is a homebrew file explorer written in C# on top of the SharpProspero SDK, the .NET toolchain for PS5. It goes well beyond basic file operations: alongside the usual listing, copying, renaming and deleting, it can browse and unpack ZIP and TAR archives, create new ones, decompress gzip and zlib streams, and compute file checksums. A built-in media player handles audio and video with seeking, looping and volume control, including WAV and VAG playback. The text viewer supports hex and table views, inline editing, find and save, while the image viewer handles PNG, JPEG, BMP, TGA and GIF files with format conversion.",
+      "The app also finds and installs PKG files, launches installed titles by ID, and runs a file server with optional authentication and read-only mode. System readings for memory, storage and display are available from the interface. The developer describes the project as exercising most of the SharpProspero SDK end to end, making it useful for verifying that a toolchain build works on real hardware. It has 26 stars on GitHub and is licensed under GPL-3.0."
+    ],
+    "sources": [
+      { "name": "Prospero-Explorer on GitHub", "url": "https://github.com/SvenGDK/Prospero-Explorer" }
+    ]
+  },
+  {
     "id": "mupen64plus-074",
     "date": "2026-10-17",
     "tag": "Emulator",
