@@ -1,5 +1,22 @@
 [
   {
+    "id": "nbastreet-homecourt-ps5",
+    "date": "2026-10-17",
+    "tag": "Port",
+    "title": "NBA Street Homecourt recompiled for PS5 at 1440p60",
+    "summary": "The 2007 Xbox 360 basketball game runs natively on jailbroken PS5 with PlayStation button prompts and a modern control scheme, from the developer behind RecompStore and Skate 3.",
+    "body": [
+      "NBA Street Homecourt, EA's arcade basketball game originally released on Xbox 360 and PS3 in 2007, now runs natively on a jailbroken PS5. The recompilation by elripalda translates the Xbox 360 PowerPC code to x86-64 at build time, so the game runs without emulation overhead at 1440p and 60 fps. Button prompts are remapped to PlayStation controls and a modern control scheme is included.",
+      "elripalda is one of the most prolific recomp developers in the PS5 scene, having already brought FIFA Street (2012), WWE '13, Skate 3, and the Porpoise Dolphin emulator to the console, and built RecompStore for installing recomps directly. NBA Street Homecourt joins a growing library of Xbox 360 recomps — you need your own copy of the game. The project appeared on GitHub on 17 October."
+    ],
+    "sources": [
+      {
+        "name": "nbastreet-ps5 on GitHub",
+        "url": "https://github.com/elripalda/nbastreet-ps5"
+      }
+    ]
+  },
+  {
     "id": "007-first-light-online",
     "date": "2026-10-17",
     "tag": "Tool",
