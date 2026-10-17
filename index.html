@@ -5,172 +5,215 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PS5 Scene Wire</title>
 <meta name="description" content="PS5 jailbreak and homebrew headlines: exploits, firmware, emulators and app releases.">
-<meta name="theme-color" content="#1E2128">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231E2128'/%3E%3Crect x='14' y='5' width='4' height='22' rx='2' fill='%233B8CFF'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#04123a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2304123a'/%3E%3Crect x='14' y='5' width='4' height='22' rx='2' fill='%233B8CFF'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --shell: #EEF1F5;
-    --panel: #FFFFFF;
-    --ink: #161A22;
-    --muted: #586172;
-    --rule: #D5DBE4;
-    --link: #1250C4;
-    --core: #1E2128;
-    --core-2: #2A2E37;
-    --core-ink: #E8ECF2;
-    --core-muted: #9AA3B2;
-    --led: #3B8CFF;
-    --led-soft: rgba(59, 140, 255, .28);
-    --stop: #FF7468;
-    --t-exploit: #1250C4;
-    --t-firmware: #9A5300;
-    --t-emulator: #0B7765;
-    --t-scene: #586172;
-    --t-pc: #5E4BB0;
-    --t-port: #A3266B;
-    --t-store: #2F6F1F;
-    --t-tool: #7A4E2D;
-    --t-media: #00658F;
-    --t-release: #586172;
-    --focus: #3B8CFF;
-    --wide: 125;
-    color-scheme: light;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --shell: #181B21;
-      --panel: #20242C;
-      --ink: #E6EAF0;
-      --muted: #9AA3B2;
-      --rule: #333945;
-      --link: #7DB2FF;
-      --core: #0F1115;
-      --core-2: #1E2229;
-      --t-exploit: #7DB2FF;
-      --t-firmware: #F0A94B;
-      --t-emulator: #4FD1B5;
-      --t-scene: #9AA3B2;
-      --t-pc: #B5A6FF;
-      --t-port: #F28CC0;
-      --t-store: #9BD67E;
-      --t-tool: #E0A97F;
-      --t-media: #6CC8EE;
-      --t-release: #9AA3B2;
-      color-scheme: dark;
-    }
+    --bg-0: #01030c;
+    --bg-1: #04123a;
+    --bg-2: #0a2a8a;
+    --glass: rgba(255, 255, 255, .055);
+    --glass-2: rgba(255, 255, 255, .09);
+    --glass-line: rgba(255, 255, 255, .11);
+    --ink: #F4F7FF;
+    --muted: #A9B4CF;
+    --dim: #7884A3;
+    --link: #8EC1FF;
+    --led: #3D8BFF;
+    --led-soft: rgba(61, 139, 255, .35);
+    --stop: #FF6B6B;
+    --focus: #FFFFFF;
+    --t-exploit: #8EC1FF;
+    --t-firmware: #FFC46B;
+    --t-emulator: #5EE6C8;
+    --t-scene: #A9B4CF;
+    --t-pc: #C3B5FF;
+    --t-port: #FF93CB;
+    --t-store: #A6E58A;
+    --t-tool: #FFB98A;
+    --t-media: #72D6FF;
+    --t-release: #A9B4CF;
+    --radius: 18px;
+    color-scheme: dark;
   }
 
   * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
+  html { -webkit-text-size-adjust: 100%; background: var(--bg-0); }
   body {
-    margin: 0;
-    background: var(--shell);
-    color: var(--ink);
-    font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
-    font-size: 16px;
-    line-height: 1.55;
+    margin: 0; min-height: 100vh; color: var(--ink);
+    background: transparent;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 16px; line-height: 1.55; font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
-  .day, .facts dd, .ruler, .apps .when, .checked { font-variant-numeric: tabular-nums; }
-  a { color: var(--link); text-underline-offset: 2px; }
+  /* PS5 home-screen light: deep blue with a soft bloom */
+  .sky {
+    position: fixed; inset: 0; z-index: -2; pointer-events: none;
+    background:
+      radial-gradient(1200px 700px at 12% -10%, rgba(40, 110, 255, .55), transparent 60%),
+      radial-gradient(900px 600px at 100% 0%, rgba(20, 60, 190, .45), transparent 65%),
+      radial-gradient(800px 500px at 50% 110%, rgba(10, 40, 140, .5), transparent 70%),
+      linear-gradient(180deg, var(--bg-1) 0%, #030a24 55%, var(--bg-0) 100%);
+  }
+  /* XMB ribbon wave */
+  .wave { position: fixed; left: 0; right: 0; top: 18vh; height: 46vh; z-index: -1; pointer-events: none; overflow: hidden; opacity: .9; }
+  .wave svg { position: absolute; left: 0; top: 0; width: 200%; height: 100%; }
+  .wave path { fill: none; stroke-linecap: round; }
+  @media (prefers-reduced-motion: no-preference) {
+    .wave svg { animation: drift 38s linear infinite; }
+    .wave svg.w2 { animation-duration: 54s; animation-direction: reverse; }
+    @keyframes drift { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  }
+
+  .day, .facts dd, .ruler, .apps .when, .checked, .clock { font-variant-numeric: tabular-nums; }
+  a { color: var(--link); text-underline-offset: 3px; }
   a:hover { text-decoration-thickness: 2px; }
-  :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 3px; }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 8px; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+  @media (min-width: 900px) { .wrap { padding: 0 32px; } }
+  .vh { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-  /* Masthead */
-  .masthead { padding: 22px 0 18px; }
-  .masthead .wrap { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 6px 24px; }
-  .brand { margin: 0; font-size: clamp(1.6rem, 6vw, 2.3rem); line-height: 1; font-weight: 850; font-stretch: 125%; letter-spacing: -0.02em; }
-  .brand a { color: inherit; text-decoration: none; }
-  .brand .bar { display: inline-block; width: .16em; height: .82em; margin-right: .22em; border-radius: 99px; background: var(--led); vertical-align: -0.04em; box-shadow: 0 0 12px var(--led-soft); }
-  .tagline { margin: 6px 0 0; color: var(--muted); font-size: .95rem; }
-  .checked { margin: 0; color: var(--muted); font-size: .85rem; }
+  .glass {
+    background: var(--glass); border: 1px solid var(--glass-line); border-radius: var(--radius);
+    -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%);
+  }
 
-  /* Firmware band: the console's black core */
-  .core { background: var(--core); color: var(--core-ink); padding: 26px 0 22px; }
-  .core h2 { margin: 0; font-size: 1.15rem; font-weight: 700; font-stretch: 112%; }
-  .facts { display: flex; flex-wrap: wrap; gap: 4px 28px; margin: 8px 0 22px; padding: 0; }
-  .facts div { display: flex; align-items: baseline; gap: 8px; }
-  .facts dt { color: var(--core-muted); font-size: .88rem; }
-  .facts dd { margin: 0; font-weight: 800; font-stretch: 125%; font-size: 1.05rem; }
-  .facts dd.hi { color: var(--led); }
+  /* Masthead: PS5 top bar */
+  .masthead { padding: 18px 0 8px; }
+  .masthead .wrap { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  @media (max-width: 560px) {
+    .tagline { font-size: .82rem; }
+    .clock { font-size: 1.05rem; }
+    .checked { font-size: .7rem; max-width: 9em; margin-left: auto; }
+    .facts dd { font-size: 1.25rem; }
+  }
+  .brand { margin: 0; font-size: clamp(1.25rem, 5vw, 1.75rem); line-height: 1.1; font-weight: 300; letter-spacing: .14em; text-transform: uppercase; }
+  .brand a { color: inherit; text-decoration: none; display: inline-flex; align-items: center; gap: .55em; }
+  .brand b { font-weight: 700; }
+  .shapes { display: inline-grid; grid-template-columns: repeat(2, .5em); gap: .12em; font-size: .9em; }
+  .shapes i { width: .5em; height: .5em; display: block; }
+  .shapes .tri { background: #3EE0B6; clip-path: polygon(50% 4%, 100% 96%, 0 96%); }
+  .shapes .cir { border: 2px solid #FF6B7E; border-radius: 50%; }
+  .shapes .crs { background: linear-gradient(45deg, transparent 42%, #7DB6FF 42% 58%, transparent 58%), linear-gradient(-45deg, transparent 42%, #7DB6FF 42% 58%, transparent 58%); }
+  .shapes .sqr { border: 2px solid #F59ED8; border-radius: 1px; }
+  .tagline { margin: 6px 0 0; color: var(--muted); font-size: .9rem; letter-spacing: .01em; }
+  .status-bar { text-align: right; flex: none; }
+  .clock { display: block; font-size: 1.35rem; font-weight: 300; letter-spacing: .02em; }
+  .checked { margin: 0; color: var(--muted); font-size: .78rem; }
+
+  /* Firmware panel */
+  .core { padding: 14px 0 6px; }
+  .core .glass { padding: 22px 20px 18px; }
+  @media (min-width: 640px) { .core .glass { padding: 26px 28px 22px; } }
+  .core h2 { margin: 0; font-size: .78rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+  .facts { display: flex; flex-wrap: wrap; gap: 4px 32px; margin: 10px 0 18px; padding: 0; }
+  .facts div { display: flex; align-items: baseline; gap: 10px; }
+  .facts dt { color: var(--muted); font-size: .88rem; }
+  .facts dd { margin: 0; font-weight: 700; font-size: 1.5rem; letter-spacing: -.01em; }
+  .facts dd.hi { color: var(--led); text-shadow: 0 0 18px var(--led-soft); }
 
   .ruler { position: relative; height: 128px; margin: 0 4px; }
   .lane { position: absolute; left: 0; right: 0; height: 26px; }
   .lane.l1 { top: 22px; }
   .lane.l2 { top: 60px; }
   .seg {
-    position: absolute; top: 0; height: 26px; border-radius: 6px;
-    background: var(--led); color: #fff; font-size: .8rem; font-weight: 700;
-    display: flex; align-items: center; padding: 0 10px; white-space: nowrap; overflow: hidden;
-    box-shadow: 0 0 18px var(--led-soft), inset 0 0 0 1px rgba(255,255,255,.18);
-    border: 0; cursor: pointer; font-family: inherit; text-align: left;
-    transform-origin: left center;
+    position: absolute; top: 0; height: 26px; border-radius: 99px;
+    background: linear-gradient(90deg, #2563EB, #4FA3FF); color: #fff; font-size: .8rem; font-weight: 600;
+    display: flex; align-items: center; padding: 0 12px; white-space: nowrap; overflow: hidden;
+    box-shadow: 0 0 22px var(--led-soft), inset 0 0 0 1px rgba(255,255,255,.25);
+    border: 0; cursor: pointer; font-family: inherit; text-align: left; transform-origin: left center;
   }
-  .dot { position: absolute; top: 7px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; border: 2px solid var(--led); background: var(--core); }
+  .dot { position: absolute; top: 7px; width: 12px; height: 12px; margin-left: -6px; border-radius: 50%; border: 2px solid var(--led); background: #061238; }
   @media (min-width: 640px) { .dot { top: 6px; width: 14px; height: 14px; margin-left: -7px; } }
   .dot-label {
     position: absolute; top: 0; height: 26px; display: flex; align-items: center; justify-content: flex-end;
-    color: var(--core-ink); font-size: .8rem; font-weight: 600; white-space: nowrap; padding-right: 14px;
+    color: var(--ink); font-size: .8rem; font-weight: 500; white-space: nowrap; padding-right: 14px;
     background: none; border: 0; cursor: pointer; font-family: inherit;
   }
-  .gap-zone { position: absolute; top: 14px; bottom: 26px; border-left: 1px dashed var(--core-muted); opacity: .45; }
+  .gap-zone { position: absolute; top: 14px; bottom: 26px; border-left: 1px dashed var(--dim); opacity: .45; }
   .mark { position: absolute; top: 0; bottom: 22px; width: 0; }
-  .mark::before { content: ""; position: absolute; top: 20px; bottom: 0; left: -1px; width: 2px; border-radius: 2px; background: var(--stop); }
-  .mark.latest::before { background: var(--core-ink); }
-  .mark span {
-    position: absolute; top: 0; transform: translateX(-50%); font-size: .78rem; font-weight: 800; font-stretch: 112%;
-    color: var(--stop); white-space: nowrap;
-  }
-  .mark.latest span { color: var(--core-ink); }
-  .axis { position: absolute; left: 0; right: 0; bottom: 0; height: 18px; border-top: 1px solid var(--core-2); }
-  .axis span { position: absolute; top: 3px; transform: translateX(-50%); font-size: .72rem; color: var(--core-muted); }
-  .axis .brk { color: var(--core-muted); letter-spacing: -2px; }
+  .mark::before { content: ""; position: absolute; top: 20px; bottom: 0; left: -1px; width: 2px; border-radius: 2px; background: var(--stop); box-shadow: 0 0 10px rgba(255,107,107,.5); }
+  .mark.latest::before { background: var(--ink); box-shadow: 0 0 10px rgba(255,255,255,.4); }
+  .mark span { position: absolute; top: 0; transform: translateX(-50%); font-size: .78rem; font-weight: 700; color: var(--stop); white-space: nowrap; }
+  .mark.latest span { color: var(--ink); }
+  .axis { position: absolute; left: 0; right: 0; bottom: 0; height: 18px; border-top: 1px solid var(--glass-line); }
+  .axis span { position: absolute; top: 3px; transform: translateX(-50%); font-size: .72rem; color: var(--dim); }
+  .axis .brk { letter-spacing: -2px; }
 
-  .legend { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 2px; }
-  @media (min-width: 760px) { .legend { grid-template-columns: 1fr 1fr; column-gap: 40px; } }
+  .legend { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 2px; }
+  @media (min-width: 760px) { .legend { grid-template-columns: 1fr 1fr; column-gap: 32px; } }
   .legend button {
     width: 100%; display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 2px 10px; align-items: start;
-    padding: 8px 8px; margin: 0 -8px; border-radius: 8px; background: none; border: 0; color: inherit;
-    font: inherit; text-align: left; cursor: pointer;
+    padding: 8px 10px; margin: 0 -10px; border-radius: 12px; background: none; border: 1px solid transparent; color: inherit;
+    font: inherit; text-align: left; cursor: pointer; transition: background .15s, border-color .15s;
   }
-  .legend button:hover { background: var(--core-2); }
+  .legend button:hover { background: var(--glass-2); border-color: var(--glass-line); }
   .key { width: 14px; height: 14px; margin-top: 4px; border-radius: 4px; }
   .key.public { background: var(--led); box-shadow: 0 0 10px var(--led-soft); }
   .key.dev { border: 2px solid var(--led); border-radius: 50%; }
   .key.stop { background: var(--stop); width: 4px; margin-left: 5px; border-radius: 2px; }
-  .key.latest { background: var(--core-ink); width: 4px; margin-left: 5px; border-radius: 2px; }
-  .legend strong { font-weight: 700; }
-  .legend .range { color: var(--core-muted); font-weight: 400; margin-left: 6px; }
-  .legend .note { grid-column: 2; color: var(--core-muted); font-size: .9rem; }
-  .footnote { margin: 12px 0 0; color: var(--core-muted); font-size: .85rem; }
+  .key.latest { background: var(--ink); width: 4px; margin-left: 5px; border-radius: 2px; }
+  .legend strong { font-weight: 600; }
+  .legend .range { color: var(--muted); font-weight: 400; margin-left: 6px; }
+  .legend .note { grid-column: 2; color: var(--muted); font-size: .88rem; }
+  .footnote { margin: 12px 0 0; color: var(--dim); font-size: .82rem; }
 
   /* Main */
-  .main { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; padding: 26px 0 48px; }
-  @media (min-width: 900px) { .main { grid-template-columns: minmax(0, 1fr) 300px; gap: 48px; } }
+  .main { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; padding-top: 22px; padding-bottom: 48px; }
+  @media (min-width: 980px) { .main { grid-template-columns: minmax(0, 1fr) 330px; gap: 36px; } }
 
-  .filters { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; }
-  .filters.cats { margin-bottom: 14px; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
-  .filters.cats button { flex: none; font-weight: 500; padding: 5px 12px; font-size: .86rem; }
-  .filters button {
-    font: inherit; font-size: .9rem; font-weight: 600; padding: 7px 14px; border-radius: 99px;
-    border: 1px solid var(--rule); background: var(--panel); color: var(--ink); cursor: pointer;
+  /* PS5-style top tabs */
+  .tabs { display: flex; gap: 22px; margin: 0 0 10px; padding: 0 2px; }
+  .tabs button {
+    font: inherit; font-size: 1.05rem; font-weight: 400; padding: 6px 0 8px; background: none; border: 0;
+    color: var(--dim); cursor: pointer; position: relative; transition: color .15s;
   }
-  .filters button[aria-pressed="true"] { background: var(--core); border-color: var(--core); color: var(--core-ink); }
+  .tabs button:hover { color: var(--ink); }
+  .tabs button[aria-pressed="true"] { color: var(--ink); font-weight: 600; }
+  .tabs button[aria-pressed="true"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; border-radius: 3px; background: var(--ink); box-shadow: 0 0 12px rgba(255,255,255,.6); }
 
-  .feed { list-style: none; margin: 0; padding: 0; background: var(--panel); border-radius: 14px; border: 1px solid var(--rule); }
-  .row { display: grid; grid-template-columns: minmax(0, 1fr); padding: 16px 16px 15px; border-top: 1px solid var(--rule); }
-  .row:first-child { border-top: 0; }
-  @media (min-width: 640px) {
-    .row { grid-template-columns: 76px minmax(0, 1fr); column-gap: 16px; padding: 18px 22px 17px; }
+  /* XMB category row */
+  .xmb {
+    display: flex; gap: 4px; margin: 0 -16px 16px; padding: 10px 16px 12px; overflow-x: auto;
+    scroll-snap-type: x proximity; scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent);
+            mask-image: linear-gradient(90deg, #000 calc(100% - 28px), transparent);
   }
-  .day { color: var(--muted); font-size: .85rem; font-weight: 600; padding-top: 3px; }
+  .xmb::-webkit-scrollbar { display: none; }
+  @media (min-width: 900px) { .xmb { margin: 0 0 18px; padding: 10px 0 12px; -webkit-mask-image: none; mask-image: none; flex-wrap: wrap; } }
+  .xmb button {
+    flex: none; scroll-snap-align: start; display: flex; flex-direction: column; align-items: center; gap: 6px;
+    min-width: 78px; padding: 10px 8px 8px; border-radius: 16px; border: 1px solid transparent;
+    background: none; color: var(--muted); font: inherit; font-size: .74rem; font-weight: 500; cursor: pointer;
+    transition: color .2s, background .2s, border-color .2s, transform .2s;
+  }
+  .xmb svg { width: 28px; height: 28px; transition: transform .25s cubic-bezier(.2,.8,.2,1), filter .25s; }
+  .xmb button:hover { color: var(--ink); background: var(--glass); }
+  .xmb button[aria-pressed="true"] { color: var(--ink); background: var(--glass-2); border-color: rgba(255,255,255,.35); font-weight: 600; }
+  .xmb button[aria-pressed="true"] svg { transform: scale(1.18); filter: drop-shadow(0 0 8px rgba(255,255,255,.7)); }
+
+  /* Feed cards */
+  .feed { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .row {
+    display: grid; grid-template-columns: minmax(0, 1fr); padding: 16px 16px 15px;
+    background: var(--glass); border: 1px solid var(--glass-line); border-radius: var(--radius);
+    -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
+    transition: border-color .18s, box-shadow .18s, transform .18s, background .18s;
+  }
+  .row:hover, .row:focus-within {
+    border-color: rgba(255,255,255,.7); background: var(--glass-2);
+    box-shadow: 0 0 0 1px rgba(255,255,255,.5), 0 10px 34px rgba(0, 10, 40, .55), 0 0 26px rgba(80, 150, 255, .18);
+  }
+  @media (prefers-reduced-motion: no-preference) { .row:hover { transform: translateY(-2px); } }
+  @media (min-width: 640px) { .row { grid-template-columns: 70px minmax(0, 1fr); column-gap: 18px; padding: 18px 22px 17px; } }
+  .day { color: var(--muted); font-size: .8rem; font-weight: 600; padding-top: 3px; letter-spacing: .02em; }
   .day:empty { display: none; }
   @media (min-width: 640px) { .day:empty { display: block; } }
-  .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; font-size: .82rem; color: var(--muted); }
-  .tag { font-weight: 700; }
+  .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; font-size: .74rem; color: var(--muted); }
+  .tag { font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
   .tag.t-exploit { color: var(--t-exploit); }
   .tag.t-firmware { color: var(--t-firmware); }
   .tag.t-emulator { color: var(--t-emulator); }
@@ -183,126 +226,141 @@
   .tag.t-media { color: var(--t-media); }
   .tag.t-release { color: var(--t-release); }
   .more-btn {
-    display: block; width: 100%; padding: 14px; border: 0; border-top: 1px solid var(--rule); background: none;
-    font: inherit; font-weight: 600; color: var(--link); cursor: pointer; border-radius: 0 0 14px 14px;
+    display: block; width: 100%; margin-top: 12px; padding: 14px; border-radius: 99px;
+    border: 1px solid var(--glass-line); background: var(--glass); color: var(--ink);
+    font: inherit; font-weight: 600; cursor: pointer; transition: background .15s, border-color .15s;
   }
-  .more-btn:hover { background: var(--shell); }
-  .pre { border: 1px solid var(--rule); border-radius: 5px; padding: 0 6px; font-size: .75rem; }
+  .more-btn:hover { background: var(--glass-2); border-color: rgba(255,255,255,.5); }
+  .pre { border: 1px solid var(--glass-line); border-radius: 99px; padding: 0 8px; font-size: .7rem; }
 
-  .story h3 { margin: 4px 0 4px; font-size: 1.2rem; line-height: 1.28; font-weight: 750; font-stretch: 112%; letter-spacing: -0.005em; }
+  .story h3 { margin: 6px 0 4px; font-size: 1.15rem; line-height: 1.3; font-weight: 600; letter-spacing: -.005em; }
   .story details > summary { list-style: none; cursor: pointer; }
+  .story details > summary:focus-visible { outline: none; }
   .story details > summary::-webkit-details-marker { display: none; }
-  .story .summary { margin: 0; color: var(--muted); max-width: 68ch; }
-  .story .more { display: inline-block; margin-top: 6px; font-size: .88rem; font-weight: 600; color: var(--link); }
+  .story .summary { margin: 0; color: var(--muted); max-width: 70ch; font-size: .95rem; }
+  .story .more { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; font-size: .82rem; font-weight: 600; color: var(--ink); opacity: .8; }
+  .story .more::before { content: ""; width: 14px; height: 14px; border: 1.6px solid currentColor; border-radius: 50%; background: radial-gradient(circle, currentColor 0 2px, transparent 2.5px); }
   .story details[open] .more { display: none; }
-  .story .body { margin-top: 12px; max-width: 68ch; }
-  .story .body p { margin: 0 0 12px; }
-  .story .sources { font-size: .9rem; color: var(--muted); margin: 0; }
+  .story .body { margin-top: 12px; max-width: 70ch; }
+  .story .body p { margin: 0 0 12px; color: #DCE3F5; }
+  .story .sources { font-size: .88rem; color: var(--muted); margin: 0; }
   .story .sources a { margin-right: 10px; white-space: nowrap; }
-  .story .actions { margin-top: 10px; display: flex; gap: 14px; font-size: .88rem; }
-  .story .actions button { font: inherit; font-weight: 600; background: none; border: 0; padding: 0; color: var(--link); cursor: pointer; }
+  .story .actions { margin-top: 10px; display: flex; gap: 14px; font-size: .85rem; }
+  .story .actions button { font: inherit; font-weight: 600; background: var(--glass-2); border: 1px solid var(--glass-line); border-radius: 99px; padding: 5px 14px; color: var(--ink); cursor: pointer; }
+  .story .actions button:hover { border-color: rgba(255,255,255,.5); }
 
-  .release h3 { margin: 3px 0 2px; font-size: 1rem; line-height: 1.35; font-weight: 700; }
+  .release h3 { margin: 4px 0 2px; font-size: 1rem; line-height: 1.35; font-weight: 600; }
   .release h3 a { color: var(--ink); text-decoration: none; }
   .release h3 a:hover { color: var(--link); text-decoration: underline; }
-  .release .ver { font-stretch: 112%; }
-  .release .notes { margin: 0; font-size: .9rem; color: var(--muted); max-width: 68ch; overflow-wrap: anywhere; }
+  .release .ver { color: var(--led); font-weight: 700; }
+  .release .notes { margin: 0; font-size: .88rem; color: var(--muted); max-width: 70ch; overflow-wrap: anywhere; }
 
-  .status { padding: 18px 22px; color: var(--muted); font-size: .92rem; }
+  .status { padding: 18px 22px; color: var(--muted); font-size: .92rem; list-style: none; }
+  .feed > .status { background: var(--glass); border: 1px solid var(--glass-line); border-radius: var(--radius); }
 
   /* Sidebar */
-  aside h2 { margin: 0 0 4px; font-size: 1.05rem; font-weight: 700; font-stretch: 112%; }
-  aside .sub { margin: 0 0 12px; color: var(--muted); font-size: .88rem; }
+  aside { display: grid; gap: 18px; align-content: start; }
+  .side-block { padding: 18px 18px 10px; }
+  aside h2 { margin: 0 0 4px; font-size: .78rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ink); }
+  aside .sub { margin: 0 0 10px; color: var(--muted); font-size: .82rem; }
   .apps { list-style: none; margin: 0; padding: 0; }
-  .apps li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 10px; padding: 9px 0; border-top: 1px solid var(--rule); }
+  .apps li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 10px; padding: 9px 0; border-top: 1px solid var(--glass-line); }
   .apps li:first-child { border-top: 0; }
-  .apps a.name { font-weight: 650; color: var(--ink); text-decoration: none; }
+  .apps a.name { font-weight: 600; color: var(--ink); text-decoration: none; grid-row: 1; grid-column: 1; overflow-wrap: anywhere; }
   .apps a.name:hover { color: var(--link); text-decoration: underline; }
-  .apps a.name { grid-row: 1; grid-column: 1; }
-  .apps .about { grid-row: 2; grid-column: 1; color: var(--muted); font-size: .82rem; }
-  .apps .v { grid-row: 1; grid-column: 2; text-align: right; font-size: .85rem; font-weight: 600; font-stretch: 112%; }
-  .apps .when { grid-row: 2; grid-column: 2; text-align: right; color: var(--muted); font-size: .78rem; }
-  .apps .none { color: var(--muted); font-weight: 400; font-stretch: 100%; }
-  .group { border-top: 1px solid var(--rule); }
+  .apps .about { grid-row: 2; grid-column: 1; color: var(--muted); font-size: .8rem; }
+  .apps .v { grid-row: 1; grid-column: 2; text-align: right; font-size: .82rem; font-weight: 600; color: var(--led); }
+  .apps .when { grid-row: 2; grid-column: 2; text-align: right; color: var(--dim); font-size: .74rem; }
+  .apps .none { color: var(--dim); font-weight: 400; }
+  .new-pill { display: inline-block; margin-left: 6px; padding: 0 7px; border-radius: 99px; font-size: .62rem; font-weight: 700; letter-spacing: .08em; vertical-align: 2px; color: #04123a; background: #5EE6C8; }
+  .group { border-top: 1px solid var(--glass-line); }
   .group:first-of-type { border-top: 0; }
-  .group > summary {
-    display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 11px 0; cursor: pointer;
-    font-weight: 700; list-style: none;
-  }
+  .group > summary { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 11px 0; cursor: pointer; font-weight: 600; font-size: .92rem; list-style: none; }
   .group > summary::-webkit-details-marker { display: none; }
-  .group > summary::before { content: "+"; width: 1em; color: var(--muted); font-weight: 600; }
-  .group[open] > summary::before { content: "\2212"; }
+  .group > summary::before { content: ""; width: 8px; height: 8px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(-45deg); transition: transform .2s; margin: 0 4px 0 2px; }
+  .group[open] > summary::before { transform: rotate(45deg); }
   .group > summary .gname { flex: 1; }
-  .group > summary .gmeta { color: var(--muted); font-size: .82rem; font-weight: 500; }
+  .group > summary .gmeta { color: var(--dim); font-size: .78rem; font-weight: 500; }
   .group .apps { padding: 0 0 8px 1.3em; }
-  .side-block + .side-block { margin-top: 32px; }
   .found { list-style: none; margin: 0; padding: 0; }
-  .found li { padding: 10px 0; border-top: 1px solid var(--rule); }
+  .found li { padding: 10px 0; border-top: 1px solid var(--glass-line); }
   .found li:first-child { border-top: 0; }
-  .found a { font-weight: 650; color: var(--ink); text-decoration: none; overflow-wrap: anywhere; }
+  .found a { font-weight: 600; color: var(--ink); text-decoration: none; overflow-wrap: anywhere; }
   .found a:hover { color: var(--link); text-decoration: underline; }
-  .found .desc { margin: 2px 0 0; color: var(--muted); font-size: .85rem; overflow-wrap: anywhere; }
-  .found .fmeta { margin: 2px 0 0; color: var(--muted); font-size: .78rem; font-variant-numeric: tabular-nums; }
+  .found .desc { margin: 2px 0 0; color: var(--muted); font-size: .84rem; overflow-wrap: anywhere; }
+  .found .fmeta { margin: 2px 0 0; color: var(--dim); font-size: .76rem; font-variant-numeric: tabular-nums; }
   .found .badge { color: var(--t-emulator); font-weight: 700; }
+  .found .tracked { color: var(--led); font-weight: 600; }
 
-  footer { border-top: 1px solid var(--rule); padding: 20px 0 36px; color: var(--muted); font-size: .88rem; }
+  footer { border-top: 1px solid var(--glass-line); padding: 22px 0 40px; color: var(--muted); font-size: .85rem; }
   footer p { margin: 0 0 6px; max-width: 70ch; }
 
   .toast {
-    position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); background: var(--core); color: var(--core-ink);
-    padding: 9px 16px; border-radius: 99px; font-size: .9rem; opacity: 0; pointer-events: none; transition: opacity .2s;
+    position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); color: var(--ink);
+    background: rgba(10, 25, 70, .85); border: 1px solid var(--glass-line); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+    padding: 9px 18px; border-radius: 99px; font-size: .88rem; opacity: 0; pointer-events: none; transition: opacity .2s;
   }
   .toast.show { opacity: 1; }
 
   @media (prefers-reduced-motion: no-preference) {
     .seg.charge { animation: charge 900ms cubic-bezier(.2, .7, .2, 1) both; }
     @keyframes charge { from { transform: scaleX(0); opacity: .4; } to { transform: scaleX(1); opacity: 1; } }
+    .feed .row { animation: rise .45s cubic-bezier(.2,.8,.2,1) both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
   }
 </style>
 </head>
 <body>
+<div class="sky" aria-hidden="true"></div>
+<div class="wave" aria-hidden="true">
+  <svg viewBox="0 0 2400 400" preserveAspectRatio="none"><path d="M0 230 C 300 120, 600 330, 900 210 S 1500 120, 1800 230 S 2100 330, 2400 230" stroke="rgba(150,200,255,.22)" stroke-width="2"/><path d="M0 250 C 300 150, 600 350, 900 235 S 1500 150, 1800 250 S 2100 350, 2400 250" stroke="rgba(150,200,255,.12)" stroke-width="28"/><path d="M0 262 C 300 170, 600 360, 900 250 S 1500 170, 1800 262 S 2100 360, 2400 262" stroke="rgba(120,180,255,.06)" stroke-width="70"/></svg>
+  <svg class="w2" viewBox="0 0 2400 400" preserveAspectRatio="none"><path d="M0 200 C 400 300, 800 110, 1200 200 S 2000 300, 2400 200" stroke="rgba(190,220,255,.16)" stroke-width="1.5"/><path d="M0 215 C 400 315, 800 125, 1200 215 S 2000 315, 2400 215" stroke="rgba(160,200,255,.07)" stroke-width="36"/></svg>
+</div>
 <header class="masthead">
   <div class="wrap">
     <div>
-      <h1 class="brand"><a href="/"><span class="bar" aria-hidden="true"></span>PS5 Scene Wire</a></h1>
+      <h1 class="brand"><a href="/"><span class="shapes" aria-hidden="true"><i class="tri"></i><i class="cir"></i><i class="crs"></i><i class="sqr"></i></span><span>PS5 <b>Scene Wire</b></span></a></h1>
       <p class="tagline">Jailbreak, firmware and homebrew headlines for PS5</p>
     </div>
-    <p class="checked" id="checked">Checking app releases…</p>
+    <div class="status-bar">
+      <time class="clock" id="clock"></time>
+      <p class="checked" id="checked">Checking app releases…</p>
+    </div>
   </div>
 </header>
 
 <section class="core" aria-labelledby="fw-title">
-  <div class="wrap">
+  <div class="wrap"><div class="glass">
     <h2 id="fw-title">Where each firmware stands</h2>
     <dl class="facts" id="facts"></dl>
     <div class="ruler" id="ruler" role="img" aria-label="Firmware coverage chart"></div>
     <ul class="legend" id="legend"></ul>
     <p class="footnote" id="footnote"></p>
-  </div>
+  </div></div>
 </section>
 
 <div class="wrap main">
   <section aria-labelledby="feed-title">
-    <h2 id="feed-title" class="visually-hidden" style="position:absolute;left:-9999px">Headlines</h2>
-    <div class="filters" role="group" aria-label="Show">
-      <button type="button" data-filter="all" aria-pressed="true">Everything</button>
-      <button type="button" data-filter="story" aria-pressed="false">Stories</button>
+    <h2 id="feed-title" class="vh">Headlines</h2>
+    <div class="tabs" role="group" aria-label="Show">
+      <button type="button" data-filter="story" aria-pressed="true">Stories</button>
       <button type="button" data-filter="release" aria-pressed="false">App releases</button>
+      <button type="button" data-filter="all" aria-pressed="false">Everything</button>
     </div>
-    <div class="filters cats" role="group" aria-label="Topic" id="cats"></div>
+    <div class="xmb" role="group" aria-label="Topic" id="cats"></div>
     <ol class="feed" id="feed"><li class="status">Loading headlines…</li></ol>
     <button type="button" class="more-btn" id="more" hidden>Show more headlines</button>
   </section>
 
   <aside>
-    <section class="side-block" aria-labelledby="apps-title">
+    <section class="side-block glass" aria-labelledby="apps-title">
       <h2 id="apps-title">Tracked apps</h2>
       <p class="sub" id="apps-sub">Latest version of each, straight from its GitHub releases. Everything in the ProsperoStore catalogue is included and synced hourly.</p>
       <div id="apps"><p class="status" style="padding:9px 0">Checking GitHub…</p></div>
     </section>
-    <section class="side-block" aria-labelledby="found-title">
+    <section class="side-block glass" aria-labelledby="found-title">
       <h2 id="found-title">New on GitHub</h2>
-      <p class="sub">PS5 homebrew repos created in the last 30 days, found by searching GitHub. These haven't been reviewed, so read each README before running anything.</p>
+      <p class="sub">PS5 homebrew repos created in the last 30 days, found by searching GitHub. Once one has a few stars it joins Tracked apps automatically. None of these are reviewed, so read each README before running anything.</p>
       <ul class="found" id="found"><li class="status" style="padding:9px 0">Searching GitHub…</li></ul>
     </section>
   </aside>
@@ -343,7 +401,9 @@
   let stories = [];
   let releases = [];
   let trackedRepos = new Set();
-  let filter = 'all';
+  let trackedCat = new Map();
+  let handPicked = new Set();
+  let filter = 'story';
   let cat = 'all';
   const PAGE = 40;
   let shown = PAGE;
@@ -357,6 +417,17 @@
     { id: 'media', short: 'Media', name: 'Media and streaming' },
     { id: 'pc', short: 'PC and Linux', name: 'PC, Linux and Steam' }
   ];
+  const ICONS = {
+    all: '<path d="M4 11.5 12 5l8 6.5V20a1 1 0 0 1-1 1h-4.5v-6h-5v6H5a1 1 0 0 1-1-1z"/>',
+    jailbreak: '<rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 6.8-1.2"/><circle cx="12" cy="15.5" r="1.4"/>',
+    tools: '<path d="M14.7 6.3a4 4 0 0 0-5.2 5.2L4.5 16.5a1.8 1.8 0 0 0 2.5 2.5l5-5a4 4 0 0 0 5.2-5.2l-2.6 2.6-2.3-.6-.6-2.3z"/>',
+    stores: '<path d="M5 8h14l-1.2 11.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/>',
+    emulators: '<path d="M7.5 8h9a4.5 4.5 0 0 1 4.4 5.4l-.6 3a2.4 2.4 0 0 1-4.2 1L14.5 16h-5l-1.6 1.4a2.4 2.4 0 0 1-4.2-1l-.6-3A4.5 4.5 0 0 1 7.5 8z"/><path d="M8 11v3M6.5 12.5h3"/><circle cx="15.5" cy="11.5" r=".6"/><circle cx="17" cy="13.2" r=".6"/>',
+    ports: '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="2.2"/><path d="M12 3.5a8.5 8.5 0 0 1 6 2.5"/>',
+    media: '<circle cx="12" cy="12" r="8.5"/><path d="M10.2 8.8v6.4l5.2-3.2z"/>',
+    pc: '<rect x="3.5" y="5" width="17" height="11" rx="1.5"/><path d="M9 20h6M12 16v4"/>'
+  };
+  const icon = (id) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">${ICONS[id] || ''}</svg>`;
   const TAG_CAT = { Exploit: 'jailbreak', Firmware: 'jailbreak', Loader: 'jailbreak', Tool: 'tools', Store: 'stores', Emulator: 'emulators', Port: 'ports', Media: 'media', 'PC & Linux': 'pc' };
   const slug = (s) => 't-' + String(s).toLowerCase().replace(/&/g, ' ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
@@ -429,7 +500,7 @@
 
   function renderCats() {
     $('#cats').innerHTML = [{ id: 'all', short: 'All topics' }, ...CATS].map((c) =>
-      `<button type="button" data-cat="${c.id}" aria-pressed="${String(c.id === cat)}">${esc(c.short)}</button>`).join('');
+      `<button type="button" data-cat="${c.id}" aria-pressed="${String(c.id === cat)}">${icon(c.id)}<span>${esc(c.short)}</span></button>`).join('');
   }
 
   function renderFeed() {
@@ -468,7 +539,8 @@
     const v = a.latest
       ? `<span class="v">${esc(a.latest.tag)}</span><span class="when">${esc(ago(a.latest.date))}</span>`
       : `<span class="v none">${a.status === 'unavailable' ? 'Couldn’t reach' : 'No releases yet'}</span>`;
-    return `<li><a class="name" href="${esc(a.latest ? a.latest.url : a.repoUrl || a.releasesUrl)}" target="_blank" rel="noopener">${esc(a.name)}</a>${v}<span class="about">${esc(a.about)}</span></li>`;
+    const pill = a.discovered ? '<span class="new-pill" title="Added automatically from New on GitHub">NEW</span>' : '';
+    return `<li><a class="name" href="${esc(a.latest ? a.latest.url : a.repoUrl || a.releasesUrl)}" target="_blank" rel="noopener">${esc(a.name)}</a>${v}<span class="about">${esc(a.about)}${pill}</span></li>`;
   }
 
   function renderApps(apps) {
@@ -485,7 +557,7 @@
   function renderFound(d) {
     const cutoff = Date.now() - 30 * 86400000;
     const list = (d.repos || [])
-      .filter((r) => !r.tracked && !trackedRepos.has(r.repo.toLowerCase()) && toDate(r.createdAt).getTime() >= cutoff)
+      .filter((r) => !handPicked.has(r.repo.toLowerCase()) && toDate(r.createdAt).getTime() >= cutoff)
       .slice(0, 15);
     if (!list.length) {
       $('#found').innerHTML = '<li class="status" style="padding:9px 0">Nothing new in the last 30 days. Check back later.</li>';
@@ -494,15 +566,16 @@
     $('#found').innerHTML = list.map((r) =>
       `<li><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.repo)}</a>` +
       `<p class="desc">${esc(r.description)}</p>` +
-      `<p class="fmeta">Created ${esc(ago(r.createdAt))}, ${r.stars} ${r.stars === 1 ? 'star' : 'stars'}${r.mentions1360 ? ', <span class="badge">mentions 13.60</span>' : ''}</p></li>`).join('');
+      `<p class="fmeta">Created ${esc(ago(r.createdAt))}, ${r.stars} ${r.stars === 1 ? 'star' : 'stars'}${r.mentions1360 ? ', <span class="badge">mentions 13.60</span>' : ''}` +
+      (trackedCat.has(r.repo.toLowerCase()) ? `<br><span class="tracked">Now tracked in ${esc((CATS.find((c) => c.id === trackedCat.get(r.repo.toLowerCase())) || {}).short || 'Apps')}</span>` : '') + '</p></li>').join('');
   }
 
   // ---------- Permalinks ----------
   function openStory(id, scroll = true) {
     if (!id) return;
     if (filter === 'release' || cat !== 'all') {
-      filter = 'all'; cat = 'all'; shown = PAGE;
-      document.querySelectorAll('[data-filter]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.filter === 'all')));
+      filter = 'story'; cat = 'all'; shown = PAGE;
+      document.querySelectorAll('[data-filter]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.filter === 'story')));
       document.querySelectorAll('[data-cat]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.cat === 'all')));
       renderFeed();
     }
@@ -558,6 +631,10 @@
   $('#cats').addEventListener('click', (e) => { const b = e.target.closest('[data-cat]'); if (b) setCat(b.dataset.cat); });
   $('#more').addEventListener('click', () => { shown += PAGE; renderFeed(); });
 
+  // ---------- Clock (PS5 status bar) ----------
+  const tick = () => { const n = new Date(); $('#clock').textContent = n.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); $('#clock').dateTime = n.toISOString(); };
+  tick(); setInterval(tick, 15000);
+
   // ---------- Load ----------
   const getJSON = (u) => fetch(u, { cache: 'no-cache' }).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); });
 
@@ -573,6 +650,8 @@
   const releasesLoaded = getJSON('/api/releases').then((d) => {
     releases = d.releases || [];
     trackedRepos = new Set((d.apps || []).map((a) => a.repo.toLowerCase()));
+    trackedCat = new Map((d.apps || []).map((a) => [a.repo.toLowerCase(), a.cat]));
+    handPicked = new Set((d.apps || []).filter((a) => !a.discovered).map((a) => a.repo.toLowerCase()));
     renderApps(d.apps || []);
     const live = (d.apps || []).filter((a) => a.status !== 'missing');
     const inStore = live.filter((a) => a.inStore).length;

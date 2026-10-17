@@ -28,8 +28,9 @@ export function categorize({ name = '', description = '', kind = '' }) {
   if (/pokemmo/.test(t)) return 'pc';
   // Games go to ports before the media check, so a port whose description mentions video isn't misfiled.
   if (kind === 'game' || /recomp|harkinian|port of|quake|doom|openmw|openrct|xash/.test(t)) return 'ports';
-  if (/jellyfin|emby|stremio|\bvlc\b|nuvio|twitch|youtube|iptv|tv\b|radio|spotify|spot5|twisp|music|cd player|media|player\b|moonlight|remote play|steam link|cloud|geforce|opennow|stream|vr\b|video/.test(t)) return 'media';
+  if (/jellyfin|emby|stremio|\bvlc\b|nuvio|twitch|youtube|iptv|tv\b|radio|spotify|spot5|twisp|music|cd player|media|player\b|moonlight|remote play|steam link|cloud|geforce|opennow|stream|vr\b|video|audio|airplay|capture card|navidrome|plex/.test(t)) return 'media';
   if (/\bwine?\b|windows|linux|\bjava\b/.test(t)) return 'pc';
+  if (/exploit|jailbreak (host|chain|service)|kernel|hypervisor|autoloader|\bhen\b|elf ?loader|relapse|byepervisor/.test(t)) return 'jailbreak';
   return 'tools';
 }
 

@@ -5,13 +5,34 @@
 // unauthenticated API only allows 60 calls an hour. Cached on Vercel for an hour.
 
 import { CATEGORIES } from './_sources.js';
-import { allSources } from './_catalog.js';
+import { allSources, categorize, shorten } from './_catalog.js';
+import { discover } from './discover.js';
 
 const PER_REPO = 3;
 const TIMEOUT_MS = 8000;
 const CONCURRENCY = 12;
 const MAX_HEADLINES = 220;
 const UA = 'ps5-scene-wire';
+// Repos found by the GitHub search are tracked automatically once they look established.
+const PROMOTE_MIN_STARS = 3;
+const PROMOTE_MAX = 60;
+
+// Turns "New on GitHub" finds into tracked apps, filed under a best-guess category.
+export function promote(found = [], sources = []) {
+  const have = new Set(sources.map((s) => s.repo.toLowerCase()));
+  return found
+    .filter((r) => !have.has(r.repo.toLowerCase()) && !r.archived && !r.noise && r.stars >= PROMOTE_MIN_STARS)
+    .sort((a, b) => b.stars - a.stars)
+    .slice(0, PROMOTE_MAX)
+    .map((r) => ({
+      cat: categorize({ name: r.name, description: r.description }),
+      repo: r.repo,
+      name: r.name,
+      about: shorten(r.description || ''),
+      discovered: true,
+      createdAt: r.createdAt
+    }));
+}
 
 const ENTITIES = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", '#39': "'", nbsp: ' ' };
 
@@ -150,9 +171,22 @@ async function pool(list, limit, fn) {
   return out;
 }
 
-export async function collect({ fetchImpl = globalThis.fetch, token = process.env.GITHUB_TOKEN, sources } = {}) {
+export async function collect({ fetchImpl = globalThis.fetch, token = process.env.GITHUB_TOKEN, sources, withDiscovered = true } = {}) {
   let catalog = { ok: false, count: 0, skipped: true };
-  if (!sources) ({ sources, catalog } = await allSources({ fetchImpl }));
+  let discovered = 0;
+  if (!sources) {
+    ({ sources, catalog } = await allSources({ fetchImpl }));
+    if (withDiscovered) {
+      try {
+        const found = await discover({ fetchImpl, token, sources });
+        const extra = promote(found.repos, sources);
+        sources = [...sources, ...extra];
+        discovered = extra.length;
+      } catch {
+        // GitHub search is optional: the hand-picked and catalogue apps still load.
+      }
+    }
+  }
   const state = { rateLimited: false };
   const results = await pool(sources, CONCURRENCY, (src) => loadRepo(src, { fetchImpl, token }, state));
 
@@ -171,6 +205,7 @@ export async function collect({ fetchImpl = globalThis.fetch, token = process.en
       name: src.name,
       about: src.about || '',
       inStore: !!src.inStore,
+      discovered: !!src.discovered,
       status: status === 'ok' && !latest ? 'no-releases' : status,
       repoUrl: `https://github.com/${src.repo}`,
       releasesUrl: `https://github.com/${src.repo}/releases`,
@@ -185,6 +220,7 @@ export async function collect({ fetchImpl = globalThis.fetch, token = process.en
     usingToken: !!token,
     rateLimited: state.rateLimited,
     catalog,
+    discovered,
     categories: CATEGORIES,
     // Apps first: shorter, and readable even when a client truncates the response.
     apps,

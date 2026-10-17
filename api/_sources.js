@@ -34,6 +34,7 @@ export const SOURCES = [
   { cat: J, repo: 'Phoenixx1202/LegacyJB', name: 'LegacyJB', about: 'Jailbreak service for apps, port 9028' },
   { cat: J, repo: 'drakmor/ppr-patch', name: 'ppr-patch', about: 'A53 PPR patcher' },
   { cat: J, repo: 'drakmor/nanoDNS', name: 'nanoDNS', about: 'DNS proxy payload' },
+  { cat: J, repo: 'lvndry/ps5-firmware-pin', name: 'ps5-firmware-pin', about: 'Blocks firmware updates' },
 
   // Managers and tools
   { cat: T, repo: 'itsPLK/ps5-payload-manager', name: 'Payload Manager', about: 'Web dashboard for payloads and autoload' },
@@ -49,10 +50,21 @@ export const SOURCES = [
   { cat: T, repo: 'ps5-payload-dev/ftpsrv', name: 'ftpsrv', about: 'FTP server on port 2121' },
   { cat: T, repo: 'ps5-payload-dev/websrv', name: 'websrv', about: 'Web server on port 8080' },
   { cat: T, repo: 'ps5-payload-dev/sdk', name: 'PS5 Payload SDK', about: 'Toolchain for payloads' },
+  { cat: T, repo: 'notmaj0r/ProsperoMgr', name: 'ProsperoMgr', about: 'Web-based all-in-one manager, port 7070' },
+  { cat: T, repo: 'SvenGDK/Prospero-Explorer', name: 'Prospero Explorer', about: 'File explorer on SharpProspero' },
+  { cat: T, repo: 'kerrdec97/PS5-Backport-GUI', name: 'PS5 Backport GUI', about: 'Batch backporting for lower firmware' },
+  { cat: T, repo: 'theghostonline/007-First-Light-PS5', name: '007 First Light Online', about: 'Local backend for online features' },
+  { cat: T, repo: 'theghostonline/Hitman-PS5', name: 'Hitman-PS5', about: 'Local backend for HITMAN online' },
+  { cat: T, repo: 'bps2414/lineup', name: 'Lineup', about: 'Reorder the home screen game row' },
+  { cat: T, repo: 'cobanov/PS5LM', name: 'PS5LM', about: 'llama.cpp language models on PS5' },
+  { cat: T, repo: 'knutwurst/ps5-patchdl', name: 'PatchDL', about: 'Download official game updates' },
+  { cat: T, repo: 'gasb07/ps4mount', name: 'ps4mount', about: 'Run PS4 games from USB' },
+  { cat: T, repo: 'Starter-ps5/Common-FPS-for-PS5', name: 'Common-FPS', about: 'Real-time FPS overlay' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },
   { cat: S, repo: 'elripalda/RecompStore', name: 'RecompStore', about: 'Installs recompiled ports from your discs' },
+  { cat: S, repo: 'JVK3R/JobeesLair', name: 'Jobee’sLair', about: 'Feed-based homebrew download manager' },
 
   // Emulators
   { cat: E, repo: 'Swordpdf/PS5SX2', name: 'PS5SX2', about: 'PS2, based on PCSX2' },
@@ -71,6 +83,7 @@ export const SOURCES = [
   { cat: E, repo: 'tsuramatsu1/psp5', name: 'psp5', about: 'PSP, based on PPSSPP' },
   { cat: E, repo: 'MisterTemaki/genplusgxPS5', name: 'Genesis Plus GX', about: 'Mega Drive, Master System, Game Gear' },
   { cat: E, repo: 'MisterTemaki/beetlepcePS5', name: 'Beetle PCE', about: 'PC Engine and TurboGrafx-16' },
+  { cat: E, repo: 'darkxex/SwanStationPS5', name: 'SwanStationPS5', about: 'PS1, Vulkan, RetroAchievements' },
 
   // PC, Linux and Steam
   { cat: P, repo: 'ps5-linux/ps5-linux-loader', name: 'ps5-linux', about: 'Linux loader, low firmware' },
@@ -86,6 +99,9 @@ export const SOURCES = [
   { cat: M, repo: 'bornaradusin/Emby5', name: 'Emby5', about: 'Emby client' },
   { cat: M, repo: '02dnot/Jelly5', name: 'Jelly5', about: 'Jellyfin and Emby client' },
   { cat: M, repo: 'ZiZc3/VLC', name: 'VLC', about: 'VLC media player' },
+  { cat: M, repo: 'blackbearreloaded/ProsperoTube', name: 'ProsperoTube', about: 'YouTube client based on SmartTube' },
+  { cat: M, repo: 'theghostonline/PS5VR', name: 'PS5VR', about: 'VR video player for PSVR2' },
+  { cat: M, repo: 'fstat13/PSCapture', name: 'PSCapture', about: 'Virtual capture card for OBS and Discord' },
 
   // Recomps and ports
   { cat: R, repo: 'Nazky/UnleashedRecomp-Prospero', name: 'Sonic Unleashed Recompiled', about: 'Xbox 360 recomp, bring your own copy' },
@@ -107,5 +123,8 @@ export const SOURCES = [
   { cat: R, repo: 'Marice/rush2-ps5', name: 'Rush 2 Recompiled', about: 'N64 recomp' },
   { cat: R, repo: 'griches/PS5_Doom3', name: 'Doom 3 BFG', about: 'RBDoom3BFG port, bring your own copy' },
   { cat: R, repo: 'griches/PS5_Quake3e', name: 'Quake III', about: 'Quake3e engine port' },
-  { cat: R, repo: 'Marice/stk-ps5', name: 'SuperTuxKart', about: 'Open-source kart racer' }
+  { cat: R, repo: 'Marice/stk-ps5', name: 'SuperTuxKart', about: 'Open-source kart racer' },
+  { cat: R, repo: 'griches/PS5_DevilutionX', name: 'DevilutionX', about: 'Diablo and Hellfire, bring your own data' },
+  { cat: R, repo: 'elripalda/nbastreet-ps5', name: 'NBA Street Homecourt', about: 'Xbox 360 recomp, 1440p60' },
+  { cat: R, repo: 'elripalda/skate3-ps5', name: 'Skate 3', about: 'Xbox 360 recomp' }
 ];
