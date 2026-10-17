@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Firmware Directory · PS5 Scene Wire</title>
+<meta name="description" content="Pick your PS5 firmware and see which jailbreak, loaders, emulators, ports and apps run on it, with links to each release.">
+<meta name="theme-color" content="#04123a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2304123a'/%3E%3Crect x='14' y='5' width='4' height='22' rx='2' fill='%233B8CFF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-0: #01030c; --bg-1: #04123a;
+    --glass: rgba(255, 255, 255, .055); --glass-2: rgba(255, 255, 255, .09); --glass-line: rgba(255, 255, 255, .11);
+    --ink: #F4F7FF; --muted: #A9B4CF; --dim: #7884A3; --link: #8EC1FF;
+    --led: #3D8BFF; --led-soft: rgba(61, 139, 255, .35); --stop: #FF6B6B; --focus: #FFFFFF;
+    --ok: #5EE6C8; --warn: #FFC46B;
+    --radius: 18px;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; background: var(--bg-0); }
+  body {
+    margin: 0; min-height: 100vh; color: var(--ink); background: transparent;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  .sky {
+    position: fixed; inset: 0; z-index: -2; pointer-events: none;
+    background:
+      radial-gradient(1200px 700px at 12% -10%, rgba(40, 110, 255, .55), transparent 60%),
+      radial-gradient(900px 600px at 100% 0%, rgba(20, 60, 190, .45), transparent 65%),
+      radial-gradient(800px 500px at 50% 110%, rgba(10, 40, 140, .5), transparent 70%),
+      linear-gradient(180deg, var(--bg-1) 0%, #030a24 55%, var(--bg-0) 100%);
+  }
+  .wave { position: fixed; left: 0; right: 0; top: 18vh; height: 46vh; z-index: -1; pointer-events: none; overflow: hidden; opacity: .9; }
+  .wave svg { position: absolute; left: 0; top: 0; width: 200%; height: 100%; }
+  .wave path { fill: none; stroke-linecap: round; }
+  @media (prefers-reduced-motion: no-preference) {
+    .wave svg { animation: drift 38s linear infinite; }
+    .wave svg.w2 { animation-duration: 54s; animation-direction: reverse; }
+    @keyframes drift { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  }
+  a { color: var(--link); text-underline-offset: 3px; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 8px; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+  @media (min-width: 900px) { .wrap { padding: 0 32px; } }
+  .glass {
+    background: var(--glass); border: 1px solid var(--glass-line); border-radius: var(--radius);
+    -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%);
+  }
+
+  .masthead { padding: 18px 0 8px; }
+  .masthead .wrap { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .brand { margin: 0; font-size: clamp(1.25rem, 5vw, 1.75rem); line-height: 1.1; font-weight: 300; letter-spacing: .14em; text-transform: uppercase; }
+  .brand a { color: inherit; text-decoration: none; display: inline-flex; align-items: center; gap: .55em; }
+  .brand b { font-weight: 700; }
+  .shapes { display: inline-grid; grid-template-columns: repeat(2, .5em); gap: .12em; font-size: .9em; }
+  .shapes i { width: .5em; height: .5em; display: block; }
+  .shapes .tri { background: #3EE0B6; clip-path: polygon(50% 4%, 100% 96%, 0 96%); }
+  .shapes .cir { border: 2px solid #FF6B7E; border-radius: 50%; }
+  .shapes .crs { background: linear-gradient(45deg, transparent 42%, #7DB6FF 42% 58%, transparent 58%), linear-gradient(-45deg, transparent 42%, #7DB6FF 42% 58%, transparent 58%); }
+  .shapes .sqr { border: 2px solid #F59ED8; border-radius: 1px; }
+  .tagline { margin: 6px 0 0; color: var(--muted); font-size: .9rem; }
+  .back { flex: none; margin-top: 4px; font-size: .9rem; font-weight: 600; color: var(--ink); text-decoration: none; padding: 6px 14px; border-radius: 99px; border: 1px solid var(--glass-line); background: var(--glass); }
+  .back:hover { border-color: rgba(255,255,255,.5); background: var(--glass-2); }
+
+  h2.kicker { margin: 0; font-size: .78rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+  .picker { padding: 20px 18px 16px; margin: 14px 0 18px; }
+  @media (min-width: 640px) { .picker { padding: 24px 28px 20px; } }
+  .hint { margin: 4px 0 12px; color: var(--muted); font-size: .88rem; }
+
+  /* Firmware chips, XMB style */
+  .chips { display: flex; gap: 6px; overflow-x: auto; padding: 4px 2px 10px; scrollbar-width: none; }
+  .chips::-webkit-scrollbar { display: none; }
+  @media (min-width: 900px) { .chips { flex-wrap: wrap; overflow: visible; } }
+  .chips button {
+    flex: none; min-width: 64px; padding: 9px 12px; border-radius: 14px; border: 1px solid transparent;
+    background: var(--glass); color: var(--muted); font: inherit; font-size: .9rem; font-weight: 500; cursor: pointer;
+    font-variant-numeric: tabular-nums; transition: color .15s, background .15s, border-color .15s, box-shadow .15s;
+    position: relative;
+  }
+  .chips button:hover { color: var(--ink); background: var(--glass-2); }
+  .chips button[aria-pressed="true"] { color: var(--ink); background: var(--glass-2); border-color: rgba(255,255,255,.6); font-weight: 700; box-shadow: 0 0 18px rgba(80,150,255,.35); }
+  .chips button .pip { position: absolute; top: 6px; right: 6px; width: 6px; height: 6px; border-radius: 50%; background: var(--led); box-shadow: 0 0 6px var(--led-soft); }
+  .chips button .pip.none { background: var(--stop); box-shadow: none; }
+  .chips.minor button { min-width: 56px; font-size: .85rem; padding: 7px 10px; }
+  .chips-legend { margin: 2px 0 0; color: var(--dim); font-size: .78rem; display: flex; gap: 16px; flex-wrap: wrap; }
+  .chips-legend i { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+
+  /* Verdict */
+  .verdict { padding: 20px 18px; margin-bottom: 18px; }
+  @media (min-width: 640px) { .verdict { padding: 24px 28px; } }
+  .verdict .fw { margin: 6px 0 4px; font-size: clamp(2rem, 8vw, 2.8rem); font-weight: 700; line-height: 1; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+  .verdict .fw.yes { color: var(--led); text-shadow: 0 0 22px var(--led-soft); }
+  .verdict .fw.no { color: var(--stop); }
+  .verdict .line { margin: 8px 0 0; color: #DCE3F5; max-width: 70ch; }
+  .entries { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 8px; }
+  @media (min-width: 760px) { .entries { grid-template-columns: 1fr 1fr; } }
+  .entries li { padding: 12px 14px; border-radius: 14px; background: var(--glass); border: 1px solid var(--glass-line); }
+  .entries a { font-weight: 700; color: var(--ink); text-decoration: none; }
+  .entries a:hover { color: var(--link); text-decoration: underline; }
+  .entries .how { margin: 2px 0 0; color: var(--muted); font-size: .86rem; }
+  .entries .rng { color: var(--led); font-size: .8rem; font-weight: 600; margin-left: 6px; font-variant-numeric: tabular-nums; }
+
+  /* Directory */
+  .dir { display: grid; gap: 12px; padding-bottom: 28px; }
+  @media (min-width: 980px) { .dir { grid-template-columns: 1fr 1fr; align-items: start; } }
+  .cat { padding: 6px 18px 10px; }
+  .cat > summary { display: flex; align-items: center; gap: 10px; padding: 12px 0; cursor: pointer; list-style: none; font-weight: 600; }
+  .cat > summary::-webkit-details-marker { display: none; }
+  .cat > summary::before { content: ""; width: 8px; height: 8px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(-45deg); transition: transform .2s; margin: 0 4px 0 2px; }
+  .cat[open] > summary::before { transform: rotate(45deg); }
+  .cat svg { width: 22px; height: 22px; flex: none; }
+  .cat .cname { flex: 1; }
+  .cat .count { color: var(--dim); font-size: .8rem; font-weight: 500; font-variant-numeric: tabular-nums; }
+  .cat .count b { color: var(--ok); font-weight: 700; }
+  @media (max-width: 560px) { .cat > summary { flex-wrap: wrap; } .cat .count { flex-basis: 100%; padding-left: 50px; } }
+  .tier { margin: 6px 0 2px; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+  .tier.ok { color: var(--ok); }
+  .tier.maybe { color: var(--warn); }
+  .list { list-style: none; margin: 0 0 6px; padding: 0; }
+  .list li { padding: 10px 0; border-top: 1px solid var(--glass-line); display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 2px 10px; }
+  .list li:first-child { border-top: 0; }
+  .list a.name { font-weight: 600; color: var(--ink); text-decoration: none; overflow-wrap: anywhere; }
+  .list a.name:hover { color: var(--link); text-decoration: underline; }
+  .list .v { text-align: right; font-size: .8rem; font-weight: 600; color: var(--led); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .list .about { grid-column: 1 / -1; color: var(--muted); font-size: .82rem; }
+  .list .why { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 4px 6px; margin-top: 3px; }
+  .pill { font-size: .7rem; font-weight: 600; padding: 1px 8px; border-radius: 99px; border: 1px solid var(--glass-line); color: var(--muted); font-variant-numeric: tabular-nums; }
+  .pill.ok { color: #04123a; background: var(--ok); border-color: transparent; }
+  .pill.range { color: var(--ink); border-color: rgba(61,139,255,.6); }
+  .pill.need { color: var(--muted); }
+  .list .note { grid-column: 1 / -1; color: var(--dim); font-size: .78rem; margin-top: 2px; }
+  .more-maybe { margin: 4px 0 6px; }
+  .more-maybe > summary { cursor: pointer; color: var(--warn); font-size: .82rem; font-weight: 600; padding: 6px 0; list-style: none; }
+  .more-maybe > summary::-webkit-details-marker { display: none; }
+  .more-maybe > summary::before { content: "+ "; }
+  .more-maybe[open] > summary::before { content: "− "; }
+  .empty { color: var(--dim); font-size: .86rem; padding: 4px 0 10px; margin: 0; }
+  .status { padding: 18px 22px; color: var(--muted); }
+
+  footer { border-top: 1px solid var(--glass-line); padding: 22px 0 40px; color: var(--muted); font-size: .85rem; }
+  footer p { margin: 0 0 6px; max-width: 75ch; }
+</style>
+</head>
+<body>
+<div class="sky" aria-hidden="true"></div>
+<div class="wave" aria-hidden="true">
+  <svg viewBox="0 0 2400 400" preserveAspectRatio="none"><path d="M0 230 C 300 120, 600 330, 900 210 S 1500 120, 1800 230 S 2100 330, 2400 230" stroke="rgba(150,200,255,.22)" stroke-width="2"/><path d="M0 250 C 300 150, 600 350, 900 235 S 1500 150, 1800 250 S 2100 350, 2400 250" stroke="rgba(150,200,255,.12)" stroke-width="28"/><path d="M0 262 C 300 170, 600 360, 900 250 S 1500 170, 1800 262 S 2100 360, 2400 262" stroke="rgba(120,180,255,.06)" stroke-width="70"/></svg>
+  <svg class="w2" viewBox="0 0 2400 400" preserveAspectRatio="none"><path d="M0 200 C 400 300, 800 110, 1200 200 S 2000 300, 2400 200" stroke="rgba(190,220,255,.16)" stroke-width="1.5"/><path d="M0 215 C 400 315, 800 125, 1200 215 S 2000 315, 2400 215" stroke="rgba(160,200,255,.07)" stroke-width="36"/></svg>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div>
+      <h1 class="brand"><a href="/"><span class="shapes" aria-hidden="true"><i class="tri"></i><i class="cir"></i><i class="crs"></i><i class="sqr"></i></span><span>PS5 <b>Scene Wire</b></span></a></h1>
+      <p class="tagline">Firmware directory: what runs on your PS5</p>
+    </div>
+    <a class="back" href="/">Headlines</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="picker glass" aria-labelledby="pick-title">
+    <h2 class="kicker" id="pick-title">Pick your firmware</h2>
+    <p class="hint">Find it on the console under Settings › System › System Software › System Software Update and Settings.</p>
+    <div class="chips" id="majors" role="group" aria-label="Firmware family"></div>
+    <div class="chips minor" id="minors" role="group" aria-label="Exact firmware"></div>
+    <p class="chips-legend"><span><i style="background:var(--led)"></i>Public jailbreak tracked</span><span><i style="background:var(--stop)"></i>None tracked</span></p>
+  </section>
+
+  <section class="verdict glass" id="verdict" aria-live="polite"><p class="status">Loading the directory…</p></section>
+
+  <div class="dir" id="dir"></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Confirmed</b> means the developer's README names a supported range that includes your firmware, or says it was tested on it. <b>Not confirmed</b> means the README doesn't name a limit, or it was only tested on other firmware. It may well work, so read the README first.</p>
+    <p>Every link goes to the project's own GitHub release or repo. No piracy links. Back up games you own.</p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const n = (v) => { const [a, b = '0'] = String(v).split('.'); return +a * 100 + +(b.padEnd(2, '0').slice(0, 2)); };
+  const inRange = (fw, r) => r && n(fw) >= n(r[0]) && n(fw) <= n(r[1]);
+
+  const CATS = [
+    { id: 'jailbreak', name: 'Jailbreak and loaders' },
+    { id: 'tools', name: 'Apps and tools' },
+    { id: 'stores', name: 'Homebrew stores' },
+    { id: 'emulators', name: 'Emulators' },
+    { id: 'ports', name: 'Recomps, ports and games' },
+    { id: 'media', name: 'Media and streaming' },
+    { id: 'pc', name: 'PC, Linux and Steam' }
+  ];
+  const ICONS = {
+    jailbreak: '<rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 6.8-1.2"/><circle cx="12" cy="15.5" r="1.4"/>',
+    tools: '<path d="M14.7 6.3a4 4 0 0 0-5.2 5.2L4.5 16.5a1.8 1.8 0 0 0 2.5 2.5l5-5a4 4 0 0 0 5.2-5.2l-2.6 2.6-2.3-.6-.6-2.3z"/>',
+    stores: '<path d="M5 8h14l-1.2 11.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/>',
+    emulators: '<path d="M7.5 8h9a4.5 4.5 0 0 1 4.4 5.4l-.6 3a2.4 2.4 0 0 1-4.2 1L14.5 16h-5l-1.6 1.4a2.4 2.4 0 0 1-4.2-1l-.6-3A4.5 4.5 0 0 1 7.5 8z"/><path d="M8 11v3M6.5 12.5h3"/><circle cx="15.5" cy="11.5" r=".6"/><circle cx="17" cy="13.2" r=".6"/>',
+    ports: '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="2.2"/><path d="M12 3.5a8.5 8.5 0 0 1 6 2.5"/>',
+    media: '<circle cx="12" cy="12" r="8.5"/><path d="M10.2 8.8v6.4l5.2-3.2z"/>',
+    pc: '<rect x="3.5" y="5" width="17" height="11" rx="1.5"/><path d="M9 20h6M12 16v4"/>'
+  };
+  const icon = (id) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">${ICONS[id] || ''}</svg>`;
+
+  let C = null;        // compat.json
+  let apps = [];       // tracked apps (from /api/releases, or compat.json as a fallback)
+  let fw = null;
+
+  // ---------- Rules ----------
+  const entryFor = (v) => C.entry.filter((e) => e.only ? e.only.includes(v) : inRange(v, e.range));
+  const jailbreakFor = (v) => entryFor(v).filter((e) => !e.linux);
+
+  // ok: confirmed for v. maybe: no limit stated / tested elsewhere. no: outside a stated range or locked to another firmware.
+  function verdict(info, v) {
+    if (!info) return { tier: 'maybe' };
+    if (info.only) return { tier: info.only.includes(v) ? 'ok' : 'no', why: 'only' };
+    if (info.range) {
+      if (!inRange(v, info.range)) return { tier: 'no' };
+      return { tier: 'ok', why: (info.tested || []).includes(v) ? 'tested' : 'range' };
+    }
+    if ((info.tested || []).includes(v)) return { tier: 'ok', why: 'tested' };
+    return { tier: 'maybe' };
+  }
+
+  let INFO = null;
+  function infoFor(repo) {
+    if (!INFO) {
+      INFO = new Map();
+      C.entry.forEach((e) => INFO.set(e.repo.toLowerCase(), { range: e.range, only: e.only, note: e.how }));
+      Object.entries(C.apps).forEach(([r, v]) => INFO.set(r.toLowerCase(), v));
+    }
+    return INFO.get(String(repo).toLowerCase());
+  }
+
+  // ---------- Picker ----------
+  const majors = () => [...new Set(C.firmwares.map((v) => v.split('.')[0]))];
+  function renderPicker() {
+    const major = fw.split('.')[0];
+    $('#majors').innerHTML = majors().map((m) => {
+      const has = C.firmwares.filter((v) => v.split('.')[0] === m).some((v) => jailbreakFor(v).length);
+      return `<button type="button" data-major="${m}" aria-pressed="${m === major}">${m}.xx<span class="pip${has ? '' : ' none'}" aria-hidden="true"></span></button>`;
+    }).join('');
+    $('#minors').innerHTML = C.firmwares.filter((v) => v.split('.')[0] === major).map((v) =>
+      `<button type="button" data-fw="${v}" aria-pressed="${v === fw}">${v}<span class="pip${jailbreakFor(v).length ? '' : ' none'}" aria-hidden="true"></span></button>`).join('');
+  }
+
+  // ---------- Verdict ----------
+  function renderVerdict() {
+    const jb = jailbreakFor(fw), linux = entryFor(fw).filter((e) => e.linux);
+    const v = n(fw);
+    const latestPub = Math.max(...C.entry.filter((e) => !e.linux && e.range).map((e) => n(e.range[1])));
+    let line;
+    if (jb.length) line = `There's a public way in on ${fw}. Start with one of these, then add a loader such as elfldr or etaHEN.`;
+    else if (v > latestPub) line = `No public jailbreak for ${fw} yet. Don't update further, and keep the console offline if you're waiting for one.`;
+    else line = `No jailbreak for ${fw} is tracked here yet. Older chains exist for some early firmware but aren't covered on this page.`;
+    const ent = (e) => `<li><a href="https://github.com/${esc(e.repo)}" target="_blank" rel="noopener">${esc(e.name)}</a>` +
+      `<span class="rng">${e.only ? esc(e.only.join(', ')) + ' only' : esc(e.range.join('–'))}</span><p class="how">${esc(e.how)}</p></li>`;
+    $('#verdict').innerHTML =
+      `<h2 class="kicker">Firmware</h2><p class="fw ${jb.length ? 'yes' : 'no'}">${esc(fw)}</p><p class="line">${esc(line)}</p>` +
+      (jb.length ? `<ul class="entries">${jb.map(ent).join('')}</ul>` : '') +
+      (linux.length ? `<p class="line" style="margin-top:14px;color:var(--muted)">Linux on this firmware:</p><ul class="entries">${linux.map(ent).join('')}</ul>` : '');
+  }
+
+  // ---------- Directory ----------
+  function pills(info, vd) {
+    if (!info) return '<span class="pill">No firmware stated</span>';
+    const out = [];
+    if (vd.tier === 'ok') out.push(`<span class="pill ok">${vd.why === 'tested' ? 'Tested on ' + esc(fw) : vd.why === 'only' ? 'Built for ' + esc(fw) : 'Supported'}</span>`);
+    if (info.range) out.push(`<span class="pill range">Supports ${esc(info.range.join('–'))}</span>`);
+    if (info.only) out.push(`<span class="pill range">${esc(info.only.join(', '))} only</span>`);
+    if (info.any && !info.range) out.push('<span class="pill range">Not tied to a firmware</span>');
+    const tested = (info.tested || []).filter((t) => t !== fw);
+    if (tested.length) out.push(`<span class="pill">Tested on ${esc(tested.join(', '))}</span>`);
+    (info.needs || []).forEach((x) => out.push(`<span class="pill need">Needs ${esc(x)}</span>`));
+    return out.join('');
+  }
+  function row(a, info, vd) {
+    const href = a.latest ? a.latest.url : 'https://github.com/' + a.repo;
+    return `<li><a class="name" href="${esc(href)}" target="_blank" rel="noopener">${esc(a.name)}</a>` +
+      `<span class="v">${a.latest ? esc(a.latest.tag) : ''}</span>` +
+      (a.about ? `<span class="about">${esc(a.about)}</span>` : '') +
+      `<span class="why">${pills(info, vd)}</span>` +
+      (info && info.note ? `<span class="note">${esc(info.note)}</span>` : '') + '</li>';
+  }
+
+  function renderDir() {
+    const hasJb = jailbreakFor(fw).length > 0;
+    const html = CATS.map((c, i) => {
+      const list = apps.filter((a) => a.cat === c.id).map((a) => {
+        const info = infoFor(a.repo);
+        return { a, info, vd: verdict(info, fw) };
+      }).sort((x, y) => x.a.name.localeCompare(y.a.name));
+      const ok = list.filter((x) => x.vd.tier === 'ok');
+      // With no jailbreak, "might work" is meaningless, so only list confirmed entries.
+      const maybe = hasJb ? list.filter((x) => x.vd.tier === 'maybe') : [];
+      // Things that explicitly name a range/tests show first among the maybes.
+      maybe.sort((x, y) => (!!y.info - !!x.info) || x.a.name.localeCompare(y.a.name));
+      if (!ok.length && !maybe.length) return '';
+      return `<details class="cat glass"${i < 4 || ok.length ? ' open' : ''}>` +
+        `<summary>${icon(c.id)}<span class="cname">${esc(c.name)}</span><span class="count"><b>${ok.length}</b> confirmed${maybe.length ? ` · ${maybe.length} not confirmed` : ''}</span></summary>` +
+        (ok.length ? `<p class="tier ok">Confirmed on ${esc(fw)}</p><ul class="list">${ok.map((x) => row(x.a, x.info, x.vd)).join('')}</ul>`
+                   : `<p class="empty">Nothing here names ${esc(fw)} yet.</p>`) +
+        (maybe.length ? `<details class="more-maybe"${ok.length ? '' : ' open'}><summary>${maybe.length} not confirmed for ${esc(fw)}</summary><ul class="list">${maybe.map((x) => row(x.a, x.info, x.vd)).join('')}</ul></details>` : '') +
+        '</details>';
+    }).join('');
+    $('#dir').innerHTML = html || `<p class="status glass">Nothing tracked names ${esc(fw)} yet.</p>`;
+  }
+
+  function setFw(v, push = true) {
+    if (!C.firmwares.includes(v)) return;
+    fw = v;
+    renderPicker(); renderVerdict(); renderDir();
+    if (push) history.replaceState(null, '', '#' + v);
+    document.title = `Firmware ${v} · PS5 Scene Wire`;
+  }
+
+  $('#majors').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-major]'); if (!b) return;
+    const fam = C.firmwares.filter((v) => v.split('.')[0] === b.dataset.major);
+    // Land on the highest firmware in the family that has a jailbreak, else the highest.
+    setFw([...fam].reverse().find((v) => jailbreakFor(v).length) || fam[fam.length - 1]);
+  });
+  $('#minors').addEventListener('click', (e) => { const b = e.target.closest('[data-fw]'); if (b) setFw(b.dataset.fw); });
+  window.addEventListener('hashchange', () => setFw(decodeURIComponent(location.hash.slice(1)), false));
+
+  // ---------- Load ----------
+  const getJSON = (u) => fetch(u, { cache: 'no-cache' }).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); });
+
+  getJSON('/data/compat.json').then((c) => {
+    C = c;
+    const fromHash = decodeURIComponent(location.hash.slice(1));
+    const start = C.firmwares.includes(fromHash) ? fromHash : '13.60';
+    apps = [];
+    setFw(start, false);
+    $('#dir').innerHTML = '<p class="status glass">Loading tracked apps from GitHub…</p>';
+    return getJSON('/api/releases').then((d) => {
+      apps = (d.apps || []).filter((a) => a.status !== 'missing');
+      renderDir();
+    }).catch(() => {
+      $('#dir').innerHTML = '<p class="status glass">Tracked apps couldn’t load from GitHub right now. The jailbreak list above still applies. Refresh in a few minutes.</p>';
+    });
+  }).catch(() => {
+    $('#verdict').innerHTML = '<p class="status">The directory couldn’t load. Refresh to try again.</p>';
+  });
+})();
+</script>
+</body>
+</html>
