@@ -1,5 +1,56 @@
 [
   {
+    "id": "seedee5-v120",
+    "date": "2026-10-17",
+    "tag": "Emulator",
+    "title": "Seedee5 v1.20: game info cards with Wikipedia descriptions and review scores",
+    "summary": "Seedee5 v1.20 adds game cards that pull descriptions from Wikipedia and review scores from publications like AllGame, Edge and CD-i Magazine, plus cached artwork from libretro-thumbnails.",
+    "body": [
+      "Seedee5 v1.20 introduces game cards that appear when you open a game. Each card shows a brief description sourced from the game's Wikipedia article (credited under CC BY-SA 4.0), review scores from publications where available (AllGame, Edge, CD-i Magazine, Next Generation and others), and a dimmed in-game screenshot backdrop with the game's own logo. Artwork and thumbnails come from the libretro-thumbnails collection. Everything is cached locally after the first view so cards open instantly offline, and the feature can be turned off in Settings.",
+      "The project has also been rebranded to Seedee5 with a new logo used as both the app icon and wheel graphic. A sound diagnostic now logs what the CD-i's sound chip played and whether it ran dry. Install by copying the PPSA99142 folder over FTP to /data/homebrew/ on a jailbroken PS5. When updating, copy over the existing folder to keep your saves and settings."
+    ],
+    "sources": [
+      {
+        "name": "Seedee5 v1.20 release",
+        "url": "https://github.com/mortaljinx/Seedee5/releases/tag/v1.20"
+      }
+    ]
+  },
+  {
+    "id": "ps5-solobridge-v011",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "ps5-solobridge v0.1.1: fixes audio pitch shift on capture start",
+    "summary": "ps5-solobridge v0.1.1 fixes a 2% pitch shift that occurred for about 17 seconds whenever a capture session started, and makes drift correction 8x gentler.",
+    "body": [
+      "ps5-solobridge v0.1.1 fixes an audio pitch shift that affected the first 17 seconds after a capture session started — on payload launch or game switch, the backlog from the capture service was played about 2% faster than normal. The backlog is now skipped entirely, and ongoing drift corrections have been reduced to 0.26% (8x gentler than before). The status command also now shows the sample rate read back from the Scarlett Solo.",
+      "Tested on PS5 firmware 13.60 with a Focusrite Scarlett Solo 3rd gen. Install by sending solobridge.elf to your ELF loader on port 9021, or place it in /data/pldmgr/payloads/local/solobridge/ for Payload Manager. SHA-256 checksums and VirusTotal scan links are provided in the release."
+    ],
+    "sources": [
+      {
+        "name": "ps5-solobridge v0.1.1 release",
+        "url": "https://github.com/hebiii994/ps5-solobridge/releases/tag/v0.1.1"
+      }
+    ]
+  },
+  {
+    "id": "ps5-stream8",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "Stream8: experimental hardware H.264 streaming from PS5 to browser",
+    "summary": "Stream8 is an open-source PS5 payload that captures the console's composited video output using the hardware H.264 encoder and streams it at 720p60 to a browser over the local network.",
+    "body": [
+      "Stream8 by psksuffsmp is an experimental payload for jailbroken PS5 on firmware 13.60 that streams the console's final video output to a PC browser over the local network. It injects into the SceGameLiveStreaming system process and captures hardware-encoded H.264 video at 1280×720 60 FPS, targeting up to 30 Mbps. The stream plays in Edge or Chrome via WebCodecs. Unlike Remote Play it does not send controller input — the DualSense stays connected directly to the console.",
+      "The project requires a jailbroken PS5 on firmware 13.60 with a payload loader, a firmware-compatible NineS ELF injector, Python 3 on the PC, and a wired LAN connection is strongly recommended. A PowerShell launcher automates the full startup sequence on Windows. Stream8 is currently experimental — it works with RDR2 but game-to-game switching is under investigation, there is no audio, and recovery requires a reboot. The payload contains firmware-specific offsets and must not be used on other firmware versions."
+    ],
+    "sources": [
+      {
+        "name": "ps5-stream8 on GitHub",
+        "url": "https://github.com/psksuffsmp/ps5-stream8"
+      }
+    ]
+  },
+  {
     "id": "seedee5",
     "date": "2026-10-17",
     "tag": "Emulator",
