@@ -1,5 +1,47 @@
 [
   {
+    "id": "mupen64plus-074",
+    "date": "2026-10-17",
+    "tag": "Emulator",
+    "title": "mupen64plus 0.7.4: cheats, custom controls and a redesigned UI",
+    "summary": "The standalone N64 emulator gets GameShark cheats for over 560 games, a fully remappable controller layout, quick save and load, and a redesigned settings panel.",
+    "body": [
+      "mupen64plus for PS5 version 0.7.4 overhauls the emulator's interface and adds several features that bring it closer to the PC version. The pause menu and settings screen have been rebuilt into a single panel with switches, a volume slider and icons. Quick save and load are now mapped to L3 and R3 while playing, and the pause menu adds dedicated Save State, Load State and Quit buttons. A new Cheats page exposes the full mupen64plus GameShark cheat database, covering roughly 560 game versions with codes for infinite lives, unlockables and more. Each code can be toggled individually and the emulator remembers your choices per game.",
+      "The controller layout is now fully customizable. Every DualSense button — Cross, Circle, Square, Triangle, L1, R1, L2, R2, OPTIONS, the D-pad and right stick — can be mapped to any N64 button or left unbound. Per-game layouts are supported: change the mapping from the pause menu and it sticks to that game only. The update also includes a new home screen icon and background. It requires etaHEN and ShadowMountPlus."
+    ],
+    "sources": [
+      { "name": "mupen64plus-ps5 0.7.4 release", "url": "https://github.com/TheRealRetro/mupen64plus-ps5/releases/tag/0.7.4" }
+    ]
+  },
+  {
+    "id": "ps5upload-v7033",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "PS5 Upload v7.0.33: PS5 updates now install without the base game",
+    "summary": "PS5 Upload fixes a long-standing issue where PS5 update packages that carry the full app were incorrectly blocked when the base game wasn't installed.",
+    "body": [
+      "PS5 Upload v7.0.33 fixes how the app handles PS5 update packages. Previously, the app refused to send any update whose base game wasn't installed on the console, showing an 'Install the base game first' error. But some PS5 updates carry the entire app — a YouTube update package, for example, installs fine through the PS5's own debug Package Installer even with YouTube removed. The app now warns instead of blocking, and lets the PS5 decide whether the package is valid. PS4 updates are still blocked since Sony silently accepts those but installs nothing.",
+      "The update also fixes install verification for packages that land as the app itself rather than in the updates folder. The About screen now links to the project website at ps5upload.phantomptr.com. Version 7.0.32, released an hour earlier, fixed rest-mode detection on Macs connected over both Wi-Fi and Ethernet."
+    ],
+    "sources": [
+      { "name": "PS5 Upload v7.0.33 release", "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.0.33" }
+    ]
+  },
+  {
+    "id": "ps5-backport-gui",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "PS5 Backport GUI: a batch backporting tool with automatic fixes and build verification",
+    "summary": "A new Windows tool that batch-backports PS5 games to run on lower firmware, with automatic fix detection, build verification and integrated console log streaming.",
+    "body": [
+      "PS5 Backport GUI by kerrdec97 is a new tool that simplifies backporting PS5 games to run on older firmware. Point it at your extracted game folders and it rewrites each title's SDK version, fake-signs the executables and applies only fix families that have been confirmed working on hardware. A build verification step re-audits the output, checks audio across firmware bands, verifies ZIP CRCs and executable structure, and refuses to produce a build that fails. The developer says roughly 9 out of 10 backports work on the first attempt in internal testing, though results vary by game, firmware and console model.",
+      "The app is closed source and currently Windows-only, with Linux and macOS planned once Windows testing is stable. It builds on earlier work by Nazky (Auto-Backpork), BestPig (BackPork) and drakmor (Backport Helper). An experimental Console Logs tab can stream live klogs from a jailbroken console with an ELF loader on port 9021, and automatically download crash dumps. The project picked up 28 stars and four forks within hours of appearing on GitHub."
+    ],
+    "sources": [
+      { "name": "PS5-Backport-GUI on GitHub", "url": "https://github.com/kerrdec97/PS5-Backport-GUI" }
+    ]
+  },
+  {
     "id": "nbastreet-homecourt-ps5",
     "date": "2026-10-17",
     "tag": "Port",
