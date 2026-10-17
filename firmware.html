@@ -91,7 +91,7 @@
   .chips-legend i { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
 
   /* Verdict */
-  .verdict { padding: 20px 18px; margin-bottom: 18px; }
+  .verdict { padding: 20px 18px; margin-bottom: 28px; }
   @media (min-width: 640px) { .verdict { padding: 24px 28px; } }
   .verdict .fw { margin: 6px 0 4px; font-size: clamp(2rem, 8vw, 2.8rem); font-weight: 700; line-height: 1; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
   .verdict .fw.yes { color: var(--led); text-shadow: 0 0 22px var(--led-soft); }
@@ -106,7 +106,7 @@
   .entries .rng { color: var(--led); font-size: .8rem; font-weight: 600; margin-left: 6px; font-variant-numeric: tabular-nums; }
 
   /* Directory */
-  .dir { display: grid; gap: 12px; padding-bottom: 28px; }
+  .dir { display: grid; gap: 12px; padding-bottom: 18px; }
   @media (min-width: 980px) { .dir { grid-template-columns: 1fr 1fr; align-items: start; } }
   .cat { padding: 6px 18px 10px; }
   .cat > summary { display: flex; align-items: center; gap: 10px; padding: 12px 0; cursor: pointer; list-style: none; font-weight: 600; }
@@ -172,9 +172,9 @@
     <p class="chips-legend"><span><i style="background:var(--led)"></i>Public jailbreak tracked</span><span><i style="background:var(--stop)"></i>None tracked</span></p>
   </section>
 
-  <section class="verdict glass" id="verdict" aria-live="polite"><p class="status">Loading the directory…</p></section>
-
   <div class="dir" id="dir"></div>
+
+  <section class="verdict glass" id="verdict" aria-live="polite"><p class="status">Loading the directory…</p></section>
 </main>
 
 <footer>
