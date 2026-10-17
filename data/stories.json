@@ -1,5 +1,22 @@
 [
   {
+    "id": "prospero-themes-v01000001",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "Prospero Themes 01.000.001: theme update badges and version tracking",
+    "summary": "Prospero Themes 01.000.001 adds version tracking in the Community tab so you can see when a theme creator publishes a new version of a pack you already have.",
+    "body": [
+      "Prospero Themes 01.000.001 adds theme versioning to the Community tab. Each theme card now shows its version number, and when a creator publishes a new version of a theme you have downloaded, the card gets an orange Update badge. Tapping Update replaces the old version in your library while the previous pack is kept in /data/prospero-themes/attic/ as a backup. If the updated theme is currently applied, you need to apply it again to see the changes on your home screen.",
+      "Update by downloading the new PPSA90210.zip from the GitHub release, extracting the PPSA90210 folder to /data/homebrew/ on the console, and letting ShadowMountPlus register it. Your library, backups and settings in /data/prospero-themes/ are preserved across updates. Requires a jailbroken PS5 on firmware 13.00 and an ELF loader on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Themes 01.000.001 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.001"
+      }
+    ]
+  },
+  {
     "id": "prospero-themes",
     "date": "2026-10-17",
     "tag": "Tool",
