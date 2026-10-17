@@ -43,6 +43,14 @@ const known = new Set(C.firmwares || []);
 if (!/^\d{4}-\d{2}-\d{2}$/.test(C.updated || '')) err('"updated" must be a YYYY-MM-DD date');
 else if (C.updated > today) err(`"updated" (${C.updated}) is in the future`);
 
+// ---- fPKG cut-off ----
+if (C.fpkg !== undefined) {
+  if (!FW.test(C.fpkg.max || '')) err('fpkg.max must be an "X.YY" firmware');
+  if (typeof C.fpkg.note !== 'string' || !C.fpkg.note.trim()) err('fpkg.note must be text');
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(C.fpkg.checked || '')) err('fpkg.checked must be a YYYY-MM-DD date');
+  if (!Array.isArray(C.fpkg.sources) || !C.fpkg.sources.length || !C.fpkg.sources.every((x) => x && x.name && /^https:\/\//.test(x.url || ''))) err('fpkg.sources must list { name, url } sources');
+}
+
 // ---- shared field checks ----
 function checkFields(where, o, { entry = false } = {}) {
   const allowed = entry ? ['repo', 'name', 'range', 'only', 'how', 'story', 'linux'] : ['range', 'tested', 'only', 'any', 'needs', 'note'];
