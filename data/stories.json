@@ -1,5 +1,47 @@
 [
   {
+    "id": "hitman-ps5-online",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "Hitman-PS5: play HITMAN World of Assassination online on a jailbroken console",
+    "summary": "A payload patches HITMAN to connect to a local backend server instead of the official servers, restoring online features on jailbroken consoles locked out of PSN.",
+    "body": [
+      "Hitman-PS5 by theghostonline is a console payload that patches HITMAN World of Assassination to connect to a backend server running on your local network. Since jailbroken consoles on firmware 13.60 and below can no longer sign in to PSN, the game's online features — elusive targets, escalations and unlocks — are normally inaccessible. This payload redirects the game's server calls to a self-hosted backend, bringing those features back offline.",
+      "The developer, who also built the PS5VR video player, describes this as a proof of concept. It runs as a payload through etaHEN and the backend server runs separately on a PC on the same network. The project has nine stars on GitHub since appearing on 15 October and is being actively developed."
+    ],
+    "sources": [
+      { "name": "Hitman-PS5 on GitHub", "url": "https://github.com/theghostonline/Hitman-PS5" }
+    ]
+  },
+  {
+    "id": "lineup-home-screen",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "Lineup: reorder your PS5 home screen game row with the controller",
+    "summary": "A homebrew app that lets you drag and drop games into your preferred order on the home screen, something Sony's firmware doesn't allow.",
+    "body": [
+      "Lineup by bps2414 is a homebrew app that lets you reorder the game row on the PS5 home screen using the controller. Sony's firmware sorts the row by most recently played, with no way to pin or rearrange titles. Lineup overrides that, giving you manual control over the order your games appear in.",
+      "It's built with PS5 React and runs as a homebrew title through ShadowMountPlus. It's a companion to TabShifter, which moves apps between the Games and Media tabs — Lineup handles the order within a tab. The project has ten stars on GitHub since appearing on 15 October."
+    ],
+    "sources": [
+      { "name": "Lineup on GitHub", "url": "https://github.com/bps2414/lineup" }
+    ]
+  },
+  {
+    "id": "pscapture-virtual-cam",
+    "date": "2026-10-17",
+    "tag": "Tool",
+    "title": "PSCapture: turn a jailbroken PS5 into a capture card for OBS and Discord",
+    "summary": "A payload streams the PS5 screen over your network as a virtual camera, visible in OBS, Discord and any app that reads a webcam — no capture card hardware needed.",
+    "body": [
+      "PSCapture by fstat13 turns a jailbroken PS5 into a virtual capture card. It streams the console's screen over your local network using H.264, and a companion Windows driver registers it as a DirectShow camera called 'PS5 Capture'. Any app that uses a webcam — OBS, Discord, Zoom — sees it as a video source.",
+      "It needs no capture card hardware and doesn't use Remote Play. The payload runs on the console and the driver installs on a Windows PC on the same network. It's written in C and has picked up four stars since appearing on 15 October."
+    ],
+    "sources": [
+      { "name": "PSCapture on GitHub", "url": "https://github.com/fstat13/PSCapture" }
+    ]
+  },
+  {
     "id": "ps5lm-llm-on-ps5",
     "date": "2026-10-16",
     "tag": "Tool",
