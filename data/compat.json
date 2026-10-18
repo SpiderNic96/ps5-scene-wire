@@ -538,6 +538,16 @@
         "13.60"
       ],
       "note": "Thread probes hard-locked to FW 13.60 / PS5 Pro SoC 0x840fd0. Console validation pending."
+    },
+    "ghost1372/WelcomeHubActivator": {
+      "range": [
+        "10.00",
+        "13.60"
+      ],
+      "needs": [
+        "elfldr"
+      ],
+      "note": "Welcome Hub was introduced in FW 10.00; not available below that."
     }
   },
   "unstated": [
@@ -568,6 +578,7 @@
     "drakmor/nanoDNS",
     "eladharels/ps5-60FPS",
     "elripalda/RecompStore",
+    "elripalda/SvR2008-Recomp-PS5",
     "elripalda/fifastreet-ps5",
     "elripalda/nbastreet-ps5",
     "elripalda/skate3-ps5",

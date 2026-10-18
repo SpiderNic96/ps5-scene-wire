@@ -67,6 +67,7 @@ export const SOURCES = [
   { cat: T, repo: 'StonedModder/Prospero-Menu', name: 'ProsperoMenu', about: 'Community overlay menu, L3+R3 in any app' },
   { cat: T, repo: 'eladharels/ps5-60FPS', name: 'fps60', about: '60 FPS unlock for PS4 and PS5 games' },
   { cat: T, repo: 'ShaneBreazeale/ps5-homebrew-tools', name: 'PS5 Homebrew Tools', about: 'Diagnostic payloads for PS5 development' },
+  { cat: T, repo: 'ghost1372/WelcomeHubActivator', name: 'WelcomeHubActivator', about: 'Enables the Welcome Hub on FW 10.00–13.60' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },
@@ -134,5 +135,6 @@ export const SOURCES = [
   { cat: R, repo: 'Marice/stk-ps5', name: 'SuperTuxKart', about: 'Open-source kart racer' },
   { cat: R, repo: 'griches/PS5_DevilutionX', name: 'DevilutionX', about: 'Diablo and Hellfire, bring your own data' },
   { cat: R, repo: 'elripalda/nbastreet-ps5', name: 'NBA Street Homecourt', about: 'Xbox 360 recomp, 1440p60' },
-  { cat: R, repo: 'elripalda/skate3-ps5', name: 'Skate 3', about: 'Xbox 360 recomp' }
+  { cat: R, repo: 'elripalda/skate3-ps5', name: 'Skate 3', about: 'Xbox 360 recomp' },
+  { cat: R, repo: 'elripalda/SvR2008-Recomp-PS5', name: 'WWE SmackDown vs. Raw 2008', about: 'Xbox 360 recomp' }
 ];
