@@ -1,5 +1,73 @@
 [
   {
+    "id": "ps5upload-v710",
+    "date": "2026-10-18",
+    "tag": "Tool",
+    "title": "PS5 Upload v7.1.0: full file manager on the TV",
+    "summary": "PS5 Upload v7.1.0 adds PS5Upload Files, a controller-driven file manager that runs in the PS5 browser and fills the TV, plus fixes for large app databases hiding installed games.",
+    "body": [
+      "PS5 Upload v7.1.0 introduces PS5Upload Files, a new tile on the PS5 home screen that opens a full file manager in the PS5 browser. The interface is built for the controller — X selects, Circle goes back, Triangle opens actions — and supports browsing, copying, cutting, pasting, renaming (including batch rename with patterns), deleting, creating folders, fixing permissions, searching across drives, viewing disk usage, and inspecting files (text with find, JSON, hex, pictures, game param.json summaries). It also lets you decompress .ffpfsc images with progress, verify files with BLAKE3 and CRC32, eject USB drives and unmount game images, and switch between Dark, Light, OLED and Peach themes. Cheats for the running game can be toggled from a dedicated tab. Files pinned on the console show up in the PC app and vice versa.",
+      "The update also fixes a bug where consoles with large app databases (over 256 entries) would hide some installed games. An optional \"Allow other devices\" setting lets a phone or computer on the same network open the file manager too — there is no password, so turn it off when done. Requires the PS5Upload helper to be loaded; the tile can be removed from Settings. Download from the GitHub release page."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v7.1.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.1.0"
+      }
+    ]
+  },
+  {
+    "id": "recompstore-v110",
+    "date": "2026-10-18",
+    "tag": "Store",
+    "title": "RecompStore v1.1.0: beta game codes and log reporting",
+    "summary": "RecompStore v1.1.0 adds a code redemption page for beta games and a Send Logs button on every game page for easier bug reporting.",
+    "body": [
+      "RecompStore v1.1.0 introduces two features aimed at testing and troubleshooting. A new Redeem a Code page in Settings accepts codes in the 12-345-678 format to unlock games in testing — redeemed titles appear in your Library with a Beta tag. Every game page now also has a Send Logs button that sends the store log and game-specific logs along with an optional message, so developers can track down problems without asking users to dig through files. Saves and game files are not included in the report.",
+      "If you already have RecompStore installed, open the app and update from Latest Updates. For a fresh install, send the RecompStore-Installer.elf to your PS5 payload loader on port 9021. Requires kstuff and ShadowMountPlus 1.7 Beta 5 or newer. No game files are included — every game requires your own legally obtained copy."
+    ],
+    "sources": [
+      {
+        "name": "RecompStore v1.1.0 release",
+        "url": "https://github.com/elripalda/RecompStore/releases/tag/v1.1.0"
+      }
+    ]
+  },
+  {
+    "id": "prosperotube-v01000010",
+    "date": "2026-10-18",
+    "tag": "Media",
+    "title": "ProsperoTube 1.000.010: Afterglow-only with non-Latin text and player fixes",
+    "summary": "ProsperoTube 1.000.010 drops the Classic interface, fixes broken non-Latin text and scrambled thumbnails, and restores player features like Up Next and auto-captions.",
+    "body": [
+      "ProsperoTube 1.000.010 makes Afterglow the only interface — the Classic browser view and its settings are gone, and if Afterglow fails to start a page offers to retry or close. Player actions like Open Channel, Search and Share now open the matching Afterglow page with Circle returning to where you were. Text in Chinese, Japanese, Korean, Thai, Arabic, Hebrew, Devanagari and other non-Latin scripts no longer renders as boxes or question marks, using the console's own fonts. Scrambled rainbow thumbnails are also fixed.",
+      "Several player features are restored: pressing Up turns on captions with the best available track including auto-translated ones, Up Next (Triangle) works for signed-in profiles with a retry on failure, the next video plays automatically when one ends (respecting your end-of-video mode), and descriptions, video details and live chat load again for signed-in accounts. Install by updating from within the app if listed on homebrew.page, or download PPSA99012.zip from the release page and copy to /data/homebrew/."
+    ],
+    "sources": [
+      {
+        "name": "ProsperoTube v01.000.010 release",
+        "url": "https://github.com/blackbearreloaded/ProsperoTube/releases/tag/v01.000.010"
+      }
+    ]
+  },
+  {
+    "id": "swanstation-ps5-142",
+    "date": "2026-10-18",
+    "tag": "Emulator",
+    "title": "SwanStationPS5 1.4.2: drive validation for ext0/ext1 game folders",
+    "summary": "SwanStationPS5 1.4.2 only creates and scans ext0 and ext1 game folders when the drive is readable with enough free space, and tidies up the About screen.",
+    "body": [
+      "SwanStationPS5 1.4.2 tightens the handling of ext0 and ext1 game folders on external drives. These folders are now only created and searched for games when the drive passes the same health check used by the Drives list in About — it must be readable and have enough free space. This prevents errors or stalls when an unusable drive is connected. The update also removes the \"Continuing where you left off...\" notice that appeared when resuming a game.",
+      "The About screen now shows the full GitHub repository address under the QR code alongside the author's X page. SwanStationPS5 is a Vulkan-based PS1 emulator for jailbroken PS5 consoles with RetroAchievements support. Update by downloading the latest release from GitHub and copying the app folder to /data/homebrew/ on the console."
+    ],
+    "sources": [
+      {
+        "name": "SwanStationPS5 1.4.2 release",
+        "url": "https://github.com/darkxex/SwanStationPS5/releases/tag/1.4.2"
+      }
+    ]
+  },
+  {
     "id": "prospero-themes-v01000006",
     "date": "2026-10-17",
     "tag": "Tool",
