@@ -64,6 +64,7 @@ export const SOURCES = [
   { cat: T, repo: 'psksuffsmp/ps5-stream8', name: 'Stream8', about: 'Hardware H.264 streaming to browser' },
   { cat: T, repo: 'Darkatek7/ProsperoThemes', name: 'Prospero Themes', about: 'Theme manager for the PS5 home screen' },
   { cat: T, repo: 'StonedModder/Prospero-Menu', name: 'ProsperoMenu', about: 'Community overlay menu, L3+R3 in any app' },
+  { cat: T, repo: 'eladharels/ps5-60FPS', name: 'fps60', about: '60 FPS unlock for PS4 and PS5 games' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },

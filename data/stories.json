@@ -1,5 +1,26 @@
 [
   {
+    "id": "fps60-v100",
+    "date": "2026-10-18",
+    "tag": "Tool",
+    "title": "fps60: unlock 60 FPS in PS4 and PS5 games with one switch per game",
+    "summary": "fps60 is a new payload that patches frame-rate limits in installed games on a jailbroken PS5, controllable from a web page on the TV or your phone.",
+    "body": [
+      "fps60 is a payload for jailbroken PS5 that scans your installed games, matches them against a built-in database of roughly 160 community frame-rate patches (sourced from illusion0001's PS4-PS5-Game-Patch collection), and lets you toggle 60 FPS unlocks per game from a web page served on the console's browser or any device on your network. When a patched game launches, fps60 writes the patch into game memory as it loads — your game files are never modified, and switches are saved across reboots. The interface shows whether each patch matches your installed game version, and an Activity log tracks every apply and error. Gravity Rush 2 and The Order: 1886 are confirmed working on a real PS5 so far.",
+      "fps60 requires a jailbroken PS5 with an ELF loader on port 9021 (Relapse, etaHEN or Payload Manager). Send fps60.elf to the console after jailbreaking, then open the fps60 tile from the Media row on the home screen or navigate to http://ps5-ip:8060 on a phone. Add it to Payload Manager's autoload list to start it automatically. Built with PS5 payload SDK v0.44 and reproducibly built through GitHub Actions."
+    ],
+    "sources": [
+      {
+        "name": "fps60 v1.0.0 release",
+        "url": "https://github.com/eladharels/ps5-60FPS/releases/tag/v1.0.0"
+      },
+      {
+        "name": "fps60 on GitHub",
+        "url": "https://github.com/eladharels/ps5-60FPS"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v710",
     "date": "2026-10-18",
     "tag": "Tool",
