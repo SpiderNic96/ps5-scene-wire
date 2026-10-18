@@ -1,5 +1,90 @@
 [
   {
+    "id": "ps5-suite-v750",
+    "date": "2026-10-18",
+    "tag": "Tool",
+    "title": "PS5-Suite v7.5.0: File Manager gets create folder, chmod, and Android app",
+    "summary": "PS5-Suite v7.5.0 overhauls the File Manager with folder creation, a chmod dialog, properties, path copying, terminal access and sorting, and brings the Android client to working status.",
+    "body": [
+      "PS5-Suite v7.5.0 adds a full right-click context menu to the File Manager on all platforms: Create Folder, Change Permissions (a proper chmod dialog with R/W/X checkboxes for Owner/Group/Others synced with an octal field), Properties (size, type, permissions, timestamps), Copy Path, Open Terminal Here, Download Selected (multi-select) and Refresh. A new permissions column shows octal modes for every file and folder, and Sort By lets you order by name, size or date. The PS5 payload gains a native CMD_CHMOD command and extended directory listings that carry permission bits.",
+      "The Android app now actually works — the shared UI was refactored from Window to UserControl to fit Android's single-view lifetime, dialogs became cross-platform overlay cards, and the theme was corrected. A hardware bug was also fixed: ioctl 0x8001950e was the beeper's OFF setting, not an LED flag, so every colour change was silently muting the console beep. Requires the v7.5.0 payload (ps5_suite_server.elf); the updated LIST_DIR format is not backward-compatible."
+    ],
+    "sources": [
+      {
+        "name": "PS5-Suite v7.5.0 on GitHub",
+        "url": "https://github.com/manos555555/PS5-Suite/releases/tag/v7.5.0"
+      }
+    ]
+  },
+  {
+    "id": "psbox-v120",
+    "date": "2026-10-18",
+    "tag": "Media",
+    "title": "PSBox Cloud Gaming v1.2.0: pristine 1080HQ streaming and DualSense haptics",
+    "summary": "PSBox Cloud Gaming v1.2.0 delivers rock-solid 30 Mbps 1080HQ streaming with zero microstutter, audio bufferbloat elimination, DualSense adaptive triggers and audio-to-haptics vibration.",
+    "body": [
+      "PSBox Cloud Gaming v1.2.0 validates a 30 Mbps REMB ceiling for crystal-clear 1080HQ visuals with zero dropped frames and 22 ms display latency, plus expanded bitrate options from 5 to 30 Mbps. A fast-forward video backlog drain eliminates microstutter caused by network jitter — recovery latency drops from 450+ ms to roughly 15 ms. Audio bufferbloat is fixed by bounding the audio queue to 80 ms and conditioning Opus packet-loss concealment to genuine loss only, cutting 300–700 ms audio chops to zero.",
+      "New PS5 hardware optimizations include Navi 21 Direct Hardware Blit (bypasses compute shaders at native 1080p, GPU draw time under 0.3 ms) and Zen 2 core pinning for decode and presentation threads. DualSense adaptive triggers get Light/Medium/Hard/Game-specific profiles, and real-time audio-to-haptics vibration synthesis feeds the controller's haptic motor. A modular in-game HUD lets you pick which statistics to show, and sign-in resilience handles restricted storage paths with automatic fallbacks."
+    ],
+    "sources": [
+      {
+        "name": "PSBox Cloud Gaming v1.2.0 on GitHub",
+        "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5/releases/tag/v1.2.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v712",
+    "date": "2026-10-18",
+    "tag": "Tool",
+    "title": "PS5 Upload v7.1.2: multi-user save management on shared consoles",
+    "summary": "PS5 Upload v7.1.2 adds per-user save labels and backup folders so shared PS5 consoles can track whose save data belongs to whom.",
+    "body": [
+      "PS5 Upload v7.1.2 reworks save-data handling for shared PS5 consoles. Each save is now labelled with its owner's name instead of a number, and the screen starts on the user currently signed in at the console. A \"Whose saves\" button switches to another user or to everyone, and Back Up All / Restore All act on whichever saves are shown.",
+      "Backups are now organized per user: a PC backup is named after the game and the user (e.g. PPSA01234-Alice.zip), and USB backups go into per-user folders (<game>/<name>-<user id>/<date>/). Previously all users shared one folder per game, which meant \"Restore all from USB\" could overwrite one user's save with another's. Existing backups are still used when only one user on the console has a save of that game."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v7.1.2 on GitHub",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.1.2"
+      }
+    ]
+  },
+  {
+    "id": "ps5-backport-gui-031",
+    "date": "2026-10-18",
+    "tag": "Tool",
+    "title": "PS5 Backport GUI 0.3.1-beta: audio and crash fixes for multiple games",
+    "summary": "PS5 Backport GUI 0.3.1-beta fixes missing audio in Story of Seasons and Wonderboy Asha, a Mewgenics crash on older firmware, and a Kingdom Hearts HD 2.8 black screen on 4.xx.",
+    "body": [
+      "PS5 Backport GUI's 0.3.1 testing build fixes no audio in STORY OF SEASONS: Grand Bazaar and WONDERBOY Asha in Monster World — other games hitting the same audio problem should also be fixed. Mewgenics crashing on boot on older firmware and KINGDOM HEARTS HD 2.8 Final Chapter Prologue showing a black screen or crash on 4.xx firmware are also resolved. All three fixes were tested on a base PS5 running firmware 4.50.",
+      "Everything from 0.3.0 remains, including the experimental PS5 Pro PSSR 2 option. To pick up the fixes, you need to rebuild your backport from the original game files with this version — old ZIPs will not change on their own. Download PS5BackportGUI.exe, verify its SHA-256 against SHA256SUMS.txt, and run it on Windows 10/11 x64. Bug reports go to GitHub Issues with firmware, console model, game PPSA/version, Export logs ZIP and ideally a klog."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Backport GUI 0.3.1 on GitHub",
+        "url": "https://github.com/kerrdec97/PS5-Backport-GUI/releases/tag/early-testing-beta-0.3.1"
+      }
+    ]
+  },
+  {
+    "id": "ps5-homebrew-tools",
+    "date": "2026-10-18",
+    "tag": "Tool",
+    "title": "PS5 Homebrew Tools: diagnostic payloads for process, thread and kernel inspection",
+    "summary": "A new open-source toolkit offers process snapshots, thread probes, kstuff log decoding, kernel-text capture and a native app starter for PS5 homebrew developers.",
+    "body": [
+      "PS5 Homebrew Tools is a new diagnostic suite by ShaneBreazeale aimed at PS5 homebrew developers. It includes payloads for process snapshots (one-shot or three-minute watch with birth, disappearance and zombie tracking), thread probes (raw sysctl records and per-process kernel thread records on firmware 13.60), a resident snapshot tool that reads counters and event rings from an instrumented kstuff resident, and kernel-text capture tools for bounded captures on PS5 Pro.",
+      "The project also provides host utilities for sending payloads, preserving raw output, log decoding and binary analysis, plus a minimal payload template to start your own diagnostic. Builds require Python 3.9+, the PS5 Payload SDK and LLVM 18 (a Docker reproducible build is also available). Note that built payloads still need console validation — this is source and local build tooling based on PS5 Pro firmware 13.60 research."
+    ],
+    "sources": [
+      {
+        "name": "ps5-homebrew-tools on GitHub",
+        "url": "https://github.com/ShaneBreazeale/ps5-homebrew-tools"
+      }
+    ]
+  },
+  {
     "id": "ps5-1410-webkit-research",
     "date": "2026-10-18",
     "tag": "Exploit",
