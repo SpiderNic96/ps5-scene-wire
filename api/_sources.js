@@ -35,6 +35,7 @@ export const SOURCES = [
   { cat: J, repo: 'drakmor/ppr-patch', name: 'ppr-patch', about: 'A53 PPR patcher' },
   { cat: J, repo: 'drakmor/nanoDNS', name: 'nanoDNS', about: 'DNS proxy payload' },
   { cat: J, repo: 'lvndry/ps5-firmware-pin', name: 'ps5-firmware-pin', about: 'Blocks firmware updates' },
+  { cat: J, repo: 'pastawithpesto/PS5-14.10-Jailbreak-Research', name: 'PS5 14.10 Jailbreak Research', about: 'WebKit exploit research for firmware 14.10' },
 
   // Managers and tools
   { cat: T, repo: 'itsPLK/ps5-payload-manager', name: 'Payload Manager', about: 'Web dashboard for payloads and autoload' },

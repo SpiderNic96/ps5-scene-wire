@@ -1,5 +1,162 @@
 [
   {
+    "id": "ps5-1410-webkit-research",
+    "date": "2026-10-18",
+    "tag": "Exploit",
+    "title": "WebKit heap overflow demonstrated on PS5 firmware 14.10",
+    "summary": "A researcher has demonstrated a working WebKit heap overflow on PS5 firmware 14.10, where all Relapse exploit bugs are patched. Kernel exploit work has not started yet.",
+    "body": [
+      "Security researcher pastawithpesto has published a WebKit jailbreak research project targeting PS5 firmware 14.10, confirming a working heap overflow in JavaScriptCore on the console. The bug (JSC Bug 317632) is an integer overflow in UnlinkedMetadataTable::finalize() — 38.3 million call sites wrap an unsigned accumulator, causing the interpreter to allocate a 100 KB buffer but write 4.29 GB forward into heap memory. A bait-and-switch heap groom controls where the write lands, and probes have confirmed JSString object corruption with controllable .length values. All Relapse WebKit bugs were tested and found to be patched on 14.10.",
+      "This is early-stage research: the WebKit bug gives a heap primitive, but a kernel exploit has not been started. The project includes 14 probe results and device fingerprinting data from a real PS5 running firmware 14.10. The researcher notes that WebAssembly and SharedArrayBuffer are unavailable on the PS5 browser, and JIT is disabled (LLInt only). All data comes from on-device probes, with the open-source WebKit-1200 snapshot used as a structure reference."
+    ],
+    "sources": [
+      {
+        "name": "PS5-14.10-Jailbreak-Research on GitHub",
+        "url": "https://github.com/pastawithpesto/PS5-14.10-Jailbreak-Research"
+      }
+    ]
+  },
+  {
+    "id": "vlc-v045",
+    "date": "2026-10-18",
+    "tag": "Media",
+    "title": "VLC v0.4.5: VP9 hardware decoding, universal search and frame-rate matching",
+    "summary": "VLC for PS5 v0.4.5 adds hardware-accelerated VP9 playback up to 4K HDR, a live search that covers videos, music, shares and 11,000+ free TV channels, and frame-rate matching for films.",
+    "body": [
+      "VLC v0.4.5 brings VP9 hardware decoding to the PS5, so 4K VP9 videos (8-bit and 10-bit HDR) now play on the console's video chip instead of software decoding. A new universal search (R3 or Options menu, available from anywhere in the app including during playback) shows results as you type across your videos, music, playlists, network shares, 11,000+ free TV channels and radio stations. Match frame rate (off by default) switches the TV to the film's native refresh — 23.976, 24, 25 or 50 fps — so movies play without judder.",
+      "The update also speeds up software decoding by removing an unnecessary CPU resize step, fetches live TV segments over parallel connections, and fixes a long list of issues: a crash when opening Free TV after searching, IPTV stutter with hardware decoding on interlaced channels, search returning nothing in the Free TV list, videos freezing for up to 10 seconds after leaving a live channel, and several hardware decoding glitches with VP9 and HEVC. Requires kstuff and ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "VLC v0.4.5 release",
+        "url": "https://github.com/ZiZc3/VLC/releases/tag/v0.4.5"
+      }
+    ]
+  },
+  {
+    "id": "prosperoeden-v1005",
+    "date": "2026-10-18",
+    "tag": "Emulator",
+    "title": "ProsperoEden v1.005.000: game folders, cheat list, MihawkGen frame generation and speed control",
+    "summary": "ProsperoEden v1.005.000 organises each game in its own folder, gives cheats a dedicated list, adds MihawkGen neural frame generation, and lets you run games faster than real time.",
+    "body": [
+      "ProsperoEden v1.005.000 reorganises game storage so each title lives in its own folder under roms/, together with its updates, DLC, mods, cheats and post-processing presets. Cheats get their own list in each game's settings (separate from mods), and games can carry their own ReShade FX presets alongside the shared ones. A new speed limit setting (100%, 150%, 200%, 300% or Unlimited) lets games run faster when the console has headroom. MihawkGen, a neural-network frame generation method, joins Lossless Scaling as a selectable frame generation method per game.",
+      "The update also fixes a crash caused by GPU submissions growing too large during loading (the graphics driver now splits them), and a visual glitch where invalid colour values spread through glow and blur effects until black boxes covered the screen. Games requesting a large GPU address space no longer fail at startup. An Update notices toggle in Diagnostics lets you suppress the version check dialog. Requires kstuff and ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "ProsperoEden v1.005.000 release",
+        "url": "https://github.com/blackbearreloaded/ProsperoEden/releases/tag/v1.005.000"
+      }
+    ]
+  },
+  {
+    "id": "patchdl-v030",
+    "date": "2026-10-18",
+    "tag": "Tool",
+    "title": "PatchDL v0.3.0: pick any game update version and bypass blocked DNS",
+    "summary": "PatchDL v0.3.0 lets you browse and download any available game patch version, bypasses blocked DNS with encrypted fallbacks, and adds 10 interface languages.",
+    "body": [
+      "PatchDL v0.3.0 adds an Other Versions button to every game card, listing every patch that Prospero Patches (PS5) or Orbis Patches (PS4) knows for the game, with size and required firmware. Versions compatible with your console appear at the top, ready to download. The update also makes downloads more resilient: PatchDL now performs its own DNS lookups and falls back to encrypted DNS (Cloudflare, Google) or cached addresses when the console's DNS is blocked, so the DNS block that prevents system updates stays in place while game patches still download. Broken connections resume where they stopped, and queuing more than 16 games no longer stalls.",
+      "The interface now speaks English, German, French, Spanish, Italian, Brazilian Portuguese, Japanese, Simplified Chinese, Korean and Russian, following the browser language or a manual choice in Settings. Game cards show installed, update and newest versions side by side with larger text. Runs on firmware 1.00 to 13.60, tested on 11.60. Download patchdl_0.3.0.elf and send it to your PS5's ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "PatchDL v0.3.0 release",
+        "url": "https://github.com/knutwurst/ps5-patchdl/releases/tag/v0.3.0"
+      }
+    ]
+  },
+  {
+    "id": "mupen64plus-075",
+    "date": "2026-10-18",
+    "tag": "Emulator",
+    "title": "mupen64plus 0.7.5: find and create your own cheats on the PS5",
+    "summary": "mupen64plus for PS5 0.7.5 adds a cheat search that lets you find memory values in any game and make custom GameShark codes, plus manual code entry from the on-screen keyboard.",
+    "body": [
+      "mupen64plus 0.7.5 adds a cheat search to the pause menu that lets you hunt for values in a running game — lives, health, money — and turn them into custom cheats. Search for a known value or scan without one for things like health bars, then play, pause and narrow down results by what changed (went up, went down, stayed the same). Once you have a match, lock it at the value you want or set it once. The search works on 8, 16 and 32-bit values, and Undo takes back a step. You can also type GameShark codes directly with the PS5's on-screen keyboard.",
+      "Custom cheats appear first in the Cheats list, are saved per game in /data/mupen64plus/cheats/<game>.custom.txt (editable from a PC too), and can be renamed, edited or deleted with Square. The Cheats page now appears for every game, even those with no built-in codes. The touchpad returns to the game from any pause menu page."
+    ],
+    "sources": [
+      {
+        "name": "mupen64plus-ps5 0.7.5 release",
+        "url": "https://github.com/TheRealRetro/mupen64plus-ps5/releases/tag/0.7.5"
+      }
+    ]
+  },
+  {
+    "id": "jobeeslair-v030",
+    "date": "2026-10-18",
+    "tag": "Store",
+    "title": "Jobee'sLair v0.3.0: browser-based file capture, TorBox integration and host learning",
+    "summary": "Jobee'sLair v0.3.0 captures download links from the PS5 browser automatically, adds TorBox as a debrid provider, and learns which file hosts work on your console.",
+    "body": [
+      "Jobee'sLair v0.3.0 adds a browser capture feature that removes the need to type file links with the controller. When a download host requires the console's browser to pass a check, the app catches the file link out of the browser on its own, verifies it matches the game (by title ID or file size), and starts the download. VikingFile support is back as the catalog's largest host, and FileKeeper downloads work with no browser step at all. A new TorBox integration (add your API key in Settings) lets TorBox-supported sources download directly in the app, with Instant badges for files TorBox already has cached.",
+      "The app now remembers which hosts work on your console: successful captures mark a host Auto-capture and rank it first, while hosts that keep failing are marked Rarely works here and ranked last. Each source shows compatibility badges including whether it runs on 13.60 with ShadowMount+, and fPKG packages are labelled with their firmware ceiling. A download speed limit (no limit, 25, 10 or 5 MB/s) can be set in Settings. Link health checks no longer hide sources — broken or offline links are tagged and ranked last but remain available."
+    ],
+    "sources": [
+      {
+        "name": "Jobee'sLair v0.3.0 release",
+        "url": "https://github.com/JVK3R/JobeesLair/releases/tag/v0.3.0"
+      }
+    ]
+  },
+  {
+    "id": "recompstore-v112",
+    "date": "2026-10-18",
+    "tag": "Store",
+    "title": "RecompStore v1.1.1–v1.1.2: original Xbox disc fix and reliable beta downloads",
+    "summary": "Two quick RecompStore updates fix original Xbox disc setup (v1.1.1) and beta game downloads that could stall (v1.1.2), and add partial disc support for multi-game collections.",
+    "body": [
+      "RecompStore v1.1.1 fixes setup for original Xbox game discs. The previous version only accepted Xbox 360 disc images, so an original Xbox .xiso.iso or full disc image was rejected with a missing default.xex error. If a game like Def Jam: Fight for NY failed to set up, update the store and try Set up game files again. Version 1.1.2 follows with fixes for beta game downloads that could sit on the download screen with an empty bar — beta zips now download in 4 MB chunks with per-chunk timeouts and automatic resume.",
+      "Version 1.1.2 also adds partial disc support: a game can take just its own folder from a multi-game disc collection. Dragon Ball Z: Budokai 3 copies only Budokai 3 from the Budokai HD Collection, skipping Budokai 1 and the collection menu. The store checks the disc's region first, so a disc from another region is rejected before anything is copied. Game updates now preserve your saves, settings and game files. Requires kstuff and ShadowMountPlus 1.7 Beta 5 or newer."
+    ],
+    "sources": [
+      {
+        "name": "RecompStore v1.1.2 release",
+        "url": "https://github.com/elripalda/RecompStore/releases/tag/v1.1.2"
+      },
+      {
+        "name": "RecompStore v1.1.1 release",
+        "url": "https://github.com/elripalda/RecompStore/releases/tag/v1.1.1"
+      }
+    ]
+  },
+  {
+    "id": "ps5-backport-gui-20261018",
+    "date": "2026-10-18",
+    "tag": "Tool",
+    "title": "PS5 Backport GUI 0.3.0-beta: PS5 Pro PSSR 2 test and conversion fixes",
+    "summary": "PS5 Backport GUI's latest testing build adds an experimental PS5 Pro PSSR 2 option and test fixes for games whose right.sprx fails conversion.",
+    "body": [
+      "PS5 Backport GUI's early testing beta from 18 October 2026 (build 0.3.0-beta) adds an experimental PS5 Pro PSSR 2 test. The new option builds a Pro-only ZIP for games that use PSSR, letting the game select its requested PSSR model and permitting the system PSSR upgrade on Pro firmware 9.x–12.x. A row-menu action can also generate a PSSR 2 test from an existing backport without the original game files. This has not been tested on a PS5 Pro yet — tester reports are needed.",
+      "The build also tests fixes for several games (MGS4, 007 First Light, Planet of Lana) whose sce_sys/about/right.sprx fails conversion with an invalid param magic error, by replacing that file with a standard copy. The application remains closed source and Windows only, with Linux and macOS builds planned once Windows testing is confirmed. Base PS5 consoles do not run PSSR and should use the normal firmware 4.xx ZIP."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Backport GUI 0.3.0-beta release",
+        "url": "https://github.com/kerrdec97/PS5-Backport-GUI/releases/tag/early-testing-beta-20261018"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v711",
+    "date": "2026-10-18",
+    "tag": "Tool",
+    "title": "PS5 Upload v7.1.1: macOS Big Sur scroll fix",
+    "summary": "PS5 Upload v7.1.1 fixes a scrolling issue on macOS Big Sur where the older WebKit engine prevented the app window from scrolling.",
+    "body": [
+      "PS5 Upload v7.1.1 is a compatibility fix for macOS Big Sur. The older built-in web engine on Big Sur caused the app window to lose its fixed height, preventing all screens from scrolling, and the sidebar rows lost their left padding. The app's styles now include the older CSS forms that Big Sur's engine understands.",
+      "This is a host-side (PC/Mac) fix only and does not change PS5 functionality. If you're not on macOS Big Sur, this update has no effect. Download from the GitHub release page."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v7.1.1 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.1.1"
+      }
+    ]
+  },
+  {
     "id": "fps60-v100",
     "date": "2026-10-18",
     "tag": "Tool",

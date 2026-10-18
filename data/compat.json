@@ -1,59 +1,151 @@
 {
   "updated": "2026-10-18",
   "about": "Firmware compatibility for the /firmware directory. Only what each project's README or release notes state. range = the developer says it supports these firmwares; tested = firmwares it has actually been run on; only = hard-locked to these firmwares; any = the developer says it isn't tied to a firmware. unstated = tracked apps whose README was checked and names no PS5 firmware (they show as not confirmed). Validate with: node scripts/compat-check.mjs",
-  "firmwares": ["1.00", "1.02", "1.05", "1.12", "1.14", "2.00", "2.20", "2.25", "2.26", "2.30", "2.50", "2.70", "3.00", "3.10", "3.20", "3.21", "4.00", "4.02", "4.03", "4.50", "4.51", "5.00", "5.02", "5.10", "5.50", "6.00", "6.02", "6.50", "7.00", "7.01", "7.20", "7.40", "7.60", "7.61", "8.00", "8.20", "8.40", "8.60", "9.00", "9.05", "9.20", "9.40", "9.60", "10.00", "10.01", "10.20", "10.40", "10.60", "11.00", "11.20", "11.40", "11.60", "12.00", "12.02", "12.20", "12.40", "12.60", "12.70", "13.00", "13.20", "13.40", "13.42", "13.60", "14.00", "14.10"],
+  "firmwares": [
+    "1.00",
+    "1.02",
+    "1.05",
+    "1.12",
+    "1.14",
+    "2.00",
+    "2.20",
+    "2.25",
+    "2.26",
+    "2.30",
+    "2.50",
+    "2.70",
+    "3.00",
+    "3.10",
+    "3.20",
+    "3.21",
+    "4.00",
+    "4.02",
+    "4.03",
+    "4.50",
+    "4.51",
+    "5.00",
+    "5.02",
+    "5.10",
+    "5.50",
+    "6.00",
+    "6.02",
+    "6.50",
+    "7.00",
+    "7.01",
+    "7.20",
+    "7.40",
+    "7.60",
+    "7.61",
+    "8.00",
+    "8.20",
+    "8.40",
+    "8.60",
+    "9.00",
+    "9.05",
+    "9.20",
+    "9.40",
+    "9.60",
+    "10.00",
+    "10.01",
+    "10.20",
+    "10.40",
+    "10.60",
+    "11.00",
+    "11.20",
+    "11.40",
+    "11.60",
+    "12.00",
+    "12.02",
+    "12.20",
+    "12.40",
+    "12.60",
+    "12.70",
+    "13.00",
+    "13.20",
+    "13.40",
+    "13.42",
+    "13.60",
+    "14.00",
+    "14.10"
+  ],
   "fpkg": {
     "max": "11.60",
     "note": "Published fPKG support (kstuff-lite) covers firmware up to 11.40, and 11.60 with the A53 PPR patch. On 12.xx and 13.xx homebrew runs, but fPKG games don't launch yet.",
     "checked": "2026-10-17",
     "sources": [
-      { "name": "kstuff-lite", "url": "https://github.com/EchoStretch/kstuff-lite" },
-      { "name": "GBAtemp: fPKG on 13.60", "url": "https://gbatemp.net/threads/is-it-possible-to-install-fpkg-files-meant-for-11-40-on-13-6.684863/" }
+      {
+        "name": "kstuff-lite",
+        "url": "https://github.com/EchoStretch/kstuff-lite"
+      },
+      {
+        "name": "GBAtemp: fPKG on 13.60",
+        "url": "https://gbatemp.net/threads/is-it-possible-to-install-fpkg-files-meant-for-11-40-on-13-6.684863/"
+      }
     ]
   },
   "entry": [
     {
       "repo": "ntfargo/Relapse-Exploit",
       "name": "Relapse",
-      "range": ["7.00", "13.60"],
+      "range": [
+        "7.00",
+        "13.60"
+      ],
       "how": "Kernel exploit from the browser. Tethered: rerun after every reboot.",
       "story": "relapse-release"
     },
     {
       "repo": "itsPLK/ps5-webkit-autoloader",
       "name": "WebKit Autoloader",
-      "range": ["7.00", "13.60"],
+      "range": [
+        "7.00",
+        "13.60"
+      ],
       "how": "Loads the browser exploit and your payloads automatically."
     },
     {
       "repo": "itsPLK/ps5-y2jb-autoloader",
       "name": "Y2JB Autoloader",
-      "range": ["4.03", "13.60"],
+      "range": [
+        "4.03",
+        "13.60"
+      ],
       "how": "Loads the kernel exploit through the YouTube app, then your payloads."
     },
     {
       "repo": "Gezine/Y2JB",
       "name": "Y2JB",
-      "range": ["4.03", "13.60"],
+      "range": [
+        "4.03",
+        "13.60"
+      ],
       "how": "YouTube app entry point. 4.03 to 12.40 and 12.60 and up need different YouTube app versions; see the README."
     },
     {
       "repo": "PS5Dev/Byepervisor",
       "name": "Byepervisor",
-      "only": ["2.50"],
+      "only": [
+        "2.50"
+      ],
       "how": "Hypervisor exploit. Its homebrew enabler only supports 2.50."
     },
     {
       "repo": "ps5-linux/ps5-linux-loader",
       "name": "ps5-linux",
-      "range": ["3.00", "7.61"],
+      "range": [
+        "3.00",
+        "7.61"
+      ],
       "how": "Boots Linux on Phat and Slim. Not a homebrew jailbreak.",
       "linux": true
     },
     {
       "repo": "pLabs5/pLinux5-NG",
       "name": "pLinux5-NG",
-      "range": ["8.00", "13.60"],
+      "range": [
+        "8.00",
+        "13.60"
+      ],
       "how": "Boots Linux on higher firmware through Byepervisor Reborn. Not a homebrew jailbreak.",
       "linux": true
     }
@@ -65,197 +157,413 @@
     },
     "drakmor/ShadowMountPlus": {
       "any": true,
-      "needs": ["kstuff-lite 1.07+"],
+      "needs": [
+        "kstuff-lite 1.07+"
+      ],
       "note": "Supports any jailbroken firmware running kstuff-lite 1.07 or newer, including 2.00."
     },
     "Phoenixx1202/LegacyJB": {
-      "range": ["1.00", "13.60"],
+      "range": [
+        "1.00",
+        "13.60"
+      ],
       "note": "Kernel addresses come from the payload SDK, which maps firmware up to 13.60."
     },
     "drakmor/ppr-patch": {
-      "range": ["1.00", "11.40"]
+      "range": [
+        "1.00",
+        "11.40"
+      ]
     },
     "lvndry/ps5-firmware-pin": {
-      "tested": ["13.60"],
-      "needs": ["Relapse"]
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "Relapse"
+      ]
     },
     "shahrilnet/remote_lua_loader": {
       "any": true,
-      "tested": ["10.40"],
+      "tested": [
+        "10.40"
+      ],
       "note": "Needs one of the supported Artemis-engine games; see the README list."
     },
     "phantomptr/ps5upload": {
-      "range": ["1.00", "13.60"],
-      "needs": ["elfldr"]
+      "range": [
+        "1.00",
+        "13.60"
+      ],
+      "needs": [
+        "elfldr"
+      ]
     },
     "knutwurst/ps5-patchdl": {
-      "range": ["1.00", "13.60"],
-      "tested": ["11.60", "13.60"],
-      "needs": ["elfldr"]
+      "range": [
+        "1.00",
+        "13.60"
+      ],
+      "tested": [
+        "11.60",
+        "13.60"
+      ],
+      "needs": [
+        "elfldr"
+      ]
     },
     "xvvulcanvx/PS5-TabShifter": {
-      "range": ["12.00", "13.60"],
-      "tested": ["12.02", "13.00", "13.40", "13.42", "13.60"]
+      "range": [
+        "12.00",
+        "13.60"
+      ],
+      "tested": [
+        "12.02",
+        "13.00",
+        "13.40",
+        "13.42",
+        "13.60"
+      ]
     },
     "cobanov/PS5LM": {
-      "range": ["7.00", "13.60"],
-      "needs": ["elfldr", "kstuff", "ShadowMountPlus"]
+      "range": [
+        "7.00",
+        "13.60"
+      ],
+      "needs": [
+        "elfldr",
+        "kstuff",
+        "ShadowMountPlus"
+      ]
     },
     "gasb07/ps4mount": {
-      "tested": ["6.50", "13.20"],
-      "needs": ["fake PKG support"],
+      "tested": [
+        "6.50",
+        "13.20"
+      ],
+      "needs": [
+        "fake PKG support"
+      ],
       "note": "Below 6.00 registering games can corrupt the database; read the README first."
     },
     "bps2414/lineup": {
-      "tested": ["13.60"],
-      "needs": ["kstuff", "elfldr", "ShadowMountPlus"]
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "kstuff",
+        "elfldr",
+        "ShadowMountPlus"
+      ]
     },
     "hebiii994/ps5-solobridge": {
-      "tested": ["13.60"],
-      "needs": ["elfldr"]
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "elfldr"
+      ]
     },
     "StonedModder/Prospero-Menu": {
-      "range": ["1.00", "13.60"],
-      "tested": ["13.60"],
-      "needs": ["elfldr", "kstuff", "ShadowMountPlus"],
+      "range": [
+        "1.00",
+        "13.60"
+      ],
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "elfldr",
+        "kstuff",
+        "ShadowMountPlus"
+      ],
       "note": "Carries offsets for 1.00 to 13.60 but has only been tested on 13.60."
     },
     "kerrdec97/PS5-Backport-GUI": {
-      "range": ["4.03", "13.60"]
+      "range": [
+        "4.03",
+        "13.60"
+      ]
     },
     "Darkatek7/ProsperoThemes": {
-      "tested": ["13.00"],
-      "needs": ["elfldr", "ShadowMountPlus"],
+      "tested": [
+        "13.00"
+      ],
+      "needs": [
+        "elfldr",
+        "ShadowMountPlus"
+      ],
       "note": "Developer says nothing is tied to 13.00; 13.40 and later need 01.000.004 or newer."
     },
     "psksuffsmp/ps5-stream8": {
-      "only": ["13.60"],
-      "needs": ["elfldr"],
+      "only": [
+        "13.60"
+      ],
+      "needs": [
+        "elfldr"
+      ],
       "note": "Hard-coded 13.60 offsets. Don't use it on other firmware."
     },
     "blackbearreloaded/ProsperoStore": {
-      "tested": ["4.50", "6.02", "12.70"],
-      "needs": ["ShadowMountPlus"]
+      "tested": [
+        "4.50",
+        "6.02",
+        "12.70"
+      ],
+      "needs": [
+        "ShadowMountPlus"
+      ]
     },
     "JVK3R/JobeesLair": {
-      "tested": ["13.60"],
-      "needs": ["ShadowMountPlus"]
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "ShadowMountPlus"
+      ]
     },
     "kamb205/KB-RPCS3": {
-      "tested": ["13.60"],
-      "needs": ["etaHEN", "kstuff-lite", "ShadowMountPlus"]
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "etaHEN",
+        "kstuff-lite",
+        "ShadowMountPlus"
+      ]
     },
     "premohq/PS5CEMU-HAR": {
-      "range": ["1.00", "13.60"],
-      "needs": ["etaHEN, OnionHEN or elfldr"]
+      "range": [
+        "1.00",
+        "13.60"
+      ],
+      "needs": [
+        "etaHEN, OnionHEN or elfldr"
+      ]
     },
     "SynoPiia/PSXS5": {
-      "tested": ["13.60"],
-      "needs": ["etaHEN", "kstuff"]
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "etaHEN",
+        "kstuff"
+      ]
     },
     "blackbearreloaded/ProsperoEden": {
-      "tested": ["6.02", "12.70", "13.60"]
+      "tested": [
+        "6.02",
+        "12.70",
+        "13.60"
+      ]
     },
     "mortaljinx/Seedee5": {
-      "tested": ["4.03"]
+      "tested": [
+        "4.03"
+      ]
     },
     "BrinooTk/PS5X360": {
-      "tested": ["13.60"],
-      "needs": ["etaHEN", "kstuff", "ShadowMountPlus"]
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "etaHEN",
+        "kstuff",
+        "ShadowMountPlus"
+      ]
     },
     "BaZZtian/SilverBirch": {
-      "tested": ["12.40"],
-      "needs": ["OnionHEN", "ShadowMountPlus"]
+      "tested": [
+        "12.40"
+      ],
+      "needs": [
+        "OnionHEN",
+        "ShadowMountPlus"
+      ]
     },
     "elripalda/Porpoise-Dolphin-Emulator-for-PS5": {
-      "tested": ["13.60"],
-      "needs": ["jailbreak daemon", "ShadowMountPlus"],
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "jailbreak daemon",
+        "ShadowMountPlus"
+      ],
       "note": "Players also run it on 12.x; there, update ShadowMountPlus to 1.7 beta 4 or newer if it closes on launch."
     },
     "darkxex/SwanStationPS5": {
-      "tested": ["13.60"],
-      "needs": ["etaHEN", "kstuff"]
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "etaHEN",
+        "kstuff"
+      ]
     },
     "Swordpdf/PS5SX2": {
-      "range": ["6.02", "12.70"],
-      "tested": ["6.02", "10.01", "10.60", "11.40", "11.60", "12.00", "12.70"],
-      "needs": ["kstuff", "ShadowMountPlus"],
+      "range": [
+        "6.02",
+        "12.70"
+      ],
+      "tested": [
+        "6.02",
+        "10.01",
+        "10.60",
+        "11.40",
+        "11.60",
+        "12.00",
+        "12.70"
+      ],
+      "needs": [
+        "kstuff",
+        "ShadowMountPlus"
+      ],
       "note": "Testers ran it on 6.02 to 12.70. USB keyboard and mouse don't work on 11.x and 12.00 yet."
     },
     "mihawk-99/PS5_RetroArch": {
       "any": true,
-      "needs": ["jailbreak", "homebrew launcher"],
+      "needs": [
+        "jailbreak",
+        "homebrew launcher"
+      ],
       "note": "No firmware limit stated; needs a working jailbreak and launcher."
     },
     "Marice/wave-race-64-ps5": {
-      "tested": ["13.60"],
-      "needs": ["ShadowMountPlus"]
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "ShadowMountPlus"
+      ]
     },
     "Marice/rush2-ps5": {
-      "tested": ["13.60"],
-      "needs": ["ShadowMountPlus"]
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "ShadowMountPlus"
+      ]
     },
     "Marice/stk-ps5": {
-      "tested": ["13.60"],
-      "needs": ["ShadowMountPlus"]
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "ShadowMountPlus"
+      ]
     },
     "griches/PS5_DevilutionX": {
-      "tested": ["13.60"]
+      "tested": [
+        "13.60"
+      ]
     },
     "griches/PS5_Doom3": {
-      "tested": ["13.60"]
+      "tested": [
+        "13.60"
+      ]
     },
     "griches/PS5_Sunshine": {
-      "tested": ["13.60"]
+      "tested": [
+        "13.60"
+      ]
     },
     "griches/PS5_WindWakerHD": {
-      "tested": ["13.60"]
+      "tested": [
+        "13.60"
+      ]
     },
     "cherryduck/PS5_EccoDefender": {
-      "tested": ["11.60"],
-      "needs": ["kstuff"]
+      "tested": [
+        "11.60"
+      ],
+      "needs": [
+        "kstuff"
+      ]
     },
     "mshivam019/oot64-ps5": {
-      "tested": ["9.00"],
-      "needs": ["kstuff", "ShadowMountPlus"]
+      "tested": [
+        "9.00"
+      ],
+      "needs": [
+        "kstuff",
+        "ShadowMountPlus"
+      ]
     },
     "mshivam019/tmm64-ps5": {
-      "tested": ["9.00"]
+      "tested": [
+        "9.00"
+      ]
     },
     "RafaelNGP/xbox-cloud-gaming-ps5": {
-      "tested": ["13.00", "13.60"],
-      "needs": ["ShadowMountPlus"]
+      "tested": [
+        "13.00",
+        "13.60"
+      ],
+      "needs": [
+        "ShadowMountPlus"
+      ]
     },
     "Sp9nky/unofficial-stremio-ps5-port": {
-      "tested": ["11.60"]
+      "tested": [
+        "11.60"
+      ]
     },
     "02dnot/Jelly5": {
-      "tested": ["11.60", "13.60"]
+      "tested": [
+        "11.60",
+        "13.60"
+      ]
     },
     "fstat13/PSCapture": {
-      "only": ["13.60"],
-      "needs": ["elfldr"],
+      "only": [
+        "13.60"
+      ],
+      "needs": [
+        "elfldr"
+      ],
       "note": "Other firmware would need a porting pass."
     },
     "leolobato/playden-ps5": {
-      "tested": ["13.60"],
-      "needs": ["kstuff-lite", "elfldr", "ShadowMountPlus"]
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "kstuff-lite",
+        "elfldr",
+        "ShadowMountPlus"
+      ]
     }
   },
   "unstated": [
     "ArkSama/PS5-Lapy-JB-Daemon",
+    "EchoStretch/kstuff",
+    "EchoStretch/kstuff-lite",
+    "KongaTime/PS5_EdgeOfTimeTitle",
+    "LightningMods/Itemzflow",
+    "LoZazaMastro/TheSimpsonsGame-PS5-Builder",
+    "MisterTemaki/beetlepcePS5",
+    "MisterTemaki/fbneo-ps5",
+    "MisterTemaki/genplusgxPS5",
+    "MisterTemaki/snes9xPS5",
+    "Nazky/UnleashedRecomp-Prospero",
+    "NotSoTypicalGamer/ShadowPKG",
+    "Starter-ps5/Common-FPS-for-PS5",
+    "SvenGDK/Prospero-Explorer",
+    "TheCriicom/omega-dashboard",
+    "TheRealRetro/mupen64plus-ps5",
+    "VenezuelanBiggie24/MacheteSVG-PS5-Save-Manager",
+    "ZiZc3/VLC",
+    "ZiZc3/XPSemu",
     "aydencharles/onionHEN",
     "bizkut/ps5-pokemmo",
     "blackbearreloaded/ProsperoTube",
     "bornaradusin/Emby5",
     "drakmor/kstuff-lite",
     "drakmor/nanoDNS",
-    "EchoStretch/kstuff",
-    "EchoStretch/kstuff-lite",
     "eladharels/ps5-60FPS",
+    "elripalda/RecompStore",
     "elripalda/fifastreet-ps5",
     "elripalda/nbastreet-ps5",
-    "elripalda/RecompStore",
     "elripalda/skate3-ps5",
     "elripalda/wwe13-ps5",
     "etaHEN/etaHEN",
@@ -266,33 +574,18 @@
     "hollamhide/hollamhide.github.io",
     "itsPLK/ps5-payload-manager",
     "juma-sayeh/PS5-Game-Compressor",
-    "KongaTime/PS5_EdgeOfTimeTitle",
-    "LightningMods/Itemzflow",
-    "LoZazaMastro/TheSimpsonsGame-PS5-Builder",
     "manos555555/PS5-Suite",
-    "MisterTemaki/beetlepcePS5",
-    "MisterTemaki/fbneo-ps5",
-    "MisterTemaki/genplusgxPS5",
-    "MisterTemaki/snes9xPS5",
     "mpereiraesaa/prospero-win",
     "mshivam019/la-ps5",
-    "Nazky/UnleashedRecomp-Prospero",
     "notmaj0r/ProsperoMgr",
-    "NotSoTypicalGamer/ShadowPKG",
+    "pastawithpesto/PS5-14.10-Jailbreak-Research",
     "ps5-payload-dev/ftpsrv",
     "ps5-payload-dev/sdk",
     "ps5-payload-dev/websrv",
-    "Starter-ps5/Common-FPS-for-PS5",
     "stupiditytries/StremiBrew",
-    "SvenGDK/Prospero-Explorer",
-    "TheCriicom/omega-dashboard",
     "theghostonline/007-First-Light-PS5",
     "theghostonline/Hitman-PS5",
     "theghostonline/PS5VR",
-    "TheRealRetro/mupen64plus-ps5",
-    "tsuramatsu1/psp5",
-    "VenezuelanBiggie24/MacheteSVG-PS5-Save-Manager",
-    "ZiZc3/VLC",
-    "ZiZc3/XPSemu"
+    "tsuramatsu1/psp5"
   ]
 }
