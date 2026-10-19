@@ -69,6 +69,8 @@ export const SOURCES = [
   { cat: T, repo: 'ShaneBreazeale/ps5-homebrew-tools', name: 'PS5 Homebrew Tools', about: 'Diagnostic payloads for PS5 development' },
   { cat: T, repo: 'ghost1372/WelcomeHubActivator', name: 'WelcomeHubActivator', about: 'Enables the Welcome Hub on FW 10.00–13.60' },
   { cat: T, repo: 'Marice/ps5-homeassistant', name: 'PS5 Home Assistant', about: 'MQTT bridge to Home Assistant' },
+  { cat: T, repo: 'shcheglovnd/ps5-m2unmount', name: 'ps5-m2unmount', about: 'Unmounts M.2 for clean PS5-Linux sessions' },
+  { cat: T, repo: 'Xnos666/SoundBridge-PS5', name: 'SoundBridge', about: 'Stream PS5 game audio to PC headset' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },
@@ -140,4 +142,5 @@ export const SOURCES = [
   { cat: R, repo: 'elripalda/SvR2008-Recomp-PS5', name: 'WWE SmackDown vs. Raw 2008', about: 'Xbox 360 recomp' },
   { cat: R, repo: 'elripalda/dbz-budokai3-ps5', name: 'Dragon Ball Z: Budokai 3', about: 'Xbox 360 recomp' },
   { cat: R, repo: 'lavavex/nfs-blackbox-ps5', name: 'NFS Most Wanted (2005)', about: 'PC game via prospero-win, 4K' },
+  { cat: R, repo: 'thesmokesession-bit/perfect-eye', name: 'Perfect Eye', about: 'Perfect Dark and GoldenEye 007 on PS5' },
 ];

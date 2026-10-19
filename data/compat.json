@@ -567,6 +567,24 @@
         "kstuff",
         "ShadowMountPlus"
       ]
+    },
+    "shcheglovnd/ps5-m2unmount": {
+      "tested": [
+        "4.50"
+      ],
+      "needs": [
+        "elfldr"
+      ],
+      "note": "Tested on CFI-1115A at 4.50. Stays resident and re-unmounts on kernel mount events."
+    },
+    "Xnos666/SoundBridge-PS5": {
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "elfldr"
+      ],
+      "note": "Tested on 13.60 only."
     }
   },
   "unstated": [
@@ -598,6 +616,7 @@
     "eladharels/ps5-60FPS",
     "elripalda/RecompStore",
     "elripalda/SvR2008-Recomp-PS5",
+    "elripalda/dbz-budokai3-ps5",
     "elripalda/fifastreet-ps5",
     "elripalda/nbastreet-ps5",
     "elripalda/skate3-ps5",
@@ -622,7 +641,7 @@
     "theghostonline/007-First-Light-PS5",
     "theghostonline/Hitman-PS5",
     "theghostonline/PS5VR",
-    "tsuramatsu1/psp5",
-    "elripalda/dbz-budokai3-ps5"
+    "thesmokesession-bit/perfect-eye",
+    "tsuramatsu1/psp5"
   ]
 }

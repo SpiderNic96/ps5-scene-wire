@@ -1,5 +1,263 @@
 [
   {
+    "id": "perfect-eye-ps5",
+    "date": "2026-10-19",
+    "tag": "Port",
+    "title": "Perfect Eye: Perfect Dark and GoldenEye 007 run natively on PS5",
+    "summary": "Perfect Eye brings Perfect Dark and GoldenEye 007 to PS5 as two separate home screen tiles, running natively on Vulkan at up to 4K with online multiplayer alongside PC players.",
+    "body": [
+      "Perfect Eye by thesmokesession-bit is a native PS5 build of Dab's Mod (a fork of the Perfect Dark PC port) that also runs GoldenEye 007 on its own tile. Both games draw with the Vulkan renderer on Mihawk's RADV port at the TV's native resolution — up to 3840×2160 on a 4K set. Online play with PC users works through Dab's Mod lobby system with room codes, co-op, counter-op and kill cams. HD texture packs are supported for both games, and GoldenEye can use the Xbox 360 XBLA version's HD assets.",
+      "You need your own Perfect Dark (USA Rev 1) and GoldenEye 007 (USA) ROMs — no game data is included. Install via FTP to /data/homebrew/ on a jailbroken PS5 with etaHEN and ShadowMountPlus. The GoldenEye tile needs both ROMs since it runs on the Perfect Dark engine. RecompStore v1.1.3 also lists both games for one-click installation."
+    ],
+    "sources": [
+      {
+        "name": "Perfect Eye on GitHub",
+        "url": "https://github.com/thesmokesession-bit/perfect-eye"
+      }
+    ]
+  },
+  {
+    "id": "ps5-m2unmount",
+    "date": "2026-10-19",
+    "tag": "Tool",
+    "title": "ps5-m2unmount: keep your M.2 clean between Linux sessions",
+    "summary": "A new PS5 payload unmounts the console's M.2 SSD volume after jailbreak, preventing the \"Repairing\" screen that follows every PS5-Linux session.",
+    "body": [
+      "The ps5-m2unmount payload by shcheglovnd solves a long-standing annoyance for PS5-Linux users: the console marks its M.2 volume dirty at every boot, and since ps5-linux-loader enters Linux through rest mode the volume is never cleanly unmounted, triggering a repair on the next PS5 boot. This payload unmounts the M.2 right after jailbreak and stays resident to re-unmount if the console remounts it later.",
+      "The payload uses kernel filesystem event filters (EVFILT_FS) rather than polling, so it does no periodic work while games run — it wakes only on mount/unmount events. It survives rest mode, never forces an unmount on a busy volume, and loading it again replaces the running copy. Tested on firmware 4.50 on a CFI-1115A. Send m2unmount.elf to an ELF loader on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "ps5-m2unmount on GitHub",
+        "url": "https://github.com/shcheglovnd/ps5-m2unmount"
+      }
+    ]
+  },
+  {
+    "id": "soundbridge-ps5",
+    "date": "2026-10-19",
+    "tag": "Tool",
+    "title": "SoundBridge: stream PS5 game audio to your PC headset",
+    "summary": "SoundBridge is a new PS5 payload and Windows app that streams game audio over the network to your PC with about 50 ms delay — no Remote Play or capture card required.",
+    "body": [
+      "SoundBridge by Xnos666 sends your PS5's game sound to a small Windows app over the home network. If your PS5 is on a monitor without speakers and your headset is plugged into your PC (for example through a Focusrite Scarlett), the PS5's audio has nowhere to go — SoundBridge fixes that. Measured delay is about 50–55 ms over Wi-Fi, less with Ethernet. Two modes are available: Low Delay for minimum latency, and Smooth for a small buffer that rides out Wi-Fi pauses.",
+      "The PC app (native Direct2D, about 250 KB, no install) finds the PS5 by itself using auto-discovery. Send the ELF to your PS5 loader on port 9021 and the app turns green. The payload runs alongside other payloads and sending it again replaces the running copy. Tested on firmware 13.60 only."
+    ],
+    "sources": [
+      {
+        "name": "SoundBridge-PS5 on GitHub",
+        "url": "https://github.com/Xnos666/SoundBridge-PS5"
+      }
+    ]
+  },
+  {
+    "id": "ps5sx2-v215",
+    "date": "2026-10-19",
+    "tag": "Emulator",
+    "title": "PS5SX2 2.15: game tiles on the home screen, 192 more HD texture packs",
+    "summary": "PS5SX2 2.15 (build vk-285-177) adds per-game home screen tiles, 192 new HD texture packs from the community Drive, less disc stutter, and frame generation at 120 Hz again.",
+    "body": [
+      "PS5SX2 2.15 rolls up six test builds (172–177) into one stable release. The headline feature is game tiles: press Square on a game in the shelf and choose \"Home screen tile\" to get a dedicated tile on the PS5 home that launches the game directly. The shelf now offers 228 HD texture packs for 223 games from the community Google Drive, and covers gain back covers (flip with the right stick), spines, and disc art from the LaunchBox Games Database. Disc performance is improved — the game no longer waits on the drive, and reads ahead at 3.2× speed.",
+      "Frame generation can switch the TV to 120 Hz again, so a 60 fps game shows 120 — still off by default, needing a 120 Hz TV and \"120 Hz Output\" enabled. Folder settings are now exact: once you set a game, BIOS or textures folder, only that folder is scanned. Search the shelf with R2. Requires a jailbroken PS5 with ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "PS5SX2 vk-285-177 release",
+        "url": "https://github.com/Swordpdf/PS5SX2/releases/tag/vk-285-177"
+      }
+    ]
+  },
+  {
+    "id": "retroarch-v400-beta4",
+    "date": "2026-10-19",
+    "tag": "Emulator",
+    "title": "RetroArch v4.0.0-beta-4: play games over SMB, frame generation fixed",
+    "summary": "PS5 RetroArch v4.0.0-beta-4 adds SMB network play from a shared PC folder, fixes the doubled-picture frame generation bug, and brings GameCube texture pack support.",
+    "body": [
+      "RetroArch v4.0.0-beta-4 answers a stack of community bug reports. The biggest addition is SMB support: play games straight from a shared folder on your PC, configured through the WebUI. Frame generation no longer produces a doubled picture — the extra frames are now properly interleaved. GameCube texture packs that previously never showed up now work after a fix to Dolphin's memory path. The PSP core no longer crashes when changing resolution in the Quick Menu.",
+      "Other fixes include persistent renames, proper game removal, and a RetroAchievements password that no longer appears lost. The WebUI Update button now lights up correctly after releases gained the checksum file the updater needs. Update through the WebUI or download from the release page. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "RetroArch v4.0.0-beta-4 release",
+        "url": "https://github.com/mihawk-99/PS5_RetroArch/releases/tag/v4.0.0-beta-4"
+      }
+    ]
+  },
+  {
+    "id": "playden-v050",
+    "date": "2026-10-19",
+    "tag": "PC & Linux",
+    "title": "Playden v0.5.0: Direct3D 12 games now run — Cyberpunk 2077 on PS5",
+    "summary": "Playden v0.5.0 brings DirectX 12 game support through vkd3d-proton, making Cyberpunk 2077, Deep Rock Galactic and more playable on a jailbroken PS5.",
+    "body": [
+      "Playden v0.5.0 adds vkd3d-proton via runtime kit 0.11, enabling Direct3D 12 games on the PS5 for the first time. Cyberpunk 2077, Ghosts 'n Goblins Resurrection, Deep Rock Galactic and more now run through Wine on the console. This release also adds sign-in with an account name and password, a setting for slow downloads, and an Installed Games list for freeing up storage space.",
+      "Updating from 0.4.0: Playden offers the update on next launch or from Settings › About. Make sure the console has at least 8 GB free before updating — the new kit unpacks next to the old one. Your sign-in, games, saves and game settings are kept, and prepared games update their runtime the next time you press Play. Alpha software: Playden signs in to your real Steam account."
+    ],
+    "sources": [
+      {
+        "name": "Playden v0.5.0 release",
+        "url": "https://github.com/leolobato/playden-ps5/releases/tag/v0.5.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v717-v719",
+    "date": "2026-10-19",
+    "tag": "Tool",
+    "title": "PS5 Upload v7.1.7–v7.1.9: file properties, remote server organizer, better Kraken",
+    "summary": "Three PS5 Upload updates in one day: v7.1.7 organizes packages on remote servers, v7.1.8 fixes Kraken decompression, and v7.1.9 adds file properties and custom permissions.",
+    "body": [
+      "PS5 Upload v7.1.9 adds a Properties panel in Files showing size, modification time and permissions for any file or folder, with the ability to set custom Unix permissions. Settings now lets you show, restore or hide the PS5Upload Minion home screen tile through a paired connection even when LAN access is off. Cheat imports from local JSON trainers are supported. v7.1.8 fixes Kraken decompression for PS5 packages compressed at the highest level that previously errored with \"chunk too short\".",
+      "v7.1.7 extends the Organize Packages feature to remote SMB, FTP, SFTP and WebDAV servers — same preview, same Game ID layout, all runs undoable. WebDAV servers that redirect folder addresses (like Apache) work again. Download each version from the release page or update from within the app."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v7.1.9 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.1.9"
+      },
+      {
+        "name": "PS5 Upload v7.1.8 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.1.8"
+      },
+      {
+        "name": "PS5 Upload v7.1.7 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.1.7"
+      }
+    ]
+  },
+  {
+    "id": "patchdl-v031-v032",
+    "date": "2026-10-19",
+    "tag": "Tool",
+    "title": "PatchDL v0.3.1–v0.3.2: faster downloads, choose your storage drive",
+    "summary": "PatchDL v0.3.1 speeds up downloads by buffering writes, and v0.3.2 lets you pick which drive to save to — internal or any connected USB. Tested on firmware 11.60.",
+    "body": [
+      "PatchDL v0.3.1 fixes a performance bottleneck: previously every small chunk was written to disk immediately, and the PS5's storage overhead capped speeds at 8–12 MB/s. Chunks are now collected in memory before flushing, significantly improving download throughput. v0.3.2 adds drive selection in Settings — it lists internal storage and every connected USB drive with free space, and new downloads go to whichever you choose.",
+      "The PatchDL tile now sits in the Media section of the home screen alongside other homebrew apps, and existing tiles move there automatically on the next launch. Both versions are tested on firmware 11.60 with USB drives. Send the ELF to your PS5 loader and open the address from the notification. PatchDL downloads official, unmodified game updates only."
+    ],
+    "sources": [
+      {
+        "name": "PatchDL v0.3.2 release",
+        "url": "https://github.com/knutwurst/ps5-patchdl/releases/tag/v0.3.2"
+      },
+      {
+        "name": "PatchDL v0.3.1 release",
+        "url": "https://github.com/knutwurst/ps5-patchdl/releases/tag/v0.3.1"
+      }
+    ]
+  },
+  {
+    "id": "payload-manager-v062",
+    "date": "2026-10-19",
+    "tag": "Tool",
+    "title": "Payload Manager v0.6.2: autoload return, release notes, smaller ELF",
+    "summary": "Payload Manager v0.6.2 adds a Return After Autoload option, in-app release notes for payloads, and cuts the ELF size by moving emoji to a CDN. v0.6.3 hotfixes emoji display.",
+    "body": [
+      "Payload Manager v0.6.2 brings several quality-of-life improvements. Return After Autoload is a new optional setting that sends you back to the dashboard about 3 seconds after all payloads load successfully — results stay visible if anything fails. A new Release Details section on payload pages shows GitHub release notes directly in the app. Dashboard icons can now be hidden for a text-focused layout, and Traditional Chinese and Romanian translations are added.",
+      "Under the hood, bundled emoji artwork has been replaced with Twemoji loaded from a CDN, significantly reducing the ELF size. Downloaded emoji are cached for offline use. Mobile upload controls are fixed for portrait mode. v0.6.3 is a hotfix for emoji not appearing on PS5. Update from within the Payload Manager app — the old ELF file automatically launches the updated version."
+    ],
+    "sources": [
+      {
+        "name": "Payload Manager v0.6.2 release",
+        "url": "https://github.com/itsPLK/ps5-payload-manager/releases/tag/v0.6.2"
+      },
+      {
+        "name": "Payload Manager v0.6.3 release",
+        "url": "https://github.com/itsPLK/ps5-payload-manager/releases/tag/v0.6.3"
+      }
+    ]
+  },
+  {
+    "id": "ps5-homeassistant-v020",
+    "date": "2026-10-19",
+    "tag": "Tool",
+    "title": "PS5 Home Assistant v0.2.0: rest mode and power off from Home Assistant",
+    "summary": "PS5 Home Assistant v0.2.0 adds Rest Mode and Power Off buttons controllable from Home Assistant, an IP address sensor, and fixes the device going unavailable after rest mode wake.",
+    "body": [
+      "PS5 Home Assistant v0.2.0 adds power control to the MQTT bridge. Rest Mode and Power Off buttons (off by default, enabled with power_actions in the config) beep the controller, show a notification, mark the device offline and use the system's own services. Each button requires a press and allows at most one action per 10 seconds. A new IP address diagnostic sensor keeps its last value while the console sleeps.",
+      "A bug where the device stayed unavailable in Home Assistant after waking from rest mode is fixed — the payload now publishes an online state with every update to counteract the broker's last-will offline message from the broken connection. Note that Power Off ends the jailbreak, and waking from Home Assistant is not possible on a jailbroken console. v0.2.1 renames the process to ps5-hass.elf so it shows correctly in payload manager lists."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Home Assistant v0.2.0 release",
+        "url": "https://github.com/Marice/ps5-homeassistant/releases/tag/v0.2.0"
+      }
+    ]
+  },
+  {
+    "id": "psbox-v130",
+    "date": "2026-10-19",
+    "tag": "Media",
+    "title": "PSBox Cloud Gaming v1.3.0: instant startup and one-click free game claims",
+    "summary": "PSBox v1.3.0 renders the library from local cache for sub-150 ms startup, doubles DualSense polling to 250 Hz for lower input lag, and adds native one-click claiming of free-to-play games.",
+    "body": [
+      "PSBox Cloud Gaming v1.3.0 brings major performance work validated on PS5 hardware. The app now renders its library from local cache on the first frame for under 150 ms startup time, with HTTP connection pooling eliminating repeated TLS handshakes. The DualSense polling rate is doubled from 125 Hz to 250 Hz, cutting input latency by half (~4 ms) with zero heap allocations. The RTP video receiver uses a pre-allocated ring buffer of 2048 slots, removing thousands of per-second memory allocations during streaming.",
+      "Free-to-play games like Fortnite and Roblox now show a native \"Get Free\" button on their detail screen instead of requiring a QR code, enabling one-click claiming directly from the console. Account saving is more robust, and Xbox Live error handling is improved. Update from the release page."
+    ],
+    "sources": [
+      {
+        "name": "PSBox v1.3.0 release",
+        "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5/releases/tag/v1.3.0"
+      }
+    ]
+  },
+  {
+    "id": "jobeeslair-v041",
+    "date": "2026-10-19",
+    "tag": "Store",
+    "title": "Jobee'sLair v0.4.1: now installs alongside Overdrive",
+    "summary": "Jobee'sLair v0.4.1 gets its own app ID so it can be installed next to Overdrive — the two previously shared an ID and couldn't coexist.",
+    "body": [
+      "Jobee'sLair v0.4.1 fixes a conflict where the app shared the same PS5 app ID as Overdrive, meaning only one could be installed at a time — the console treated them as the same app. Jobee'sLair now has its own unique ID. This is a manual update: copy the new JobeesLair.exfat over the old one in homebrew/, then open it. The in-app updater can't cross this change.",
+      "Your download list and play time carry over, but settings, favorites, feeds and your TorBox API key start fresh and need to be set up again. The old home screen icon can be deleted. From v0.4.1 onward, future updates can use the in-app Download and Install dialog or automatic updates in Settings → About."
+    ],
+    "sources": [
+      {
+        "name": "Jobee'sLair v0.4.1 release",
+        "url": "https://github.com/JVK3R/JobeesLair/releases/tag/v0.4.1"
+      }
+    ]
+  },
+  {
+    "id": "recompstore-v113",
+    "date": "2026-10-19",
+    "tag": "Store",
+    "title": "RecompStore v1.1.3: more zip formats, Perfect Eye and Ninja Gaiden join the store",
+    "summary": "RecompStore v1.1.3 handles more release zip layouts, adding Perfect Dark, GoldenEye 007 and Ninja Gaiden II to the store's installable games.",
+    "body": [
+      "RecompStore v1.1.3 improves how release zips are unpacked. Some ports put their game folder one level deep in the zip or ship two games in one archive — like Perfect Eye, which contains both Perfect Dark and GoldenEye 007. The store now identifies and installs the folder matching the game's title ID and skips the rest. This brings Perfect Dark, GoldenEye 007, and Ninja Gaiden II into the store.",
+      "Already have RecompStore? Open it and update from Latest Updates. For a new install, send RecompStore-Installer.elf to port 9021. ShadowMountPlus puts the store on the home screen. Requires kstuff and ShadowMountPlus 1.7 Beta 5 or newer. No game files are included — every game needs your own legally obtained copy."
+    ],
+    "sources": [
+      {
+        "name": "RecompStore v1.1.3 release",
+        "url": "https://github.com/elripalda/RecompStore/releases/tag/v1.1.3"
+      }
+    ]
+  },
+  {
+    "id": "prosperostore-v1000101-v1000102",
+    "date": "2026-10-19",
+    "tag": "Store",
+    "title": "ProsperoStore v1.000.101–v1.000.102: shared-ID app support",
+    "summary": "ProsperoStore v1.000.101 adds support for applications that share the same app ID, with v1.000.102 following as a CI fix.",
+    "body": [
+      "ProsperoStore v1.000.101 resolves an issue where apps sharing the same PS5 app ID could conflict during installation. The store now handles shared-ID applications correctly. v1.000.102 is a maintenance release that fixes the release workflow.",
+      "Update from within ProsperoStore or download from the release page. ProsperoStore is the install client for the homebrew.page catalog."
+    ],
+    "sources": [
+      {
+        "name": "ProsperoStore v1.000.101 release",
+        "url": "https://github.com/darkxex/ProsperoStore/releases/tag/v1.000.101"
+      },
+      {
+        "name": "ProsperoStore v1.000.102 release",
+        "url": "https://github.com/darkxex/ProsperoStore/releases/tag/v1.000.102"
+      }
+    ]
+  },
+  {
     "id": "dbz-budokai3-ps5",
     "date": "2026-10-19",
     "tag": "Port",
