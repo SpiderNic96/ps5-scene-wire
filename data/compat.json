@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18",
+  "updated": "2026-10-19",
   "about": "Firmware compatibility for the /firmware directory. Only what each project's README or release notes state. range = the developer says it supports these firmwares; tested = firmwares it has actually been run on; only = hard-locked to these firmwares; any = the developer says it isn't tied to a firmware. unstated = tracked apps whose README was checked and names no PS5 firmware (they show as not confirmed). Validate with: node scripts/compat-check.mjs",
   "firmwares": [
     "1.00",
@@ -548,6 +548,25 @@
         "elfldr"
       ],
       "note": "Welcome Hub was introduced in FW 10.00; not available below that."
+    },
+    "Marice/ps5-homeassistant": {
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "ps5-exporter"
+      ],
+      "note": "Requires ps5-exporter 0.3.0+ and ps5-signal for light/beep control"
+    },
+    "lavavex/nfs-blackbox-ps5": {
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "etaHEN",
+        "kstuff",
+        "ShadowMountPlus"
+      ]
     }
   },
   "unstated": [
@@ -603,6 +622,7 @@
     "theghostonline/007-First-Light-PS5",
     "theghostonline/Hitman-PS5",
     "theghostonline/PS5VR",
-    "tsuramatsu1/psp5"
+    "tsuramatsu1/psp5",
+    "elripalda/dbz-budokai3-ps5"
   ]
 }

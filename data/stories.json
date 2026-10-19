@@ -1,5 +1,124 @@
 [
   {
+    "id": "dbz-budokai3-ps5",
+    "date": "2026-10-19",
+    "tag": "Port",
+    "title": "DBZ Budokai 3: Dragon Ball Z runs natively on PS5 as an Xbox 360 recomp",
+    "summary": "Dragon Ball Z: Budokai 3 from the HD Collection is now a native PS5 homebrew app, recompiled from the Xbox 360 version with the ReXGlue SDK.",
+    "body": [
+      "A new PS5 homebrew app by elripalda brings Dragon Ball Z: Budokai 3 from the Budokai HD Collection to the console as native code. It builds on NovaPowers’ DBZ Budokai 3 HD Collection recomp and the ReXGlue SDK, drawing on Vulkan via Mesa RADV — no emulation involved. The app opens on a DualSense-native hub with PlayStation button prompts and includes trophies.",
+      "Installation is straightforward with RecompStore or by FTP. Copy your own Xbox 360 disc image into the app’s Assets folder and press Start Game. The hub checks that all files are present before launching. Requires a jailbroken PS5 running homebrew from /data/homebrew/ with ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "dbz-budokai3-ps5 on GitHub",
+        "url": "https://github.com/elripalda/dbz-budokai3-ps5"
+      }
+    ]
+  },
+  {
+    "id": "nfs-blackbox-ps5",
+    "date": "2026-10-19",
+    "tag": "Port",
+    "title": "NFS Most Wanted (2005): the Black Box classic runs at 4K on PS5",
+    "summary": "EA Black Box’s Need for Speed: Most Wanted (2005) now runs as a PS5 homebrew app at 4K, with the PC version running through prospero-win and optional Xbox 360 visuals.",
+    "body": [
+      "The nfs-blackbox-ps5 project by lavavex packages EA Black Box’s NFS Most Wanted (2005) as a native PS5 homebrew app. It runs the PC version through prospero-win at 4K resolution and includes quality-of-life mods: Widescreen Fix, DualSense support via XtendedInput (with touchpad as cursor), DSOAL audio, and an in-game PS5 Options menu for a performance overlay and settings. An optional Xbox 360 Stuff Pack adds the 360’s visuals, movies, HD reflections and front-end shadows.",
+      "You supply your own copy of the PC game (version 1.2 or 1.3) via FTP or USB; a 1.2 copy is patched to 1.3 during installation. The app installs and mods the game without modifying the original. Tested on a PS5 Pro on firmware 13.60 with etaHEN, kstuff and ShadowMount+. Install takes about three minutes with the Xbox 360 look enabled on a wired connection."
+    ],
+    "sources": [
+      {
+        "name": "nfs-blackbox-ps5 on GitHub",
+        "url": "https://github.com/lavavex/nfs-blackbox-ps5"
+      }
+    ]
+  },
+  {
+    "id": "ps5-homeassistant",
+    "date": "2026-10-19",
+    "tag": "Tool",
+    "title": "ps5-homeassistant: turn your PS5 into a Home Assistant device",
+    "summary": "A new payload publishes PS5 temperatures, power draw, fan speed, frame rate and game info over MQTT, adding the console as a device in Home Assistant with notification and light control.",
+    "body": [
+      "Marice’s ps5-homeassistant is a payload that runs alongside ps5-exporter and ps5-signal to publish the console’s telemetry over MQTT with Home Assistant auto-discovery. A \"PS5\" device appears automatically in Home Assistant with sensors for temperature, SoC and memory power, GPU clock, fan speed, CPU load, frame rate, current game, uptime and free space. Home Assistant can also send notifications to the TV (with emoji and its own icon), beep the controller, blink the light bar or change its colour.",
+      "Install the Mosquitto broker add-on in Home Assistant, create a user for the console, and load the ELF via your loader or ps5-autoloader. Configure the broker address through Signal Companion’s Payloads screen or a local API call. The payload talks plain MQTT on the home network, stores its config with owner-only permissions, and its local API only answers on 127.0.0.1. Requires a jailbroken PS5 with ps5-exporter 0.3.0 or later."
+    ],
+    "sources": [
+      {
+        "name": "ps5-homeassistant on GitHub",
+        "url": "https://github.com/Marice/ps5-homeassistant"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v715",
+    "date": "2026-10-19",
+    "tag": "Tool",
+    "title": "PS5 Upload v7.1.5: bulk uploads fixed, Files renamed to Minion",
+    "summary": "PS5 Upload v7.1.5 fixes uploads of many small files getting stuck, renames PS5Upload Files to PS5Upload Minion, and patches payload catalog display issues.",
+    "body": [
+      "PS5 Upload v7.1.5 fixes a bug where uploading many small files would stall after about 30 files with a \"the console is busy\" message. The console now releases each finished upload so every file goes through — a 240-file, 347 MB folder uploaded in about 2 minutes 20 seconds in testing. The companion app PS5Upload Files is now renamed to PS5Upload Minion; the home-screen tile picks up the new name the next time the helper starts.",
+      "The payload catalog also gets fixes: websrv’s newest release showed an error instead of the release because its notes are empty, and payloads whose GitHub page has been taken down (such as Ghostpad) now say so plainly while still offering the saved version. Time displays now read like \"saved 3 days ago\" instead of a raw second count."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v7.1.5 on GitHub",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.1.5"
+      }
+    ]
+  },
+  {
+    "id": "prosperostore-v1000100",
+    "date": "2026-10-19",
+    "tag": "Store",
+    "title": "ProsperoStore v1.000.100: detects running apps by sandbox entry",
+    "summary": "ProsperoStore v1.000.100 now detects a running app by its app0 sandbox entry, a community contribution by andrescera.",
+    "body": [
+      "ProsperoStore v1.000.100 adds detection of whether a homebrew app is currently running by checking its app0 sandbox entry. This is a community contribution by andrescera — their first to the project. The detection lets the store show whether an installed app is active before you try to manage or update it.",
+      "ProsperoStore is the on-console front-end for the homebrew.page catalog, letting you browse, install and update PS5 homebrew apps directly from the console. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "ProsperoStore v1.000.100 on GitHub",
+        "url": "https://github.com/blackbearreloaded/ProsperoStore/releases/tag/v1.000.100"
+      }
+    ]
+  },
+  {
+    "id": "vlc-v046",
+    "date": "2026-10-19",
+    "tag": "Media",
+    "title": "VLC v0.4.6: hardware decoding toggle fix and archive handling",
+    "summary": "VLC v0.4.6 fixes re-enabling hardware decoding on a paused live channel and stops archives on network shares from playing as video files.",
+    "body": [
+      "VLC v0.4.6 for PS5 fixes two bugs. Turning hardware decoding back on after disabling it didn’t take effect on a paused live channel until you opened it again — this now applies immediately. Zip, RAR and 7z archive files stored on a network share were incorrectly played as video instead of being opened as folders.",
+      "VLC is the PS5 port of the VideoLAN media player, supporting local, USB and network playback with hardware-accelerated decoding. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "VLC v0.4.6 on GitHub",
+        "url": "https://github.com/ZiZc3/VLC/releases/tag/v0.4.6"
+      }
+    ]
+  },
+  {
+    "id": "jobeeslair-v040",
+    "date": "2026-10-19",
+    "tag": "Store",
+    "title": "Jobee’sLair v0.4.0: complete translations and faster catalog search",
+    "summary": "Jobee’sLair v0.4.0 completes all 13 language translations, speeds up catalog search and filters, adds a startup animation and a debug log.",
+    "body": [
+      "Jobee’sLair v0.4.0 is a stability release that finishes the app’s localization: all 13 language translations now cover every screen, where previously about half the app fell back to English. Catalog search and filter operations do roughly a third of the work they used to, and source-list ranking is cut in half. A new startup animation shows sparks spiraling into the JL logo before the store fades in, and the version number is now always visible under the logo.",
+      "The release also adds a debug log at /data/ps5-react/PPSA99058/logs/jobeeslair.log, readable over FTP, which stays under about 1 MB and blanks out API keys, tokens and email addresses. A browser-capture failure now shows the real reason instead of a generic message. For developers, tests now run with npm test and npm run test:render, and check every language’s string completeness and placeholder correctness on every push."
+    ],
+    "sources": [
+      {
+        "name": "Jobee’sLair v0.4.0 on GitHub",
+        "url": "https://github.com/JVK3R/JobeesLair/releases/tag/v0.4.0"
+      }
+    ]
+  },
+  {
     "id": "ps5-suite-v760",
     "date": "2026-10-18",
     "tag": "Tool",

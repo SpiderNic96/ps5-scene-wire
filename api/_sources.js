@@ -68,6 +68,7 @@ export const SOURCES = [
   { cat: T, repo: 'eladharels/ps5-60FPS', name: 'fps60', about: '60 FPS unlock for PS4 and PS5 games' },
   { cat: T, repo: 'ShaneBreazeale/ps5-homebrew-tools', name: 'PS5 Homebrew Tools', about: 'Diagnostic payloads for PS5 development' },
   { cat: T, repo: 'ghost1372/WelcomeHubActivator', name: 'WelcomeHubActivator', about: 'Enables the Welcome Hub on FW 10.00–13.60' },
+  { cat: T, repo: 'Marice/ps5-homeassistant', name: 'PS5 Home Assistant', about: 'MQTT bridge to Home Assistant' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },
@@ -136,5 +137,7 @@ export const SOURCES = [
   { cat: R, repo: 'griches/PS5_DevilutionX', name: 'DevilutionX', about: 'Diablo and Hellfire, bring your own data' },
   { cat: R, repo: 'elripalda/nbastreet-ps5', name: 'NBA Street Homecourt', about: 'Xbox 360 recomp, 1440p60' },
   { cat: R, repo: 'elripalda/skate3-ps5', name: 'Skate 3', about: 'Xbox 360 recomp' },
-  { cat: R, repo: 'elripalda/SvR2008-Recomp-PS5', name: 'WWE SmackDown vs. Raw 2008', about: 'Xbox 360 recomp' }
+  { cat: R, repo: 'elripalda/SvR2008-Recomp-PS5', name: 'WWE SmackDown vs. Raw 2008', about: 'Xbox 360 recomp' },
+  { cat: R, repo: 'elripalda/dbz-budokai3-ps5', name: 'Dragon Ball Z: Budokai 3', about: 'Xbox 360 recomp' },
+  { cat: R, repo: 'lavavex/nfs-blackbox-ps5', name: 'NFS Most Wanted (2005)', about: 'PC game via prospero-win, 4K' },
 ];
