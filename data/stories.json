@@ -1,5 +1,43 @@
 [
   {
+    "id": "recompstore-v200-v201",
+    "date": "2026-10-20",
+    "tag": "Store",
+    "title": "RecompStore v2.0.0–v2.0.1: full homebrew store with emulators, apps and phone linking",
+    "summary": "RecompStore v2.0 expands from a game store to a full PS5 homebrew store with 60+ emulators, apps and tools, phone linking via QR code, custom sources, and install-to-drive — followed by v2.0.1 with Title Update handling for the GTA IV beta.",
+    "body": [
+      "RecompStore v2.0.0 is a major rewrite that turns the game-only store into a complete PS5 homebrew manager. Four tabs — Games, Emulators, Apps and Tools — each with label filters and a Discover section. The Library shows everything installed, pending updates and betas, with an Update All button. Sixty emulators, apps and tools from the PS5 homebrew scene are listed, each installed directly from the developer's GitHub release. A collision guard checks title IDs before writing anything — if an app is already installed under the same ID, the store asks first and can install it under a new ID with updates following it there. Settings > Link a phone shows a QR code; scanning it opens recompstore.com where you can browse your PS5's installed apps, send installs and add sources from your phone. Custom sources let you add any GitHub repo or repo list so its apps appear in the store (marked as not checked by Recomp Store). Advanced mode allows installing to the M.2 SSD, extended storage or USB drives.",
+      "Version 2.0.1 follows with Title Update handling for ports that install games from disc images — updates now go into the install folder under the name the game expects, supporting the GTA IV beta. Other v2.0 additions include .7z release support, parallel icon loading, Triangle to refresh, and automatic ShadowMountPlus re-sync after installs. Already have RecompStore? Open it and update from Latest Updates. New install: send RecompStore-Installer.elf to port 9021. Requires kstuff and ShadowMountPlus 1.7 Beta 5 or newer. No game files are included."
+    ],
+    "sources": [
+      {
+        "name": "RecompStore v2.0.0 release",
+        "url": "https://github.com/elripalda/RecompStore/releases/tag/v2.0.0"
+      },
+      {
+        "name": "RecompStore v2.0.1 release",
+        "url": "https://github.com/elripalda/RecompStore/releases/tag/v2.0.1"
+      }
+    ]
+  },
+  {
+    "id": "psbox-v131",
+    "date": "2026-10-20",
+    "tag": "Media",
+    "title": "PSBox Cloud Gaming v1.3.1: DNS diagnostics and Xbox profile setup guidance",
+    "summary": "PSBox v1.3.1 adds friendly multilingual DNS failure messages with NanoDNS setup guidance, plus QR-code-driven Xbox profile creation for new Microsoft accounts.",
+    "body": [
+      "PSBox Cloud Gaming v1.3.1 focuses on diagnostics and first-run usability. When the app hits a DNS resolution failure (error 0x8041013d) connecting to Microsoft's servers, it now shows a clear, multilingual message explaining how to configure NanoDNS — set the PS5's primary DNS to the local NanoDNS IP so Sony system updates stay blocked while Microsoft cloud services remain reachable. The message is available in all six supported languages (Portuguese, English, Spanish, French, German and Italian).",
+      "New Microsoft accounts that haven't set up an Xbox profile (error XErr 2148916233) now see an on-screen explanation with a QR code pointing to xbox.com. Scan with a phone, create a Gamertag, and return to PSBox without cryptic error messages. The update also adds graceful error handling when syncing the game library over a flaky connection, and contextual notifications for transient WAN issues during stream startup. Download PPSA99810.zip from the release page and install on a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "PSBox v1.3.1 release",
+        "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5/releases/tag/v1.3.1"
+      }
+    ]
+  },
+  {
     "id": "perfect-eye-ps5",
     "date": "2026-10-19",
     "tag": "Port",
