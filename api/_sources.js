@@ -71,6 +71,7 @@ export const SOURCES = [
   { cat: T, repo: 'Marice/ps5-homeassistant', name: 'PS5 Home Assistant', about: 'MQTT bridge to Home Assistant' },
   { cat: T, repo: 'shcheglovnd/ps5-m2unmount', name: 'ps5-m2unmount', about: 'Unmounts M.2 for clean PS5-Linux sessions' },
   { cat: T, repo: 'Xnos666/SoundBridge-PS5', name: 'SoundBridge', about: 'Stream PS5 game audio to PC headset' },
+  { cat: T, repo: 'Alexandre78500/xpad-ps5', name: 'xpad-ps5', about: 'Wired Xbox controller as virtual DualSense' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },
@@ -82,7 +83,7 @@ export const SOURCES = [
   { cat: E, repo: 'kamb205/KB-RPCS3', name: 'KB-RPCS3', about: 'PS3, based on RPCS3' },
   { cat: E, repo: 'blackbearreloaded/ProsperoEden', name: 'ProsperoEden', about: 'Switch, based on Eden' },
   { cat: E, repo: 'elripalda/Porpoise-Dolphin-Emulator-for-PS5', name: 'Porpoise', about: 'GameCube and Wii, based on Dolphin' },
-  { cat: E, repo: 'premohq/PS5CEMU-HAR', name: 'PS5CEMU-HAR', about: 'Wii U and 3DS, Cemu and Azahar' },
+  { cat: E, repo: 'premohq/PS5CEMU-HAR', name: 'PS5-ECAM', about: 'Switch, Wii U, 3DS and DS — Eden, Cemu and Azahar' },
   { cat: E, repo: 'mortaljinx/Seedee5', name: 'Seedee5', about: 'Philips CD-i, based on MAME SAME_CDI' },
   { cat: E, repo: 'BrinooTk/PS5X360', name: 'PS5X360', about: 'Xbox 360, based on Xenia' },
   { cat: E, repo: 'ZiZc3/XPSemu', name: 'XPSemu', about: 'Original Xbox, based on xemu' },
@@ -137,6 +138,9 @@ export const SOURCES = [
   { cat: R, repo: 'griches/PS5_Quake3e', name: 'Quake III', about: 'Quake3e engine port' },
   { cat: R, repo: 'Marice/stk-ps5', name: 'SuperTuxKart', about: 'Open-source kart racer' },
   { cat: R, repo: 'griches/PS5_DevilutionX', name: 'DevilutionX', about: 'Diablo and Hellfire, bring your own data' },
+  { cat: R, repo: 'griches/PS5_MarioGalaxy', name: 'Super Mario Galaxy', about: 'Nebula recomp, bring your own Wii disc' },
+  { cat: R, repo: 'griches/PS5_Burnout3', name: 'Burnout 3: Takedown', about: 'Takedawn recomp, bring your own Xbox disc' },
+  { cat: R, repo: '7tg/sahin', name: 'Sahin (Blur)', about: 'PC Blur via prospero-win, online through Amax' },
   { cat: R, repo: 'elripalda/nbastreet-ps5', name: 'NBA Street Homecourt', about: 'Xbox 360 recomp, 1440p60' },
   { cat: R, repo: 'elripalda/skate3-ps5', name: 'Skate 3', about: 'Xbox 360 recomp' },
   { cat: R, repo: 'elripalda/SvR2008-Recomp-PS5', name: 'WWE SmackDown vs. Raw 2008', about: 'Xbox 360 recomp' },

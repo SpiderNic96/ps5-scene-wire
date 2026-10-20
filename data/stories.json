@@ -1,5 +1,234 @@
 [
   {
+    "id": "snes9x-v27",
+    "date": "2026-10-20",
+    "tag": "Emulator",
+    "title": "Snes9x v2.7: network shares, borders and shelf tabs",
+    "summary": "Snes9x PS5 v2.7 adds SMB and NFS network share support so you can play ROMs from a NAS, plus shelf tabs, per-game borders from The Bezel Project and five interface languages.",
+    "body": [
+      "Snes9x PS5 v2.7 lets you keep your ROMs on a NAS or PC and play them directly from the shelf. Network shares are set up in Settings with an on-screen keyboard and a Test connection button — SMB and NFS are both supported. Saves, states, cheats and covers stay on the console. The shelf now has tabs for Internal, USB and Network, switched with L1/R1 and with L2/R2 to skip ten games at a time. Per-game borders from The Bezel Project are downloaded on the console and applied automatically when Border is set to Auto; a built-in frame is also available. The cover database is expanded so fan translations and renamed ROMs find their artwork. Cheats reload automatically when their .cht file changes. Community contribution by thatboialex for shares, tabs, borders, covers and cheat reload.",
+      "The interface is now available in English, Spanish, Portuguese (Brazil), French and German. Debug logging is off by default. The SMB and NFS libraries are updated to the latest upstream, including fixes for memory safety bugs (CVE-2025-57632 and CVE-2026-110712). SMB passwords are stored in plain text in /data/snes9x/shares.txt — anyone with FTP access can read them. Send the ELF to your payload loader on port 9021, or use the PPSA99922.zip app folder with Settings > Updates."
+    ],
+    "sources": [
+      {
+        "name": "Snes9x v2.7 release",
+        "url": "https://github.com/MisterTemaki/snes9xPS5/releases/tag/v2.7"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v7110",
+    "date": "2026-10-20",
+    "tag": "Tool",
+    "title": "PS5 Upload v7.1.10: compressed game images, bulk conversion and tile cleanup",
+    "summary": "PS5 Upload v7.1.10 shows compressed .ffpfsc images in Game files, adds bulk conversion and copying, and fixes tile removal to report save and uninstall failures.",
+    "body": [
+      "PS5 Upload v7.1.10 makes compressed .ffpfsc image files visible in Game files, including images beyond the first directory page. Open their folder in Files to decompress them before editing; compressed images use ShadowMount+ for playback. Tile removal now waits for the removal result and reports any save or uninstall failure — update the helper for this fix. The Convert tool recognizes packages inside game subfolders, names generic game.pkg image outputs after the game folder, and accepts more source formats for image conversion. Files can queue further picks during a copy, and the desktop Stream client can select multiple packages with bases queued before updates and DLC.",
+      "Payload setup repairs the LZ4 Compression catalogue source, adds the upstream elfldr download, and recognizes HyperHEN's mount process. Back navigation deduplicates multiple Back requests, and conversion diagnostics now record stage timings and compression settings. The Files menu keeps Rename first, with Properties and permissions below and Delete last. The phone menu preserves its action order too."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v7.1.10 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.1.10"
+      }
+    ]
+  },
+  {
+    "id": "ps5-burnout3",
+    "date": "2026-10-20",
+    "tag": "Port",
+    "title": "Burnout 3: Takedown arrives on PS5 as a native recomp",
+    "summary": "Burnout 3: Takedown for PS5 by griches uses the Takedawn static recompilation to run the 2004 Xbox game natively at 4K, 60fps with widescreen and split screen.",
+    "body": [
+      "Burnout 3: Takedown joins the PS5 homebrew library as a native port built on Takedawn, the static recompilation of the original Xbox game by xenophobentx. The 2004 racer runs at four times its original resolution with a widescreen HUD that is not stretched, 60fps crash cameras and split screen support, plus access to Takedawn's settings menu. This is another port from griches, who has brought Super Mario 64, Wind Waker HD, Super Mario Sunshine, Twilight Princess, Doom 3 BFG, Quake III, DevilutionX and now also Super Mario Galaxy to the console.",
+      "You need your own disc image of the North America (USA) Xbox release — PAL, Japanese and PlayStation 2 versions are not supported. No game data is included. Download the release ZIP, copy the PPSA99316 folder to /data/homebrew/ over FTP, and ShadowMountPlus registers it on the home screen. Requires a jailbroken PS5 with an FTP server and ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "PS5_Burnout3 on GitHub",
+        "url": "https://github.com/griches/PS5_Burnout3"
+      }
+    ]
+  },
+  {
+    "id": "prosperothemes-v009-v011",
+    "date": "2026-10-20",
+    "tag": "Tool",
+    "title": "Prospero Themes 01.000.009–01.000.011: themes on firmware before 13.00",
+    "summary": "Prospero Themes 01.000.009 through 01.000.011 fix theme support on firmware 9.60, 11.60 and 12.40, where backgrounds are stored in a different format, and fix large-file transfers for system icons on older firmware.",
+    "body": [
+      "Prospero Themes 01.000.009 fixes themes on firmware before 13.00. Firmware 9.60, 11.60 and 12.40 store home backgrounds as plain .dds files instead of the .dds.zst compressed format used on 13.00, so themes that only replaced the compressed files showed \"Nothing in this theme fits this console\". The app now writes the theme's background unpacked on the console. Version 01.000.010 fixes store downloads and folder creation — downloads that drop mid-read are retried up to three times, and folders are created directly instead of checking each parent first, which failed on 12.20 and on 13.00 after suspending the app.",
+      "Version 01.000.011 tackles system icon themes on older firmware. On 9.60 and 11.60 the icon file is about 100 MB (versus 39 MB on 13.00), which caused out-of-memory errors and a 64 MB transfer limit in the file helper. The app now keeps one copy at a time and compares files by checksum, and the helper accepts files up to 160 MB. Restart your console once after updating so the new helper (v5) takes over. Install: extract PPSA90210.zip and copy the PPSA90210 folder to /data/homebrew/ over FTP. ShadowMountPlus registers it. Your library and settings in /data/prospero-themes/ are kept."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Themes 01.000.011 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.011"
+      },
+      {
+        "name": "Prospero Themes 01.000.009 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.009"
+      }
+    ]
+  },
+  {
+    "id": "ps5-mario-galaxy",
+    "date": "2026-10-20",
+    "tag": "Port",
+    "title": "Super Mario Galaxy on PS5: 4K at 60fps via Nebula recomp",
+    "summary": "Super Mario Galaxy runs natively on the PS5 as a homebrew title, built with the Nebula static recompilation at 4K and 60fps. Bring your own USA disc.",
+    "body": [
+      "Super Mario Galaxy (Wii, 2007) is now playable on a jailbroken PS5 as a native homebrew title running at 4K and 60 frames per second. This is not emulation — the game's code is translated into C++ by the Nebula static recompiler and compiled for the console. Version 1.0.0 is built and packaged by griches, who has ported over a dozen games to the PS5 including Super Mario 64, Wind Waker HD, Super Mario Sunshine, Twilight Princess and now Burnout 3.",
+      "You build the title yourself from your own USA revision 0 disc image (RMGE01, the first printing) using a builder app for Mac (Apple silicon, macOS 13+) or Windows 10/11 64-bit. European, Japanese, Korean and later printings are not supported. About 12 GB free is needed during the build. Copy the resulting PPSA99315 folder to /data/homebrew/ on a jailbroken PS5 with etaHEN or similar, ShadowMountPlus and an FTP server. No game data is included in the download."
+    ],
+    "sources": [
+      {
+        "name": "PS5_MarioGalaxy on GitHub",
+        "url": "https://github.com/griches/PS5_MarioGalaxy"
+      }
+    ]
+  },
+  {
+    "id": "prosperostore-v1000103-v1000104",
+    "date": "2026-10-20",
+    "tag": "Store",
+    "title": "ProsperoStore v1.000.103–v1.000.104: custom catalogs from GitHub repos",
+    "summary": "ProsperoStore v1.000.104 lets you add GitHub repositories as custom catalogs, each in its own Catalogs room, while v1.000.103 adds shared-ID app safety and a scrollable downloads list.",
+    "body": [
+      "ProsperoStore v1.000.104 adds custom catalogs: you can add a list of GitHub repositories as catalogs, each appearing in its own Catalogs room. The official catalog's repository is no longer loaded as a custom catalog from settings.txt — it stays as the Official catalog switch. Every notice in the app now stays on screen for two seconds at most. Version 1.000.103 adds a safety check when managing a folder whose param.json name doesn't match the catalog — the app now shows both names and recommends Cancel, since different apps can share a title ID and managing the wrong one risks overwriting the original.",
+      "The Downloads list in v1.000.103 scrolls like a carousel: with more than four entries, all rows are reachable, and the list only moves when focus leaves the visible area. Install notices stay on screen for three seconds. Update from within ProsperoStore, or download from the GitHub release page. ProsperoStore is the install client for the homebrew.page catalog."
+    ],
+    "sources": [
+      {
+        "name": "ProsperoStore v1.000.104 release",
+        "url": "https://github.com/darkxex/ProsperoStore/releases/tag/v1.000.104"
+      },
+      {
+        "name": "ProsperoStore v1.000.103 release",
+        "url": "https://github.com/blackbearreloaded/ProsperoStore/releases/tag/v1.000.103"
+      }
+    ]
+  },
+  {
+    "id": "recompstore-v210",
+    "date": "2026-10-20",
+    "tag": "Store",
+    "title": "RecompStore v2.1.0: signed catalogs and version rollback",
+    "summary": "RecompStore v2.1.0 signs its catalog so a tampered recompstore.com is ignored, lets you roll back GitHub apps to an earlier version, and locks each app's downloads to its own repo.",
+    "body": [
+      "RecompStore v2.1.0 focuses on security and control. The store now only accepts a catalog signed on the developer's PC — if anyone tampers with recompstore.com, the store ignores it and keeps the last known good catalog. Store updates and beta builds are signed too. GitHub apps can only download from their own repository; if a download moves somewhere else, the store asks before proceeding.",
+      "New in this version: you can go back to an earlier version of a GitHub app or a beta, and pin it there until you choose to update. Each category in the Discover section has its own sort order — alphabetical, most installed, newest or recently updated. Testers see changelogs for each beta build. Update from inside the store, or send RecompStore-Installer.elf with your payload sender."
+    ],
+    "sources": [
+      {
+        "name": "RecompStore v2.1.0 release",
+        "url": "https://github.com/elripalda/RecompStore/releases/tag/v2.1.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5-ecam-v500",
+    "date": "2026-10-20",
+    "tag": "Emulator",
+    "title": "PS5-ECAM v5.0.0: four systems in one — Nintendo Switch joins Wii U, 3DS and DS",
+    "summary": "PS5CEMU-HAR is now PS5-ECAM. Version 5.0.0 adds Nintendo Switch emulation through ProsperoEden alongside the existing Wii U, 3DS and DS systems, with a new four-system launcher.",
+    "body": [
+      "PS5CEMU-HAR is renamed to PS5-ECAM in version 5.0.0 and now plays four systems. The new Nintendo Switch side uses ProsperoEden, the PS5 port of the Eden emulator, which the launcher starts and returns to when the game ends. Settings include internal resolution, upscaling, ASTC textures, docked or handheld mode, vibration and the overlay — configurable per game. ProsperoEden's own launcher for mods, cheats, updates and DLC is one press away from the game menu. You need your own prod.keys, title.keys and firmware placed in /data/ps5cemu/eden/keys and /data/ps5cemu/eden/firmware; games go in /data/ps5cemu/eden/roms.",
+      "The app has a new icon and home screen art showing four squares for each system. The title ID stays PPSA99360 and all data stays in /data/ps5cemu, so updating from PS5CEMU-HAR works from inside the app. Version 5.0.0 also adds support for games in .zip, .7z and .rar archives. Download PS5-ECAM-v5.0.0.zip from the releases branch, extract it and copy the PPSA99360 folder to /data/homebrew/PPSA99360, or update from inside the app if coming from 3.0.0 or later."
+    ],
+    "sources": [
+      {
+        "name": "PS5-ECAM v5.0.0 release",
+        "url": "https://github.com/premohq/PS5CEMU-HAR/releases/tag/v5.0.0"
+      }
+    ]
+  },
+  {
+    "id": "vlc-v050",
+    "date": "2026-10-20",
+    "tag": "Media",
+    "title": "VLC v0.5.0: video upscaling with FSR, neural network and anime modes",
+    "summary": "VLC PS5 v0.5.0 adds four upscaling modes — EWA Lanczos Sharp, AMD FSR, FSRCNNX and Anime4K — accessible from Settings or during playback.",
+    "body": [
+      "VLC for PS5 v0.5.0 adds video upscaling with four modes in Settings > Video > Upscaling, or toggled during playback with the Picture option. EWA Lanczos Sharp gives the most natural look as a plain scaler. AMD FSR is the sharpest and fastest. FSRCNNX is a neural network upscaler designed for films and shows that restores fine detail. Anime4K is purpose-built for anime with clean, sharp lines — it uses its heaviest mode and only steps down when the PS5 can't keep up. Upscaling is off by default.",
+      "This release also adds video details for files on network shares — Details now shows resolution, codecs, tracks, size and more for SMB share files. A bug where files on SMB shares and in M3U playlists stayed in software decoding after hardware decoding was turned back on is fixed. VLC is the PS5 port of the VideoLAN media player, supporting local, USB and network playback. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "VLC v0.5.0 release",
+        "url": "https://github.com/ZiZc3/VLC/releases/tag/v0.5.0"
+      }
+    ]
+  },
+  {
+    "id": "sahin-blur-ps5",
+    "date": "2026-10-20",
+    "tag": "Port",
+    "title": "Sahin brings Blur racing to PS5 through Wine, with online play",
+    "summary": "Sahin runs the PC version of Blur (2010) on a jailbroken PS5 through prospero-win and Wine, with up to 4K resolution and online multiplayer through Amax community servers.",
+    "body": [
+      "Sahin is a homebrew wrapper that installs and runs your own PC copy of Blur — the 2010 Bizarre Creations racing game — on a jailbroken PS5. It runs through prospero-win (Wine, DXVK and the PS5's Vulkan driver). Your copy is never modified; the app sets up its own Wine prefix and adds Ultimate ASI Loader and optionally the Amax redirect for online multiplayer through community servers. Resolution options are 3840x2160, 2560x1440 and 1920x1080, with a performance overlay and a repair option.",
+      "The game launches straight from its home screen tile (PPSA99404). Hold Square while the tile starts to open Sahin's settings page instead. An English and Turkish guide are included. You need your own copy of the game — nothing in the download contains it. Mods from an earlier install are left out, and the app adds its own. Requires a jailbroken PS5 with prospero-win."
+    ],
+    "sources": [
+      {
+        "name": "Sahin on GitHub",
+        "url": "https://github.com/7tg/sahin"
+      }
+    ]
+  },
+  {
+    "id": "xpad-ps5",
+    "date": "2026-10-20",
+    "tag": "Tool",
+    "title": "xpad-ps5: use a wired Xbox controller on your PS5",
+    "summary": "xpad-ps5 is a payload that lets you plug a wired Xbox One or Series controller into a jailbroken PS5 and use it as a virtual DualSense, with hot-plug and autoload support.",
+    "body": [
+      "xpad-ps5 by Alexandre78500 reads a wired Xbox One or Series controller over USB and presents it to the PS5 as a virtual DualSense. The system menu, PS4/PS5 games and emulators all see a regular Sony controller. The Xbox button works as the PS button to open the system menu. Hot-plug is supported — unplug mid-game and plug back in, no relaunch needed. It survives rest mode and can be added to Payload Manager's autoload list with a single command.",
+      "The payload includes a tuned stick deadzone based on real hardware measurements and diagnostic logging that shows what went wrong if a controller is not detected — including distinguishing a charge-only cable. No adapter, Bluetooth or batteries needed. Send the ELF to your payload loader on a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "xpad-ps5 on GitHub",
+        "url": "https://github.com/Alexandre78500/xpad-ps5"
+      }
+    ]
+  },
+  {
+    "id": "patchdl-v033",
+    "date": "2026-10-20",
+    "tag": "Tool",
+    "title": "PatchDL v0.3.3: checks free space before downloading",
+    "summary": "PatchDL v0.3.3 checks whether there is enough room to install a game update before starting the download, preventing wasted bandwidth on updates that won't fit.",
+    "body": [
+      "PatchDL v0.3.3 adds pre-download and pre-install space checks. Before a download starts, the app checks that the console has enough room to install the update afterwards — the game's drive needs roughly the package's size free again for the install step. If there is not enough space, the download does not start and the game card shows how much is needed. Freeing space or picking another download drive in Settings fixes it. Before an install starts, PatchDL also checks the free space on the game's drive and asks before going ahead when it looks too low.",
+      "Tested on firmware 11.60. Send patchdl_0.3.3.elf to your PS5 with your ELF loader and open the address from the notification. PatchDL downloads official, unmodified updates for games already installed on your console."
+    ],
+    "sources": [
+      {
+        "name": "PatchDL v0.3.3 release",
+        "url": "https://github.com/knutwurst/ps5-patchdl/releases/tag/v0.3.3"
+      }
+    ]
+  },
+  {
+    "id": "ps5lm-v091",
+    "date": "2026-10-20",
+    "tag": "Tool",
+    "title": "PS5LM v0.9.1: server stability fix and HEN storage access",
+    "summary": "PS5LM v0.9.1 fixes the server stopping when its log queue fills up, and adds automatic storage access on consoles where the HEN doesn't open /data by itself.",
+    "body": [
+      "PS5LM v0.9.1 is a fix release. The main issue: llama.cpp's log holds 512 lines, and when the app's writer fell behind, the server thread waited for room — so /slots and /metrics stopped responding while /health still did. A full queue now drops the line instead of blocking, and the writer reports how many lines it dropped. This fixes the hang reported in issue #20. Community contribution by @bilawalriaz.",
+      "The app now asks the HEN to open the console's storage at every start, including after a model restart, so it works on consoles where the HEN doesn't open /data to the app by itself. OnionHEN users need to add PPSA99575 to app_jailbreak.exact_title_ids in /data/OnionHEN/config.ini. If /data stays closed, a notification on the TV says so and names the OnionHEN setting. Requires a jailbroken PS5 on firmware 7.00 to 13.60 with kstuff-lite, etaHEN and ShadowMountPlus. Install: copy the PPSA99575 folder to /data/homebrew over FTP."
+    ],
+    "sources": [
+      {
+        "name": "PS5LM v0.9.1 release",
+        "url": "https://github.com/cobanov/PS5LM/releases/tag/v0.9.1"
+      }
+    ]
+  },
+  {
     "id": "recompstore-v200-v201",
     "date": "2026-10-20",
     "tag": "Store",
