@@ -72,6 +72,7 @@ export const SOURCES = [
   { cat: T, repo: 'shcheglovnd/ps5-m2unmount', name: 'ps5-m2unmount', about: 'Unmounts M.2 for clean PS5-Linux sessions' },
   { cat: T, repo: 'Xnos666/SoundBridge-PS5', name: 'SoundBridge', about: 'Stream PS5 game audio to PC headset' },
   { cat: T, repo: 'Alexandre78500/xpad-ps5', name: 'xpad-ps5', about: 'Wired Xbox controller as virtual DualSense' },
+  { cat: T, repo: 'J7mbo/nasbridge-ps5', name: 'NASBridge', about: 'Browse and install games from your NAS over WebDAV' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "about": "Firmware compatibility for the /firmware directory. Only what each project's README or release notes state. range = the developer says it supports these firmwares; tested = firmwares it has actually been run on; only = hard-locked to these firmwares; any = the developer says it isn't tied to a firmware. unstated = tracked apps whose README was checked and names no PS5 firmware (they show as not confirmed). Validate with: node scripts/compat-check.mjs",
   "firmwares": [
     "1.00",
@@ -585,6 +585,16 @@
         "elfldr"
       ],
       "note": "Tested on 13.60 only."
+    },
+    "J7mbo/nasbridge-ps5": {
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "ShadowMountPlus",
+        "elfldr"
+      ],
+      "note": "Tested on 13.60 only. Needs its own ShadowMountPlus build for live home screen updates."
     }
   },
   "unstated": [

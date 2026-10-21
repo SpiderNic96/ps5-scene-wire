@@ -1,5 +1,111 @@
 [
   {
+    "id": "nasbridge-ps5",
+    "date": "2026-10-21",
+    "tag": "Tool",
+    "title": "NASBridge: browse and install games from your NAS over WebDAV",
+    "summary": "NASBridge by J7mbo is a native PS5 homebrew app that browses your NAS over WebDAV, shows game covers and sizes, and copies games to the console with a resumable queue.",
+    "body": [
+      "NASBridge turns a NAS or any WebDAV server into a game library on your PS5. It scans up to four folders deep, reads each game's sce_sys metadata for names and covers, and shows them in a library view. Games can be queued for download, and the queue supports reordering, pausing, resuming and picking up where it left off after a restart. Large files are fetched over several connections at once, and folders of small files go through a helper payload that fetches many in parallel. Copied games are registered on the home screen through ShadowMountPlus immediately. Games can also be deleted from the console without affecting the NAS copy.",
+      "NASBridge needs a jailbroken PS5 with an ELF loader on port 9021 and ShadowMountPlus. A custom ShadowMountPlus build is included for live home screen updates while NASBridge is open. Your NAS needs WebDAV enabled — on a Synology that is the WebDAV Server package. Install by sending the ELF to port 9021; it appears on the home screen within seconds. Tested on firmware 13.60. Version 0.3.0 is the first public release, with 14 stars on GitHub already."
+    ],
+    "sources": [
+      {
+        "name": "NASBridge on GitHub",
+        "url": "https://github.com/J7mbo/nasbridge-ps5"
+      },
+      {
+        "name": "NASBridge 0.3.0 release",
+        "url": "https://github.com/J7mbo/nasbridge-ps5/releases/tag/0.3.0"
+      }
+    ]
+  },
+  {
+    "id": "shadowmountplus-17beta6",
+    "date": "2026-10-21",
+    "tag": "Tool",
+    "title": "ShadowMountPlus 1.7beta6: hook reliability, rest mode recovery and per-game fakelib ignore",
+    "summary": "ShadowMountPlus 1.7beta6 improves ShellCore hook reliability, fixes rest mode HTTP recovery, enables background work while games run, and adds a per-game Ignore global fakelib option in the web UI.",
+    "body": [
+      "ShadowMountPlus 1.7beta6 focuses on reliability. ShellCore hook startup is more robust while waiting for kstuff to be ready. Sandbox cleanup and mount ownership are fixed across process handoffs and relaunches, and duplicate-image remount loops across scan roots are resolved. The HTTP service now recovers properly after rest mode and socket loss, restoring the web UI without a manual restart.",
+      "Background work now continues while FAKE/LAPY apps are running or games are unfocused, while still protecting their sources and mounts. Backport folders with title ID suffixes are supported, with clearer notifications showing the original path. The web UI has a new per-game \"Ignore global fakelib\" option applied on the next launch, and the branding is updated to Shadow Mount+ with a favicon. Requires kstuff and an ELF loader on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "ShadowMountPlus 1.7beta6 release",
+        "url": "https://github.com/drakmor/ShadowMountPlus/releases/tag/1.7beta6"
+      }
+    ]
+  },
+  {
+    "id": "seedee5-v122",
+    "date": "2026-10-21",
+    "tag": "Emulator",
+    "title": "Seedee5 v1.22: survives ProsperoStore updates and finds NAS on other subnets",
+    "summary": "Seedee5 v1.22 keeps your settings, saves and BIOS safe when ProsperoStore replaces the app folder, and finds a NAS on a different subnet without manual entry.",
+    "body": [
+      "Seedee5 v1.22 fixes a data loss issue with ProsperoStore updates. ProsperoStore replaces the entire app folder when updating, and everything Seedee5 stored — games, BIOS, covers, saves and settings — was inside it. The old folder is moved to /data/prosperostore/previous/, not deleted, but access required FTP. From v1.22, settings, NAS settings, saved games and BIOS are also kept in the title's own storage, which an update does not touch, and are restored automatically. Games on the console, covers and save states are too large for that storage and need to be copied back manually from the previous folder after an update. Games stored on a NAS need nothing.",
+      "The other fix is NAS discovery on a different subnet. \"Find NAS on my network\" previously searched only the console's own subnet, so a NAS at 10.0.0.8 next to a console at 10.0.3.21 was invisible. The search now queries the whole network, and manual entry starts from your network's address instead of a fixed 192.168.1.x. DNS lookups use the network's own router. A rare crash in the NAS save backup message is also fixed."
+    ],
+    "sources": [
+      {
+        "name": "Seedee5 v1.22 release",
+        "url": "https://github.com/mortaljinx/Seedee5/releases/tag/v1.22"
+      }
+    ]
+  },
+  {
+    "id": "burnout3-v021",
+    "date": "2026-10-21",
+    "tag": "Port",
+    "title": "Burnout 3 v0.2.1: faster first start with a setup screen",
+    "summary": "Burnout 3: Takedown v0.2.1 adds a setup screen on first launch with a progress bar and time estimate, and writes game data in larger blocks so setup finishes faster.",
+    "body": [
+      "Burnout 3: Takedown v0.2.1 improves the first-start experience. The initial setup, which extracts game data from your disc image, now shows a progress bar, the time remaining and a clock instead of an apparently frozen screen. Game data is written in larger blocks, cutting setup time. The progress may slow toward the end — that is the console's storage, not a hang. Once setup finishes, the game starts on its own.",
+      "Updating from v0.2.0: copy the new PPSA99316 folder over the old one. If the game data is already set up, nothing changes — saves and settings are kept. New installs: copy PPSA99316 to /data/homebrew/, place your own North America (USA) Xbox disc image in PPSA99316/dump/ and start the game. No game data is included."
+    ],
+    "sources": [
+      {
+        "name": "Burnout 3 v0.2.1 release",
+        "url": "https://github.com/griches/PS5_Burnout3/releases/tag/v0.2.1"
+      }
+    ]
+  },
+  {
+    "id": "y2jb-autoloader-v103",
+    "date": "2026-10-21",
+    "tag": "Exploit",
+    "title": "Y2JB Autoloader v1.0.3: updater fix and Payload Manager v0.6.3",
+    "summary": "Y2JB Autoloader v1.0.3 fixes the updater to enforce splash.html permissions even without an update zip, and bundles unified-autoloader v0.1.6 with Payload Manager v0.6.3.",
+    "body": [
+      "Y2JB Autoloader v1.0.3 is a maintenance release. The updater now ensures splash.html has read-only permissions even when no update zip was applied, preventing a permissions issue. The unified-autoloader is updated to v0.1.6, and the bundled Payload Manager moves to v0.6.3 which hotfixes emoji display on the PS5.",
+      "The build integrates elfldr v0.26, ps5-kexp v0.8 and unified-autoloader v0.1.6. Install by updating from within Y2JB Autoloader or by sending the new ELF to your payload loader. Supports firmware 4.03 to 13.60."
+    ],
+    "sources": [
+      {
+        "name": "Y2JB Autoloader v1.0.3 release",
+        "url": "https://github.com/itsPLK/ps5-y2jb-autoloader/releases/tag/v1.0.3-185cdf8"
+      }
+    ]
+  },
+  {
+    "id": "sonic-unleashed-ps5-r3",
+    "date": "2026-10-21",
+    "tag": "Port",
+    "title": "Sonic Unleashed Recompiled PS5 R3: surround sound fix and mod deletion",
+    "summary": "Sonic Unleashed Recompiled PS5 R3 fixes surround sound output and adds a delete button to the mod manager.",
+    "body": [
+      "Sonic Unleashed Recompiled PS5 R3 is a small update to the Xbox 360 recomp. Surround sound now works correctly, and the mod manager has a new delete button so mods can be removed from the console without FTP.",
+      "Bring your own US or EU Xbox 360 copy of Sonic Unleashed plus its title update. Install via RecompStore or by copying the folder to /data/homebrew/. Requires kstuff and ShadowMountPlus on a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "Sonic Unleashed PS5 R3 release",
+        "url": "https://github.com/Nazky/UnleashedRecomp-Prospero/releases/tag/1.0.3-PS5_R3"
+      }
+    ]
+  },
+  {
     "id": "snes9x-v27",
     "date": "2026-10-20",
     "tag": "Emulator",
