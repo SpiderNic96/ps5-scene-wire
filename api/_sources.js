@@ -72,7 +72,9 @@ export const SOURCES = [
   { cat: T, repo: 'shcheglovnd/ps5-m2unmount', name: 'ps5-m2unmount', about: 'Unmounts M.2 for clean PS5-Linux sessions' },
   { cat: T, repo: 'Xnos666/SoundBridge-PS5', name: 'SoundBridge', about: 'Stream PS5 game audio to PC headset' },
   { cat: T, repo: 'Alexandre78500/xpad-ps5', name: 'xpad-ps5', about: 'Wired Xbox controller as virtual DualSense' },
-  { cat: T, repo: 'J7mbo/nasbridge-ps5', name: 'NASBridge', about: 'Browse and install games from your NAS over WebDAV' },
+  { cat: T, repo: 'J7mbo/nasbridge-ps5', name: 'NASBridge', about: 'Browse and install games from your NAS over WebDAV or SMB' },
+  { cat: T, repo: 'griches/PS5_ArtSwap', name: 'Art Swap', about: 'Change home-screen icons and backgrounds with SteamGridDB art' },
+  { cat: T, repo: 'VoxDon3/vox-launcher', name: 'VoX Launcher', about: 'Payload launcher with built-in web dashboard' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },
@@ -148,4 +150,5 @@ export const SOURCES = [
   { cat: R, repo: 'elripalda/dbz-budokai3-ps5', name: 'Dragon Ball Z: Budokai 3', about: 'Xbox 360 recomp' },
   { cat: R, repo: 'lavavex/nfs-blackbox-ps5', name: 'NFS Most Wanted (2005)', about: 'PC game via prospero-win, 4K' },
   { cat: R, repo: 'thesmokesession-bit/perfect-eye', name: 'Perfect Eye', about: 'Perfect Dark and GoldenEye 007 on PS5' },
+  { cat: R, repo: 'Yahballon/4Wins', name: '4 Wins', about: 'Connect Four homebrew game' },
 ];

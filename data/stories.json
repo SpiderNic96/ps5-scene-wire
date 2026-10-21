@@ -1,5 +1,166 @@
 [
   {
+    "id": "mario-galaxy-v110",
+    "date": "2026-10-21",
+    "tag": "Port",
+    "title": "Super Mario Galaxy v1.1.0: DualSense motion controls",
+    "summary": "Super Mario Galaxy v1.1.0 adds full DualSense motion controls — point the controller like a Wii Remote, tilt for the Star Ball and ray, and shake to spin.",
+    "body": [
+      "Super Mario Galaxy v1.1.0 brings DualSense motion controls to the PS5 recomp. Point the DualSense at the screen like a Wii Remote and the pointer follows — turn past the edge and it leaves the screen, just like the original. Tilt the controller to roll the Star Ball and steer the ray. An optional motion shake lets you spin with a flick of the wrist, mimicking either the Wii Remote or Nunchuk. Press R3 to recenter the pointer at any time, and the gyro recalibrates automatically when the pad rests for half a second.",
+      "A new settings menu (hold touchpad + Options > Controls) lets you adjust gyro sensitivity, choose which controller a shake stands for, and set how long before a still pointer hides. All motion controls can be turned off to revert to the 1.0.0 stick-only scheme. To update, rebuild the title with the 1.1.0 builder and copy the PPSA99315 folder. Requires a jailbroken PS5 with an ELF loader and your own Wii disc."
+    ],
+    "sources": [
+      {
+        "name": "Super Mario Galaxy v1.1.0 release",
+        "url": "https://github.com/griches/PS5_MarioGalaxy/releases/tag/v1.1.0"
+      }
+    ]
+  },
+  {
+    "id": "nasbridge-v050",
+    "date": "2026-10-21",
+    "tag": "Tool",
+    "title": "NASBridge v0.5.0: SMB support alongside WebDAV",
+    "summary": "NASBridge v0.5.0 adds SMB as an alternative to WebDAV for connecting to your NAS, with protocol selection in Settings.",
+    "body": [
+      "NASBridge v0.5.0 is a test build that adds SMB (Server Message Block) as a second connection protocol alongside WebDAV. In Settings > Connection, pick SMB, enter the NAS IP address and credentials, then choose the games folder. Guest access is not supported yet. This is useful for NAS devices that handle SMB better than WebDAV or for users who prefer the simpler setup.",
+      "Install by sending NASBridge-0.5.0.elf to your PS5 ELF loader on port 9021. Requires ShadowMountPlus 1.7beta6-fix2 or newer. This is a beta build — the developer asks users to report problems with their NAS model and any error messages."
+    ],
+    "sources": [
+      {
+        "name": "NASBridge v0.5.0-beta.1 release",
+        "url": "https://github.com/J7mbo/nasbridge-ps5/releases/tag/v0.5.0-beta.1"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v7112-v7113",
+    "date": "2026-10-21",
+    "tag": "Tool",
+    "title": "PS5 Upload v7.1.12–v7.1.13: browser file uploads, adjustable avatar crop and SMB fixes",
+    "summary": "PS5 Upload v7.1.13 adds browser-based file and payload uploads, adjustable avatar cropping, and fixes SMB collection moves. v7.1.12 is a maintenance build.",
+    "body": [
+      "PS5 Upload v7.1.13 adds several features. Browser file and payload uploads let you choose or drop files from any device, upload them to the engine, and review before sending to the PS5 — including sending ELF payloads to a running loader. Avatar cropping is now adjustable: position the crop horizontally or vertically and center it again, with consistent framing between browser and desktop. SMB collection moves are more reliable — metadata readers close before folder moves, pending closes complete before renames, and denied SMB operations no longer appear as failed sign-ins.",
+      "v7.1.12 is a maintenance release with no published notes. Both versions work with all existing PS5 Upload setups including Docker engines. Download from the GitHub releases page or update through the app."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v7.1.13 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.1.13"
+      },
+      {
+        "name": "PS5 Upload v7.1.12 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.1.12"
+      }
+    ]
+  },
+  {
+    "id": "psbox-v133-v134",
+    "date": "2026-10-21",
+    "tag": "Media",
+    "title": "PSBox Cloud Gaming v1.3.3–v1.3.4: achievements button, DualSense speaker alerts and wishlist",
+    "summary": "PSBox v1.3.3 adds a clickable achievements button and loading screen, while v1.3.4 brings DualSense speaker queue alerts and a wishlist with live pricing.",
+    "body": [
+      "PSBox Cloud Gaming v1.3.3 adds a clickable achievements button positioned next to Play in game details — press X to open an interactive modal with your progress and Gamerscore. A splash loading screen now holds DualSense input until authentication and account sync finish, so the catalog opens with the profile ready. The streaming menu is cleaner with the played-time item and debug notification removed. A Ko-Fi support link appears in Settings.",
+      "v1.3.4 adds a DualSense speaker queue-ready alert — when your game is ready, the notification sound plays through the controller speaker alongside the haptic vibration. The wishlist is accessible through the search in My Games with a dedicated filter, showing marked games with live store pricing or an empty-list message. Update by reinstalling the latest ELF or through your payload manager."
+    ],
+    "sources": [
+      {
+        "name": "PSBox v1.3.4 release",
+        "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5/releases/tag/v1.3.4"
+      },
+      {
+        "name": "PSBox v1.3.3 release",
+        "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5/releases/tag/v1.3.3"
+      }
+    ]
+  },
+  {
+    "id": "prosperostore-v1000105",
+    "date": "2026-10-21",
+    "tag": "Store",
+    "title": "ProsperoStore v1.000.105: Turkish language and custom catalog self-update",
+    "summary": "ProsperoStore v1.000.105 adds Turkish as the eighth language and lets the store update itself from a custom catalog host.",
+    "body": [
+      "ProsperoStore v1.000.105 adds Turkish as the eighth supported language. When the console is set to Turkish, the store starts in Turkish automatically, and Settings > Language offers Türkçe as an option. This follows the pattern of community-contributed translations that have expanded the store from English to seven other languages.",
+      "The store can now update itself from a custom catalog's own host, meaning catalog operators can distribute store updates through their own infrastructure instead of relying solely on the main ProsperoStore update channel. Update from within the store or install through your preferred homebrew store."
+    ],
+    "sources": [
+      {
+        "name": "ProsperoStore v1.000.105 release",
+        "url": "https://github.com/darkxex/ProsperoStore/releases/tag/v1.000.105"
+      }
+    ]
+  },
+  {
+    "id": "prosperothemes-v012",
+    "date": "2026-10-21",
+    "tag": "Tool",
+    "title": "Prospero Themes 01.000.012: theme removal and icon restart notice",
+    "summary": "Prospero Themes 01.000.012 lets you remove installed themes and now warns that icon changes require a console restart.",
+    "body": [
+      "Prospero Themes 01.000.012 adds theme removal. Open a theme in your library and press Triangle to remove it — the file moves to /data/prospero-themes/attic rather than being deleted, so you can recover it. If the removed theme is currently applied, it stays on the console until you apply another theme or restore defaults. The bundled theme cannot be removed.",
+      "The app now tells you that tile and system icon changes only take effect after a restart, because the PS5 caches home screen icons. Backgrounds still change immediately. ThemeHelper is unchanged at v5 — no extra reboot is needed if you are coming from 01.000.011. Update from within ProsperoStore or your preferred homebrew store."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Themes 01.000.012 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.012"
+      }
+    ]
+  },
+  {
+    "id": "ps5-artswap",
+    "date": "2026-10-21",
+    "tag": "Tool",
+    "title": "Art Swap: replace PS5 home screen icons and backgrounds with SteamGridDB art",
+    "summary": "Art Swap is a new PS5 homebrew app that lets you swap the icon and background of any title on the home screen with art from SteamGridDB, with live preview and one-press restore.",
+    "body": [
+      "Art Swap lists every title on the console that has home-screen art — PS5 and PS4 games plus homebrew — finds each on SteamGridDB, and lets you browse and pick replacement icons and backgrounds. A frame page (press Triangle) lets you choose how the art is cropped: fit, left/center/right, or a free position with zoom. The preview shows exactly what will be written. Originals are kept as .old files beside the replacements, and a Restore option puts them back. For ShadowMountPlus homebrew, Art Swap can refresh the home screen immediately so the new art appears without closing the app.",
+      "Art Swap writes each file in the format the console expects — PNG, JPEG or DDS with the same header and layout — and changes all copies together (appmeta and sce_sys). Tested on firmware 13.60. Requires a jailbroken PS5 with ShadowMountPlus. Install by building with the Art Swap builder and copying the PPSA99318 folder."
+    ],
+    "sources": [
+      {
+        "name": "Art Swap on GitHub",
+        "url": "https://github.com/griches/PS5_ArtSwap"
+      }
+    ]
+  },
+  {
+    "id": "vox-launcher",
+    "date": "2026-10-21",
+    "tag": "Tool",
+    "title": "VoX Launcher: PS5 payload launcher with built-in web dashboard",
+    "summary": "VoX Launcher is a single-ELF PS5 payload that runs a web dashboard for managing payloads, browsing files, installing packages, viewing processes and scheduling boot tasks.",
+    "body": [
+      "VoX Launcher is a new PS5 payload launcher with a built-in web interface. Send the single ELF file to your console and it runs an HTTP server on port 8095 accessible from any phone, PC or the console itself. From the dashboard you can list, launch, upload and delete payloads, toggle auto-start per payload, browse the filesystem with full file operations (upload, download, rename, move, search, ZIP extraction), install PKG files, view live processes and terminate them, and monitor system stats like uptime, kernel version and storage usage.",
+      "Additional features include scheduled boot tasks that auto-launch payloads after a set delay, backup and restore of your configuration, three themes (Dark, Light, Neon) and support for 12 languages including Arabic with RTL. Built with the PS5 Payload SDK. Send vox-launcher.elf to your ELF loader on port 9021 or add it to your autoloader."
+    ],
+    "sources": [
+      {
+        "name": "VoX Launcher on GitHub",
+        "url": "https://github.com/VoxDon3/vox-launcher"
+      }
+    ]
+  },
+  {
+    "id": "4wins",
+    "date": "2026-10-21",
+    "tag": "Port",
+    "title": "4 Wins: Connect Four homebrew game for PS5",
+    "summary": "4 Wins is a native Connect Four game for jailbroken PS5 with local two-player, three bot difficulties, neon arcade visuals and DualSense controls.",
+    "body": [
+      "4 Wins is a new homebrew game that brings Connect Four to the PS5. Drop chips into a 7-column, 6-row board — the first to connect four horizontally, vertically or diagonally wins. Play local two-player with a shared DualSense or take on a bot at Easy, Medium or Hard difficulty (Hard uses minimax with alpha-beta pruning). The visual style features a neon arcade lounge, glossy animated chips and clean menu overlays.",
+      "Settings and scores are saved to /data/4WINS/settings.ini with diagnostic logging. Built with the ps5-homebrew-ui renderer. Install by downloading the latest release from GitHub and sending it to your jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "4 Wins on GitHub",
+        "url": "https://github.com/Yahballon/4Wins"
+      }
+    ]
+  },
+  {
     "id": "recompstore-v250",
     "date": "2026-10-21",
     "tag": "Store",
