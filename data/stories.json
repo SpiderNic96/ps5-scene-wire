@@ -1,5 +1,94 @@
 [
   {
+    "id": "recompstore-v250",
+    "date": "2026-10-21",
+    "tag": "Store",
+    "title": "RecompStore v2.5.0–v2.5.1: phone file transfers, game save backup, music, mods and collections",
+    "summary": "RecompStore v2.5.0 adds phone Wi-Fi file transfers, game save backup, menu music, mod support, collections with Install all, and a Ready to play checklist. v2.5.1 fixes duplicate title ID handling.",
+    "body": [
+      "RecompStore v2.5.0 is a feature-packed update. Send files to your PS5 from your phone over Wi-Fi — link a phone to see and manage your apps from it, with deletions and moves still confirmed on the console. Game saves can be backed up to USB or your phone. Menu music plays at 40% by default, adjustable or off in Settings > General. Like apps and browse Most liked. Collections let you group apps with an Install all option. Searches can be typed on your phone. Restore my apps puts back everything you had. Mods are supported for games that have them, and Ready to play shows what a game still needs before it can launch. Drives now display their real size.",
+      "v2.5.1 follows up with a fix for apps that share the same title ID — both can now appear in the store. Steam Remote Play is the first one affected. Update from inside the store or send RecompStore-Installer.elf with your payload sender."
+    ],
+    "sources": [
+      {
+        "name": "RecompStore v2.5.0 release",
+        "url": "https://github.com/elripalda/RecompStore/releases/tag/v2.5.0"
+      },
+      {
+        "name": "RecompStore v2.5.1 release",
+        "url": "https://github.com/elripalda/RecompStore/releases/tag/v2.5.1"
+      }
+    ]
+  },
+  {
+    "id": "nasbridge-v040",
+    "date": "2026-10-21",
+    "tag": "Tool",
+    "title": "NASBridge v0.4.0: now works with official ShadowMountPlus",
+    "summary": "NASBridge v0.4.0 drops the custom ShadowMountPlus build — it now works with official ShadowMountPlus 1.7beta6-fix2 or newer, with live home screen updates and in-app game deletion.",
+    "body": [
+      "NASBridge v0.4.0 is a compatibility update. The app no longer requires a custom ShadowMountPlus build — it works with the official ShadowMountPlus 1.7beta6-fix2 or newer from its own releases page. With the new ShadowMountPlus, copied games appear on the home screen while NASBridge is still open, and games can be deleted without restarting the console.",
+      "Older ShadowMountPlus versions still work but with reduced functionality: copied games only show up once NASBridge is closed, and freshly copied games can only be deleted after a restart. Install by sending NASBridge-0.4.0.elf to your ELF loader on port 9021. Requires a jailbroken PS5 with an ELF loader and ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "NASBridge v0.4.0 release",
+        "url": "https://github.com/J7mbo/nasbridge-ps5/releases/tag/v0.4.0"
+      }
+    ]
+  },
+  {
+    "id": "sahin-blur-01004000",
+    "date": "2026-10-21",
+    "tag": "Port",
+    "title": "Sahin (Blur) 01.004.000: Turkish localization and controller fix",
+    "summary": "Sahin 01.004.000 adds full Turkish localization for the launcher UI, fixes a controller detection timing issue, and expands the bundled fonts to cover Turkish characters.",
+    "body": [
+      "Sahin 01.004.000 brings Turkish localization to the Blur launcher. On a console set to Turkish, every screen the launcher shows — setup steps, copy status, Install / Repair / Play, dialogs, the Options panel — appears in Turkish. On any other language setting it stays in English. The game itself still plays in whatever language your copy includes (Blur has no Turkish). The bundled fonts (Inter, Montserrat, DejaVu Sans Mono) now include Latin Extended-A characters for Turkish: ç, ğ, ı, İ, ö, ş, ü. The app is about 6 MB larger as a result.",
+      "A controller detection timing fix makes holding Square to open the launcher page more reliable. The launcher now watches the controller for 600 ms before deciding, instead of giving up on the first empty sample batch. No changes to the game files or the install itself — there is no need to reinstall Blur. Requires a jailbroken PS5 with ShadowMount+ and your Blur folder in /data/sahin/base-games/Blur or on USB."
+    ],
+    "sources": [
+      {
+        "name": "Sahin 01.004.000 release",
+        "url": "https://github.com/7tg/sahin/releases/tag/01.004.000"
+      }
+    ]
+  },
+  {
+    "id": "shadowmountplus-17beta6-fix2",
+    "date": "2026-10-21",
+    "tag": "Tool",
+    "title": "ShadowMountPlus 1.7beta6-fix2: sandbox and suspend fixes",
+    "summary": "ShadowMountPlus 1.7beta6-fix2 fixes sandbox /data reuse and preserves game layers across suspend, following an older-WebKit UI fix in fix1.",
+    "body": [
+      "ShadowMountPlus 1.7beta6-fix2 is a hotfix following the 1.7beta6 release covered earlier today. fix1 addressed web UI compatibility with older WebKit browsers. fix2 fixes sandbox /data reuse and preserves game layers across suspend, preventing games from losing their mount state when the console enters and exits rest mode.",
+      "These fixes build on the 1.7beta6 base which added ShellCore hook reliability improvements, background work while apps are running, backport folder support, and the per-game Ignore global fakelib option. Requires kstuff and an ELF loader on port 9021. NASBridge v0.4.0 now requires this version or newer."
+    ],
+    "sources": [
+      {
+        "name": "ShadowMountPlus 1.7beta6-fix2 release",
+        "url": "https://github.com/drakmor/ShadowMountPlus/releases/tag/1.7beta6-fix2"
+      }
+    ]
+  },
+  {
+    "id": "payload-manager-v063",
+    "date": "2026-10-21",
+    "tag": "Tool",
+    "title": "Payload Manager v0.6.3: emoji display hotfix",
+    "summary": "Payload Manager v0.6.3 fixes emojis not appearing on PS5, a regression from the v0.6.2 CDN switch.",
+    "body": [
+      "Payload Manager v0.6.3 is a hotfix for v0.6.2. The previous release moved bundled emoji artwork to Twemoji images loaded from a CDN to shrink the ELF payload. This broke emoji display on PS5, where the CDN images were not rendering. v0.6.3 fixes the issue so emojis appear correctly again.",
+      "No need to manually replace the ELF file. Install the update from inside the Payload Manager app via the repository. The updated version launches automatically on every subsequent startup regardless of which ELF file is loaded initially."
+    ],
+    "sources": [
+      {
+        "name": "Payload Manager v0.6.3 release",
+        "url": "https://github.com/itsPLK/ps5-payload-manager/releases/tag/v0.6.3"
+      }
+    ]
+  },
+  {
     "id": "jobeeslair-v050",
     "date": "2026-10-21",
     "tag": "Store",
@@ -9,7 +98,12 @@
       "Jobee'sLair v0.5.0 is the biggest update yet. A new Homebrew section lists over 200 PS5 apps and emulators — PS5SX2, Stremio, RetroArch and more — installed straight from each author's own GitHub releases. Updates appear automatically, and installed apps show up in your Library with their name and icon. Apps that need a helper payload (PS5SX2, XPSemu, Ruffle, VITA5) get it installed alongside them — press Run helper on the app's page after each console restart. A new search shows a cover grid with Games and Homebrew tabs, a pop-up keyboard, a Ready for 13.60 row and a Format filter. Multi-part downloads now grab the next part's link while the current one is downloading, and parts that need the browser open by themselves.",
       "A phone companion is available from Settings: scan the QR code to watch downloads, manage the queue, run payloads and send a log from your phone. A screen saver kicks in after 10 minutes idle, showing download progress. Settings is now its own section with categories. ShadowMount no longer says Device busy after closing Jobee'sLair — it releases the app a few seconds after exit. Update from inside the app or download PPSA99810.zip from the release page."
     ],
-    "sources": [{"name": "Jobee'sLair v0.5.0 release", "url": "https://github.com/JVK3R/JobeesLair/releases/tag/v0.5.0"}]
+    "sources": [
+      {
+        "name": "Jobee'sLair v0.5.0 release",
+        "url": "https://github.com/JVK3R/JobeesLair/releases/tag/v0.5.0"
+      }
+    ]
   },
   {
     "id": "recompstore-v223",
@@ -21,7 +115,12 @@
       "RecompStore v2.2.3 overhauls Library and My Apps. Library shows everything in the store across All, Games, Emulators, Apps and Tools, sorted how you like. My Apps is what's on your console: Installed, Updates, On this PS5, Drives and Betas. On this PS5 lists every homebrew app, even ones that didn't come from the store. Delete, move to another drive or give an app a new title ID, one at a time or in bulk. Drives shows how much room each drive has, what's using it, and USB drives show up when you plug them in.",
       "Downloads now wait in a queue so you can keep browsing while they install. Pick where an app goes — console storage, M.2 or USB. Opening a brand new app waits for its home screen tile, then opens it. Auto-update works for one app or for everything. ShadowMountPlus version and recommended update are shown in Settings, and you can reload it without losing your drives. Also new: Favorites, More like this and People also installed on app pages. Update from inside the store, or send RecompStore-Installer.elf with your payload sender."
     ],
-    "sources": [{"name": "RecompStore v2.2.3 release", "url": "https://github.com/elripalda/RecompStore/releases/tag/v2.2.3"}]
+    "sources": [
+      {
+        "name": "RecompStore v2.2.3 release",
+        "url": "https://github.com/elripalda/RecompStore/releases/tag/v2.2.3"
+      }
+    ]
   },
   {
     "id": "ps5upload-v7111",
@@ -33,7 +132,12 @@
       "PS5 Upload v7.1.11 adds browser avatar upload. Choose an image from the browser device, preview it with crop or fit options, and apply it to the selected console user. This works with Docker engines too. Remote conversion inspection now lets slow console image reads complete beyond the ordinary one-minute request deadline, including build preflight and size estimates, so large conversions no longer time out.",
       "The Organize tool now covers the whole collection — supported images and extracted game folders as well as packages. Files are sorted under each configured collection root, image formats and intact game folders are preserved, and skipped items are reported without claiming they are already organized."
     ],
-    "sources": [{"name": "PS5 Upload v7.1.11 release", "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.1.11"}]
+    "sources": [
+      {
+        "name": "PS5 Upload v7.1.11 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.1.11"
+      }
+    ]
   },
   {
     "id": "psbox-v132",
@@ -45,7 +149,12 @@
       "PSBox Cloud Gaming v1.3.2 fixes a TLS handshake issue that blocked streaming in certain regions. Azure regional load balancers (such as India Central) sometimes send intermediate certificates out of order, causing MbedTLS error -9984 (BADCERT_NOT_TRUSTED). The client now detects and reorders the X.509 certificate chain in memory before validation, eliminating the handshake failure when launching a game.",
       "Free-to-play game handling is also improved. Games already owned by the Microsoft account are now recognized correctly, so the app no longer tries to re-acquire them and fails. Transient WAN issues during stream startup get contextual notifications, and syncing the game library over a flaky connection is handled more gracefully. Download PPSA99810.zip from the release page and install on a jailbroken PS5."
     ],
-    "sources": [{"name": "PSBox v1.3.2 release", "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5/releases/tag/v1.3.2"}]
+    "sources": [
+      {
+        "name": "PSBox v1.3.2 release",
+        "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5/releases/tag/v1.3.2"
+      }
+    ]
   },
   {
     "id": "ps4mount-v061",
@@ -57,7 +166,12 @@
       "ps4mount v0.6.1 fixes how renamed drives are handled. A drive mounted under a different name now keeps its games registered instead of losing track of them, and a renamed drive gets its PKG links rewritten rather than creating a duplicate registration. Game PKGs are now only used from the folder matching their own title ID, preventing cross-folder conflicts.",
       "The log file is capped at 10 MB to stop it growing indefinitely. Log and registration files are read once at startup instead of checking the file path first. The README now warns about merged PKGs and drops the PS Plus backup mention. Requires a jailbroken PS5 with kstuff. Source and release on GitHub."
     ],
-    "sources": [{"name": "ps4mount v0.6.1 release", "url": "https://github.com/gasb07/ps4mount/releases/tag/v0.6.1"}]
+    "sources": [
+      {
+        "name": "ps4mount v0.6.1 release",
+        "url": "https://github.com/gasb07/ps4mount/releases/tag/v0.6.1"
+      }
+    ]
   },
   {
     "id": "nasbridge-ps5",
