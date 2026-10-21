@@ -1,5 +1,65 @@
 [
   {
+    "id": "jobeeslair-v050",
+    "date": "2026-10-21",
+    "tag": "Store",
+    "title": "Jobee'sLair v0.5.0: homebrew store, emulator helpers and phone companion",
+    "summary": "Jobee'sLair v0.5.0 adds a Homebrew section with 200+ PS5 apps and emulators installed from their authors' releases, automatic emulator helper payloads, a phone companion via QR code, and a search with cover grid.",
+    "body": [
+      "Jobee'sLair v0.5.0 is the biggest update yet. A new Homebrew section lists over 200 PS5 apps and emulators — PS5SX2, Stremio, RetroArch and more — installed straight from each author's own GitHub releases. Updates appear automatically, and installed apps show up in your Library with their name and icon. Apps that need a helper payload (PS5SX2, XPSemu, Ruffle, VITA5) get it installed alongside them — press Run helper on the app's page after each console restart. A new search shows a cover grid with Games and Homebrew tabs, a pop-up keyboard, a Ready for 13.60 row and a Format filter. Multi-part downloads now grab the next part's link while the current one is downloading, and parts that need the browser open by themselves.",
+      "A phone companion is available from Settings: scan the QR code to watch downloads, manage the queue, run payloads and send a log from your phone. A screen saver kicks in after 10 minutes idle, showing download progress. Settings is now its own section with categories. ShadowMount no longer says Device busy after closing Jobee'sLair — it releases the app a few seconds after exit. Update from inside the app or download PPSA99810.zip from the release page."
+    ],
+    "sources": [{"name": "Jobee'sLair v0.5.0 release", "url": "https://github.com/JVK3R/JobeesLair/releases/tag/v0.5.0"}]
+  },
+  {
+    "id": "recompstore-v223",
+    "date": "2026-10-21",
+    "tag": "Store",
+    "title": "RecompStore v2.2.3: Library and My Apps overhaul, drive management and install queue",
+    "summary": "RecompStore v2.2.3 redesigns Library and My Apps with sortable views, drive storage info, USB hot-plug, a download queue, and ShadowMountPlus management from Settings.",
+    "body": [
+      "RecompStore v2.2.3 overhauls Library and My Apps. Library shows everything in the store across All, Games, Emulators, Apps and Tools, sorted how you like. My Apps is what's on your console: Installed, Updates, On this PS5, Drives and Betas. On this PS5 lists every homebrew app, even ones that didn't come from the store. Delete, move to another drive or give an app a new title ID, one at a time or in bulk. Drives shows how much room each drive has, what's using it, and USB drives show up when you plug them in.",
+      "Downloads now wait in a queue so you can keep browsing while they install. Pick where an app goes — console storage, M.2 or USB. Opening a brand new app waits for its home screen tile, then opens it. Auto-update works for one app or for everything. ShadowMountPlus version and recommended update are shown in Settings, and you can reload it without losing your drives. Also new: Favorites, More like this and People also installed on app pages. Update from inside the store, or send RecompStore-Installer.elf with your payload sender."
+    ],
+    "sources": [{"name": "RecompStore v2.2.3 release", "url": "https://github.com/elripalda/RecompStore/releases/tag/v2.2.3"}]
+  },
+  {
+    "id": "ps5upload-v7111",
+    "date": "2026-10-21",
+    "tag": "Tool",
+    "title": "PS5 Upload v7.1.11: browser avatar upload, slow conversion support and full collection organizer",
+    "summary": "PS5 Upload v7.1.11 lets you upload and crop a user avatar from the browser, waits for slow console conversions past the one-minute deadline, and organizes your entire collection including images and extracted game folders.",
+    "body": [
+      "PS5 Upload v7.1.11 adds browser avatar upload. Choose an image from the browser device, preview it with crop or fit options, and apply it to the selected console user. This works with Docker engines too. Remote conversion inspection now lets slow console image reads complete beyond the ordinary one-minute request deadline, including build preflight and size estimates, so large conversions no longer time out.",
+      "The Organize tool now covers the whole collection — supported images and extracted game folders as well as packages. Files are sorted under each configured collection root, image formats and intact game folders are preserved, and skipped items are reported without claiming they are already organized."
+    ],
+    "sources": [{"name": "PS5 Upload v7.1.11 release", "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.1.11"}]
+  },
+  {
+    "id": "psbox-v132",
+    "date": "2026-10-21",
+    "tag": "Media",
+    "title": "PSBox Cloud Gaming v1.3.2: Azure TLS fix and free-to-play license handling",
+    "summary": "PSBox v1.3.2 fixes TLS handshake failures on regional Azure servers by reordering out-of-order certificate chains, and improves free-to-play game acquisition and license recognition.",
+    "body": [
+      "PSBox Cloud Gaming v1.3.2 fixes a TLS handshake issue that blocked streaming in certain regions. Azure regional load balancers (such as India Central) sometimes send intermediate certificates out of order, causing MbedTLS error -9984 (BADCERT_NOT_TRUSTED). The client now detects and reorders the X.509 certificate chain in memory before validation, eliminating the handshake failure when launching a game.",
+      "Free-to-play game handling is also improved. Games already owned by the Microsoft account are now recognized correctly, so the app no longer tries to re-acquire them and fails. Transient WAN issues during stream startup get contextual notifications, and syncing the game library over a flaky connection is handled more gracefully. Download PPSA99810.zip from the release page and install on a jailbroken PS5."
+    ],
+    "sources": [{"name": "PSBox v1.3.2 release", "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5/releases/tag/v1.3.2"}]
+  },
+  {
+    "id": "ps4mount-v061",
+    "date": "2026-10-21",
+    "tag": "Tool",
+    "title": "ps4mount v0.6.1: drive rename handling and log size cap",
+    "summary": "ps4mount v0.6.1 keeps games registered when a drive is renamed, rewrites PKG links instead of creating duplicate registrations, and caps log.txt at 10 MB.",
+    "body": [
+      "ps4mount v0.6.1 fixes how renamed drives are handled. A drive mounted under a different name now keeps its games registered instead of losing track of them, and a renamed drive gets its PKG links rewritten rather than creating a duplicate registration. Game PKGs are now only used from the folder matching their own title ID, preventing cross-folder conflicts.",
+      "The log file is capped at 10 MB to stop it growing indefinitely. Log and registration files are read once at startup instead of checking the file path first. The README now warns about merged PKGs and drops the PS Plus backup mention. Requires a jailbroken PS5 with kstuff. Source and release on GitHub."
+    ],
+    "sources": [{"name": "ps4mount v0.6.1 release", "url": "https://github.com/gasb07/ps4mount/releases/tag/v0.6.1"}]
+  },
+  {
     "id": "nasbridge-ps5",
     "date": "2026-10-21",
     "tag": "Tool",
