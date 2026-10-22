@@ -1,5 +1,81 @@
 [
   {
+    "id": "playden-v060",
+    "date": "2026-10-22",
+    "tag": "PC & Linux",
+    "title": "Playden v0.6.0: 120 Hz games, USB and FTP imports, download queue",
+    "summary": "Playden v0.6.0 brings 120 Hz game support with kit 0.12, lets you import Windows games from a USB drive or over FTP, and moves its data outside the app folder so store updates can't erase it.",
+    "body": [
+      "Playden v0.6.0 adds 120 Hz support for games through kit 0.12, which bundles updated Wine, DXVK, vkd3d-proton and audio/video decoding. You can now import Windows games you already own from a USB drive or over FTP and play them alongside your Steam library. A new Queue screen tracks every download and game setup. Playden also moves its data to /data/playden/ so that store updates and mods can no longer remove your sign-in, saves or settings.",
+      "This is alpha software that signs in to your real Steam account and reads and writes Steam Cloud saves. Updating from v0.5.0 is handled automatically the next time Playden starts, or from Settings > About > Playden updates. The update is about 469 MB and needs at least 8 GB of free console storage. For a fresh install, follow the README on GitHub."
+    ],
+    "sources": [
+      {
+        "name": "Playden v0.6.0 release",
+        "url": "https://github.com/leolobato/playden-ps5/releases/tag/v0.6.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v7115-v7116",
+    "date": "2026-10-22",
+    "tag": "Tool",
+    "title": "PS5 Upload v7.1.15–v7.1.16: safer launches, smarter LZ4 compression",
+    "summary": "PS5 Upload v7.1.15 fixes a crash when launching with no signed-in user, and LZ4 image compression now adapts to each game engine. v7.1.16 is a quick follow-up patch.",
+    "body": [
+      "PS5 Upload v7.1.15 fixes a bug where pressing Play with no user signed in (for example right after a reboot) could crash and restart the PS5 home screen. The helper now waits for a user and asks you to sign in first. LZ4 image compression is now engine-aware: Unity games compress only streamed assets and resource files while keeping startup files intact, and unrecognised engines compress only large files (16 MB and up). Unreal Engine games keep the v7.1.14 rule. v7.1.16 is a quick follow-up patch.",
+      "PS5 Upload is a tool for managing files, payloads and game packages on a jailbroken PS5. Download v7.1.16 from the GitHub releases page."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v7.1.15 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.1.15"
+      },
+      {
+        "name": "PS5 Upload v7.1.16 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.1.16"
+      }
+    ]
+  },
+  {
+    "id": "prosperothemes-v013-v014",
+    "date": "2026-10-22",
+    "tag": "Tool",
+    "title": "Prospero Themes v013–v014: theme combining and faster community tab",
+    "summary": "Prospero Themes v013 lets you stack themes so applying one no longer resets the last, and v014 cuts Community tab data use by roughly 85 percent.",
+    "body": [
+      "Prospero Themes v013 introduces theme combining: applying a background theme followed by an icon-only theme now gives you both, and system icons from different themes stack too. A new setting under System lets you switch between Combine (the new default) and Replace (the old behaviour). Restore defaults on the System tab still resets everything. v014 follows up with a faster Community tab — cards now load small JPEG previews from the store at about an eighth the size of the full PNG, bringing a page of 24 themes down from roughly 14 MB to 1–2 MB.",
+      "Both releases use the existing ThemeHelper v5, so no extra reboot is needed beyond the usual console restart for icon changes to take effect. Download from the GitHub releases page."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Themes v013 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.013"
+      },
+      {
+        "name": "Prospero Themes v014 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.014"
+      }
+    ]
+  },
+  {
+    "id": "quake3-v140",
+    "date": "2026-10-22",
+    "tag": "Port",
+    "title": "Quake III v1.4.0: split-screen multiplayer and its own title ID",
+    "summary": "Quake III Arena on PS5 gets 2-to-4-player split screen and moves to its own title ID so it no longer collides with PS3 emulators.",
+    "body": [
+      "Quake III v1.4.0 adds split-screen multiplayer for two to four players on one console, each with their own controller and user account. Two players get a side-by-side half-screen, three or four get a quarter each, and with three players the fourth quarter shows a live scoreboard. Team games let you assign teams on the setup page, and a camera option adds a spectator quarter that follows each player and bot in turn. Every player uses player 1's control scheme and can toggle gyro aim independently with a double-tap on the touchpad.",
+      "This release also moves to title ID PPSA99319, separating it from PS5SX3 and KB-RPCS3 which shared PPSA99303. The first launch automatically copies your pak files and settings from the old folder. You can then remove the old Quake tile, but only if no PS3 emulator is using that folder. Download from the GitHub releases page."
+    ],
+    "sources": [
+      {
+        "name": "Quake III v1.4.0 release",
+        "url": "https://github.com/griches/PS5_Quake3e/releases/tag/v1.4.0"
+      }
+    ]
+  },
+  {
     "id": "burnout3-v022",
     "date": "2026-10-22",
     "tag": "Port",
