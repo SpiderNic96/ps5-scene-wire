@@ -58,6 +58,7 @@ export const SOURCES = [
   { cat: T, repo: 'theghostonline/Hitman-PS5', name: 'Hitman-PS5', about: 'Local backend for HITMAN online' },
   { cat: T, repo: 'bps2414/lineup', name: 'Lineup', about: 'Reorder the home screen game row' },
   { cat: T, repo: 'cobanov/PS5LM', name: 'PS5LM', about: 'llama.cpp language models on PS5' },
+  { cat: T, repo: 'nikay99/PS5MG', name: 'PS5MG', about: 'TRELLIS.2 3D mesh generation on PS5' },
   { cat: T, repo: 'knutwurst/ps5-patchdl', name: 'PatchDL', about: 'Download official game updates' },
   { cat: T, repo: 'gasb07/ps4mount', name: 'ps4mount', about: 'Run PS4 games from USB' },
   { cat: T, repo: 'Starter-ps5/Common-FPS-for-PS5', name: 'Common-FPS', about: 'Real-time FPS overlay' },

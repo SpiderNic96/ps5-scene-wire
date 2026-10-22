@@ -1,5 +1,60 @@
 [
   {
+    "id": "ps5mg",
+    "date": "2026-10-22",
+    "tag": "Tool",
+    "title": "PS5MG: turn a picture into a 3D mesh on the PS5's GPU",
+    "summary": "PS5MG runs TRELLIS.2 on the PS5 to generate a textured 3D mesh from a single picture in one to three minutes, with a web interface and a TV dashboard.",
+    "body": [
+      "PS5MG by nikay99 turns a PlayStation 5 into a local 3D-mesh generator. Drop a picture into the web interface served on port 7870 and the console's GPU produces a game-ready GLB model (150k faces, 1024 px texture) in roughly one to three minutes using TRELLIS.2 or a Pixal3D fine-tune. Finished meshes appear in a three.js 3D viewer with GLB, STL and OBJ downloads. A REST API is included for scripting, and the TV screen shows a live dashboard with progress, memory use and a QR code to the web interface. PS5MG is the third title in the line after PS5LM (language models) and PS5SD (Stable Diffusion).",
+      "Requires a jailbroken PS5 running homebrew through ShadowMountPlus. You supply the model weights yourself from their original authors. Title id PPSA99577. Install by extracting the ZIP into /data/homebrew/ and rescanning in ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "PS5MG on GitHub",
+        "url": "https://github.com/nikay99/PS5MG"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v7117",
+    "date": "2026-10-22",
+    "tag": "Tool",
+    "title": "PS5 Upload v7.1.17: recursive disk usage and USB eject",
+    "summary": "PS5 Upload v7.1.17 makes folder sizes include all subfolders and adds an Eject button for USB drives in the File system screen.",
+    "body": [
+      "PS5 Upload v7.1.17 improves disk usage so a folder's reported size now includes everything inside its subfolders. The count runs progressively with a Stop button, and opening a subfolder afterwards is instant because the data is already cached. Symlinks, system folders and other drives mounted inside are excluded to avoid double-counting.",
+      "USB drives in the File system's drive bar now have an Eject button that works like the one on the Volumes screen. If the PS5 is still holding the drive it asks before ejecting, and ejecting the drive you are currently browsing takes you back to /data. Download from the GitHub releases page."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v7.1.17 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.1.17"
+      }
+    ]
+  },
+  {
+    "id": "prosperothemes-v015-v017",
+    "date": "2026-10-22",
+    "tag": "Tool",
+    "title": "Prospero Themes v015–v017: sound themes and /data sandbox fix",
+    "summary": "Prospero Themes v015 adds sound themes that change the home screen music and UI sounds. v017 fixes the app on jailbreaks that don't give it /data access, such as OnionHEN on 10.01.",
+    "body": [
+      "Prospero Themes v015 introduces sound themes: a theme can now replace the home screen music and UI sounds (like the tile-move sound), with a new Music and Sounds setting on the System tab. When applying a theme with multiple parts the app now asks which to install — background, app backgrounds, system icons, tile icons, music and sounds, or other files. The theme pack creator can build UI sounds from any audio file. v016 adds music and sound counts to Community tab cards and lets the web creator on the store build sound themes.",
+      "v017 fixes a problem on consoles where the jailbreak doesn't give the app access to /data (for example firmware 10.01 with OnionHEN). Downloads, applying themes and the firmware report previously failed with a sandbox error; the app now detects this and routes through the theme helper instead. ThemeHelper is updated to v6 — restart the console once if an older helper was already running. Download from the GitHub releases page."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Themes v015 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.015"
+      },
+      {
+        "name": "Prospero Themes v017 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.017"
+      }
+    ]
+  },
+  {
     "id": "playden-v060",
     "date": "2026-10-22",
     "tag": "PC & Linux",
