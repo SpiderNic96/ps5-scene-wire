@@ -1,5 +1,73 @@
 [
   {
+    "id": "porpoise-v40",
+    "date": "2026-10-22",
+    "tag": "Emulator",
+    "title": "Porpoise v4.0: frame generation, simpler settings and Auto Boost",
+    "summary": "Porpoise 4.0 adds frame generation to double the frame rate of GameCube and Wii games, a simplified settings screen with Auto Boost per game, and a refreshed theme.",
+    "body": [
+      "Porpoise 4.0 introduces frame generation (beta) in Settings → Video and the in-game menu, interpolating frames so a 30 fps game displays at 60 or, with the PS5 set to 120 Hz, a 60 fps game at 120. A Simpler Settings mode shows only the most common options, while Show All Settings restores the full list. Auto Boost in a game's settings applies the best-known PS5 settings with one press. Other additions include Smooth Edges (FXAA), a Player 1 Port selector, Change Disc in the in-game menu, and the ability to Add a Code in Cheats and Patches. The theme has been redesigned with a fainter grid, no light beams and a redone Star Cube.",
+      "Performance and stability improvements include smoother quick saves and screenshots, lighter input and logging overhead, and a fix for games with large shader caches stalling on a black screen at startup. NFS shares with version 3 turned off now connect, and rumble no longer triggers unwanted Wii Remote shakes. Porpoise requires ShadowMountPlus 1.7 beta 4 or newer. Update from Settings → About → Updates, or download Porpoise-4.0.zip and replace the PPSA99764 folder in /data/homebrew/."
+    ],
+    "sources": [
+      {
+        "name": "Porpoise v4.0 release",
+        "url": "https://github.com/elripalda/Porpoise-Dolphin-Emulator-for-PS5/releases/tag/v4.0"
+      }
+    ]
+  },
+  {
+    "id": "vlc-v060",
+    "date": "2026-10-22",
+    "tag": "Media",
+    "title": "VLC v0.6.0: new redesign theme, 10-band equalizer and controller vibration",
+    "summary": "VLC for PS5 v0.6.0 adds a third interface look by Juxtopposed with dark and light themes, a 10-band audio equalizer with presets, and controller vibration feedback.",
+    "body": [
+      "VLC v0.6.0 introduces a Redesign look by Juxtopposed alongside the existing Modern and Classic interfaces, selectable in Settings › Interface › Look. Dark and Light themes are available for every look in Settings › Interface › Theme, and the first launch of v0.6 prompts you to choose your preferred style. A 10-band equalizer adds Preamp and bands from 31 Hz to 16 kHz (−20 to +20 dB), with presets you can customize into your own saved Custom sound.",
+      "Controller vibration is now active when switching tabs, changing settings and adjusting volume, and can be turned off in Settings › Interface › Controller vibration. The player bar volume control has also been reworked: move to the speaker icon and use ↑ ↓ to change volume, or press ✕ to mute. Download from the GitHub releases page and copy the app folder to your PS5."
+    ],
+    "sources": [
+      {
+        "name": "VLC v0.6.0 release",
+        "url": "https://github.com/ZiZc3/VLC/releases/tag/v0.6.0"
+      }
+    ]
+  },
+  {
+    "id": "swanstation-ps5-143",
+    "date": "2026-10-22",
+    "tag": "Emulator",
+    "title": "SwanStationPS5 1.4.3: configurable in-game menu combo and auto-refreshing cheats",
+    "summary": "SwanStationPS5 1.4.3 lets you choose how to open the in-game menu and refreshes cheat files automatically.",
+    "body": [
+      "SwanStationPS5 1.4.3 adds a Game Menu Combination setting under Settings > Controls, letting you open the in-game menu by holding the touchpad (as before), L3 + R3, or Options + touchpad. A combination already used by the analog mode combo cannot be selected. The Analog Mode Combo display now uses the controller's own button symbols instead of text labels.",
+      "Cheat and patch files now refresh on their own once the downloaded file is a day old, and a new Update Cheats button (R2) on the cheats screen lets you force a refresh. The cheat file lists are rebuilt with every release, so newly supported games and cheats are recognised sooner. Download from the GitHub releases page and copy the app folder to /data/homebrew/ on the PS5."
+    ],
+    "sources": [
+      {
+        "name": "SwanStationPS5 1.4.3 release",
+        "url": "https://github.com/darkxex/SwanStationPS5/releases/tag/1.4.3"
+      }
+    ]
+  },
+  {
+    "id": "seedee5-v123",
+    "date": "2026-10-22",
+    "tag": "Emulator",
+    "title": "Seedee5 v1.23: NAS connection fix and manual share path entry",
+    "summary": "Seedee5 1.23 fixes NAS address entry while a search is running and lets you type a share path manually for NAS servers that hide their share list.",
+    "body": [
+      "Seedee5 1.23 fixes a bug where entering a NAS address while Find NAS was still searching would silently refuse the request, leaving the old search progress on screen. A new request now stops the running search and contacts the NAS straight away. A new Type the Share Path option on the Shares page lets you manually enter a share path such as /volume1/games for NAS servers that don't list their shares (NFS 4 only, or listing turned off).",
+      "Seedee5 speaks both NFS 3 and NFS 4 (4.0). A NAS set to NFS 4.1 normally accepts 4.0 as well — choose NFS 4 in Settings › NAS › NFS Version. Update through ProsperoStore from v1.22 (settings, NAS settings, saves and BIOS restore automatically; copy console-stored games back from /data/prosperostore/previous/), or replace the PPSA99142 folder in /data/homebrew/ manually."
+    ],
+    "sources": [
+      {
+        "name": "Seedee5 v1.23 release",
+        "url": "https://github.com/mortaljinx/Seedee5/releases/tag/v1.23"
+      }
+    ]
+  },
+  {
     "id": "mario-galaxy-v110",
     "date": "2026-10-21",
     "tag": "Port",
