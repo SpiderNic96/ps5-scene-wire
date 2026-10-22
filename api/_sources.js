@@ -118,6 +118,7 @@ export const SOURCES = [
   { cat: M, repo: 'blackbearreloaded/ProsperoTube', name: 'ProsperoTube', about: 'YouTube client based on SmartTube' },
   { cat: M, repo: 'theghostonline/PS5VR', name: 'PS5VR', about: 'VR video player for PSVR2' },
   { cat: M, repo: 'fstat13/PSCapture', name: 'PSCapture', about: 'Virtual capture card for OBS and Discord' },
+  { cat: M, repo: 'bornaradusin/ProsperoRadio', name: 'ProsperoRadio', about: 'Internet radio via Radio Browser' },
 
   // Recomps and ports
   { cat: R, repo: 'Nazky/UnleashedRecomp-Prospero', name: 'Sonic Unleashed Recompiled', about: 'Xbox 360 recomp, bring your own copy' },
@@ -151,4 +152,6 @@ export const SOURCES = [
   { cat: R, repo: 'lavavex/nfs-blackbox-ps5', name: 'NFS Most Wanted (2005)', about: 'PC game via prospero-win, 4K' },
   { cat: R, repo: 'thesmokesession-bit/perfect-eye', name: 'Perfect Eye', about: 'Perfect Dark and GoldenEye 007 on PS5' },
   { cat: R, repo: 'Yahballon/4Wins', name: '4 Wins', about: 'Connect Four homebrew game' },
+  { cat: R, repo: 'tmghd272/ProsperoCraft', name: 'ProsperoCraft', about: 'Minecraft Java Edition launcher' },
+  { cat: R, repo: 'CHI-GETSU/GTA-SA-PS5-Homebrew', name: 'GTA San Andreas', about: 'Classic PC edition via Prospero Win' },
 ];

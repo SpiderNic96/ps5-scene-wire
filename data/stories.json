@@ -1,5 +1,141 @@
 [
   {
+    "id": "burnout3-v022",
+    "date": "2026-10-22",
+    "tag": "Port",
+    "title": "Burnout 3: Takedown v0.2.2: quiet logging and 30 fps crash cameras",
+    "summary": "Burnout 3 v0.2.2 silences diagnostic logging that cost frames, and reverts crash cameras and split screen to 30 fps by default.",
+    "body": [
+      "Burnout 3: Takedown v0.2.2 fixes a performance drain caused by diagnostic logging being on by default. Takedawn's logs go quiet only in its own release builds, and the PS5 build was not one, so every diagnostic line went to the console's klog and cost frames. The PS5 build now starts with logging off. The 60 fps crash cameras and 60 fps split screen options are off by default again, matching the original game's behavior — where the console can't hold 60, the game itself slows down. Both options remain in the settings menu.",
+      "Burnout 3: Takedown is a PS5 recomp of the original Xbox version via the Takedawn engine. You need your own original Xbox disc. Download v0.2.2 from the GitHub releases page and copy the app folder to /data/homebrew/ on a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "Burnout 3: Takedown v0.2.2 release",
+        "url": "https://github.com/griches/PS5_Burnout3/releases/tag/v0.2.2"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v7114",
+    "date": "2026-10-22",
+    "tag": "Tool",
+    "title": "PS5 Upload v7.1.14: maintenance release",
+    "summary": "PS5 Upload v7.1.14 is a maintenance release with no published changelog.",
+    "body": [
+      "PS5 Upload v7.1.14 follows v7.1.13 with what appears to be a minor maintenance build. No changelog was published with this release. The previous version added browser file and payload uploads, adjustable avatar cropping, and improved SMB collection handling.",
+      "PS5 Upload is a tool for managing files and payloads on a jailbroken PS5 from a browser or desktop client. Download v7.1.14 from the GitHub releases page."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v7.1.14 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.1.14"
+      }
+    ]
+  },
+  {
+    "id": "psbox-v140",
+    "date": "2026-10-22",
+    "tag": "Media",
+    "title": "PSBox Cloud Gaming v1.4.0: web remote, age ratings and DualSense speaker volume",
+    "summary": "PSBox v1.4.0 adds a local web panel with phone-based search keyboard and button remapping, content rating badges, DualSense speaker volume control, and a universal Linux AppImage.",
+    "body": [
+      "PSBox Cloud Gaming v1.4.0 introduces a local web panel served on port 8080: scan the QR code in Settings from your phone to open a responsive management interface. From there, type searches with your phone keyboard in real time, remap DualSense buttons and keyboard keys interactively, and download sanitized logs for bug reports. The game details screen now shows official age rating badges (ClassInd, ESRB, PEGI) with content descriptors. A new DualSense speaker volume slider (0–100%) appears in the in-game overlay and Settings, and bitrate caps from 5 to 50 Mbps let you fine-tune streaming bandwidth.",
+      "A new \"Get Free\" button on game details lets you claim free-to-play titles like Fortnite and Warzone directly on the PS5 without opening a browser. The app now plays the PS5 startup chime on launch. A universal .AppImage package is available for Steam Deck and Linux with SDL3 runtime and desktop integration. Download from the GitHub releases page."
+    ],
+    "sources": [
+      {
+        "name": "PSBox Cloud Gaming v1.4.0 release",
+        "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5/releases/tag/v1.4.0"
+      }
+    ]
+  },
+  {
+    "id": "prosperocraft",
+    "date": "2026-10-22",
+    "tag": "Port",
+    "title": "ProsperoCraft: Minecraft Java Edition on PS5 homebrew",
+    "summary": "ProsperoCraft is a native launcher and Java runtime that lets you play Minecraft: Java Edition on a jailbroken PS5 with your own Microsoft account.",
+    "body": [
+      "ProsperoCraft is a controller-driven launcher and Java runtime for Minecraft: Java Edition on PS5 homebrew. It downloads game files from Mojang's servers at runtime, just like the official launcher, and does not include or distribute any Minecraft data. Online play requires signing in with a Microsoft account that owns Minecraft: Java Edition through the standard device-code flow. A local offline mode with username-only is also available. Per-instance settings let you pick the Minecraft version, mods, resolution and render distance.",
+      "ProsperoCraft is a non-commercial hobby project by a single developer. No ads or monetization. The Microsoft Azure app used for sign-in is registered as ConsoleCraft. Requires a jailbroken PS5 with homebrew support."
+    ],
+    "sources": [
+      {
+        "name": "ProsperoCraft on GitHub",
+        "url": "https://github.com/tmghd272/ProsperoCraft"
+      }
+    ]
+  },
+  {
+    "id": "swanstation-ps5-144",
+    "date": "2026-10-22",
+    "tag": "Emulator",
+    "title": "SwanStationPS5 1.4.4: texture filtering changes and L3 + R3 default menu",
+    "summary": "SwanStationPS5 1.4.4 updates texture filtering and sets L3 + R3 as the default in-game menu shortcut.",
+    "body": [
+      "SwanStationPS5 1.4.4 brings texture filtering changes and makes L3 + R3 the default button combination for opening the in-game menu. The previous version (1.4.3) had added the L3 + R3 option alongside the touchpad hold and Options + touchpad; this release now selects it by default for new installs.",
+      "SwanStationPS5 is a Vulkan-based PS1 emulator for jailbroken PS5 consoles with RetroAchievements support. Download from the GitHub releases page and copy the app folder to /data/homebrew/ on the console."
+    ],
+    "sources": [
+      {
+        "name": "SwanStationPS5 1.4.4 release",
+        "url": "https://github.com/darkxex/SwanStationPS5/releases/tag/1.4.4"
+      }
+    ]
+  },
+  {
+    "id": "ps5x360-v100",
+    "date": "2026-10-22",
+    "tag": "Emulator",
+    "title": "PS5X360 v1.0.0: Xbox 360 dashboard home screen, system windows and online play",
+    "summary": "PS5X360 v1.0.0 reaches its first stable release with a Kinect-era Xbox 360 dashboard home screen, the games' own system windows on screen, online play, and the newest Xenia Canary core.",
+    "body": [
+      "PS5X360 v1.0.0 is the first stable release of the Xbox 360 emulator for PS5. The headline feature is a new home screen modeled after the Kinect-era Xbox 360 dashboard, with channels, slots that turn in perspective, and the last played game appearing as a disc in the tray with its own Marketplace art. Games' system windows (sign-in, saves, messages, keyboard) now show on screen and respond to the controller — this fixes games like Bayonetta that previously got stuck on a sign-in prompt. Online play over the internet (experimental) and System Link are now available via the Online channel. A custom Xbox 360 dashboard.xex can be loaded from the title folder, and the entire skin is replaceable.",
+      "Controller handling is improved: games that wait for \"any controller\" no longer see the pad as disconnected, and a refused vibration request no longer drops the controller. The full release also includes the newest Xenia Canary core. Compatibility varies by game, firmware and homebrew setup. Download from the GitHub releases page."
+    ],
+    "sources": [
+      {
+        "name": "PS5X360 v1.0.0 release",
+        "url": "https://github.com/BrinooTk/PS5X360/releases/tag/v1.0.0"
+      }
+    ]
+  },
+  {
+    "id": "gta-sa-ps5-homebrew",
+    "date": "2026-10-22",
+    "tag": "Port",
+    "title": "GTA San Andreas PS5 Homebrew: classic PC edition on a PS5 tile",
+    "summary": "GTA San Andreas PS5 Homebrew runs the classic PC edition of GTA San Andreas from a dedicated PS5 homebrew tile, using Sahin and Prospero Win.",
+    "body": [
+      "GTA San Andreas PS5 Homebrew wraps the classic PC edition of Grand Theft Auto: San Andreas into a dedicated PS5 homebrew tile with direct launch. It uses the Sahin launcher and Prospero Win to run the original PC game. You must supply your own legally obtained copy of the classic PC game — the Definitive Edition is not supported. DualSense controls work through the R4 DirectInput/XInput bridge, and an AUTO2 feature automatically activates native controls after a few seconds of stable controller reads.",
+      "The project is at v0.1.0-beta with support for in-game saves and persistent GTA settings. This is an unofficial community project, not affiliated with Rockstar Games, Take-Two Interactive or Sony. Requires a jailbroken PS5 with homebrew support."
+    ],
+    "sources": [
+      {
+        "name": "GTA San Andreas PS5 Homebrew on GitHub",
+        "url": "https://github.com/CHI-GETSU/GTA-SA-PS5-Homebrew"
+      }
+    ]
+  },
+  {
+    "id": "prosperoradio",
+    "date": "2026-10-22",
+    "tag": "Media",
+    "title": "ProsperoRadio: native internet radio for PS5 homebrew",
+    "summary": "ProsperoRadio is a community-maintained internet radio app for PS5, continuing BlackBearReloaded's original project with controller-first browsing of the Radio Browser catalogue.",
+    "body": [
+      "ProsperoRadio is a native internet radio application for jailbroken PS5 consoles. It lets you browse and search the Radio Browser catalogue with disk-backed caching, native PS5 audio playback, and a controller-first OpenGL interface. The project is a community-maintained continuation of the original ProsperoRadio by BlackBearReloaded, established to preserve and maintain the application.",
+      "ProsperoRadio is licensed under GPL-3.0-or-later. Requires a jailbroken PS5 with homebrew support. Download from the GitHub releases page."
+    ],
+    "sources": [
+      {
+        "name": "ProsperoRadio on GitHub",
+        "url": "https://github.com/bornaradusin/ProsperoRadio"
+      }
+    ]
+  },
+  {
     "id": "porpoise-v40",
     "date": "2026-10-22",
     "tag": "Emulator",

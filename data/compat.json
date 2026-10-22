@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21",
+  "updated": "2026-10-22",
   "about": "Firmware compatibility for the /firmware directory. Only what each project's README or release notes state. range = the developer says it supports these firmwares; tested = firmwares it has actually been run on; only = hard-locked to these firmwares; any = the developer says it isn't tied to a firmware. unstated = tracked apps whose README was checked and names no PS5 firmware (they show as not confirmed). Validate with: node scripts/compat-check.mjs",
   "firmwares": [
     "1.00",
@@ -610,6 +610,8 @@
     "bizkut/ps5-pokemmo",
     "blackbearreloaded/ProsperoTube",
     "bornaradusin/Emby5",
+    "bornaradusin/ProsperoRadio",
+    "CHI-GETSU/GTA-SA-PS5-Homebrew",
     "drakmor/kstuff-lite",
     "drakmor/nanoDNS",
     "EchoStretch/kstuff",
@@ -658,6 +660,7 @@
     "theghostonline/PS5VR",
     "TheRealRetro/mupen64plus-ps5",
     "thesmokesession-bit/perfect-eye",
+    "tmghd272/ProsperoCraft",
     "tsuramatsu1/psp5",
     "VenezuelanBiggie24/MacheteSVG-PS5-Save-Manager",
     "VoxDon3/vox-launcher",
