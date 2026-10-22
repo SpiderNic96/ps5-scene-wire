@@ -1,5 +1,73 @@
 [
   {
+    "id": "ps5upload-v7118",
+    "date": "2026-10-22",
+    "tag": "Tool",
+    "title": "PS5 Upload v7.1.18: clean-up screen, fan control and Minion overhaul",
+    "summary": "PS5 Upload v7.1.18 adds a Clean Up screen that reclaims wasted space, safer fan control, and a major Minion expansion with Games, Fan, Processes pages and on-console archive extraction.",
+    "body": [
+      "PS5 Upload v7.1.18 introduces a Clean Up screen across the desktop app, browser and PS5Upload Minion that finds space wasted by updates of removed games, leftover .pkg files (skipping your package library), temp files, and leftovers from uninstalled titles. Updates of games you still have are shown unticked with a warning. Sizes and totals are displayed first, and nothing is removed without confirmation — saves are never touched. Fan control is reworked: the helper now changes only the target temperature rather than overwriting fan settings with zeros, verifies the change took, and restores your target within about two seconds when the system resets it. Fan targets range from 45 to 85 degrees and never exceed the console's own limit. The reported fan speed, which was about four times too high, is now correct.",
+      "Minion on the TV gains four new pages: Games lets you start, close, hide or uninstall games with version, size and storage info; Fan shows temperatures, fan speed and target temperature controls; Processes lists what's running with the ability to stop games or payloads; and Files now lets you install .pkg packages and load .elf or .bin payloads directly from the console. Archive extraction (.zip, .7z, .rar including multi-part, and .tar) is now available on-console from both Minion Files and the desktop File system screen, with password support for .zip and .7z."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v7.1.18 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.1.18"
+      }
+    ]
+  },
+  {
+    "id": "ps5-ecam-v501",
+    "date": "2026-10-22",
+    "tag": "Emulator",
+    "title": "PS5-ECAM v5.0.1: Switch emulation now works, with custom loading screens and in-game menu",
+    "summary": "PS5-ECAM v5.0.1 fixes Nintendo Switch game launching and adds PS5-ECAM's own loading screen, in-game menu and full library management for Switch titles.",
+    "body": [
+      "PS5-ECAM v5.0.1 makes the Switch side actually work. Version 5.0.0 introduced Switch emulation through ProsperoEden but games did not start because the console was not passing Eden its launch arguments. The launcher now hands Eden the game in a file, and under etaHEN it requests /data access the way the main app does. Switch games launch on PS5-ECAM's own loading screen showing the game's cover and name, and the touchpad-click-plus-Options in-game menu works just like the Wii U, 3DS and DS sides — with upscaling, FSR sharpening, anti-aliasing, frame generation, performance overlay, speed limit, volume, docked or handheld mode, controller type, vibration, stick deadzone, amiibo support and a Quit button. ProsperoEden's separate launcher no longer opens, and a failed game returns to the library with the reason.",
+      "The library now reads each Switch game's own files with your prod.keys, listing every NSP and XCI under its proper title ID and name. Updates and DLC are excluded, and a game present as both NSP and XCI appears once. Box art and game pages come from GameTDB, with an option for the games' own icons. Button remapping in Settings lets you place any Switch button on any DualSense button or the touchpad click. ProsperoEden's per-game settings (memory 4/6/8 GB, async shaders, fullscreen mode) are configurable from the launcher. Update from inside the app if on 3.0.0 or later, or extract the ZIP to /data/homebrew/PPSA99360."
+    ],
+    "sources": [
+      {
+        "name": "PS5-ECAM v5.0.1 release",
+        "url": "https://github.com/premohq/PS5-ECAM/releases/tag/v5.0.1"
+      }
+    ]
+  },
+  {
+    "id": "ps5mg-v020-v022",
+    "date": "2026-10-22",
+    "tag": "Tool",
+    "title": "PS5MG v0.2.0–v0.2.2: 3D-printable exports, batch jobs and one-command weight setup",
+    "summary": "PS5MG v0.2.0 through v0.2.2 add STL and OBJ downloads sized for 3D printing, quality presets, batch image processing, PS5SD integration and a cross-platform script that downloads and copies model weights in one command.",
+    "body": [
+      "PS5MG v0.2.0 adds STL and OBJ downloads in the 3D viewer, oriented for printing and scaled to a size you specify in millimetres. Three quality presets (Fast, Balanced, Detailed) are available, with Detailed also setting a bigger texture and higher face budget. A dice button picks a random seed. You can now drop several pictures at once — each becomes its own job — and a new option picks a picture from PS5SD on the same console without copying files. Texture size is selectable (512, 1024 or 2048) under More Options, and an API button in the header provides ready-made curl commands. v0.2.1 improves the missing-weights experience: the page now lists which files are needed, their sizes and where to put them, with a Model Files status under More Options.",
+      "v0.2.2 introduces a one-command setup tool for Windows, macOS and Linux. Download the PS5MG tools ZIP from GitHub, run the setup script with your console's IP address, and it downloads the TRELLIS.2 weights (about 6.5 GB) from Hugging Face, verifies each file and copies them to the console over FTP. If interrupted, it resumes where it stopped. When weights are missing, the web interface now walks you through three steps with the command ready to copy. Model licences: TRELLIS.2 and Pixal3D are MIT; DINOv3 uses Meta's licence."
+    ],
+    "sources": [
+      {
+        "name": "PS5MG v0.2.2 release",
+        "url": "https://github.com/nikay99/PS5MG/releases/tag/v0.2.2"
+      }
+    ]
+  },
+  {
+    "id": "sahin-blur-01005-01006",
+    "date": "2026-10-22",
+    "tag": "Port",
+    "title": "Sahin (Blur) 01.005.000–01.006.000: PS5 keyboard input, Amax login and PlayStation button prompts",
+    "summary": "Sahin 01.005.000 adds PS5 system keyboard support and fixes online login in Blur, while 01.006.000 replaces Xbox 360 button prompts with DualSense buttons and skips intro movies.",
+    "body": [
+      "Sahin 01.005.000 lets you type in Blur using the PS5's own system keyboard. Hold the touchpad and press triangle to open it — what you confirm is typed into the focused field as a USB keyboard would. This covers the Amax login, player names and chat without needing a physical keyboard. The update also fixes Amax online login: Blur checks for a network adapter before connecting, and Wine on the PS5 reported none, so the game said the server was unavailable without trying. Sahin now reads the console's network settings (address, netmask, gateway) and provides them to Wine as Blur's adapter. No reinstall is needed.",
+      "Sahin 01.006.000 replaces the Xbox 360 button prompts (A, B, X, Y, bumpers) with DualSense buttons (cross, circle, square, triangle, L1/R1, L2/R2) using custom-drawn textures injected through DS2TexInject. The update also skips the intro movies (Activision and Bizarre Creations logos and the attract movie) so Blur starts directly at the title screen. Your copy keeps the original movies. After updating, press Repair (triangle) on Sahin's page to apply both changes to the installed game. Requires a jailbroken PS5 with ShadowMount+ and your Blur folder in /data/sahin/base-games/Blur or on USB."
+    ],
+    "sources": [
+      {
+        "name": "Sahin 01.006.000 release",
+        "url": "https://github.com/7tg/sahin/releases/tag/01.006.000"
+      }
+    ]
+  },
+  {
     "id": "ps5mg",
     "date": "2026-10-22",
     "tag": "Tool",
