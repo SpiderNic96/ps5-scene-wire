@@ -1,5 +1,145 @@
 [
   {
+    "id": "ludemos-ps5",
+    "date": "2026-10-23",
+    "tag": "PC & Linux",
+    "title": "LudemOS: a gaming Linux distribution for the PS5 Slim",
+    "summary": "LudemOS installs a complete CachyOS-based Linux system to the PS5 Slim’s M.2 SSD over Wi-Fi, boots from the home screen with the controller, and puts Windows and Linux games in a console-style launcher with Proton — no Steam required.",
+    "body": [
+      "LudemOS by ldm087 is a gaming Linux distribution built for the PS5 Slim. It installs to a dedicated M.2 SSD entirely over Wi-Fi (no USB drive, PC cables or keyboard needed), dual-boots from a LudemOS icon on the PS5 home screen via the Relapse exploit, and lands in a full-screen Qt6/QML launcher called LudemOS Home. The launcher shows Windows games through Proton without Steam, Linux games, and an optional Steam library, with per-game presets, virtual gamepad support and automatic cover art. The kernel (7.1.7-ludemos) includes six patches for the Slim’s hardware: MediaTek MT7921 Wi-Fi and Bluetooth, DualSense over BT, fan control, CPU/GPU frequency ranges and HDMI audio. A power management daemon drives the fan and clocks, idling at 43 °C and boosting within seconds of starting a game.",
+      "The project also includes LudemNR, an ongoing research effort on a neural upscaler for the PS5 GPU. Source code has not been published yet and will appear in the repository once the project is ready for others to use. Requires a PS5 Slim on firmware 13.60 (or another firmware supported by Relapse and ps5-linux-loader) and a dedicated M.2 SSD; PS5 game storage on that SSD is lost. Consoles on firmware 14.00 or later are not supported."
+    ],
+    "sources": [
+      {
+        "name": "LudemOS for PS5 on GitHub",
+        "url": "https://github.com/ldm087/ludemos-ps5"
+      }
+    ]
+  },
+  {
+    "id": "prosperokit",
+    "date": "2026-10-23",
+    "tag": "Tool",
+    "title": "ProsperoKit: build native PS5 homebrew apps with React and Tailwind",
+    "summary": "ProsperoKit is a framework for building native PS5 homebrew apps using React 19, TanStack Start and Tailwind CSS, rendered by a Rust engine with DualSense spatial focus — no browser involved.",
+    "body": [
+      "ProsperoKit by AdamGoodApp is a developer framework for building native PS5 homebrew apps. A QuickJS runtime executes React 19 and TanStack Start code while a Rust engine handles layout, text shaping and rasterisation through sceVideoOut. The DualSense drives a spatial focus system with focus:/active:/disabled: Tailwind variants mapping to controller states. The framework includes a shadcn-style component registry pre-styled to match the PS5 system UI, native API bindings for notifications, the system keyboard (IME), pad vibration, light bar, audio and file access, and a desktop host with hot reload on both PC and console.",
+      "Developers scaffold a new app with pnpm create prosperokit, develop with live reload on desktop or directly on the PS5 over the network, and deploy to /data/homebrew/ via FTP. Apps are built with the PS5 payload SDK and are GPL-3.0-or-later. Requires Node 22.18+, pnpm 12, Rust (nightly) and a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "ProsperoKit on GitHub",
+        "url": "https://github.com/AdamGoodApp/prosperokit"
+      }
+    ]
+  },
+  {
+    "id": "psbox-v150",
+    "date": "2026-10-23",
+    "tag": "Media",
+    "title": "PSBox Cloud Gaming v1.5.0: one-click free game acquisition and delta library updates",
+    "summary": "PSBox v1.5.0 adds instant free game acquisition directly on the PS5, delta library updates that download only new metadata, and reorganised settings.",
+    "body": [
+      "PSBox Cloud Gaming v1.5.0 by RafaelNGP adds one-click acquisition for free-to-play Xbox Cloud Gaming titles. When a free game or launcher (such as Call of Duty HQ or Final Fantasy XIV Free Trial) hasn’t been claimed yet, the error screen now offers a direct Acquire Free button that licenses the game instantly through the Microsoft Store API on the PS5 itself — no phone or QR code needed. The library refresh (L3) has been reworked with delta updates: instead of rebuilding the library from scratch, the app compares local titles with the online catalogue and downloads only new metadata, with a notification showing exactly how many games were added.",
+      "Other changes include reorganised settings that prioritise network, region and connection options, a new Restore Defaults button with a five-second confirmation guard, a refined Free filter that shows which Cloud Gaming titles cost nothing and distinguishes between free games and those in the Game Pass catalogue. Requires a jailbroken PS5 with ShadowMountPlus and an Xbox/Microsoft account with Game Pass Ultimate."
+    ],
+    "sources": [
+      {
+        "name": "PSBox v1.5.0 release",
+        "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5/releases/tag/v1.5.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v7119",
+    "date": "2026-10-23",
+    "tag": "Tool",
+    "title": "PS5 Upload v7.1.19: disc file downloads, automatic bring-up and multi-queue streaming",
+    "summary": "PS5 Upload v7.1.19 lets you download files from a data disc in the drive, connect a saved PS5 automatically when its loader appears, and stream multiple packages at once from any source.",
+    "body": [
+      "PS5 Upload v7.1.19 by phantomptr fixes disc file access: downloading a file from a data DVD or Blu-ray in /mnt/disc previously failed with \"not allowed\" and now works, with the disc remaining read-only. A new Quick bring-up switch in Connection settings (desktop) lets the app connect a saved PS5 automatically — when the console’s ELF loader is up and the helper isn’t running, it runs your bring-up playlist, sends the helper and runs your autoloader, with no clicks. This fires once per cold boot (about 90 seconds after the loader appears) and after rest mode only the helper is re-sent.",
+      "Streaming several packages at once now works from saved servers, Android and \"From this device\" in the browser, queued base game first, then update, then DLC. Queue icons appear immediately. The Edit Image feature on desktop opens every format ps5upload reads (.exfat, .ffpkg, .ffpfs, .ffpfsc and debug .pkg) on Windows and in the browser version, letting you browse folder sizes and save any file or folder. Requires a jailbroken PS5 with an ELF loader (elfldr)."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v7.1.19 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.1.19"
+      }
+    ]
+  },
+  {
+    "id": "ps5mg-v024",
+    "date": "2026-10-23",
+    "tag": "Tool",
+    "title": "PS5MG v0.2.4: view generated 3D meshes directly on the TV",
+    "summary": "PS5MG v0.2.4 adds an on-console mesh viewer: press Cross to display the latest mesh textured on the TV, rotate with the left stick, zoom with L2/R2 and browse meshes with L1/R1.",
+    "body": [
+      "PS5MG v0.2.4 by nikay99 adds an interactive 3D mesh viewer directly on the PS5. When the title is idle, pressing Cross on the controller displays the newest generated mesh, fully textured, on the TV. The left stick rotates the model, L2/R2 zoom in and out, L1/R1 cycle through previously generated meshes, and Circle returns to the main screen. Button hints are shown on-screen, no job starts while a mesh is displayed, and the viewer closes itself after two minutes without input.",
+      "PS5MG uses TRELLIS.2 and Pixal3D to generate 3D meshes on the PS5’s hardware. It has no network client and downloads nothing — model weights (about 6.5 GB from MIT and Meta-licensed sources) must be set up once from a PC using the included setup script. Requires a jailbroken PS5; install the title to /data/homebrew/."
+    ],
+    "sources": [
+      {
+        "name": "PS5MG v0.2.4 release",
+        "url": "https://github.com/nikay99/PS5MG/releases/tag/v0.2.4"
+      }
+    ]
+  },
+  {
+    "id": "prosperothemes-v020",
+    "date": "2026-10-23",
+    "tag": "Tool",
+    "title": "Prospero Themes 01.000.020: experimental tile icon support on firmware 13.60 and 10.01",
+    "summary": "Prospero Themes 01.000.020 adds experimental support for replacing system tile icons on firmware 13.60 and 10.01, where the icons live in a different path than on 13.00.",
+    "body": [
+      "Prospero Themes 01.000.020 by Darkatek7 tackles tile icon support beyond firmware 13.00. On 13.00 the PS5 home screen reads system tile icons (Store, Game Library, Media Gallery and others) from /mnt/rnps/apps, but on 13.60 and 10.01 that folder is empty. Thanks to a community-contributed app.db query, the app now knows those firmwares read icons from /system_ex/rnps/apps and writes tile icons there when the /mnt/rnps/apps copy is absent. The repository also ships new icon catalogs for 10.01 and 13.60. This feature is marked experimental — it has only been tested on 13.00 so far, and users on other firmware are asked to report results.",
+      "The release also fixes theme_pack.py’s catalog-from-report command, which no longer stops on a report whose icon container could not be read. A new ThemeHelper v7 is included that can write tile icons under /system_ex/rnps/apps; the console must be restarted once after updating, then the jailbreak and ELF loader started again. Requires a jailbroken PS5 with elfldr and ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Themes 01.000.020 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.020"
+      }
+    ]
+  },
+  {
+    "id": "ps5-homeassistant-v030",
+    "date": "2026-10-23",
+    "tag": "Tool",
+    "title": "PS5 Home Assistant v0.3.0: live events, game launching and extended storage sensors",
+    "summary": "PS5 Home Assistant v0.3.0 adds live event entities for trophies, downloads, game starts and storage jobs, lets you start games from Home Assistant, and reports free space on extended storage and USB.",
+    "body": [
+      "PS5 Home Assistant v0.3.0 by Marice adds four event entities for Home Assistant automations. Trophy events (bronze, silver, gold, platinum) and download events (installed, ready, addon ready, update added) are read from the console’s notification list every two seconds. Game started/stopped events come from ps5-exporter, and storage job events (completed, failed, cancelled) come from ShadowMountPlus’s copy, move, unpack and delete jobs. A trophy event also names the running game. New sensors report free space on extended storage (/mnt/ext1) and the first USB drive (/mnt/usb0), and a diagnostic sensor shows the status of each payload in ps5-autoloader’s boot chain with a Start button for payloads that aren’t running.",
+      "The headline addition is game launching from Home Assistant: a select entity lists every title ShadowMountPlus knows about, and a Start Game button launches the chosen title (it refuses while a game is already running). The payload now bundles SQLite 3.46.1 to read the notification list, growing from 168 KB to about 1.07 MB. Requires a jailbroken PS5 with ps5-exporter 0.3.0+ and ps5-signal."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Home Assistant v0.3.0 release",
+        "url": "https://github.com/Marice/ps5-homeassistant/releases/tag/v0.3.0"
+      }
+    ]
+  },
+  {
+    "id": "sahin-blur-01007-01008",
+    "date": "2026-10-23",
+    "tag": "Port",
+    "title": "Sahin (Blur) 01.007.000–01.008.000: Turkish text and Amax DLL override fix",
+    "summary": "Sahin adds Turkish text support for Blur’s menus in 01.007.000 and fixes the Amax client’s DLL override formatting in 01.008.000.",
+    "body": [
+      "Sahin 01.007.000 by 7tg adds Turkish text support for Blur. A new option on Sahin’s page installs blur-tr, which shows Blur’s menus and in-game text in Turkish while keeping the voices in English. It is on by default on a PS5 set to Turkish and off on all other languages. The translation is downloaded by the console at install time, pinned by SHA-256. Existing installs can enable it from Sahin’s page and pressing Repair. Sahin 01.008.000 follows with a fix for the Amax client extras: the DLL override line was being concatenated incorrectly (d3d9=n ran into the ASI loader’s override), causing malformed profiles. Overrides now join with a proper semicolon separator. Users with Amax client extras enabled should press Repair once after updating.",
+      "Sahin runs the PC version of Blur on the PS5 via prospero-win with online multiplayer through the Amax client. Requires a jailbroken PS5 with ShadowMount+ and your own copy of Blur (the retail exe carries SecuROM copy protection, which doesn’t run under Wine). Install by copying the PPSA99404 folder to /data/homebrew/."
+    ],
+    "sources": [
+      {
+        "name": "Sahin 01.008.000 release",
+        "url": "https://github.com/7tg/sahin/releases/tag/01.008.000"
+      },
+      {
+        "name": "Sahin 01.007.000 release",
+        "url": "https://github.com/7tg/sahin/releases/tag/01.007.000"
+      }
+    ]
+  },
+  {
     "id": "jobeeslair-v051",
     "date": "2026-10-23",
     "tag": "Store",

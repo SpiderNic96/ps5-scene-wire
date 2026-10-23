@@ -293,7 +293,7 @@
         "elfldr",
         "ShadowMountPlus"
       ],
-      "note": "Developer says nothing is tied to 13.00; 13.40 and later need 01.000.004 or newer."
+      "note": "Tile icons on 13.60 and 10.01 are experimental since 01.000.020; only fully tested on 13.00."
     },
     "psksuffsmp/ps5-stream8": {
       "only": [
@@ -556,7 +556,7 @@
       "needs": [
         "ps5-exporter"
       ],
-      "note": "Requires ps5-exporter 0.3.0+ and ps5-signal for light/beep control"
+      "note": "Requires ps5-exporter 0.3.0+ and ps5-signal. v0.3.0 adds ShadowMountPlus and ps5-autoloader integration for game launching and storage events."
     },
     "lavavex/nfs-blackbox-ps5": {
       "tested": [
@@ -600,6 +600,16 @@
       "tested": [
         "13.60"
       ]
+    },
+    "ldm087/ludemos-ps5": {
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "Relapse",
+        "ps5-linux-loader"
+      ],
+      "note": "PS5 Slim only. Installs to M.2 SSD. Developer says it works on any firmware supported by Relapse and ps5-linux-loader, but only tested on 13.60."
     }
   },
   "unstated": [
@@ -668,6 +678,7 @@
     "VoxDon3/vox-launcher",
     "Yahballon/4Wins",
     "ZiZc3/VLC",
-    "ZiZc3/XPSemu"
+    "ZiZc3/XPSemu",
+    "AdamGoodApp/prosperokit"
   ]
 }

@@ -76,6 +76,7 @@ export const SOURCES = [
   { cat: T, repo: 'J7mbo/nasbridge-ps5', name: 'NASBridge', about: 'Browse and install games from your NAS over WebDAV or SMB' },
   { cat: T, repo: 'griches/PS5_ArtSwap', name: 'Art Swap', about: 'Change home-screen icons and backgrounds with SteamGridDB art' },
   { cat: T, repo: 'VoxDon3/vox-launcher', name: 'VoX Launcher', about: 'Payload launcher with built-in web dashboard' },
+  { cat: T, repo: 'AdamGoodApp/prosperokit', name: 'ProsperoKit', about: 'React + Tailwind framework for native PS5 homebrew apps' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },
@@ -108,6 +109,7 @@ export const SOURCES = [
   { cat: P, repo: 'mpereiraesaa/prospero-win', name: 'prospero-win', about: 'Wine for PS5 homebrew' },
   { cat: P, repo: 'leolobato/playden-ps5', name: 'Playden', about: 'Play your Steam Windows games' },
   { cat: P, repo: 'bizkut/ps5-pokemmo', name: 'PokeMMO for PS5', about: 'PokeMMO client through Wine' },
+  { cat: P, repo: 'ldm087/ludemos-ps5', name: 'LudemOS', about: 'Gaming Linux distro for PS5 Slim with console-style launcher' },
 
   // Media and streaming
   { cat: M, repo: 'RafaelNGP/xbox-cloud-gaming-ps5', name: 'PSBox Cloud Gaming', about: 'Xbox Cloud Gaming client' },
