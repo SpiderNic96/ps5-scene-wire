@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22",
+  "updated": "2026-10-23",
   "about": "Firmware compatibility for the /firmware directory. Only what each project's README or release notes state. range = the developer says it supports these firmwares; tested = firmwares it has actually been run on; only = hard-locked to these firmwares; any = the developer says it isn't tied to a firmware. unstated = tracked apps whose README was checked and names no PS5 firmware (they show as not confirmed). Validate with: node scripts/compat-check.mjs",
   "firmwares": [
     "1.00",
@@ -611,6 +611,7 @@
     "blackbearreloaded/ProsperoTube",
     "bornaradusin/Emby5",
     "bornaradusin/ProsperoRadio",
+    "ChaDea1/Bedlam2-PS5",
     "CHI-GETSU/GTA-SA-PS5-Homebrew",
     "drakmor/kstuff-lite",
     "drakmor/nanoDNS",

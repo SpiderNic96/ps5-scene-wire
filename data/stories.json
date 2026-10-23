@@ -1,5 +1,56 @@
 [
   {
+    "id": "jobeeslair-v051",
+    "date": "2026-10-23",
+    "tag": "Store",
+    "title": "Jobee'sLair v0.5.1: fixed game launches, 13.60 compatibility labels and AllDebrid support",
+    "summary": "Jobee'sLair v0.5.1 fixes the \"Can't start the game or app\" error that broke most archive-based downloads in v0.5.0, adds at-a-glance 13.60 compatibility labels and AllDebrid as a second debrid service.",
+    "body": [
+      "Jobee'sLair v0.5.1 by JVK3R fixes the biggest issue in v0.5.0: games downloaded as archives (RAR, 7z, zip) were unpacked with file attributes the console refused to run, causing a \"Can't start the game or app\" error on every launch. The fix works in three places — new downloads are unpacked correctly, every already-extracted game is repaired automatically on first launch of v0.5.1, and newly installed games are opened once as a second guard. Games delivered as .exfat or .ffpfsc images were never affected. The release also adds 13.60-ready labels so each game page shows how many of its links run on your console, a live catalog refreshed every few hours with proper deduplication and PlayStation Store ratings, and AllDebrid alongside TorBox as a debrid download service.",
+      "Other additions include per-game fakelib toggling from the Library (with a diagnostic hint when fakelibs cause a launch failure), a two-press bug reporter that sends logs to Discord with keys and passwords blanked out, in-app update notifications, download management (clear finished, cancel all), and a full-screen screen saver. The in-app updater itself was re-released on October 23 with three quick fixes for the update flow. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "Jobee'sLair v0.5.1 release",
+        "url": "https://github.com/JVK3R/JobeesLair/releases/tag/v0.5.1"
+      }
+    ]
+  },
+  {
+    "id": "swanstation-ps5-145",
+    "date": "2026-10-23",
+    "tag": "Emulator",
+    "title": "SwanStationPS5 1.4.5: profile persistence fix",
+    "summary": "SwanStationPS5 1.4.5 fixes a bug where newly created profiles were not saved, causing the app to revert to the main profile on restart.",
+    "body": [
+      "SwanStationPS5 1.4.5 by darkxex fixes profile persistence: a newly created profile was never written to the profile list, so the app fell back to the main profile every time it reopened. The last-used profile is now remembered across sessions. Switching profiles also clears the previous profile's per-game settings state, preventing stale settings from carrying over.",
+      "SwanStationPS5 is a Vulkan-based PS1 emulator for jailbroken PS5 consoles with RetroAchievements support. Download the release from GitHub and install via FTP to /data/homebrew/ on the console."
+    ],
+    "sources": [
+      {
+        "name": "SwanStationPS5 1.4.5 release",
+        "url": "https://github.com/darkxex/SwanStationPS5/releases/tag/1.4.5"
+      }
+    ]
+  },
+  {
+    "id": "bedlam2-ps5",
+    "date": "2026-10-23",
+    "tag": "Port",
+    "title": "Bedlam 2: Absolute Bedlam — native PS5 port with twin-stick DualSense controls",
+    "summary": "Bedlam 2: Absolute Bedlam is an unofficial native PS5 port of the 1998 robot strategy game, featuring twin-stick controls, HUD scaling and persistent saves. Original game data required.",
+    "body": [
+      "Bedlam 2: Absolute Bedlam PS5 by ChaDea1 is an unofficial native port of the 1998 DOS robot strategy game, based on the 8street source project. It runs the game engine with an SDL frontend and DualSense support instead of through DOSBox, offering twin-stick play (left stick to move, right stick to aim), D-pad menu navigation and squad selection, L1/R1 weapon cycling and map toggling, three HUD sizes (100%/150%/200%), an enlarged crosshair with drop shadow, and pause/exit confirmations. The active PS5 profile name fills the game's default player-name field.",
+      "Release candidate 4 fixes a crash when the active robot dies, corrects the opening splash palette and reduces memory use by resampling sound effects during playback. Installation requires ShadowMountPlus, FTP access and your own copy of the original Bedlam 2 game data placed in /data/Bedlam2PS5/content/. Saves persist in /data/Bedlam2PS5/saves/ and survive app updates."
+    ],
+    "sources": [
+      {
+        "name": "Bedlam 2 PS5 GitHub",
+        "url": "https://github.com/ChaDea1/Bedlam2-PS5"
+      }
+    ]
+  },
+  {
     "id": "genplusgx-v21",
     "date": "2026-10-23",
     "tag": "Emulator",

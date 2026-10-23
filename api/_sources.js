@@ -155,4 +155,5 @@ export const SOURCES = [
   { cat: R, repo: 'Yahballon/4Wins', name: '4 Wins', about: 'Connect Four homebrew game' },
   { cat: R, repo: 'tmghd272/ProsperoCraft', name: 'ProsperoCraft', about: 'Minecraft Java Edition launcher' },
   { cat: R, repo: 'CHI-GETSU/GTA-SA-PS5-Homebrew', name: 'GTA San Andreas', about: 'Classic PC edition via Prospero Win' },
+  { cat: R, repo: 'ChaDea1/Bedlam2-PS5', name: 'Bedlam 2: Absolute Bedlam', about: 'Native DOS game port with DualSense twin-stick controls' },
 ];
