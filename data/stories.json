@@ -1,5 +1,94 @@
 [
   {
+    "id": "genplusgx-v21",
+    "date": "2026-10-23",
+    "tag": "Emulator",
+    "title": "Genesis Plus GX PS5 v2.1: network shares, shelf tabs, borders, cheats and four years of updates",
+    "summary": "Genesis Plus GX PS5 v2.1 adds NAS and PC network-share playback, shelf tabs, per-game borders from The Bezel Project, cheat support and cover lookups, bundling every update since v1.7.",
+    "body": [
+      "Genesis Plus GX PS5 v2.1 by MisterTemaki is the first GitHub release since v1.7 and bundles everything from v1.8 through v2.0 — the GPU renderer with slang shaders, five interface languages, safer saves, per-game settings, the shader cache with tunable parameters, custom presets and a GPU-drawn shelf. New in v2.1: ROMs and Sega CD disc images can be played from a NAS or PC over SMB and NFS (Settings > Network shares), with cartridges read in full and discs streaming during play. The shelf gains Internal, USB and Network tabs switched with L1/R1, and L2/R2 skips ten games at a time.",
+      "Borders from The Bezel Project are available for Mega Drive, Sega CD, Master System, Game Gear and SG-1000, downloaded automatically or in bulk via Settings > Download all borders. Cheats use libretro-database .cht files and reload when the file changes. An online cover database (Hasheous) fills in 1,638 games that libretro-thumbnails lacks. Debug logs are off by default. The SMB and NFS libraries are at the newest upstream code, including the fix for CVE-2025-57632. Requires an ELF loader (elfldr, etaHEN or similar) on a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "Genesis Plus GX PS5 v2.1 release",
+        "url": "https://github.com/MisterTemaki/genplusgxPS5/releases/tag/v2.1"
+      }
+    ]
+  },
+  {
+    "id": "ps5x360-v102",
+    "date": "2026-10-23",
+    "tag": "Emulator",
+    "title": "PS5X360 v1.0.2: online play fixes, full localisation, dark theme and Content Installer",
+    "summary": "PS5X360 v1.0.2 fixes online play on PS5 so games like Halo 3 and Modern Warfare 2 reach Xbox LIVE, adds every listed language, a dark theme, and a Windows Content Installer for DLC and title updates.",
+    "body": [
+      "PS5X360 v1.0.2 by BrinooTk fixes the critical online-play hang that prevented games from reaching the Xenia server on PS5: socket close requests that took 55 seconds on the console now complete in under a second. Call of Duty: Modern Warfare 2 no longer black-screens at start with online enabled, and Halo 3 online sessions, connection checks and leaderboards are confirmed working. Each network request is logged with its result and time, and a 10-second connect / 30-second total timeout prevents freezes from unresponsive servers. UPnP port mapping now uses the correct remapped ports (PS5 shifts ports below 1024 by adding 10000).",
+      "Every language the emulator lists now works throughout the interface. A dark theme is available. A new Windows Content Installer app sends DLC and title updates to the emulator over the network. Helper is updated to v1.3.0. The release notes caution that compatibility varies by game, firmware and homebrew setup, and that joining and completing a full online match with other players has not yet been confirmed. Requires an ELF loader on a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "PS5X360 v1.0.2 release",
+        "url": "https://github.com/BrinooTk/PS5X360/releases/tag/v1.0.2"
+      }
+    ]
+  },
+  {
+    "id": "ps5mg-v023",
+    "date": "2026-10-23",
+    "tag": "Tool",
+    "title": "PS5MG v0.2.3: performance fix eliminates slowdown after repeated jobs",
+    "summary": "PS5MG v0.2.3 fixes a bug where each successive 3D-mesh job ran up to 2.6 times slower after 15 runs, and shrinks untextured GLB exports from 30–130 MB to about 0.3 MB.",
+    "body": [
+      "PS5MG v0.2.3 by nikay99 fixes a performance regression present since launch: up to v0.2.2 each successive job ran progressively slower, taking roughly 2.6 times longer after 15 jobs in a row. In testing, 80 consecutive jobs now all finish at the same speed. Jobs without texture are now simplified to the face budget like textured ones, shrinking their GLB output from 30–130 MB to about 0.3 MB.",
+      "Logging has been moved to a dedicated thread so slow writes no longer hold up jobs, and output is significantly less verbose. A quit file left from an earlier run no longer terminates a freshly started session. Model weights (about 6.5 GB via the setup scripts) are still required separately — see the README for the one-command setup on Windows, macOS and Linux. TRELLIS.2 and Pixal3D are MIT-licensed; DINOv3 uses Meta's licence. Requires an ELF loader on a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "PS5MG v0.2.3 release",
+        "url": "https://github.com/nikay99/PS5MG/releases/tag/v0.2.3"
+      }
+    ]
+  },
+  {
+    "id": "prosperothemes-v018-v019",
+    "date": "2026-10-23",
+    "tag": "Tool",
+    "title": "Prospero Themes 018–019: interactive preview and a phone-based theme creator",
+    "summary": "Prospero Themes 01.000.018 adds an interactive home-screen preview you can navigate, and 01.000.019 adds a phone-based web theme creator via QR code.",
+    "body": [
+      "Prospero Themes 01.000.018 by Darkatek7 replaces the static theme preview with an interactive home screen: tile icons appear in the home row, the background follows the focused tile so per-app backgrounds display correctly, and you can move around to see exactly how a theme will look before applying it. Version 01.000.019 adds a \"Make your own theme\" card in the USB Import tab. Scanning the QR code with your phone opens a web-based theme creator where you can build a theme in the browser, download it and import it into the app.",
+      "The Community tab and empty-library screen also link to the web creator. The theme_pack.py verification tool no longer falsely reports packs with all-apps or per-app backgrounds as invalid. ThemeHelper remains at v6, so no restart is needed. To install, extract PPSA90210.zip and copy the PPSA90210 folder to /data/homebrew/ on the console. ShadowMountPlus registers it. The app requires an ELF loader on port 9021 (elfldr) on a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Themes 01.000.019 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.019"
+      },
+      {
+        "name": "Prospero Themes 01.000.018 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.018"
+      }
+    ]
+  },
+  {
+    "id": "recompstore-v260",
+    "date": "2026-10-23",
+    "tag": "Store",
+    "title": "RecompStore v2.6.0: 20 languages, file manager, in-app patch notes and streamlined game setup",
+    "summary": "RecompStore v2.6.0 adds 20-language localisation, a full-screen file manager, an Updates tab with inline patch notes, and game pages that explain setup type and copy files for you.",
+    "body": [
+      "RecompStore v2.6.0 by elripalda adds full localisation in 20 languages, following the PS5's system language or set manually in Settings > General > Language. Descriptions and patch notes are translated too. A new full-screen file manager (My Apps > Drives) lets you copy, move, rename and delete files, create folders and pin favourite locations. Updates get their own tab when something is waiting, and pressing Square on a row shows its patch notes inline.",
+      "Each game page now shows its setup type — Plug and play, Bring your files or Manual setup. Games that require a folder of user-supplied files (like Half-Life's valve folder) let you pick the folder and copy it automatically. Pressing Open right after an install shows a loading screen while ShadowMountPlus adds it to the home screen, avoiding the \"Can't find the game or app\" error. Menu music volume goes higher, colour transitions are smoother, and numerous small fixes are included. Update from inside the store or send RecompStore-Installer.elf with a payload sender."
+    ],
+    "sources": [
+      {
+        "name": "RecompStore v2.6.0 release",
+        "url": "https://github.com/elripalda/RecompStore/releases/tag/v2.6.0"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v7118",
     "date": "2026-10-22",
     "tag": "Tool",
