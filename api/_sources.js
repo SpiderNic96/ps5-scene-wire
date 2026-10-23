@@ -77,6 +77,7 @@ export const SOURCES = [
   { cat: T, repo: 'griches/PS5_ArtSwap', name: 'Art Swap', about: 'Change home-screen icons and backgrounds with SteamGridDB art' },
   { cat: T, repo: 'VoxDon3/vox-launcher', name: 'VoX Launcher', about: 'Payload launcher with built-in web dashboard' },
   { cat: T, repo: 'AdamGoodApp/prosperokit', name: 'ProsperoKit', about: 'React + Tailwind framework for native PS5 homebrew apps' },
+  { cat: T, repo: 'ghost1372/PS5-Payload-Template', name: 'PS5 Payload Template', about: 'Boilerplate for payloads with a web UI and SQLite' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },

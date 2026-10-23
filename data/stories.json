@@ -1,5 +1,73 @@
 [
   {
+    "id": "artswap-v130",
+    "date": "2026-10-23",
+    "tag": "Tool",
+    "title": "Art Swap v1.3.0: one-press apply, home screen logos, custom music and sorting",
+    "summary": "Art Swap v1.3.0 adds Apply changes (R2) to show all swapped art at once, logos from SteamGridDB for game pages, custom music for home screen tiles, and three sorting modes.",
+    "body": [
+      "Art Swap v1.3.0 by griches overhauls how changes reach the home screen. A new Apply changes button (R2) restarts the home screen and shows every change at once — icons, backgrounds and renames — regardless of how the game was installed. Logos (Square) let you put a SteamGridDB logo on a game's home screen page where plain text normally shows. A Music option (OPTIONS menu) lets you send audio from your phone via QR code or copy MP3, FLAC, WAV or AIFF files to /data/artswap/music, pick a clip and hear it as the home screen will play it; Art Swap converts it to snd0.at9 on the console using a port of BlackBearReloaded's ps5-at9-converter. Homebrew installed from a folder that has no background can now get one, and Sorting (L2) offers the home screen's own order, A–Z, or changed-first.",
+      "The controls are reorganised into face buttons for art and shoulder buttons for navigation, with Restore moved to the OPTIONS menu. Requires a jailbroken PS5 with etaHEN or kstuff, ShadowMountPlus 1.7+ (for renames, added backgrounds and music), an ELF loader on port 9021, and your own SteamGridDB API key (free at steamgriddb.com). Install by copying the PPSA99318 folder to /data/homebrew/ or updating from ProsperoStore."
+    ],
+    "sources": [
+      {
+        "name": "Art Swap v1.3.0 release",
+        "url": "https://github.com/griches/PS5_ArtSwap/releases/tag/v1.3.0"
+      }
+    ]
+  },
+  {
+    "id": "genplusgx-v211",
+    "date": "2026-10-23",
+    "tag": "Emulator",
+    "title": "Genesis Plus GX PS5 v2.1.1: network share fix for the GPU build",
+    "summary": "Genesis Plus GX PS5 v2.1.1 fixes network shares in the GPU (Vulkan) build, where every share failed with a misleading address error since v2.1.",
+    "body": [
+      "Genesis Plus GX PS5 v2.1.1 by MisterTemaki fixes a bug in the GPU build introduced in v2.1: every network share (SMB and NFS) failed with \"No server named ... was found. Use its IP address.\" even when given an IP address. The Vulkan driver's platform layer was replacing the app's own address lookup and folder listing functions, causing all share connections to fail. The fix restores the app's own implementations and adds a build-time check to prevent the same class of linker override from happening again. The CPU-only build was not affected.",
+      "Network sockets are also now made non-blocking using the standard method first (matching SwanStationPS5's approach), with the console-specific switch as a fallback. The release is marked as untested on hardware — the developer asks users to report whether shares connect, with debug logs enabled (Settings > Debug logs, output in /data/genplus/logs/). Requires an ELF loader on a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "Genesis Plus GX PS5 v2.1.1 release",
+        "url": "https://github.com/MisterTemaki/genplusgxPS5/releases/tag/v2.1.1"
+      }
+    ]
+  },
+  {
+    "id": "welcomehubactivator-v110",
+    "date": "2026-10-23",
+    "tag": "Tool",
+    "title": "WelcomeHubActivator v1.1.0: graphical UI and toggle support",
+    "summary": "WelcomeHubActivator v1.1.0 adds a user interface and the ability to both activate and deactivate the Welcome Hub, plus fixes for DNS and loading errors.",
+    "body": [
+      "WelcomeHubActivator v1.1.0 by ghost1372 replaces the headless payload with a graphical interface. Users can now both activate and deactivate the Welcome Hub through the UI instead of running separate payloads. The update fixes the \"Something went wrong\" error that appeared when loading the Welcome Hub after initial activation, and resolves an issue where the Welcome Hub would disappear or fail to appear after configuring DNS or nanoDNS.",
+      "The Welcome Hub is the content discovery screen Sony introduced in firmware 10.00. WelcomeHubActivator supports firmware 10.00 through 13.60 and creates a backup of app.db before making changes. Requires an ELF loader on a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "WelcomeHubActivator v1.1.0 release",
+        "url": "https://github.com/ghost1372/WelcomeHubActivator/releases/tag/v1.1.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5-payload-template",
+    "date": "2026-10-23",
+    "tag": "Tool",
+    "title": "PS5 Payload Template: a starting point for payloads with a web UI",
+    "summary": "PS5 Payload Template by ghost1372 is a boilerplate project for building PS5 payloads that include an HTTP server, web interface and optional SQLite — configure and build your own tool in minutes.",
+    "body": [
+      "PS5 Payload Template by ghost1372 provides a ready-made scaffold for creating PS5 payloads that come with a web UI. The template includes a single-threaded HTTP server handling GET and POST requests with JSON, HTML or file responses; a clean web page served from the payload at the console's IP and port; SQLite wired into the Makefile with console database paths predefined; and automatic opening of the console's built-in browser (or off if you prefer a laptop). All project-specific strings and constants live in a single config.h file.",
+      "Out of the box the payload does nothing except show its own page — everything else is yours to add. The project layout separates startup and routing (main.c), the HTTP server (server.c) and the web page (webui.c). Build targets include deploy and debug. Requires the PS5 Payload SDK and LLVM, and a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Payload Template on GitHub",
+        "url": "https://github.com/ghost1372/PS5-Payload-Template"
+      }
+    ]
+  },
+  {
     "id": "ludemos-ps5",
     "date": "2026-10-23",
     "tag": "PC & Linux",
