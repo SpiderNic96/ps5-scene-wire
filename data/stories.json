@@ -1,5 +1,94 @@
 [
   {
+    "id": "geometry-wars-2-ps5",
+    "date": "2026-10-23",
+    "tag": "Port",
+    "title": "Geometry Wars 2 for PS5: Xbox Live Arcade Classic at 4K 120 Hz",
+    "summary": "A native PS5 port of Geometry Wars: Retro Evolved 2 runs all six modes at 4K and up to 120 Hz, with PlayStation buttons and a public online scoreboard.",
+    "body": [
+      "griches has ported techknight's native rebuild of Geometry Wars: Retro Evolved 2 (Xbox Live Arcade, 2008) to the PS5. All six game modes, menus and local multiplayer for up to four players run natively at 4K resolution. On TVs that support it, the game runs at 120 Hz. The port replaces Xbox prompts with PlayStation button icons throughout and adds a public online scoreboard.",
+      "You need your own copy of the Xbox Live Arcade release of the game (title ID 584108FF, about 42 MB). Install the PPSA99322 folder to /data/homebrew/ via FTP and register it with ShadowMountPlus. The port requires a jailbroken PS5 with an FTP server running. Source code is available under GPL-3.0."
+    ],
+    "sources": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/griches/PS5_GeometryWars2"
+      }
+    ]
+  },
+  {
+    "id": "a2-racer-2-ps5",
+    "date": "2026-10-23",
+    "tag": "Port",
+    "title": "A2 Racer II: 1998 Dutch Racer Ported to Native PS5 Homebrew",
+    "summary": "A port of berobloom's C reimplementation of A2 Racer II (Davilex, 1998) runs as a native PS5 title with DualSense and touchpad support.",
+    "body": [
+      "Marice has ported berobloom's a2racer2-re, a C reimplementation of the 1998 Dutch racing game A2 Racer II, to native PS5 homebrew. The game runs as an installed title (PPSA69428) using the PS5 OpenGL SDK's Compatibility profile. Career mode, races with sound, the intro video and the menu all work. The DualSense is fully supported, with the touchpad acting as a mouse in menus and the PS5 keyboard available for entering a player name. The light bar flashes blue and red during police sirens.",
+      "You need your own disc image of A2 Racer II (Netherlands, v1.01) in .bin/.cue format. Place it in the title's dump/ folder; the first launch copies game files automatically. Tested on firmware 13.60 with ShadowMountPlus. Install the PPSA69428 folder to /data/homebrew/ on the console."
+    ],
+    "sources": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/Marice/a2-racer-2-ps5"
+      }
+    ]
+  },
+  {
+    "id": "prosperothemes-v021-v022",
+    "date": "2026-10-23",
+    "tag": "Tool",
+    "title": "Prospero Themes v021–v022: Save Your Look, Volume Controls, No-Restart Icons",
+    "summary": "Two Prospero Themes updates add the ability to save custom theme mixes, community store search, volume sliders for sounds and music, and icon changes that take effect without a console restart.",
+    "body": [
+      "Darkatek7 released two back-to-back updates for Prospero Themes. Version 021 adds a Save your look feature: when combining parts from multiple themes, you can save the current mix as a named theme with its background as the cover art for quick reapplication later. The Community store now has a search chip that filters themes by name, author and description. Restoring defaults lets you pick which parts to revert (background, app backgrounds, icons, music, sounds). Applying and restoring now show progress bars.",
+      "Version 022 removes the need for a full console restart when changing system icons, tile icons or UI sounds — the home screen restarts on its own in seconds, with automatic rollback if it keeps crashing. Two new sliders control the volume of UI sounds (default 25%) and home music (default 10%), with the music re-encoded on-console in ATRAC9. Install or update through the app's built-in updater."
+    ],
+    "sources": [
+      {
+        "name": "v022 Release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.022"
+      },
+      {
+        "name": "v021 Release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.021"
+      }
+    ]
+  },
+  {
+    "id": "psbox-v151",
+    "date": "2026-10-23",
+    "tag": "Media",
+    "title": "PSBox Cloud Gaming v1.5.1: Game Library Fix",
+    "summary": "PSBox v1.5.1 fixes a critical regression from v1.5.0 where the game library showed only two titles instead of the full collection.",
+    "body": [
+      "RafaelNGP has released PSBox Cloud Gaming v1.5.1, fixing a critical regression introduced in v1.5.0 where the My Games list only showed Call of Duty and Fortnite instead of all purchased and free-to-play titles. The update also removes the duplicate Call of Duty DLC entries that were being inserted in a loop, keeping only the playable titles (Modern Warfare 4 and Warzone).",
+      "The app now auto-detects and rebuilds a corrupted library_cache.json file on the console. The L3 forced library refresh is more reliable, and there are additional stability improvements to the cloud gaming connection. Update through the app or reinstall from the latest release."
+    ],
+    "sources": [
+      {
+        "name": "GitHub Release",
+        "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5/releases/tag/v1.5.1"
+      }
+    ]
+  },
+  {
+    "id": "recompstore-v261",
+    "date": "2026-10-23",
+    "tag": "Store",
+    "title": "RecompStore v2.6.1: Fixes Install Failures on Some Consoles",
+    "summary": "RecompStore v2.6.1 fixes installs that failed with an eboot.bin mismatch error on consoles where the store couldn't see its own homebrew folder.",
+    "body": [
+      "elripalda has released RecompStore v2.6.1, fixing an installation issue that affected consoles where the store could not see its own homebrew folder. Installs on those consoles would fail with an \"eboot.bin doesn't match the download after installing\" error, even though the files were correct. The Send Logs feature now includes more detail about homebrew folder layout to help diagnose similar issues faster.",
+      "This fix came directly from user-submitted logs, so the developer encourages users to keep sending logs from Settings when problems occur. Update by installing from inside the store or by sending RecompStore-Installer.elf with a payload sender."
+    ],
+    "sources": [
+      {
+        "name": "GitHub Release",
+        "url": "https://github.com/elripalda/RecompStore/releases/tag/v2.6.1"
+      }
+    ]
+  },
+  {
     "id": "artswap-v130",
     "date": "2026-10-23",
     "tag": "Tool",

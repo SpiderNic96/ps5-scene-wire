@@ -159,4 +159,6 @@ export const SOURCES = [
   { cat: R, repo: 'tmghd272/ProsperoCraft', name: 'ProsperoCraft', about: 'Minecraft Java Edition launcher' },
   { cat: R, repo: 'CHI-GETSU/GTA-SA-PS5-Homebrew', name: 'GTA San Andreas', about: 'Classic PC edition via Prospero Win' },
   { cat: R, repo: 'ChaDea1/Bedlam2-PS5', name: 'Bedlam 2: Absolute Bedlam', about: 'Native DOS game port with DualSense twin-stick controls' },
+  { cat: R, repo: 'griches/PS5_GeometryWars2', name: 'Geometry Wars 2', about: 'Xbox Live Arcade port, 4K 120 Hz' },
+  { cat: R, repo: 'Marice/a2-racer-2-ps5', name: 'A2 Racer II', about: 'Dutch racer port via a2racer2-re' },
 ];

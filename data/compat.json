@@ -610,6 +610,14 @@
         "ps5-linux-loader"
       ],
       "note": "PS5 Slim only. Installs to M.2 SSD. Developer says it works on any firmware supported by Relapse and ps5-linux-loader, but only tested on 13.60."
+    },
+    "Marice/a2-racer-2-ps5": {
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "ShadowMountPlus"
+      ]
     }
   },
   "unstated": [
@@ -658,6 +666,7 @@
     "ghost1372/PS5-Payload-Template",
     "griches/PS5_Burnout3",
     "griches/PS5_Dusklight",
+    "griches/PS5_GeometryWars2",
     "griches/PS5_Ghostship",
     "griches/PS5_MarioGalaxy",
     "griches/PS5_Quake3e",
