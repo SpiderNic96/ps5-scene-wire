@@ -1,5 +1,166 @@
 [
   {
+    "id": "swanstation-ps5-146-147",
+    "date": "2026-10-24",
+    "tag": "Emulator",
+    "title": "SwanStationPS5 v1.4.6–v1.4.7: Lighter Memory and Library Fix",
+    "summary": "SwanStationPS5 v1.4.6 cuts memory use by giving heap back after each game, and v1.4.7 stops Circle from closing the library.",
+    "body": [
+      "SwanStationPS5 v1.4.6 reworks how the library uses memory. Instead of holding a fixed 1 GB block all the time, the heap now takes memory when it needs it and gives it back. The title restarts when a game is closed, so the library always returns to a clean state. Silent Hill and music discs are no longer mistaken for light gun games when the Light gun setting is on Automatic.",
+      "Version 1.4.7 follows with a quick fix: holding Circle on the library screen no longer closes the app. Both releases are ELF payloads — send them to your loader on port 9021, or update through the emulator's settings."
+    ],
+    "sources": [
+      {
+        "name": "v1.4.7 release",
+        "url": "https://github.com/darkxex/SwanStationPS5/releases/tag/1.4.7"
+      },
+      {
+        "name": "v1.4.6 release",
+        "url": "https://github.com/darkxex/SwanStationPS5/releases/tag/1.4.6"
+      }
+    ]
+  },
+  {
+    "id": "psbox-v152-v153",
+    "date": "2026-10-24",
+    "tag": "Media",
+    "title": "PSBox Cloud Gaming v1.5.2–v1.5.3: Free Game Store and Instant Library Sync",
+    "summary": "PSBox v1.5.2 and v1.5.3 add direct acquisition of free Xbox games from the store, with instant library sync and seamless transition to cloud streaming.",
+    "body": [
+      "PSBox Cloud Gaming v1.5.2 introduces a universal free-game acquisition engine. Free-to-play and Game Pass catalogue titles can be claimed directly from the in-app store without getting stuck in loading loops. Acquired games are immediately written to the local cache and injected into the My Games list without a manual sync, and the library now boots sorted by recency. Strict catalogue filters prevent paid titles from showing as available.",
+      "Version 1.5.3 follows with end-to-end validation of the free-game flow on real PS5 hardware, confirming that claimed titles appear at the top of My Games and the Play button activates immediately with hardware-accelerated video (3.9 ms via VPU) and DualSense feedback. Requires a jailbroken PS5 with etaHEN and a Microsoft account with Xbox Game Pass."
+    ],
+    "sources": [
+      {
+        "name": "v1.5.3 release",
+        "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5/releases/tag/v1.5.3"
+      },
+      {
+        "name": "v1.5.2 release",
+        "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5/releases/tag/v1.5.2"
+      }
+    ]
+  },
+  {
+    "id": "recompstore-v270",
+    "date": "2026-10-24",
+    "tag": "Store",
+    "title": "RecompStore v2.7.0: New Branding, Aurora Background and Animated Boot",
+    "summary": "RecompStore v2.7.0 debuts a new logo and name, an aurora background, animated boot sequence, redesigned Discover grid and smoother app pages.",
+    "body": [
+      "RecompStore v2.7.0 is a visual overhaul. The store is now officially \"RecompStore\" with a new logo, icon and home screen art. An animated aurora background runs behind the entire UI. On launch the logo builds itself with a soft hum and chime (toggle it in Settings > General > Boot sound), then flies up into the top bar as the store slides in. The Discover grid lines up seven apps per row with the next row peeking from the bottom. The top bar has a dark shade for readability, and Games, Emulators, Apps and Tools each get new icons.",
+      "App pages now slide in from the right and fade back on close. Button hints sit on their own bar so they no longer cover content. The right panel sits higher, level with the page, and long credits wrap instead of being cut off. Pressing Install, Update or Update All sends the app icon flying up to the Downloads badge. Update from inside the store, or send RecompStore-Installer.elf with your payload sender."
+    ],
+    "sources": [
+      {
+        "name": "RecompStore v2.7.0 release",
+        "url": "https://github.com/elripalda/RecompStore/releases/tag/v2.7.0"
+      }
+    ]
+  },
+  {
+    "id": "welcomehubactivator-v120",
+    "date": "2026-10-24",
+    "tag": "Tool",
+    "title": "WelcomeHubActivator v1.2.0: UI Improvements",
+    "summary": "WelcomeHubActivator v1.2.0 updates the user interface for activating and deactivating the PS5 Welcome Hub.",
+    "body": [
+      "WelcomeHubActivator v1.2.0 by ghost1372 improves the payload's user interface. The tool lets users activate and deactivate the Welcome Hub on firmware 10.00–13.60, and this release polishes the graphical UI introduced in v1.1.0.",
+      "Send the ELF payload to your PS5 via a payload sender. Requires a jailbroken PS5 with a payload loader running on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "WelcomeHubActivator v1.2.0 release",
+        "url": "https://github.com/ghost1372/WelcomeHubActivator/releases/tag/v1.2.0"
+      }
+    ]
+  },
+  {
+    "id": "artswap-v131",
+    "date": "2026-10-24",
+    "tag": "Tool",
+    "title": "Art Swap v1.3.1: Renames No Longer Reinstall Games",
+    "summary": "Art Swap v1.3.1 fixes a critical issue from v1.3.0 where renaming a game triggered a full reinstall, which could delete homebrew save data.",
+    "body": [
+      "Art Swap v1.3.1 fixes how game renaming works. In v1.3.0, renaming a title had ShadowMountPlus reinstall the game, and the console's uninstall process would delete the game's download data — some homebrew like Ship of Harkinian kept saves there, causing data loss. Version 1.3.1 writes the new name directly into the home screen's database, so the game itself is never touched. The Apply Changes pop-up now shows what will happen to each game: a rename or a full install.",
+      "Adding a background or music to homebrew that had none still requires a reinstall, but Art Swap now moves the download data aside first and restores it before the game can launch. A backup of the database is saved to /data/artswap/app.db.backup before changes. Known issue: with OnionHEN, Apply Changes may trigger a System Software Error (CE-108262-9) that can be dismissed with OK. Requires etaHEN or kstuff and ShadowMountPlus 1.7+."
+    ],
+    "sources": [
+      {
+        "name": "Art Swap v1.3.1 release",
+        "url": "https://github.com/griches/PS5_ArtSwap/releases/tag/v1.3.1"
+      }
+    ]
+  },
+  {
+    "id": "beetlepce-v11",
+    "date": "2026-10-24",
+    "tag": "Emulator",
+    "title": "Beetle PCE v1.1: Network Shares, Shelf Tabs and 7-Zip Support",
+    "summary": "Beetle PCE v1.1 adds SMB and NFS network share support for playing games from a NAS, shelf tabs for Internal/USB/Network, 7-Zip archive support and five interface languages.",
+    "body": [
+      "Beetle PCE PS5 v1.1 brings network shares (SMB and NFS) to the PC Engine and TurboGrafx-16 emulator. HuCards and CD games (.cue/.bin, .chd, .ccd, .toc, .m3u) can be stored on a NAS or PC and played from the shelf. CD music streams in real time with tracks pre-fetched at startup. The shelf now has tabs — Internal, USB and Network — switched with L1/R1, while L2/R2 skip 10 games. 7-Zip archives (.7z) are supported for HuCards, with CRC-based cover and cheat matching.",
+      "Five interface languages are available: English, Spanish, Portuguese, French and German. The SMB and NFS libraries are updated to the latest upstream code with security fixes including CVE-2025-57632 and CVE-2026-110712. Debug logs are off by default. Send the ELF to your payload loader, or update through Settings > Updates."
+    ],
+    "sources": [
+      {
+        "name": "Beetle PCE v1.1 release",
+        "url": "https://github.com/MisterTemaki/beetlepcePS5/releases/tag/v1.1"
+      }
+    ]
+  },
+  {
+    "id": "snes9x-v29",
+    "date": "2026-10-24",
+    "tag": "Emulator",
+    "title": "Snes9x PS5 v2.9: 7-Zip Archive Support",
+    "summary": "Snes9x PS5 v2.9 adds 7-Zip (.7z) archive support for playing SNES games from compressed archives on the console or network shares.",
+    "body": [
+      "Snes9x PS5 v2.9 adds 7-Zip (.7z) archive support. SNES games inside a .7z (LZMA, LZMA2, PPMd, BCJ compression) appear on the shelf and play like zipped ones, from the console or a network share. Archives are named from the CRC they contain, so games get the same covers, borders and cheats as their .zip equivalents. Multi-file archives use the biggest SNES ROM. Encrypted, damaged or unsupported archives are refused with a localized message.",
+      "This release also carries the network share fixes from Genesis Plus GX PS5 v2.1: read errors on a share are no longer permanently remembered, opening Settings pauses background scanning, and share reliability is improved. Send the ELF to your payload loader or update through the emulator."
+    ],
+    "sources": [
+      {
+        "name": "Snes9x v2.9 release",
+        "url": "https://github.com/MisterTemaki/snes9xPS5/releases/tag/v2.9"
+      }
+    ]
+  },
+  {
+    "id": "genplusgx-v22",
+    "date": "2026-10-24",
+    "tag": "Emulator",
+    "title": "Genesis Plus GX PS5 v2.2: 7-Zip Archive Support",
+    "summary": "Genesis Plus GX PS5 v2.2 adds 7-Zip (.7z) support for Mega Drive, Master System, Game Gear and SG-1000 games from the console or network shares.",
+    "body": [
+      "Genesis Plus GX PS5 v2.2 adds 7-Zip (.7z) archive support. Mega Drive/Genesis, Master System, Game Gear and SG-1000 games inside a .7z (LZMA, LZMA2, PPMd, BCJ) appear on the shelf and play like zipped ones, from the console or a network share. CRC-based naming means the same covers, borders and cheats apply regardless of archive format. Multi-file archives use the first ROM in archive order. Sega CD discs inside a .7z are not supported and are skipped.",
+      "Encrypted, damaged or unsupported archives and games over 16 MiB are refused with a localized message in all five languages. The 7z decoder uses the LZMA SDK (7-Zip 26.05, public domain). Send the ELF to your payload loader or update through the emulator."
+    ],
+    "sources": [
+      {
+        "name": "Genesis Plus GX v2.2 release",
+        "url": "https://github.com/MisterTemaki/genplusgxPS5/releases/tag/v2.2"
+      }
+    ]
+  },
+  {
+    "id": "playtime-ps5",
+    "date": "2026-10-24",
+    "tag": "Tool",
+    "title": "PlayTime: Track and Edit PS5 Game Play Times",
+    "summary": "PlayTime is a new PS5 payload that serves a web page listing every installed game with per-user play time, and lets you edit the hours.",
+    "body": [
+      "PlayTime by ghost1372 is a PS5 ELF payload that reads the console's play-time data and serves it as a web page. It lists every installed game (CUSA and PPSA title IDs), shows how long each has been played per console user, and lets you edit the play time. Open it on the PS5's own browser at 127.0.0.1:7788, or from any phone or laptop on the same network.",
+      "Requires a jailbroken PS5 with a payload loader that can run ELF payloads. Send PlayTime.elf via Payload Sender or Payload Manager to port 9021. Works on all firmware versions your loader supports. Source code is available on GitHub."
+    ],
+    "sources": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/ghost1372/PlayTime"
+      }
+    ]
+  },
+  {
     "id": "geometry-wars-2-ps5",
     "date": "2026-10-23",
     "tag": "Port",

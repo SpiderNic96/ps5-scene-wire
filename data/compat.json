@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23",
+  "updated": "2026-10-24",
   "about": "Firmware compatibility for the /firmware directory. Only what each project's README or release notes state. range = the developer says it supports these firmwares; tested = firmwares it has actually been run on; only = hard-locked to these firmwares; any = the developer says it isn't tied to a firmware. unstated = tracked apps whose README was checked and names no PS5 firmware (they show as not confirmed). Validate with: node scripts/compat-check.mjs",
   "firmwares": [
     "1.00",
@@ -538,6 +538,12 @@
         "13.60"
       ],
       "note": "Thread probes hard-locked to FW 13.60 / PS5 Pro SoC 0x840fd0. Console validation pending."
+    },
+    "ghost1372/PlayTime": {
+      "any": true,
+      "needs": [
+        "elfldr"
+      ]
     },
     "ghost1372/WelcomeHubActivator": {
       "range": [
