@@ -1,5 +1,77 @@
 [
   {
+    "id": "ps5upload-v720-v730",
+    "date": "2026-10-24",
+    "tag": "Tool",
+    "title": "PS5 Upload v7.2.0–v7.3.0: iPhone app and Collection overhaul",
+    "summary": "PS5 Upload ships an iPhone app for the first time, and v7.3.0 adds Convert, Cheats and multi-select to the Collection.",
+    "body": [
+      "PS5 Upload v7.2.0 by phantomptr adds an iPhone app: every release now includes an unsigned IPA that can be sideloaded with AltStore or Sideloadly using a free Apple ID. The same app as on Android, it runs the engine built in and uses the Files app for game storage. Also new: a text-size slider (75–130%) on the console page in PS5Upload Minion, saved per screen so a TV and a browser can have different sizes, and the Convert progress bar now shows movement from the start on very large games.",
+      "Version 7.3.0 is a Collection update. Convert from Collection lets you pick a game and open Convert with its best copy pre-filled. A Cheats tab on each game page offers to download cheats when none are installed. The ⋯ menu on a game can install a newer update, add missing DLC, backport the game, or check its copies. Select mode picks multiple games to send to one or more PS5s at once, queue them in Convert, or check their copies end to end. A \"Could be smaller\" filter lists big folders and plain images and queues them as compressed .ffpfsc images. Requires a jailbroken PS5 with elfldr."
+    ],
+    "sources": [
+      { "name": "PS5 Upload v7.3.0 release", "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.3.0" },
+      { "name": "PS5 Upload v7.2.0 release", "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.2.0" }
+    ]
+  },
+  {
+    "id": "prosperothemes-v023-v024",
+    "date": "2026-10-24",
+    "tag": "Tool",
+    "title": "Prospero Themes 01.000.023–024: firmware 11.60 catalog and AI theme filter",
+    "summary": "Prospero Themes adds a theme catalog for firmware 11.60, fixes restore-defaults on 13.60, and lets you hide AI-generated themes in the Community store.",
+    "body": [
+      "Prospero Themes 01.000.023 by Darkatek7 adds a full theme catalog for firmware 11.60, built from firmware reports sent from the app. Its backgrounds match 11.20. Restore defaults on 13.60 now knows the stock system icon file (PUI_UI3.rco) for that firmware from a report of a never-modified console, so it no longer mistakes a themed file for the original. The firmware report on 9.60 through 11.60, where the system icon file is about 104 MB, no longer crashes with an out-of-memory error — it reads one copy at a time instead of two at once.",
+      "Version 01.000.024 adds an AI theme filter. A No AI chip next to Search in the Community tab hides themes whose pictures were made with an AI image generator — flagged by the author, by the store's automatic check, or by a moderator. An AI Themes row in System settings (Show/Hide) makes the filter persistent across restarts, and Community cards of AI themes carry an \"AI\" badge. The same filters are available on the themes.darkatek7.com website. Requires elfldr and ShadowMountPlus."
+    ],
+    "sources": [
+      { "name": "Prospero Themes 01.000.024 release", "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.024" },
+      { "name": "Prospero Themes 01.000.023 release", "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.023" }
+    ]
+  },
+  {
+    "id": "bluev-ps5",
+    "date": "2026-10-24",
+    "tag": "Tool",
+    "title": "BlueV: Bluetooth audio streaming for PS5",
+    "summary": "BlueV is a new PS5 payload that streams the console's audio to Bluetooth speakers and headphones, controlled from a web page.",
+    "body": [
+      "BlueV by 0xZ3n0x is a payload for jailbroken PS5 consoles that encodes the console's audio and sends it to any Bluetooth speaker or headphones supporting A2DP (SBC). You control scanning, pairing and disconnecting from a web page on the console itself or from a phone or PC on the same network. Paired devices are remembered and reconnect automatically. A BlueV entry is added to the home screen, and an optional launcher entry works with ps5-payload-websrv.",
+      "BlueV works with a USB Bluetooth adapter (a CSR 4.0 adapter is tested) or with the console's own Bluetooth chip, though the internal chip is shared with the gamepad and may cause input issues if the controller is reconnected while the radio is active. A USB adapter avoids this. Tested on a PS5 Slim; PS5 Pro and fat PS5 owners are asked to report results. Requires a jailbroken PS5 with an ELF loader on port 9021 (elfldr). Source code available under GPL-3.0."
+    ],
+    "sources": [
+      { "name": "BlueV repo", "url": "https://github.com/0xZ3n0x/BlueV" }
+    ]
+  },
+  {
+    "id": "ps5-cleanup",
+    "date": "2026-10-24",
+    "tag": "Tool",
+    "title": "PS5 Cleanup: clear leftover data from a jailbroken PS5 without reinstalling",
+    "summary": "PS5 Cleanup is a Windows tool that connects to a jailbroken PS5 via FTP, lists every game, save, trophy and leftover with readable names, and deletes only what you select.",
+    "body": [
+      "PS5 Cleanup by xXBneutzerNameXx is a Windows application that brings a jailbroken PS5 back to a clean state without reinstalling or resetting the system software. It connects over FTP, auto-detects the console on the network, identifies the model, firmware and disc-drive pairing status, and lists everything with readable names: PS5 and PS4 games with updates and DLCs individually selectable, saves, trophies, screenshots and videos per game, downloads, leftovers from removed games, and jailbreak tool data including M.2 content.",
+      "A test mode lets you review everything before anything is deleted. You can pick individual items or use the full-clean mode for a fresh-setup state (the M.2 is asked separately). ShadowMount games can be removed tile-only or completely, and tile metadata is cleaned up to prevent locked ghost tiles after rebuilding the database. System software, disc-drive pairing, user accounts and real licenses are always preserved. Tested on PS5 Pro with firmware 12.00. Requires a jailbroken PS5 with an FTP server (ftpsrv recommended)."
+    ],
+    "sources": [
+      { "name": "PS5-Cleanup repo", "url": "https://github.com/xXBneutzerNameXx/PS5-Cleanup" }
+    ]
+  },
+  {
+    "id": "iwbtg-remastered-ps5",
+    "date": "2026-10-24",
+    "tag": "Port",
+    "title": "I Wanna Be The Guy: Remastered Tribute Edition for PS5",
+    "summary": "The notoriously difficult fangame I Wanna Be The Guy: Remastered has been ported to PS5 as a native homebrew title, with DualSense controls and remappable buttons.",
+    "body": [
+      "I Wanna Be The Guy: Remastered Tribute Edition by kaizerfcm (shaman) is a native PS5 homebrew port of the famously punishing platformer, version 1.6.6.6. The game installs as title PPSA99099 via ShadowMountPlus and runs natively on the console rather than through emulation. DualSense controls are fully mapped — D-pad or left stick to move, Cross to jump, Square to shoot, Triangle to restart — and all controls can be remapped in the options menu.",
+      "The port also ships Windows x64 and Linux x64 builds alongside the PS5 version. Built with the PS5 payload SDK and SDL2. Requires a jailbroken PS5 with a homebrew payload loader (etaHEN or elfldr) and ShadowMountPlus to register the app. Copy the PPSA99099 folder to /data/homebrew/ on the console. Saves persist in /data/iwbtgr/save."
+    ],
+    "sources": [
+      { "name": "IWBTG Remastered Tribute Edition repo", "url": "https://github.com/kaizerfcm/iwbtg-remastered-tribute-edition" }
+    ]
+  },
+  {
     "id": "ps5-luigismansion-100",
     "date": "2026-10-24",
     "tag": "Port",

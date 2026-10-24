@@ -629,9 +629,15 @@
       "tested": [
         "4.51"
       ]
+    },
+    "xXBneutzerNameXx/PS5-Cleanup": {
+      "tested": [
+        "12.00"
+      ]
     }
   },
   "unstated": [
+    "0xZ3n0x/BlueV",
     "7tg/sahin",
     "AdamGoodApp/prosperokit",
     "Alexandre78500/xpad-ps5",
@@ -685,6 +691,7 @@
     "hollamhide/hollamhide.github.io",
     "itsPLK/ps5-payload-manager",
     "juma-sayeh/PS5-Game-Compressor",
+    "kaizerfcm/iwbtg-remastered-tribute-edition",
     "leafyjerk/PS5_LuigisMansion",
     "manos555555/PS5-Suite",
     "mpereiraesaa/prospero-win",
