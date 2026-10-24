@@ -1,5 +1,98 @@
 [
   {
+    "id": "ps5upload-v742-v744",
+    "date": "2026-10-24",
+    "tag": "Tool",
+    "title": "PS5 Upload v7.4.2–v7.4.4: server-side consoles and update checker",
+    "summary": "PS5 Upload v7.4.2 moves the console list out of the browser so every device sees the same setup, v7.4.3 adds an update-check button, and v7.4.4 is a quick follow-up fix.",
+    "body": [
+      "PS5 Upload v7.4.2 by phantomptr moves the console list in the web UI and Docker out of browser storage and into the engine's /data directory. Every browser or computer that opens the container now sees the same consoles, names, addresses, order, notes and Wake keys. A change in one browser reaches the others in about 30 seconds, and two people editing at once both keep their changes. The first browser to open v7.4.2 hands over whatever it had saved. Per-browser settings like theme, language and text size stay local. It also fixes a bug where a second browser with an empty list could make the engine forget read data from every other console.",
+      "v7.4.3 adds a version-check button to the top bar on desktop and tablet: press it to see whether you are up to date or to jump to Settings → Updates. On phones the button is at the foot of More, and Cmd/Ctrl+K opens it in the command palette. v7.4.4 is a quick follow-up patch. Requires a jailbroken PS5 with elfldr."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v7.4.4 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.4.4"
+      },
+      {
+        "name": "PS5 Upload v7.4.3 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.4.3"
+      },
+      {
+        "name": "PS5 Upload v7.4.2 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.4.2"
+      }
+    ]
+  },
+  {
+    "id": "tabshifter-v130",
+    "date": "2026-10-24",
+    "tag": "Tool",
+    "title": "TabShifter v1.3.0: universal firmware engine from 5.00 to 13.60",
+    "summary": "TabShifter v1.3.0 dynamically handles dashboard JSON across all jailbreakable firmwares, permanently suppresses hidden bloatware, and fixes the padlock bug.",
+    "body": [
+      "TabShifter v1.3.0 by xvvulcanvx introduces a universal firmware engine that covers FW 5.00 through 13.60. Sony changed how the dashboard JSON is stored between earlier firmwares and 11.40+, and TabShifter now handles both legacy field_list arrays (5.00–10.xx) and modern flat JSON (11.00–13.60) in app.db and appinfo.db automatically. Hidden bloatware like the PlayStation Store or PS Plus now stays gone after rest mode and cold boots — v1.3.0 sets native daemon flags, clears emsPushedFlag and purges system group entries.",
+      "The release also fixes the padlock bug that could lock games by using the wrong concept bitmasks. An orange Fix Padlocks button on the dashboard restores entitlements across the entire library. Multi-user profile sync ensures your layout carries across every account on the console, and folder support is extended with icon reordering and an \"Ungroup all\" shortcut. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "TabShifter v1.3.0 release",
+        "url": "https://github.com/xvvulcanvx/PS5-TabShifter/releases/tag/v1.3.0"
+      }
+    ]
+  },
+  {
+    "id": "fbneo-ps5-v20",
+    "date": "2026-10-24",
+    "tag": "Emulator",
+    "title": "FinalBurn Neo PS5 v2.0: per-game button layouts, network shares and .7z support",
+    "summary": "FBNeo PS5 2.0 lets you remap buttons per game, load ROM sets from a NAS over SMB or NFS, browse by shelf tabs, and open .7z archives.",
+    "body": [
+      "FinalBurn Neo PS5 v2.0 by MisterTemaki adds per-game button layouts: change the mapping from a game's pause menu and the layout is saved for that game alone in /data/fbneo/config/. Clones without their own layout inherit from their parent, and a \"Default button layout\" option sends a game back to the general mapping. Six-button fighters now default to Capcom's PlayStation layout (punches on Square, Triangle, R1; kicks on Cross, Circle, R2) instead of putting heavy kick on L1.",
+      "ROM sets on SMB and NFS network shares can be browsed and played from the shelf — configure the shares in Settings, test the connection and the sets appear at once. Shelf tabs (Internal, USB, Network) switch with L1/R1, L2/R2 skip 10 games, and L3/R3 cycle makers. The update also adds .7z archive support, a compact list view toggled with Triangle, per-set cover art (save a PNG named after the set in /data/fbneo/covers/), and a save-state slot selector in the pause menu. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "FBNeo PS5 v2.0 release",
+        "url": "https://github.com/MisterTemaki/fbneo-ps5/releases/tag/v2.0"
+      }
+    ]
+  },
+  {
+    "id": "grfs-ps5-v101-v103",
+    "date": "2026-10-24",
+    "tag": "Port",
+    "title": "Ghost Recon: Future Soldier v1.0.1–v1.0.3: DualSense prompts, precompiled shaders",
+    "summary": "Three quick patches for the Ghost Recon PS5 port fix trophy fonts, swap button icons to the DualSense and ship precompiled shaders to cut first-run stutter.",
+    "body": [
+      "Ghost Recon: Future Soldier v1.0.1 by lamarkingru fixes a path issue where the port's fonts and Portuguese trophy translations were not found, so the trophies screen now works whether the game sits in Assets/ or assets/. v1.0.2 replaces all Xbox button icons and the loading-screen controller diagram with DualSense equivalents; the textures/ folder carries only the redrawn blocks, applied at load time over your own game data so nothing from the original game is distributed.",
+      "v1.0.3 ships 1 175 precompiled shaders and 819 pipelines. At startup they are merged into the console's own cache and compiled before the menu, cutting the first-time stutter in each area. The first launch takes a few extra seconds. To update from an earlier version, replace the ELF and copy the new shaders/ and textures/ folders; your saves carry over. Requires your own Xbox 360 copy and a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "Ghost Recon v1.0.3 release",
+        "url": "https://github.com/lamarkingru/grfs-ps5/releases/tag/v1.0.3"
+      }
+    ]
+  },
+  {
+    "id": "ps5-cleanup-v104",
+    "date": "2026-10-24",
+    "tag": "Tool",
+    "title": "PS5 Cleanup v1.0.4: rewritten as a native Windows app",
+    "summary": "PS5 Cleanup v1.0.4 replaces the PowerShell wrapper with a proper C# application, adds per-file M.2 listings and background size counting.",
+    "body": [
+      "PS5 Cleanup v1.0.4 by xXBneutzerNameXx rewrites the tool as a native Windows program in C# (.NET Framework 4.8, built into Windows 10/11) instead of a packaged PowerShell script. The interface and safety rules stay the same, with two cleanup modes: pick individual entries (one game's data, saves or trophies) or wipe the entire internal SSD at once like a factory reset, with M.2 prompted separately. German and English switch automatically by the Windows language, with a manual toggle.",
+      "New in this version: every M.2 game and file appears individually in the list instead of whole folders, sizes are counted in the background so the long pre-delete wait is mostly gone, a cancel button stops searching or counting at any time, and a startup check notifies you of new versions on GitHub without downloading anything. Requires a jailbroken PS5 running an FTP server (ftpsrv by drakmor recommended, tested with v1.16)."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Cleanup v1.0.4 release",
+        "url": "https://github.com/xXBneutzerNameXx/PS5-Cleanup/releases/tag/v1.0.4-beta"
+      }
+    ]
+  },
+  {
     "id": "homehider-v200",
     "date": "2026-10-24",
     "tag": "Tool",
@@ -10,7 +103,10 @@
       "HomeHider is now licensed under GPL-3.0 because it bundles LiveShell (source in third_party/liveshell). Install by uploading HomeHider.elf in Payload Manager or updating from the Updates section. Requires a jailbroken PS5 with Payload Manager by itsPLK."
     ],
     "sources": [
-      { "name": "HomeHider v2.0.0 release", "url": "https://github.com/Euphoric-Dev/HomeHider/releases/tag/RELEASE-V2" }
+      {
+        "name": "HomeHider v2.0.0 release",
+        "url": "https://github.com/Euphoric-Dev/HomeHider/releases/tag/RELEASE-V2"
+      }
     ]
   },
   {
@@ -24,7 +120,10 @@
       "Minion gains a network-access toggle so other devices on the LAN can open its interface, plus a Remove button that turns Minion off and deletes its PS5 data (favourites, library cache, controller log) while leaving saves, cheats and backups. Tablets held upright now start with the compact icon rail, and hover-only buttons on the sidebar are tappable on a touch screen. Requires a jailbroken PS5 with elfldr."
     ],
     "sources": [
-      { "name": "PS5 Upload v7.3.1 release", "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.3.1" }
+      {
+        "name": "PS5 Upload v7.3.1 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.3.1"
+      }
     ]
   },
   {
@@ -38,7 +137,10 @@
       "No game files are included — you need your own Xbox 360 copy. Build with the rexglue-ps5 SDK and ps5-plume-triangle toolchain, copy game files into the app's assets folder, and configure the relay and news server addresses in grfs.toml. A bundled news server and relay script (Python 3) handle the multiplayer backend. Not affiliated with Ubisoft, Sony or Microsoft."
     ],
     "sources": [
-      { "name": "grfs-ps5 repo", "url": "https://github.com/lamarkingru/grfs-ps5" }
+      {
+        "name": "grfs-ps5 repo",
+        "url": "https://github.com/lamarkingru/grfs-ps5"
+      }
     ]
   },
   {
@@ -52,7 +154,10 @@
       "Two network-share fixes are also included: a socket that is made blocking again now stays blocking, and the GPU build's link check correctly reads the PS5_Vulkan recipe to verify the app's NFS functions are intact. Requires a jailbroken PS5 with an ELF loader on port 9021."
     ],
     "sources": [
-      { "name": "Genesis Plus GX PS5 v2.2.1 release", "url": "https://github.com/MisterTemaki/genplusgxPS5/releases/tag/v2.2.1" }
+      {
+        "name": "Genesis Plus GX PS5 v2.2.1 release",
+        "url": "https://github.com/MisterTemaki/genplusgxPS5/releases/tag/v2.2.1"
+      }
     ]
   },
   {
@@ -66,7 +171,10 @@
       "CD games on network shares get several streaming improvements. The running game's own read-ahead now takes priority over the CD's background prefetch on slow connections. Blocks already kept for an earlier track are no longer double-counted against the prefetch budget. Mixed-sector .cue files with both 2048-byte and 2352-byte tracks now fetch each track's start at the correct offset, and .wav/.ogg music tracks only prefetch their own start. Requires a jailbroken PS5 with an ELF loader on port 9021."
     ],
     "sources": [
-      { "name": "Beetle PCE PS5 v1.1.1 release", "url": "https://github.com/MisterTemaki/beetlepcePS5/releases/tag/v1.1.1" }
+      {
+        "name": "Beetle PCE PS5 v1.1.1 release",
+        "url": "https://github.com/MisterTemaki/beetlepcePS5/releases/tag/v1.1.1"
+      }
     ]
   },
   {
@@ -80,7 +188,10 @@
       "The firmware report now reads the size of a changed system file the app cannot see directly through the helper, where it previously showed −1. ThemeHelper is unchanged at v8 — from 01.000.022 or later, no restart is needed after updating. Requires elfldr and ShadowMountPlus."
     ],
     "sources": [
-      { "name": "Prospero Themes 01.000.025 release", "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.025" }
+      {
+        "name": "Prospero Themes 01.000.025 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.025"
+      }
     ]
   },
   {
@@ -94,8 +205,14 @@
       "Version 1.0.3 adds clearer prompts around M.2 deletion. If any M.2 items are selected, a separate confirmation dialog appears immediately with the list of chosen M.2 entries and a Cancel default. The size-counting phase now explicitly states that nothing is being deleted yet, and the final prompt warns at the top when M.2 entries are included. Closing the window during counting aborts cleanly with nothing deleted. Tested on PS5 Pro (CFI-7021) with firmware 12.00."
     ],
     "sources": [
-      { "name": "PS5 Cleanup v1.0.3-beta release", "url": "https://github.com/xXBneutzerNameXx/PS5-Cleanup/releases/tag/v1.0.3-beta" },
-      { "name": "PS5 Cleanup v1.0.2-beta release", "url": "https://github.com/xXBneutzerNameXx/PS5-Cleanup/releases/tag/v1.0.2-beta" }
+      {
+        "name": "PS5 Cleanup v1.0.3-beta release",
+        "url": "https://github.com/xXBneutzerNameXx/PS5-Cleanup/releases/tag/v1.0.3-beta"
+      },
+      {
+        "name": "PS5 Cleanup v1.0.2-beta release",
+        "url": "https://github.com/xXBneutzerNameXx/PS5-Cleanup/releases/tag/v1.0.2-beta"
+      }
     ]
   },
   {
@@ -109,8 +226,14 @@
       "Version 7.3.0 is a Collection update. Convert from Collection lets you pick a game and open Convert with its best copy pre-filled. A Cheats tab on each game page offers to download cheats when none are installed. The ⋯ menu on a game can install a newer update, add missing DLC, backport the game, or check its copies. Select mode picks multiple games to send to one or more PS5s at once, queue them in Convert, or check their copies end to end. A \"Could be smaller\" filter lists big folders and plain images and queues them as compressed .ffpfsc images. Requires a jailbroken PS5 with elfldr."
     ],
     "sources": [
-      { "name": "PS5 Upload v7.3.0 release", "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.3.0" },
-      { "name": "PS5 Upload v7.2.0 release", "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.2.0" }
+      {
+        "name": "PS5 Upload v7.3.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.3.0"
+      },
+      {
+        "name": "PS5 Upload v7.2.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.2.0"
+      }
     ]
   },
   {
@@ -124,8 +247,14 @@
       "Version 01.000.024 adds an AI theme filter. A No AI chip next to Search in the Community tab hides themes whose pictures were made with an AI image generator — flagged by the author, by the store's automatic check, or by a moderator. An AI Themes row in System settings (Show/Hide) makes the filter persistent across restarts, and Community cards of AI themes carry an \"AI\" badge. The same filters are available on the themes.darkatek7.com website. Requires elfldr and ShadowMountPlus."
     ],
     "sources": [
-      { "name": "Prospero Themes 01.000.024 release", "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.024" },
-      { "name": "Prospero Themes 01.000.023 release", "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.023" }
+      {
+        "name": "Prospero Themes 01.000.024 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.024"
+      },
+      {
+        "name": "Prospero Themes 01.000.023 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.023"
+      }
     ]
   },
   {
@@ -139,7 +268,10 @@
       "BlueV works with a USB Bluetooth adapter (a CSR 4.0 adapter is tested) or with the console's own Bluetooth chip, though the internal chip is shared with the gamepad and may cause input issues if the controller is reconnected while the radio is active. A USB adapter avoids this. Tested on a PS5 Slim; PS5 Pro and fat PS5 owners are asked to report results. Requires a jailbroken PS5 with an ELF loader on port 9021 (elfldr). Source code available under GPL-3.0."
     ],
     "sources": [
-      { "name": "BlueV repo", "url": "https://github.com/0xZ3n0x/BlueV" }
+      {
+        "name": "BlueV repo",
+        "url": "https://github.com/0xZ3n0x/BlueV"
+      }
     ]
   },
   {
@@ -153,7 +285,10 @@
       "A test mode lets you review everything before anything is deleted. You can pick individual items or use the full-clean mode for a fresh-setup state (the M.2 is asked separately). ShadowMount games can be removed tile-only or completely, and tile metadata is cleaned up to prevent locked ghost tiles after rebuilding the database. System software, disc-drive pairing, user accounts and real licenses are always preserved. Tested on PS5 Pro with firmware 12.00. Requires a jailbroken PS5 with an FTP server (ftpsrv recommended)."
     ],
     "sources": [
-      { "name": "PS5-Cleanup repo", "url": "https://github.com/xXBneutzerNameXx/PS5-Cleanup" }
+      {
+        "name": "PS5-Cleanup repo",
+        "url": "https://github.com/xXBneutzerNameXx/PS5-Cleanup"
+      }
     ]
   },
   {
@@ -167,7 +302,10 @@
       "The port also ships Windows x64 and Linux x64 builds alongside the PS5 version. Built with the PS5 payload SDK and SDL2. Requires a jailbroken PS5 with a homebrew payload loader (etaHEN or elfldr) and ShadowMountPlus to register the app. Copy the PPSA99099 folder to /data/homebrew/ on the console. Saves persist in /data/iwbtgr/save."
     ],
     "sources": [
-      { "name": "IWBTG Remastered Tribute Edition repo", "url": "https://github.com/kaizerfcm/iwbtg-remastered-tribute-edition" }
+      {
+        "name": "IWBTG Remastered Tribute Edition repo",
+        "url": "https://github.com/kaizerfcm/iwbtg-remastered-tribute-edition"
+      }
     ]
   },
   {
