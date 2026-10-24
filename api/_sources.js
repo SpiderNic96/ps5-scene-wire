@@ -167,4 +167,5 @@ export const SOURCES = [
   { cat: R, repo: 'Marice/a2-racer-2-ps5', name: 'A2 Racer II', about: 'Dutch racer port via a2racer2-re' },
   { cat: R, repo: 'leafyjerk/PS5_LuigisMansion', name: "Luigi's Mansion", about: 'GameCube recomp, bring your own disc' },
   { cat: R, repo: 'kaizerfcm/iwbtg-remastered-tribute-edition', name: 'I Wanna Be The Guy: Remastered', about: 'Native PS5 port of the fangame platformer' },
+  { cat: R, repo: 'lamarkingru/grfs-ps5', name: 'Ghost Recon: Future Soldier', about: 'Xbox 360 recomp with LAN/relay multiplayer' },
 ];

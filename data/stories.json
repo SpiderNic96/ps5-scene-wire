@@ -1,5 +1,104 @@
 [
   {
+    "id": "homehider-v200",
+    "date": "2026-10-24",
+    "tag": "Tool",
+    "title": "HomeHider v2.0.0: live wallpapers on the PS5 home screen",
+    "summary": "HomeHider v2 can play a looping video behind the home screen, powered by LiveShell Engine built right into the payload.",
+    "body": [
+      "HomeHider v2.0.0 by Euphoric-Dev adds live wallpapers. A single payload now handles everything: folders, hidden tiles, custom icons, renamed apps and animated backgrounds. The LiveShell Engine 1.5.2 by ZiZc3 is compiled in, so there is no need to load liveshell.elf separately. Switch Live wallpaper on in the menu, drop .mp4 videos into the USB liveshell folder or upload them from a phone or PC, and press Use. An Open LiveShell button gives access to the full LiveShell settings — playlists, a video per game, and the Discover feed.",
+      "HomeHider is now licensed under GPL-3.0 because it bundles LiveShell (source in third_party/liveshell). Install by uploading HomeHider.elf in Payload Manager or updating from the Updates section. Requires a jailbroken PS5 with Payload Manager by itsPLK."
+    ],
+    "sources": [
+      { "name": "HomeHider v2.0.0 release", "url": "https://github.com/Euphoric-Dev/HomeHider/releases/tag/RELEASE-V2" }
+    ]
+  },
+  {
+    "id": "ps5upload-v731",
+    "date": "2026-10-24",
+    "tag": "Tool",
+    "title": "PS5 Upload v7.3.1: drag-and-drop file transfers and tablet layout",
+    "summary": "PS5 Upload v7.3.1 lets you drag files and folders between the PS5's Files view and your computer's desktop, and adds a tablet-friendly layout.",
+    "body": [
+      "PS5 Upload v7.3.1 by phantomptr adds drag-and-drop between the Files view and the host computer. In the desktop app, drag files or folders out of Files onto the desktop, Finder, Explorer or a Linux file manager to copy them, or drag them in from there to upload. Hold Alt (Option on a Mac) to move instead of copy. One drag handles up to 4 GB; right-click Download covers larger transfers. In the browser web UI, dropped files are uploaded to the PS5 as well.",
+      "Minion gains a network-access toggle so other devices on the LAN can open its interface, plus a Remove button that turns Minion off and deletes its PS5 data (favourites, library cache, controller log) while leaving saves, cheats and backups. Tablets held upright now start with the compact icon rail, and hover-only buttons on the sidebar are tappable on a touch screen. Requires a jailbroken PS5 with elfldr."
+    ],
+    "sources": [
+      { "name": "PS5 Upload v7.3.1 release", "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.3.1" }
+    ]
+  },
+  {
+    "id": "grfs-ps5-port",
+    "date": "2026-10-24",
+    "tag": "Port",
+    "title": "Ghost Recon: Future Soldier recompiled for PS5 with LAN and relay multiplayer",
+    "summary": "An unofficial native PS5 port of the Xbox 360 shooter, built with ReXGlue, featuring System Link multiplayer over LAN or a relay server.",
+    "body": [
+      "Ghost Recon: Future Soldier by lamarkingru brings the 2012 Xbox 360 tactical shooter to a jailbroken PS5 as a native homebrew title, recompiled with the ReXGlue SDK and its PS5 layer. The port adds FSR upscaling, PS5-style trophies with Portuguese and English text, and System Link multiplayer over the local network or through a relay server selected in the multiplayer menu. Class XP and ranks are saved per console and on the server, with online ban support.",
+      "No game files are included — you need your own Xbox 360 copy. Build with the rexglue-ps5 SDK and ps5-plume-triangle toolchain, copy game files into the app's assets folder, and configure the relay and news server addresses in grfs.toml. A bundled news server and relay script (Python 3) handle the multiplayer backend. Not affiliated with Ubisoft, Sony or Microsoft."
+    ],
+    "sources": [
+      { "name": "grfs-ps5 repo", "url": "https://github.com/lamarkingru/grfs-ps5" }
+    ]
+  },
+  {
+    "id": "genplusgx-v221",
+    "date": "2026-10-24",
+    "tag": "Emulator",
+    "title": "Genesis Plus GX PS5 v2.2.1: correct controller icons and network-share fixes",
+    "summary": "Genesis Plus GX v2.2.1 shows system-correct gamepad icons on cover-less game cards and fixes two network-share issues.",
+    "body": [
+      "Genesis Plus GX PS5 v2.2.1 by MisterTemaki fixes the controller icon shown on cards for games without cover art. The card corner previously showed a four-button Super Nintendo pad left over from the Snes9x PS5 codebase. It now displays three buttons for a Mega Drive or Sega CD game, and two buttons for a Master System, Game Gear or SG-1000 game. Thanks to CroCop86 for reporting the issue.",
+      "Two network-share fixes are also included: a socket that is made blocking again now stays blocking, and the GPU build's link check correctly reads the PS5_Vulkan recipe to verify the app's NFS functions are intact. Requires a jailbroken PS5 with an ELF loader on port 9021."
+    ],
+    "sources": [
+      { "name": "Genesis Plus GX PS5 v2.2.1 release", "url": "https://github.com/MisterTemaki/genplusgxPS5/releases/tag/v2.2.1" }
+    ]
+  },
+  {
+    "id": "beetlepce-v111",
+    "date": "2026-10-24",
+    "tag": "Emulator",
+    "title": "Beetle PCE PS5 v1.1.1: PC Engine pad icon and CD streaming improvements",
+    "summary": "Beetle PCE v1.1.1 shows a PC Engine controller on cover-less game cards and improves CD streaming over network shares.",
+    "body": [
+      "Beetle PCE PS5 v1.1.1 by MisterTemaki replaces the Snes9x PS5 leftover Super Nintendo pad icon with a PC Engine pad showing its two round buttons (II and I) on game cards that have no cover art. This matches the fix applied to Genesis Plus GX PS5 in the same batch of updates.",
+      "CD games on network shares get several streaming improvements. The running game's own read-ahead now takes priority over the CD's background prefetch on slow connections. Blocks already kept for an earlier track are no longer double-counted against the prefetch budget. Mixed-sector .cue files with both 2048-byte and 2352-byte tracks now fetch each track's start at the correct offset, and .wav/.ogg music tracks only prefetch their own start. Requires a jailbroken PS5 with an ELF loader on port 9021."
+    ],
+    "sources": [
+      { "name": "Beetle PCE PS5 v1.1.1 release", "url": "https://github.com/MisterTemaki/beetlepcePS5/releases/tag/v1.1.1" }
+    ]
+  },
+  {
+    "id": "prosperothemes-v025",
+    "date": "2026-10-24",
+    "tag": "Tool",
+    "title": "Prospero Themes 01.000.025: restore-defaults fix for firmware 11.60",
+    "summary": "Prospero Themes 01.000.025 now correctly identifies the stock system icon file on firmware 11.60 and reports changed file sizes through the helper.",
+    "body": [
+      "Prospero Themes 01.000.025 by Darkatek7 fixes restore-defaults on firmware 11.60. The app now knows the stock system icon file (PUI_UI3.rco) for that firmware, identified from a firmware report of a console whose backup is the unmodified original. When a backup is missing or has been themed, the app leaves the file as-is and names it in the result rather than mistaking a themed file for the original.",
+      "The firmware report now reads the size of a changed system file the app cannot see directly through the helper, where it previously showed −1. ThemeHelper is unchanged at v8 — from 01.000.022 or later, no restart is needed after updating. Requires elfldr and ShadowMountPlus."
+    ],
+    "sources": [
+      { "name": "Prospero Themes 01.000.025 release", "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.025" }
+    ]
+  },
+  {
+    "id": "ps5-cleanup-v102-v103",
+    "date": "2026-10-24",
+    "tag": "Tool",
+    "title": "PS5 Cleanup v1.0.2–v1.0.3: symlink safety fix and clearer M.2 prompts",
+    "summary": "PS5 Cleanup v1.0.2 patches a safety bug where M.2 data could be deleted through symlinks, and v1.0.3 adds separate confirmation prompts for M.2 content.",
+    "body": [
+      "PS5 Cleanup v1.0.2 by xXBneutzerNameXx is a safety update. A symlink under /user/data pointing to the M.2 SSD could cause content on the M.2 to be deleted even when the user selected \"keep M.2\". Symlinks are now never followed — at most the symlink itself is removed, never the target. The ShadowMount halt step also now only counts a fresh logout, preventing a stale log entry from letting the cleanup continue too early.",
+      "Version 1.0.3 adds clearer prompts around M.2 deletion. If any M.2 items are selected, a separate confirmation dialog appears immediately with the list of chosen M.2 entries and a Cancel default. The size-counting phase now explicitly states that nothing is being deleted yet, and the final prompt warns at the top when M.2 entries are included. Closing the window during counting aborts cleanly with nothing deleted. Tested on PS5 Pro (CFI-7021) with firmware 12.00."
+    ],
+    "sources": [
+      { "name": "PS5 Cleanup v1.0.3-beta release", "url": "https://github.com/xXBneutzerNameXx/PS5-Cleanup/releases/tag/v1.0.3-beta" },
+      { "name": "PS5 Cleanup v1.0.2-beta release", "url": "https://github.com/xXBneutzerNameXx/PS5-Cleanup/releases/tag/v1.0.2-beta" }
+    ]
+  },
+  {
     "id": "ps5upload-v720-v730",
     "date": "2026-10-24",
     "tag": "Tool",
