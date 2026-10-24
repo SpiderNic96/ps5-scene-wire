@@ -1,5 +1,90 @@
 [
   {
+    "id": "ps5-luigismansion-100",
+    "date": "2026-10-24",
+    "tag": "Port",
+    "title": "PS5_LuigisMansion: GameCube classic recompiled for PS5 at 4K/60",
+    "summary": "Luigi's Mansion (GameCube, 2001) runs natively on PS5 as a static recompilation, rendered at 4K and 60 fps — built from your own disc with a Windows or Linux app.",
+    "body": [
+      "PS5_LuigisMansion by leafyjerk brings the 2001 GameCube original to a jailbroken PS5 as a native homebrew title, not through emulation. The game's code was translated into C++ by rob646464's Luigi's Mansion Recompiled project and compiled for the console, building on Gary Riches' Super Mario Galaxy and Dusklight ports and Mihawk's PS5 Vulkan stack. The result runs at 4K resolution and 60 frames per second.",
+      "You build the title yourself from a USA disc image (GLME01) using a builder app for Windows 10/11 or Linux (x86-64, glibc 2.39+). The builder accepts ISO, GCM, RVZ, WIA, GCZ, CISO, NFS and TGC formats and needs about 5 GB of free space. Transfer the built title to the console via FTP. Requires a jailbroken PS5 with etaHEN or similar, ShadowMountPlus, and an FTP server on port 2121."
+    ],
+    "sources": [
+      {
+        "name": "PS5_LuigisMansion repo",
+        "url": "https://github.com/leafyjerk/PS5_LuigisMansion"
+      }
+    ]
+  },
+  {
+    "id": "homehider-100",
+    "date": "2026-10-24",
+    "tag": "Tool",
+    "title": "HomeHider: customise the PS5 home screen with folders, icons and hidden tiles",
+    "summary": "HomeHider is a PS5 payload that lets you hide tiles, create folders, rename apps and set custom icons and backgrounds on the home screen — changes survive reboots.",
+    "body": [
+      "HomeHider by Euphoric-Dev is an ELF payload that opens a web-based menu in the PS5 browser (or on a phone or PC) and lets you reshape the home screen. You can hide any tile including system apps like PlayStation Store and Media Gallery, group games into folders that open a Game Library-style page, rename tiles, and replace icons and backgrounds with custom images including transparent PNGs. Changes are written into the console's own home-screen database, so they persist across restarts and normal (non-jailbroken) boots.",
+      "If the PS5 restores a tile or image you changed, HomeHider puts your choice back the next time it runs. It supports quiet autoload through Payload Manager and can update itself from GitHub, USB or a file upload. The database is backed up before every change. Tested on firmware 4.51. Requires a jailbroken PS5 with Payload Manager by itsPLK."
+    ],
+    "sources": [
+      {
+        "name": "HomeHider repo",
+        "url": "https://github.com/Euphoric-Dev/HomeHider"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v7120",
+    "date": "2026-10-24",
+    "tag": "Tool",
+    "title": "PS5 Upload v7.1.20: cover art cache fix, folder cancel and full library listing",
+    "summary": "PS5 Upload v7.1.20 stops the cover cache from remembering missing artwork when the helper is down, fixes folder upload cancellation, and reads libraries larger than 256 titles.",
+    "body": [
+      "PS5 Upload v7.1.20 by phantomptr fixes several edge cases in console management. Cover art lookups no longer cache a \"no artwork\" result when the helper app is not running or the console is in rest mode — only a genuine miss from the console is remembered for 15 minutes. Cancelling a folder upload mid-count now works immediately instead of being ignored, and the upload ends as cancelled. Libraries with more than 256 titles are now read in full, fixing a bug where extra titles were cut off and shown as not installed.",
+      "Folder uploads now correctly report how many files were skipped when \"skip existing\" is on. Other fixes include: failed measure-how-it-plays starts now clean up their temporary files, time sync refuses an empty target instead of resetting the clock to 1970, profile activation rejects a malformed account ID, unreadable files in a selection are skipped rather than failing the entire job, and unknown API paths return a proper 404. Requires a jailbroken PS5 with an ELF loader (elfldr)."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v7.1.20 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.1.20"
+      }
+    ]
+  },
+  {
+    "id": "ps4mount-v070",
+    "date": "2026-10-24",
+    "tag": "Tool",
+    "title": "ps4mount v0.7.0: automatic add-on installation and a game management panel",
+    "summary": "ps4mount v0.7.0 copies add-ons from USB to internal storage automatically and adds a web panel where you can manage games, DLC and updates.",
+    "body": [
+      "ps4mount v0.7.0 by gasb07 adds automatic add-on (DLC) installation: after a scan, every game's add-ons are copied from the external drive to the console's internal storage in a single batch. A failed or disconnected copy does not block others, and an add-on that fails three times is skipped. Games show as \"Installing add-ons\" until their DLC is ready, and turning an add-on off, deleting it from system storage, or removing the game uninstalls the copy.",
+      "The web panel gains game management features: you can choose a game's update and add-ons, start games directly from the panel, and view per-add-on install status. Games are sorted by name with summary label filters and a new \"With DLC\" filter. The startup notification now shows the panel address with the console's IP. Moving a game that exists on two drives now moves only the active copy. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "ps4mount v0.7.0 release",
+        "url": "https://github.com/gasb07/ps4mount/releases/tag/v0.7.0"
+      }
+    ]
+  },
+  {
+    "id": "swanstation-ps5-148",
+    "date": "2026-10-24",
+    "tag": "Emulator",
+    "title": "SwanStationPS5 v1.4.8: hold-to-exit restored and cleaner shutdown",
+    "summary": "SwanStationPS5 v1.4.8 brings back the hold-Circle-to-exit gesture on the library screen, now with a progress bar and hint, and shuts down background services before closing.",
+    "body": [
+      "SwanStationPS5 v1.4.8 by darkxex restores the ability to close the app by holding Circle on the library screen, reversing the v1.4.7 change that disabled it. A short tap now shows a \"Hold to exit\" hint with a progress bar, so accidental exits are less likely while the feature remains accessible.",
+      "App shutdown is also cleaner: the phone server, RetroAchievements connection and cover downloads are all stopped first (waiting up to 2 seconds), then the audio, controllers, interface, renderer and Vulkan screen are released before the system takes the title down. This is an ELF payload — send it to your loader on port 9021, or update through the emulator's settings."
+    ],
+    "sources": [
+      {
+        "name": "SwanStationPS5 1.4.8 release",
+        "url": "https://github.com/darkxex/SwanStationPS5/releases/tag/1.4.8"
+      }
+    ]
+  },
+  {
     "id": "swanstation-ps5-146-147",
     "date": "2026-10-24",
     "tag": "Emulator",

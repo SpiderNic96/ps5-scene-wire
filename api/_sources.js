@@ -79,6 +79,7 @@ export const SOURCES = [
   { cat: T, repo: 'AdamGoodApp/prosperokit', name: 'ProsperoKit', about: 'React + Tailwind framework for native PS5 homebrew apps' },
   { cat: T, repo: 'ghost1372/PS5-Payload-Template', name: 'PS5 Payload Template', about: 'Boilerplate for payloads with a web UI and SQLite' },
   { cat: T, repo: 'ghost1372/PlayTime', name: 'PlayTime', about: 'View and edit per-user game play times' },
+  { cat: T, repo: 'Euphoric-Dev/HomeHider', name: 'HomeHider', about: 'Hide tiles, folders, custom icons on the home screen' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },
@@ -162,4 +163,5 @@ export const SOURCES = [
   { cat: R, repo: 'ChaDea1/Bedlam2-PS5', name: 'Bedlam 2: Absolute Bedlam', about: 'Native DOS game port with DualSense twin-stick controls' },
   { cat: R, repo: 'griches/PS5_GeometryWars2', name: 'Geometry Wars 2', about: 'Xbox Live Arcade port, 4K 120 Hz' },
   { cat: R, repo: 'Marice/a2-racer-2-ps5', name: 'A2 Racer II', about: 'Dutch racer port via a2racer2-re' },
+  { cat: R, repo: 'leafyjerk/PS5_LuigisMansion', name: "Luigi's Mansion", about: 'GameCube recomp, bring your own disc' },
 ];

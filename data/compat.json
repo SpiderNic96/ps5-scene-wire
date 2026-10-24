@@ -624,6 +624,11 @@
       "needs": [
         "ShadowMountPlus"
       ]
+    },
+    "Euphoric-Dev/HomeHider": {
+      "tested": [
+        "4.51"
+      ]
     }
   },
   "unstated": [
@@ -680,6 +685,7 @@
     "hollamhide/hollamhide.github.io",
     "itsPLK/ps5-payload-manager",
     "juma-sayeh/PS5-Game-Compressor",
+    "leafyjerk/PS5_LuigisMansion",
     "manos555555/PS5-Suite",
     "mpereiraesaa/prospero-win",
     "mshivam019/la-ps5",
