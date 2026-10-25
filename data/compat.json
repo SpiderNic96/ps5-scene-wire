@@ -634,6 +634,11 @@
       "tested": [
         "12.00"
       ]
+    },
+    "disco-trooper/hush": {
+      "tested": [
+        "13.60"
+      ]
     }
   },
   "unstated": [

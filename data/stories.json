@@ -1,5 +1,107 @@
 [
   {
+    "id": "hush-ps5",
+    "date": "2026-10-25",
+    "tag": "Tool",
+    "title": "Hush v1.0.0: stop the PS5's constant gameplay recording",
+    "summary": "Hush is a new payload that turns off the PlayStation 5's continuous background video recording without errors or popups, reversible with a reboot.",
+    "body": [
+      "Hush v1.0.0 by disco-trooper is a small payload for jailbroken consoles that disables the PS5's built-in recent-gameplay recording. The PS5 constantly encodes the last 15 seconds to one hour of gameplay to the internal SSD — the developer estimates roughly 7–8 GB written per hour of play based on observed clip sizes. Hush patches the capture daemon's video encoder in memory so it reports success but encodes nothing. The capture daemon keeps running, games start and quit normally, and no error dialogs appear.",
+      "The payload modifies only process memory; no firmware, system files or boot chain are touched, so a reboot restores stock behaviour. Hush tracks all encoder import slots and verifies every write, storing the original addresses for precise reversal. Send hush.elf to your PS5's ELF loader or Payload Manager. Tested on firmware 13.60. Licensed under GPL-3."
+    ],
+    "sources": [
+      {
+        "name": "disco-trooper/hush on GitHub",
+        "url": "https://github.com/disco-trooper/hush"
+      }
+    ]
+  },
+  {
+    "id": "prosperothemes-v028",
+    "date": "2026-10-25",
+    "tag": "Tool",
+    "title": "Prospero Themes 01.000.028: avatars and six new firmware catalogs",
+    "summary": "Prospero Themes 01.000.028 adds user avatars with a community store, six new firmware catalogs and a revamped Library layout.",
+    "body": [
+      "Prospero Themes 01.000.028 by Darkatek7 introduces avatars — profile pictures for the account running the app, separate from themes. Create one in the Avatar Creator at themes.darkatek7.com (it produces a .p5avatar file or publishes to the store), or browse the new Avatars tab where published avatars appear sorted by top-rated, most downloaded or newest. Download and set them with one press, and manage your collection in a new avatar row under the Library. USB import also accepts .p5avatar files.",
+      "Six firmware catalogs have been added (10.60, 12.40, 12.70, 13.20, 13.40 and 13.42), bringing the total to twelve. The Community section is now called Themes, and the Library layout has been rearranged so Down from your themes goes to your avatars. Tested on firmware 13.00. Install via the in-app updater (System → App update) or by extracting PPSA90210.zip to /data/homebrew/ on the console."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Themes 01.000.028 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.028"
+      }
+    ]
+  },
+  {
+    "id": "playden-v071-beta1",
+    "date": "2026-10-25",
+    "tag": "PC & Linux",
+    "title": "Playden v0.7.1-beta.1: fixes game preparation failure",
+    "summary": "Playden v0.7.1-beta.1 fixes a bug from 0.7.0 that stopped some consoles from preparing games, and teaches updates to find an unchanged runtime kit automatically.",
+    "body": [
+      "Playden v0.7.1-beta.1 by leolobato is the first beta of the 0.7.1 line for the PC-to-PS5 Steam game streamer. It fixes a bug introduced in 0.7.0 where a program running without a title ID (such as a loaded payload) made the title-reservation check fail, blocking every game from being prepared. Those programs are now recognised as non-games so the check passes normally.",
+      "Updates can now find an unchanged runtime kit in an earlier release automatically. A release whose kit did not change can leave the kit out, and Playden will fetch it from the newest earlier release that has one. Everything else is the same as 0.7.0 and uses the same runtime kit (0.13). To get the beta from 0.7.0, enable Settings → Updates → Beta updates; from 0.6.0, update to 0.7.0 first or install this beta manually."
+    ],
+    "sources": [
+      {
+        "name": "Playden v0.7.1-beta.1 release",
+        "url": "https://github.com/leolobato/playden-ps5/releases/tag/v0.7.1-beta.1"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v752",
+    "date": "2026-10-25",
+    "tag": "Tool",
+    "title": "PS5 Upload v7.5.2: wake-on-upload and big package fix",
+    "summary": "PS5 Upload v7.5.2 wakes a sleeping PS5 for waiting uploads, fixes conversion of large Sony-compressed packages and cleans up save backups.",
+    "body": [
+      "PS5 Upload v7.5.2 by phantomptr adds wake-on-upload: when an upload is queued for a PS5 in rest mode, the app sends a wake signal, re-sends the helper once the console is up, and carries on. The feature works with consoles that have wake configured on the Connection screen and can be toggled under Settings → Uploads. The Start all button also no longer loops endlessly when two or more uploads target a sleeping console.",
+      "The Convert feature now handles large Sony-compressed PS5 packages. Some titles (Astro Bot, for example) use a layout table with 256 KiB stretches that have no stored data; the reader previously misinterpreted these as blocks, corrupting every offset after the first one. Automatic save backups no longer save the PS5's own empty sce_backup folders. The in-app payload catalogue and Install Package now link to drakmor/ppr-patch as the source for the a53 PPR install ELF."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v7.5.2 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.5.2"
+      }
+    ]
+  },
+  {
+    "id": "ps5-cleanup-v105",
+    "date": "2026-10-25",
+    "tag": "Tool",
+    "title": "PS5 Cleanup v1.0.5: network discovery, safer deletion and new UI",
+    "summary": "PS5 Cleanup v1.0.5 adds automatic PS5 network discovery, broader FTP server compatibility, a redesigned interface and safer ShadowMount-aware deletion.",
+    "body": [
+      "PS5 Cleanup v1.0.5 by xXBneutzerNameXx overhauls the Windows cleanup tool with network discovery: Find PS5 on network checks FTP ports 2121 and 2120, identifies the FTP server and its version, and lets you pick from a list if multiple are found. Entering just an IP now tries both ports automatically. Compatibility is broadened to servers without EPSV (such as ftpsrv 0.21.1), and the tool has been tested with ftpsrv by drakmor 1.16, ftpsrv 0.21.1 and zftpd 1.6.0.",
+      "Deletion is now ShadowMount-aware: if the selection involves ShadowMount content, the program stops ShadowMount first and only proceeds without asking when the stop is confirmed or no games are mounted. A voluntary compatibility report feature lets you submit model, firmware and FTP server details to GitHub with personal data stripped. The interface has been redesigned with console, disc drive pairing and storage visible at a glance. Confirmed on PS5 Pro (CFI-7021) with firmware 12.00."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Cleanup v1.0.5 release",
+        "url": "https://github.com/xXBneutzerNameXx/PS5-Cleanup/releases/tag/v1.0.5-beta"
+      }
+    ]
+  },
+  {
+    "id": "nasbridge-v060-stable",
+    "date": "2026-10-25",
+    "tag": "Tool",
+    "title": "NASBridge v0.6.0: copy games to internal storage or USB",
+    "summary": "NASBridge v0.6.0 leaves beta with a headline addition: games can now be copied from the NAS to the PS5's internal storage or a plugged-in USB drive.",
+    "body": [
+      "NASBridge v0.6.0 by J7mbo is the stable release of the PS5 NAS game browser, graduating from the earlier beta. The headline addition is Copy to Internal: games browsed on the NAS can now be copied to the PS5's internal storage or a plugged-in external drive, rather than only being played directly from the network share. This means games installed this way launch and perform like locally stored titles.",
+      "Send NASBridge-0.6.0.elf to your PS5's ELF loader on port 9021 to install. Requires ShadowMountPlus 1.7beta6-fix2 or newer. NASBridge continues to support parallel downloads, game deletion from the PS5, queue management with pause and resume, and automatic home-screen registration."
+    ],
+    "sources": [
+      {
+        "name": "NASBridge v0.6.0 release",
+        "url": "https://github.com/J7mbo/nasbridge-ps5/releases/tag/v0.6.0"
+      }
+    ]
+  },
+  {
     "id": "swanstation-ps5-151",
     "date": "2026-10-25",
     "tag": "Emulator",

@@ -82,6 +82,7 @@ export const SOURCES = [
   { cat: T, repo: 'Euphoric-Dev/HomeHider', name: 'HomeHider', about: 'Hide tiles, folders, custom icons on the home screen' },
   { cat: T, repo: '0xZ3n0x/BlueV', name: 'BlueV', about: 'Bluetooth audio streaming to speakers and headphones' },
   { cat: T, repo: 'xXBneutzerNameXx/PS5-Cleanup', name: 'PS5 Cleanup', about: 'Clean up a jailbroken PS5 without reinstalling' },
+  { cat: T, repo: 'disco-trooper/hush', name: 'Hush', about: 'Turns off continuous gameplay recording' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },
