@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24",
+  "updated": "2026-10-25",
   "about": "Firmware compatibility for the /firmware directory. Only what each project's README or release notes state. range = the developer says it supports these firmwares; tested = firmwares it has actually been run on; only = hard-locked to these firmwares; any = the developer says it isn't tied to a firmware. unstated = tracked apps whose README was checked and names no PS5 firmware (they show as not confirmed). Validate with: node scripts/compat-check.mjs",
   "firmwares": [
     "1.00",
@@ -600,7 +600,7 @@
         "ShadowMountPlus",
         "elfldr"
       ],
-      "note": "Tested on 13.60 only. Needs its own ShadowMountPlus build for live home screen updates."
+      "note": "Tested on 13.60 only. Requires ShadowMountPlus 1.7beta6-fix2 or newer."
     },
     "griches/PS5_ArtSwap": {
       "tested": [

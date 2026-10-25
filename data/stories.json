@@ -1,5 +1,157 @@
 [
   {
+    "id": "recompstore-v271",
+    "date": "2026-10-25",
+    "tag": "Store",
+    "title": "RecompStore v2.7.1: stability fixes and M.2/USB update support",
+    "summary": "RecompStore v2.7.1 delivers stability improvements, a performance boost, and ensures in-app updates now reach stores installed on an M.2 or USB drive.",
+    "body": [
+      "RecompStore v2.7.1 by elripalda brings stability improvements and a performance boost to the PS5 homebrew store app. The headline fix is that in-app updates now reach the store wherever it is installed, including on an M.2 SSD or USB drive. Previously, updating from inside the store could miss installations on external storage.",
+      "If your store is on an M.2 or USB drive, send the new RecompStore-Installer.elf with your payload sender once; updates from inside the store work from then on. The developer asks users to keep sending logs from Settings, as those reports are how most issues get found and fixed. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "RecompStore v2.7.1 release",
+        "url": "https://github.com/elripalda/RecompStore/releases/tag/v2.7.1"
+      }
+    ]
+  },
+  {
+    "id": "prosperothemes-v026-v027",
+    "date": "2026-10-25",
+    "tag": "Tool",
+    "title": "Prospero Themes v026–v027: in-app updates and community preview",
+    "summary": "Prospero Themes v027 adds self-updating from the store with SHA-256 verification, a community theme preview before download, and OnionHEN compatibility. v026 fixes backups that came from another theming tool.",
+    "body": [
+      "Prospero Themes 01.000.027 by Darkatek7 adds in-app self-updating: the System tab shows an App update row, and when a newer release is out, pressing X offers \"Update now\". The app downloads the release ZIP from the store, checks its size, SHA-256 and every file name, and replaces its own files. Community themes now have a preview on Square — see the picture, home row, sounds and music before downloading. X on a community theme offers \"Download\", \"Download and apply\" or \"Cancel\", with the apply questions shown before anything changes. Under OnionHEN the app no longer restarts the home screen after applying a theme, avoiding a potential System Software Error; the new look shows after the next console restart.",
+      "v026 fixes backups that were actually another tool's theme rather than the originals. The app now checks how a backup looks and will not write back or keep a file that fails the check. Restore defaults names any files it cannot restore. Firmware report catalogs exist for 9.60, 10.01, 11.20, 11.60, 13.00 and 13.60; the developer still wants reports from 12.40 on a console that never had a theme. ThemeHelper v9 ships with v027 — restart the console once after updating. Requires ShadowMountPlus and an ELF loader on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Themes 01.000.027 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.027"
+      },
+      {
+        "name": "Prospero Themes 01.000.026 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.026"
+      }
+    ]
+  },
+  {
+    "id": "psbox-v154",
+    "date": "2026-10-25",
+    "tag": "Media",
+    "title": "PSBox Cloud Gaming v1.5.4: full mouse support and renderer optimisation",
+    "summary": "PSBox Cloud Gaming v1.5.4 adds complete mouse and vector cursor navigation on PS5 and desktop, and optimises the 2D renderer with fast-path drawing and a glyph cache.",
+    "body": [
+      "PSBox Cloud Gaming v1.5.4 by RafaelNGP introduces full mouse and vector cursor support: responsive navigation across all screens with hover, card selection, tab and filter interaction, and precise hit-testing on the toolbar, game details and settings. The software cursor hides smoothly when you switch to the DualSense controller.",
+      "Under the hood, the software 2D renderer gets fast-path drawing with direct scanline copies and batch fills for opaque images and gradients, a glyph and font cache that eliminates per-character heap allocations using an O(1) hash table, and intelligent catalogue scanning that stops the linear scan of 5,000 titles at 60 FPS. The codebase was also split from monolithic modules into smaller, decoupled units. Requires a jailbroken PS5 with etaHEN or similar."
+    ],
+    "sources": [
+      {
+        "name": "PSBox Cloud Gaming v1.5.4 release",
+        "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5/releases/tag/v1.5.4"
+      }
+    ]
+  },
+  {
+    "id": "swanstation-ps5-149-150",
+    "date": "2026-10-25",
+    "tag": "Emulator",
+    "title": "SwanStationPS5 v1.4.9–v1.5.0: USB disc drive and automatic CHD covers",
+    "summary": "SwanStationPS5 v1.5.0 adds USB CD drive support with play-from-disc and copy-to-storage options, while v1.4.9 automatically downloads covers for CHD and other compressed disc images.",
+    "body": [
+      "SwanStationPS5 v1.5.0 by darkxex adds USB CD drive support. When a disc is inserted, the app asks whether to play it directly from the disc or copy it to storage first. A disc whose game is already installed focuses that game on the shelf and offers Continue or Start over when a quick-resume save exists. Discs show on the shelf with their cover art while inserted. The old \"Play from disc\" and \"Do not start the game automatically\" settings are replaced by this interactive prompt, with a new \"Ask when a disc is put in\" toggle (on by default).",
+      "v1.4.9 fixes automatic cover downloads for .chd (compressed) games. The library now asks the emulation core to open the image and read the serial from the disc contents, so CHD files get their covers without needing the serial in the filename or a serial.txt file. The same approach works for .ecm and .mds formats. Multi-disc .m3u playlists of CHD files also get their cover from the first disc. A cache file remembers serials so the library stays fast after the first scan. .ecm and .mds files now appear in the game library. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "SwanStationPS5 1.5.0 release",
+        "url": "https://github.com/darkxex/SwanStationPS5/releases/tag/1.5.0"
+      },
+      {
+        "name": "SwanStationPS5 1.4.9 release",
+        "url": "https://github.com/darkxex/SwanStationPS5/releases/tag/1.4.9"
+      }
+    ]
+  },
+  {
+    "id": "grfs-ps5-v104-v105",
+    "date": "2026-10-25",
+    "tag": "Port",
+    "title": "Ghost Recon: Future Soldier v1.0.4–v1.0.5: DualSense haptics, save backups and 60 FPS menus",
+    "summary": "Ghost Recon: Future Soldier v1.0.5 adds DualSense vibration and adaptive triggers, server-side save backups, attachment credits and 60 FPS menus. v1.0.4 introduces decision points and a bigger shader cache.",
+    "body": [
+      "Ghost Recon: Future Soldier v1.0.5 by lamarkingru brings full DualSense support: rumble, adaptive triggers with resistance and trigger click on R2 and light aiming resistance on L2, a blue Ghost light bar that flashes red on damage, and DualSense button glyphs in HUD hints. Menus now run at 60 FPS (gameplay stays at 30). Attachment credits — one per rank level of each class, matching the original game — are now tracked and saved on both the console and the multiplayer server. Campaign saves, profile and trophies are backed up to the server and restore automatically on a fresh install. The shader cache grows to 2,271 precompiled shaders, shared between consoles via the server.",
+      "v1.0.4 adds decision points to System Link and online VPS multiplayer: at ranks 4, 16, 20, 28, 32 and 40 of each class, a Decision Point screen appears in the lobby showing both items with icons and descriptions. The chosen item unlocks immediately. The shader cache grew from 1,175 to 1,745 shaders. A public ranking board is available. Update by replacing eboot.bin and the shaders/ and textures/ folders in PPSA95210/. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "Ghost Recon: Future Soldier v1.0.5 release",
+        "url": "https://github.com/lamarkingru/grfs-ps5/releases/tag/v1.0.5"
+      },
+      {
+        "name": "Ghost Recon: Future Soldier v1.0.4 release",
+        "url": "https://github.com/lamarkingru/grfs-ps5/releases/tag/v1.0.4"
+      }
+    ]
+  },
+  {
+    "id": "playden-v070",
+    "date": "2026-10-25",
+    "tag": "PC & Linux",
+    "title": "Playden v0.7.0: self-installing runtime and Steam demos",
+    "summary": "Playden v0.7.0 downloads its runtime kit automatically on first start, keeps the controller during the PS5 overlay, adds Steam demos to the library, and groups game settings by topic.",
+    "body": [
+      "Playden v0.7.0 by leolobato simplifies installation to a single folder copy: the app now downloads its runtime kit (Wine, DXVK, vkd3d-proton, Mono and the per-game app shell) by itself on first start. Games keep the controller when you open the PS5 overlay, Stray plays with default settings, and uninstalls now show in the Queue screen. Game settings are grouped by topic for easier navigation.",
+      "Steam demos now appear in the Library, and you can opt into beta versions of games. Updating from v0.6.0: Playden offers the update on next start or from Settings > About > Playden updates > Check now, downloading app and kit together (469 MB). Make sure console storage has at least 8 GB free. Sign-in, games, saves and settings are kept. This is alpha software that signs in to your real Steam account. Requires a jailbroken PS5 with ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "Playden v0.7.0 release",
+        "url": "https://github.com/leolobato/playden-ps5/releases/tag/v0.7.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v750-v751",
+    "date": "2026-10-25",
+    "tag": "Tool",
+    "title": "PS5 Upload v7.5.0–v7.5.1: new branding and security hardening",
+    "summary": "PS5 Upload v7.5.0 introduces a new PS5 Pro logo and branding across every platform, and v7.5.1 hardens the build pipeline with pinned GitHub Actions and a CodeQL gate.",
+    "body": [
+      "PS5 Upload v7.5.0 by phantomptr gives the app a new visual identity: a PS5 Pro drawn in black and white with the name set in Titan One. The new logo appears as the app icon on macOS, Windows, Linux, Android and iPhone, in the app itself, on the PS5 home-screen tile for Minion (updated the next time the helper is sent), and across the website, screenshots and README. All master artwork and every exported image are in the branding/ folder.",
+      "v7.5.1 follows up with a security scan clean-up. Every finding from the new code scan was reviewed: a damaged game image can no longer make the converter reserve a huge buffer, every GitHub Action is pinned to an exact commit, and the scan now skips tests, examples and developer tools that never ship. A PR gate fails any workflow action not pinned to a commit, a CodeQL gate fails any change that leaves a new open alert, and the release script refuses to tag while one is open. Requires a jailbroken PS5 with elfldr."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v7.5.1 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.5.1"
+      },
+      {
+        "name": "PS5 Upload v7.5.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.5.0"
+      }
+    ]
+  },
+  {
+    "id": "nasbridge-v060",
+    "date": "2026-10-25",
+    "tag": "Tool",
+    "title": "NASBridge v0.6.0: test build",
+    "summary": "NASBridge v0.6.0-beta.1 is a new test build of the PS5 NAS game browser and installer. No changelog was published; the developer asks for bug reports.",
+    "body": [
+      "NASBridge v0.6.0-beta.1 by J7mbo is a new test build of the native PS5 app that browses and installs games from a NAS over WebDAV or SMB. The release notes do not list specific changes from v0.5.0, but the app continues to support parallel downloads, game deletion from the PS5, download queue management with pause and resume, and automatic home-screen registration through ShadowMountPlus.",
+      "Install by sending NASBridge-0.6.0.elf to your PS5 ELF loader on port 9021. Requires ShadowMountPlus 1.7beta6-fix2 or newer. Tested on firmware 13.60. This is a beta build — report any issues to the developer."
+    ],
+    "sources": [
+      {
+        "name": "NASBridge v0.6.0-beta.1 release",
+        "url": "https://github.com/J7mbo/nasbridge-ps5/releases/tag/v0.6.0-beta.1"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v742-v744",
     "date": "2026-10-24",
     "tag": "Tool",
