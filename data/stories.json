@@ -1,5 +1,60 @@
 [
   {
+    "id": "prosperothemes-v029-v030",
+    "date": "2026-10-25",
+    "tag": "Tool",
+    "title": "Prospero Themes 01.000.029–01.000.030: crash fix for large files and USB originals restore",
+    "summary": "Prospero Themes 01.000.029 fixes an OutOfMemoryException crash when theming large system files, and 01.000.030 lets you restore original system files from a USB drive.",
+    "body": [
+      "Prospero Themes 01.000.029 by Darkatek7 fixes an OutOfMemoryException crash when preparing backups of large system files. Before firmware 13.00 the file containing system icons and sounds is roughly 100 MB, and the app read it entirely into managed memory — which could not hold it twice in a row with the 'Earlier themes: Combine' option, or even once under heavy memory use. Files of 16 MiB and above are now held outside the app's managed memory for backups, applying, Restore defaults and rollback after a failed write, whether the app accesses /data directly or through ThemeHelper (OnionHEN). Tested on firmware 13.00.",
+      "Prospero Themes 01.000.030 adds USB originals restore. When the console no longer has the original of a file — for example because its backup was made from a themed file and a factory reset does not reset system files — Restore defaults previously left that file unchanged. Now you can copy original files for your firmware to a USB drive under prospero-themes/originals/ in the same folder layout as the app's backups, and run the USB import. The app accepts a file only when its size and SHA-256 match the firmware catalog's original exactly, and skips anything else. The old backup is kept under backup/replaced/. Install via the in-app updater (System → App update) or by extracting PPSA90210.zip to /data/homebrew/ on the console."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Themes 01.000.030 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.030"
+      },
+      {
+        "name": "Prospero Themes 01.000.029 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.029"
+      }
+    ]
+  },
+  {
+    "id": "playden-v071-beta2",
+    "date": "2026-10-25",
+    "tag": "PC & Linux",
+    "title": "Playden v0.7.1-beta.2: startup diagnostics and Steam sign-in fix",
+    "summary": "Playden v0.7.1-beta.2 handles missing folders from manual installs, shows which startup step failed, and tries to fix Steam sign-ins that expire after a day.",
+    "body": [
+      "Playden v0.7.1-beta.2 by leolobato is the second beta of the 0.7.1 line for the PC-to-PS5 Steam game streamer. The app now starts correctly when its folder was copied by hand without its empty subdirectories, and its first screen shows which startup step failed and how to fix it — useful for diagnosing installation issues without checking logs. It also includes a tentative fix for saved Steam sign-ins that stop working after roughly a day.",
+      "Same runtime kit as 0.7.0 (kit 0.13). Playden downloads the kit automatically when it needs it. Update from beta.1 or 0.7.0 via Settings → Updates → Check now, or turn on Beta updates to receive it automatically. Your sign-in, games, saves and Game settings are kept. Beta of alpha software — Playden signs in to your real Steam account and reads and writes your Steam Cloud saves."
+    ],
+    "sources": [
+      {
+        "name": "Playden v0.7.1-beta.2 release",
+        "url": "https://github.com/leolobato/playden-ps5/releases/tag/v0.7.1-beta.2"
+      }
+    ]
+  },
+  {
+    "id": "ps5-linux-tuning",
+    "date": "2026-10-25",
+    "tag": "PC & Linux",
+    "title": "ps5-linux-tuning: system tuning scripts for PS5 Linux",
+    "summary": "A new collection of configuration files, systemd units and shell scripts that tune a PS5 running Linux for gaming — including a Bluetooth fix for MediaTek chips and a 5 GB Mesa shader cache.",
+    "body": [
+      "ps5-linux-tuning by fs0ciety404 is a set of system-level tuning and fixes for PlayStation 5 consoles running Linux via ps5-linux-loader and the Relapse jailbreak chain. The repo contains only configuration files, systemd units, udev and modprobe rules and shell scripts — no binaries or firmware. Tuning covers sysctl settings for VM pressure, dirty page flushing, TCP BBR and UDP buffers; a systemd unit that auto-resets the MediaTek MT7921 Bluetooth chip after boot to work around the 0xfd98 timeout; modprobe blacklisting of absent drivers; udev rules to hide ghost BT HID interfaces; and a 5 GB system-wide Mesa shader cache.",
+      "Tested on a PS5 Slim (CFI-2016) on firmware 13.60 with Ubuntu 26.04 LTS and a scene custom 7.1.7 kernel. Not yet verified on original PS5 or PS5 Pro models. All changes are reversible with a single rollback script. The repo includes detailed documentation for each tuning area and accepts community benchmark contributions. Licensed under MIT."
+    ],
+    "sources": [
+      {
+        "name": "fs0ciety404/ps5-linux-tuning on GitHub",
+        "url": "https://github.com/fs0ciety404/ps5-linux-tuning"
+      }
+    ]
+  },
+  {
     "id": "hush-ps5",
     "date": "2026-10-25",
     "tag": "Tool",

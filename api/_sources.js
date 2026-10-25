@@ -116,6 +116,7 @@ export const SOURCES = [
   { cat: P, repo: 'leolobato/playden-ps5', name: 'Playden', about: 'Play your Steam Windows games' },
   { cat: P, repo: 'bizkut/ps5-pokemmo', name: 'PokeMMO for PS5', about: 'PokeMMO client through Wine' },
   { cat: P, repo: 'ldm087/ludemos-ps5', name: 'LudemOS', about: 'Gaming Linux distro for PS5 Slim with console-style launcher' },
+  { cat: P, repo: 'fs0ciety404/ps5-linux-tuning', name: 'ps5-linux-tuning', about: 'System tuning and BT fix for PS5 Linux' },
 
   // Media and streaming
   { cat: M, repo: 'RafaelNGP/xbox-cloud-gaming-ps5', name: 'PSBox Cloud Gaming', about: 'Xbox Cloud Gaming client' },

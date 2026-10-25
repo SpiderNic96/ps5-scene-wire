@@ -639,6 +639,15 @@
       "tested": [
         "13.60"
       ]
+    },
+    "fs0ciety404/ps5-linux-tuning": {
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "ps5-linux-loader"
+      ],
+      "note": "Linux-side config scripts. Tested on PS5 Slim with Relapse jailbreak and Ubuntu 26.04."
     }
   },
   "unstated": [
