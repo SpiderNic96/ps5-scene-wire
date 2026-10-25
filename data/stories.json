@@ -1,5 +1,145 @@
 [
   {
+    "id": "prosperothemes-v031-v033",
+    "date": "2026-10-25",
+    "tag": "Tool",
+    "title": "Prospero Themes 01.000.031–01.000.033: disk-space safety and infinite theme scrolling",
+    "summary": "Three rapid Prospero Themes updates add disk-space checks before writes, in-place overwrites when space is tight, and infinite scrolling in the theme store.",
+    "body": [
+      "Prospero Themes 01.000.031 by Darkatek7 adds a free-space check before every file write. Theme files are normally written as a .tmp alongside the original and then renamed over it, so the folder needs room for the full duplicate. On a console with a full /system_ex partition, a write could stop halfway and leave an orphan .tmp that consumed the remaining space. The app now checks free space before an apply writes anything and again before each individual write, stopping with a clear message when there is not enough room. Version 01.000.032 goes further: when there is no room for the .tmp but the new file is exactly the same size as the old one, the app overwrites only the bytes that differ, in place, needing no extra space at all.",
+      "Prospero Themes 01.000.033 adds infinite scrolling to the Themes store tab, which previously showed only the first 24 themes. As the cursor nears the end of the list, the next page loads automatically and the header shows the total count for the current sort, category and search. A page that fails to load is retried when the cursor moves. The update also fixes the control centre sound icon to match the actual speaker state. Install via the in-app updater (System → App update) or by extracting the zip to /data/homebrew/ on the console."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Themes 01.000.033 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.033"
+      },
+      {
+        "name": "Prospero Themes 01.000.031 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.031"
+      }
+    ]
+  },
+  {
+    "id": "machetesvg-v131",
+    "date": "2026-10-25",
+    "tag": "Tool",
+    "title": "MacheteSVG v1.3.1: active save slot priority and PFS module fix",
+    "summary": "MacheteSVG v1.3.1 prioritises gameplay save slots over settings-only PROFILE entries and broadens PFS kernel module resolution for mounting saves.",
+    "body": [
+      "MacheteSVG v1.3.1 (Build #75) by VenezuelanBiggie24 fixes how PS5 param.json dirName is chosen when restoring saves: active gameplay slots (QUICKSAVE, MANUALSAVE, AUTOSAVE) are now prioritised over settings-only PROFILE slots, so the console loads the right save data. Individual slot descriptors (_param.json and per-slot .json files) are preserved during metadata reconstruction instead of being overwritten.",
+      "The update also expands the list of PFS kernel and VSH module candidates and removes overly restrictive access checks, ensuring sceFsMountSaveData and sceSaveDataMount symbol resolution succeeds on more firmware and module configurations. PS4 container directory layout is now enforced by cleaning up loose files in the savedata directory. Requires a jailbroken PS5 with etaHEN or equivalent."
+    ],
+    "sources": [
+      {
+        "name": "MacheteSVG v1.3.1 release",
+        "url": "https://github.com/VenezuelanBiggie24/MacheteSVG-PS5-Save-Manager/releases/tag/v1.3.1"
+      }
+    ]
+  },
+  {
+    "id": "grfs-ps5-v106",
+    "date": "2026-10-25",
+    "tag": "Port",
+    "title": "Ghost Recon: Future Soldier v1.0.6: saved pipelines eliminate repeated stutter",
+    "summary": "Ghost Recon: Future Soldier v1.0.6 finally persists Vulkan pipelines on PS5, ships a much larger pre-built shader cache, and downloads shared pipelines on first launch.",
+    "body": [
+      "Ghost Recon: Future Soldier v1.0.6 by lamarkingru fixes a pipeline caching issue that caused stuttering on every play session. Up to v1.0.5, the PS5 never actually saved newly compiled Vulkan pipelines to storage, so they were rebuilt from scratch each time the game launched. Pipelines are now persisted correctly, eliminating the repeated micro-stutters. The pre-built cache shipped with the package has also grown to 3 508 shaders (up from 2 271) and 2 780 pipelines (up from 819).",
+      "A new shared pipeline cache feature downloads shaders discovered by other consoles from a server before the game loads on first launch (with an eight-second timeout), so even a fresh install benefits from community-compiled pipelines. The release also adds new PS5 home screen artwork — a custom icon, background and boot splash — and includes a public ranking server. Requires a jailbroken PS5 with the recomp runtime."
+    ],
+    "sources": [
+      {
+        "name": "Ghost Recon: Future Soldier v1.0.6 release",
+        "url": "https://github.com/lamarkingru/grfs-ps5/releases/tag/v1.0.6"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v753",
+    "date": "2026-10-25",
+    "tag": "Tool",
+    "title": "PS5 Upload v7.5.3: Android export fix and screen-on during web transfers",
+    "summary": "PS5 Upload v7.5.3 fixes bug reports and exports leaving 0-byte files on Android, and keeps the screen on during web UI transfers.",
+    "body": [
+      "PS5 Upload v7.5.3 by phantomptr fixes an Android bug where the save dialog created an empty file at the chosen location while the actual export went to the Downloads folder, making bug reports and settings exports appear empty. Exports now go straight to Downloads with no dialog and no orphan file, and the app log records each save with its path and size. An export that comes out empty now reports the problem instead of appearing successful.",
+      "The web UI (used in Docker deployments and browser-based setups) now holds the screen awake during uploads, downloads and installs, preventing a laptop or phone from sleeping and killing the browser tab that drives the transfer queue. A manual Keep screen on toggle is also available in Settings. The desktop apps already kept the display on during transfers."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v7.5.3 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v7.5.3"
+      }
+    ]
+  },
+  {
+    "id": "ps5-suite-v770",
+    "date": "2026-10-25",
+    "tag": "Tool",
+    "title": "PS5-Suite v7.7.0: trophy unlock pipeline reworked with NID-first resolution",
+    "summary": "PS5-Suite v7.7.0 reworks the trophy unlock path to follow the daemon's real extraction flow, adds NID-first symbol resolution for next-gen SDK libraries, and shows trophy timestamps in local time.",
+    "body": [
+      "PS5-Suite v7.7.0 by manos555555 reworks the trophy unlock pipeline so posts travel the path the trophy daemon actually extracts. Events are now created as game-generated (GENERATED_BY_CODEGEN), posted on a fresh per-post handle, and the callback is pumped after every post so the daemon drains its event queue. The handle is destroyed afterwards, which triggers the journal flush that grants the award. A new NID-first symbol resolver tries each remote export by NID before falling back to name lookup, fixing libraries like libSceNpUniversalDataSystem that are invisible to dlsym-by-name.",
+      "When the running game has no live UDS handle, the payload creates one and binds it via RegisterContext, with the handle scan now sweeping the full handle-id range. A direct-award path through the daemon's own debug ops (sceNpTrophy2SystemDebugUnlockTrophy / LockTrophy) is available on registered pairs. Trophy unlock timestamps are now converted from UTC to local time before display. Requires a jailbroken PS5 with etaHEN or equivalent."
+    ],
+    "sources": [
+      {
+        "name": "PS5-Suite v7.7.0 release",
+        "url": "https://github.com/manos555555/PS5-Suite/releases/tag/v7.7.0"
+      }
+    ]
+  },
+  {
+    "id": "bluev-v020",
+    "date": "2026-10-25",
+    "tag": "Tool",
+    "title": "BlueV v0.2.0: SDP service discovery logging",
+    "summary": "BlueV v0.2.0 logs the UUIDs a Bluetooth device searches for during SDP, aiding debugging of audio pairing issues.",
+    "body": [
+      "BlueV v0.2.0 by 0xZ3n0x adds logging of the UUIDs that a Bluetooth device queries during SDP (Service Discovery Protocol) service searches. When a speaker or headphone connects and performs SDP, the payload now records which service UUIDs it looked for, making it easier to diagnose why certain devices fail to pair or stream audio.",
+      "The release also adds a GitHub Actions workflow that automatically publishes the payload binary when a version tag is pushed. BlueV is a PS5 payload that enables Bluetooth audio streaming to speakers and headphones on jailbroken consoles. Send bluev.elf to your ELF loader or Payload Manager."
+    ],
+    "sources": [
+      {
+        "name": "BlueV v0.2.0 release",
+        "url": "https://github.com/0xZ3n0x/BlueV/releases/tag/v0.2.0"
+      }
+    ]
+  },
+  {
+    "id": "sm-toolbox",
+    "date": "2026-10-25",
+    "tag": "Tool",
+    "title": "SM+ Toolbox: desktop companion for building ShadowMountPlus images",
+    "summary": "SM+ Toolbox is a new cross-platform Electron app that builds, verifies and manages UFS2, exFAT and compressed PFS images for ShadowMountPlus, and sends payloads to the console.",
+    "body": [
+      "SM+ Toolbox by AldySan is a desktop companion for ShadowMountPlus, the PS5 homebrew project that mounts game images from external storage. Building those images usually means running command-line tools with elevated permissions and sometimes reaching for a hex editor. SM+ Toolbox brings that workflow into a single app with support for all three image formats: UFS2 (.ffpkg), exFAT (.exfat) and compressed PFS (.ffpfsc). Multiple builds can be queued and processed in sequence. A verification view checks an image's filesystem signatures and file extension before you transfer it to the console.",
+      "The app also downloads and sends the shadowmountplus.elf payload to a listener on the console over TCP port 9021, manages UFS2Tool and MkPFS dependencies automatically, and includes the ShadowMountPlus README as searchable built-in documentation. Commands are previewed before execution and shown in a terminal panel as they run. Available for Windows and Linux under GPL-3.0. Built with Electron, React, Vite and TypeScript."
+    ],
+    "sources": [
+      {
+        "name": "AldySan/SM-Toolbox on GitHub",
+        "url": "https://github.com/AldySan/SM-Toolbox"
+      }
+    ]
+  },
+  {
+    "id": "ps5-runescape",
+    "date": "2026-10-25",
+    "tag": "Port",
+    "title": "RuneScape on PS5: Old School RuneScape and RuneLite through Wine",
+    "summary": "A new homebrew project runs the official Jagex Launcher, Old School RuneScape and RuneLite on a jailbroken PS5 using a Wine port with Vulkan and DualSense controller mapping.",
+    "body": [
+      "ps5-runescape by bizkut is a new PS5 homebrew title that runs the official Windows Jagex Launcher, the official Old School RuneScape client and RuneLite on a jailbroken console using a PS5 port of Wine with a Vulkan graphics stack. Nothing from Jagex is bundled — the launcher is downloaded from Jagex on first start and then installs OSRS (and optionally RuneLite) itself. You sign in with your own Jagex account. The controller mapping is adapted from Brigsby Bear's Steam Input layout for OSRS, with R2 half-press for a second binding layer.",
+      "This is the first public build and is labelled as a prerelease. Unpack the PPSA99225 folder to /data/homebrew/ on the console. Game data lives separately in /data/runescape (Wine prefix, launcher and saves), so app updates keep your progress. The data directory is world-readable for FTP access but contains session data, so should not be shared. Requires a jailbroken PS5 with homebrew loading from /data/homebrew."
+    ],
+    "sources": [
+      {
+        "name": "bizkut/ps5-runescape on GitHub",
+        "url": "https://github.com/bizkut/ps5-runescape"
+      }
+    ]
+  },
+  {
     "id": "prosperothemes-v029-v030",
     "date": "2026-10-25",
     "tag": "Tool",

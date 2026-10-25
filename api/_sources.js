@@ -83,6 +83,7 @@ export const SOURCES = [
   { cat: T, repo: '0xZ3n0x/BlueV', name: 'BlueV', about: 'Bluetooth audio streaming to speakers and headphones' },
   { cat: T, repo: 'xXBneutzerNameXx/PS5-Cleanup', name: 'PS5 Cleanup', about: 'Clean up a jailbroken PS5 without reinstalling' },
   { cat: T, repo: 'disco-trooper/hush', name: 'Hush', about: 'Turns off continuous gameplay recording' },
+  { cat: T, repo: 'AldySan/SM-Toolbox', name: 'SM+ Toolbox', about: 'Desktop companion for building ShadowMountPlus images' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },
@@ -170,4 +171,5 @@ export const SOURCES = [
   { cat: R, repo: 'leafyjerk/PS5_LuigisMansion', name: "Luigi's Mansion", about: 'GameCube recomp, bring your own disc' },
   { cat: R, repo: 'kaizerfcm/iwbtg-remastered-tribute-edition', name: 'I Wanna Be The Guy: Remastered', about: 'Native PS5 port of the fangame platformer' },
   { cat: R, repo: 'lamarkingru/grfs-ps5', name: 'Ghost Recon: Future Soldier', about: 'Xbox 360 recomp with LAN/relay multiplayer' },
+  { cat: R, repo: 'bizkut/ps5-runescape', name: 'RuneScape (PS5)', about: 'OSRS and RuneLite through Wine' },
 ];
