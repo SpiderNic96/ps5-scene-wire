@@ -1,5 +1,39 @@
 [
   {
+    "id": "swanstation-ps5-151",
+    "date": "2026-10-25",
+    "tag": "Emulator",
+    "title": "SwanStationPS5 v1.5.1: eight new CRT and LCD shaders",
+    "summary": "SwanStationPS5 v1.5.1 adds eight display shaders including CRT Royale, CRT Newpixie, and Game Boy LCD, replaces two older shaders, and fixes rendering bugs in shader chains.",
+    "body": [
+      "SwanStationPS5 v1.5.1 by darkxex brings eight new shaders to the PS1 emulator's display options (Settings → Display → Shader). The additions include CRT Royale, the full and heaviest version of the CRT Royale family; CRT Newpixie, a curved CRT with ghosting and rolling scanlines; CRT Hyllian NTSC, a CRT look with NTSC colour fringes; CRT Mattias, a curved CRT with a vignette, noise and crawling scanlines; CRT Lottes, scanlines on a warped screen with a shadow mask and bloom; CRT Pi, a light CRT with glowing scanlines; Game Boy LCD, which splits every pixel into RGB sub-pixels; and zfast LCD, pixels with darkened borders like an LCD panel.",
+      "The old Sharp Bilinear and CRT Basic shaders have been removed; any game or setting that used one will now load with the shader off. CRT Royale Fast has been renamed to its proper name and sits right before the new CRT Royale. The developer verified all new shaders against their original presets for accuracy. This release also fixes a read past the end of a table in CRT Royale Fast and corrects the frame counter visible to the last pass of a shader chain, which had been shifting animated lines. Requires a jailbroken PS5 with a compatible firmware."
+    ],
+    "sources": [
+      {
+        "name": "SwanStationPS5 v1.5.1 release",
+        "url": "https://github.com/darkxex/SwanStationPS5/releases/tag/1.5.1"
+      }
+    ]
+  },
+  {
+    "id": "prosperostore-v1000106",
+    "date": "2026-10-25",
+    "tag": "Store",
+    "title": "ProsperoStore v1.000.106: custom catalog hosting, comments and background music",
+    "summary": "ProsperoStore v1.000.106 restores custom catalog support with self-hosting, adds up to 20 comments per app, and introduces a background music toggle with custom MP3 support.",
+    "body": [
+      "ProsperoStore v1.000.106 by blackbearreloaded fixes custom catalog support so the store accepts a catalog's full address again and lets its own host serve the apps it lists (PR #48 by ajgon, fixing issue #47). The update also adds a comments feature with up to 20 comments per app, giving users a way to share feedback and tips directly within the store.",
+      "A new Background Music switch appears in Settings under Sounds, letting users toggle the store's music on or off. For custom music, drop a background.mp3 file in /data/prosperostore to replace the default song. Requires a jailbroken PS5 with a compatible firmware."
+    ],
+    "sources": [
+      {
+        "name": "ProsperoStore v1.000.106 release",
+        "url": "https://github.com/darkxex/ProsperoStore/releases/tag/v1.000.106"
+      }
+    ]
+  },
+  {
     "id": "recompstore-v271",
     "date": "2026-10-25",
     "tag": "Store",
