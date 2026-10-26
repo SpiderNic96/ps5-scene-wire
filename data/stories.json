@@ -1,5 +1,94 @@
 [
   {
+    "id": "machetesvg-v139-v1311",
+    "date": "2026-10-26",
+    "tag": "Tool",
+    "title": "MacheteSVG v1.3.9–v1.3.11: PFS Helper daemon and Decima engine save fixes",
+    "summary": "MacheteSVG v1.3.9 through v1.3.11 add an integrated PFS Helper daemon for native container mounting, fix Decima engine saves in Horizon Zero Dawn Remastered, and correct PS4 backwards-compatible save mirroring.",
+    "body": [
+      "MacheteSVG v1.3.9 by VenezuelanBiggie24 introduces a resident PFS Helper daemon (machete_pfs_helper.elf) that runs in system space via the ELF loader on port 9021, bypassing the application sandbox restriction. It enables native PFS container mounting for both PS4 and PS5 saves through libSceFsInternalForVsh.sprx, with an automatic dual IPC client (socket and file) for communication between the GUI and the daemon. The release also fixes the Decima engine master descriptor for Horizon Zero Dawn Remastered by dynamically linking dirName to the active save slot, and adds full local re-signing of PS4 save containers with Merkle tree sealing.",
+      "v1.3.10 fixes premature return in ScopedPfsMount that blocked the PFS Helper from activating and switches to dynamic loading of libSceFsInternalForVsh.sprx for clean startup under elfldr. v1.3.11 corrects PS5 primary slot selection to prioritise PROFILE when present, fixes Decima engine boot detection for Horizon Zero Dawn Remastered and Death Stranding, and adds automatic 1:1 mirroring of sealed active slots to backup twins for PS4 backwards-compatible titles like Dragon Quest XI S."
+    ],
+    "sources": [
+      {
+        "name": "MacheteSVG v1.3.11 release",
+        "url": "https://github.com/VenezuelanBiggie24/MacheteSVG-PS5-Save-Manager/releases/tag/v1.3.11"
+      },
+      {
+        "name": "MacheteSVG v1.3.9 release",
+        "url": "https://github.com/VenezuelanBiggie24/MacheteSVG-PS5-Save-Manager/releases/tag/v1.3.9"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v810",
+    "date": "2026-10-26",
+    "tag": "Tool",
+    "title": "PS5 Upload v8.1.0: Mesh Drive across consoles and conflict resolution",
+    "summary": "PS5 Upload v8.1.0 links Mesh Drives between multiple PS5 consoles so files sync console to console, adds a conflict resolution UI, and reworks drive creation with guided setup.",
+    "body": [
+      "PS5 Upload v8.1.0 by phantomptr adds cross-console Mesh Drive. A drive can now be linked to another PS5 console: each console becomes a master for the devices that sync through it, and a computer or Docker instance keeps both consoles in sync with files going directly between them. Each console holds a drive once, so links form a tree with no loops. A device whose console is off syncs through a linked one, and a console that was off catches up when it returns.",
+      "A new Settle Conflicts screen on the drive card lists every conflict copy beside the file it duplicates, showing who made it, sizes and times. Choose Keep the original, Keep the copy or Keep both for each one — settled items go to the drive’s 30-day trash. Drive creation is now guided: name the drive, choose or create a folder on the console and on the device, with live validation. The old approval step is gone; password protection replaces it, stored as a salted Argon2id hash. A Restart Engine button in Settings lets you restart the helper without closing the app."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v8.1.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v8.1.0"
+      }
+    ]
+  },
+  {
+    "id": "swanstation-ps5-152",
+    "date": "2026-10-26",
+    "tag": "Emulator",
+    "title": "SwanStationPS5 v1.5.2: play PS1 games from NTFS USB drives",
+    "summary": "SwanStationPS5 1.5.2 reads games directly from NTFS-formatted USB disks and hard drives, with no copying to the console required.",
+    "body": [
+      "SwanStationPS5 1.5.2 by darkxex adds native NTFS disk support. A USB disk or hard drive formatted as NTFS (MBR or GPT) can now be read directly from the console without copying anything: its psx folder (or whatever name is set in Games folder on drives) and its SwanStationPS5/games folder appear on the shelf like any other drive. Plug the disk in and use Settings → Library → Rescan library to pick it up.",
+      "The feature can be toggled under Settings → System → NTFS disks. The disk is read-only and only visible to the app. If the disk is unplugged mid-game, the game exits with a notice. Encrypted files (EFS, BitLocker) cannot be read, and a disk Windows left in Fast Startup may not show its latest changes. The NTFS reader is based on PS5-NTFS-BROWSER by abcde6543."
+    ],
+    "sources": [
+      {
+        "name": "SwanStationPS5 1.5.2 release",
+        "url": "https://github.com/darkxex/SwanStationPS5/releases/tag/1.5.2"
+      }
+    ]
+  },
+  {
+    "id": "emby5-v129",
+    "date": "2026-10-26",
+    "tag": "Media",
+    "title": "Emby5 1.2.9: full TV guide and volume boost",
+    "summary": "Emby5 1.2.9 adds a full TV guide grid for Live TV and M3U playlists, volume boost up to +300%, and a configurable network buffer for remote streaming.",
+    "body": [
+      "Emby5 1.2.9 by bornaradusin introduces a full TV guide in Live TV (press Square): channels run down the left side, time runs across, and each programme is a block with the current time marked by a vertical line. Navigate with D-pad, switch groups with L1/R1, and press Cross to watch. The guide works with Emby, Jellyfin, Xtream and M3U playlists. M3U channels now also display what is on now and next on their cards and in the player. For M3U, the guide reads from the playlist’s url-tvg or a custom XMLTV URL you enter in settings.",
+      "A new volume boost in Settings → Playback raises the level by +50% to +300% with a limiter to prevent distortion (HDMI bitstream is disabled while active). A network buffer option (30 seconds to 5 minutes) helps with remote servers or weak Wi-Fi. Audio track switching now shows a progress indicator instead of appearing frozen, and the playback info panel (L3) now displays dropped frames. Download the ZIP and copy the PPSA99515 folder to /data/homebrew/."
+    ],
+    "sources": [
+      {
+        "name": "Emby5 1.2.9 release",
+        "url": "https://github.com/bornaradusin/Emby5/releases/tag/1.2.9"
+      }
+    ]
+  },
+  {
+    "id": "recompstore-v272",
+    "date": "2026-10-26",
+    "tag": "Store",
+    "title": "RecompStore v2.7.2: developer profiles with verification and beta codes",
+    "summary": "RecompStore v2.7.2 shows the developer behind each app with a verified badge, adds developer profile pages, and lets you install beta builds with a code.",
+    "body": [
+      "RecompStore v2.7.2 by elripalda introduces developer profiles. Every app now shows who made it right below its name, with a Verified Developer badge for developers RecompStore has checked. Tiles, the Library and search results display the developer’s name alongside a small check mark for verified developers. Each developer has their own page in the store with their picture, bio, links, a QR code to their recompstore.com profile, and all their published apps. The Discover section can now feature a developer’s catalogue in a dedicated row.",
+      "Beta builds are now supported: if you have a beta code for an app that is already published, the beta build appears under Versions on the app’s page. Install it from there and switch back to the regular version any time. The store’s own update screen now always shows its current patch notes instead of older ones, and per-app updates display their release notes once fetched from GitHub. Update from inside the store or send RecompStore-Installer.elf to your payload loader."
+    ],
+    "sources": [
+      {
+        "name": "RecompStore v2.7.2 release",
+        "url": "https://github.com/elripalda/RecompStore/releases/tag/v2.7.2"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v800",
     "date": "2026-10-26",
     "tag": "Tool",
