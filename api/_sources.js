@@ -84,6 +84,7 @@ export const SOURCES = [
   { cat: T, repo: 'xXBneutzerNameXx/PS5-Cleanup', name: 'PS5 Cleanup', about: 'Clean up a jailbroken PS5 without reinstalling' },
   { cat: T, repo: 'disco-trooper/hush', name: 'Hush', about: 'Turns off continuous gameplay recording' },
   { cat: T, repo: 'AldySan/SM-Toolbox', name: 'SM+ Toolbox', about: 'Desktop companion for building ShadowMountPlus images' },
+  { cat: T, repo: 'omerbicer/ps5-pkg-folderizer', name: 'PKG Folderizer', about: 'Convert debug PKGs to ShadowMountPlus folders on-console' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },

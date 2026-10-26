@@ -1,5 +1,94 @@
 [
   {
+    "id": "ps5upload-v811-v820",
+    "date": "2026-10-26",
+    "tag": "Tool",
+    "title": "PS5 Upload v8.1.1–v8.2.0: Mesh Drive survives rest mode and batched uploads",
+    "summary": "PS5 Upload v8.1.1 fixes settings sync between devices and Mesh Drive repeated copies, while v8.2.0 handles consoles going to rest mode mid-sync and uploads many files in batches instead of one at a time.",
+    "body": [
+      "PS5 Upload v8.1.1 by phantomptr fixes cross-device settings sync — a setting changed on one device now applies everywhere immediately instead of trading back and forth with \"settings arrived — reload\" prompts. Mesh Drive no longer copies a file twice after syncing it, takes the agreed state from a fresh listing, and treats a save-during-upload as a retry rather than a conflict. Linked consoles handle network errors without re-hashing everything or resurrecting deleted files, and an unlinked console can be re-linked to the copy it kept.",
+      "v8.2.0 makes Mesh Drive tolerate rest mode: a console going to sleep mid-sync stops the copy within about a minute, keeps what it transferred, and labels the state (Console asleep, Helper not running, or Console away) with a \"Wake console\" or \"Send helper\" option on the card. Multiple-file uploads go up in batches — a test moved 520 files in 25 seconds instead of four minutes. Pop-up notifications and menus now fit correctly on phone screens. Send PS5Upload.elf to your payload loader on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v8.2.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v8.2.0"
+      },
+      {
+        "name": "PS5 Upload v8.1.1 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v8.1.1"
+      }
+    ]
+  },
+  {
+    "id": "recompstore-v273",
+    "date": "2026-10-26",
+    "tag": "Store",
+    "title": "RecompStore v2.7.3: Indonesian, Thai and Ukrainian translations plus self-repair",
+    "summary": "RecompStore v2.7.3 adds Bahasa Indonesia, Thai and Ukrainian translations with proper font and word-wrap support, and a new Repair option that re-downloads the store data without touching your apps or settings.",
+    "body": [
+      "RecompStore v2.7.3 by elripalda adds three new languages: Bahasa Indonesia, Thai (ไทย) and Ukrainian (Українська). The store follows the PS5's system language automatically, or you can pick one in Settings. Thai gets its own font with clean word-wrap between words and correctly positioned tone marks. Numbers are written the way each language expects.",
+      "A new Settings > Storage > Repair RecompStore option re-downloads the store's catalogue, charts and images while keeping all installed apps, saves and settings intact. When the store can't load its list it now explains why (not connected, network couldn't start, or server didn't answer) and what to try. Install via \"Update\" inside the store or send RecompStore-Installer.elf to your payload loader."
+    ],
+    "sources": [
+      {
+        "name": "RecompStore v2.7.3 release",
+        "url": "https://github.com/elripalda/RecompStore/releases/tag/v2.7.3"
+      }
+    ]
+  },
+  {
+    "id": "prosperothemes-v036",
+    "date": "2026-10-26",
+    "tag": "Tool",
+    "title": "Prospero Themes 01.000.036: theme backgrounds now cover PS4 games",
+    "summary": "Prospero Themes 01.000.036 extends \"All apps\" theming to PS4 games, converting backgrounds to the smaller format PS4 tiles use and restoring originals with Restore Defaults.",
+    "body": [
+      "Prospero Themes 01.000.036 by Darkatek7 fixes a gap where PS4 game tiles kept their own background picture even with \"All apps\" selected. The PS5 stores PS4 game images in a smaller 1920×1080 DXT1 format rather than the 3840×2160 BC7 used by PS5 titles, so the app used to skip them entirely. The update converts the theme's background to the PS4 format once per apply and writes it to each PS4 game, with the usual backup so Restore Defaults puts the original picture back.",
+      "Tested on firmware 13.00 with a PS4 game installed from a PKG. Update via System → App Update inside the app, or extract PPSA90210.zip and copy the PPSA90210 folder to /data/homebrew/ on the console. ThemeHelper is unchanged at v11 so no restart is needed — just re-apply your theme with \"All apps\" selected. Requires elfldr on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Themes 01.000.036 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.036"
+      }
+    ]
+  },
+  {
+    "id": "playden-v071-beta3",
+    "date": "2026-10-26",
+    "tag": "PC & Linux",
+    "title": "Playden v0.7.1-beta.3: update dialogs stay open and out-of-storage error handling",
+    "summary": "Playden v0.7.1-beta.3 fixes the update offer and What's New dialogs closing prematurely when the game library loads, and adds a clear error message when installed outside console storage.",
+    "body": [
+      "Playden v0.7.1-beta.3 by leolobato is the third beta in the 0.7.1 series. The main fix: the \"Update available\" offer and \"What's new\" dialogs no longer close by themselves when the game library finishes loading in the background. Both dialogs tend to appear at startup before games have loaded, and the library arriving would dismiss them before the user could respond. The update offer is also now accessible from Settings > Updates if it does get missed.",
+      "An installation placed outside console storage — for example on a USB drive — now shows a clear error message explaining how to fix it instead of stopping on a black screen. This beta also prepares for 0.8.0, when Playden moves to its ProsperoStore title (nothing moves yet). Same runtime kit as 0.7.0 (kit 0.13). Update from any earlier 0.7.1 beta via the in-app update prompt, or turn on Settings > Updates > Beta Updates from 0.7.0."
+    ],
+    "sources": [
+      {
+        "name": "Playden v0.7.1-beta.3 release",
+        "url": "https://github.com/leolobato/playden-ps5/releases/tag/v0.7.1-beta.3"
+      }
+    ]
+  },
+  {
+    "id": "pkg-folderizer",
+    "date": "2026-10-26",
+    "tag": "Tool",
+    "title": "PKG Folderizer: convert debug packages to ShadowMountPlus folders on-console",
+    "summary": "PKG Folderizer is a new PS5 homebrew app that converts debug .pkg files into every ShadowMountPlus image format directly on the console, with batch queuing, a browser remote, and resume support.",
+    "body": [
+      "PKG Folderizer by omerbicer is a native PS5 homebrew app that converts PS5 and PS4 debug (FPKG) .pkg files from the internal SSD, USB drives or extended storage into folders and images that ShadowMountPlus can run. It supports every SM+ format: plain folders, .ffpkg (UFS2), .ffpfs (PFS), .ffpfsc (compressed PFS with fast, balanced or smallest compression) and .exfat images. It can also pack game data into LZ4 volumes for the AMPR emulator and includes an AMPR launch fix that adds the required libSceAmpr.sprx.",
+      "The app recommends the best format and options for each game automatically, with Advanced Options for manual control. A batch queue lets you line up several games with individual settings, and the PS5 can power off when the queue finishes. A browser remote lets you start and monitor conversions from a phone or computer on the same network. Every image is verified after writing, and interrupted conversions resume where they stopped. Requires kstuff and an ELF loader on port 9021. Install by copying the PPSA99180 folder to /data/homebrew/."
+    ],
+    "sources": [
+      {
+        "name": "omerbicer/ps5-pkg-folderizer on GitHub",
+        "url": "https://github.com/omerbicer/ps5-pkg-folderizer"
+      }
+    ]
+  },
+  {
     "id": "machetesvg-v139-v1311",
     "date": "2026-10-26",
     "tag": "Tool",
