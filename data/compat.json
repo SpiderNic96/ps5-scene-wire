@@ -648,6 +648,16 @@
         "ps5-linux-loader"
       ],
       "note": "Linux-side config scripts. Tested on PS5 Slim with Relapse jailbreak and Ubuntu 26.04."
+    },
+    "kauansilvalopes/trophy": {
+      "tested": [
+        "11.60"
+      ],
+      "needs": [
+        "Elf Arsenal",
+        "ShadowMountPlus"
+      ],
+      "note": "Only firmware 11.60 tested. PS5 trophies only; PS4 trophies are not supported."
     }
   },
   "unstated": [

@@ -1,5 +1,174 @@
 [
   {
+    "id": "trophy-manager",
+    "date": "2026-10-26",
+    "tag": "Tool",
+    "title": "Trophy Manager: view, unlock and back up PS5 trophies on-console",
+    "summary": "Trophy Manager is a new native PS5 app that lets you browse, unlock, lock and back up your game trophies directly from the console with the controller, in English, Portuguese and Spanish.",
+    "body": [
+      "Trophy Manager by kauansilvalopes is a native PS5 homebrew app that lists all installed PS5 games with their trophy progress, opens a game to show every trophy (picture, name, description, grade, date earned) in the console's language, and lets you unlock or lock one trophy, a ticked selection, or all of them. Platinum trophies are unlocked last with a short delay between trophies to mimic a real play session. Every edit saves a backup of the trophy file first (the first copy is permanent, plus the last eight), and Restore Original puts the earliest backup back.",
+      "The app reads and writes the console's local trophy files through the Elf Arsenal HTTP and FTP servers on localhost — nothing is ever sent to PSN. It refuses to edit unless NanoDNS (the PSN block) is active and no other game is running. PS5 trophies only; PS4 trophies are encrypted and not supported. Tested on firmware 11.60. Requires a jailbroken PS5 with Elf Arsenal and ShadowMountPlus. Install by copying the PPSA99842 folder to /data/homebrew/ on the console."
+    ],
+    "sources": [
+      {
+        "name": "Trophy Manager 0.1.0 release",
+        "url": "https://github.com/kauansilvalopes/trophy/releases/tag/v0.1.0"
+      },
+      {
+        "name": "kauansilvalopes/trophy on GitHub",
+        "url": "https://github.com/kauansilvalopes/trophy"
+      }
+    ]
+  },
+  {
+    "id": "pkg-folderizer-01040-01042",
+    "date": "2026-10-26",
+    "tag": "Tool",
+    "title": "PKG Folderizer 01.040–01.042: image format support and large-game crash fixes",
+    "summary": "PKG Folderizer 01.040 adds direct conversion of .exfat, .ffpkg, .ffpfs and .ffpfsc images alongside packages, while 01.041 and 01.042 fix crashes when selecting very large games like Call of Duty and Metal Gear Solid Delta.",
+    "body": [
+      "PKG Folderizer 01.040 by omerbicer extends the app beyond .pkg files: .exfat, .ffpkg, .ffpfs and .ffpfsc images are now converted the same way as packages, and USB drives are remounted on every scan so a second stick is less likely to hide your games.",
+      "Versions 01.041 and 01.042 tackle crashes when selecting very large FPKGs such as Call of Duty and Metal Gear Solid Delta. The size check now reads only the package layout header instead of loading the full compressed filesystem table into memory, and the size estimator no longer opens the full layout. Packages that still need more RAM than the console can spare show an error instead of aborting. 01.042 also writes a short crash report on fatal errors, uploaded on the next launch for debugging."
+    ],
+    "sources": [
+      {
+        "name": "01.042.000 release",
+        "url": "https://github.com/desstannsoftware/ps5-pkg-folderizer/releases/tag/01.042.000"
+      },
+      {
+        "name": "01.040.000 release",
+        "url": "https://github.com/desstannsoftware/ps5-pkg-folderizer/releases/tag/01.040.000"
+      }
+    ]
+  },
+  {
+    "id": "playden-v071",
+    "date": "2026-10-26",
+    "tag": "PC & Linux",
+    "title": "Playden v0.7.1: stable release with ProsperoStore title ready",
+    "summary": "Playden v0.7.1 graduates from beta with stability and installation fixes, and prepares for its upcoming ProsperoStore listing as PPSA97031.",
+    "body": [
+      "Playden v0.7.1 by leolobato is the stable release that follows three beta rounds. It carries all the fixes from the beta cycle: the update offer and What's New dialogs no longer close when the game library loads, an installation placed outside console storage shows a clear error explaining how to fix it, and startup failures are diagnosed on the first screen. This release also prepares for 0.8.0, when Playden moves to its ProsperoStore title (PPSA97031).",
+      "Playden lets you play Steam games on a jailbroken PS5 through Wine. It signs in to your real Steam account and reads and writes your Steam Cloud saves. Same runtime kit as 0.7.0 (kit 0.13). Download playden-ps5-0.7.1.zip for the app, and playden-kit-0.13.zip for the runtime kit if you don't already have it from 0.7.0."
+    ],
+    "sources": [
+      {
+        "name": "Playden v0.7.1 release",
+        "url": "https://github.com/leolobato/playden-ps5/releases/tag/v0.7.1"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v830",
+    "date": "2026-10-26",
+    "tag": "Tool",
+    "title": "PS5 Upload v8.3.0: install-and-restart no longer freezes",
+    "summary": "PS5 Upload v8.3.0 fixes the \"Install and restart\" freeze on macOS, Windows and Linux by giving the clean-up phase a time limit and force-exiting if it stalls.",
+    "body": [
+      "PS5 Upload v8.3.0 by phantomptr fixes a freeze that affected \"Install and restart\" on every platform. The app's quit routine waited on its clean-up indefinitely; when that clean-up could not finish, the app sat \"not responding\" and the update installer waited for it. Quitting now gives the clean-up a few seconds, then stops the engine and exits. If the app still has not quit after 30 seconds, the updater closes it instead of reopening the old version.",
+      "The \"Downloading…\" indicator no longer sticks after the download finished (the app had waited for Finder or the file manager to show the Downloads folder before continuing). Send PS5Upload.elf to your payload loader on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v8.3.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v8.3.0"
+      }
+    ]
+  },
+  {
+    "id": "patchdl-v034-v036",
+    "date": "2026-10-26",
+    "tag": "Tool",
+    "title": "PatchDL v0.3.4–v0.3.6: proper installs, network recovery and disc-build checks",
+    "summary": "PatchDL v0.3.4 through v0.3.6 fix how updates are registered on the console, add automatic network recovery, and check disc-build compatibility before installing.",
+    "body": [
+      "PatchDL v0.3.5 by knutwurst fixes the way updates are installed on the console. Earlier versions marked every PS5 game PatchDL updated as a \"fake\" install, which caused disc games to report corrupted data instead of asking for the disc after a restart. Updates now install the way the console's own updates do. Downloads and the install notification show the game's name and cover. PatchDL also remembers links you paste, so the next time that version is offered it starts the download right away. v0.3.4 adds automatic network recovery: switching Wi-Fi off and on or pulling the cable no longer leaves PatchDL unreachable until the payload is sent again.",
+      "v0.3.6 adds a compatibility check for disc builds. Some disc games don't accept Sony's update because the update builds on a newer base game — Black Myth: Wukong is one example. PatchDL now checks this before installing: if the update doesn't fit, it asks once, removes the game and installs the update as the full game. PS5 updates carry the complete game anyway, so saves and disc licenses are kept. Tested on firmware 11.60. Send patchdl_0.3.6.elf to your PS5 with your ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "PatchDL v0.3.6 release",
+        "url": "https://github.com/knutwurst/ps5-patchdl/releases/tag/v0.3.6"
+      },
+      {
+        "name": "PatchDL v0.3.4 release",
+        "url": "https://github.com/knutwurst/ps5-patchdl/releases/tag/v0.3.4"
+      }
+    ]
+  },
+  {
+    "id": "prosperostore-v1000108-v1000109",
+    "date": "2026-10-26",
+    "tag": "Store",
+    "title": "ProsperoStore v1.000.108–v1.000.109: top-bar navigation for the Square menu",
+    "summary": "ProsperoStore v1.000.108 redesigns the Square menu's rooms as a bar across the top of the screen, and v1.000.109 refines the active indicator to a gold underline.",
+    "body": [
+      "ProsperoStore v1.000.108 by darkxex overhauls the Square menu's navigation. The rooms — Downloads, Settings, Catalogs, About, News — are now a horizontal bar across the top, matching the home page's section layout. Press Up from a room's first row to reach the bar, then Left/Right to change room and Down to go back in. L1/R1 still work as shortcuts. The finished-jobs list in Downloads now rewrites correctly when the language changes, and the page behind an open menu no longer shakes.",
+      "v1.000.109 follows with a visual refinement: the active room's ring highlight is removed in favour of the gold underline that already marks the active section on the home page, making the navigation style consistent throughout the app."
+    ],
+    "sources": [
+      {
+        "name": "ProsperoStore v1.000.109 release",
+        "url": "https://github.com/darkxex/ProsperoStore/releases/tag/v1.000.109"
+      },
+      {
+        "name": "ProsperoStore v1.000.108 release",
+        "url": "https://github.com/darkxex/ProsperoStore/releases/tag/v1.000.108"
+      }
+    ]
+  },
+  {
+    "id": "sm-toolbox-v002",
+    "date": "2026-10-26",
+    "tag": "Tool",
+    "title": "SM+ Toolbox v0.0.2: batch verification and post-build automation",
+    "summary": "SM+ Toolbox v0.0.2 adds batch image verification, automatic post-build verify and source cleanup, and a full stability audit.",
+    "body": [
+      "SM+ Toolbox v0.0.2 by AldySan adds batch verification: queue any number of ShadowMountPlus images and check them in one pass, with a clear per-file verdict. New post-build options let you verify the finished image automatically after every build, or delete the source folder once a build succeeds — both save a manual step when producing multiple images.",
+      "Startup is faster with parallel tool detection, build output is streamed live to the terminal panel, and a full-codebase audit resolved issues in the terminal, cache and queue subsystems. Available for Windows (.exe installer or portable zip) and Linux."
+    ],
+    "sources": [
+      {
+        "name": "SM+ Toolbox v0.0.2 release",
+        "url": "https://github.com/AldySan/SM-Toolbox/releases/tag/v0.0.2"
+      }
+    ]
+  },
+  {
+    "id": "swanstation-ps5-153",
+    "date": "2026-10-26",
+    "tag": "Emulator",
+    "title": "SwanStationPS5 1.5.3: new menu shortcut and safer save states",
+    "summary": "SwanStationPS5 1.5.3 changes the game menu to Touchpad + R3, adds a configurable hold time, and updates the core with safer save-state handling.",
+    "body": [
+      "SwanStationPS5 1.5.3 by darkxex changes the game menu shortcut from Touchpad alone to Touchpad + R3, so the Touchpad is free for games that map it to Select. A new \"Game menu hold time\" setting lets you choose Immediate, 0.5 seconds (default) or 1 second, and the on-screen hint adjusts to say Press or Hold accordingly.",
+      "The underlying DuckStation core is brought up to date: invalid save states are now rejected instead of crashing, the CD tray and selected disc are preserved inside save states, and M3U playlists stay loadable after a state restore. On the Vulkan side, the device is created through the frontend with a single queue when there is no surface. Send the ELF to your payload loader on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "SwanStationPS5 1.5.3 release",
+        "url": "https://github.com/darkxex/SwanStationPS5/releases/tag/1.5.3"
+      }
+    ]
+  },
+  {
+    "id": "prosperothemes-v037",
+    "date": "2026-10-26",
+    "tag": "Tool",
+    "title": "Prospero Themes 01.000.037: library and avatar search",
+    "summary": "Prospero Themes 01.000.037 adds a search bar to the theme Library and the Avatars tab, and shows store names for downloaded avatars.",
+    "body": [
+      "Prospero Themes 01.000.037 by Darkatek7 adds search to the theme Library and the avatar store. Press D-pad up from your themes to reach a Search chip beside \"Your collection\": type a word, press Options, and the Library filters to themes whose name, author or description match — everything is searched locally on the console, nothing is sent to the store. In the Avatars tab, D-pad up from the first row reaches its own Search chip that finds avatars by name through the store.",
+      "Downloaded avatars now show the name from the store instead of just a filename. Footer hints on the Library, Themes and Avatars tabs show how to reach the search. Install via the in-app updater (System > App update) or by extracting PPSA90210.zip to /data/homebrew/ on the console."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Themes 01.000.037 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.037"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v811-v820",
     "date": "2026-10-26",
     "tag": "Tool",
