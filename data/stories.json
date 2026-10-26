@@ -1,5 +1,26 @@
 [
   {
+    "id": "lego-dimensions-virtual-toypad",
+    "date": "2026-10-26",
+    "tag": "Tool",
+    "title": "LEGO Dimensions Virtual Toy Pad v2.0.0: on-screen picker, phone remote, 60 FPS and 4K",
+    "summary": "Virtual Toy Pad v2.0.0 lets you play the PS4 version of LEGO Dimensions on a jailbroken PS5 without the physical Toy Pad, with an on-screen character picker drawn by the system UI, a phone remote, and 60 FPS plus resolution patches up to 2160p.",
+    "body": [
+      "Virtual Toy Pad v2.0.0 by SpiderNic96 is a PS5 payload that virtualizes the LEGO Dimensions Toy Pad so the game believes one is plugged in. It includes all 155 characters and 240 vehicle and gadget builds, with saved vehicle upgrades. An on-screen picker built on harrysof's LegoToypad is drawn directly by the PS5 system UI (SceShellUI): it shows pads with live toypad LEDs, a world grid, rosters with vehicle builds, favourites, multiple sort modes, full search, and a sneak-peek overlay you can hold open with L2 while you play. A Settings screen lets you choose wallpapers, pad skins including a realistic toypad look, transparency and UI size. The same picker is also served as a web app to any phone on your Wi-Fi at port 8765.",
+      "The release bundles connorh315's 60 FPS unlock and internal resolution patches (1080p, 1440p or 2160p, set in config.ini). Requires LEGO Dimensions PS4 (EU CUSA01176 v1.24 or US CUSA00935 v1.23) on a jailbroken PS5 with an ELF loader. Developed on firmware 13.60 with kstuff-lite, etaHEN and ShadowMountPlus. Copy the data/ldmod folder from the release zip to /data/ on the console over FTP, then send VirtualToyPad.elf to your ELF loader. Hold L3 + R3 in-game to open the picker."
+    ],
+    "sources": [
+      {
+        "name": "v2.0.0 release",
+        "url": "https://github.com/SpiderNic96/LegoToypad-VirtualToypadPS5-Homebrew/releases/tag/v2.0.0"
+      },
+      {
+        "name": "SpiderNic96/LegoToypad-VirtualToypadPS5-Homebrew on GitHub",
+        "url": "https://github.com/SpiderNic96/LegoToypad-VirtualToypadPS5-Homebrew"
+      }
+    ]
+  },
+  {
     "id": "trophy-manager",
     "date": "2026-10-26",
     "tag": "Tool",

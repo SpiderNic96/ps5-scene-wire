@@ -658,6 +658,16 @@
         "ShadowMountPlus"
       ],
       "note": "Only firmware 11.60 tested. PS5 trophies only; PS4 trophies are not supported."
+    },
+    "SpiderNic96/LegoToypad-VirtualToypadPS5-Homebrew": {
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "etaHEN",
+        "ShadowMountPlus"
+      ],
+      "note": "Developed on 13.60 with kstuff-lite and etaHEN. Requires LEGO Dimensions PS4 (CUSA01176 v1.24 or CUSA00935 v1.23)."
     }
   },
   "unstated": [

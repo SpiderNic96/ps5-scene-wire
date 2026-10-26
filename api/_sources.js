@@ -86,6 +86,7 @@ export const SOURCES = [
   { cat: T, repo: 'AldySan/SM-Toolbox', name: 'SM+ Toolbox', about: 'Desktop companion for building ShadowMountPlus images' },
   { cat: T, repo: 'omerbicer/ps5-pkg-folderizer', name: 'PKG Folderizer', about: 'Convert debug PKGs to ShadowMountPlus folders on-console' },
   { cat: T, repo: 'kauansilvalopes/trophy', name: 'Trophy Manager', about: 'View, unlock, lock and back up PS5 trophies on-console' },
+  { cat: T, repo: 'SpiderNic96/LegoToypad-VirtualToypadPS5-Homebrew', name: 'LEGO Dimensions Virtual Toy Pad', about: 'Play LEGO Dimensions without the physical Toy Pad' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },
