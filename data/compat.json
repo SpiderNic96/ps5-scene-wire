@@ -664,10 +664,9 @@
         "13.60"
       ],
       "needs": [
-        "etaHEN",
-        "ShadowMountPlus"
+        "elfldr"
       ],
-      "note": "Developed on 13.60 with kstuff-lite and etaHEN. Requires LEGO Dimensions PS4 (CUSA01176 v1.24 or CUSA00935 v1.23)."
+      "note": "Developed on 13.60. Requires an ELF loader and LEGO Dimensions PS4 (CUSA01176 v1.24 or CUSA00935 v1.23)."
     }
   },
   "unstated": [
