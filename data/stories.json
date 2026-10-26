@@ -1,5 +1,174 @@
 [
   {
+    "id": "ps5upload-v800",
+    "date": "2026-10-26",
+    "tag": "Tool",
+    "title": "PS5 Upload v8.0.0: multi-device support, Mesh Drive and NAS downloads",
+    "summary": "PS5 Upload v8.0.0 lets multiple computers, phones and Docker setups share one PS5 at once, adds a synced Mesh Drive across devices, and can download files straight to a NAS.",
+    "body": [
+      "PS5 Upload v8.0.0 by phantomptr introduces multi-device support: every computer, phone and Docker instance on your network can now connect to the same PS5 simultaneously, see what the others are doing and stay out of each other's way. Pairing codes are gone — any device that reaches the helper connects automatically, and the console remembers it. A new Devices screen lists every connected device with its status, app version and current activity, and lets you rename, remove or block any of them. Package installs queue up automatically when another device is already installing, and rest-mode warnings tell you which devices are busy.",
+      "Mesh Drive keeps a folder synced between all your devices through the console, with conflict detection and a 30-day trash for deleted files. You can also download files straight to a NAS (SMB, FTP, FTPS, SFTP or WebDAV). Your settings, sidebar pins, saved searches and console list now follow you across devices. Send the updated helper ELF once; every device then connects to the new version."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v8.0.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v8.0.0"
+      }
+    ]
+  },
+  {
+    "id": "shadowmountplus-17beta8",
+    "date": "2026-10-26",
+    "tag": "Tool",
+    "title": "ShadowMountPlus 1.7beta8: web UI redesign, PKG install and backport management",
+    "summary": "ShadowMountPlus 1.7beta8 redesigns its web interface for TV screens and gamepads, adds PKG installation from console storage or streamed from a PC browser, and brings backport and patch/DLC management.",
+    "body": [
+      "ShadowMountPlus 1.7beta8 by drakmor overhauls the web interface with a layout designed for TV screens and gamepad navigation. The update adds PKG installation directly from console or external storage, as well as streaming installation from a PC browser — inspired by ps5-pkg-manager. Installed patches and DLC now show their details and can be removed individually.",
+      "Backport installation, replacement and deletion are now built in. The release also adds support for custom param.sfo, eboot2.bin and homebrew title IDs beyond the standard FAKE/LAPY identifiers, and enables LAN access to the API by default. Send the ELF to your payload loader on port 9021 to update."
+    ],
+    "sources": [
+      {
+        "name": "ShadowMountPlus 1.7beta8 release",
+        "url": "https://github.com/drakmor/ShadowMountPlus/releases/tag/1.7beta8"
+      }
+    ]
+  },
+  {
+    "id": "fbneo-ps5-v21",
+    "date": "2026-10-26",
+    "tag": "Emulator",
+    "title": "FinalBurn Neo PS5 v2.1: choose which arcade player each controller plays",
+    "summary": "FBNeo PS5 v2.1 adds per-controller player assignment so you can decide which arcade player slot each DualSense controls, with a simple prompt or detailed controller settings.",
+    "body": [
+      "FinalBurn Neo PS5 v2.1 by MisterTemaki adds controller-to-player assignment. The simple way: open \"Choose players\" from the pause menu or Settings > Controls > Controllers and press Cross on each controller in turn to claim Player 1, 2, 3 or 4. This lets three people play a 4-player cabinet game like The Simpsons on the slots they want. The advanced way shows each controller's light-bar colour and lets you swap players directly.",
+      "Assignments can be saved per game or globally — a change from a game's pause menu is kept for that game and its clones, while a change from the shelf's Settings applies everywhere. A message appears at game start when a controller plays a different player. The pause menu (L3 + R3) always stays on controller 1. Send FBNeoPS5-v2.1.elf to your payload loader on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "FBNeo PS5 v2.1 release",
+        "url": "https://github.com/MisterTemaki/fbneo-ps5/releases/tag/v2.1"
+      }
+    ]
+  },
+  {
+    "id": "emby5-v127-v128",
+    "date": "2026-10-26",
+    "tag": "Media",
+    "title": "Emby5 1.2.7–1.2.8: full translations in 27 languages and artwork fixes",
+    "summary": "Emby5 1.2.7 fixes mismatched interface languages and adds full Chinese translation, while 1.2.8 completes every screen in all 27 languages and adds Croatian and Serbian.",
+    "body": [
+      "Emby5 1.2.7 by bornaradusin fixes a bug where every language from Japanese onward was matched to the wrong translation — Simplified Chinese showed Korean, Korean showed Russian, and so on. Chinese is now fully translated in both Simplified and Traditional. Artwork loading is fixed for servers that require sign-in to view images, including those behind a reverse proxy, and music albums and artists without a picture tag now show their covers. A new wiki documents every part of the app.",
+      "Emby5 1.2.8 completes the interface translation in all languages: newer screens like Live TV, VOD, Appearance and the player's settings are no longer English-only. Two new languages — Croatian and Serbian (Cyrillic) — bring the total to 27. A new Settings > System > Language option lets you follow the PS5's system language or choose any language yourself. Dates, genres and audio/subtitle language names now follow the interface language. Download the ZIP from the release and copy the PPSA99515 folder to /data/homebrew/."
+    ],
+    "sources": [
+      {
+        "name": "Emby5 1.2.8 release",
+        "url": "https://github.com/bornaradusin/Emby5/releases/tag/1.2.8"
+      },
+      {
+        "name": "Emby5 1.2.7 release",
+        "url": "https://github.com/bornaradusin/Emby5/releases/tag/1.2.7"
+      }
+    ]
+  },
+  {
+    "id": "machetesvg-v133-v135",
+    "date": "2026-10-26",
+    "tag": "Tool",
+    "title": "MacheteSVG v1.3.3–v1.3.5: critical save corruption fixes for Decima and PS4 BC games",
+    "summary": "MacheteSVG v1.3.3 through v1.3.5 fix save corruption in Decima engine games like Horizon Zero Dawn Remastered and PS4 backwards-compatible titles like Dragon Quest XI S.",
+    "body": [
+      "MacheteSVG v1.3.3 by VenezuelanBiggie24 preserves the authentic PS4 keystone during backwards-compatible save restoration, fixing save integrity rejection in Dragon Quest XI S and other PS4 titles. It also restores the real console sdimg_PROFILE during cross-console restores for Decima engine games like Horizon Zero Dawn Remastered. v1.3.4 purges loose PS4 param.sfo and sce_sys directories that caused \"no se pudo cargar los datos\" errors, and fixes Decima profile corruption by keeping the user's authentic sdimg_PROFILE from backup.",
+      "v1.3.5 adds strict PROFILE prioritisation for Decima 2.0 engine compatibility and a purge routine that removes orphaned synthetic sdimg_sce_bu_* replicas that triggered \"Datos dañados: PROFILE\" errors. PS4 backwards-compatible saves now properly index sce_bu_ backup slots and enforce system_blocks = 0 in savedata.db, matching the native Prospero storage layout. Update through your preferred method."
+    ],
+    "sources": [
+      {
+        "name": "MacheteSVG v1.3.5 release",
+        "url": "https://github.com/VenezuelanBiggie24/MacheteSVG-PS5-Save-Manager/releases/tag/v1.3.5"
+      },
+      {
+        "name": "MacheteSVG v1.3.4 release",
+        "url": "https://github.com/VenezuelanBiggie24/MacheteSVG-PS5-Save-Manager/releases/tag/v1.3.4"
+      },
+      {
+        "name": "MacheteSVG v1.3.3 release",
+        "url": "https://github.com/VenezuelanBiggie24/MacheteSVG-PS5-Save-Manager/releases/tag/v1.3.3"
+      }
+    ]
+  },
+  {
+    "id": "grfs-ps5-v107",
+    "date": "2026-10-26",
+    "tag": "Port",
+    "title": "Ghost Recon: Future Soldier v1.0.7: ISO install directly on PS5 and new screens",
+    "summary": "Ghost Recon: Future Soldier v1.0.7 lets you install the game from an ISO placed on the console or a USB drive, adds animated trophy and donor screens, and ships more precompiled shaders.",
+    "body": [
+      "Ghost Recon: Future Soldier v1.0.7 by lamarkingru adds ISO installation directly on the PS5. Without the game files already extracted, the app shows a screen listing ISOs found on the console (/data, /data/homebrew and USB drives). Pick one and press Cross — the files are extracted to assets/ and the game starts. With etaHEN or elfldr running on port 9021, extraction runs as a payload at full SSD speed (about one minute for the 12 GB); without a loader, the app extracts on its own but the PS5 throttles write speed after the first few gigabytes.",
+      "The release adds new animated screens for trophies (earned trophies now appear first, sorted newest to oldest), a support screen and a donors screen, all using the skull artwork. The shader and pipeline cache grows to 3,595 shaders and 2,928 pipelines precompiled (up from 3,508 and 2,780). To update from v1.0.6, replace the eboot.bin, the shaders/ folder and the LEIA-ME.txt inside PPSA95210/."
+    ],
+    "sources": [
+      {
+        "name": "Ghost Recon: Future Soldier v1.0.7 release",
+        "url": "https://github.com/lamarkingru/grfs-ps5/releases/tag/v1.0.7"
+      }
+    ]
+  },
+  {
+    "id": "prosperothemes-v034-v035",
+    "date": "2026-10-26",
+    "tag": "Tool",
+    "title": "Prospero Themes 01.000.034–01.000.035: download queue, music preview and sharp backgrounds",
+    "summary": "Prospero Themes 01.000.034 queues theme downloads and plays home music in previews, while 01.000.035 shows full-resolution backgrounds and per-tile previews.",
+    "body": [
+      "Prospero Themes 01.000.034 by Darkatek7 lets you queue multiple theme downloads — pressing Cross on another theme while one is downloading adds it to the queue instead of showing \"Please wait\". Preview music now plays for every theme: when a theme has no MP3 excerpt, the preview plays the first 30 seconds of its home music decoded from ATRAC9. The preview background behind system tiles is now scaled smoothly instead of pixel-stretched. Four new firmware catalogs (10.40, 11.40, 12.00, 12.20) are added from user-submitted reports.",
+      "01.000.035 sharpens the preview further: the fullscreen background now shows the theme's real home background decoded from the pack at full resolution, replacing the blurry stretched 640×360 cover. When a theme gives a system tile its own background, the preview shows that tile-specific background for the tile and the theme's main background for the rest. Tested on FW 13.00. Install via System → App update or by extracting PPSA90210.zip to /data/homebrew/. ThemeHelper is unchanged at v11."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Themes 01.000.035 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.035"
+      },
+      {
+        "name": "Prospero Themes 01.000.034 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.034"
+      }
+    ]
+  },
+  {
+    "id": "jobeeslair-v052",
+    "date": "2026-10-26",
+    "tag": "Store",
+    "title": "Jobee'sLair v0.5.2: Fix it button for broken games and save-safe homebrew updates",
+    "summary": "Jobee'sLair v0.5.2 adds a Fix it button that diagnoses and repairs games that won't start, and homebrew updates now preserve saves and settings inside the app folder.",
+    "body": [
+      "Jobee'sLair v0.5.2 by JVK3R adds a Fix it button for games and homebrew apps that crash with \"Can't start the game or app\". Press Cross on the Library tile, in Options, or in \"Why won't it start?\" — it reads ShadowMount's log and tells you where things stand. If the game didn't start, it opens the game's files so the console can run them and turns off the game's own fakelibs when they might be causing the crash (only on firmware new enough for the game). If that doesn't help, the next press turns fakelibs back on for one more try.",
+      "Homebrew updates now replace only the files the new version ships, preserving saves, settings and profiles that apps keep in their own folder — fixing cases like PS5X360's update from 0.6.0 to 1.0.0 losing its Xbox 360 profile. Removing an app with saved data now asks first. The release also adds anonymous online stats showing how many people are on Jobee'sLair, with opt-out in Settings. L1/R1 navigation stops at the edges of the shelf."
+    ],
+    "sources": [
+      {
+        "name": "Jobee'sLair v0.5.2 release",
+        "url": "https://github.com/JVK3R/JobeesLair/releases/tag/v0.5.2"
+      }
+    ]
+  },
+  {
+    "id": "prosperostore-v1000107",
+    "date": "2026-10-26",
+    "tag": "Store",
+    "title": "ProsperoStore v1.000.107: Simplified Chinese and new music",
+    "summary": "ProsperoStore v1.000.107 adds Simplified Chinese as the store's ninth language, with a new background song and startup sound.",
+    "body": [
+      "ProsperoStore v1.000.107 by blackbearreloaded adds Simplified Chinese as the ninth interface language, contributed by carlchina who also handled the font work. The language picker now shows Chinese's own first character for its name. Banner navigation is improved — climbing from a shelf keeps the app in view, and the button opens that app.",
+      "The update includes a new background song and startup sound. Install through your preferred method or update via the store's built-in updater."
+    ],
+    "sources": [
+      {
+        "name": "ProsperoStore v1.000.107 release",
+        "url": "https://github.com/darkxex/ProsperoStore/releases/tag/v1.000.107"
+      }
+    ]
+  },
+  {
     "id": "prosperothemes-v031-v033",
     "date": "2026-10-25",
     "tag": "Tool",
