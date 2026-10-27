@@ -1,5 +1,106 @@
 [
   {
+    "id": "pkg-folderizer-01045-01047",
+    "date": "2026-10-27",
+    "tag": "Tool",
+    "title": "PKG Folderizer 01.045–01.047: large-game crash fixes and self-update improvements",
+    "summary": "Three PKG Folderizer releases fix crashes on large titles like Mortal Shell II and Gran Turismo, and let you self-update without waiting for the package scan.",
+    "body": [
+      "PKG Folderizer 01.045 by omerbicer fixes a crash at the end of Start on large games such as Mortal Shell II (PPSA34008): the AMPR launch fix could segfault while scanning a huge eboot.bin. It also keeps the resume journal until post-extract steps finish, so a crash during the launch fix no longer forces a full re-extract of tens of gigabytes. Version 01.046 fixes out-of-memory crashes when starting very large naps packages such as Gran Turismo (PPSA01317) by no longer expanding the full block table into RAM and raising the title heap to 384 MB.",
+      "Version 01.047 lets you self-update as soon as the dialog appears, even right after launch, instead of waiting for the package list to finish scanning. Starting a convert now refuses packages that are not a real PS5 or PS4 image, and the error includes the file header bytes so bad downloads are easier to spot. Requires a jailbroken PS5 with ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "PKG Folderizer 01.047.000 release",
+        "url": "https://github.com/desstannsoftware/ps5-pkg-folderizer/releases/tag/01.047.000"
+      },
+      {
+        "name": "PKG Folderizer 01.046.000 release",
+        "url": "https://github.com/desstannsoftware/ps5-pkg-folderizer/releases/tag/01.046.000"
+      },
+      {
+        "name": "PKG Folderizer 01.045.000 release",
+        "url": "https://github.com/desstannsoftware/ps5-pkg-folderizer/releases/tag/01.045.000"
+      }
+    ]
+  },
+  {
+    "id": "playden-v072",
+    "date": "2026-10-27",
+    "tag": "PC & Linux",
+    "title": "Playden v0.7.2: ProsperoStore-compatible packaging",
+    "summary": "Playden v0.7.2 repackages the 0.7.1 release so ProsperoStore can install it directly, and cancels the planned title-ID change.",
+    "body": [
+      "Playden v0.7.2 by leolobato is the same app as 0.7.1, repackaged the way ProsperoStore installs apps. The FAKE77031 folder is now at the top of the zip instead of inside a versioned subfolder, matching ProsperoStore's expected layout. ProsperoStore now accepts Playden's existing title ID, so the move to PPSA97031 announced in 0.7.1 is cancelled.",
+      "Same runtime kit as 0.7.0 and 0.7.1 (kit 0.13). Updating from 0.7.1 or a 0.7.1 beta: Playden offers the update on next launch or from Settings > Updates > Check now. Warning: alpha software that signs in to your real Steam account."
+    ],
+    "sources": [
+      {
+        "name": "Playden v0.7.2 release",
+        "url": "https://github.com/leolobato/playden-ps5/releases/tag/v0.7.2"
+      }
+    ]
+  },
+  {
+    "id": "prosperostore-v1000110-v1000112",
+    "date": "2026-10-27",
+    "tag": "Store",
+    "title": "ProsperoStore v1.000.110–v1.000.112: wider title IDs and internal-storage installs",
+    "summary": "Three ProsperoStore releases accept broader title IDs, bring back the original background music, and route internalOnly apps to internal storage.",
+    "body": [
+      "ProsperoStore v1.000.110 by darkxex widens the title-ID filter to accept any four capital letters followed by five digits, except CUSA and NPXS, matching ShadowMountPlus's handling. Version v1.000.111 restores the original background song by popular request.",
+      "Version v1.000.112 honours the internalOnly flag in app metadata so those apps are always installed to the console's internal storage. Requires a jailbroken PS5 with ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "ProsperoStore v1.000.112 release",
+        "url": "https://github.com/darkxex/ProsperoStore/releases/tag/v1.000.112"
+      },
+      {
+        "name": "ProsperoStore v1.000.111 release",
+        "url": "https://github.com/darkxex/ProsperoStore/releases/tag/v1.000.111"
+      },
+      {
+        "name": "ProsperoStore v1.000.110 release",
+        "url": "https://github.com/darkxex/ProsperoStore/releases/tag/v1.000.110"
+      }
+    ]
+  },
+  {
+    "id": "trophy-manager-v011",
+    "date": "2026-10-27",
+    "tag": "Tool",
+    "title": "Trophy Manager v0.1.1: clearer Elf Arsenal error message",
+    "summary": "Trophy Manager v0.1.1 improves the error screen when Elf Arsenal is not reachable, with instructions in English, Portuguese and Spanish.",
+    "body": [
+      "Trophy Manager v0.1.1 by kauansilvalopes replaces the generic connection error with a clear explanation that Trophy Manager needs Elf Arsenal (a separate homebrew) running on the console, and tells the user to start it and press Square to refresh. The message is shown in English, Portuguese and Spanish.",
+      "Trophy Manager reads and writes the console's trophy files through Elf Arsenal's local servers (HTTP 6969 and FTP 2121), so Elf Arsenal and ShadowMountPlus must be running on a jailbroken PS5. Only firmware 11.60 has been tested. The PSN block (NanoDNS) must be on to edit trophies."
+    ],
+    "sources": [
+      {
+        "name": "Trophy Manager v0.1.1 release",
+        "url": "https://github.com/kauansilvalopes/trophy/releases/tag/v0.1.1"
+      }
+    ]
+  },
+  {
+    "id": "swanstation-ps5-154",
+    "date": "2026-10-27",
+    "tag": "Emulator",
+    "title": "SwanStationPS5 1.5.4: corrected game-menu labels",
+    "summary": "SwanStationPS5 1.5.4 fixes the game-menu combination options that incorrectly said \"Hold\" when the hold time was set to Immediate.",
+    "body": [
+      "SwanStationPS5 1.5.4 by darkxex fixes the game-menu combination options so they no longer display \"Hold\" when the hold time is set to Immediate. The descriptions of the game-menu combination and its hold-time setting are also corrected to match their actual behaviour.",
+      "SwanStationPS5 is a PS1 emulator for jailbroken PS5 with Vulkan rendering, RetroAchievements, and USB game loading. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "SwanStationPS5 1.5.4 release",
+        "url": "https://github.com/darkxex/SwanStationPS5/releases/tag/1.5.4"
+      }
+    ]
+  },
+  {
     "id": "lego-dimensions-virtual-toypad",
     "date": "2026-10-26",
     "tag": "Tool",
