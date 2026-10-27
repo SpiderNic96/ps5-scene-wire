@@ -1,5 +1,60 @@
 [
   {
+    "id": "ps5upload-v850-v851",
+    "date": "2026-10-27",
+    "tag": "Tool",
+    "title": "PS5 Upload v8.5.0–v8.5.1: reorganized sidebar and package conversion fix",
+    "summary": "PS5 Upload overhauls its sidebar layout, moves Game Activity play-time into a unified Games screen, and fixes a package-conversion regression caused by Windows bookkeeping folders.",
+    "body": [
+      "PS5 Upload v8.5.0 reorganizes the sidebar so related screens live together. Games now has three tabs — On this PS5, Everything (the former Collection) and Files — and includes play-time tracking from the old Game Activity screen. Payloads & processes, Console snapshots and Disk usage each move under their logical parent. Console checks for firmware spoofing on its own card in plain language, Network shares replaces Servers, and the fan-target slider now starts at whatever the console actually holds instead of resetting to 65 °C. After an update, the home screen greets the signed-in user by name and links to what changed.",
+      "v8.5.1 is a quick follow-up that fixes a regression where packages containing Windows bookkeeping folders (like System Volume Information) failed to convert to game images. Package sources now filter out OS junk the same way game folders do. The release also translates hundreds of previously untranslated labels across every language, adds Persian checks, and rearranges sidebar sections into Games & content, Files & storage, Console, Connect, Diagnostics and App. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v8.5.1 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v8.5.1"
+      },
+      {
+        "name": "PS5 Upload v8.5.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v8.5.0"
+      }
+    ]
+  },
+  {
+    "id": "patchdl-v037",
+    "date": "2026-10-27",
+    "tag": "Tool",
+    "title": "PatchDL v0.3.7: legacy downloads now validated before install",
+    "summary": "PatchDL v0.3.7 extends its compatibility check to downloads made before v0.3.5, fetching missing details from Sony so older updates are verified against the installed game.",
+    "body": [
+      "PatchDL v0.3.7 fixes an oversight where downloads made with versions before 0.3.5 skipped the game-compatibility check introduced in 0.3.6. Previously, those older downloads could be installed even if they did not match the game on the console, with no warning offered. PatchDL now fetches the missing metadata from Sony when the user presses Install, so the check works without re-downloading.",
+      "Tested on firmware 11.60. Send patchdl_0.3.7.elf to a jailbroken PS5 with an ELF loader and open the address shown in the notification. PatchDL downloads official, unmodified game updates directly on the console."
+    ],
+    "sources": [
+      {
+        "name": "PatchDL v0.3.7 release",
+        "url": "https://github.com/knutwurst/ps5-patchdl/releases/tag/v0.3.7"
+      }
+    ]
+  },
+  {
+    "id": "xbc-recomp-v10",
+    "date": "2026-10-27",
+    "tag": "Port",
+    "title": "Xenoblade Chronicles V1.0: first playable PS5 recomp release",
+    "summary": "KongaTime releases the first playable build of Xenoblade Chronicles: Definitive Edition for PS5, running natively through static recompilation at 1080p/60 FPS.",
+    "body": [
+      "Xenoblade Chronicles V1.0 is the first public release of KongaTime's PS5 recomp port of Xenoblade Chronicles: Definitive Edition. Built on the Monado project and LASRecomp, the port runs the game natively on PS5 at a 1080p internal resolution targeting 60 FPS. It includes a controller-friendly launcher, AMD FSR 1 upscaling, SMAA anti-aliasing, depth-of-field and blur controls, V-Sync, an FPS counter, opening movie playback, DualSense button prompts, and save/load support.",
+      "The port is still experimental — the full campaign has not been verified and some areas may have performance drops or shader compilation stutter. Players need a jailbroken PS5 capable of running native homebrew, their own legally obtained base-game NSP and 2.0.0 update files, dumped keys, and an ELF loader on port 9021. No game files or keys are provided."
+    ],
+    "sources": [
+      {
+        "name": "XBC Recomp V1.0 release",
+        "url": "https://github.com/KongaTime/XBC-Recomp-PS5-Port/releases/tag/V1.0"
+      }
+    ]
+  },
+  {
     "id": "swanstation-ps5-155",
     "date": "2026-10-27",
     "tag": "Emulator",
