@@ -1,5 +1,90 @@
 [
   {
+    "id": "swanstation-ps5-155",
+    "date": "2026-10-27",
+    "tag": "Emulator",
+    "title": "SwanStationPS5 1.5.5: faster startup on Lapy consoles",
+    "summary": "SwanStationPS5 1.5.5 speeds up launching on consoles that unlock through Lapy by sending the helper straight to the ELF loader instead of waiting for a resident service.",
+    "body": [
+      "SwanStationPS5 1.5.5 by darkxex speeds up starting the app on consoles that unlock through Lapy. Instead of waiting about 2.5 seconds for a resident service, the Lapy helper is sent straight to the ELF loader. The command server of etaHEN and LegacyJB is also checked before the request file, so consoles that answer there unlock sooner. A console that answers nowhere now gives up after 1.5 seconds instead of repeating the request.",
+      "The Lapy helper is built with Payload SDK v0.45 from the pinned fork. SwanStationPS5 is a PS1 emulator for jailbroken PS5 with Vulkan rendering, RetroAchievements and USB game loading. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "SwanStationPS5 1.5.5 release",
+        "url": "https://github.com/darkxex/SwanStationPS5/releases/tag/1.5.5"
+      }
+    ]
+  },
+  {
+    "id": "jobeeslair-v053",
+    "date": "2026-10-27",
+    "tag": "Store",
+    "title": "Jobee'sLair v0.5.3: fixed PS5 package installs, homebrew search and top games",
+    "summary": "Jobee'sLair v0.5.3 fixes PS5 package installs that were failing with 'The file is not a PKG', adds a homebrew search field and a top-games carousel on Discover.",
+    "body": [
+      "Jobee'sLair v0.5.3 by JVK3R fixes PS5 package installs. PS5Library, ezRemote Client and Spectrum Library's packages were failing with \"The file is not a PKG\". Closing Jobee'sLair while a big app like RetroArch or RPCS3 was unpacking no longer makes every later install fail — installing while another extraction runs now waits its turn. Failed installs say why and offer Try again instead of showing \"Installing\" forever. The \"Device busy\" error is gone: closing and reopening the app immediately works because ShadowMount releases it properly. Removed homebrew apps are fully cleaned up, and updates preserve your build variant (EVO Player's -pro, PS5MC's Kodi version).",
+      "New features: a Search field at the top of the Homebrew section (press Up from the spotlight), a top-games carousel on Discover showing five popular titles that change each launch, and 26 new game pictures including 7 Days to Die, Alien: Rogue Incursion, Remnant 2, NBA 2K and Madden. Requires a jailbroken PS5 with ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "Jobee'sLair v0.5.3 release",
+        "url": "https://github.com/JVK3R/JobeesLair/releases/tag/v0.5.3"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v840",
+    "date": "2026-10-27",
+    "tag": "Tool",
+    "title": "PS5 Upload v8.4.0: NAS file-name fix, convert queue and per-console screens",
+    "summary": "PS5 Upload v8.4.0 stops games copied from mounted NAS shares arriving with garbled names, lets you add and change games while the convert queue runs, and remembers each console's last screen.",
+    "body": [
+      "PS5 Upload v8.4.0 by phantomptr fixes games copied from a mounted Samba share arriving with made-up short names (C69YSY~1.TXT). A Windows mapped drive or macOS Finder mount mangles file names containing : ? * characters; the app now detects such a folder and tells you to copy over SFTP or FTP instead, matching the built-in SMB connection behaviour since v7.5.3. Bug reports from an iPhone are now correctly filed as iOS instead of macOS.",
+      "The convert queue is now live: games can be added at any time while it runs, and each waiting game has an options button to change the output type (package, game image, folder) and what happens after (keep, install, upload). Switching console tabs goes back to the screen you last used with that console, across restarts. Failed uninstalls, queue errors and LZ4 images that saved nothing all show clearer messages. Send PS5Upload.elf to your payload loader on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v8.4.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v8.4.0"
+      }
+    ]
+  },
+  {
+    "id": "lineup-v142",
+    "date": "2026-10-27",
+    "tag": "Tool",
+    "title": "Lineup v1.4.2: always leaves one home-screen place unpinned",
+    "summary": "Lineup v1.4.2 fixes a pinning edge case where every place was pinned, leaving the last opened game stranded in the game library.",
+    "body": [
+      "Lineup v1.4.2 by bps2414 fixes an edge case with fully pinned home screens. When every place on the row was pinned, the last game opened (the jailbreak's entry point, for example) had nowhere to go and ended up in the game library instead of on the home screen. Pin the whole row now automatically leaves the first place free.",
+      "Users who pinned every place with an older version will see an offer to free the first place when they next open Lineup. Lineup is a homebrew app that lets you reorder and pin the game row on the PS5 home screen. Requires a jailbroken PS5 with ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "Lineup v1.4.2 release",
+        "url": "https://github.com/bps2414/lineup/releases/tag/v1.4.2"
+      }
+    ]
+  },
+  {
+    "id": "xbc-recomp-ps5-port",
+    "date": "2026-10-27",
+    "tag": "Port",
+    "title": "Xenoblade Chronicles: PS5 recomp port by KongaTime enters development",
+    "summary": "KongaTime has started a native PS5 port of Xenoblade Chronicles: Definitive Edition using the Monado static recompiler, with 1080p/60 FPS gameplay tested on hardware.",
+    "body": [
+      "XBC-Recomp-PS5-Port by KongaTime is a native PS5 port of Xenoblade Chronicles: Definitive Edition, built on Monado and LASRecomp by Peiikai. The project has been tested on a PS5 with textured characters, environments, lighting and effects at 1080p internal resolution and a 60 FPS target. A controller-operated launcher offers Prepare Game / Play, Settings and Exit. Features include AMD FSR 1, SMAA, depth-of-field and blur controls, V-Sync, an FPS counter, opening movie playback, saving and loading, and PlayStation button prompts.",
+      "The port is experimental and in development — no public installable build is available yet. When released, players will need a jailbroken PS5 capable of running native homebrew, their own base-game NSP and the 2.0.0 update NSP, dumped key files and an ELF loader on port 9021. KongaTime is the developer behind the Spider-Man: Edge of Time PS5 recomp."
+    ],
+    "sources": [
+      {
+        "name": "XBC-Recomp-PS5-Port on GitHub",
+        "url": "https://github.com/KongaTime/XBC-Recomp-PS5-Port"
+      }
+    ]
+  },
+  {
     "id": "pkg-folderizer-01045-01047",
     "date": "2026-10-27",
     "tag": "Tool",

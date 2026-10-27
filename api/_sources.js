@@ -138,6 +138,7 @@ export const SOURCES = [
   { cat: R, repo: 'Nazky/UnleashedRecomp-Prospero', name: 'Sonic Unleashed Recompiled', about: 'Xbox 360 recomp, bring your own copy' },
   { cat: R, repo: 'LoZazaMastro/TheSimpsonsGame-PS5-Builder', name: 'The Simpsons Game', about: 'Xbox 360 recomp builder, bring your own copy' },
   { cat: R, repo: 'KongaTime/PS5_EdgeOfTimeTitle', name: 'Spider-Man: Edge of Time', about: 'Xbox 360 recomp, bring your own copy' },
+  { cat: R, repo: 'KongaTime/XBC-Recomp-PS5-Port', name: 'Xenoblade Chronicles', about: 'Switch recomp, bring your own copy' },
   { cat: R, repo: 'elripalda/fifastreet-ps5', name: 'FIFA Street (2012)', about: 'Xbox 360 recomp' },
   { cat: R, repo: 'elripalda/wwe13-ps5', name: "WWE '13", about: 'Xbox 360 recomp' },
   { cat: R, repo: 'hollamhide/hollamhide.github.io', name: 'Mario Kart Wii (PS5)', about: 'Wii recomp' },
