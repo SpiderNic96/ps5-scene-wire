@@ -684,6 +684,16 @@
         "13.60"
       ],
       "note": "Firmware 13.60 is the primary hardware-tested target. Other firmwares not claimed."
+    },
+    "Anime0t4ku/Prospero-Hi-Fi": {
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "Y2JB",
+        "ShadowMountPlus"
+      ],
+      "note": "Target setup is 13.60 with Y2JB and ShadowMount+; older firmware not verified."
     }
   },
   "unstated": [

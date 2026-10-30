@@ -1,5 +1,81 @@
 [
   {
+    "id": "ps5upload-v952-v953",
+    "date": "2026-10-30",
+    "tag": "Tool",
+    "title": "PS5 Upload v9.5.2–v9.5.3: full-screen Remote Play on every app",
+    "summary": "PS5 Upload v9.5.2 places the Remote Play picture on the window's edges so the full image is always visible, with a new Fit/Fill/Stretch menu in full screen.",
+    "body": [
+      "PS5 Upload v9.5.2 reworks Remote Play full screen across every app. The picture now sits exactly on the window's edges instead of inside the page, so the top and bottom can no longer be cut off even with Fit. Sizing is handled the way a video player does it: Fit shows the whole picture at its own aspect ratio with black bars where the screen differs, Fill covers the whole screen and crops the edges, and Stretch fills the screen regardless of shape. Each mode now looks visibly different. A new menu in the full-screen bar shows the current size and opens a list of Fit, Fill and Stretch, replacing the old button that cycled through them.",
+      "v9.5.3 is a quick follow-up with minor fixes. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v9.5.3 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v9.5.3"
+      },
+      {
+        "name": "PS5 Upload v9.5.2 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v9.5.2"
+      }
+    ]
+  },
+  {
+    "id": "playden-v080-v090b3",
+    "date": "2026-10-30",
+    "tag": "PC & Linux",
+    "title": "Playden v0.8.0–v0.9.0-beta.3: DX12, frame generation and Steam Families",
+    "summary": "Playden gains Direct3D 12 support, frame generation up to 4×, Steam Family Sharing, game management and runtime kit 0.16 with rumble and PS5 keyboard support.",
+    "body": [
+      "Playden by leolobato ships four releases since 0.7.2. Version 0.8.0 adds Steam Families — shared games appear in the Library with a Family badge and install like your own. Saved sign-ins no longer expire after about a day, and cover art stays available offline. The 0.9.0 beta series brings Direct3D 12 support, starting The Witcher 3 and other titles that previously failed, and Unreal Engine 5 games now default to DX12. Frame generation can show up to four times the frames a game draws. A new install screen lets you choose a game's language and version, install DLC and updates, and move or uninstall installed games.",
+      "Runtime kit 0.16 adds DualSense rumble, the PS5 on-screen keyboard in games, USB mouse wheel support and fixes for games that ran out of memory or file handles. Beta 3 specifically fixes .NET games such as Slay the Spire 2, installs PhysX for older games whose setup program carries it, and can run a game's own settings launcher once — Batman: Arkham Asylum now starts. Warning: alpha software that signs in to your real Steam account."
+    ],
+    "sources": [
+      {
+        "name": "Playden v0.9.0-beta.3 release",
+        "url": "https://github.com/leolobato/playden-ps5/releases/tag/v0.9.0-beta.3"
+      },
+      {
+        "name": "Playden v0.8.0 release",
+        "url": "https://github.com/leolobato/playden-ps5/releases/tag/v0.8.0"
+      }
+    ]
+  },
+  {
+    "id": "snes9x-v210",
+    "date": "2026-10-30",
+    "tag": "Emulator",
+    "title": "Snes9x PS5 v2.10: game search, instant shelf and C++ stability fix",
+    "summary": "Snes9x PS5 v2.10 adds a search-by-name feature, caches the game library for instant shelf loading and fixes a C++ runtime split that could crash the app.",
+    "body": [
+      "Snes9x PS5 v2.10 by MisterTemaki adds search by name on the shelf. Press Circle to open the on-screen keyboard, type part of a game's name and the shelf shows only matching titles — capitals and accents are ignored, and the file name counts too. The search stays across tab changes and play sessions and clears when the app quits. The shelf now opens instantly: the app saves a library cache at /data/snes9x/library.bin and refreshes it in the background only when a USB drive or share is added or removed.",
+      "A full code audit found and fixed a C++ runtime split between the app's own copy and the console's, the same mix that caused Stella PS5 1.0 to crash. Out-of-memory conditions during ROM loads or state saves now fail with a message instead of crashing, and damaged state files can no longer request gigabytes of memory. Updates through ShadowMountPlus now go into the correct folder when the app runs from a USB or extended drive. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "Snes9x PS5 v2.10 release",
+        "url": "https://github.com/MisterTemaki/snes9xPS5/releases/tag/v2.10"
+      }
+    ]
+  },
+  {
+    "id": "prospero-hi-fi",
+    "date": "2026-10-30",
+    "tag": "Media",
+    "title": "Prospero Hi-Fi: lossless music player for PS5",
+    "summary": "Prospero Hi-Fi plays MP3, FLAC, WAV and Ogg Vorbis from internal, M.2, USB and network storage with album artwork, an equalizer and browser remote control.",
+    "body": [
+      "Prospero Hi-Fi by Anime0t4ku is a music player for jailbroken PS5, based on the MiSTer Hi-Fi and NX Hi-Fi projects. It plays MP3, FLAC, PCM WAV and Ogg Vorbis files from internal storage (/data/music), M.2 (/mnt/ext1/Music), USB drives and network locations. Physical audio CDs are supported through a USB optical drive. The interface shows album artwork and includes an equalizer.",
+      "A browser remote at the console's IP mirrors the player controls. Each external mount remembers its own music folder, and a different folder can be chosen with Triangle. The target setup is PS5 firmware 13.60 with Y2JB and ShadowMount+; older firmware compatibility depends on the homebrew setup. Install by copying the PPSA99287 folder to /data/homebrew/PPSA99287/."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Hi-Fi GitHub",
+        "url": "https://github.com/Anime0t4ku/Prospero-Hi-Fi"
+      }
+    ]
+  },
+  {
     "id": "virtual-infinity-portal-ps5",
     "date": "2026-10-30",
     "tag": "Tool",

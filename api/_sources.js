@@ -135,6 +135,7 @@ export const SOURCES = [
   { cat: M, repo: 'theghostonline/PS5VR', name: 'PS5VR', about: 'VR video player for PSVR2' },
   { cat: M, repo: 'fstat13/PSCapture', name: 'PSCapture', about: 'Virtual capture card for OBS and Discord' },
   { cat: M, repo: 'bornaradusin/ProsperoRadio', name: 'ProsperoRadio', about: 'Internet radio via Radio Browser' },
+  { cat: M, repo: 'Anime0t4ku/Prospero-Hi-Fi', name: 'Prospero Hi-Fi', about: 'Lossless music player with CD and network support' },
 
   // Recomps and ports
   { cat: R, repo: 'Nazky/UnleashedRecomp-Prospero', name: 'Sonic Unleashed Recompiled', about: 'Xbox 360 recomp, bring your own copy' },
