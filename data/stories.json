@@ -1,5 +1,183 @@
 [
   {
+    "id": "virtual-infinity-portal-ps5",
+    "date": "2026-10-30",
+    "tag": "Tool",
+    "title": "Virtual Infinity Portal: play Disney Infinity on PS5 without the base",
+    "summary": "A new homebrew payload emulates the Disney Infinity USB base on a jailbroken PS5, with a TV picker, phone remote and 322 figures for Disney Infinity 2.0 and 3.0.",
+    "body": [
+      "Virtual Infinity Portal for PS5 by SpiderNic96 lets you play the PS4 Disney Infinity 2.0 and 3.0 games on a jailbroken PS5 without the physical Infinity Base. A single ELF payload emulates the USB base inside the game, supporting all 322 characters, play sets and power discs from the 1.0, 2.0 and 3.0 waves. Levels and skill-tree progress are saved per figure. The on-TV picker (hold L3+R3) shows franchise shelves, a collector’s album for power discs, a 3D base with lights that mimic the real hardware, search, favourites and a sneak-peek overlay while playing.",
+      "A phone remote served at http://<PS5 IP>:8766 mirrors the TV picker from any browser on your Wi-Fi. Themes include Classic, Clear, Light, Crimson and Neon with animated backgrounds. Requires a jailbroken PS5 on firmware 7.00–13.60 with an ELF loader and your own PS4 LEGO Dimensions EU or US disc (Disney Infinity 2.0 CUSA01114 or 3.0 CUSA03603)."
+    ],
+    "sources": [
+      {
+        "name": "Virtual Infinity Portal GitHub",
+        "url": "https://github.com/SpiderNic96/VirtualInfinityPortal-PS5"
+      }
+    ]
+  },
+  {
+    "id": "prosperoeden-encore",
+    "date": "2026-10-30",
+    "tag": "Emulator",
+    "title": "ProsperoEden Encore: controller-first Switch emulator fork for PS5",
+    "summary": "ProsperoEden Encore is a new Nintendo Switch emulator fork focused on firmware 13.60, with a TV-first DualSense UI, per-game profiles and hardened builds.",
+    "body": [
+      "ProsperoEden Encore by niakw is a new fork of the Eden-based Switch emulator for PS5, built specifically for firmware 13.60. It supports NSP, XCI, NSZ, XCZ, NRO, NSO, NCA, NAX and KIP loading with LZ4, ZBIC and zstd decoding. The fork focuses on a controller-first TV experience with a redesigned DualSense UI, per-game profiles for settings, unified storage management, AMD FSR upscaling and reproducible builds.",
+      "Key additions over the base ProsperoEden include a Safe Launch mode with diagnostics, audited OpenGL fixes, stable per-core JIT, and hardened release artifacts with checksum verification. Firmware 13.60 is the primary tested target; other firmwares are not claimed as supported. Requires a jailbroken PS5 and your own Switch game files and keys."
+    ],
+    "sources": [
+      {
+        "name": "ProsperoEden Encore GitHub",
+        "url": "https://github.com/niakw/ProsperoEden-Encore"
+      }
+    ]
+  },
+  {
+    "id": "mk9-ps5",
+    "date": "2026-10-30",
+    "tag": "Port",
+    "title": "Mortal Kombat Komplete Edition: Xbox 360 recomp with online multiplayer",
+    "summary": "Mortal Kombat Komplete Edition is recompiled to run natively on PS5 at 4K/60 FPS with FSR upscaling, PlayStation button prompts, trophies and working online play.",
+    "body": [
+      "Mortal Kombat Komplete Edition for PS5 by cptlamarca brings the Xbox 360 fighting game to the PS5 as a native recomp built on the ReXGlue SDK. The port runs at 1280×720 upscaled to 4K with AMD FSR at a steady 60 FPS in fights. It includes every mode from the original — story, ladder, tag ladder, Challenge Tower, Krypt and training — along with PlayStation button prompts in menus and move lists, and the game’s achievements as PS5-style trophies.",
+      "Online multiplayer works through the project’s own servers: ranked and player matches, rooms, King of the Hill lobbies and leaderboards. A message-of-the-day system is included. Requires a jailbroken PS5, your own Xbox 360 Mortal Kombat Komplete Edition disc image, a payload loader on port 9021, and about 7 GB of free space."
+    ],
+    "sources": [
+      {
+        "name": "MK9 PS5 GitHub",
+        "url": "https://github.com/cptlamarca/mk9-ps5"
+      }
+    ]
+  },
+  {
+    "id": "mp3-represcribed",
+    "date": "2026-10-30",
+    "tag": "Port",
+    "title": "Max Payne 3 RePrescribed: Xbox 360 recomp at 60 FPS with HD textures",
+    "summary": "Max Payne 3 is recompiled to run natively on PS5 at 60 FPS with HD textures from the PC version, DLC support, trophies and save imports from Xbox 360.",
+    "body": [
+      "Max Payne 3 RePrescribed by ChaosTheory1075 recompiles the Xbox 360 version of Max Payne 3 to run natively on PS5. Built on elripalda’s GTA IV PS5 layer and saulob’s GPU/timing work from Crackdown Recompiled, the port unlocks the 30 FPS cap to 60 FPS (with a 30 FPS option), integrates the PC version’s HD textures from Nexus Mods, and adds FXAA and anisotropic filtering up to 16×. Both discs and DLC are included.",
+      "The game’s achievements are mapped to PS5-style trophies with their own menu page. An installer sets up the discs, Title Update 9, DLC and textures from your own files at the drive’s full speed, and Xbox 360 saves can be imported. Requires a jailbroken PS5 with etaHEN or elfldr, your own Xbox 360 Max Payne 3 disc images, and Title Update 9."
+    ],
+    "sources": [
+      {
+        "name": "Max Payne 3 RePrescribed GitHub",
+        "url": "https://github.com/ChaosTheory1075/mp3-ps5"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v941-v951",
+    "date": "2026-10-30",
+    "tag": "Tool",
+    "title": "PS5 Upload v9.4.1–v9.5.1: persistent cheat engine and Remote Play fixes",
+    "summary": "PS5 Upload ships three releases: the cheat engine now survives reboots, Remote Play on Linux works without extra installs, and full-screen letterboxing is fixed.",
+    "body": [
+      "PS5 Upload v9.5.0 makes the cheat engine persistent across reboots — once enabled, switched-on cheats and game patches apply automatically when the game starts, including after a power cycle. Minion now distinguishes Saved from Applied status while the engine is off, and a crashing cheat can no longer crash its game on every start thanks to a 30-second safety window. v9.4.1 bundles GStreamer with its H.264 decoder into the Linux AppImage so Remote Play works out of the box on Arch, CachyOS and other distributions. The app now checks for a decoder before waking the console and gives up cleanly with install instructions if none is found.",
+      "v9.5.1 fixes Remote Play full-screen letterboxing: the app now sizes the picture itself the way video players do, so the whole image is always visible with black bars where the screen shape differs. Previously, the browser’s scaling could clip an edge by a scrollbar’s width on Windows. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v9.5.1 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v9.5.1"
+      },
+      {
+        "name": "PS5 Upload v9.5.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v9.5.0"
+      },
+      {
+        "name": "PS5 Upload v9.4.1 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v9.4.1"
+      }
+    ]
+  },
+  {
+    "id": "lego-toypad-v204",
+    "date": "2026-10-30",
+    "tag": "Tool",
+    "title": "LEGO Dimensions Virtual Toy Pad v2.0.4: firmware 7.00–13.60 and safer hooking",
+    "summary": "The Virtual Toy Pad now starts on every firmware from 7.00 to 13.60, adds a 4K resolution safety net and a crash-loop guard for the system software.",
+    "body": [
+      "LEGO Dimensions Virtual Toy Pad v2.0.4 by SpiderNic96 extends firmware support to the full 7.00–13.60 range, including 9.60 without etaHEN and 10.xx where it previously failed to start. The payload now waits up to 90 seconds for the game to load its USB library on a cold start, eliminating the “restart the game” message. Hooking is safer: only verified import slots are replaced, and the game is paused while they’re rewritten.",
+      "A new 4K safety net automatically steps down the resolution (2160→ 1440→ 1080) if the game crashes during startup, since PS4 titles keep their original memory budget on PS5. A crash-loop guard prevents the system software from looping if the payload itself causes a restart, automatically disabling after a set number of restarts so the console recovers. Requires a jailbroken PS5 on firmware 7.00–13.60 with an ELF loader and a PS4 LEGO Dimensions disc."
+    ],
+    "sources": [
+      {
+        "name": "LEGO Dimensions Virtual Toy Pad v2.0.4 release",
+        "url": "https://github.com/SpiderNic96/LegoToypad-VirtualToypadPS5-Homebrew/releases/tag/v2.0.4"
+      }
+    ]
+  },
+  {
+    "id": "ps5-cleanup-v106",
+    "date": "2026-10-30",
+    "tag": "Tool",
+    "title": "PS5 Cleanup v1.0.6: now runs directly on the PS5 with controller UI",
+    "summary": "PS5 Cleanup v1.0.6 adds a native PS5 ELF that runs on the console itself with controller navigation, its own home-screen tile and cleaner tile removal via Sony’s uninstall service.",
+    "body": [
+      "PS5 Cleanup v1.0.6 by xXBneutzerNameXx adds a native ELF (ps5cleanup.elf) that runs directly on the PS5 with controller navigation on the TV, removing the need for a PC. On first launch it creates its own “PS5 Cleanup” tile on the home screen. Load it through any payload loader or the Payload Manager. Tile removal now uses Sony’s own uninstall service, so deleting games and apps no longer leaves behind empty tiles — eliminating the need for a database rebuild in most cases.",
+      "If Sony’s service cannot remove a tile, it’s flagged as PARTIAL and listed under “Rebuild database” at the end. The console shuts down fully when finished (no rest mode) via a dedicated shutdown button. The Windows desktop version is still included for users who prefer the PC workflow. Requires a jailbroken PS5 with an FTP server and an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Cleanup v1.0.6 release",
+        "url": "https://github.com/xXBneutzerNameXx/PS5-Cleanup/releases/tag/v1.0.6"
+      }
+    ]
+  },
+  {
+    "id": "sm-toolbox-v005",
+    "date": "2026-10-30",
+    "tag": "Tool",
+    "title": "SM+ Toolbox v0.0.5: leaked-handle fix and housekeeping",
+    "summary": "SM+ Toolbox v0.0.5 fixes leaked file handles on failed payload sends, cleans up temp files from elevated builds, and caps terminal history at 30 jobs.",
+    "body": [
+      "SM+ Toolbox v0.0.5 by AldySan is a housekeeping release for the ShadowMountPlus desktop companion. Failed or cancelled payload sends no longer leave open file descriptors behind — previously every failed send leaked a handle, which could pile up over a long session. Elevated Windows builds now clean up their temporary helper scripts and logs in %TEMP% once each step finishes, instead of accumulating indefinitely.",
+      "Terminal scroll-back is capped at the 30 most recent builds instead of retaining every job for the entire session. No feature changes in this release. SM+ Toolbox is a desktop client that takes game dumps and produces console-ready images for ShadowMountPlus. Available for Windows and Linux."
+    ],
+    "sources": [
+      {
+        "name": "SM+ Toolbox v0.0.5 release",
+        "url": "https://github.com/AldySan/SM-Toolbox/releases/tag/v0.0.5"
+      }
+    ]
+  },
+  {
+    "id": "jobeeslair-v054",
+    "date": "2026-10-30",
+    "tag": "Store",
+    "title": "Jobee’sLair v0.5.4: PS5 keyboard, phone typing and rebuilt companion",
+    "summary": "Jobee’sLair v0.5.4 adds the PS5’s own on-screen keyboard for search and input, lets you type from your phone, and rebuilds the phone companion with live downloads.",
+    "body": [
+      "Jobee’sLair v0.5.4 by JVK3R integrates the PS5’s native on-screen keyboard for search, links and API keys like TorBox or AllDebrid, displayed in the console’s language. When the keyboard appears on the console, the same input box shows on the phone companion so you can paste from your phone and press Send. The phone companion is rebuilt with live download and install progress in the console’s language, plus Library access with Fix-it, removing homebrew apps, picking a game’s source, and managing API keys.",
+      "The release also fixes downloads that failed only after hours of waiting, and adds a speed limit and update controls to the phone interface. Jobee’sLair is a feed-based homebrew download manager for jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "Jobee’sLair v0.5.4 release",
+        "url": "https://github.com/JVK3R/JobeesLair/releases/tag/v0.5.4"
+      }
+    ]
+  },
+  {
+    "id": "recompstore-v274",
+    "date": "2026-10-30",
+    "tag": "Store",
+    "title": "RecompStore v2.7.4: faster game setup with local file moves",
+    "summary": "RecompStore v2.7.4 moves disc images into place instead of copying when they’re on the same drive, making game setup nearly instant and saving disk space.",
+    "body": [
+      "RecompStore v2.7.4 by elripalda speeds up game setup: disc images that are already on the same drive as the game are moved into place instead of copied, so setup takes about a second and doesn’t need room for a second copy. Files from another drive (like a USB stick) are still copied as before. Game pages with lots of files now have a scrollable panel with a scroll bar, keeping the layout clean.",
+      "A new log-sending feature on each app’s page lets users share diagnostic logs directly from the store. RecompStore is a homebrew store for jailbroken PS5 that installs recompiled game ports from your own disc images. Update from inside the store or send RecompStore-Installer.elf with a payload sender."
+    ],
+    "sources": [
+      {
+        "name": "RecompStore v2.7.4 release",
+        "url": "https://github.com/elripalda/RecompStore/releases/tag/v2.7.4"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v850-v851",
     "date": "2026-10-27",
     "tag": "Tool",

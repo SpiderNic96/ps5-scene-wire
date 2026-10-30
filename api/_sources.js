@@ -87,6 +87,7 @@ export const SOURCES = [
   { cat: T, repo: 'omerbicer/ps5-pkg-folderizer', name: 'PKG Folderizer', about: 'Convert debug PKGs to ShadowMountPlus folders on-console' },
   { cat: T, repo: 'kauansilvalopes/trophy', name: 'Trophy Manager', about: 'View, unlock, lock and back up PS5 trophies on-console' },
   { cat: T, repo: 'SpiderNic96/LegoToypad-VirtualToypadPS5-Homebrew', name: 'LEGO Dimensions Virtual Toy Pad', about: 'Play LEGO Dimensions without the physical Toy Pad' },
+  { cat: T, repo: 'SpiderNic96/VirtualInfinityPortal-PS5', name: 'Virtual Infinity Portal', about: 'Play Disney Infinity without the physical base' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },
@@ -112,6 +113,7 @@ export const SOURCES = [
   { cat: E, repo: 'MisterTemaki/genplusgxPS5', name: 'Genesis Plus GX', about: 'Mega Drive, Master System, Game Gear' },
   { cat: E, repo: 'MisterTemaki/beetlepcePS5', name: 'Beetle PCE', about: 'PC Engine and TurboGrafx-16' },
   { cat: E, repo: 'darkxex/SwanStationPS5', name: 'SwanStationPS5', about: 'PS1, Vulkan, RetroAchievements' },
+  { cat: E, repo: 'niakw/ProsperoEden-Encore', name: 'ProsperoEden Encore', about: 'Switch, FW 13.60 focused Eden fork' },
 
   // PC, Linux and Steam
   { cat: P, repo: 'ps5-linux/ps5-linux-loader', name: 'ps5-linux', about: 'Linux loader, low firmware' },
@@ -176,4 +178,6 @@ export const SOURCES = [
   { cat: R, repo: 'kaizerfcm/iwbtg-remastered-tribute-edition', name: 'I Wanna Be The Guy: Remastered', about: 'Native PS5 port of the fangame platformer' },
   { cat: R, repo: 'lamarkingru/grfs-ps5', name: 'Ghost Recon: Future Soldier', about: 'Xbox 360 recomp with LAN/relay multiplayer' },
   { cat: R, repo: 'bizkut/ps5-runescape', name: 'RuneScape (PS5)', about: 'OSRS and RuneLite through Wine' },
+  { cat: R, repo: 'ChaosTheory1075/mp3-ps5', name: 'Max Payne 3 RePrescribed', about: 'Xbox 360 recomp, 60 FPS with HD textures' },
+  { cat: R, repo: 'cptlamarca/mk9-ps5', name: 'Mortal Kombat Komplete Edition', about: 'Xbox 360 recomp with online multiplayer' },
 ];

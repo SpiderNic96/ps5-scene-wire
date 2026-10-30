@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27",
+  "updated": "2026-10-30",
   "about": "Firmware compatibility for the /firmware directory. Only what each project's README or release notes state. range = the developer says it supports these firmwares; tested = firmwares it has actually been run on; only = hard-locked to these firmwares; any = the developer says it isn't tied to a firmware. unstated = tracked apps whose README was checked and names no PS5 firmware (they show as not confirmed). Validate with: node scripts/compat-check.mjs",
   "firmwares": [
     "1.00",
@@ -660,13 +660,30 @@
       "note": "Only firmware 11.60 tested. PS5 trophies only; PS4 trophies are not supported."
     },
     "SpiderNic96/LegoToypad-VirtualToypadPS5-Homebrew": {
-      "tested": [
+      "range": [
+        "7.00",
         "13.60"
       ],
       "needs": [
         "elfldr"
       ],
-      "note": "Developed on 13.60. Requires an ELF loader and LEGO Dimensions PS4 (CUSA01176 v1.24 or CUSA00935 v1.23)."
+      "note": "v2.0.4: firmware 7.00–13.60, including 9.60 without etaHEN. Requires an ELF loader and LEGO Dimensions PS4 (CUSA01176 v1.24 or CUSA00935 v1.23)."
+    },
+    "SpiderNic96/VirtualInfinityPortal-PS5": {
+      "range": [
+        "7.00",
+        "13.60"
+      ],
+      "needs": [
+        "elfldr"
+      ],
+      "note": "Requires an ELF loader and PS4 Disney Infinity 2.0 or 3.0."
+    },
+    "niakw/ProsperoEden-Encore": {
+      "tested": [
+        "13.60"
+      ],
+      "note": "Firmware 13.60 is the primary hardware-tested target. Other firmwares not claimed."
     }
   },
   "unstated": [
@@ -677,6 +694,7 @@
     "Alexandre78500/xpad-ps5",
     "ArkSama/PS5-Lapy-JB-Daemon",
     "CHI-GETSU/GTA-SA-PS5-Homebrew",
+    "ChaosTheory1075/mp3-ps5",
     "ChaDea1/Bedlam2-PS5",
     "EchoStretch/kstuff",
     "EchoStretch/kstuff-lite",
@@ -705,6 +723,7 @@
     "blackbearreloaded/ProsperoTube",
     "bornaradusin/Emby5",
     "bornaradusin/ProsperoRadio",
+    "cptlamarca/mk9-ps5",
     "drakmor/kstuff-lite",
     "drakmor/nanoDNS",
     "eladharels/ps5-60FPS",
