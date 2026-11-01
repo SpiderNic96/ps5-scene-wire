@@ -1,5 +1,190 @@
 [
   {
+    "id": "phazonprime-ps5",
+    "date": "2026-11-01",
+    "tag": "Port",
+    "title": "PhazonPrime: Metroid Prime on PS5 via Metaforce",
+    "summary": "PhazonPrime is a native PS5 homebrew port of Metroid Prime for GameCube, with DualSense input, save slots, tile music and an early-alpha playable state.",
+    "body": [
+      "PhazonPrime by BaZZtian adapts the Metaforce classic foundation to a standalone PS5 application. It renders natively through Aurora and Dawn/WebGPU with Mesa/RADV, has native PS5 audio, DualSense movement and right-stick camera input with PlayStation button prompts, and three regular save slots plus autosave. Tile music on the home screen is generated from your own game data. A diagnostic report can optionally be shared for debugging. The current release is v00.001.035.",
+      "Only the PAL GameCube ISO (GM8P01, revision 0) is supported; NTSC and Japanese versions are untested. Known issues include invisible map geometry and some doors that look closed but can be passed through. Full-game completion is not yet validated. Requires a jailbroken PS5 with a compatible homebrew loader. Extract the release ZIP and copy the PPSA99731 folder, then place your own raw ISO beside eboot.bin as owned-pal.iso."
+    ],
+    "sources": [
+      {
+        "name": "PhazonPrime-PS5 on GitHub",
+        "url": "https://github.com/BaZZtian/PhazonPrime-PS5"
+      },
+      {
+        "name": "PhazonPrime v00.001.035 release",
+        "url": "https://github.com/BaZZtian/PhazonPrime-PS5/releases/tag/v00.001.035"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v1030-v1041",
+    "date": "2026-11-01",
+    "tag": "Tool",
+    "title": "PS5 Upload v10.3.0–v10.4.1: keyboard and mouse passthrough in Remote Play",
+    "summary": "PS5 Upload v10.4.0 passes your computer’s keyboard and mouse to the PS5 as native input in Remote Play on firmware 13.60, while v10.3.0 moves Settings into an overlay panel and backs up ProsperoEden saves.",
+    "body": [
+      "PS5 Upload v10.4.0 by phantomptr adds keyboard and mouse passthrough in Remote Play on firmware 13.60. Settings › Controls has three modes kept per game: Controller (keys and mouse act as a controller, the default), Keyboard & mouse (the PS5 gets real keyboard and mouse for games and apps that support them) and Mixed (real mouse with keys as controller, WASD moves). Click the picture to capture input; press and release Ctrl+Option (Ctrl+Alt on Windows/Linux) to get it back. A card explains the keys on first capture, and a faint hint stays on screen. Input is released automatically when the window loses focus or Settings opens. v10.4.1 is a quick follow-up fix.",
+      "v10.3.0 redesigns Settings into a slide-over panel that opens on top of the running stream in both windowed and full-screen mode. Esc closes Settings instead of pressing Circle and never leaves full screen. Picture, frame rate, video decoding and video format can be changed mid-stream. ProsperoEden (the Switch emulator) saves are now backed up alongside PS5 saves, locally and to a server. Send PS5Upload.elf to your payload loader on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v10.4.1 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v10.4.1"
+      },
+      {
+        "name": "PS5 Upload v10.4.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v10.4.0"
+      },
+      {
+        "name": "PS5 Upload v10.3.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v10.3.0"
+      }
+    ]
+  },
+  {
+    "id": "prospero-hi-fi-v130-v210",
+    "date": "2026-11-01",
+    "tag": "Media",
+    "title": "Prospero Hi-Fi v2.0.0–v2.1.0: playlists, internet radio and custom themes",
+    "summary": "Prospero Hi-Fi v2.0.0 adds playlists, internet radio, AAC/ALAC playback, Modern and Classic interface styles with animated backgrounds, and v2.1.0 brings centralized library management and artwork uploads.",
+    "body": [
+      "Prospero Hi-Fi v2.0.0 by Anime0t4ku is a major update. Playlists can be created and managed with artwork. Internet radio streams stations with live ICY metadata and automatic reconnection. AAC-LC and ALAC playback via M4A files is added. The interface now offers Modern and Classic styles with translucent glass effects, animated backgrounds (Ambient Drift, Aurora, Gradient Waves with adjustable speed), adjustable opacity, and physical CD browsing with disc eject support. v1.3.0 added 11 visualizer styles with GPU rendering and an edge-to-edge fullscreen visualizer cycled with D-pad Left/Right.",
+      "v2.1.0 adds Settings → Library for managing SMB shares, Collections, Playlists and Online Radio in one place. Artwork can now be uploaded directly from a PC or phone alongside the URL option, with images resized and stored on the PS5. PLS and standard M3U playlist links for online radio are now followed automatically. Requires a jailbroken PS5 with etaHEN or equivalent. Install via FTP or ProsperoStore."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Hi-Fi v2.1.0 release",
+        "url": "https://github.com/Anime0t4ku/Prospero-Hi-Fi/releases/tag/v2.1.0"
+      },
+      {
+        "name": "Prospero Hi-Fi v2.0.0 release",
+        "url": "https://github.com/Anime0t4ku/Prospero-Hi-Fi/releases/tag/v2.0.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5lm-v0100",
+    "date": "2026-11-01",
+    "tag": "Tool",
+    "title": "PS5LM v0.10.0: fleet mode splits a model across multiple consoles",
+    "summary": "PS5LM v0.10.0 adds an experimental fleet build that distributes one language model across several PS5 consoles, an introspection endpoint for logits and activations, and fixes download speeds past 2 GB.",
+    "body": [
+      "PS5LM v0.10.0 by cobanov introduces an experimental fleet mode that splits one language model across several PS5 consoles. A PC runs the controller (python3 -m fleet serve) and one llama-server, while each PS5 runs the fleet build as an RPC worker holding a slice of the model’s layers on its GPU. Dense Llama and Qwen2 GGUFs are supported for now. An opt-in introspection endpoint exposes the model’s logits and activations. Downloads no longer slow down past 2 GB, and models on M.2 and USB drives now show up properly.",
+      "Install by copying the PPSA99575 folder to /data/homebrew over FTP; ShadowMountPlus puts PS5LM on the home screen. The fleet build (ps5lm-app-fleet-v0.10.0.zip) has the same title ID and replaces the normal app. Without /data/PS5LM/fleet-worker.txt it behaves normally. Requires a jailbroken PS5 on firmware 7.00 to 13.60 with kstuff-lite, etaHEN and ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "PS5LM v0.10.0 release",
+        "url": "https://github.com/cobanov/PS5LM/releases/tag/v0.10.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5-backport-gui-v034",
+    "date": "2026-11-01",
+    "tag": "Tool",
+    "title": "PS5 Backport GUI 0.3.4: CRI audio fix and AMPR/PlayGo library swaps",
+    "summary": "PS5 Backport GUI 0.3.4 consolidates the 0.3.3 and 0.3.4 testing builds, adding a fix for silent Unreal Engine games with CRI audio on firmware 4.xx–5.xx and a Switch AMPR/PlayGo tool for swapping known-good libraries.",
+    "body": [
+      "PS5 Backport GUI 0.3.4 by kerrdec97 consolidates everything since 0.3.2. Unreal Engine games using CRI audio (such as FINAL FANTASY RESONANCE) that requested a 7.1.4 (12-channel) speaker setup ran silently on firmware 4.xx–5.xx because those firmwares only accept up to 8 channels. The game now falls back to its own 7.1 setup. Confirmed working on a base PS5 on 4.50. A new Switch AMPR/PlayGo tool lets you replace fakelib/libSceAmpr.sprx or libScePlayGo.sprx with a known-good library from a list: the engine’s own, the Unreal Engine AMPR, drakmor’s ampr_emu 0.4.2.1, or a signed .sprx of your own.",
+      "Select a game and press Switch AMPR/PlayGo above Start Backport (also in the right-click menu for any backport ZIP or folder). Only those two files change. The tool is useful for titles like Dave the Diver and Hollow Knight. Download from the GitHub releases page. Requires a Windows PC."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Backport GUI 0.3.4 release",
+        "url": "https://github.com/kerrdec97/PS5-Backport-GUI/releases/tag/early-testing-beta-0.3.4"
+      }
+    ]
+  },
+  {
+    "id": "seedee5-v124",
+    "date": "2026-11-01",
+    "tag": "Emulator",
+    "title": "Seedee5 v1.24: USB drives no longer list other systems’ games",
+    "summary": "Seedee5 v1.24 fixes USB and external drives listing non-CD-i games and causing long black-screen startups, adds per-drive folder selection, and searches drives in the background.",
+    "body": [
+      "Seedee5 v1.24 by mortaljinx fixes a bug where USB and external drives listed games from other systems as CD-i titles, because Seedee5 searched any roms folder even with the NAS off. On large mechanical drives the search could keep the startup on a black screen for half an hour. The emulator now only looks in CD-i-specific folder names (cdi, CD-i, Philips CD-i, roms/cdi, ps5-cdi, etc.) and never searches a general roms folder. A safety limit stops any search that meets more than 20,000 files.",
+      "Settings › Games › Where on the drives lets you browse and pick your exact CD-i folder. Games on USB drives can be turned off entirely. Drive searching now happens in the background — the game wheel opens immediately and titles join it when found. Copy the PPSA99142 folder from the release ZIP over the old one in /data/homebrew/ via FTP, or update through ProsperoStore."
+    ],
+    "sources": [
+      {
+        "name": "Seedee5 v1.24 release",
+        "url": "https://github.com/mortaljinx/Seedee5/releases/tag/v1.24"
+      }
+    ]
+  },
+  {
+    "id": "pkg-folderizer-01058-01061",
+    "date": "2026-11-01",
+    "tag": "Tool",
+    "title": "PKG Folderizer 01.058–01.061: file browser, save manager and trophy backup",
+    "summary": "PKG Folderizer 01.058 adds a file browser, a save manager and a trophy screen with backup, restore and USB export. 01.061 fixes cross-device copies and adds PS4 Folder support.",
+    "body": [
+      "PKG Folderizer 01.058 by omerbicer adds three new screens: Files for browsing and managing folders on mounted drives, Saves for browsing slots, resigning, backing up, restoring and deleting save data, and Trophies for browsing sets, backing up, restoring and exporting trophy data (Apollo-style export to USB at PS5/EXPORT/TROPHY/). 01.059 keeps cloud vault backup available while hiding Google Drive/Dropbox linking until server-enabled, and speeds up folder browsing. 01.060 shows average and recent MB/s in convert progress logs.",
+      "01.061 fixes Convert USB/external publishes that failed with “Cross-device link” by copying across volumes when rename cannot. PS4 Folder publishes now accept sce_sys/param.sfo since PS4 games never ship param.json. 01.056–01.057 were a rollback and fix for intermittent startup crashes (OpenGL/Mesa) in 01.050–01.054. Update via ProsperoStore or FTP."
+    ],
+    "sources": [
+      {
+        "name": "PKG Folderizer 01.061 release",
+        "url": "https://github.com/desstannsoftware/ps5-pkg-folderizer/releases/tag/01.061.000"
+      },
+      {
+        "name": "PKG Folderizer 01.058 release",
+        "url": "https://github.com/desstannsoftware/ps5-pkg-folderizer/releases/tag/01.058.000"
+      }
+    ]
+  },
+  {
+    "id": "machetesvg-v1312-v1317",
+    "date": "2026-11-01",
+    "tag": "Tool",
+    "title": "MacheteSVG v1.3.12–v1.3.17: batch operations, PFS dump diagnostics and PS4 save fixes",
+    "summary": "MacheteSVG v1.3.12 through v1.3.17 add batch backup and restore, a PFS diagnostic dump mode, Decima 2.0 multi-slot reconstruction, and fix PS4 BC save corruption from user ID sanitization.",
+    "body": [
+      "MacheteSVG v1.3.12 by VenezuelanBiggie24 adds batch backup and restore with multi-select (Square to toggle, Triangle to select all). v1.3.13 brings Decima Engine 2.0 multi-slot metadata reconstruction for Horizon Zero Dawn Remastered and automated twin mirroring for PS4 backup containers. v1.3.14 fixes a false positive in the Title Activity Monitor that caused lockouts from system daemon mount points. v1.3.15 adds a PFS dump diagnostic mode that inspects every mounted container.",
+      "v1.3.16 fixes a critical issue where the PS4 param.sfo resigner replaced the local PS4 user index (user_id=1) with the 32-bit PS5 OS user ID, causing backwards compatibility titles like Dragon Quest XI S to reject saves with CE-108255-1. v1.3.17 hardens user_id sanitization across all PS4 SFO patching paths with bounds enforcement and a comprehensive container verification suite. Store packaging updated to 01.045.000 for ProsperoStore auto-update. All 183 unit tests pass."
+    ],
+    "sources": [
+      {
+        "name": "MacheteSVG v1.3.17 release",
+        "url": "https://github.com/VenezuelanBiggie24/MacheteSVG-PS5-Save-Manager/releases/tag/v1.3.17"
+      },
+      {
+        "name": "MacheteSVG v1.3.16 release",
+        "url": "https://github.com/VenezuelanBiggie24/MacheteSVG-PS5-Save-Manager/releases/tag/v1.3.16"
+      }
+    ]
+  },
+  {
+    "id": "mp3-represcribed-v103-v105",
+    "date": "2026-11-01",
+    "tag": "Port",
+    "title": "Max Payne 3 RePrescribed v1.0.3–v1.0.5: FSR upscaling, DualSense features and cheat menu",
+    "summary": "Max Payne 3 RePrescribed v1.0.5 adds AMD FSR 1 upscaling with SMAA for a sharper picture on 4K TVs. v1.0.4 adds a cheat menu and fixes grass rendering. v1.0.3 brings PlayStation button icons, DualSense haptics and background shader compilation.",
+    "body": [
+      "Max Payne 3 RePrescribed v1.0.5 by ChaosTheory1075 adds AMD FSR 1 upscaling after SMAA anti-aliasing. The game renders at 720p (higher resolutions caused frame rate issues or black screens) and is now enlarged with FSR instead of simple stretching, with a selectable sharpness level. Both are on by default. v1.0.4 adds a cheat menu (L3+R3) with god mode, infinite ammo, infinite bullet time, one-shot kills and passive enemies, plus an FPS counter. It also fixes grass that turned into big stretched triangles due to a missing alpha-to-coverage feature.",
+      "v1.0.3 replaces Xbox button prompts with PlayStation icons from the PS3 version, adds DualSense features (light bar follows health, adaptive triggers resist while aiming and kick with each shot, haptic rumble on hits), and builds new shaders in the background instead of on the graphics thread, eliminating the 100–300 ms freezes on first play. Requires a jailbroken PS5 with etaHEN or elfldr and your own Xbox 360 Max Payne 3 disc images."
+    ],
+    "sources": [
+      {
+        "name": "Max Payne 3 v1.0.5 release",
+        "url": "https://github.com/ChaosTheory1075/mp3-ps5/releases/tag/1.0.5"
+      },
+      {
+        "name": "Max Payne 3 v1.0.4 release",
+        "url": "https://github.com/ChaosTheory1075/mp3-ps5/releases/tag/1.0.4"
+      },
+      {
+        "name": "Max Payne 3 v1.0.3 release",
+        "url": "https://github.com/ChaosTheory1075/mp3-ps5/releases/tag/1.0.3"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v952-v953",
     "date": "2026-10-30",
     "tag": "Tool",

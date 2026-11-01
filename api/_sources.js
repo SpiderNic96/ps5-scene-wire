@@ -180,5 +180,6 @@ export const SOURCES = [
   { cat: R, repo: 'lamarkingru/grfs-ps5', name: 'Ghost Recon: Future Soldier', about: 'Xbox 360 recomp with LAN/relay multiplayer' },
   { cat: R, repo: 'bizkut/ps5-runescape', name: 'RuneScape (PS5)', about: 'OSRS and RuneLite through Wine' },
   { cat: R, repo: 'ChaosTheory1075/mp3-ps5', name: 'Max Payne 3 RePrescribed', about: 'Xbox 360 recomp, 60 FPS with HD textures' },
+  { cat: R, repo: 'BaZZtian/PhazonPrime-PS5', name: 'PhazonPrime', about: 'Metroid Prime via Metaforce, bring your own GameCube ISO' },
   { cat: R, repo: 'cptlamarca/mk9-ps5', name: 'Mortal Kombat Komplete Edition', about: 'Xbox 360 recomp with online multiplayer' },
 ];
