@@ -79,6 +79,9 @@ export const SOURCES = [
   { cat: T, repo: 'AdamGoodApp/prosperokit', name: 'ProsperoKit', about: 'React + Tailwind framework for native PS5 homebrew apps' },
   { cat: T, repo: 'ghost1372/PS5-Payload-Template', name: 'PS5 Payload Template', about: 'Boilerplate for payloads with a web UI and SQLite' },
   { cat: T, repo: 'ghost1372/PlayTime', name: 'PlayTime', about: 'View and edit per-user game play times' },
+  { cat: T, repo: 'icepuente/tailscale-ps5', name: 'Tailscale PS5', about: 'Join your PS5 to your Tailscale tailnet' },
+  { cat: T, repo: 'pristmc-code/ps5-glibren-releases', name: 'glibren', about: 'Game Library Renamer, file manager and system monitor' },
+  { cat: T, repo: 'Zubastic/PS5-Sync-Clock', name: 'PS5 Sync Clock', about: 'Fix system time after dead CMOS battery' },
   { cat: T, repo: 'Euphoric-Dev/HomeHider', name: 'HomeHider', about: 'Hide tiles, folders, custom icons on the home screen' },
   { cat: T, repo: '0xZ3n0x/BlueV', name: 'BlueV', about: 'Bluetooth audio streaming to speakers and headphones' },
   { cat: T, repo: 'xXBneutzerNameXx/PS5-Cleanup', name: 'PS5 Cleanup', about: 'Clean up a jailbroken PS5 without reinstalling' },
@@ -182,4 +185,7 @@ export const SOURCES = [
   { cat: R, repo: 'ChaosTheory1075/mp3-ps5', name: 'Max Payne 3 RePrescribed', about: 'Xbox 360 recomp, 60 FPS with HD textures' },
   { cat: R, repo: 'BaZZtian/PhazonPrime-PS5', name: 'PhazonPrime', about: 'Metroid Prime via Metaforce, bring your own GameCube ISO' },
   { cat: R, repo: 'cptlamarca/mk9-ps5', name: 'Mortal Kombat Komplete Edition', about: 'Xbox 360 recomp with online multiplayer' },
+  { cat: R, repo: 'bystritskiy/reUndr2-ps5', name: 'NFS Underground 2 (reUndr 2)', about: 'Xbox recomp, 4K 60fps, bring your own disc' },
+  { cat: R, repo: 'KongaTime/The-Darkness-Recomp-PS5', name: 'The Darkness', about: 'Xbox 360 recomp (preview), bring your own copy' },
+  { cat: R, repo: 'youss17x/Forgotten-Warrior-PS5', name: 'Forgotten Warrior Remastered', about: 'J2ME game native C++ port, bring your own .jar' },
 ];

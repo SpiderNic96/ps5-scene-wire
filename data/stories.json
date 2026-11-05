@@ -1,5 +1,145 @@
 [
   {
+    "id": "ps5upload-v1110",
+    "date": "2026-11-05",
+    "tag": "Tool",
+    "title": "PS5 Upload v11.1.0: MCP server for agents, per-console queue and picture-off Remote Play",
+    "summary": "PS5 Upload v11.1.0 adds an MCP server so AI agents can drive the console, a per-console job queue for uploads and installs, and a picture-off switch that keeps friends streaming while freeing your screen.",
+    "body": [
+      "PS5 Upload v11.1.0 by phantomptr introduces an MCP server at /mcp (and a stdio bridge via ps5upload-engine mcp) that lets AI agents manage files, uploads, installs, games, saves, cheats, payloads, power, hardware and Remote Play through the engine's full API. PS5UPLOAD_MCP_READ_ONLY=1 restricts it to read-only. The engine now has its own queue per console: uploads, downloads and installs run in order, survive restarts, and are visible to every client. Scripts must name the console explicitly — a route that changes something now returns 400 without addr. An OpenAPI 3.1 spec at /api/openapi.json documents every route, enforced by CI.",
+      "Remote Play gains a Picture on this device toggle: turn it off and the stream stops decoding locally while friends and Go live keep receiving it, useful for couch play with the TV. Play Together lets you use the console's own DualSense while friends join through the app. PS5-side activity (copies, NAS transfers) now appears in the app with progress and Cancel. Installs are more reliable — paused downloads survive reconnection, the app asks before replacing an installed game, and stalled installs no longer block later ones. Send PS5Upload.elf to your payload loader on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v11.1.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v11.1.0"
+      }
+    ]
+  },
+  {
+    "id": "psbox-v161",
+    "date": "2026-11-05",
+    "tag": "Media",
+    "title": "PSBox Cloud Gaming v1.6.1: Xbox achievements convert to native PS5 trophies",
+    "summary": "PSBox Cloud Gaming v1.6.1 converts unlocked Xbox achievements into native PS5 Trophy 2 packages and fixes keyboard input isolation on Linux.",
+    "body": [
+      "PSBox Cloud Gaming v1.6.1 by RafaelNGP adds Xbox-to-PS5 trophy synchronisation. Unlocked Xbox achievements are converted directly into native PlayStation 5 Trophy 2 packages (TRPTITLE.DAT, TROPHY.UCP and database registration). A disclaimer modal warns about PSN ban and flag risk and advises enabling only on local or offline profiles. A new Remove Local PSBox Trophies option in Settings lets you strip all PSBox-added trophies and metadata from your account at any time, and trophies can be re-synced from Xbox afterwards.",
+      "On Linux desktop, keyboard text input no longer triggers gamepad buttons during UI navigation and search. The Delete key no longer fires a touchpad-hold signout, and inactive WebUI connections no longer show a phantom phone controller icon. A low-latency Vulkan NV12 decode pipeline with mailbox presentation is added for Linux desktop and handheld devices such as Steam Deck, ROG Ally and Legion Go. Install from ProsperoStore or RecompStore on PS5, via USB PKG on PS4, or as an AppImage on Linux."
+    ],
+    "sources": [
+      {
+        "name": "PSBox Cloud Gaming v1.6.1 release",
+        "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5/releases/tag/v1.6.1"
+      }
+    ]
+  },
+  {
+    "id": "reundr2-ps5",
+    "date": "2026-11-05",
+    "tag": "Port",
+    "title": "reUndr 2: Need for Speed Underground 2 recompiled for PS5",
+    "summary": "reUndr 2 statically recompiles the original Xbox version of Need for Speed: Underground 2 into a native PS5 homebrew app with 4K rendering, HD text, two-player split screen and DualSense controls.",
+    "body": [
+      "reUndr 2 by bystritskiy translates the original Xbox game code ahead of time into native PS5 C, with a replacement runtime for graphics, audio, input and system services. It renders at 3840×2160 up to 60 fps, redraws the menu font stroke by stroke at 2048×2048 for sharp 4K text, and maps controls to the DualSense with PlayStation button prompts and a DualSense diagram on the controls screen. Two-player split screen works with two controllers and independent rumble. Cutscenes and intro videos fill the widescreen frame. Copy your own USA (NTSC-U) Xbox disc image to the console and the app handles extraction.",
+      "Available on ProsperoStore and RecompStore for direct install, or download the release ZIP and copy the game folder over FTP. Requires a PS5 with ShadowMountPlus and about 2.5 GB free. Only the USA Xbox disc is supported; PAL and other releases may not work. Bring your own legally owned copy of the game."
+    ],
+    "sources": [
+      {
+        "name": "reUndr 2 on GitHub",
+        "url": "https://github.com/bystritskiy/reUndr2-ps5"
+      }
+    ]
+  },
+  {
+    "id": "the-darkness-recomp-ps5",
+    "date": "2026-11-05",
+    "tag": "Port",
+    "title": "The Darkness Recomp: Xbox 360 classic ported to PS5 homebrew",
+    "summary": "The Darkness Recomp is an experimental PS5 homebrew port of the Xbox 360 version of The Darkness, based on portingpete's recompilation, with a native launcher and disc image import.",
+    "body": [
+      "The Darkness Recomp by KongaTime adapts portingpete's The Darkness Recomp into a standalone PS5 homebrew title. It includes a native PS5 launcher with Play and Exit options and supports importing your own Xbox 360 ISO directly on the console. An extracted dump can also be placed manually in the game folder. The archive includes PS5 app files and launcher artwork.",
+      "This is a preview release — the launcher and Play have been tested with an existing extracted dump on PS5, while the ISO reader passed host tests but a full import on console is still unverified. Expect variable performance. Requires a jailbroken PS5 with a compatible homebrew loader. Bring your own copy of the original Xbox 360 game."
+    ],
+    "sources": [
+      {
+        "name": "The Darkness Recomp PS5 on GitHub",
+        "url": "https://github.com/KongaTime/The-Darkness-Recomp-PS5"
+      }
+    ]
+  },
+  {
+    "id": "tailscale-ps5",
+    "date": "2026-11-05",
+    "tag": "Tool",
+    "title": "Tailscale on PS5: put your console on your private tailnet",
+    "summary": "tailscale-ps5 runs Tailscale's tsnet library natively on a jailbroken PS5, joining the console to your tailnet so you can send payloads from any device, at home or away.",
+    "body": [
+      "tailscale-ps5 by icepuente puts a jailbroken PS5 on your Tailscale tailnet as its own device with a MagicDNS name. It runs Tailscale's tsnet library natively on the console using a patched Go 1.27.3 toolchain that works around FreeBSD 11 syscall differences and the PS5's sandbox restrictions. Once joined, you can send ELF payloads from any tailnet device with tools/send.py, with output streamed back. A status page and heartbeat log are served at http://ps5/ over the tailnet. Login is a one-time browser link, and the identity persists across reboots.",
+      "TCP connections route through a small allowlist proxy on your LAN (only *.tailscale.com and *.tailscale.io), so the console doesn't need direct internet and your router can keep blocking Sony. UDP runs direct WireGuard on the LAN at about 2 ms latency. Tested on firmware 13.60 with Y2JB and elfldr v0.26. Load via pldmgr autoload or start manually. Diagnostic log upload is off by default. Early release — one run hung after a few minutes, so a heartbeat was added to catch it."
+    ],
+    "sources": [
+      {
+        "name": "tailscale-ps5 on GitHub",
+        "url": "https://github.com/icepuente/tailscale-ps5"
+      }
+    ]
+  },
+  {
+    "id": "glibren-ps5",
+    "date": "2026-11-05",
+    "tag": "Tool",
+    "title": "glibren: rename your game library and manage files on PS5",
+    "summary": "glibren is a PS5 payload that renames game files from their Title ID, adds a file manager with batch operations, a temperature and fan monitor, and drive and network speed tests.",
+    "body": [
+      "glibren by pristmc-code is a signed PS5 payload that renames your installed game files from their raw Title ID to readable names. Beyond renaming, it includes a full file manager with batch copy, move and delete, a temperature and fan monitor, and drive and internet speed tests. The interface opens on the PS5's Media tab or at http://PS5-IP:8765 from a PC or phone. Releases are Ed25519-signed and the payload verifies the signature before installing updates, so tampered files are refused.",
+      "Send glibren.elf to your ELF loader on port 9021. On the first run it creates a Game Library Renamer icon in the Media tab. Updates appear as a button on the Games page and install directly from GitHub with signature verification. Full source code is included with each release under GPL-3.0. Use at your own risk on a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "glibren releases on GitHub",
+        "url": "https://github.com/pristmc-code/ps5-glibren-releases"
+      }
+    ]
+  },
+  {
+    "id": "forgotten-warrior-ps5",
+    "date": "2026-11-05",
+    "tag": "Port",
+    "title": "Forgotten Warrior Remastered: classic J2ME game ported natively to PS5",
+    "summary": "Forgotten Warrior PS5 is a native C++ port of the classic J2ME mobile game, running at 1080p with DualSense controls and no Java VM required.",
+    "body": [
+      "Forgotten Warrior PS5 by youss17x is a native C++ port of the J2ME mobile classic, remastered for homebrew PS5. It runs at 1920×1080 with enhanced pixel scaling and the original 3:4 aspect ratio preserved, all without a Java virtual machine or payload launcher. DualSense controls are mapped natively. On first launch it reads the original game's artwork, maps and audio from your own copy of the J2ME .jar file.",
+      "Download the v1.2.0 release ZIP and copy the FWRG00001 folder to your PS5's homebrew directory. Place your own original .jar file as instructed in the setup guide. Requires a jailbroken PS5 with a compatible homebrew loader. Build instructions and source code are included."
+    ],
+    "sources": [
+      {
+        "name": "Forgotten Warrior PS5 on GitHub",
+        "url": "https://github.com/youss17x/Forgotten-Warrior-PS5"
+      },
+      {
+        "name": "Forgotten Warrior v1.2.0 release",
+        "url": "https://github.com/youss17x/Forgotten-Warrior-PS5/releases/tag/v1.2.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5-sync-clock",
+    "date": "2026-11-05",
+    "tag": "Tool",
+    "title": "PS5 Sync Clock: fix time and trophy errors from a dead CMOS battery",
+    "summary": "PS5 Sync Clock is a payload that fixes system time after a dead CMOS battery reset, with an interactive web UI and an auto-fix daemon that corrects the clock on every wake from rest mode.",
+    "body": [
+      "PS5 Sync Clock by Zubastic solves a common problem: when a PS5's CMOS/RTC battery dies, the clock resets on every boot, causing 0x80B50001 errors from libSceRtc and breaking trophies and NP services. The project ships two payloads. sync-clock.elf provides a web UI on port 5915 with NTP-via-browser (the browser queries HTTPS time APIs and compensates network delay), NTP-via-console (direct UDP/123), manual unix timestamp entry, and SRTC cache diagnostics with an opt-in kernel write to fix 0x800F0532 trophy timestamp errors.",
+      "sync-clock-auto.elf is a resident background daemon that fixes the time once at startup and after every wake from rest mode, fully offline using the console's own CLOCK_REALTIME. Add it to your PLK autoload list and it guards the clock for the whole session. Both payloads use clock_settime on Sony's custom clockids (16 and 17 for RTC domains) and the SRTC boot-time cache. Send the ELF to your payload loader on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Sync Clock on GitHub",
+        "url": "https://github.com/Zubastic/PS5-Sync-Clock"
+      }
+    ]
+  },
+  {
     "id": "phazonprime-ps5",
     "date": "2026-11-01",
     "tag": "Port",
