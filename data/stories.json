@@ -1,5 +1,26 @@
 [
   {
+    "id": "eglantine-ps5-v1000111",
+    "date": "2026-11-05",
+    "tag": "Emulator",
+    "title": "EglantinePS5 v1.000.111: Switch 2 emulator hits PS5 with Pokopia near 60 FPS",
+    "summary": "EglantinePS5 brings Nintendo Switch 2 emulation to jailbroken PS5 consoles via the Eglantine fork of Eden, with Pokémon Pokopia running at 45–60 FPS and a Vulkan renderer built on Mihawk's PS5 Mesa RADV driver.",
+    "body": [
+      "EglantinePS5 v1.000.111 by heydemoura ports the Eglantine Switch 2 emulator (itself a fork of Eden) to PS5 homebrew. The standout result is Pokémon Pokopia running at 45–60 FPS depending on the scene, confirmed by the EdGlantine-PS5 fork's compatibility table and community reports. Mario Kart World reaches roughly 24 FPS at the title screen. The emulator ships a Vulkan renderer powered by Mihawk's PS5 Mesa RADV driver alongside an OpenGL fallback, and supports output up to 4K at 120 Hz with frame generation that doubles 30 FPS to 60 FPS visually.",
+      "Other features include a game library with cover art, per-game profiles for resolution and renderer settings, and seven performance switches for trading accuracy for speed. Tested firmwares range from 6.02 to 13.60. Send EglantinePS5.elf to your payload loader on port 9021; ShadowMountPlus is required. You need your own game dumps — the emulator does not include any games."
+    ],
+    "sources": [
+      {
+        "name": "EglantinePS5 v1.000.111 release",
+        "url": "https://github.com/heydemoura/EglantinePS5/releases/tag/v1.000.111"
+      },
+      {
+        "name": "EdGlantine-PS5 game compatibility",
+        "url": "https://github.com/Portablelle/EdGlantine-PS5"
+      }
+    ]
+  },
+  {
     "id": "fbneo-ps5-v23",
     "date": "2026-11-05",
     "tag": "Emulator",

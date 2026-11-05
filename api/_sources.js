@@ -117,6 +117,7 @@ export const SOURCES = [
   { cat: E, repo: 'MisterTemaki/genplusgxPS5', name: 'Genesis Plus GX', about: 'Mega Drive, Master System, Game Gear' },
   { cat: E, repo: 'MisterTemaki/beetlepcePS5', name: 'Beetle PCE', about: 'PC Engine and TurboGrafx-16' },
   { cat: E, repo: 'darkxex/SwanStationPS5', name: 'SwanStationPS5', about: 'PS1, Vulkan, RetroAchievements' },
+  { cat: E, repo: 'heydemoura/EglantinePS5', name: 'EglantinePS5', about: 'Switch 2, based on Eglantine/Eden' },
   { cat: E, repo: 'niakw/ProsperoEden-Encore', name: 'ProsperoEden Encore', about: 'Switch, FW 13.60 focused Eden fork' },
 
   // PC, Linux and Steam

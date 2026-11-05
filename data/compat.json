@@ -420,6 +420,19 @@
       ],
       "note": "Testers ran it on 6.02 to 12.70. USB keyboard and mouse don't work on 11.x and 12.00 yet."
     },
+    "heydemoura/EglantinePS5": {
+      "tested": [
+        "6.02",
+        "7.40",
+        "7.61",
+        "12.70",
+        "13.60"
+      ],
+      "needs": [
+        "ShadowMountPlus"
+      ],
+      "note": "Switch 2 emulator based on Eglantine/Eden. Vulkan renderer via PS5 Mesa RADV. Send ELF to port 9021."
+    },
     "mihawk-99/PS5_RetroArch": {
       "any": true,
       "needs": [
