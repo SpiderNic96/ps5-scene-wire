@@ -715,6 +715,16 @@
         "13.60"
       ],
       "note": "Tested on 13.60 with homebrew game-folder setup."
+    },
+    "B4ckd0orl/PADRINO-FPKG": {
+      "range": [
+        "1.00",
+        "13.60"
+      ],
+      "needs": [
+        "elfldr"
+      ],
+      "note": "All-in-one HEN payload with kstuff-lite; send to port 9021."
     }
   },
   "unstated": [
@@ -732,6 +742,7 @@
     "EchoStretch/kstuff-lite",
     "KongaTime/PS5_EdgeOfTimeTitle",
     "KongaTime/The-Darkness-Recomp-PS5",
+    "KongaTime/Wario-Land-Shake-It-PS5",
     "KongaTime/XBC-Recomp-PS5-Port",
     "LightningMods/Itemzflow",
     "LoZazaMastro/TheSimpsonsGame-PS5-Builder",

@@ -1,5 +1,81 @@
 [
   {
+    "id": "playden-v0100b2",
+    "date": "2026-11-05",
+    "tag": "Port",
+    "title": "Playden v0.10.0-beta.2: Project Zomboid plays, USB games persist and batch runtime updates",
+    "summary": "Playden v0.10.0-beta.2 fixes Project Zomboid quitting after 20 seconds, keeps USB games starting from PS5 Home after drives change, and adds a Runtimes tab for updating many games at once.",
+    "body": [
+      "Playden v0.10.0-beta.2 by leolobato fixes Project Zomboid so it no longer quits about 20 seconds after starting. USB games now keep starting from PS5 Home after drives change places, with no need to open Playden first. A new Runtimes tab lets you update many games at once, and Playden asks once after a new runtime kit. The web page gains a Files tab for browsing a game's saves and files.",
+      "Runtime kit 0.19 brings USB drive search, NW.js game support, better rumble, and fixes for Prototype and The Evil Within. This is a beta — turn on Settings › Updates › Beta updates, then Check now. Requires about 8 GB free console storage for the update. Your sign-in, games, saves and settings are kept."
+    ],
+    "sources": [
+      {
+        "name": "Playden v0.10.0-beta.2 release",
+        "url": "https://github.com/leolobato/playden-ps5/releases/tag/v0.10.0-beta.2"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v1120-v1122",
+    "date": "2026-11-05",
+    "tag": "Tool",
+    "title": "PS5 Upload v11.2.0–v11.2.2: MCP & API dashboard, resilient queues and stream diagnostics",
+    "summary": "PS5 Upload v11.2.0 adds a sidebar page for agent setup and API docs, v11.2.1 makes queues survive rest mode, and v11.2.2 brings minor fixes.",
+    "body": [
+      "PS5 Upload v11.2.0 by phantomptr adds an MCP & API page in the sidebar. Claude Code, Codex and OpenCode get one-click Add, Update and Remove buttons plus commands to copy. Gemini CLI, Cursor, Claude Desktop and curl have setup instructions to copy. The page lists all 128 agent tools with search, every API route with a curl line, and two API calls can be run directly. Agents stay current automatically — when the app updates, new tools appear the next time you start a session.",
+      "v11.2.1 makes the queue survive rest mode and lost connections: the whole queue now carries on when the console is back, instead of running only the interrupted row. SMB files that fail to close no longer block the next file. v11.2.2 brings minor fixes. Remote Play now tells you when your device can't decode the stream's audio instead of playing silence. Send PS5Upload.elf to your payload loader on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v11.2.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v11.2.0"
+      },
+      {
+        "name": "PS5 Upload v11.2.1 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v11.2.1"
+      },
+      {
+        "name": "PS5 Upload v11.2.2 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v11.2.2"
+      }
+    ]
+  },
+  {
+    "id": "padrino-fpkg",
+    "date": "2026-11-05",
+    "tag": "Loader",
+    "title": "PADRINO FPKG: all-in-one HEN payload with fPKG installer, cheat engine and toolbox",
+    "summary": "PADRINO FPKG is a single ELF payload that boots a full HEN on firmware 1.00–13.60, with a built-in fPKG installer, payload manager, cheat engine and native system-menu toolbox.",
+    "body": [
+      "PADRINO FPKG by B4ckd0orl is a 2.62 MB ELF payload that decompresses and boots a complete HEN on a jailbroken PS5 running firmware 1.00 to 13.60. It bundles an fPKG installer using ShellCore API patches and libSceBgft for background installs, a payload manager that loads ELF files from USB or /data/LiteHEN/payloads with auto-boot support, and a cheat engine with embedded SQLite, JSON/MC4/SHN/XML parsers and the Keystone assembler. A native toolbox in the system UI lets you install packages, launch payloads and adjust settings without leaving the console interface.",
+      "Under the hood it uses kstuff-lite with backported firmware tables, runs its own elfldr on port 9020, and writes config and logs to /data/LiteHEN/. Send the payload to your exploit's ELF loader on port 9021. Requires a PS5 with a kernel exploit active (elfldr listening)."
+    ],
+    "sources": [
+      {
+        "name": "PADRINO FPKG on GitHub",
+        "url": "https://github.com/B4ckd0orl/PADRINO-FPKG"
+      }
+    ]
+  },
+  {
+    "id": "wario-land-shake-it-ps5",
+    "date": "2026-11-05",
+    "tag": "Port",
+    "title": "Wario Land: Shake It! PS5 port based on WiiRecomp tested on hardware",
+    "summary": "A native PS5 port of Wario Land: Shake It! uses WiiRecomp and Aurora to recompile the Wii game, with on-console disc extraction, resolution scaling to 1440p and controller remapping.",
+    "body": [
+      "Wario Land: Shake It! for PS5 by KongaTime uses the WarioRecomp project with WiiRecomp and Aurora to run the Wii game natively on PS5. It includes a native launcher with Prepare Game, Play and Settings, on-console disc extraction and verification, render resolution from 480p to 1440p, aspect ratio options and experimental full-width levels. Controller remapping, audio controls and manual or automatic save backups are supported. A full RVZ import was tested on PS5 hardware with 2,352 files extracted and the title screen reached.",
+      "A public installable build is not available yet — setup requires a compatible native build generated from the supported USA disc (RWLE01 revision 0). ISO, WBFS, CISO, RVZ, WIA and GCZ disc formats are accepted. Requires a jailbroken PS5 with a homebrew loader. Bring your own legally owned copy of the game."
+    ],
+    "sources": [
+      {
+        "name": "Wario Land: Shake It! PS5 on GitHub",
+        "url": "https://github.com/KongaTime/Wario-Land-Shake-It-PS5"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v1110",
     "date": "2026-11-05",
     "tag": "Tool",

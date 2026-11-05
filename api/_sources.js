@@ -36,6 +36,7 @@ export const SOURCES = [
   { cat: J, repo: 'drakmor/nanoDNS', name: 'nanoDNS', about: 'DNS proxy payload' },
   { cat: J, repo: 'lvndry/ps5-firmware-pin', name: 'ps5-firmware-pin', about: 'Blocks firmware updates' },
   { cat: J, repo: 'pastawithpesto/PS5-14.10-Jailbreak-Research', name: 'PS5 14.10 Jailbreak Research', about: 'WebKit exploit research for firmware 14.10' },
+  { cat: J, repo: 'B4ckd0orl/PADRINO-FPKG', name: 'PADRINO FPKG', about: 'All-in-one HEN with fPKG installer, cheats and toolbox' },
 
   // Managers and tools
   { cat: T, repo: 'itsPLK/ps5-payload-manager', name: 'Payload Manager', about: 'Web dashboard for payloads and autoload' },
@@ -187,5 +188,6 @@ export const SOURCES = [
   { cat: R, repo: 'cptlamarca/mk9-ps5', name: 'Mortal Kombat Komplete Edition', about: 'Xbox 360 recomp with online multiplayer' },
   { cat: R, repo: 'bystritskiy/reUndr2-ps5', name: 'NFS Underground 2 (reUndr 2)', about: 'Xbox recomp, 4K 60fps, bring your own disc' },
   { cat: R, repo: 'KongaTime/The-Darkness-Recomp-PS5', name: 'The Darkness', about: 'Xbox 360 recomp (preview), bring your own copy' },
+  { cat: R, repo: 'KongaTime/Wario-Land-Shake-It-PS5', name: 'Wario Land: Shake It!', about: 'Wii recomp, bring your own disc' },
   { cat: R, repo: 'youss17x/Forgotten-Warrior-PS5', name: 'Forgotten Warrior Remastered', about: 'J2ME game native C++ port, bring your own .jar' },
 ];
