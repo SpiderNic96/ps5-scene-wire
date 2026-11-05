@@ -1,5 +1,90 @@
 [
   {
+    "id": "fbneo-ps5-v23",
+    "date": "2026-11-05",
+    "tag": "Emulator",
+    "title": "FinalBurn Neo v2.3: Daytona USA arrives as first Sega Model 2 game, plus favorites and smoother sub-60 Hz",
+    "summary": "FinalBurn Neo v2.3 adds Sega Model 2 emulation with Daytona USA in four variants, a favorites system for the shelf, and smoother rendering for games that don't run at 60 Hz.",
+    "body": [
+      "FinalBurn Neo v2.3 by MisterTemaki brings Sega Model 2 emulation to PS5 with Daytona USA — the emulator's first Model 2 game. Four sets are included: Revision A, Special Edition, the 1993 original and the Saturn-ads variant. The port covers the i960 CPU with TGP geometry coprocessor, the Model 2 3D renderer, System 24 tilemaps, Model 1 I/O and sound boards, all ported from MAME. A new Driving control layout maps steering to the left stick with analog L2/R2 for brake and accelerator, and R1/L1 for gear shifts. The I/O board ROM (epr-14869c.25) is required in model1io.zip or the game zip.",
+      "A new favorites system lets you press Circle on the shelf to star any game, with a gold star badge and a Favorites filter via L3/R3. Games that don't run at 60 Hz are now drawn on their own thread while the next frame runs, skipping at most one frame rather than leaving audio gaps. Buttons 7 and 8 are now available in control settings, and NVRAM saves no longer pause the game. Send FBNeo_PS5.elf to your payload loader on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "FinalBurn Neo v2.3 release",
+        "url": "https://github.com/MisterTemaki/fbneo-ps5/releases/tag/v2.3"
+      }
+    ]
+  },
+  {
+    "id": "ps5sx2-v240",
+    "date": "2026-11-05",
+    "tag": "Emulator",
+    "title": "PS5SX2 2.40: full in-game menu with save states, disc swap and RetroAchievements",
+    "summary": "PS5SX2 2.40 adds a proper in-game menu accessed by holding L2 + D-pad Down, with ten save-state slots, disc changing for multi-disc games, settings adjustment and RetroAchievements browsing.",
+    "body": [
+      "PS5SX2 2.40 (build vk-285-190) by Swordpdf introduces a full in-game menu. Hold L2 + D-pad Down for a second and the game pauses with its picture on a card beside a shelf-style menu. Game options include resume, ten save-state slots (each with a screenshot and timestamp), fast forward, disc changing for multi-disc games, a QR code for phone-based settings, and a Report a Problem shortcut. Settings and Controls tabs let you change options mid-game (L1/R1 to switch), and an Achievements tab shows RetroAchievements with badges. No console restart is needed this time.",
+      "Achievement unlock and sign-in pop-ups now show the badge and avatar on consoles where they previously appeared blank, by reading from /user/data instead of /data. The in-game menu buttons are remappable via the Controls tab. Install via the PS5SX2 Installer payload or use the app's built-in System Update. Requires ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "PS5SX2 2.40 release",
+        "url": "https://github.com/Swordpdf/PS5SX2/releases/tag/vk-285-190"
+      }
+    ]
+  },
+  {
+    "id": "ps4mount-v073",
+    "date": "2026-11-05",
+    "tag": "Tool",
+    "title": "ps4mount v0.7.3: game limit raised to 768 per drive with full add-on listing",
+    "summary": "ps4mount v0.7.3 raises the game limit per drive to 768, lists every add-on of a game, counts only content add-ons toward the limit, and searches up to 64 folders for packages.",
+    "body": [
+      "ps4mount v0.7.3 by gasb07 raises the game limit per drive to 768 and warns when games exceed it. Every add-on of a game is now listed, with a small record kept per add-on instead of the full parsed package, and long add-on choices are accepted. Only add-ons with actual content count toward the add-on limit — unlock-only add-ons are excluded. The tool now searches up to 64 folders for packages and preserves long folder lists instead of truncating them, with a warning when folders are skipped.",
+      "Internal tests now verify that each piece of a long request fits before adding it. Send ps4mount.elf to your payload loader on port 9021. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "ps4mount v0.7.3 release",
+        "url": "https://github.com/gasb07/ps4mount/releases/tag/v0.7.3"
+      }
+    ]
+  },
+  {
+    "id": "ps5-suite-v781",
+    "date": "2026-11-05",
+    "tag": "Tool",
+    "title": "PS5-Suite v7.8.1: on-console Web UI, saves manager rework, LED and lightbar controls",
+    "summary": "PS5-Suite v7.8.1 adds a full on-console web dashboard accessible from the PS5 home screen, reworks the saves manager with icons and game names, and adds console LED and DualSense lightbar controls.",
+    "body": [
+      "PS5-Suite v7.8.1 by manos555555 introduces an on-console Web UI — a full dashboard served by the payload on port 17382 with a home-screen tile (PSUI00001) that launches it straight from the PS5 without a PC. Pages include Dashboard, System (live charts), Games, Install, Trophy, Saves, Screenshots, Files, Kernel Log and Tools. The saves manager is reworked with per-save icons, friendly game names, PS4/PS5 badges, hidden backup entries, and Mount / Browse / Download / Delete per save. A new Lights page controls console LED presets and effects (breathe, sunrise, off/auto) and DualSense lightbar colors.",
+      "Trophy support on firmware 5.50 is fixed with a PostEvent signature fallback, and a verified 4-layer unlock cascade ensures custom-protocol titles get trophies. Suite-mounted games missing from the home screen can be re-registered with repair:<title|all>. TCP port stacking and client connectivity issues are fixed, and download progress now shows for all transfer types. Clients available for Windows, Linux, macOS and Android; deploy ps5_suite_server.elf to port 9021."
+    ],
+    "sources": [
+      {
+        "name": "PS5-Suite v7.8.1 release",
+        "url": "https://github.com/manos555555/PS5-Suite/releases/tag/v7.8.1"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v1123",
+    "date": "2026-11-05",
+    "tag": "Tool",
+    "title": "PS5 Upload v11.2.3: Play Together freeze fix and safer friend controls",
+    "summary": "PS5 Upload v11.2.3 fixes a friend's picture freezing in Play Together, adds default blocking of PS and Create buttons for friends, and fixes Payload Manager uploads.",
+    "body": [
+      "PS5 Upload v11.2.3 by phantomptr fixes Play Together sessions where a friend's picture froze about 10 seconds after joining on plain HTTP links (LAN and Tailscale). The Watch Party on phones gets the same fix. On phones, Play Together buttons no longer overlap the console's \"Who's using this controller?\" menu. Block PS & Create for friends is now on by default, preventing a friend from quitting your game or triggering a console update by accident — friends can still press PS once to pick a user, and the setting is toggleable.",
+      "Playing on your TV now leaves room for 2 friends (a PS5 takes 4 controllers and the stream user holds one). The Helper payload now works with Payload Manager 0.6.3 — sending it no longer fails with HTTP 500 when an earlier copy is stored. Send PS5Upload.elf to your payload loader on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v11.2.3 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v11.2.3"
+      }
+    ]
+  },
+  {
     "id": "playden-v0100b2",
     "date": "2026-11-05",
     "tag": "Port",
