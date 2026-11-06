@@ -191,4 +191,5 @@ export const SOURCES = [
   { cat: R, repo: 'KongaTime/The-Darkness-Recomp-PS5', name: 'The Darkness', about: 'Xbox 360 recomp (preview), bring your own copy' },
   { cat: R, repo: 'KongaTime/Wario-Land-Shake-It-PS5', name: 'Wario Land: Shake It!', about: 'Wii recomp, bring your own disc' },
   { cat: R, repo: 'youss17x/Forgotten-Warrior-PS5', name: 'Forgotten Warrior Remastered', about: 'J2ME game native C++ port, bring your own .jar' },
+  { cat: R, repo: 'dakotadawolfe/Pokopia-Recomp-PS5', name: 'Pokopia Recomp', about: 'Switch 2 recomp (in development), bring your own dump' },
 ];

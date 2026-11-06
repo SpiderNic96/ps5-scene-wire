@@ -1,5 +1,26 @@
 [
   {
+    "id": "pokopia-recomp-ps5",
+    "date": "2026-11-06",
+    "tag": "Port",
+    "title": "Pokopia Recomp: Pok\u00e9mon Pokopia being recompiled natively for PS5",
+    "summary": "Pokopia Recomp by dakotadawolfe is bringing Pok\u00e9mon Pokopia (Switch 2) to PS5 as a native recompilation. The in-development port has reached the character-selection screen with working menu, controller input and audio, though character rendering still has missing content and gameplay is unverified.",
+    "body": [
+      "Pokopia Recomp by dakotadawolfe is a native PS5 recompilation of Pok\u00e9mon Pokopia (Switch 2), built on drakolordx7's upstream Windows recompiler. Unlike running Pokopia through the EglantinePS5 emulator, this project statically recompiles the game's ARM code to run directly on PS5 hardware using the homebrew SDK and Mihawk's RADV Vulkan driver. The current development build has reached character selection with confirmed native menu rendering, DualSense controller response and working audio. Character rendering still has missing or black content, and playable-world progression remains unverified. The performance target is a steady 60 FPS with no frame generation, using a fixed graphics profile against the base PS5 hardware.",
+      "There is no public PS5 release yet \u2014 current builds use PC-generated game code that cannot be distributed. The final release will require ShadowMountPlus and must prepare all native code and shaders entirely on the console from the user's own decrypted game dump (version 2.0.1a), with no PC needed for setup or play. The on-console preparation pipeline is not yet implemented. The project has passed 226 runtime test cases on console hardware including memory management, threading, guest kernel services and shader caching, and all 49,981 texture-conversion checks. The repo is GPL-3.0 licensed."
+    ],
+    "sources": [
+      {
+        "name": "Pokopia Recomp PS5 repository",
+        "url": "https://github.com/dakotadawolfe/Pokopia-Recomp-PS5"
+      },
+      {
+        "name": "PS5 project scope and status",
+        "url": "https://github.com/dakotadawolfe/Pokopia-Recomp-PS5/blob/main/ps5/README.md"
+      }
+    ]
+  },
+  {
     "id": "jobeeslair-v056",
     "date": "2026-11-06",
     "tag": "Store",
