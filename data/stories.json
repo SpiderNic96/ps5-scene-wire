@@ -1,5 +1,49 @@
 [
   {
+    "id": "ps5-hass-payload",
+    "date": "2026-11-06",
+    "tag": "Tool",
+    "title": "ps5-hass-payload: standalone Home Assistant bridge for PS5 with TV pairing",
+    "summary": "A new PS5 payload by Phynix88 connects the console to Home Assistant over a local HTTP API with TV-displayed pairing codes — no MQTT broker, no PSN account and no cloud required.",
+    "body": [
+      "ps5-hass-payload is a standalone ELF that turns a jailbroken PS5 into a Home Assistant device. It listens on port 8181, pairs with a six-digit code shown on the TV, and exposes an HTTP API that reports console state, lists installed games and apps with their covers, and starts or closes titles. Home Assistant discovers the console via mDNS automatically, and the companion HACS integration ps5-hass handles the other side. Unlike Marice's ps5-homeassistant, this project needs no MQTT broker and no companion payloads — it is fully self-contained.",
+      "Optional features include rest mode, power off, fan threshold control (45–85 °C, never above the factory value) and sending notifications to the TV, each gated behind a permission that requires a second pairing code. Configuration lives in /data/ps5-hass/ and is reachable via FTP. Tested on firmware 13.60 with Relapse, kstuff-lite 1.11 and Payload Manager 0.6.3. Install by adding the payload source URL in Payload Manager or loading the ELF with any loader."
+    ],
+    "sources": [
+      { "name": "ps5-hass-payload on GitHub", "url": "https://github.com/Phynix88/ps5-hass-payload" },
+      { "name": "ps5-hass integration on GitHub", "url": "https://github.com/Phynix88/ps5-hass" }
+    ]
+  },
+  {
+    "id": "ps5upload-v1127-v1128",
+    "date": "2026-11-06",
+    "tag": "Tool",
+    "title": "PS5 Upload v11.2.7–v11.2.8: ELF fake-signing, iOS fixes and broader package support",
+    "summary": "Two rapid updates add automatic fake-signing of unsigned ELFs during game conversion, fix iOS full-screen and on-screen controller overlap, and read more package formats including PFS v3.",
+    "body": [
+      "v11.2.8 adds automatic fake-signing for game conversion: when a game's executables are plain unsigned ELFs the console would refuse to start them, so the converter now fake-signs them in the output package, image or game folder without touching the source. The same release broadens the packages the converter can read — patches, updates and packages built with PSVIETHOA FPKG Builder that use smaller blocks, byte shuffling (PFS v3) or a different layout mark were previously refused and now work.",
+      "v11.2.7 fixes several iOS issues: full screen no longer requests its own web full screen (which put Apple's dismiss button on top of L2 and caused the screen to jump when opening the keyboard), on-screen controller parts no longer overlap each other on most phones, and iPhone Duo dialogs stay clear of system icons. On the conversion side, .exfat and .ffpkg names are kept short enough to mount, LZ4-packed games retain their ampr_emu.index, and packages build faster with a CRC check that runs about five times quicker."
+    ],
+    "sources": [
+      { "name": "PS5 Upload v11.2.8 release", "url": "https://github.com/phantomptr/ps5upload/releases/tag/v11.2.8" },
+      { "name": "PS5 Upload v11.2.7 release", "url": "https://github.com/phantomptr/ps5upload/releases/tag/v11.2.7" }
+    ]
+  },
+  {
+    "id": "glibren-v084",
+    "date": "2026-11-06",
+    "tag": "Tool",
+    "title": "glibren v0.8.4: power button to shut down or rest the PS5 from the browser",
+    "summary": "glibren's latest test build adds a power button to the web page that can turn off the PS5 or put it into rest mode using the console's own power calls — useful when the TV is unresponsive.",
+    "body": [
+      "glibren v0.8.4-teste adds a power button (the plug icon at the top of the page) that shuts down the PS5 or puts it into rest mode with a confirmation dialog, using the console's native power services rather than a raw reboot. The feature is aimed at situations where the TV fails and the user cannot reach the XMB power menu. Note that turning off ends the jailbreak — the exploit must be run again after the console is powered back on.",
+      "This is a test release (teste) and has not yet been verified on a real PS5. It includes everything from v0.8.3. Source code is provided under GPL-3. Load glibren through your PS5's web-based jailbreak host to use it."
+    ],
+    "sources": [
+      { "name": "glibren v0.8.4-teste release", "url": "https://github.com/pristmc-code/ps5-glibren-releases/releases/tag/v0.8.4-teste" }
+    ]
+  },
+  {
     "id": "ps5upload-v1126",
     "date": "2026-11-06",
     "tag": "Tool",

@@ -93,6 +93,7 @@ export const SOURCES = [
   { cat: T, repo: 'SpiderNic96/LegoToypad-VirtualToypadPS5-Homebrew', name: 'LEGO Dimensions Virtual Toy Pad', about: 'Play LEGO Dimensions without the physical Toy Pad' },
   { cat: T, repo: 'SpiderNic96/VirtualInfinityPortal-PS5', name: 'Virtual Infinity Portal', about: 'Play Disney Infinity without the physical base' },
   { cat: T, repo: 'Gl0ttis/ps5-tls-verify', name: 'ps5-tls-verify', about: 'Toggleable TLS certificate override for lab testing' },
+  { cat: T, repo: 'Phynix88/ps5-hass-payload', name: 'PS5 Home Assistant Bridge', about: 'Standalone Home Assistant bridge with TV pairing' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },

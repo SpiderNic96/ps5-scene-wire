@@ -744,6 +744,13 @@
         "13.20"
       ],
       "note": "Claims firmware-agnostic via signature scanning; tested only on 13.20."
+    },
+    "Phynix88/ps5-hass-payload": {
+      "tested": [
+        "13.60"
+      ],
+      "needs": ["elfldr"],
+      "note": "Tested on 13.60 with Relapse and kstuff-lite 1.11; claims other firmwares should work."
     }
   },
   "unstated": [
