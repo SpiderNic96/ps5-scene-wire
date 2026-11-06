@@ -1,5 +1,39 @@
 [
   {
+    "id": "ps5upload-v1126",
+    "date": "2026-11-06",
+    "tag": "Tool",
+    "title": "PS5 Upload v11.2.6: newer SMB client, audio library and verified Samba support",
+    "summary": "PS5 Upload v11.2.6 updates the SMB client to 0.39 and the audio library to cpal 0.18, with all network-share operations verified against a real Samba server and DualSense haptics that survive audio glitches.",
+    "body": [
+      "PS5 Upload v11.2.6 by phantomptr ships dependency updates that touch two core subsystems. The SMB client jumps to version 0.39, and browsing, reading, uploading, renaming and deleting files on a network share were tested against a real Samba server. The audio library moves to cpal 0.18, which reports audio glitches as errors rather than silencing them.",
+      "DualSense haptics now keep playing through small audio glitches — the newer audio library surfaces those glitches as error events, and the rumble engine no longer treats them as fatal. Two more names appear on the Thanks & Support list. Requires a jailbroken PS5 with a compatible homebrew loader; send PS5Upload.elf to your payload loader on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v11.2.6 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v11.2.6"
+      }
+    ]
+  },
+  {
+    "id": "ps5-tls-verify",
+    "date": "2026-11-06",
+    "tag": "Tool",
+    "title": "ps5-tls-verify: toggleable TLS certificate override for PS5 lab testing",
+    "summary": "ps5-tls-verify is a standalone PS5 payload that patches the certificate-chain verifier in every loaded TLS library across all running processes, stays resident to catch new ones, and toggles off on a second run.",
+    "body": [
+      "ps5-tls-verify by Gl0ttis is a firmware-agnostic PS5 payload that overrides TLS certificate verification across the system. Loaded via elfldr or pldmgr, it walks every live process, locates four TLS libraries — libSceSsl, LibreSSL, LibreSSL 3 and mono-btls (BoringSSL) — and patches their certificate-chain verifier functions. It then stays resident, re-patching newly spawned processes every second. Running it again detects that patches are already active and reverts everything to stock; a reboot also restores pristine state since patches live only in RAM.",
+      "The tool resolves libSceSsl offsets with a signature scan rather than hard-coded addresses, making it work across firmware versions. LibreSSL and LibreSSL 3 are patched via dlsym by name, while mono-btls is located by decoding an exported thunk. Intended for isolated-network lab use only — this is a verifier bypass, not a trust extension. Load the payload through elfldr or pldmgr on a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "ps5-tls-verify on GitHub",
+        "url": "https://github.com/Gl0ttis/ps5-tls-verify"
+      }
+    ]
+  },
+  {
     "id": "playden-v0100",
     "date": "2026-11-06",
     "tag": "Port",

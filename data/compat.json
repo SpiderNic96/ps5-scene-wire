@@ -680,7 +680,7 @@
       "needs": [
         "elfldr"
       ],
-      "note": "v2.0.4: firmware 7.00\u201313.60, including 9.60 without etaHEN. Requires an ELF loader and LEGO Dimensions PS4 (CUSA01176 v1.24 or CUSA00935 v1.23)."
+      "note": "v2.0.4: firmware 7.00–13.60, including 9.60 without etaHEN. Requires an ELF loader and LEGO Dimensions PS4 (CUSA01176 v1.24 or CUSA00935 v1.23)."
     },
     "SpiderNic96/VirtualInfinityPortal-PS5": {
       "range": [
@@ -738,6 +738,12 @@
         "elfldr"
       ],
       "note": "All-in-one HEN payload with kstuff-lite; send to port 9021."
+    },
+    "Gl0ttis/ps5-tls-verify": {
+      "tested": [
+        "13.20"
+      ],
+      "note": "Claims firmware-agnostic via signature scanning; tested only on 13.20."
     }
   },
   "unstated": [
