@@ -1,5 +1,22 @@
 [
   {
+    "id": "ps5-suite-v800",
+    "date": "2026-11-06",
+    "tag": "Tool",
+    "title": "PS5-Suite v8.0.0: in-process Remote Play replaces bundled chiaki-ng",
+    "summary": "PS5-Suite v8.0.0 replaces the 430 MB bundled chiaki-ng application with a 927 KB in-process shim, rendering video and decoding audio inside the suite itself on Windows x64.",
+    "body": [
+      "PS5-Suite v8.0.0 by manos555555 overhauls Remote Play on Windows x64. The standalone chiaki-ng application bundled in v7.9.0 is gone — replaced by ps5chiaki.dll, a 927 KB shim over chiaki-ng's library protocol core plus nine dependency DLLs (~22 MB total). Everything is embedded inside the single PS5Suite.exe and self-extracts at runtime. Decoded video frames are converted to BGRA in the shim and rendered into an Avalonia control in the suite's own window, while Opus audio is decoded in-process to 48 kHz PCM and played through Windows waveOut. Keyboard input maps directly onto ChiakiControllerState with full analog L2/R2 at full press.",
+      "The update also fixes a use-after-free in the audio queue that could cause silent exits, and hardens session teardown with a volatile pointer so stop and pull operations can't race. Linux, macOS and Android ship the full suite but without the Remote Play engine for now — they report the limitation cleanly instead of failing. Send ps5_suite_server.elf to your exploit's ELF loader on port 9021; client and server versions must match."
+    ],
+    "sources": [
+      {
+        "name": "PS5-Suite v8.0.0 release",
+        "url": "https://github.com/manos555555/PS5-Suite/releases/tag/v8.0.0"
+      }
+    ]
+  },
+  {
     "id": "eglantine-ps5-v1000111",
     "date": "2026-11-05",
     "tag": "Emulator",
