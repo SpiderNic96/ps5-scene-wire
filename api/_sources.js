@@ -197,4 +197,6 @@ export const SOURCES = [
   { cat: R, repo: 'dakotadawolfe/Pokopia-Recomp-PS5', name: 'Pokopia Recomp', about: 'Switch 2 recomp (in development), bring your own dump' },
   { cat: R, repo: 'kamb205/TNA-iMPACT-Reloaded-PS5', name: 'TNA iMPACT! Reloaded', about: 'Xbox 360 recomp, 60fps 1440p, bring your own disc' },
   { cat: R, repo: 'dannyboyjaros/ps5classof09', name: 'Class of \'09', about: 'Visual novel port from PC, bring your own game files' },
+  { cat: R, repo: 'dannyboyjaros/ps5classof09thereup', name: 'Class of \'09: The Re-Up', about: 'Visual novel sequel port from PC, bring your own game files' },
+  { cat: R, repo: 'dannyboyjaros/ps5classof09theflipside', name: 'Class of \'09: The Flip Side', about: 'Visual novel sequel port from PC, bring your own game files' },
 ];

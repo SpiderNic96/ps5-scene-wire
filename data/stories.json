@@ -1,5 +1,64 @@
 [
   {
+    "id": "ps5upload-v1150-v1151",
+    "date": "2026-11-07",
+    "tag": "Tool",
+    "title": "PS5 Upload v11.5.0–v11.5.1: Remote Play audio diagnostics, multi-user pairing and keyboard fixes",
+    "summary": "PS5 Upload v11.5.0 adds Remote Play audio-problem diagnostics, fallback playback for unsupported codecs, multi-user pairing, and smaller streaming packets for VPN/cellular — v11.5.1 fixes keyboard and mouse double-click behaviour in games.",
+    "body": [
+      "PS5 Upload v11.5.0 by phantomptr focuses on Remote Play reliability. When a stream has no sound the app now explains why after a few seconds — the PS5 is sending none, it sends an unsupported format, or the device cannot play it — and logs which case it is for bug reports. Devices that cannot decode Opus audio or the video stream now fall back to the system media player instead of staying silent or ending the session. Starting again right after a stream ended no longer falsely warns about another device using Remote Play; the app waits for the PS5’s hold period and auto-reconnects. A new Play As feature lets you pair more than one PSN user on a console and choose which one signs in, and streaming over a VPN on cellular now uses smaller packets to avoid WireGuard tunnel drops.",
+      "v11.5.1 fixes keyboard and mouse handling during game play: double-clicking no longer switches fullscreen and drops the mouse, Ctrl+R and F5 now reach the game instead of being swallowed, and Esc in windowed mode correctly returns the cursor. Account avatars stored as JPEG with a .png extension now display properly. Requires a jailbroken PS5 with a Remote Play-capable payload."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v11.5.1 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v11.5.1"
+      },
+      {
+        "name": "PS5 Upload v11.5.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v11.5.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5classof09-sequels",
+    "date": "2026-11-07",
+    "tag": "Port",
+    "title": "Class of '09: The Re-Up and The Flip Side ported to PS5",
+    "summary": "dannyboyjaros brings both Class of '09 sequels to jailbroken PS5 as native homebrew apps — The Re-Up (PPSA09010) with 163 labels and 5,543 voiced lines, and The Flip Side (PPSA09011) with its five-way opening and phone UI.",
+    "body": [
+      "Following today's port of the original Class of '09, dannyboyjaros has released native PS5 homebrew runtimes for both sequels. The Re-Up (ps5classof09thereup) and The Flip Side (ps5classof09theflipside) use the same compact C runtime built on CatsAndGats' original engine: Ren'Py .rpyc scripts are decompiled once into bytecode that a small interpreter runs directly through the PS5's VideoOut, Pad and AudioOut services. Each game gets its own title ID, native main menu with the game's art and animated backgrounds, boot splash videos, and full voice playback.",
+      "Both ports require your own retail PC copy of each game — copy the game folder to the app's assets directory inside /data/homebrew/ on the PS5 over FTP or a file manager. The Re-Up is installed as PPSA09010 and The Flip Side as PPSA09011. Launch through ShadowMountPlus or any homebrew loader that mounts directory apps. No Ren'Py runtime is needed on the console."
+    ],
+    "sources": [
+      {
+        "name": "ps5classof09thereup GitHub repository",
+        "url": "https://github.com/dannyboyjaros/ps5classof09thereup"
+      },
+      {
+        "name": "ps5classof09theflipside GitHub repository",
+        "url": "https://github.com/dannyboyjaros/ps5classof09theflipside"
+      }
+    ]
+  },
+  {
+    "id": "glibren-v085",
+    "date": "2026-11-07",
+    "tag": "Tool",
+    "title": "glibren v0.8.5-teste: fixed temperature charts and Android companion app",
+    "summary": "glibren v0.8.5-teste fixes the temperature chart scaling and line smoothing, and introduces glibrenControle — an Android app that opens the glibren web dashboard full-screen without a browser.",
+    "body": [
+      "glibren v0.8.5-teste by pristmc-code fixes the web-based PS5 monitoring dashboard’s temperature chart: the vertical scale now follows the period’s actual temperatures with grid lines at round steps (35°/40°/45°), grid numbers no longer stretch, and the lines are smoothed instead of zig-zagging between readings. This is a test build that has not yet been run on a PS5.",
+      "The release also introduces glibrenControle (v0.1-teste), a companion Android app that opens the glibren dashboard (port 8765) full-screen without the browser chrome. On first launch, enter the PS5’s IP address or tap “Procurar o PS5” to search, then press Connect. Update glibren from the web dashboard’s Atualizar button or by sending glibren.elf to elfldr. Source code is included under GPL-3."
+    ],
+    "sources": [
+      {
+        "name": "glibren v0.8.5-teste release",
+        "url": "https://github.com/pristmc-code/ps5-glibren-releases/releases/tag/v0.8.5-teste"
+      }
+    ]
+  },
+  {
     "id": "tna-impact-reloaded-ps5",
     "date": "2026-11-07",
     "tag": "Port",
@@ -10,7 +69,10 @@
       "No game files are included — you need your own Xbox 360 disc image (.iso) of TNA iMPACT!, which the app reads in place from the app folder, /data or a USB drive. A settings hub before the game starts lets you adjust resolution, frame rate, upscaling, filtering, the FPS counter and vibration. Install by copying the PPSA94007 folder to /data/homebrew/ and launching from your homebrew loader. Online multiplayer does not work and button prompts still show Xbox buttons."
     ],
     "sources": [
-      { "name": "TNA iMPACT! Reloaded PS5 GitHub repository", "url": "https://github.com/kamb205/TNA-iMPACT-Reloaded-PS5" }
+      {
+        "name": "TNA iMPACT! Reloaded PS5 GitHub repository",
+        "url": "https://github.com/kamb205/TNA-iMPACT-Reloaded-PS5"
+      }
     ]
   },
   {
@@ -24,7 +86,10 @@
       "The game requires your own retail copy of Class of '09 for PC — the original game folder must be placed inside the app's assets directory. Install by copying the PPSA09009 folder to /data/homebrew/ over FTP (port 2121) or a file manager, then copy your PC game files into the assets/game subfolder."
     ],
     "sources": [
-      { "name": "ps5classof09 GitHub repository", "url": "https://github.com/dannyboyjaros/ps5classof09" }
+      {
+        "name": "ps5classof09 GitHub repository",
+        "url": "https://github.com/dannyboyjaros/ps5classof09"
+      }
     ]
   },
   {
@@ -38,8 +103,14 @@
       "v0.4.1 adds a safety check that blocks payload switching while a game is running — stopping CheatRunner during a game in v0.4.0 hung the console. v0.4.2 improves the detection to also catch minimised games (where the console reports no running app although the game is still in memory), using an eboot.bin process check. CheatRunner is now controllable again when no game is in memory. Requires a jailbroken PS5 with etaHEN or another payload loader."
     ],
     "sources": [
-      { "name": "ps5-hass-payload v0.4.2 release", "url": "https://github.com/Phynix88/ps5-hass-payload/releases/tag/v0.4.2" },
-      { "name": "ps5-hass-payload v0.4.0 release", "url": "https://github.com/Phynix88/ps5-hass-payload/releases/tag/v0.4.0" }
+      {
+        "name": "ps5-hass-payload v0.4.2 release",
+        "url": "https://github.com/Phynix88/ps5-hass-payload/releases/tag/v0.4.2"
+      },
+      {
+        "name": "ps5-hass-payload v0.4.0 release",
+        "url": "https://github.com/Phynix88/ps5-hass-payload/releases/tag/v0.4.0"
+      }
     ]
   },
   {
@@ -53,7 +124,10 @@
       "Existing Vapor setups update by downloading Vapor-CS2-019.1.zip and replacing the PPSA77382 app folder (keep file permissions). New setups also need Vapor-base-kit-0.13.zip. A fix-vapor-install-modes.py helper restores pinned file permissions if FTP loses them. Skyrim Special Edition, Terraria, Brotato and Counter-Strike: Source default profiles are included. In-game online Steam authentication and matchmaking remain unsupported. Full source for the Wine/Prospero cs2 runtime module is provided."
     ],
     "sources": [
-      { "name": "WinBrew 11 cs2-runtime-v1 release", "url": "https://github.com/KPKev/WinBrew-11/releases/tag/cs2-runtime-v1" }
+      {
+        "name": "WinBrew 11 cs2-runtime-v1 release",
+        "url": "https://github.com/KPKev/WinBrew-11/releases/tag/cs2-runtime-v1"
+      }
     ]
   },
   {
