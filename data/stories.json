@@ -1,5 +1,73 @@
 [
   {
+    "id": "winbrew-11",
+    "date": "2026-11-07",
+    "tag": "PC & Linux",
+    "title": "WinBrew 11: a Windows 11-style desktop for PS5 homebrew",
+    "summary": "WinBrew 11 by KPKev brings a Windows 11-inspired desktop to the PS5 with the Vapor game launcher, movable windows, light and dark modes, and controller-driven navigation — all running natively through PS5 VideoOut.",
+    "body": [
+      "WinBrew 11 is a new native PS5 homebrew application that presents a full Windows 11-style desktop environment. It includes a Start menu, taskbar, movable windows and a built-in game launcher called Vapor with its own library and download manager. The desktop uses PS5 VideoOut and controller services directly, and supported Windows games run through Playden's Wine-based PS5 compatibility runtime. The interface features a blue bloom wallpaper, 36 px desktop shortcuts, a compact 54 px taskbar, and styled Settings pages covering System, Personalisation, Taskbar, Accessibility and About.",
+      "The Settings app includes working light and dark modes, accent colour choices and three background options. Games launch through a Quake II RTX test target or via Playden. The application installs to /data/homebrew/PPSA77381 and ships as a ready-made PS5 package. A Windows preview build is also included for testing on PC. Requires a jailbroken PS5 with a homebrew loader."
+    ],
+    "sources": [
+      {
+        "name": "WinBrew-11 GitHub repository",
+        "url": "https://github.com/KPKev/WinBrew-11"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v1140",
+    "date": "2026-11-07",
+    "tag": "Tool",
+    "title": "PS5 Upload v11.4.0: zstd compression, PS4 fake-package import and ShadowMount+ scan fix",
+    "summary": "PS5 Upload v11.4.0 adds zstd asset packs in Convert that can halve game image sizes, opens PS4 fake packages for conversion, fixes ShadowMount+ scan to pick up new images without removing games, and adds an AMPR emulator button.",
+    "body": [
+      "PS5 Upload v11.4.0 by phantomptr introduces zstd asset packs in Convert for any plain image format (.ffpkg, .exfat, .ffpfs) at compression levels 1, 5 and 19. Packs are written directly into the image with no temporary copy, and a 29.9 GB test game shrank to 15.9 GB while still reaching its main menu. Games already in LZ4 packs can switch to zstd or back without needing the original files. PS4 fake packages can now be opened in Convert and turned into a game image or folder without a key file — limited to packages with the standard all-zero passcode, and updates and add-ons are not covered.",
+      "ShadowMount+ scan now picks up a new image without deleting the game from the home screen, and gives games that failed to mount another try. A new 'Add the AMPR emulator' button lets users add the emulator to an existing game, and Convert automatically adds one to plain images that need it. The Files section gains Rename from Title with format choices and a length check, plus Hide from ShadowMount+ to keep images from being mounted. Plain .exfat builds now resume after a crash instead of starting over, and every byte is verified afterwards. Requires a jailbroken PS5 with a compatible payload loader on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v11.4.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v11.4.0"
+      }
+    ]
+  },
+  {
+    "id": "xpsemu-v31",
+    "date": "2026-11-07",
+    "tag": "Emulator",
+    "title": "XPSemu v3.1: Sega Chihiro arcade games, DualSense rumble and in-app updates",
+    "summary": "XPSemu v3.1 adds Sega Chihiro arcade board emulation — running OutRun 2, Crazy Taxi: High Roller, Virtua Cop 3 and more on the same native Xbox core — plus DualSense vibration, automatic updates from GitHub and SSAA+SMAA anti-aliasing.",
+    "body": [
+      "XPSemu Alpha 3.1 by ZiZc3 adds a Chihiro tab for Sega's Xbox-based arcade hardware, built on XPSemu-Chihiro by tattoohanz and Cxbx-Reloaded's BIOS-free boot method. No Chihiro BIOS or media board flash is needed — only the game and three base board files. Games are read in place with no unpacking, and controls are tailored per game: driving games map to sticks and triggers, gun games use a crosshair on the left stick or a USB mouse, and steering wheel force feedback comes through as controller rumble. Playable titles include OutRun 2 (with force feedback), Crazy Taxi: High Roller, Virtua Cop 3, Ollie King and Ghost Squad.",
+      "Xbox games now rumble the DualSense across all four controllers, with a toggle in Settings or the quick menu. A new Check for Updates feature finds the latest release on GitHub, installs it automatically and restarts — no more manual file copying. The dashboard shows each game's region and languages, marks duplicates and lets users delete saves per game. A new SSAA+SMAA anti-aliasing option draws at 6× resolution and applies an SMAA pass on top for the smoothest picture available, though it is the heaviest setting. Requires a jailbroken PS5 with elfldr or a compatible loader."
+    ],
+    "sources": [
+      {
+        "name": "XPSemu v3.1 release",
+        "url": "https://github.com/ZiZc3/XPSemu/releases/tag/v3.1"
+      }
+    ]
+  },
+  {
+    "id": "psbox-v163",
+    "date": "2026-11-07",
+    "tag": "Media",
+    "title": "PSBox Cloud Gaming v1.6.3: streaming stutter fix, richer game descriptions and 20 tips in 6 languages",
+    "summary": "PSBox Cloud Gaming v1.6.3 eliminates streaming stutter by pausing background trophy sync during gameplay, migrates the catalog cache for full game descriptions, and adds 20 rotating loading-screen tips across six languages.",
+    "body": [
+      "PSBox Cloud Gaming v1.6.3 by RafaelNGP tackles streaming stutter by pausing the background trophy worker thread's batch catalog discovery and achievement queries during active cloud sessions. Real-time achievement checks for the running game continue without interruption. When the user exits the game or returns to the home screen, batch sync resumes smoothly without dropping any tasks. The catalog cache is bumped to version 3: entries with short or missing descriptions (under 80 characters) are automatically invalidated and rehydrated from Microsoft's API in the background, so every game now shows its full, rich overview instead of a marketing slogan.",
+      "Loading screens now cycle through 20 tips — up from 8 — covering DualSense adaptive triggers and haptics, touchpad mouse emulation, the in-game overlay, WebUI controllers, trophy sync, audio buffer tuning and USB controllers. Tips rotate every 7 seconds with pseudo-random seeding per session, and full translations are provided in English, Brazilian Portuguese, Spanish, German, French and Italian. The Diagnostics modals (Verify Sign-In and Network Test) now open with instant visual feedback. Requires a jailbroken PS5 and an Xbox Game Pass Ultimate subscription."
+    ],
+    "sources": [
+      {
+        "name": "PSBox Cloud Gaming v1.6.3 release",
+        "url": "https://github.com/RafaelNGP/xbox-cloud-gaming-ps5/releases/tag/v1.6.3"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v1129-v1130",
     "date": "2026-11-07",
     "tag": "Tool",
