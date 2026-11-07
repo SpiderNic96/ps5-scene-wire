@@ -1,5 +1,26 @@
 [
   {
+    "id": "ps5upload-v1129-v1130",
+    "date": "2026-11-07",
+    "tag": "Tool",
+    "title": "PS5 Upload v11.2.9–v11.3.0: backup & restore, cross-console save copy and iPhone Duo improvements",
+    "summary": "PS5 Upload v11.3.0 adds full console backup and restore — saves, payload settings, screenshots, clips and homebrew folders — with cross-console save copying, while v11.2.9 improves iPhone Duo streaming and adds a PS button to the iOS app.",
+    "body": [
+      "PS5 Upload v11.3.0 by phantomptr introduces Backup & Restore in the Console section. Users choose which data to keep on their computer: saves, payload settings, screenshots and clips, homebrew and other /data folders, each shown with its size. Installed games are excluded because copying them back does not install them. Restoring after a factory reset puts settings and folders straight back; saves go into the matching user's game save, so each game must be started once first. Saves that are not yet ready are listed, and running the restore again is safe. A new guide — 'If your PS5 won't start' — covers Safe Mode options in order, which ones erase data, USB drive setup and why reinstalling from Sony's file can end a jailbreak. The Saves section also gains Copy to Another Console for PS5, Switch, PS2 and PS1 emulator saves: pick the target console and user, with automatic backup of the destination save.",
+      "v11.2.9 fixes the iPhone Duo layout: with the phone open and sideways the stream now uses the full available height instead of being cropped by large system insets, and when folded the tabs tuck under the system icons to reclaim page space. The iOS app now asks the system to route the controller's PS button to the console during a stream, and a PS button in the full-screen menu works as a fallback. Remote Play pairing is more reliable — a failed pair clears the pending PIN, and unresponsive consoles are retried. FTP source listings no longer hide files with dates in other languages. Requires a jailbroken PS5 with a compatible payload loader on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v11.3.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v11.3.0"
+      },
+      {
+        "name": "PS5 Upload v11.2.9 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v11.2.9"
+      }
+    ]
+  },
+  {
     "id": "webkit-autoloader-v070",
     "date": "2026-11-07",
     "tag": "Loader",
