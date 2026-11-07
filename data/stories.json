@@ -1,5 +1,43 @@
 [
   {
+    "id": "webkit-autoloader-v070",
+    "date": "2026-11-07",
+    "tag": "Loader",
+    "title": "WebKit Autoloader v0.7.0: automatic exploit selection and smaller builds",
+    "summary": "WebKit Autoloader v0.7.0 picks the right exploit for your firmware automatically, switches Relapse to a Lua implementation, fixes mid-load freezes and cuts the installer ELF from 3.9 MB to 2.1 MB.",
+    "body": [
+      "WebKit Autoloader v0.7.0 by itsPLK now selects the exploit automatically based on the console's firmware and network status. Firmware above 12.00 up to 13.60 uses Relapse (Poops does not support those versions); firmware 9.05 uses Poops (Relapse does not support 9.05); and offline consoles on 12.00 or below fall back to Poops since it works without an active network connection. The release also switches the Relapse backend to notmaj0r's Lua reimplementation, running through the new LuaK1t runtime in ps5-webkit-remote-loader.",
+      "Build artifacts are substantially smaller thanks to a modular AppCache architecture that replaces the old monolithic HTML bundle with base64-inlined payloads: the host script drops from about 11.9 MB to 3.7 MB and the installer ELF from about 3.9 MB to 2.1 MB. Several causes of the loader hanging or freezing mid-load have been fixed. Dependencies updated to ps5-webkit-remote-loader v0.2.1 and ps5-unified-autoloader v0.1.7. Supports firmwares 7.00 to 13.60."
+    ],
+    "sources": [
+      {
+        "name": "WebKit Autoloader v0.7.0 release",
+        "url": "https://github.com/itsPLK/ps5-webkit-autoloader/releases/tag/v0.7.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5-hass-payload-v030-v031",
+    "date": "2026-11-07",
+    "tag": "Tool",
+    "title": "ps5-hass-payload v0.3.0–v0.3.1: on-TV permission grants and client labels",
+    "summary": "ps5-hass-payload v0.3.0 adds a TV-code grant system that lets a paired Home Assistant client request rest mode, power off and fan control permissions without editing config files.",
+    "body": [
+      "ps5-hass-payload v0.3.0 by Phynix88 adds a grant flow for privileged permissions. A paired Home Assistant client can now request rest mode, power off or fan threshold access by posting to /grant/start, which shows a confirmation code on the TV. Completing the code with /grant/finish activates the permission, and /grant/revoke removes it — no FTP or config.json editing required. Grant codes use their own slot and failure budget, separate from pairing, and belong to the requesting client. A new /info.permissions endpoint reports which permissions are allowed and currently available.",
+      "v0.3.1 cleans up client labels so control characters become spaces during pairing, in the log and in the TV grant text. Permission log lines now name the client that was granted access, and 403 error messages for rest mode, power off and fan control point users toward the Home Assistant options first. Requires a jailbroken PS5 running elfldr; tested on firmware 13.60."
+    ],
+    "sources": [
+      {
+        "name": "ps5-hass-payload v0.3.1 release",
+        "url": "https://github.com/Phynix88/ps5-hass-payload/releases/tag/v0.3.1"
+      },
+      {
+        "name": "ps5-hass-payload v0.3.0 release",
+        "url": "https://github.com/Phynix88/ps5-hass-payload/releases/tag/v0.3.0"
+      }
+    ]
+  },
+  {
     "id": "ps5-hass-payload",
     "date": "2026-11-06",
     "tag": "Tool",
@@ -10,8 +48,14 @@
       "Optional features include rest mode, power off, fan threshold control (45–85 °C, never above the factory value) and sending notifications to the TV, each gated behind a permission that requires a second pairing code. Configuration lives in /data/ps5-hass/ and is reachable via FTP. Tested on firmware 13.60 with Relapse, kstuff-lite 1.11 and Payload Manager 0.6.3. Install by adding the payload source URL in Payload Manager or loading the ELF with any loader."
     ],
     "sources": [
-      { "name": "ps5-hass-payload on GitHub", "url": "https://github.com/Phynix88/ps5-hass-payload" },
-      { "name": "ps5-hass integration on GitHub", "url": "https://github.com/Phynix88/ps5-hass" }
+      {
+        "name": "ps5-hass-payload on GitHub",
+        "url": "https://github.com/Phynix88/ps5-hass-payload"
+      },
+      {
+        "name": "ps5-hass integration on GitHub",
+        "url": "https://github.com/Phynix88/ps5-hass"
+      }
     ]
   },
   {
@@ -25,8 +69,14 @@
       "v11.2.7 fixes several iOS issues: full screen no longer requests its own web full screen (which put Apple's dismiss button on top of L2 and caused the screen to jump when opening the keyboard), on-screen controller parts no longer overlap each other on most phones, and iPhone Duo dialogs stay clear of system icons. On the conversion side, .exfat and .ffpkg names are kept short enough to mount, LZ4-packed games retain their ampr_emu.index, and packages build faster with a CRC check that runs about five times quicker."
     ],
     "sources": [
-      { "name": "PS5 Upload v11.2.8 release", "url": "https://github.com/phantomptr/ps5upload/releases/tag/v11.2.8" },
-      { "name": "PS5 Upload v11.2.7 release", "url": "https://github.com/phantomptr/ps5upload/releases/tag/v11.2.7" }
+      {
+        "name": "PS5 Upload v11.2.8 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v11.2.8"
+      },
+      {
+        "name": "PS5 Upload v11.2.7 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v11.2.7"
+      }
     ]
   },
   {
@@ -40,7 +90,10 @@
       "This is a test release (teste) and has not yet been verified on a real PS5. It includes everything from v0.8.3. Source code is provided under GPL-3. Load glibren through your PS5's web-based jailbreak host to use it."
     ],
     "sources": [
-      { "name": "glibren v0.8.4-teste release", "url": "https://github.com/pristmc-code/ps5-glibren-releases/releases/tag/v0.8.4-teste" }
+      {
+        "name": "glibren v0.8.4-teste release",
+        "url": "https://github.com/pristmc-code/ps5-glibren-releases/releases/tag/v0.8.4-teste"
+      }
     ]
   },
   {
