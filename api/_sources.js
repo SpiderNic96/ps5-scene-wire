@@ -195,4 +195,6 @@ export const SOURCES = [
   { cat: R, repo: 'KongaTime/Wario-Land-Shake-It-PS5', name: 'Wario Land: Shake It!', about: 'Wii recomp, bring your own disc' },
   { cat: R, repo: 'youss17x/Forgotten-Warrior-PS5', name: 'Forgotten Warrior Remastered', about: 'J2ME game native C++ port, bring your own .jar' },
   { cat: R, repo: 'dakotadawolfe/Pokopia-Recomp-PS5', name: 'Pokopia Recomp', about: 'Switch 2 recomp (in development), bring your own dump' },
+  { cat: R, repo: 'kamb205/TNA-iMPACT-Reloaded-PS5', name: 'TNA iMPACT! Reloaded', about: 'Xbox 360 recomp, 60fps 1440p, bring your own disc' },
+  { cat: R, repo: 'dannyboyjaros/ps5classof09', name: 'Class of \'09', about: 'Visual novel port from PC, bring your own game files' },
 ];

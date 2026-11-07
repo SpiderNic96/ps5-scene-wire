@@ -1,5 +1,62 @@
 [
   {
+    "id": "tna-impact-reloaded-ps5",
+    "date": "2026-11-07",
+    "tag": "Port",
+    "title": "TNA iMPACT! Reloaded: Xbox 360 wrestling game recompiled for PS5",
+    "summary": "TNA iMPACT! Reloaded by kamb205 statically recompiles the 2008 Xbox 360 wrestling game to run natively on PS5 at 60 fps and up to 1440p with FSR 1 upscaling, DualSense rumble and a settings hub — no emulator involved.",
+    "body": [
+      "TNA iMPACT! Reloaded is a new PS5 homebrew app (PPSA94007) that runs Midway's TNA iMPACT! as native code using the ReXGlue static recompiler — there is no emulator in the loop. The Xbox 360 PowerPC code is recompiled and runs on elripalda's ReXGlue PS5 runtime, drawing through Vulkan on Mesa RADV. The port delivers 60 fps at 720p or 1440p with AMD FSR 1 upscaling to 4K, 16x texture filtering, and SSAA or SMAA anti-aliasing. DualSense features include four rumble levels you feel as you pick them, light bar colours, and touchpad mapped to Back.",
+      "No game files are included — you need your own Xbox 360 disc image (.iso) of TNA iMPACT!, which the app reads in place from the app folder, /data or a USB drive. A settings hub before the game starts lets you adjust resolution, frame rate, upscaling, filtering, the FPS counter and vibration. Install by copying the PPSA94007 folder to /data/homebrew/ and launching from your homebrew loader. Online multiplayer does not work and button prompts still show Xbox buttons."
+    ],
+    "sources": [
+      { "name": "TNA iMPACT! Reloaded PS5 GitHub repository", "url": "https://github.com/kamb205/TNA-iMPACT-Reloaded-PS5" }
+    ]
+  },
+  {
+    "id": "ps5classof09-v100",
+    "date": "2026-11-07",
+    "tag": "Port",
+    "title": "Class of '09: visual novel ported to PS5",
+    "summary": "ps5classof09 by dannyboyjaros ports the PC visual novel Class of '09 to run natively on a jailbroken PS5 via ShadowMountPlus or another homebrew launcher.",
+    "body": [
+      "Class of '09 is a dark-comedy visual novel originally released on PC, now ported to run on a jailbroken PS5 as a directory-style homebrew app. The port by dannyboyjaros packages the game as PPSA09009 and launches through ShadowMountPlus or any loader that mounts a directory app at /app0.",
+      "The game requires your own retail copy of Class of '09 for PC — the original game folder must be placed inside the app's assets directory. Install by copying the PPSA09009 folder to /data/homebrew/ over FTP (port 2121) or a file manager, then copy your PC game files into the assets/game subfolder."
+    ],
+    "sources": [
+      { "name": "ps5classof09 GitHub repository", "url": "https://github.com/dannyboyjaros/ps5classof09" }
+    ]
+  },
+  {
+    "id": "ps5-hass-payload-v040-v042",
+    "date": "2026-11-07",
+    "tag": "Tool",
+    "title": "ps5-hass-payload v0.4.0–v0.4.2: no more permissions, play time tracking and payload control",
+    "summary": "ps5-hass-payload v0.4.0 removes the permission system entirely, adds play-time tracking, power state monitoring, game suspend, SoC power draw, drive info and payload start/stop — with v0.4.1–v0.4.2 fixing a game-hang bug in payload switching.",
+    "body": [
+      "ps5-hass-payload v0.4.0 by Phynix88 is a major update to the Home Assistant bridge payload. The entire permission system from v0.3 is gone: pairing with the TV code is now the only step, and any paired client can enter rest mode, power off and set the fan threshold. New features include real-time power state reporting (on, going to rest, rest, shutting down), foreground play-time tracking with per-title session history stored in playtime.json, SoC power draw readings, M.2/USB drive info, the ability to minimise the running game, and start/stop control of other payloads through the Payload Manager (with kstuff, the ELF loader, the Payload Manager and ps5-hass protected from being stopped).",
+      "v0.4.1 adds a safety check that blocks payload switching while a game is running — stopping CheatRunner during a game in v0.4.0 hung the console. v0.4.2 improves the detection to also catch minimised games (where the console reports no running app although the game is still in memory), using an eboot.bin process check. CheatRunner is now controllable again when no game is in memory. Requires a jailbroken PS5 with etaHEN or another payload loader."
+    ],
+    "sources": [
+      { "name": "ps5-hass-payload v0.4.2 release", "url": "https://github.com/Phynix88/ps5-hass-payload/releases/tag/v0.4.2" },
+      { "name": "ps5-hass-payload v0.4.0 release", "url": "https://github.com/Phynix88/ps5-hass-payload/releases/tag/v0.4.0" }
+    ]
+  },
+  {
+    "id": "winbrew-11-cs2-runtime",
+    "date": "2026-11-07",
+    "tag": "PC & Linux",
+    "title": "WinBrew 11 cs2-runtime-v1: Counter-Strike 2 plays offline on PS5 via Vapor",
+    "summary": "WinBrew 11's Vapor launcher now auto-detects Counter-Strike 2 by Steam app ID and installs a matched, fixed cs2-019.1 runtime — no manual ntdll patching needed. Offline bot gameplay is confirmed.",
+    "body": [
+      "The Vapor game launcher inside WinBrew 11 by KPKev now detects Counter-Strike 2 (Steam app 730) and installs the complete cs2-019.1 runtime during first installation or reinstallation. The runtime ships inside the app, so there is no manual ntdll patch step. Other games continue to use their base runtime, and existing bottle, settings and save data are preserved during an owned-title refresh. CS2 offline gameplay with bots is confirmed on the matching runtime.",
+      "Existing Vapor setups update by downloading Vapor-CS2-019.1.zip and replacing the PPSA77382 app folder (keep file permissions). New setups also need Vapor-base-kit-0.13.zip. A fix-vapor-install-modes.py helper restores pinned file permissions if FTP loses them. Skyrim Special Edition, Terraria, Brotato and Counter-Strike: Source default profiles are included. In-game online Steam authentication and matchmaking remain unsupported. Full source for the Wine/Prospero cs2 runtime module is provided."
+    ],
+    "sources": [
+      { "name": "WinBrew 11 cs2-runtime-v1 release", "url": "https://github.com/KPKev/WinBrew-11/releases/tag/cs2-runtime-v1" }
+    ]
+  },
+  {
     "id": "winbrew-11",
     "date": "2026-11-07",
     "tag": "PC & Linux",
