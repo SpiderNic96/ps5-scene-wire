@@ -1,5 +1,56 @@
 [
   {
+    "id": "ps5upload-v1160",
+    "date": "2026-11-08",
+    "tag": "Tool",
+    "title": "PS5 Upload v11.6.0: Play Together works over the internet, Convert saves straight to PS5",
+    "summary": "PS5 Upload v11.6.0 lets Play Together friends connect from anywhere — a phone on mobile data, another home — instead of needing the same Wi-Fi. Convert can now write images directly to the PS5 with no local copy.",
+    "body": [
+      "PS5 Upload v11.6.0 by phantomptr removes the Wi-Fi-only limit from Play Together. Choosing Internet when you invite creates a link that works from anywhere: a phone on mobile data, a friend's house. A small server at hub.phantomptr.com only introduces the two sides; the game's picture, sound and controls go peer-to-peer, never through it. The link carries the app's fingerprint so only an invited friend can connect. Most home routers work out of the box; where allowed the app opens a port for the session via UPnP / NAT-PMP / PCP. Settings are under Settings > Play Together.",
+      "Convert gains a Save to: PS5 option that writes an image directly to the console as it is built, with no copy on the computer and no upload afterwards. A dropped connection or restart picks up where it stopped, and the image is verified on the PS5 when done — works for .exfat, .ffpkg and .ffpfs images, and .exfat with zstd packs. PS4 game updates can now be merged: pick a PS4 game and its update and Convert merges them into one image or folder at the update's version. PS4 DLC with files becomes a folder of their data. Interrupted .ffpkg, .ffpfs and .ffpfsc builds now resume from where they stopped. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v11.6.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v11.6.0"
+      }
+    ]
+  },
+  {
+    "id": "nfs-blackbox-v01000010",
+    "date": "2026-11-08",
+    "tag": "Port",
+    "title": "NFS Most Wanted (2005) 01.000.010: fresh-install fix and better crash logs",
+    "summary": "NFS Most Wanted (2005) 01.000.010 fixes a fresh-install failure where the profiles folder didn't exist, and session logs now flush once a second so crashes leave a complete log.",
+    "body": [
+      "NFS Most Wanted (2005) 01.000.010 by lavavex fixes a bug where a fresh install on a console that had never run another prospero-win game would fail at the end with \"Can't write pb-nfsmw.profile: No such file or directory\". The install now creates the profiles folder itself — no need to manually create /data/prospero-win/profiles.",
+      "Session logs in /data/prospero-win/logs/ now save to disk roughly once a second. If the game hangs and the console needs a hard reset, the log keeps everything up to the hang. The developer asks that you attach the newest session-N.log if you report a freeze or crash. Tested on PS5 Pro, firmware 13.60, with etaHEN, kstuff and ShadowMount+. Requires your own copy of the PC game."
+    ],
+    "sources": [
+      {
+        "name": "NFS Most Wanted 01.000.010 release",
+        "url": "https://github.com/lavavex/nfs-blackbox-ps5/releases/tag/01.000.010"
+      }
+    ]
+  },
+  {
+    "id": "webkit-autoloader-v071",
+    "date": "2026-11-08",
+    "tag": "Loader",
+    "title": "WebKit Autoloader v0.7.1: Poops stability restored",
+    "summary": "WebKit Autoloader v0.7.1 fixes a regression from v0.7.0 where a Relapse stability fix was unintentionally making Poops slower and more prone to kernel panics.",
+    "body": [
+      "WebKit Autoloader v0.7.1 by itsPLK is a hotfix for a regression introduced in v0.7.0. A stability fix for the Relapse exploit was unintentionally affecting the Poops exploit, causing slower runs and more kernel panics. This release isolates the fix so only Relapse benefits from it.",
+      "Poops logging has also been cleaned up to produce less noisy output. The installer is available as an ELF payload for the PS5 and as a host script (Python or Windows .exe) for Linux, macOS and WSL. Requires a PS5 with WebKit access."
+    ],
+    "sources": [
+      {
+        "name": "WebKit Autoloader v0.7.1 release",
+        "url": "https://github.com/itsPLK/ps5-webkit-autoloader/releases/tag/v0.7.1"
+      }
+    ]
+  },
+  {
     "id": "playden-v0110b1",
     "date": "2026-11-08",
     "tag": "PC & Linux",
