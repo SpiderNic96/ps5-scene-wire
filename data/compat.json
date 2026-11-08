@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07",
+  "updated": "2026-11-08",
   "about": "Firmware compatibility for the /firmware directory. Only what each project's README or release notes state. range = the developer says it supports these firmwares; tested = firmwares it has actually been run on; only = hard-locked to these firmwares; any = the developer says it isn't tied to a firmware. unstated = tracked apps whose README was checked and names no PS5 firmware (they show as not confirmed). Validate with: node scripts/compat-check.mjs",
   "firmwares": [
     "1.00",
@@ -753,6 +753,16 @@
         "elfldr"
       ],
       "note": "Tested on 13.60 with Relapse and kstuff-lite 1.11; claims other firmwares should work."
+    },
+    "Samclay8/DK64-Rekongpiled-PS5": {
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "etaHEN",
+        "ShadowMountPlus"
+      ],
+      "note": "N64 recomp via RT64/RADV Vulkan. Tested on 13.60 with ShadowMountPlus 1.7beta11."
     }
   },
   "unstated": [
@@ -828,6 +838,7 @@
     "kamb205/TNA-iMPACT-Reloaded-PS5",
     "lamarkingru/grfs-ps5",
     "leafyjerk/PS5_LuigisMansion",
+    "logicalpeyote777/ps5-14.00-jailbreak-research",
     "manos555555/PS5-Suite",
     "mpereiraesaa/prospero-win",
     "mshivam019/la-ps5",

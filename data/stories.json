@@ -1,5 +1,56 @@
 [
   {
+    "id": "dk64-rekongpiled-ps5",
+    "date": "2026-11-08",
+    "tag": "Port",
+    "title": "DK64 Rekongpiled: Donkey Kong 64 recompiled as native PS5 homebrew",
+    "summary": "DK64 Rekongpiled by Samclay8 ports Donkey Kong 64: Recompiled to the PS5 as a native installed title — 4K widescreen at 60 fps with HD textures, built-in mods and DualSense controls.",
+    "body": [
+      "DK64 Rekongpiled by Samclay8 takes the PC recompilation of Donkey Kong 64 (v1.0.3 of DK64: Recompiled by Rainchus) and ports it to the PS5 as a native homebrew title (PPSA64064). It runs through RT64 on Mihawk's RADV Vulkan port at 4K widescreen and 60 fps. Two mods are built in and enabled by default: Tag Anywhere, which lets you switch Kong from almost anywhere with D-pad left and right, and Tag Anywhere Sparkles for a visual and audio cue on the swap. The touchpad opens the in-game menu for settings, controls, sound and mods. Michi's HD texture pack can be dropped into the mods folder for the full HD experience.",
+      "The project requires ShadowMountPlus to register the title and your own Donkey Kong 64 (USA) ROM in .z64 format — no game assets are included. Extract PPSA64064.zip into /data/homebrew/ on the console or homebrew/ on USB or M.2 storage, place the ROM next to eboot.bin, and start from the home screen. Tested on firmware 13.60 with ShadowMountPlus 1.7beta11 and etaHEN."
+    ],
+    "sources": [
+      {
+        "name": "DK64 Rekongpiled PS5 GitHub repository",
+        "url": "https://github.com/Samclay8/DK64-Rekongpiled-PS5"
+      }
+    ]
+  },
+  {
+    "id": "winbrew-11-desktop-storage",
+    "date": "2026-11-08",
+    "tag": "PC & Linux",
+    "title": "WinBrew 11 desktop-storage-dev-v1: Explorer, Office editing and console-backed storage",
+    "summary": "WinBrew 11's desktop-storage update adds a full Windows-style Explorer with tabs, address bar, tree view and drag-and-drop, plus Notepad Save As, Paint, bounded CSV/XLSX editing and a large console-backed C: drive.",
+    "body": [
+      "WinBrew 11 by KPKev ships the desktop-storage-dev-v1 update (PPSA77382, system version 01.016.000) with a Windows-style Explorer that includes tabs, address and breadcrumb bars, search, a left-aligned tree and details pane, drive cards, sorting, views, selection, preview, context menus and drag-and-drop. Copy, cut, paste, no-overwrite rename, recoverable Delete and an Empty Recycle Bin flow all work with progress and cancel support. Notepad gains Save As and editable save/close names with replacement confirmation. Paint and bounded CSV/XLSX editing with workbook-part preservation round out the Office side.",
+      "Storage now uses a large console-backed C: drive mapped to /data with personal folders at C:\\WinBrew\\Users\\Default. First-start copying is verified with retained originals and duplicate D: hidden. Actual mounted-device detection shows real USB capacity with hotplug support. The release includes Gold Vapor status and pulsing Preparing/Starting Play feedback. CS2 and Blender runtime bundles remain unchanged. Skyrim Special Edition is reported down in this build; the project warns that games may unexpectedly break after changes. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "WinBrew 11 desktop-storage-dev-v1 release",
+        "url": "https://github.com/KPKev/WinBrew-11/releases/tag/desktop-storage-dev-v1"
+      }
+    ]
+  },
+  {
+    "id": "ps5-1400-jailbreak-research",
+    "date": "2026-11-08",
+    "tag": "Scene",
+    "title": "PS5 14.00 jailbreak research: userland chain working, sysctl kind swap re-characterised",
+    "summary": "Open research by logicalpeyote and Morini Computers reaches arbitrary JavaScript on PS5 firmware 14.00 through the User's Guide browser and re-characterises the sysctl kind swap as a permission bypass, not a type confusion.",
+    "body": [
+      "An open-source research project by logicalpeyote and Morini Computers targets PS5 firmware 14.00 using only the system User's Guide browser — no game, loader or USB required. The userland chain is confirmed working on a CFI-2000 Digital Edition: re-entrant getContext() leads to same-type reclaim and bidirectional read/write over the reclaimed object. CVE-2026-43720 is confirmed vulnerable on this firmware build. The headline contribution is re-characterising the sysctl kind swap (0x80048002 to 0x70048002) that the community has used since 13.60: it leaves CTLTYPE untouched and skips PRIV_SYSCTL_WRITE, making it a permission-check bypass rather than a type confusion.",
+      "The project is explicit about what it does not have: no code leak has been found (neither by these researchers nor upstream), and no kernel bug yielding read/write has been identified. Seven candidate routes to a leak were closed on device with different classes of evidence. A verified PS5 14.00 PUP is on disk but a decrypted kernel image requires the PUP container key from the Titania Security Processor, extractable only from a jailbroken console at firmware 13.60 or below. Status: not jailbroken. All raw output is published alongside each claim."
+    ],
+    "sources": [
+      {
+        "name": "ps5-14.00-jailbreak-research GitHub repository",
+        "url": "https://github.com/logicalpeyote777/ps5-14.00-jailbreak-research"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v1160",
     "date": "2026-11-08",
     "tag": "Tool",

@@ -36,6 +36,7 @@ export const SOURCES = [
   { cat: J, repo: 'drakmor/nanoDNS', name: 'nanoDNS', about: 'DNS proxy payload' },
   { cat: J, repo: 'lvndry/ps5-firmware-pin', name: 'ps5-firmware-pin', about: 'Blocks firmware updates' },
   { cat: J, repo: 'pastawithpesto/PS5-14.10-Jailbreak-Research', name: 'PS5 14.10 Jailbreak Research', about: 'WebKit exploit research for firmware 14.10' },
+  { cat: J, repo: 'logicalpeyote777/ps5-14.00-jailbreak-research', name: 'PS5 14.00 Jailbreak Research', about: 'Open research toward 14.00 jailbreak via User Guide browser' },
   { cat: J, repo: 'B4ckd0orl/PADRINO-FPKG', name: 'PADRINO FPKG', about: 'All-in-one HEN with fPKG installer, cheats and toolbox' },
 
   // Managers and tools
@@ -199,4 +200,5 @@ export const SOURCES = [
   { cat: R, repo: 'dannyboyjaros/ps5classof09', name: 'Class of \'09', about: 'Visual novel port from PC, bring your own game files' },
   { cat: R, repo: 'dannyboyjaros/ps5classof09thereup', name: 'Class of \'09: The Re-Up', about: 'Visual novel sequel port from PC, bring your own game files' },
   { cat: R, repo: 'dannyboyjaros/ps5classof09theflipside', name: 'Class of \'09: The Flip Side', about: 'Visual novel sequel port from PC, bring your own game files' },
+  { cat: R, repo: 'Samclay8/DK64-Rekongpiled-PS5', name: 'DK64 Rekongpiled', about: 'N64 recomp, 4K 60fps with HD textures, bring your own ROM' },
 ];
