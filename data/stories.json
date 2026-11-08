@@ -1,5 +1,39 @@
 [
   {
+    "id": "ps5upload-v1200",
+    "date": "2026-11-08",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.0.0: built-in Tailscale, Play Together profiles and fPKG creation",
+    "summary": "PS5 Upload v12.0.0 adds built-in Tailscale networking so you can Remote Play your PS5 from anywhere through your own Tailscale network — no VPN router needed. Play Together gains profile selection, third-party controller support and internet phone controls.",
+    "body": [
+      "PS5 Upload v12.0.0 by phantomptr brings Tailscale networking directly into the app. Sign in once under Settings > Tailscale, then use Connection > 'Put this PS5 on Tailscale' — no Tailscale app on the PS5 or a VPN router required. The PS5 only answers to Remote Play and PS5Upload over Tailscale, nothing else. The settings panel shows plain-language status for sign-in errors, server issues and expiring keys.",
+      "Play Together gets its own page with Start and Invite. Friends can now play as a profile you pick (such as a guest), so the game uses that profile's saves and trophies with nothing popping up on the TV. Third-party controllers from 8BitDo and other popular pads are mapped correctly, and friends can check and set up their controller from the invite page. Phone and watch controls now work over the internet too. Convert can now make PS4 fake packages (.pkg) and write images directly to a NAS or server over SMB, NFS, FTP, SFTP or WebDAV. Remote Play fixes include real L2/R2 analog trigger support across all platforms, and Mac PS button pass-through during Remote Play."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.0.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.0.0"
+      }
+    ]
+  },
+  {
+    "id": "xpsemu-v32",
+    "date": "2026-11-08",
+    "tag": "Emulator",
+    "title": "XPSemu v3.2: all 8 Chihiro games, adaptive triggers and gyro aim",
+    "summary": "XPSemu v3.2 makes all 8 Sega Chihiro arcade games playable, adds DualSense adaptive triggers and gyro aiming, per-game button mapping, anisotropic filtering, a CRT filter, fast-forward and trainer support.",
+    "body": [
+      "XPSemu Alpha 3.2 by ZiZc3 completes Sega Chihiro arcade board support with all 8 games now playable at 60 FPS on the same native Xbox core: OutRun 2 (with steering force feedback), Crazy Taxi: High Roller, Ollie King, Virtua Cop 3, Ghost Squad, The House of the Dead III, Wangan Midnight Maximum Tune and Wangan Midnight Maximum Tune 2. Each game has its own control layout matching the original cabinet. DualSense adaptive triggers now push back with a pedal feel in driving games and a trigger feel in shooters, configurable per game. Gyro aiming lets you tilt the controller to aim, and every Xbox button can be remapped per game.",
+      "Visual upgrades include anisotropic filtering up to 16x, AMD CAS sharpening as an upscaler option, and an optional CRT filter with scanlines, curve, mask and vignette — all configurable per game. A new fast-forward mode runs Xbox games at double speed, toggleable from the quick menu. Trainer support loads .etm files from /data/xpsemu/trainers/ with per-game options applied at launch. Game fixes address crashes in Midnight Club II, flickering in Midnight Club 3, streaming stutters in Half-Life 2, washed-out menus in the Prince of Persia trilogy, and a restart bug in the European version of Conker: Live & Reloaded. Requires kstuff-lite and at least ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "XPSemu v3.2 release",
+        "url": "https://github.com/ZiZc3/XPSemu/releases/tag/v3.2"
+      }
+    ]
+  },
+  {
     "id": "dk64-rekongpiled-ps5",
     "date": "2026-11-08",
     "tag": "Port",
