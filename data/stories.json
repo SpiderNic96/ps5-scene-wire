@@ -1,5 +1,94 @@
 [
   {
+    "id": "playden-v0110b1",
+    "date": "2026-11-08",
+    "tag": "PC & Linux",
+    "title": "Playden v0.11.0-beta.1: 120 Hz VRR support and runtime kit 0.20",
+    "summary": "Playden v0.11.0-beta.1 lets Steam games run at 120 Hz on a VRR display without forcing 'Apply to Unsupported Games', and runtime kit 0.20 fixes Spider-Man: Web of Shadows and pointer handling in small display modes.",
+    "body": [
+      "Playden v0.11.0-beta.1 by leolobato brings native VRR (Variable Refresh Rate) 120 Hz support to Steam games on jailbroken PS5. Previously, games dropped to 60 Hz even with VRR enabled on the console — games updated to runtime kit 0.20 now hold 120 Hz under VRR with no need for Sony's 'Apply to Unsupported Games' toggle. The update also fixes Spider-Man: Web of Shadows, which previously failed to launch, and corrects the mouse pointer in small display modes such as Heroes III. Side menus now wrap around from the last row to the top.",
+      "To get the beta, turn on Settings > Updates > Beta updates, then Check now. Playden will update itself and download runtime kit 0.20 (about 433 MB). After updating, Playden asks once whether to update your installed games to the new runtime kit — each game takes about 30 seconds with no Steam download. Games keep running on their old kit from PS5 Home until updated. Requires at least 8 GB free on the PS5."
+    ],
+    "sources": [
+      {
+        "name": "Playden v0.11.0-beta.1 release",
+        "url": "https://github.com/leolobato/playden-ps5/releases/tag/v0.11.0-beta.1"
+      }
+    ]
+  },
+  {
+    "id": "winbrew-11-blender",
+    "date": "2026-11-08",
+    "tag": "PC & Linux",
+    "title": "WinBrew 11 combined-blender-v1: Blender runs on PS5, CS2 handoff hotfix and five confirmed games",
+    "summary": "WinBrew 11's combined Blender release adds automatic Blender repair with matched Wine 0.19 and Vulkan defaults. The CS2 runtime handoff hotfix is included, and Schedule I and Skyrim are now confirmed working.",
+    "body": [
+      "WinBrew 11 by KPKev ships a combined update (combined-blender-v1, title PPSA77382) that adds Blender to the Vapor launcher's supported applications. Blender gets an automatic, pinned compatibility bundle: matched Wine 0.19, an independent hardware-cursor fix, portable launcher, Vulkan defaults, a loading-animation fix, numbered-sandbox discovery and mouse-wheel forwarding. The owner confirmed workspace visibility, smooth pointer/menus and responsive wheel zoom. The release also includes cs2-runtime-v1.1 — a hotfix for existing Counter-Strike 2 installations that reported 'runtime bundle unavailable' when the automatic update skipped the runtime check.",
+      "Five games are now confirmed working through Vapor: Counter-Strike 2 (offline bots), Schedule I, The Elder Scrolls V: Skyrim Special Edition, Blackjack 21 and Golf With Your Friends, plus Quake II RTX. Kane's Wrath reaches its splash screen but has no working menu, and Splitgate is blocked by server authentication. Online play is not supported. Download the complete Vapor-CS2-019.1.zip app and install to /data/homebrew/. Requires a jailbroken PS5 with a homebrew loader."
+    ],
+    "sources": [
+      {
+        "name": "WinBrew 11 combined-blender-v1 release",
+        "url": "https://github.com/KPKev/WinBrew-11/releases/tag/combined-blender-v1"
+      },
+      {
+        "name": "WinBrew 11 cs2-runtime-v1.1 hotfix",
+        "url": "https://github.com/KPKev/WinBrew-11/releases/tag/cs2-runtime-v1.1"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v1152",
+    "date": "2026-11-08",
+    "tag": "Tool",
+    "title": "PS5 Upload v11.5.2: Remote Play fixes for older Macs and Play Together improvements",
+    "summary": "PS5 Upload v11.5.2 fixes Remote Play video and audio on older Macs — the system media player fallback now works and Opus audio is decoded in-app via WebAssembly where the system can't. Play Together's Player 1 is now off by default.",
+    "body": [
+      "PS5 Upload v11.5.2 by phantomptr tackles Remote Play on older Macs (macOS 13 and older Safari). The system media player fallback for video now works inside the app — it was previously blocked by the app's own security rules, causing a retry loop. A player that still fails gives up after three tries with one error, and a new 'System media player' option in Settings > Video decoding lets you go straight to it. For audio, where the system can't decode the PS5's Opus stream, the app now decodes it itself using opus-decoder (WebAssembly), both in the app and for Play Together friends in Safari.",
+      "Play Together also gets changes: Player 1 — a friend playing on the host's own controller as the host's PS5 user — is now a setting, off by default, with clearer prompts. On iPhone and iPad, full screen now hides the status bar, and the Controller/Touchpad switch fades out in full screen. A DLC install bug where add-ons were refused with 'move the game out of the scan folder' for ShadowMount+ images is also fixed. Requires a jailbroken PS5 with a Remote Play-capable payload."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v11.5.2 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v11.5.2"
+      }
+    ]
+  },
+  {
+    "id": "ps5-cleanup-v108",
+    "date": "2026-11-08",
+    "tag": "Tool",
+    "title": "PS5 Cleanup v1.0.8: redesigned TV interface and unified test mode",
+    "summary": "PS5 Cleanup v1.0.8 overhauls the on-console UI with a home screen showing console, drive and jailbreak info, merges the test and live ELFs into one app that starts in test mode by default, and adds page-by-page navigation.",
+    "body": [
+      "PS5 Cleanup v1.0.8 by xXBneutzerNameXx redesigns the on-console TV interface. A new home screen shows the console, drive pairing, jailbreak status and storage per drive. The selection view has categories on the left, items in the centre sorted largest-first (or A–Z), and a detail pane on the right with an image and description. L1/R1 page through items. PKG and ELF files now appear next to their parent game or tool across USB, M.2 and internal drives — PKGs are marked red because they cannot be re-downloaded. Games stored as .exfat and unpacked games without a tile now show their name and icon.",
+      "The separate test ELF from v1.0.7 is gone — the app now ships as a single ps5cleanup_v1.0.8.elf (or .zip with docs) that starts in test mode by default, showing what would be deleted without risk. Turn off test mode in the Options menu when ready. A dedicated confirmation screen explains what is permanent, what can be reinstalled and what stays. Single items are deleted by holding X for 1.5 seconds; full cleanup requires typing LÖSCHEN (DELETE). The delete process can be paused by holding Circle. Never use Sony's 'Rebuild Database' — it removes fPKG-installed PS4 games."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Cleanup v1.0.8 release",
+        "url": "https://github.com/xXBneutzerNameXx/PS5-Cleanup/releases/tag/v1.0.8"
+      }
+    ]
+  },
+  {
+    "id": "glibren-v091",
+    "date": "2026-11-08",
+    "tag": "Tool",
+    "title": "glibren v0.8.9–v0.9.1-teste: queue badges, 'Also in' indicator and sticky action buttons",
+    "summary": "glibren's latest test builds add real-time queue badges for copy/move/delete operations, an 'Also in' badge for games with multiple copies, and sticky action buttons that stay visible while scrolling.",
+    "body": [
+      "glibren v0.8.9 through v0.9.1-teste by pristmc-code brings three rounds of UI improvements to the web-based PS5 game library manager. Version 0.9.1 adds queue badges to games during file operations: queued items show an hourglass, active operations show progress percentages (Copying 45%, Moving 45%, Deleting), and copying into a ShadowMount folder shows 'Activating'. A file already queued or in progress is not queued again. Version 0.9.0 introduces an 'Also in' badge for active games (in a ShadowMount folder) that have another copy stored elsewhere, plus a Top button next to the action buttons.",
+      "Version 0.8.9 makes the Copy/Move/Hide/Delete buttons scroll with the page and pin at the top when you scroll past them, so they remain accessible on phones, short windows and the PS5 browser layout. All three are test builds that have not yet been run on a PS5. The Android companion app glibrenControle remains at v0.1-teste. Update glibren from the web dashboard's Atualizar button or by sending glibren.elf to elfldr. Source code is included under GPL-3."
+    ],
+    "sources": [
+      {
+        "name": "glibren v0.9.1-teste release",
+        "url": "https://github.com/pristmc-code/ps5-glibren-releases/releases/tag/v0.9.1-teste"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v1150-v1151",
     "date": "2026-11-07",
     "tag": "Tool",
