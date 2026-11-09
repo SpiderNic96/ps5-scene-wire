@@ -1,5 +1,39 @@
 [
   {
+    "id": "ps5upload-v1220",
+    "date": "2026-11-09",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.2.0: Connection dashboard, device permissions and faster console detection",
+    "summary": "PS5 Upload v12.2.0 adds a Connection page that shows every PS5 as a live status card — online or not, reachable over Wi-Fi or Tailscale — with device invite links, allow/decline controls and one-tap revoke or block.",
+    "body": [
+      "PS5 Upload v12.2.0 by phantomptr introduces a Connection page that lists each PS5 as a card showing its online status, how the current device reaches it (home network or Tailscale), firmware version, helper status and which devices are allowed to use it. Setup steps appear only until a console is ready. The Add a PS5 flow now scans both your home network and Tailscale network in one pass, can open an invite from another device via QR code or link, and deduplicates consoles found on multiple paths.",
+      "A new Invite a device option generates a code and link that add the PS5 on a new phone or computer without granting any access by itself. When 'Ask before a new device can connect' is enabled, new devices require explicit Allow or Decline on any existing device — a device cannot approve itself. Other improvements include faster console detection (about one second instead of ten), three-check-in-a-row verification before marking a PS5 as unreachable, session persistence so the app reopens on the last screen, and fixes for Remote Play full-screen black screens and Mac WebCodecs playback. Requires a jailbroken PS5 with a Remote Play-capable payload."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.2.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.2.0"
+      }
+    ]
+  },
+  {
+    "id": "jobeeslair-v057",
+    "date": "2026-11-09",
+    "tag": "Store",
+    "title": "Jobee'sLair v0.5.7: new catalog format for continuous game updates",
+    "summary": "Jobee'sLair v0.5.7 switches to a new catalog format that lets new games arrive between releases. Users on v0.5.6 or earlier will stop receiving new catalog entries and should update to keep the store current.",
+    "body": [
+      "Jobee'sLair v0.5.7 by JVK3R moves the homebrew game store to a new catalog format that allows new games to be added between releases, rather than requiring an app update for every catalog change. Users running v0.5.6 or earlier will keep the games they already have but will stop receiving new additions, making this a recommended update for anyone who wants the latest homebrew catalog.",
+      "Updating from v0.5.2 through v0.5.6 is handled in-app — Jobee'sLair offers the new version automatically and applies it after a restart. For a fresh install, copy JobeesLair.exfat to /data/homebrew over FTP (close Jobee'sLair first if replacing an existing copy) and launch it. Bug reports can be filed from Settings > About & credits > Report a bug, which generates a report code to include in a Discord ticket."
+    ],
+    "sources": [
+      {
+        "name": "Jobee'sLair v0.5.7 release",
+        "url": "https://github.com/JVK3R/JobeesLair/releases/tag/v0.5.7"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v1210",
     "date": "2026-11-09",
     "tag": "Tool",
