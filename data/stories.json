@@ -1,5 +1,90 @@
 [
   {
+    "id": "cbfd-recompiled-ps5",
+    "date": "2026-11-09",
+    "tag": "Port",
+    "title": "Conker's Bad Fur Day: Recompiled arrives on PS5",
+    "summary": "A native PS5 port of Conker's Bad Fur Day: Recompiled brings the N64 classic to the console at 4K, 60 fps with texture pack support and DualSense controls. Tested on firmware 13.60.",
+    "body": [
+      "Conker's Bad Fur Day: Recompiled for PS5 by Samclay8 is a native homebrew port of the N64 recompilation project, running at 4K widescreen and 60 fps. It renders through RT64 via Mihawk's RADV Vulkan port and installs as a home-screen title (PPSA64065) through ShadowMountPlus. The game supports texture packs, including GameBeast92's 4K HD icons and Nikachu's AI-upscaled pack available in a companion repository.",
+      "You need your own Conker's Bad Fur Day USA ROM (SHA-1 4cbadd3c4e0729dec46af64ad018050eada4f47a, .z64 format). Drop the extracted PPSA64065 folder into /data/homebrew/ and place your ROM inside it. On first launch the game verifies and copies the ROM, then boots in under a second on subsequent starts. Press the touchpad for settings, controls and achievements. Requires a jailbroken PS5 with ShadowMountPlus, tested on firmware 13.60."
+    ],
+    "sources": [
+      {
+        "name": "CBFD-Recompiled-PS5 on GitHub",
+        "url": "https://github.com/Samclay8/CBFD-Recompiled-PS5"
+      }
+    ]
+  },
+  {
+    "id": "ps5-playtime-tracker",
+    "date": "2026-11-09",
+    "tag": "Tool",
+    "title": "PS5 Playtime Tracker: track play sessions and trophies without PSN",
+    "summary": "An open-source payload that tracks playtime, sessions and trophies for PS5 and PS4 games on a jailbroken PS5 and syncs them to a gowithme.club profile. No PSN account needed.",
+    "body": [
+      "PS5 Playtime Tracker by gowithme-club is an open-source ELF payload that records every play session with its start time, end time and duration for both PS5 and PS4 games. It reads trophies from the console's trophy files (PS5) and trophy notifications (PS4), recovers sessions played while the payload was stopped from the system journal, and shows a live 'playing now' status on your profile. Reports queue on the console while offline and sync when connectivity returns.",
+      "Download the .elf from the latest release and load it with Payload Manager or send it to elfldr on port 9021. The console displays a six-digit code to pair with your free gowithme.club account under Settings > PS5 (CFW). No config file needed. Tested on PS5 firmware 13.40. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Playtime Tracker on GitHub",
+        "url": "https://github.com/gowithme-club/ps5-playtime-tracker"
+      }
+    ]
+  },
+  {
+    "id": "prospero-themes-01000040",
+    "date": "2026-11-09",
+    "tag": "Tool",
+    "title": "Prospero Themes 01.000.040: store catalogs and Media Gallery icon",
+    "summary": "Prospero Themes 01.000.040 loads theme catalogs from the store when its own catalog does not cover the current firmware, and adds the Media Gallery tile icon to six firmware catalogs.",
+    "body": [
+      "Prospero Themes 01.000.040 by Darkatek7 changes how catalogs work: on a firmware the app does not carry a catalog for, it now loads the one the store has, validates it and keeps a local copy in /data/prospero-themes/catalogs/. The System tab shows where the active catalog comes from. The catalogs for firmwares 11.60, 13.00, 13.20, 13.40, 13.42 and 13.60 now include the Media Gallery tile icon, which themes can change and Restore defaults puts back.",
+      "When the app finds files another theming tool had already changed with no original left to restore, it warns once about what Restore defaults cannot bring back (backgrounds, icons, sounds) and keeps showing it. Tested on firmware 13.00. Install via System > App update from within the app, or extract PPSA90210.zip and copy the PPSA90210 folder to /data/homebrew/. ThemeHelper is unchanged (v11), so no restart is needed. Requires an ELF loader on port 9021 (elfldr)."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Themes 01.000.040 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.040"
+      }
+    ]
+  },
+  {
+    "id": "glibren-v092-teste",
+    "date": "2026-11-09",
+    "tag": "Tool",
+    "title": "glibren v0.9.2-teste: active/stored filters and .complete file controls",
+    "summary": "glibren v0.9.2-teste adds Active and Stored Only filters for ShadowMount folders, plus per-item and bulk Show/Hide controls for .complete files. Test build, not yet run on a PS5.",
+    "body": [
+      "glibren v0.9.2-teste by pristmc-code is a test build that adds two new filters alongside the existing PS4/PS5/exFAT/pkg options: Active (files in a ShadowMount folder) and Stored only (files outside the ShadowMount folders with no active copy). These filters only appear when a folder is marked as ShadowMount's, and they combine with other filters and the item counter.",
+      ".complete files are still hidden automatically but now have a Show button (per-item and in bulk) that brings them back to the list; the choice is saved on the PS5. Hide sends them back to the automatic hidden list. Carries forward the queue/progress badges and Activating features from v0.9.1. The companion APK (glibren Controle) is unchanged at v0.1-teste. Note: this is a test build and has not been run on a PS5 yet."
+    ],
+    "sources": [
+      {
+        "name": "glibren v0.9.2-teste release",
+        "url": "https://github.com/pristmc-code/ps5-glibren-releases/releases/tag/v0.9.2-teste"
+      }
+    ]
+  },
+  {
+    "id": "xpsemu-v33",
+    "date": "2026-11-09",
+    "tag": "Emulator",
+    "title": "XPSemu Alpha 3.3: DualSense HD haptics and PAL 60 Hz",
+    "summary": "XPSemu Alpha 3.3 converts Xbox rumble to DualSense HD haptics across all four controllers, forces PAL games to 60 Hz by default, and fixes Midtown Madness 3, RalliSport Challenge 2 and Thief: Deadly Shadows.",
+    "body": [
+      "XPSemu Alpha 3.3 by ZiZc3 brings DualSense HD haptics to the PS5 Xbox emulator: Xbox rumble now plays on the DualSense's modern haptic motors instead of old-style rumble, making engines, crashes and gunfire feel detailed and precise across all four controllers in every Xbox game. PAL 60 Hz is now enabled for every PAL (European) game by default, so they run at 60 Hz like US versions; individual games can be switched back to 50 Hz in their settings or the quick menu.",
+      "Three game fixes ship in this release: Midtown Madness 3's crash is fixed and the game is now unlocked at 60 FPS by default, RalliSport Challenge 2 is fixed along with issues of running too slow and getting stuck loading into a race, and the European version of Thief: Deadly Shadows no longer crashes while loading. A slow-download bug in updates has also been resolved. Install by extracting PPSA97358.zip to /data/homebrew/ and launch from the home screen. Requires kstuff lite and at least ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "XPSemu Alpha 3.3 release",
+        "url": "https://github.com/ZiZc3/XPSemu/releases/tag/v3.3"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v1230",
     "date": "2026-11-09",
     "tag": "Tool",

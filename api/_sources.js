@@ -95,6 +95,7 @@ export const SOURCES = [
   { cat: T, repo: 'SpiderNic96/VirtualInfinityPortal-PS5', name: 'Virtual Infinity Portal', about: 'Play Disney Infinity without the physical base' },
   { cat: T, repo: 'Gl0ttis/ps5-tls-verify', name: 'ps5-tls-verify', about: 'Toggleable TLS certificate override for lab testing' },
   { cat: T, repo: 'Phynix88/ps5-hass-payload', name: 'PS5 Home Assistant Bridge', about: 'Standalone Home Assistant bridge with TV pairing' },
+  { cat: T, repo: 'gowithme-club/ps5-playtime-tracker', name: 'PS5 Playtime Tracker', about: 'Playtime and trophy tracker for gowithme.club' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },
@@ -201,4 +202,5 @@ export const SOURCES = [
   { cat: R, repo: 'dannyboyjaros/ps5classof09thereup', name: 'Class of \'09: The Re-Up', about: 'Visual novel sequel port from PC, bring your own game files' },
   { cat: R, repo: 'dannyboyjaros/ps5classof09theflipside', name: 'Class of \'09: The Flip Side', about: 'Visual novel sequel port from PC, bring your own game files' },
   { cat: R, repo: 'Samclay8/DK64-Rekongpiled-PS5', name: 'DK64 Rekongpiled', about: 'N64 recomp, 4K 60fps with HD textures, bring your own ROM' },
+  { cat: R, repo: 'Samclay8/CBFD-Recompiled-PS5', name: 'Conker\'s Bad Fur Day: Recompiled', about: 'N64 recomp, 4K 60fps with texture packs, bring your own ROM' },
 ];

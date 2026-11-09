@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08",
+  "updated": "2026-11-09",
   "about": "Firmware compatibility for the /firmware directory. Only what each project's README or release notes state. range = the developer says it supports these firmwares; tested = firmwares it has actually been run on; only = hard-locked to these firmwares; any = the developer says it isn't tied to a firmware. unstated = tracked apps whose README was checked and names no PS5 firmware (they show as not confirmed). Validate with: node scripts/compat-check.mjs",
   "firmwares": [
     "1.00",
@@ -763,6 +763,24 @@
         "ShadowMountPlus"
       ],
       "note": "N64 recomp via RT64/RADV Vulkan. Tested on 13.60 with ShadowMountPlus 1.7beta11."
+    },
+    "gowithme-club/ps5-playtime-tracker": {
+      "tested": [
+        "13.40"
+      ],
+      "needs": [
+        "elfldr"
+      ],
+      "note": "Playtime and trophy tracker for gowithme.club. Tested on firmware 13.40."
+    },
+    "Samclay8/CBFD-Recompiled-PS5": {
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "ShadowMountPlus"
+      ],
+      "note": "N64 recomp via RT64/RADV Vulkan. Tested on firmware 13.60."
     }
   },
   "unstated": [
