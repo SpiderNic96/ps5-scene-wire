@@ -1,5 +1,73 @@
 [
   {
+    "id": "ps5upload-v1210",
+    "date": "2026-11-09",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.1.0: universal Play Together invites, game sharing and Tailscale improvements",
+    "summary": "PS5 Upload v12.1.0 makes Play Together invites work everywhere — Wi-Fi, Tailscale or open internet — with automatic path selection and smooth 60 FPS video streaming. A new Share feature lets you send saves, screenshots, controls and homebrew apps directly to friends.",
+    "body": [
+      "PS5 Upload v12.1.0 by phantomptr unifies Play Together invites into a single link that works on any connection. The app detects whether a friend is on your local Wi-Fi, your Tailscale network, or the open internet and picks the best route automatically. Over the internet the picture now arrives as a video stream at a steady 60 FPS, and a connection-quality panel tells friends to lower the stream quality if their bandwidth falls short. A new setting under Settings > App > Play Together lets you choose 'Invites work: Anywhere' or 'Only on my Wi-Fi'.",
+      "A new Share feature lets you send saves, screenshots, clips, cheat settings, controller layouts and homebrew apps directly to a friend via a link — retail games and their updates cannot be shared. Tailscale improvements include automatic fallback from local Wi-Fi, Pause without sign-out, support for an existing Tailscale app, key renewal that preserves the address, and clear notices when features cannot work over Tailscale. Per-console settings (keep awake, rest after uploads, auto-wake, reconnect) are now stored separately for each console. Requires a jailbroken PS5 with a Remote Play-capable payload."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.1.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.1.0"
+      }
+    ]
+  },
+  {
+    "id": "prosperomgr-v12",
+    "date": "2026-11-09",
+    "tag": "Tool",
+    "title": "ProsperoMgr v1.2: Media gallery, Games library, right-click menus and 111 MB/s PKG installs",
+    "summary": "ProsperoMgr v1.2 adds a full Media page for browsing and downloading PS5 captures, separates games from apps on the Home page, introduces right-click context menus, back/forward navigation, safe USB removal and much faster PKG installs.",
+    "body": [
+      "ProsperoMgr v1.2 by notmaj0r is the biggest update yet to the web-based PS5 manager. A new Media page shows every screenshot and video clip from the console, grouped by game in Albums or by date. You can view, download, select in bulk or delete captures directly — deletions remove them from the console's own gallery too. The Home page now splits installed games from apps and homebrew into separate tabs, with play-time chips on every cover. You can launch web-based homebrew like CheatRunner and ShadowMount+ straight from the manager.",
+      "Right-click context menus work on files, payloads, saves and custom repositories. Back/Forward navigation tracks every folder, tab and dialog, and works with mouse side buttons or L1/R1 on the PS5 browser. PKG installs now transfer over HTTP instead of WebSocket, reaching about 111 MB/s, with smart grouping that installs base game first, then updates, then DLC. Other additions include safe USB removal, a revamped Autoloader timeline view, Payload Manager integration, hardware stats under Settings, a Power menu with timed shutdown, and Hungarian — bringing support to 17 languages. Accessible at the console's IP on port 7070."
+    ],
+    "sources": [
+      {
+        "name": "ProsperoMgr v1.2 release",
+        "url": "https://github.com/notmaj0r/ProsperoMgr/releases/tag/v1.2"
+      }
+    ]
+  },
+  {
+    "id": "shadowmountplus-17beta12",
+    "date": "2026-11-09",
+    "tag": "Tool",
+    "title": "ShadowMountPlus 1.7beta12: config format v2, M.2 mount recovery and resilient library scans",
+    "summary": "ShadowMountPlus 1.7beta12 introduces a new configuration format with separate config.ini and profiles.ini, automatic migration, and runtime reloads. Mount recovery is safer on M.2 storage and library scans handle inaccessible folders gracefully.",
+    "body": [
+      "ShadowMountPlus 1.7beta12 by drakmor overhauls configuration with format v2, splitting settings into config.ini and profiles.ini with automatic migration from the old format and support for runtime reloads without restarting. Mount and launch recovery is improved with safer cleanup of sandbox layers and better handling for M.2 storage, reducing the chance of a failed mount leaving stale data behind.",
+      "Library scans are now more resilient to inaccessible folders and source changes — a scan no longer fails entirely when one path is unreachable. Metadata and filename handling is improved for PS4 trophies, sce_sys files and dynamic libraries. Other additions include browser back navigation, an option to disable startup library notifications, and better support for long image mount paths. Requires a jailbroken PS5 with etaHEN or a compatible payload loader."
+    ],
+    "sources": [
+      {
+        "name": "ShadowMountPlus 1.7beta12 release",
+        "url": "https://github.com/drakmor/ShadowMountPlus/releases/tag/1.7beta12"
+      }
+    ]
+  },
+  {
+    "id": "ftpsrv-v022",
+    "date": "2026-11-09",
+    "tag": "Tool",
+    "title": "ftpsrv v0.22: fixes data-connection accept() crash",
+    "summary": "ftpsrv v0.22 fixes a bug where the FTP data connection could fail with EINVAL because the address-length argument to accept() was uninitialized.",
+    "body": [
+      "ftpsrv v0.22 by ps5-payload-dev fixes a crash in ftp_data_open where accept() was called with an uninitialized addrlen argument. Because accept() treats addrlen as a value-result parameter, garbage in that field caused the call to fail with EINVAL. The fix reads the length from sizeof(data_addr), matching what ftp_serve() already does.",
+      "ftpsrv is a lightweight FTP server payload for jailbroken PS5 consoles, giving full filesystem access over FTP on port 2121. Send the ELF to your payload loader to start the server. No additional dependencies are required beyond a jailbreak entry point."
+    ],
+    "sources": [
+      {
+        "name": "ftpsrv v0.22 release",
+        "url": "https://github.com/ps5-payload-dev/ftpsrv/releases/tag/v0.22"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v1200",
     "date": "2026-11-08",
     "tag": "Tool",
