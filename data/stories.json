@@ -1,5 +1,39 @@
 [
   {
+    "id": "ps5upload-v1230",
+    "date": "2026-11-09",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.3.0: Tailscale console discovery, invite-link fix and Share screen",
+    "summary": "PS5 Upload v12.3.0 shows Tailscale-reachable PS5s directly on the Connection page with one-tap Add, fixes Play Together invite links broken since v12.1 and moves received content to a dedicated Share screen.",
+    "body": [
+      "PS5 Upload v12.3.0 by phantomptr adds Tailscale console discovery to the Connection page: PS5s visible on your Tailscale network that are not yet on this device’s list appear with an Add button, removing the need to go through Settings or a scan. If a console has not allowed this device yet, Connection tells you where to grant access. When Tailscale is paused on the device, Connection offers to turn it back on.",
+      "This release also fixes Play Together invite links, which stopped opening in the app after v12.1 introduced universal https links. The app now handles the link directly, whether joining over the home network or over the internet. The QR scanners in Join a friend and Add a PS5 now tell you when the code in view is the wrong kind instead of appearing stuck. Received content has been moved from Play into its own Share screen under Games & Content, and the website has been updated with new sections and screenshots in all 21 languages. Requires a jailbroken PS5 with a Remote Play-capable payload."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.3.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.3.0"
+      }
+    ]
+  },
+  {
+    "id": "phazonprime-v00001036",
+    "date": "2026-11-09",
+    "tag": "Port",
+    "title": "PhazonPrime v00.001.036: redesigned project artwork",
+    "summary": "PhazonPrime v00.001.036 replaces the wayfinder background with a redesigned crystalline version featuring the PhazonPrime wordmark. The native program is unchanged from v00.001.035.",
+    "body": [
+      "PhazonPrime v00.001.036 by BaZZtian is a cosmetic-only update that introduces a redesigned crystalline wayfinder background with the PhazonPrime wordmark. The original icon and the native PS5 program are unchanged from the previous release. Artwork origin, resampling and component-license boundaries are documented in the matching source archive.",
+      "A known issue remains: automatic system-tile music does not play. Fresh v00.001.036 testing generated the 60-second music locally, but automatic registered publication failed. Install only PhazonPrime-v00.001.036-PS5.zip and use Quick update in ProsperoStore to retain your ISO and user data. The title folder remains PPSA99731. Requires a jailbreak entry point and the ps5-payload-sdk runtime."
+    ],
+    "sources": [
+      {
+        "name": "PhazonPrime v00.001.036 release",
+        "url": "https://github.com/BaZZtian/PhazonPrime-PS5/releases/tag/v00.001.036"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v1220",
     "date": "2026-11-09",
     "tag": "Tool",
