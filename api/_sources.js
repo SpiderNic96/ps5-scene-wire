@@ -135,7 +135,7 @@ export const SOURCES = [
   { cat: P, repo: 'KPKev/WinBrew-11', name: 'WinBrew 11', about: 'Windows 11-style desktop with Vapor game launcher' },
 
   // Media and streaming
-  { cat: M, repo: 'RafaelNGP/xbox-cloud-gaming-ps5', name: 'PSBox Cloud Gaming', about: 'Xbox Cloud Gaming client' },
+  { cat: M, repo: 'RafaelNGP/psbox-cloud-gaming', name: 'PSBox Cloud Gaming', about: 'Xbox Cloud Gaming client' },
   { cat: M, repo: 'Sp9nky/unofficial-stremio-ps5-port', name: 'Stremio', about: 'Unofficial Stremio client' },
   { cat: M, repo: 'stupiditytries/StremiBrew', name: 'StremiBrew', about: 'Another native Stremio port' },
   { cat: M, repo: 'bornaradusin/Emby5', name: 'Emby5', about: 'Emby client' },

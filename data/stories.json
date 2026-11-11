@@ -1,5 +1,183 @@
 [
   {
+    "id": "ps5upload-v1245-v1247",
+    "date": "2026-11-11",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.4.5–v12.4.7: Play Together lag fix and NFS share repair",
+    "summary": "PS5 Upload v12.4.5 through v12.4.7 fix Play Together picture lag on home networks, NFS share connectivity on Linux/NAS servers, and phone-app layout issues.",
+    "body": [
+      "PS5 Upload v12.4.5 by phantomptr fixes a Play Together regression where friends’ pictures lagged behind by several seconds even on fast home networks. The app mistook quiet menu screens (which send little data) for a slow connection, throttling the stream when the game got busy again. Friends on your home network now get the full stream rate at all times. The update also keeps slow-connection friends from falling further behind by skipping ahead to fresh frames, and improves error messages when Remote Play hangs. v12.4.6 fixes phone-app text being squeezed into a one-letter column on the Network Shares and Shared Folders menus, and repairs NFS connectivity with many Linux, NAS and Windows servers by finding the mount service over UDP as well as TCP.",
+      "v12.4.7 is a follow-up with additional stability fixes. Download the latest version from the GitHub releases page. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.4.7 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.4.7"
+      },
+      {
+        "name": "PS5 Upload v12.4.5 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.4.5"
+      }
+    ]
+  },
+  {
+    "id": "psbox-v169",
+    "date": "2026-11-11",
+    "tag": "Media",
+    "title": "PSBox Cloud Gaming v1.6.9: overhauled DualSense gyro and SmartGlass companion",
+    "summary": "PSBox Cloud Gaming v1.6.9 re-engineers DualSense gyro aiming for precision shooters, adds a virtual steering wheel mode, and introduces a SmartGlass WebUI companion accessible via QR code from the in-game menu.",
+    "body": [
+      "PSBox Cloud Gaming v1.6.9 by RafaelNGP completely overhauls DualSense gyro controls. Fine aiming in shooters like Fortnite is now 1:1 responsive with subtle wrist movements, and horizontal aim tracks room gravity and body posture rather than controller tilt. A new Virtual Steering Wheel mode with auto-centering turns the DualSense into a racing wheel with four driving presets (Casual, Normal, Aggressive, Drift). Quick in-game calibration lets you tune sensitivity with instant visual feedback.",
+      "The in-game stream menu now includes a SmartGlass WebUI companion card with a QR code pointing to the console’s local web interface. Scan with your phone to adjust settings, use virtual thumbsticks, and monitor live FPS and video quality telemetry. Multiple devices can connect simultaneously. The update also reorganizes the stream menu into two tabs and refines the visual design. Users on v1.6.3 or older from the legacy xbox-cloud-gaming-ps5 repo can update through a temporary bridge release that redirects to the official repository. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "PSBox Cloud Gaming v1.6.9 release",
+        "url": "https://github.com/RafaelNGP/psbox-cloud-gaming/releases/tag/v1.6.9"
+      }
+    ]
+  },
+  {
+    "id": "glibren-v093-v094-teste",
+    "date": "2026-11-11",
+    "tag": "Tool",
+    "title": "glibren v0.9.3–v0.9.4-teste: internet clock sync and one-tap game activation",
+    "summary": "glibren v0.9.3-teste adds automatic PS5 clock correction from NTP servers, fixing HTTPS issues on offline consoles. v0.9.4-teste adds an ACTIVATE button that copies stored games to a ShadowMount folder in one tap.",
+    "body": [
+      "glibren v0.9.3-teste by pristmc-code tackles a common problem on jailbroken PS5 consoles without PSN: the system clock is never set, which breaks HTTPS and leaves YouTube apps unable to find videos. glibren now checks the time on startup, every six hours, and after rest mode against NTP servers (Cloudflare, NTP.br, Google) and the Date header of an HTTPS site. When at least two sources agree and the clock is off by more than 30 seconds, it corrects it automatically. A new Clock card on the Temperature page shows the status and offers a manual Check button. The update also reads the ShadowMountPlus API port from its new v2 config format.",
+      "v0.9.4-teste adds an ACTIVATE button next to stored games (those not in a ShadowMount folder and with no active copy). One tap copies the game to the ShadowMount folder with the most free space, keeping 512 MB spare. Clear error messages appear when no ShadowMount folder is marked or when no folder has enough room. Both are test builds not yet run on a PS5. Requires a jailbroken PS5 with ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "glibren v0.9.4-teste release",
+        "url": "https://github.com/pristmc-code/ps5-glibren-releases/releases/tag/v0.9.4-teste"
+      },
+      {
+        "name": "glibren v0.9.3-teste release",
+        "url": "https://github.com/pristmc-code/ps5-glibren-releases/releases/tag/v0.9.3-teste"
+      }
+    ]
+  },
+  {
+    "id": "lineup-v200",
+    "date": "2026-11-10",
+    "tag": "Tool",
+    "title": "Lineup v2.0.0: pinning fix, hide system tiles and Media Gallery tab moves",
+    "summary": "Lineup v2.0.0 fixes saving with pinned apps, lets you hide All Apps and other system tiles, and allows the Media Gallery to move between the Games and Media tabs.",
+    "body": [
+      "Lineup v2.0.0 by bps2414 fixes the persistent \"The row changed since it was read\" save error that hit users who pinned apps. The console renumbers pinned apps every half minute while Lineup is open, and saving now checks the order rather than the exact numbers. All Apps (the App Library tile on the Media tab) can now be hidden and shown again from Hidden apps, just like the PS Store and Media Gallery. The Media Gallery can move between the Games and Media tabs using Options > Move, and stays on its chosen tab after restarts and rest mode.",
+      "Other improvements include shorter Brazilian Portuguese notification messages, a readable QR code on the star page (previously cut off halfway), fixes for moved apps keeping their old concept on the wrong tab, and a Remove TabShifter leftovers option. On first run, v2.0.0 backs up both databases to /data/lineup/backups/ before making changes. Requires a jailbroken PS5 with ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "Lineup v2.0.0 release",
+        "url": "https://github.com/bps2414/lineup/releases/tag/v2.0.0"
+      }
+    ]
+  },
+  {
+    "id": "fbneo-ps5-v24",
+    "date": "2026-11-10",
+    "tag": "Emulator",
+    "title": "FinalBurn Neo v2.4: GPU rendering with CRT filters and experimental rollback netplay",
+    "summary": "FinalBurn Neo PS5 v2.4 adds Vulkan GPU output with eleven CRT filters at 4K resolution, plus experimental two-player rollback netplay over direct TCP connections.",
+    "body": [
+      "FinalBurn Neo PS5 v2.4 by MisterTemaki adds Vulkan/RADV GPU presentation. The CPU core generates the original game frame while the GPU handles texture scaling, CRT filtering, interface composition and final presentation. Eleven CRT filters are available, including the default Easymode style, with the GPU pass taking just 0.4–0.6 ms. Initial logs confirm 3840×2160 output at 59.940 Hz, with games like Daytona USA, Cadillacs and Dinosaurs, and Contra running at near-60 fps. Software rendering remains available via gpu=0 in fbneo-ps5.ini.",
+      "The release also introduces experimental two-player rollback netplay. With a compatible game running, press L3+R3 to open the Netplay menu, then host or join via IPv4 address and TCP port. Both players need the same v2.4 build with matching ROM/BIOS content and DIP settings. This uses a direct connection and does not connect to Fightcade or RetroArch. A session between two physical PS5 consoles has not yet been validated. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "FBNeo PS5 v2.4 release",
+        "url": "https://github.com/MisterTemaki/fbneo-ps5/releases/tag/v2.4"
+      }
+    ]
+  },
+  {
+    "id": "sm-toolbox-v009",
+    "date": "2026-11-10",
+    "tag": "PC & Linux",
+    "title": "SM+ Toolbox v0.0.9: new icon and interface overhaul",
+    "summary": "SM+ Toolbox v0.0.9 gets its own green icon, a calmer dark/light interface with five accent presets, improved accessibility, and refreshed project documentation.",
+    "body": [
+      "SM+ Toolbox v0.0.9 by AldySan, the desktop companion app for ShadowMountPlus, drops the borrowed ShadowMountPlus artwork for its own green squircle icon with a mountain range and plus sign. The interface has been redesigned with a custom palette in both dark and light themes, five accent presets, sentence-case labels replacing uppercase micro labels, and text contrast that passes WCAG AA on every surface.",
+      "Accessibility improvements include visible focus rings on inputs, properly associated labels, a real radio group for the accent picker, and a proper Settings button. The project also gets a refreshed README with badges, a table of contents, a contributor guide, and structured issue/pull request templates. Available for Windows (.exe, .zip) and Linux (AppImage, .deb, .rpm)."
+    ],
+    "sources": [
+      {
+        "name": "SM+ Toolbox v0.0.9 release",
+        "url": "https://github.com/AldySan/SM-Toolbox/releases/tag/v0.0.9"
+      }
+    ]
+  },
+  {
+    "id": "xpsemu-v34",
+    "date": "2026-11-10",
+    "tag": "Emulator",
+    "title": "XPSemu v3.4: MSAA anti-aliasing, turbo buttons and region box art",
+    "summary": "XPSemu Alpha 3.4 adds MSAA 2x/4x/8x anti-aliasing per game, turbo button support, and region-specific box art with spines for European and Japanese discs.",
+    "body": [
+      "XPSemu Alpha 3.4 by ZiZc3 adds MSAA anti-aliasing at 2x, 4x or 8x per game (off by default, heavy on big titles). A new turbo button feature lets you hold a button instead of tapping it repeatedly — useful for shooters where holding fire keeps the gun shooting. Turbo can be activated on Cross, Circle, Square, Triangle, R2, two together, or all buttons in each game’s Controller settings or the quick menu.",
+      "European and Japanese discs now display their own region’s box art with front, back and spines, falling back to USA covers when region-specific art isn’t available. Game fixes include SSX 3 (THX intro no longer freezes), SSX On Tour (gets past loading), FIFA 06/07 (no longer stuck loading), and Def Jam: Fight for NY Europe (no longer crashes at start). Run XPSemu with kstuff-lite and at least ShadowMountPlus on a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "XPSemu v3.4 release",
+        "url": "https://github.com/ZiZc3/XPSemu/releases/tag/v3.4"
+      }
+    ]
+  },
+  {
+    "id": "vlc-v061",
+    "date": "2026-11-10",
+    "tag": "Media",
+    "title": "VLC v0.6.1: share playlists, network playback from other apps and phone controls",
+    "summary": "VLC for PS5 v0.6.1 adds SMB files and folders to playlists, a Playlists row on Home, autoplay links from other PS5 apps, and a Network tab on the phone/PC page for remote share management.",
+    "body": [
+      "VLC for PS5 v0.6.1 by ZiZc3 brings playlist support for network shares. In Browse, highlight a video or song on a share and press Options to add it to a playlist, or add entire folders (with or without subfolders). Share files display their name, length and picture in the playlist. A new Playlists row appears on Home under Videos, with ✕ to open a playlist and △ to play all.",
+      "Other apps like TorrServer and Lampa can now send video links to VLC through an autoplay.txt file or an HTTP endpoint on port 8080. The phone/PC web page gains a Network tab for playing links directly on the TV and adding network shares with saved credentials. Bug fixes include playlist pictures surviving Helper restarts and a .zip/.rar browsing regression. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "VLC v0.6.1 release",
+        "url": "https://github.com/ZiZc3/VLC/releases/tag/v0.6.1"
+      }
+    ]
+  },
+  {
+    "id": "playden-v0110b3",
+    "date": "2026-11-10",
+    "tag": "PC & Linux",
+    "title": "Playden v0.11.0-beta.3: Euro Truck Simulator 2 controller fix and runtime kit 0.23",
+    "summary": "Playden v0.11.0-beta.3 fixes the ETS2 controller regression from beta 2, adds a Steam Input per-game setting, and ships runtime kit 0.23 with Fallout intro movie fixes and Black Mesa support.",
+    "body": [
+      "Playden v0.11.0-beta.3 by leolobato fixes the controller regression in Euro Truck Simulator 2 that beta 2 introduced. ETS2 now takes the Xbox controller again and plays with many mods or all its DLCs. A new Steam Input choice in Game settings handles games like ETS2 that need specific controller handling. Black Mesa now starts successfully.",
+      "Runtime kit 0.23 also plays Fallout’s intro movies at full speed and adds a per-game switch for games that hang on the console’s network adapters. To get the beta from v0.7.0 or newer, turn on Settings › Updates › Beta updates, then Check now. The update requires at least 8 GB of free console storage. Requires a jailbroken PS5 with ShadowMountPlus. Beta of alpha software — new bugs are expected."
+    ],
+    "sources": [
+      {
+        "name": "Playden v0.11.0-beta.3 release",
+        "url": "https://github.com/leolobato/playden-ps5/releases/tag/v0.11.0-beta.3"
+      }
+    ]
+  },
+  {
+    "id": "winbrew-11-notepad-start-recycle",
+    "date": "2026-11-10",
+    "tag": "PC & Linux",
+    "title": "WinBrew 11: Notepad tabs with find/replace, Start context menus and Recycle Bin",
+    "summary": "WinBrew 11’s notepad-start-recycle update brings a tabbed Notepad with find and replace, context menus on the desktop and Start menu, and a working Recycle Bin with item recovery.",
+    "body": [
+      "WinBrew 11 by KPKev ships the notepad-start-recycle-dev-v1 update (PPSA77382) with a refreshed Notepad featuring tabs, find and replace, undo/redo, Save and Save As with editable names and replacement confirmation. Unsaved edits are protected by prompts, and the developer confirmed physical-keyboard typing on the PS5. Desktop and Start gain context menus via mouse right-click or controller Circle, offering cut, copy, paste and delete on desktop files. Built-in apps can be pinned or unpinned from the desktop, Start and taskbar.",
+      "A new Personalization option lets you change the display name shown in Start (default: WinBrew), without moving the personal folder. The Recycle Bin now collects deleted items with individual removal, confirmation on Empty, and recovery from older locations including connected volumes. Large bins can be browsed in batches with search and sorting. The built-in Quake II shortcut and legacy search launch were removed. Vapor remains available. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "WinBrew 11 notepad-start-recycle release",
+        "url": "https://github.com/KPKev/WinBrew-11/releases/tag/notepad-start-recycle-dev-v1"
+      }
+    ]
+  },
+  {
     "id": "cbfd-recompiled-ps5",
     "date": "2026-11-09",
     "tag": "Port",
