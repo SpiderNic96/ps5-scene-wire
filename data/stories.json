@@ -1,5 +1,22 @@
 [
   {
+    "id": "lineup-v201",
+    "date": "2026-11-11",
+    "tag": "Tool",
+    "title": "Lineup v2.0.1: fixes app moves on older firmware databases",
+    "summary": "Lineup v2.0.1 fixes moving apps whose AppInfoJson is stored as a field list, as written by older firmware and some package installers, so tab, category and hub link changes now stick.",
+    "body": [
+      "Lineup v2.0.1 by bps2414 fixes a bug when moving apps whose internal AppInfoJson is a field list rather than the usual key-value format. Older PS5 firmware and some package installers write the database this way. Previously, Lineup added the new tab, category and hub link as separate keys alongside the old list, leaving the app on its original tab. Now it updates the values inside the field list directly, so the move takes effect. Stale keys from earlier versions are cleaned up on the next move or when Lineup starts.",
+      "The README now lists which firmware has been checked: a 13.60 console and copies of the 11.40 and 13.00 home-screen databases. A new issue form makes it easy to submit firmware compatibility reports. Requires a jailbroken PS5 with ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "Lineup v2.0.1 release",
+        "url": "https://github.com/bps2414/lineup/releases/tag/v2.0.1"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v1245-v1247",
     "date": "2026-11-11",
     "tag": "Tool",
