@@ -96,6 +96,10 @@ export const SOURCES = [
   { cat: T, repo: 'Gl0ttis/ps5-tls-verify', name: 'ps5-tls-verify', about: 'Toggleable TLS certificate override for lab testing' },
   { cat: T, repo: 'Phynix88/ps5-hass-payload', name: 'PS5 Home Assistant Bridge', about: 'Standalone Home Assistant bridge with TV pairing' },
   { cat: T, repo: 'gowithme-club/ps5-playtime-tracker', name: 'PS5 Playtime Tracker', about: 'Playtime and trophy tracker for gowithme.club' },
+  { cat: T, repo: 'heydemoura/ps5-memcard', name: 'PS5 Memcard', about: 'Automatic save mirroring to USB drives' },
+  { cat: T, repo: 'marcelorsdd/OpenPSApp', name: 'OpenPSApp', about: 'Offline PlayStation App features: playtime, trophies and profile' },
+  { cat: T, repo: 'Techsociology/ps5_download_manager', name: 'PS5 Download Manager', about: 'Web-based download manager with queues and resume' },
+  { cat: T, repo: 'rikleigh/parallax-browser', name: 'Parallax Browser', about: 'WebKit browser with PS VR2 video playback' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },
@@ -123,6 +127,7 @@ export const SOURCES = [
   { cat: E, repo: 'darkxex/SwanStationPS5', name: 'SwanStationPS5', about: 'PS1, Vulkan, RetroAchievements' },
   { cat: E, repo: 'heydemoura/EglantinePS5', name: 'EglantinePS5', about: 'Switch 2, based on Eglantine/Eden' },
   { cat: E, repo: 'niakw/ProsperoEden-Encore', name: 'ProsperoEden Encore', about: 'Switch, FW 13.60 focused Eden fork' },
+  { cat: E, repo: 'thereal47Ronin/GBAR5', name: 'GBAR5', about: 'Game Boy Advance, based on mGBA' },
 
   // PC, Linux and Steam
   { cat: P, repo: 'ps5-linux/ps5-linux-loader', name: 'ps5-linux', about: 'Linux loader, low firmware' },
@@ -203,4 +208,5 @@ export const SOURCES = [
   { cat: R, repo: 'dannyboyjaros/ps5classof09theflipside', name: 'Class of \'09: The Flip Side', about: 'Visual novel sequel port from PC, bring your own game files' },
   { cat: R, repo: 'Samclay8/DK64-Rekongpiled-PS5', name: 'DK64 Rekongpiled', about: 'N64 recomp, 4K 60fps with HD textures, bring your own ROM' },
   { cat: R, repo: 'Samclay8/CBFD-Recompiled-PS5', name: 'Conker\'s Bad Fur Day: Recompiled', about: 'N64 recomp, 4K 60fps with texture packs, bring your own ROM' },
+  { cat: R, repo: 'KongaTime/Dantes-Inferno-PS5-Port', name: 'Dante\'s Inferno', about: 'Xbox 360 recomp, up to 4K, bring your own disc' },
 ];

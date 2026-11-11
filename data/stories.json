@@ -1,5 +1,145 @@
 [
   {
+    "id": "ps5-memcard",
+    "date": "2026-11-11",
+    "tag": "Tool",
+    "title": "PS5 Memcard: automatic save mirroring to USB drives",
+    "summary": "PS5 Memcard watches every save on a jailbroken PS5 and keeps a copy on USB drives, with a web UI for importing saves into any profile.",
+    "body": [
+      "PS5 Memcard by heydemoura is an ELF payload that continuously mirrors every save on the console — PS5 and PS4 titles, all profiles — to connected USB drives. Each USB drive with a /memcard folder becomes a memory card, and every card gets every save automatically. Cards that are unplugged catch up when reconnected. The web UI on port 8083 shows what is on each card, lets you import any card save into any profile on the console, back up individual games or everything at once, and delete copies you no longer need. Built on Garlic SaveMgr by earthonion for its native save mounting and re-signing code.",
+      "Loading the payload adds a PS5 Memcard shortcut to the Media tab and shows a notification with how many memory cards were detected. The app supports multiple USB drives simultaneously and keeps its own index per card. Requires a jailbroken PS5 with an ELF loader (elfldr on port 9021). Drives must be exFAT or FAT32."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Memcard repository",
+        "url": "https://github.com/heydemoura/ps5-memcard"
+      }
+    ]
+  },
+  {
+    "id": "dantes-inferno-ps5-port",
+    "date": "2026-11-11",
+    "tag": "Port",
+    "title": "Dante's Inferno PS5 Port: the Xbox 360 classic recompiled for PS5",
+    "summary": "Dante's Inferno gets a native PS5 port with up to 4K resolution, PlayStation button prompts and a launcher that prepares game data from your own Xbox 360 disc image.",
+    "body": [
+      "Dante's Inferno PS5 Port by KongaTime brings the 2010 Xbox 360 action game to the PS5 as a recompiled native homebrew title (PPSA99343). Version 1.1.0 defaults to 1440p rendering with an option for full 4K (3840×2160), up from the original 720p. The port includes PlayStation button prompts, a native renderer and a launcher that can extract game data directly from your own Xbox 360 disc ISO and Title Update 2. If your game files are already extracted, drop them into the gamedata folder and skip the ISO step.",
+      "Install by extracting the PPSA99343 folder to /data/homebrew/ and registering it with ShadowMount+. You need your own copy of the game — the download provides only the port code. Resolution can be changed from the launcher menu and is remembered between sessions. Requires a jailbroken PS5 with ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "Dante's Inferno PS5 Port v1.1.0",
+        "url": "https://github.com/KongaTime/Dantes-Inferno-PS5-Port/releases/tag/v1.1.0"
+      }
+    ]
+  },
+  {
+    "id": "gbar5",
+    "date": "2026-11-11",
+    "tag": "Emulator",
+    "title": "GBAR5: native Game Boy Advance emulator for PS5",
+    "summary": "GBAR5 brings mGBA-powered GBA and Game Boy emulation to the PS5 as a native home-screen app with RetroAchievements, cheats, save states and a game shelf.",
+    "body": [
+      "GBAR5 by thereal47Ronin is a native PS5 homebrew app (PPSA97511) that emulates Game Boy Advance and Game Boy games using the mGBA libretro core compiled for the PS5 CPU. It installs on the home screen as a real title with its own icon, not a payload or stream. The front end provides a shelf view of your games with cover art, ten save-state slots per game with thumbnails, quick resume, RetroAchievements integration, cheat support, and a phone-friendly settings page. Rendering goes through Vulkan on the console's GPU.",
+      "Place your ROMs in the app's folder at /data/homebrew/PPSA97511/. Requires a jailbroken PS5 with kstuff loaded. Development and testing was done on firmware 9.40."
+    ],
+    "sources": [
+      {
+        "name": "GBAR5 repository",
+        "url": "https://github.com/thereal47Ronin/GBAR5"
+      }
+    ]
+  },
+  {
+    "id": "parallax-browser",
+    "date": "2026-11-11",
+    "tag": "Tool",
+    "title": "Parallax Browser: a WebKit browser for PS5 with PS VR2 video playback",
+    "summary": "Parallax Browser is an experimental homebrew web browser for the PS5 built on WPE WebKit, featuring VR video playback in the PS VR2 headset.",
+    "body": [
+      "Parallax Browser by rikleigh is a homebrew web browser for jailbroken PS5 consoles, built on WPE WebKit with GPU compositing. Its headline feature is View in VR: press R3 on any page playing video and it appears in your PS VR2 headset, supporting 180° and 360° video, side-by-side and top-and-bottom 3D, and fisheye projection. The browser includes WebGL 1 and 2, hardware video decoding for H.264, HEVC and VP9 up to 8K, WebAssembly with JIT, tabs, bookmarks, history, private browsing and a gamepad mode for browser games.",
+      "Experimental — tested on one console on firmware 13.60 with a DualSense and PS VR2. WebXR is not supported yet. Requires a jailbroken PS5 with kstuff, etaHEN, elfldr on port 9021 and ftpsrv on port 2121. Does not bundle any Sony system files, firmware or keys."
+    ],
+    "sources": [
+      {
+        "name": "Parallax Browser repository",
+        "url": "https://github.com/rikleigh/parallax-browser"
+      }
+    ]
+  },
+  {
+    "id": "openpsapp",
+    "date": "2026-11-11",
+    "tag": "Tool",
+    "title": "OpenPSApp: offline PlayStation App features on your jailbroken PS5",
+    "summary": "OpenPSApp brings playtime tracking, trophies with hidden ones, monthly recaps and a trophy timeline to the PS5 without needing PSN or the PlayStation App.",
+    "body": [
+      "OpenPSApp by marcelorsdd is an ELF payload that brings PlayStation App features directly to a jailbroken PS5 without requiring PSN. It reads the console's own playtime and trophy files and serves a React web UI on port 7777. Features include per-game playtime, full trophy lists including hidden trophies, recent trophies per game, a monthly recap and a trophy timeline. On first run it adds an OpenPSApp tile to the Media tab; you can also access it from any device on your network.",
+      "Install by loading openpsapp.elf with your payload loader (elfldr on port 9021, Prospero Manager or an autoload setup). Settings are stored in /data/openpsapp/config.json. The app only reads data — it does not modify any console files. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "OpenPSApp repository",
+        "url": "https://github.com/marcelorsdd/OpenPSApp"
+      }
+    ]
+  },
+  {
+    "id": "ps5-download-manager",
+    "date": "2026-11-11",
+    "tag": "Tool",
+    "title": "PS5 Download Manager: queued multi-connection downloads on the console",
+    "summary": "PS5 Download Manager is a web-based download manager payload for jailbroken PS5 with up to 16 named queues, resume support and multi-connection downloads.",
+    "body": [
+      "PS5 Download Manager by Techsociology is a native ELF payload that hosts a download manager UI on port 5837. It supports up to 16 named queues each with configurable concurrency (1–8 simultaneous downloads), pause and resume, multi-connection downloads for faster speeds, and a link grabber. The UI opens in the PS5 browser from a Media-tab shortcut or from any device on your LAN.",
+      "Send dlmgr.elf to your ELF loader to start it. The payload adds a shortcut to the Media tab automatically. Downloaded files are saved to the console's storage. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Download Manager repository",
+        "url": "https://github.com/Techsociology/ps5_download_manager"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v1248",
+    "date": "2026-11-11",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.4.8: large RAR extraction and Workshop output fix",
+    "summary": "PS5 Upload v12.4.8 fixes RAR extraction for archives with large dictionaries (up to 4 GB) and moves game image building to the Workshop Output folder.",
+    "body": [
+      "PS5 Upload v12.4.8 by phantomptr fixes RAR archive extraction on the PS5 for archives packed with a large dictionary — up to 4 GB, which is common for big game archives. Previously these failed with a \"Declared dictionary size is not supported\" error. The fix was tested on a PS5 Pro with a 4 GB-dictionary multi-part archive.",
+      "The update also changes the \"Send it as one game image\" feature to build the image in Workshop's Output folder instead of always using the Downloads folder, and adds a Change button to pick another location. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.4.8 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.4.8"
+      }
+    ]
+  },
+  {
+    "id": "glibren-youtube-dns-glibren2",
+    "date": "2026-11-11",
+    "tag": "Media",
+    "title": "glibren YouTube builds add public DNS fallback for blocked consoles",
+    "summary": "The glibren-modified builds of ytps5 and YouTube Max'd now resolve YouTube and Google hosts through public DNS when the console's DNS blocks them.",
+    "body": [
+      "pristmc-code has released glibren2 builds of ytps5 (v1.0.5) and YouTube Max'd (v1.6.0) — the modified YouTube apps installed by the glibren payload. The new feature resolves YouTube and Google hosts through a public DNS server (8.8.8.8 or 1.1.1.1) when the console's own DNS blocks them by returning 0.0.0.0. Only YouTube and Google domains are resolved this way; Sony and PlayStation names are never redirected through public DNS.",
+      "These are test builds and have not yet been verified on a PS5 console. Install via the glibren payload's Apps window, or copy the ZIP contents to the app's install folder under /data/homebrew/. Full source code is included. Based on ytps5 by haasele (GPL-3.0) and YouTube Max'd by HandshakeHackin (GPL-3.0)."
+    ],
+    "sources": [
+      {
+        "name": "ytps5 1.0.5-glibren2 release",
+        "url": "https://github.com/pristmc-code/ps5-glibren-releases/releases/tag/ytps5-1.0.5-glibren2"
+      },
+      {
+        "name": "YouTube Max'd 1.6.0-glibren2 release",
+        "url": "https://github.com/pristmc-code/ps5-glibren-releases/releases/tag/youtube-maxd-1.6.0-glibren2"
+      }
+    ]
+  },
+  {
     "id": "lineup-v201",
     "date": "2026-11-11",
     "tag": "Tool",

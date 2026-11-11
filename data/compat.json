@@ -781,6 +781,25 @@
       "needs": [
         "ShadowMountPlus"
       ]
+    },
+    "thereal47Ronin/GBAR5": {
+      "tested": [
+        "9.40"
+      ],
+      "needs": [
+        "kstuff"
+      ],
+      "note": "Development and testing on firmware 9.40."
+    },
+    "rikleigh/parallax-browser": {
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "kstuff",
+        "etaHEN"
+      ],
+      "note": "Experimental. Tested on one console on firmware 13.60."
     }
   },
   "unstated": [
@@ -797,6 +816,7 @@
     "EchoStretch/kstuff",
     "EchoStretch/kstuff-lite",
     "KPKev/WinBrew-11",
+    "KongaTime/Dantes-Inferno-PS5-Port",
     "KongaTime/PS5_EdgeOfTimeTitle",
     "KongaTime/The-Darkness-Recomp-PS5",
     "KongaTime/Wario-Land-Shake-It-PS5",
@@ -811,6 +831,7 @@
     "NotSoTypicalGamer/ShadowPKG",
     "Starter-ps5/Common-FPS-for-PS5",
     "SvenGDK/Prospero-Explorer",
+    "Techsociology/ps5_download_manager",
     "TheCriicom/omega-dashboard",
     "TheRealRetro/mupen64plus-ps5",
     "VenezuelanBiggie24/MacheteSVG-PS5-Save-Manager",
@@ -849,6 +870,7 @@
     "griches/PS5_MarioGalaxy",
     "griches/PS5_Quake3e",
     "griches/PS5_SwitchWaker",
+    "heydemoura/ps5-memcard",
     "hollamhide/hollamhide.github.io",
     "itsPLK/ps5-payload-manager",
     "juma-sayeh/PS5-Game-Compressor",
@@ -858,6 +880,7 @@
     "leafyjerk/PS5_LuigisMansion",
     "logicalpeyote777/ps5-14.00-jailbreak-research",
     "manos555555/PS5-Suite",
+    "marcelorsdd/OpenPSApp",
     "mpereiraesaa/prospero-win",
     "mshivam019/la-ps5",
     "nikay99/PS5MG",
