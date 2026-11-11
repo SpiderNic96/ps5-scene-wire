@@ -1,5 +1,90 @@
 [
   {
+    "id": "xpsemu-v35",
+    "date": "2026-11-11",
+    "tag": "Emulator",
+    "title": "XPSemu v3.5: resolution up to x10 and ambient occlusion",
+    "summary": "XPSemu Alpha 3.5 pushes internal resolution to x10, adds screen-space ambient occlusion and fixes precision bugs in the GPU pipeline.",
+    "body": [
+      "XPSemu v3.5 by ZiZc3 raises the internal resolution ceiling to x10, meaning a 640×480 game can now render at 6400×4800 — over 30 million pixels — then downscale to the display. The new setting is available under Settings → Graphics. The update also adds screen-space ambient occlusion (SSAO), giving 3D scenes softer contact shadows around objects and edges that the original hardware did not produce.",
+      "On the fixes side, v3.5 corrects GPU precision issues that caused colour banding and shimmering in certain scenes, and improves vertex-buffer handling that could crash specific titles on boot. XPSemu is a native PS5 homebrew emulator for the original Xbox; requires a jailbroken PS5 with an ELF loader and your own Xbox BIOS and game dumps."
+    ],
+    "sources": [
+      {
+        "name": "XPSemu v3.5 release",
+        "url": "https://github.com/ZiZc3/XPSemu/releases/tag/v3.5"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v1249",
+    "date": "2026-11-11",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.4.9: tar and zstd archive support",
+    "summary": "PS5 Upload v12.4.9 adds upload-with-unpack for tar archives (.tar, .tar.zst, .tar.gz, .tar.xz, .tar.bz2), single .zst files and zstd-compressed zips.",
+    "body": [
+      "PS5 Upload v12.4.9 by phantomptr expands the upload-with-unpack feature to handle tar archives in all major compression formats: plain .tar, .tar.zst/.tzst, .tar.gz/.tgz, .tar.xz/.txz and .tar.bz2/.tbz2, plus standalone .zst files and zip archives compressed with zstd. Archives are unpacked on-the-fly as they stream to the console, so you no longer need to extract and re-pack into zip or RAR before uploading.",
+      "This release follows v12.4.8 (which fixed large-dictionary RAR extraction). PS5 Upload is a file-management tool for jailbroken PS5 consoles that handles uploads, downloads, extraction and game-image building through a web interface."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.4.9 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.4.9"
+      }
+    ]
+  },
+  {
+    "id": "reundr2-surround",
+    "date": "2026-11-11",
+    "tag": "Port",
+    "title": "reUndr 2 v01.001.000: 5.1 surround sound for Need for Speed Underground 2",
+    "summary": "reUndr 2 build 01.001.000 adds native 5.1 surround output for Need for Speed Underground 2 on PS5, routing car engines and effects through the game's original positional channels.",
+    "body": [
+      "reUndr 2 build 01.001.000 by bystritskiy brings 5.1 surround sound to the PS5 port of Need for Speed: Underground 2. Car engines, environmental effects and music now keep their original 5.1 channel positions when the PS5 is connected to a surround system. The console's native audio output handles the routing, and the signal folds down automatically for TV speakers and headphones so stereo setups still work correctly.",
+      "reUndr 2 is a static recompilation of the original Xbox version of NFS Underground 2 into a native PS5 homebrew app. It requires a jailbroken PS5 with ShadowMountPlus and your own copy of the game. Previous builds already supported 4K rendering, HD text, split-screen and DualSense controls; 5.1 surround was the most-requested audio feature."
+    ],
+    "sources": [
+      {
+        "name": "reUndr 2 01.001.000 release",
+        "url": "https://github.com/bystritskiy/reUndr2-ps5/releases/tag/01.001.000"
+      }
+    ]
+  },
+  {
+    "id": "glibren-youtube-maxd-glibren4",
+    "date": "2026-11-11",
+    "tag": "Tool",
+    "title": "glibren YouTube Max'd 1.6.0-glibren4: cross-app YouTube search",
+    "summary": "The latest glibren YouTube Max'd build lets other PS5 homebrew apps request a YouTube search, opening the results inside the modified YouTube client.",
+    "body": [
+      "glibren YouTube Max'd 1.6.0-glibren4 by pristmc-code adds cross-app YouTube search: another homebrew program can write a search query to glibrenbusca.txt in the shared homebrew data folder (/data/homebrew/PPSA99991 or /app0), and the modified YouTube client picks it up and opens the results page. This enables integration between custom launchers, media dashboards or other homebrew and YouTube without the user needing to type the query manually on the console's on-screen keyboard.",
+      "The build is based on YouTube Max'd 1.6.0 (GPL-3.0-or-later), itself built on ProsperoTube and EVO Player. It ships as a ready-to-install homebrew package. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "glibren YouTube Max'd 1.6.0-glibren4 release",
+        "url": "https://github.com/pristmc-code/ps5-glibren-releases/releases/tag/youtube-maxd-1.6.0-glibren4"
+      }
+    ]
+  },
+  {
+    "id": "prefbar-battery-overlay",
+    "date": "2026-11-11",
+    "tag": "Tool",
+    "title": "PrefBar: standalone DualSense battery overlay for PS5",
+    "summary": "PrefBar is a new standalone payload that draws a compact DualSense battery gauge over any running game, with a low-battery warning and touchpad toggle.",
+    "body": [
+      "PrefBar v1.0.1 by VoxDon3 is a standalone on-screen battery overlay for jailbroken PS5 consoles. It reads the DualSense battery level through libSceHidControl and draws a compact three-segment gauge over the running game using the ShellUI renderer. At 20% or below the gauge switches to a blinking red outline as a low-battery warning. A triple-click on the DualSense touchpad toggles the overlay on or off.",
+      "PrefBar ships as a single combined ELF that packages both the controller module and the renderer, with no separate payload or network connection needed. Load it with any ELF loader on a jailbroken PS5. The overlay position and appearance adapt to the game scene and firmware."
+    ],
+    "sources": [
+      {
+        "name": "PrefBar repository",
+        "url": "https://github.com/VoxDon3/PrefBar"
+      }
+    ]
+  },
+  {
     "id": "ps5-memcard",
     "date": "2026-11-11",
     "tag": "Tool",

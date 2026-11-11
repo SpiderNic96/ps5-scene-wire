@@ -78,6 +78,7 @@ export const SOURCES = [
   { cat: T, repo: 'J7mbo/nasbridge-ps5', name: 'NASBridge', about: 'Browse and install games from your NAS over WebDAV or SMB' },
   { cat: T, repo: 'griches/PS5_ArtSwap', name: 'Art Swap', about: 'Change home-screen icons and backgrounds with SteamGridDB art' },
   { cat: T, repo: 'VoxDon3/vox-launcher', name: 'VoX Launcher', about: 'Payload launcher with built-in web dashboard' },
+  { cat: T, repo: 'VoxDon3/PrefBar', name: 'PrefBar', about: 'Standalone DualSense battery overlay for PS5' },
   { cat: T, repo: 'AdamGoodApp/prosperokit', name: 'ProsperoKit', about: 'React + Tailwind framework for native PS5 homebrew apps' },
   { cat: T, repo: 'ghost1372/PS5-Payload-Template', name: 'PS5 Payload Template', about: 'Boilerplate for payloads with a web UI and SQLite' },
   { cat: T, repo: 'ghost1372/PlayTime', name: 'PlayTime', about: 'View and edit per-user game play times' },
