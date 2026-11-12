@@ -1,5 +1,56 @@
 [
   {
+    "id": "psbox-v170-profiles",
+    "date": "2026-11-12",
+    "tag": "Media",
+    "title": "PSBox Cloud Gaming v1.7.0: per-profile Xbox accounts, free tier and gyro calibration",
+    "summary": "PSBox Cloud Gaming v1.7.0 gives every PS5 profile its own Xbox sign-in with isolated libraries and settings, adds a proper free tier with 30-minute ad-supported sessions, and introduces automatic gyro aim calibration that measures each game's stick response.",
+    "body": [
+      "PSBox Cloud Gaming v1.7.0 by RafaelNGP overhauls profile handling so every PS5 profile has its own Xbox account — sign-in, library, settings, hidden games and trophies are isolated per profile and encrypted on the device. Signing out in one profile no longer signs out the others. Accounts without a Game Pass subscription now see an \"Xbox Game Pass Free\" label with locks on subscription games and 30-minute ad-supported sessions. Pressing Play on a free game that is not on your account claims it and starts streaming immediately. A new Store country setting lets you browse another region's store and prices (for example Japan) while streaming stays on your local server. Games sold through editions or bundles now show their real prices, and games not sold in your region or listed as misleadingly \"free\" are filtered out.",
+      "Gyro aiming gets a calibration step: the app turns the camera by itself for about 40 seconds and measures how each game responds to stick input, then adjusts the aim to follow your hand at every speed. Game response presets (Linear, Smooth, Exponential, Fortnite) and per-axis invert are available per game. An experimental live-test mode (press triangle in the in-game gyro menu) shrinks the settings to a side panel so you can aim with L2 + gyro while adjusting. Image quality is improved with 16-bit processing and end-stage dithering for smoother skies, fog and shadows, plus higher stream bitrate on 1080p. A trophy crash about 20 seconds after launch when trophies were disabled is fixed, and Remove Synced Trophies now removes only the current profile's trophies. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "PSBox Cloud Gaming v1.7.0 release",
+        "url": "https://github.com/RafaelNGP/psbox-cloud-gaming/releases/tag/v1.7.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v12413",
+    "date": "2026-11-12",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.4.13: large Master Codes, preserved file dates",
+    "summary": "PS5 Upload v12.4.13 raises the cheat engine limit from 32 to 4096 locations so multi-address Master Codes apply, and files downloaded from the PS5 now keep their original dates.",
+    "body": [
+      "PS5 Upload v12.4.13 by phantomptr fixes the cheat engine for cheats that write to many memory addresses. A game's \"Master Code\" — which other cheats depend on — could hold up to 32 locations and about 8 KB of text; anything larger was refused with \"cheat has more locations than the engine can hold\". The limit is now 4096 locations. The Blood of Dawnwalker's Master Code, which has 37 locations, now applies, and the game's other cheats that require it work as intended.",
+      "Files downloaded from the PS5, such as video clips and screenshots, now keep their original date and time from the console instead of showing the time of download. ZIP downloads also preserve the dates. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.4.13 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.4.13"
+      }
+    ]
+  },
+  {
+    "id": "playden-v0110-beta4",
+    "date": "2026-11-12",
+    "tag": "PC & Linux",
+    "title": "Playden v0.11.0-beta.4: community recipes, DLC management and runtime kit 0.25",
+    "summary": "Playden v0.11.0-beta.4 lets players share and import game settings recipes without a GitHub account, adds per-game DLC management, and ships runtime kit 0.25 with Project Zomboid and Steam library folder fixes.",
+    "body": [
+      "Playden v0.11.0-beta.4 by leolobato opens community recipes to everyone. Game settings now lists the presets other players shared for a game, with how well they ran, and you can share your own in a few presses with no GitHub account required. New DLC management under Maintenance lists a game's DLC with their sizes — turning one on downloads only its files, turning one off removes only its own. A touchpad-hold option (hold 2 seconds) swaps to a mouse preset for menus the controller cannot navigate, then swaps back. Game settings opens on a summary showing the preset and your changes at a glance, with Steam settings under their own Compatibility heading.",
+      "Runtime kit 0.25 fixes Project Zomboid, which ran out of open files when loading a world — Wine now watches the game's folders itself. Steam games installed from this version onward run from Steam's own library folder, which fixes The Talos Principle's Croteam login screen. Borderlands 2 no longer starts its 2K launcher instead of the game, SUPERHOT gets past its quit-at-start issue, and Leaf It Alone launches after its splash. Cloud sync now reports the specific reason it cannot reach Steam (DNS, rate limit, timeout or no sign-in). Requires a jailbroken PS5 with etaHEN, kstuff and ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "Playden v0.11.0-beta.4 release",
+        "url": "https://github.com/leolobato/playden-ps5/releases/tag/v0.11.0-beta.4"
+      }
+    ]
+  },
+  {
     "id": "pstube-v017",
     "date": "2026-11-12",
     "tag": "Media",
