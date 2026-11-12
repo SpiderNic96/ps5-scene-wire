@@ -1,5 +1,60 @@
 [
   {
+    "id": "ps5upload-v12411-v12412",
+    "date": "2026-11-12",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.4.11–v12.4.12: cross-user save restore and Remote Play fix",
+    "summary": "PS5 Upload v12.4.12 lets you restore a save-data backup to a user who has never played the game, rewriting ownership automatically. v12.4.11 fixes Remote Play picture hitching under the system media player.",
+    "body": [
+      "PS5 Upload v12.4.12 by phantomptr adds cross-user save-data restoration. Restoring a backup to another user now works even when that user has no existing save for the game or is missing one of its save slots — the backup becomes that user's save by rewriting the account and user data inside it. Backups made on a different PS5 are also accepted. In testing on firmware 13.60, a save made on one console loaded in the game on another for a user who had never played it. The Mount button on disk images now asks for confirmation when the image holds a packed game (LZ4 or zstd) if ShadowMount+ is not running, since those games need it to launch.",
+      "PS5 Upload v12.4.11 fixes Remote Play picture hitching that occurred every 12 seconds when Settings > Video decoding was set to the system's media player. The player was requesting a fresh full frame periodically and blocking all other frames until it arrived. On consoles with large libraries, the game page now reports when it could not determine backport status rather than silently hiding the Backport button. Play Together friend-connection logs now consistently show whether a friend's picture and sound use the fast path or the slower fallback. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.4.12 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.4.12"
+      },
+      {
+        "name": "PS5 Upload v12.4.11 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.4.11"
+      }
+    ]
+  },
+  {
+    "id": "gbar5-v101",
+    "date": "2026-11-12",
+    "tag": "Emulator",
+    "title": "GBAR5 v1.0.1: shelf performance overhaul for large libraries",
+    "summary": "GBAR5 v1.0.1 caches category counts and memoises the multiplayer check, dropping the per-frame header cost from 1671 ms to 0.5 ms on a 1164-game library.",
+    "body": [
+      "GBAR5 v1.0.1 by thereal47Ronin is a performance-focused update for the PS5 Game Boy Advance emulator. The shelf (library view) now caches category counts and memoises the multiplayer check so they are not recomputed every frame. On a test library of 1164 games the per-frame header cost dropped from 1671 ms to 0.5 ms, and a full shelf draw completes in about 17.8 ms — roughly 56 FPS. The Settings > About screen also receives a cosmetic fix: the QR-code addresses now sit centred under their own codes and are no longer truncated.",
+      "Installation is unchanged from v1.0.0. Download GBAR5-v1.0.1-PS5.zip, unzip the PPSA97511 folder and copy it to /data/homebrew/ via FTP (port 2121) or PS5 Upload. Set permissions to 777 recursively, restart ShadowMountPlus or reboot, and GBAR5 appears on the home screen. Games go in /data/GBAR5/games/. Settings > About > Check for updates can install future releases from the app. Requires a jailbroken PS5 with etaHEN, kstuff and ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "GBAR5 v1.0.1 release",
+        "url": "https://github.com/thereal47Ronin/GBAR5/releases/tag/v1.0.1"
+      }
+    ]
+  },
+  {
+    "id": "phazonprime-v00001040",
+    "date": "2026-11-12",
+    "tag": "Port",
+    "title": "PhazonPrime v00.001.040: Fusion menu removed, version follows package metadata",
+    "summary": "PhazonPrime v00.001.040 removes the Metroid Fusion Bonuses entry from both menus, makes the displayed version follow installed package metadata, and fixes the image gallery returning to the menu after dependency loading.",
+    "body": [
+      "PhazonPrime v00.001.040 by BaZZtian removes the Metroid Fusion Bonuses entry from both the frontend menus. The version number shown in the menu and diagnostics now follows the installed package metadata rather than being hard-coded. The image gallery now returns control to the menu after dependency loading completes, and pressing B cancels a pending load. Gallery image rendering and automatic PS5 tile music remain known issues. Map geometry and door visuals are also still under investigation.",
+      "This is a cleanup release with no game-logic changes. The production build removes temporary Fusion and gallery tracing from the previous test versions. The title folder remains PPSA99731. You must supply your own supported PAL GameCube ISO — no game data, saves or generated audio are included. Install using Quick Update in ProsperoStore to keep your existing ISO and user data. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "PhazonPrime v00.001.040 release",
+        "url": "https://github.com/BaZZtian/PhazonPrime-PS5/releases/tag/v00.001.040"
+      }
+    ]
+  },
+  {
     "id": "soulcalibur-ii-hd-ps5",
     "date": "2026-11-12",
     "tag": "Port",
