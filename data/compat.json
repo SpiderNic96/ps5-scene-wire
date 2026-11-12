@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11",
+  "updated": "2026-11-12",
   "about": "Firmware compatibility for the /firmware directory. Only what each project's README or release notes state. range = the developer says it supports these firmwares; tested = firmwares it has actually been run on; only = hard-locked to these firmwares; any = the developer says it isn't tied to a firmware. unstated = tracked apps whose README was checked and names no PS5 firmware (they show as not confirmed). Validate with: node scripts/compat-check.mjs",
   "firmwares": [
     "1.00",
@@ -847,6 +847,7 @@
     "bornaradusin/Emby5",
     "bornaradusin/ProsperoRadio",
     "bystritskiy/reUndr2-ps5",
+    "codemasterv/Soulcalibur-II-HD-PS5",
     "cptlamarca/mk9-ps5",
     "dakotadawolfe/Pokopia-Recomp-PS5",
     "dannyboyjaros/ps5classof09",

@@ -1,5 +1,73 @@
 [
   {
+    "id": "soulcalibur-ii-hd-ps5",
+    "date": "2026-11-12",
+    "tag": "Port",
+    "title": "Soulcalibur II HD Online: PS3 fighting classic recompiled for PS5 at 60 FPS",
+    "summary": "Soulcalibur II HD Online by codemasterv brings the PS3 fighting game to jailbroken PS5 consoles as a native static recompilation, running story, arcade and versus modes at a full 60 FPS with complete audio.",
+    "body": [
+      "Soulcalibur II HD Online by codemasterv is a native PS5 port of the PS3 fighting game, built through static recompilation rather than emulation. The game’s PowerPC code and Cell SPU programs were translated ahead of time into x86-64 C code and compiled with a standard compiler for the PS5’s AMD Zen 2 CPU. PS3 system libraries for audio, file access, controllers and threads are replaced by new implementations targeting the PS5’s own APIs, and the graphics are rendered through a Vulkan translation layer that converts PS3 command lists and shaders. Story mode, arcade mode, versus and character select all play at full speed with correct audio and graphics. Online mode is not yet available.",
+      "The project is based on n0madic’s PC recompilation and the ps3recomp toolchain. It requires a jailbroken PS5 with an ELF loader. You must supply your own copy of the PS3 game (NPUB31366) — the build ships no game data. Place the game package, the 01.01 update and the license file in /data/sc2hd/ on the console; the app installs and decrypts them on first launch."
+    ],
+    "sources": [
+      {
+        "name": "Soulcalibur II HD PS5 repository",
+        "url": "https://github.com/codemasterv/Soulcalibur-II-HD-PS5"
+      }
+    ]
+  },
+  {
+    "id": "eglantine-ps5-v1000001",
+    "date": "2026-11-12",
+    "tag": "Emulator",
+    "title": "EglantinePS5 v1.000.001: Zelda Ocarina of Time boots, NUP container support",
+    "summary": "EglantinePS5 v1.000.001 restarts versioning on the Eglantine core, adding NUP container loading, unencrypted-game support without keys, and The Legend of Zelda: Ocarina of Time booting to gameplay.",
+    "body": [
+      "EglantinePS5 v1.000.001 by heydemoura is the first numbered release on the Eglantine core, restarting version numbers from scratch (earlier tags were removed). The headline additions are NUP container support — games packaged as NUP archives now start directly — and the ability to run unencrypted games without needing keys or firmware files. The Legend of Zelda: Ocarina of Time now boots and renders gameplay including the title screen, overworld and Switch 2 audio streams; its anti-aliasing network is skipped by default under Settings → Video.",
+      "On the performance side, this build brings memory fixes targeting Mario Kart World’s race-load out-of-memory crashes: guest memory packing, idle blocks returned to the system, JIT code cache allocated in smaller pieces and Mesa cache files capped. Draw and upload performance is improved in several titles through a draw-delta path, texture memoisation, buffer-sync early-outs and native MME macros enabled by default. GPU memory handling is more robust with RADV trimming only granules unused for two seconds. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "EglantinePS5 v1.000.001 release",
+        "url": "https://github.com/heydemoura/EglantinePS5/releases/tag/v1.000.001"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v12410",
+    "date": "2026-11-12",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.4.10: Play Together streaming fixes and full-app safety review",
+    "summary": "PS5 Upload v12.4.10 fixes Play Together picture skipping at 15 Mbit/s, tightens file-management safety across the board, and hardens installs, saves and sharing against edge cases.",
+    "body": [
+      "PS5 Upload v12.4.10 by phantomptr is the result of a full review of the app, engine and PS5 helper. The headline fix targets Play Together’s remote-play streaming: at the default 15 Mbit/s quality, about half the picture frames were dropped when the game was busy; the fix eliminates the drops entirely and adds automatic quality back-off when the connection cannot keep up. Friend-connection stats (lost packets, round trip) were sometimes reading the audio stream’s numbers instead of the video’s, which is also corrected.",
+      "File management gets broad safety improvements: actions in Console Files, Saves and game rows now always target the folder that was open when the action was requested; mounting an image twice or onto an existing mount point is refused; unmounting can no longer pull the drive underneath; and odd file names from network shares cannot escape the chosen folder. Delete User now asks whether to keep that user’s saves, installs keep the package if completion cannot be confirmed, and SDK Changer keeps a durable backup. Bug reports hide more private details. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.4.10 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.4.10"
+      }
+    ]
+  },
+  {
+    "id": "glibren-v096-teste",
+    "date": "2026-11-12",
+    "tag": "Tool",
+    "title": "glibren v0.9.6-teste: YouTube opens in Jobee’sLair",
+    "summary": "glibren v0.9.6-teste routes YouTube playback through Jobee’sLair when that app advertises its YouTube screen, with a Circle-button shortcut back to glibren.",
+    "body": [
+      "glibren v0.9.6-teste by pristmc-code adds integration with Jobee’sLair’s built-in YouTube screen. When Jobee’sLair (version glibren.35 or newer) advertises YouTube support via /data/JobeesLair/tube/jobe-tube.txt, glibren’s “▶ YouTube” box and per-game YouTube links write a search file and open Jobee’sLair on its YouTube screen directly. Pressing Circle in Jobee’sLair returns to glibren. A line under the search box shows which player will open (Jobee’sLair or YouTube Max’d).",
+      "Without the Jobee’sLair advertisement file, YouTube still opens through YouTube Max’d as before. The integration never opens on top of a running game app. This is a test build that has not yet been run on a PS5. The APK companion app (glibren Controle) remains at version 0.1-teste. Requires a jailbroken PS5 with ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "glibren v0.9.6-teste release",
+        "url": "https://github.com/pristmc-code/ps5-glibren-releases/releases/tag/v0.9.6-teste"
+      }
+    ]
+  },
+  {
     "id": "xpsemu-v35",
     "date": "2026-11-11",
     "tag": "Emulator",

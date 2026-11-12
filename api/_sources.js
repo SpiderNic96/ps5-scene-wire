@@ -210,4 +210,5 @@ export const SOURCES = [
   { cat: R, repo: 'Samclay8/DK64-Rekongpiled-PS5', name: 'DK64 Rekongpiled', about: 'N64 recomp, 4K 60fps with HD textures, bring your own ROM' },
   { cat: R, repo: 'Samclay8/CBFD-Recompiled-PS5', name: 'Conker\'s Bad Fur Day: Recompiled', about: 'N64 recomp, 4K 60fps with texture packs, bring your own ROM' },
   { cat: R, repo: 'KongaTime/Dantes-Inferno-PS5-Port', name: 'Dante\'s Inferno', about: 'Xbox 360 recomp, up to 4K, bring your own disc' },
+  { cat: R, repo: 'codemasterv/Soulcalibur-II-HD-PS5', name: 'Soulcalibur II HD Online', about: 'PS3 recomp, 60fps with full audio, bring your own game' },
 ];
