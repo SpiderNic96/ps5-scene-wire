@@ -152,6 +152,7 @@ export const SOURCES = [
   { cat: M, repo: 'fstat13/PSCapture', name: 'PSCapture', about: 'Virtual capture card for OBS and Discord' },
   { cat: M, repo: 'bornaradusin/ProsperoRadio', name: 'ProsperoRadio', about: 'Internet radio via Radio Browser' },
   { cat: M, repo: 'Anime0t4ku/Prospero-Hi-Fi', name: 'Prospero Hi-Fi', about: 'Lossless music player with CD and network support' },
+  { cat: M, repo: 'leetlamer/PStube', name: 'PStube', about: 'Ad-free YouTube client with Google account support' },
 
   // Recomps and ports
   { cat: R, repo: 'Nazky/UnleashedRecomp-Prospero', name: 'Sonic Unleashed Recompiled', about: 'Xbox 360 recomp, bring your own copy' },
@@ -211,4 +212,5 @@ export const SOURCES = [
   { cat: R, repo: 'Samclay8/CBFD-Recompiled-PS5', name: 'Conker\'s Bad Fur Day: Recompiled', about: 'N64 recomp, 4K 60fps with texture packs, bring your own ROM' },
   { cat: R, repo: 'KongaTime/Dantes-Inferno-PS5-Port', name: 'Dante\'s Inferno', about: 'Xbox 360 recomp, up to 4K, bring your own disc' },
   { cat: R, repo: 'codemasterv/Soulcalibur-II-HD-PS5', name: 'Soulcalibur II HD Online', about: 'PS3 recomp, 60fps with full audio, bring your own game' },
+  { cat: R, repo: 'Vampinity/GreenHatBoy', name: 'Green Hat Boy (OoT)', about: 'Ocarina of Time (Switch 2) via Eglantine, bring your own dump' },
 ];

@@ -1,5 +1,60 @@
 [
   {
+    "id": "pstube-ps5",
+    "date": "2026-11-12",
+    "tag": "Media",
+    "title": "PStube: ad-free YouTube for PS5 with Google account support",
+    "summary": "PStube is a standalone native PS5 homebrew YouTube client with controller navigation, Google account support, SponsorBlock and software-decoded 1080p playback — no PC transcoding server required.",
+    "body": [
+      "PStube by leetlamer is a new native PS5 YouTube client that runs entirely on the console. The app features a blue TV-style interface with category shelves for Home, Music, Gaming, News and Live content, plus search and Shorts. You can link a Google account for subscriptions, history and playlists. Playback includes seeking, captions, video metrics and automatic next-video options. Optional SponsorBlock skips creator sponsorship segments, and optional DeArrow provides alternate titles. The app also offers DNS-over-HTTPS and proxy settings at the app level.",
+      "PStube requires a jailbroken PS5 with OnionHEN active and websrv (Homebrew Launcher) to run in a foreground graphics context. The tested configuration is PS5 Pro firmware 13.00, OnionHEN 0.9.0 and websrv 0.34. To install, download PStube-PS5-Test-v0.16.zip from the Releases page, extract it and copy the PStube-PS5-Test folder into /data/homebrew/, then launch eboot.elf through the Homebrew Launcher. 1080p is the recommended resolution; 4K and live playback remain experimental. Hardware decoding is not yet implemented. Current release is beta 0.16."
+    ],
+    "sources": [
+      {
+        "name": "PStube GitHub",
+        "url": "https://github.com/leetlamer/PStube"
+      },
+      {
+        "name": "PStube beta 0.16 release",
+        "url": "https://github.com/leetlamer/PStube/releases/tag/PStube-PS5-Beta-0.16"
+      }
+    ]
+  },
+  {
+    "id": "greenhatboy-oot-ps5",
+    "date": "2026-11-12",
+    "tag": "Emulator",
+    "title": "Green Hat Boy: Ocarina of Time (Switch 2 version) running on PS5 via Eglantine",
+    "summary": "Green Hat Boy aims to run the Switch 2 version of Ocarina of Time on a base PS5 through the Eglantine emulator. The project is in early testing with no public download yet, but progress is tracked openly.",
+    "body": [
+      "Green Hat Boy by Vampinity, GrowingBlackBeans and waveydude is a new project that runs the Switch 2 version of Ocarina of Time on a jailbroken base PS5, using builds of the Eglantine emulator core (via viejunerd's and heydemoura's EglantinePS5 work). The aim is the complete game from start to finish at the game's full docked resolution on a base console. Current progress includes a working opening sequence, playable first village, fixed fog and foliage rendering, and improved frame times for first-visit areas.",
+      "There is no public download yet — the Releases page only has tester pre-release builds for existing testers. The team says the first alpha will come when a fresh install can get through the first start and into the first village without crashing, tested on a real console. The project is unofficial and requires your own legally dumped copy of the game. No game files, keys or firmware are included in the repository."
+    ],
+    "sources": [
+      {
+        "name": "Green Hat Boy GitHub",
+        "url": "https://github.com/Vampinity/GreenHatBoy"
+      }
+    ]
+  },
+  {
+    "id": "dantes-inferno-v120-dlc",
+    "date": "2026-11-12",
+    "tag": "Port",
+    "title": "Dante's Inferno v1.2.0: full DLC support for all Xbox 360 expansion packs",
+    "summary": "Dante's Inferno PS5 Port v1.2.0 adds DLC support, installing your own Xbox 360 DLC including Trials of St. Lucia, the Dark Forest Pack, costume packs and item packs with on-screen progress.",
+    "body": [
+      "Dante's Inferno PS5 Port v1.2.0 by KongaTime adds full DLC support to the Xbox 360 recompiled port. The update installs your own Xbox 360 DLC for Dante's Inferno directly on the PS5, including Trials of St. Lucia, the Dark Forest Pack, costume packs (Florentine Dante, Animated Feature Dante, Isaac Clarke Dead Space Rig) and the soul, relic, Godlike and Devil packs. A new DLC install screen shows each pack's name, how many remain and a progress bar. The game starts automatically when installation finishes. Without DLC, the game starts as before.",
+      "To add DLC, create a dlc folder inside the PPSA99343 directory and copy your DLC packages from an Xbox 360's Content folder — the whole 454108CF folder structure works as-is. The first install of Trials of St. Lucia can take several minutes due to its size. Do not close the app while it installs. Users upgrading from v1.1.0 can copy the new PPSA99343 folder over the existing one; game data, saves and resolution settings carry over. A fresh install requires ShadowMount+ and your own Xbox 360 disc ISO with Title Update 2."
+    ],
+    "sources": [
+      {
+        "name": "Dante's Inferno v1.2.0 release",
+        "url": "https://github.com/KongaTime/Dantes-Inferno-PS5-Port/releases/tag/v1.2.0"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v12411-v12412",
     "date": "2026-11-12",
     "tag": "Tool",

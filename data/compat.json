@@ -800,6 +800,27 @@
         "etaHEN"
       ],
       "note": "Experimental. Tested on one console on firmware 13.60."
+    },
+    "leetlamer/PStube": {
+      "tested": [
+        "13.00"
+      ],
+      "needs": [
+        "OnionHEN",
+        "websrv"
+      ],
+      "note": "Tested on PS5 Pro firmware 13.00 with OnionHEN 0.9.0 and websrv 0.34. Beta."
+    },
+    "Vampinity/GreenHatBoy": {
+      "tested": [
+        "9.40",
+        "12.40",
+        "13.60"
+      ],
+      "needs": [
+        "Eglantine"
+      ],
+      "note": "Pre-alpha, no public download. Tested on base PS5 firmware 12.40 and 13.60."
     }
   },
   "unstated": [
