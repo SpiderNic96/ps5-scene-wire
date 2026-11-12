@@ -1,5 +1,22 @@
 [
   {
+    "id": "pstube-v017",
+    "date": "2026-11-12",
+    "tag": "Media",
+    "title": "PStube v0.17: streaming recovery, selectable decoder threads and UI polish",
+    "summary": "PStube beta 0.17 improves streaming reliability with bounded audio/video reconnection and byte-range resumes, adds selectable decoder threads (6/8/10), and refreshes the interface with larger cards, animated shelves and hidden playback controls.",
+    "body": [
+      "PStube v0.17 by leetlamer focuses on streaming recovery and interface improvements for the PS5 YouTube client. Audio and video reconnection is now bounded with validated byte-range resumes, larger buffers and recovery near the last playback position, so interrupted streams pick up closer to where they left off. Decoder thread count is now selectable between 6, 8 and 10 — eight remains the default after console comparisons, with scaling using two threads. Playback controls now start hidden and appear on controller input for a cleaner viewing experience. The interface gets larger rounded cards, animated shelves and neighboring video previews.",
+      "Tested on PS5 Pro firmware 13.00 with OnionHEN 0.9.0 and websrv 0.34. A two-minute 1080p60 test displayed 7,200 frames with 6 sync drops and no audio rebuffering. 1080p remains the recommended resolution; native 4K is experimental and showed timing lateness. HDR, hardware decoding and HDMI refresh switching are not yet implemented. To install, extract the ZIP and copy the PStube-PS5-Test folder to /data/homebrew/, then launch eboot.elf through websrv with OnionHEN active."
+    ],
+    "sources": [
+      {
+        "name": "PStube v0.17 release",
+        "url": "https://github.com/leetlamer/PStube/releases/tag/v0.17"
+      }
+    ]
+  },
+  {
     "id": "pstube-ps5",
     "date": "2026-11-12",
     "tag": "Media",
