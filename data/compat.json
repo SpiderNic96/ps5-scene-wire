@@ -840,6 +840,15 @@
         "kstuff-lite"
       ],
       "note": "Tested on PS5 Slim FW 12.60 with kstuff-lite."
+    },
+    "wnzzer/ps5-wireguard": {
+      "tested": [
+        "12.40"
+      ],
+      "needs": [
+        "elfldr"
+      ],
+      "note": "Tested on firmware 12.40. Can run alongside ps5-tailscale on a different port."
     }
   },
   "unstated": [

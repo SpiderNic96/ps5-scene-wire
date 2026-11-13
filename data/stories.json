@@ -1,5 +1,77 @@
 [
   {
+    "id": "ps5upload-v12416-v12417",
+    "date": "2026-11-13",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.4.16–v12.4.17: IPv6 Play Together and upload verification",
+    "summary": "PS5 Upload v12.4.17 adds IPv6 for Play Together internet invites so friends behind CGNAT can connect, and v12.4.16 strengthens upload verification for large files sent twice.",
+    "body": [
+      "PS5 Upload v12.4.17 by phantomptr adds IPv6 connectivity to Play Together internet invites. If your ISP shares one IPv4 address across many homes (CGNAT) and ports cannot be forwarded, a friend can still join directly when both sides have IPv6 — common on mobile networks and many home providers. The friend row shows \"Internet direct · IPv6\" when the route is used, and share links between two computers work the same way. Files now offers folder-scoped search: pick \"This folder\" beside the search box to stay in the current directory instead of searching every drive.",
+      "v12.4.16 extends the upload integrity check so that when a large file had to be sent in two parts, the second copy is also read back and verified once it reaches the drive. The console shell can no longer access the folders holding the identity key and saved network-share passwords. The share-link countdown no longer runs at double speed, and on Windows a shared file named like a Windows device (NUL.pkg, CON) saves under a safe name. Game grid tiles no longer flash an old cover when reused for another game. Requires a jailbroken PS5 with a payload loader."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.4.17 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.4.17"
+      },
+      {
+        "name": "PS5 Upload v12.4.16 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.4.16"
+      }
+    ]
+  },
+  {
+    "id": "reundr2-settings-menu",
+    "date": "2026-11-13",
+    "tag": "Port",
+    "title": "reUndr 2 v01.002.000: in-game settings menu and sharper 4K geometry",
+    "summary": "reUndr 2 build 01.002.000 adds a unified settings menu (Touchpad + Options) with motion blur control, geometry precision, detail distance and a performance benchmark for NFS Underground 2 on PS5.",
+    "body": [
+      "reUndr 2 build 01.002.000 by bystritskiy adds a unified in-game settings menu opened with Touchpad + Options. Graphics, gameplay, sound and performance sit in tabbed panels navigated with L1/R1, with a version changelog in each tab. Motion blur can be set to Off, Low or Original. Geometry Precision disables the original 640×480 snap grid so 3D objects look sharper at 4K. Detail Distance pushes the level-of-detail switch point up to eight times farther away, keeping high-poly cars and scenery visible longer. A performance overlay and 60-second benchmark are included, and a rendering bug that caused coloured blocks at low resolution scales is fixed.",
+      "The game's own Options menu is restored to its original Xbox layout. A hint shows after the intro movies until the settings menu has been opened once. To install, unpack the ZIP and copy the PPSA99027 folder to /data/homebrew/ on the console, replacing the old one; saves in /data/nfsu2/ carry over. Requires a jailbroken PS5 with ShadowMountPlus and your own legally obtained USA Xbox disc image of Need for Speed: Underground 2."
+    ],
+    "sources": [
+      {
+        "name": "reUndr 2 01.002.000 release",
+        "url": "https://github.com/bystritskiy/reUndr2-ps5/releases/tag/01.002.000"
+      }
+    ]
+  },
+  {
+    "id": "pstube-v020",
+    "date": "2026-11-13",
+    "tag": "Media",
+    "title": "PStube v0.20: storyboard seek previews and four-column layouts",
+    "summary": "PStube v0.20 adds optional storyboard seek previews with accelerated L2/R2 seeking, switches Subscriptions, History and Liked Videos to four columns, and improves playback cancellation and metadata.",
+    "body": [
+      "PStube v0.20 by leetlamer adds storyboard seek previews — thumbnail strips that show where you are scrubbing to — along with accelerated seeking on L2/R2. Subscriptions, History and Liked Videos now display in four-column grids. Video cards pull metadata automatically with corrected creator names, and the sidebar icon clipping is fixed. Playback cancellation during network and audio waits is more responsive, and audio cleanup at video end is safer. The loading spinner is centered and paused-overlay redraws are clean.",
+      "Tested on PS5 Pro firmware 13.00 with OnionHEN 0.9.0 and websrv 0.34. Final console playback of a 1080p60 VP9/Opus stream showed 600/600 frames displayed with zero sync drops or PCM underruns. 1080p remains the recommended resolution; higher resolutions and live playback are experimental. Software decoding is used; HDR, hardware decoding and HDMI refresh switching are not yet implemented. To install, extract the ZIP and copy the PStube-PS5-Test folder to /data/homebrew/."
+    ],
+    "sources": [
+      {
+        "name": "PStube v0.20 release",
+        "url": "https://github.com/leetlamer/PStube/releases/tag/v0.20"
+      }
+    ]
+  },
+  {
+    "id": "ps5-wireguard",
+    "date": "2026-11-13",
+    "tag": "Tool",
+    "title": "ps5-wireguard: WireGuard VPN peer for jailbroken PS5",
+    "summary": "ps5-wireguard puts a jailbroken PS5 on a standard WireGuard network as an ordinary peer — no Tailscale account needed — so you can reach FTP, ELF loaders and Remote Play from anywhere through the tunnel.",
+    "body": [
+      "ps5-wireguard by wnzzer is a PS5 payload that turns the console into a WireGuard peer using userspace wireguard-go and gVisor netstack, connecting to whatever WireGuard server you already run on a router or VPS. Every TCP port on the console — FTP, ELF loader, web tools, Remote Play session port — becomes reachable at its tunnel address from anywhere on the VPN. Remote Play UDP ports and Sunshine host ports are relayed too, so Chiaki and similar clients can connect through the tunnel. Local forwards let apps on the console reach a host behind the tunnel through a port on the console itself, for example a Moonlight client connecting to a Sunshine host at home.",
+      "A status page on port 8091 shows the handshake state, traffic counters, a config editor and a log. The project reuses the PS5 Go runtime from ps5-tailscale but removes the Tailscale dependency, accepting a standard wg-quick style config instead. Requires a jailbroken PS5 with elfldr. Early and experimental — not affiliated with WireGuard or Sony."
+    ],
+    "sources": [
+      {
+        "name": "ps5-wireguard on GitHub",
+        "url": "https://github.com/wnzzer/ps5-wireguard"
+      }
+    ]
+  },
+  {
     "id": "bluebird",
     "date": "2026-11-13",
     "tag": "Tool",

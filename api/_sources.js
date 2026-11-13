@@ -105,6 +105,7 @@ export const SOURCES = [
   { cat: T, repo: 'B4ckd0orl/Updater-Games', name: 'Updater Games', about: 'Download official game patches from browser' },
   { cat: T, repo: 'jpemendonca/BlueBird', name: 'BlueBird', about: 'Bluetooth speaker and headphone audio via USB adapter' },
   { cat: T, repo: 'kh-mitya/ghostcontrol-8bitdo', name: 'ghostcontrol-8bitdo', about: 'Xbox controllers as virtual DualSense via 8BitDo adapter' },
+  { cat: T, repo: 'wnzzer/ps5-wireguard', name: 'ps5-wireguard', about: 'WireGuard VPN peer for jailbroken PS5' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },
