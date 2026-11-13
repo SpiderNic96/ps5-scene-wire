@@ -1,5 +1,56 @@
 [
   {
+    "id": "soulcalibur-ii-hd-v155",
+    "date": "2026-11-13",
+    "tag": "Port",
+    "title": "Soulcalibur II HD Online v1.55: detailed technical documentation",
+    "summary": "Soulcalibur II HD Online v1.55 ships an extended release page explaining exactly how the static recompilation turns PS3 PowerPC code into native PS5 x86-64 code, with Vulkan rendering and rebuilt system libraries.",
+    "body": [
+      "Soulcalibur II HD Online v1.55 by codemasterv is a maintenance release that adds a comprehensive technical explanation of the static recompilation pipeline. The PS3 executable's PowerPC code and Cell SPU co-processor programs are translated ahead of time into C code, compiled natively for the PS5's AMD CPU, and linked against rebuilt system libraries for audio, files, controllers and threads. Graphics are rendered through a Vulkan translation layer that reads PS3-style command lists and draws them with converted shaders. The game runs at 60 FPS with full audio.",
+      "This build is based on n0madic's PC recompilation and the ps3recomp toolchain. It requires a jailbroken PS5 with an ELF loader and your own copy of the PS3 game (NPUB31366). Place the game package, the 01.01 update and the license file in /data/sc2hd/ on the console; the app installs and decrypts them on first launch."
+    ],
+    "sources": [
+      {
+        "name": "Soulcalibur II HD v1.55 release",
+        "url": "https://github.com/codemasterv/Soulcalibur-II-HD-PS5/releases/tag/v1.55"
+      }
+    ]
+  },
+  {
+    "id": "psbox-v171-reliability",
+    "date": "2026-11-13",
+    "tag": "Media",
+    "title": "PSBox Cloud Gaming v1.7.1: sign-in and library reliability fixes",
+    "summary": "PSBox Cloud Gaming v1.7.1 fixes blank sign-in screens, stale library pages and a saved sign-in that loops on expired Microsoft tokens, plus a reorganised WebUI with gyro and DualSense settings.",
+    "body": [
+      "PSBox Cloud Gaming v1.7.1 by RafaelNGP is a reliability update. The sign-in screen no longer appears blank when the app is installed outside the default /data/homebrew/PPSA99810 path — fonts are now built into the app itself so text always renders. A saved Microsoft sign-in that the server rejects no longer loops on the error screen; the app clears it and asks for a new code. Library pages that fail temporarily (server error, timeout) are retried automatically instead of leaving old data on screen, and persistent failures trigger an auto-refresh with a status message.",
+      "The SmartGlass WebUI is reorganised: the Mapping page gains a Gyro tab for response curve, start threshold and axis inversion, and the DualSense tab now holds dead zones, speaker volume, trigger vibration, smart triggers and light bar. Settings are laid out one option per line with a new Resolution entry. The Current Game page becomes a read-only telemetry display with colour-coded network and picture-quality metrics. Trophy sync no longer triggers a redundant sign-in prompt. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "PSBox Cloud Gaming v1.7.1 release",
+        "url": "https://github.com/RafaelNGP/psbox-cloud-gaming/releases/tag/v1.7.1"
+      }
+    ]
+  },
+  {
+    "id": "dantes-inferno-v121-perf",
+    "date": "2026-11-13",
+    "tag": "Port",
+    "title": "Dante's Inferno v1.2.1: fixes frame-rate drop after 20 minutes of play",
+    "summary": "Dante's Inferno PS5 Port v1.2.1 fixes a progressive slowdown that cut the frame rate to 30 FPS with periodic freezes after roughly 20 minutes, caused by a log file growing on every frame.",
+    "body": [
+      "Dante's Inferno PS5 Port v1.2.1 by KongaTime fixes a performance regression present in all earlier versions. After about 20 minutes of play the frame rate dropped to roughly 30 FPS with short freezes every second or two, and stayed that way until the game was restarted. The cause was an error message written to the log file on every frame; once the log grew to around 6 MB the writes began stalling the render loop. The message is now logged once. A 44-minute test session on PS5 held a steady 60 FPS throughout.",
+      "All features from v1.2.0 are included, including full Xbox 360 DLC support with the on-screen install progress bar. To update from v1.2.0 or earlier, close the game and copy the new PPSA99343 folder over the existing one — game data, saves, settings and installed DLC carry over. A fresh install requires ShadowMount+ and your own Xbox 360 disc ISO with Title Update 2. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "Dante's Inferno v1.2.1 release",
+        "url": "https://github.com/KongaTime/Dantes-Inferno-PS5-Port/releases/tag/v1.2.1"
+      }
+    ]
+  },
+  {
     "id": "tabshifter-v140",
     "date": "2026-11-13",
     "tag": "Tool",
