@@ -101,6 +101,8 @@ export const SOURCES = [
   { cat: T, repo: 'marcelorsdd/OpenPSApp', name: 'OpenPSApp', about: 'Offline PlayStation App features: playtime, trophies and profile' },
   { cat: T, repo: 'Techsociology/ps5_download_manager', name: 'PS5 Download Manager', about: 'Web-based download manager with queues and resume' },
   { cat: T, repo: 'rikleigh/parallax-browser', name: 'Parallax Browser', about: 'WebKit browser with PS VR2 video playback' },
+  { cat: T, repo: 'quer3q/kraken-mount', name: 'Kraken Mount', about: 'Minimalist game mounter with compression support' },
+  { cat: T, repo: 'B4ckd0orl/Updater-Games', name: 'Updater Games', about: 'Download official game patches from browser' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },

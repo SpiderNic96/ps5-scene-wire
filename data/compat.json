@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12",
+  "updated": "2026-11-13",
   "about": "Firmware compatibility for the /firmware directory. Only what each project's README or release notes state. range = the developer says it supports these firmwares; tested = firmwares it has actually been run on; only = hard-locked to these firmwares; any = the developer says it isn't tied to a firmware. unstated = tracked apps whose README was checked and names no PS5 firmware (they show as not confirmed). Validate with: node scripts/compat-check.mjs",
   "firmwares": [
     "1.00",
@@ -730,6 +730,16 @@
       ],
       "note": "All-in-one HEN payload with kstuff-lite; send to port 9021."
     },
+    "B4ckd0orl/Updater-Games": {
+      "range": [
+        "1.00",
+        "13.60"
+      ],
+      "needs": [
+        "elfldr"
+      ],
+      "note": "Payload that downloads official game patches from Sony's servers."
+    },
     "Gl0ttis/ps5-tls-verify": {
       "tested": [
         "13.20"
@@ -914,6 +924,7 @@
     "ps5-payload-dev/ftpsrv",
     "ps5-payload-dev/sdk",
     "ps5-payload-dev/websrv",
+    "quer3q/kraken-mount",
     "stupiditytries/StremiBrew",
     "theghostonline/007-First-Light-PS5",
     "theghostonline/Hitman-PS5",

@@ -1,5 +1,56 @@
 [
   {
+    "id": "ps5upload-v12415",
+    "date": "2026-11-13",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.4.15: Play Together fixes and Share page redesign",
+    "summary": "PS5 Upload v12.4.15 fixes the Play Together \"Block PS & Create\" feature so friends are properly locked out, and redesigns the Share page to use the full window.",
+    "body": [
+      "PS5 Upload v12.4.15 by phantomptr fixes how Play Together handles blocked controllers for friends. The \"Block PS & Create for friends\" option now works correctly: a friend gets one PS press to pick a user on the TV, after which PS and Create are disabled for them. Previously both buttons kept working for the first minute after joining and again after every controller re-setup. Friends who close the user picker without choosing are no longer locked out, and Create is properly disabled while they pick.",
+      "The Share page has been redesigned to use the whole window like the other pages. Opening a second share link while the Share page is already showing now correctly puts the new link in the box instead of silently dropping it. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.4.15 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.4.15"
+      }
+    ]
+  },
+  {
+    "id": "kraken-mount",
+    "date": "2026-11-13",
+    "tag": "Tool",
+    "title": "Kraken Mount: minimalist PS5 game mounter with compression support",
+    "summary": "Kraken Mount is a new PS5 payload that scans internal and USB drives for game dumps, registers each one on the home screen, and supports folder, FPKG, LZ4 and zstd formats.",
+    "body": [
+      "Kraken Mount by quer3q is a new PS5 ELF payload that finds games on the internal SSD and USB or extended drives and registers each one as a tile on the home screen. It supports debug FPKG packages made by ps5-dump-forge, plain game folders with eboot.bin and param.json, and compressed formats including zstd and LZ4. At launch it overlays ampr-emu-ng into the game's sandbox via a fakelib. It comes with a web UI at port 8097 for managing games, rebuilding entries, changing settings and reading the log.",
+      "Games go in scan roots at /data/homebrew, /data/etaHEN/games, or the root of a USB drive, with backports in a backports subfolder. The bundled ampr-emu-ng is installed to /data/krakenmount/ampr/ on first run and can be replaced with a custom build. Requires a jailbroken PS5 with elfldr running on port 9021. Based on the ShadowMountPlus registration and fakelib sandbox approach."
+    ],
+    "sources": [
+      {
+        "name": "Kraken Mount on GitHub",
+        "url": "https://github.com/quer3q/kraken-mount"
+      }
+    ]
+  },
+  {
+    "id": "updater-games",
+    "date": "2026-11-13",
+    "tag": "Tool",
+    "title": "Updater Games: download official game patches from your browser",
+    "summary": "Updater Games is a new PS5 payload that lists installed games with their current and latest patch versions, then downloads official updates from Sony's servers directly to the console.",
+    "body": [
+      "Updater Games by B4ckd0orl is a PS5 payload that runs a local web server, giving you a browser interface to see all installed PS5 and PS4 games alongside their current version and the latest patch available on Sony's servers. Hit update and the patch downloads straight to the console's installer with multi-connection acceleration (4 by default, up to 16). An \"Update All\" button queues every outdated game and processes them one by one. Interrupted downloads resume where they left off.",
+      "If the latest patch requires a higher firmware than the console is running, Updater Games automatically finds the newest patch compatible with the current firmware. The \"Other versions\" menu lets you pick any specific patch manually. The web interface supports multiple languages and auto-updates its own code. Supports firmware 1.00 to 13.60."
+    ],
+    "sources": [
+      {
+        "name": "Updater Games on GitHub",
+        "url": "https://github.com/B4ckd0orl/Updater-Games"
+      }
+    ]
+  },
+  {
     "id": "soulcalibur-ii-hd-v155",
     "date": "2026-11-13",
     "tag": "Port",
