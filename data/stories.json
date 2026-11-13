@@ -1,5 +1,39 @@
 [
   {
+    "id": "bluebird",
+    "date": "2026-11-13",
+    "tag": "Tool",
+    "title": "BlueBird: Bluetooth speaker and headphone audio for PS5",
+    "summary": "BlueBird is a new PS5 payload that streams game audio to Bluetooth speakers and headphones through a USB Bluetooth adapter, keeping the console's own Bluetooth free for the DualSense.",
+    "body": [
+      "BlueBird by jpemendonca is a PS5 ELF payload that drives a separate USB Bluetooth adapter to stream game audio to any A2DP speaker or headphones. The console's internal Bluetooth stays dedicated to the DualSense, so controllers keep working normally. It supports Realtek RTL8761B sticks like the TP-Link UB500 with firmware loaded automatically, and generic CSR 4.0 dongles out of the box. Audio uses SBC at 48 kHz with adaptive quality that lowers the bitrate momentarily when the wireless link weakens, rather than cutting out.",
+      "BlueBird adds a tile in the Media tab and a web dashboard at port 8120 accessible from a phone, available in seven languages including English, Portuguese, Spanish, French, German, Russian and Japanese. Devices pair once and reconnect automatically on subsequent launches. Compatible with OmniPad CE when each payload uses its own adapter. Requires a jailbroken PS5 with a payload loader."
+    ],
+    "sources": [
+      {
+        "name": "BlueBird on GitHub",
+        "url": "https://github.com/jpemendonca/BlueBird"
+      }
+    ]
+  },
+  {
+    "id": "ghostcontrol-8bitdo",
+    "date": "2026-11-13",
+    "tag": "Tool",
+    "title": "ghostcontrol-8bitdo: Xbox controllers on PS5 via 8BitDo adapter",
+    "summary": "A lightweight rework of GhostControl that lets Xbox controllers work on a jailbroken PS5 through the 8BitDo USB Adapter 2 or by wire, appearing as virtual DualSense pads.",
+    "body": [
+      "ghostcontrol-8bitdo by kh-mitya is a compact PS5 payload that maps Xbox controllers to virtual DualSense pads. It supports the 8BitDo USB Adapter 2 in Switch mode, which can pair with Xbox Elite Series 2, Series X/S, One and other Bluetooth controllers, as well as wired Xbox One and Series pads over their native USB protocol. Up to four controllers work simultaneously, with each one getting the console's standard user assignment dialog. The payload is a single ELF of about 150 KB with one thread and minimal system impact.",
+      "Controllers can be hot-plugged and swapped at any time, including across rest mode. The payload was developed and tested on a PS5 Slim running firmware 12.60 with kstuff-lite and Payload Manager 0.6.3. It is a lightweight rework of StonedModder's original GhostControl, focused on the 8BitDo adapter setup. Requires a jailbroken PS5 with a payload loader."
+    ],
+    "sources": [
+      {
+        "name": "ghostcontrol-8bitdo on GitHub",
+        "url": "https://github.com/kh-mitya/ghostcontrol-8bitdo"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v12415",
     "date": "2026-11-13",
     "tag": "Tool",
