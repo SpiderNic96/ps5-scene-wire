@@ -1,5 +1,56 @@
 [
   {
+    "id": "tabshifter-v140",
+    "date": "2026-11-13",
+    "tag": "Tool",
+    "title": "TabShifter v1.4.0: native tile uninstall and WAL-safe database handling",
+    "summary": "TabShifter v1.4.0 registers its Media tile with SceAppInstUtil so it can be deleted from the Home Screen natively, and switches to WAL-mode SQLite to stop corrupting the app database when kstuff loads.",
+    "body": [
+      "TabShifter v1.4.0 by xvvulcanvx adds full tile lifecycle management. The TBSH00001 Media tile now registers via SceAppInstUtil when available, so Home Screen Options → Delete works natively. A new Uninstall button and persistent removal marker keep the tile gone across reboots and padlock repairs, and an Add Media Tile button brings it back when needed. Tab shifting now updates only display location and visibility flags while preserving each title’s categoryType, video-app flag and hub URIs, fixing launch errors for homebrew, emulators and exploit apps.",
+      "The SQLite engine drops the OMIT_WAL build flag and stops forcing DELETE journal mode, so TabShifter no longer corrupts WAL and SHM state alongside SceShellCore. Initial backups use SQLite’s online backup API, and Restore DB Backup now works non-destructively via ATTACH DATABASE transactions instead of raw file overwrites, preserving any apps installed after the backup was taken. An Upload .elf button and direct-download fallback work around browser CORS blocks on GitHub releases. Smart Tidy and Fix Padlocks remove the fixed 256/512 title caps. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "TabShifter v1.4.0 release",
+        "url": "https://github.com/xvvulcanvx/PS5-TabShifter/releases/tag/v1.4.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v12414",
+    "date": "2026-11-13",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.4.14: redesigned Share page",
+    "summary": "PS5 Upload v12.4.14 overhauls the Share page layout to match the rest of the app, with a clearer three-step guide and always-visible share history.",
+    "body": [
+      "PS5 Upload v12.4.14 by phantomptr redesigns the Share page to line up with the rest of the app. The box for opening a friend’s share link sits on the left like other pages, and beside it are three short steps explaining how sharing works, with a button to choose a game to share from. Past shares are now always visible, even when there are none yet.",
+      "This is a UI-focused update with no gameplay or cheat-engine changes. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.4.14 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.4.14"
+      }
+    ]
+  },
+  {
+    "id": "eglantine-ps5-v1000002",
+    "date": "2026-11-13",
+    "tag": "Emulator",
+    "title": "EglantinePS5 v1.000.002: upstream core merge doubles Zelda OoT performance",
+    "summary": "EglantinePS5 v1.000.002 rebases onto the upstream Eglantine nx2 core from November 2026, doubling Zelda: Ocarina of Time to a locked 30 FPS and fixing a Donkey Kong Bananza crash.",
+    "body": [
+      "EglantinePS5 v1.000.002 by heydemoura merges the upstream Eglantine nx2 November 2026 core with the PS5-specific changes kept in-tree instead of a patched submodule. Zelda: Ocarina of Time now holds its native 30 FPS cap, roughly double the 20 FPS of the previous release, at the same image quality. Donkey Kong Bananza no longer crashes when smashing the first rock wall after the intro, which was caused by a burst of terrain uploads overwhelming the console’s GPU driver in a single submission.",
+      "Memory and speed optimisations from the new core include skipping texture-cache locks for guest reads that no texture uses, background ASTC texture conversion on busy frames, and earlier GPU work submission. Known issue: Mario Kart World runs out of memory two to nine minutes in, as most of v1.000.001’s Mario Kart memory work has not been ported to the new core yet. Pre-release. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "EglantinePS5 v1.000.002 release",
+        "url": "https://github.com/heydemoura/EglantinePS5/releases/tag/v1.000.002"
+      }
+    ]
+  },
+  {
     "id": "psbox-v170-profiles",
     "date": "2026-11-12",
     "tag": "Media",
