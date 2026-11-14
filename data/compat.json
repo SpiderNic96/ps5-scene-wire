@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13",
+  "updated": "2026-11-14",
   "about": "Firmware compatibility for the /firmware directory. Only what each project's README or release notes state. range = the developer says it supports these firmwares; tested = firmwares it has actually been run on; only = hard-locked to these firmwares; any = the developer says it isn't tied to a firmware. unstated = tracked apps whose README was checked and names no PS5 firmware (they show as not confirmed). Validate with: node scripts/compat-check.mjs",
   "firmwares": [
     "1.00",
@@ -849,6 +849,16 @@
         "elfldr"
       ],
       "note": "Tested on firmware 12.40. Can run alongside ps5-tailscale on a different port."
+    },
+    "ramalhoboss/XPS5": {
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "etaHEN",
+        "ShadowMountPlus"
+      ],
+      "note": "Tested on firmware 13.60 with etaHEN and ShadowMountPlus."
     }
   },
   "unstated": [

@@ -158,6 +158,7 @@ export const SOURCES = [
   { cat: M, repo: 'bornaradusin/ProsperoRadio', name: 'ProsperoRadio', about: 'Internet radio via Radio Browser' },
   { cat: M, repo: 'Anime0t4ku/Prospero-Hi-Fi', name: 'Prospero Hi-Fi', about: 'Lossless music player with CD and network support' },
   { cat: M, repo: 'leetlamer/PStube', name: 'PStube', about: 'Ad-free YouTube client with Google account support' },
+  { cat: M, repo: 'ramalhoboss/XPS5', name: 'XPS5', about: 'Native X (Twitter) client for PS5' },
 
   // Recomps and ports
   { cat: R, repo: 'Nazky/UnleashedRecomp-Prospero', name: 'Sonic Unleashed Recompiled', about: 'Xbox 360 recomp, bring your own copy' },

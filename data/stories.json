@@ -1,5 +1,60 @@
 [
   {
+    "id": "xps5-twitter-ps5",
+    "date": "2026-11-14",
+    "tag": "Media",
+    "title": "XPS5: native X (Twitter) client for jailbroken PS5",
+    "summary": "XPS5 is a full native X client that installs as a real PS5 title in the Media tab, with timelines, posting with your captures, controller-driven UI, PS5 notifications over your game, and up to five accounts.",
+    "body": [
+      "XPS5 by ramalhoboss is an unofficial X (Twitter) client written in C that runs as a native PS5 title in the home screen's Media tab. It is not a browser wrapper — every pixel is drawn by its own CPU renderer at up to 4K. The app supports For You and Following timelines with pictures, videos and GIFs, posting and replying with the PS5 keyboard (attaching up to four screenshots or a clip straight from your captures), likes, reposts, bookmarks, Explore, Notifications, direct messages, Lists, Bookmarks and search. It delivers X notifications as real PS5 notifications over your game with an Open button, knows which game you are playing and can set a playing status on your X profile, and warns you about spoiler posts for your current game.",
+      "XPS5 installs via an ELF loader (port 9021) and requires ShadowMountPlus to show the tile on the home screen. It supports up to five X accounts, seven languages, day and night themes, and self-updates from Settings. A background payload keeps notifications and the playing status running after the app closes. Tested on PS5 firmware 13.60 with etaHEN. Not affiliated with X Corp. or Sony."
+    ],
+    "sources": [
+      {
+        "name": "XPS5 on GitHub",
+        "url": "https://github.com/ramalhoboss/XPS5"
+      },
+      {
+        "name": "XPS5 v1.0.1 release",
+        "url": "https://github.com/ramalhoboss/XPS5/releases/tag/v1.0.1"
+      }
+    ]
+  },
+  {
+    "id": "ghostcontrol-8bitdo-v04",
+    "date": "2026-11-14",
+    "tag": "Tool",
+    "title": "ghostcontrol-8bitdo v0.4: button mapper and controller profiles",
+    "summary": "ghostcontrol-8bitdo v0.4 adds a browser-based button mapper accessible from the console or a phone, switchable controller profiles, and Xbox/Nintendo label support.",
+    "body": [
+      "ghostcontrol-8bitdo v0.4 by kh-mitya adds a full button mapper accessible through a GhostControl 8BitDo tile in the Media tab or via the console's IP on port 8096 from a phone or computer. Every PlayStation button can be remapped to one or more controller buttons with dedicated glyphs, and sticks and triggers have options for swapping, axis inversion, dead zones, and press-point adjustment. The interface has a light theme and a graphite dark theme with an orange accent, designed for the console browser's stick cursor with large targets.",
+      "The update introduces profiles shared across all controllers, where each controller remembers its own active profile. New profiles get symbol names (Bolt, Leaf, Heart) and switch with Xbox + RB/LB on the controller. Buttons are stored by position so a profile works the same on Xbox and Switch-layout pads, with matching Xbox or Nintendo labels for adapter controllers. Tested on PS5 Slim firmware 12.60 with kstuff-lite. Requires a jailbroken PS5 with a payload loader."
+    ],
+    "sources": [
+      {
+        "name": "ghostcontrol-8bitdo v0.4 release",
+        "url": "https://github.com/kh-mitya/ghostcontrol-8bitdo/releases/tag/v0.4"
+      }
+    ]
+  },
+  {
+    "id": "ps4mount-v080",
+    "date": "2026-11-14",
+    "tag": "Tool",
+    "title": "ps4mount v0.8.0: packages stay where you put them",
+    "summary": "ps4mount v0.8.0 no longer moves files on your drive — games, updates and add-ons are used from whichever folder they are in, with any file name, and each drive is read only once on connect.",
+    "body": [
+      "ps4mount v0.8.0 by gasb07 is a major rework of how the tool handles packages. It no longer moves anything on your drive: games, updates and add-ons are used from the folder they are already in, in any folder of the drive, with any file name. Each drive is read once when connected and each package is read only once. Games are grouped with their own updates and add-ons automatically, and when a game has more than one update on the drive the newest one is used. Libraries organized by earlier versions in ps4/<game ID> folders keep working as they are.",
+      "The release also fixes add-ons with large copies failing with \"copy stopped\" while the console was still copying, the log filling up with repeated system messages, and duplicate-drive conflicts where the same game on two drives caused it to be re-added repeatedly. The web panel now shows the folder a game is actually read from. Send ps4mount.elf to your payload loader on port 9021. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "ps4mount v0.8.0 release",
+        "url": "https://github.com/gasb07/ps4mount/releases/tag/v0.8.0"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v12416-v12417",
     "date": "2026-11-13",
     "tag": "Tool",
