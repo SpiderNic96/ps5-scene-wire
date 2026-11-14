@@ -1,5 +1,20 @@
 [
   {
+    "id": "patchdl-v0312-v0313",
+    "date": "2026-11-14",
+    "tag": "Tool",
+    "title": "PatchDL v0.3.12–v0.3.13: auto-install after download and authorship attribution",
+    "summary": "PatchDL v0.3.12 installs game updates right after downloading by default, and v0.3.13 adds an About box with authorship attribution and GPL additional terms after the project was republished without credit.",
+    "body": [
+      "PatchDL v0.3.12 by knutwurst changes the default workflow so updates install right after downloading, removing one manual step. Existing users keep their saved setting and can turn \"Install after download\" on in the settings. Astro's Playroom is no longer flagged as experimental — on a freshly reset console PatchDL downloads and installs it without problems. Donations now go through Ko-fi.",
+      "v0.3.13 is a response to PatchDL being republished under a different name and author (\"Updater Games\") with the original credits stripped. The settings page now ends with an About box showing the copyright, license, a link to the source and where the ELF was built — official builds say \"Built from knutwurst/ps5-patchdl\". PatchDL also adds additional terms under section 7 of the GPL: forks must keep the copyright notices and the attribution in the About box and must identify themselves as a modified version. Send patchdl_0.3.13.elf to your PS5 with your ELF loader."
+    ],
+    "sources": [
+      {"name": "PatchDL v0.3.12 release", "url": "https://github.com/knutwurst/ps5-patchdl/releases/tag/v0.3.12"},
+      {"name": "PatchDL v0.3.13 release", "url": "https://github.com/knutwurst/ps5-patchdl/releases/tag/v0.3.13"}
+    ]
+  },
+  {
     "id": "ps5upload-v12418-v12419",
     "date": "2026-11-14",
     "tag": "Tool",
