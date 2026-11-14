@@ -144,6 +144,7 @@ export const SOURCES = [
   { cat: P, repo: 'ldm087/ludemos-ps5', name: 'LudemOS', about: 'Gaming Linux distro for PS5 Slim with console-style launcher' },
   { cat: P, repo: 'fs0ciety404/ps5-linux-tuning', name: 'ps5-linux-tuning', about: 'System tuning and BT fix for PS5 Linux' },
   { cat: P, repo: 'KPKev/WinBrew-11', name: 'WinBrew 11', about: 'Windows 11-style desktop with Vapor game launcher' },
+  { cat: P, repo: 'gmorb/nor-studio', name: 'NOR Studio', about: 'Browser-based PS5 NOR editor, CH341A programmer and UART diagnostics' },
 
   // Media and streaming
   { cat: M, repo: 'RafaelNGP/psbox-cloud-gaming', name: 'PSBox Cloud Gaming', about: 'Xbox Cloud Gaming client' },

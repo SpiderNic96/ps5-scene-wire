@@ -1,5 +1,26 @@
 [
   {
+    "id": "nor-studio-ps5-nor-editor",
+    "date": "2026-11-14",
+    "tag": "PC & Linux",
+    "title": "NOR Studio: browser-based PS5 NOR editor, CH341A programmer and UART diagnostics",
+    "summary": "NOR Studio is a single-file HTML tool that reads and edits PS5 NOR dumps, flashes them with a CH341A programmer, decodes UART error logs, and includes a 430+ code error database — all from Chrome or Edge.",
+    "body": [
+      "NOR Studio by gmorb is an open-source, single HTML file that combines a PS5 NOR editor, a CH341A programmer and a UART diagnostics terminal. The NOR editor reads serial numbers, motherboard serial, SKU, region, board revision, Wi-Fi and LAN MACs, firmware version, active boot slot and OS flags from a NOR dump, with MD5 and SHA-256 checksums and SLB2 firmware container health checks. It can switch a console between Disc and Digital editions, edit serials, SKU, MACs and OS flags (IDU mode, manufacturing mode, boot messages, memory tests), and shows a byte-level diff of every change before saving. The CH341A programmer reads the NOR chip directly into the editor (reading twice and comparing), takes an automatic backup before every write, rewrites only the 4 KB sectors that changed, then verifies the whole chip. It detects the chip model and warns about 1.8 V parts that need the well-known 3.3 V mod.",
+      "The UART diagnostics tab detects the console and wakes it with a serial break, reads the full error log and decodes each entry with description, power state, OS state, boot cause, active devices, SoC and ambient temperatures, and inter-entry timing. An error code database covers 430+ exact codes plus 30+ pattern-matched families, imports from Console Service Tool JSON, the old errorDB.xml or CSV, and lets you add your own repair notes per code. A built-in hardware guide shows NOR pinout and UART pad maps for EDM-010/020 and Slim boards. Use it online at gmorb.github.io/nor-studio or download the single HTML file and open it offline. Requires desktop Chrome or Edge for Web Serial and WebUSB features; Firefox and Safari can use the NOR editor and error database."
+    ],
+    "sources": [
+      {
+        "name": "NOR Studio on GitHub",
+        "url": "https://github.com/gmorb/nor-studio"
+      },
+      {
+        "name": "NOR Studio 1.2.0 release",
+        "url": "https://github.com/gmorb/nor-studio/releases/tag/v1.2.0"
+      }
+    ]
+  },
+  {
     "id": "xps5-twitter-ps5",
     "date": "2026-11-14",
     "tag": "Media",
