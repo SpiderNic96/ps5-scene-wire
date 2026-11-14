@@ -1,5 +1,34 @@
 [
   {
+    "id": "ps5upload-v12418-v12419",
+    "date": "2026-11-14",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.4.18–v12.4.19: Play Together NAT diagnostics and stable port forwarding",
+    "summary": "PS5 Upload v12.4.18 shows your router's NAT status on Play Together invites and keeps the friend-connection port consistent so forwarded ports stay working. Tailscale pauses on an offline PS5 are now remembered.",
+    "body": [
+      "PS5 Upload v12.4.18 by phantomptr improves Play Together networking diagnostics. The invite panel now reports what your router did for friends on other networks: whether it opened a port, opened one behind double NAT (another router or CGNAT), or opened none at all. When port forwarding is needed, the panel tells you which UDP port to forward. The port friends connect to is now consistent across sessions, so a forwarded port on your router keeps working. You can also pick a custom port in Settings › App › Play Together.",
+      "Tailscale integration is also improved: pausing Tailscale on a PS5 that is powered off or not responding is no longer lost — the app remembers the pause and applies it as soon as the PS5 answers again, and switching it back on cancels the pending pause. v12.4.19 is a follow-up micro-patch. Requires a jailbroken PS5 with a web browser or ELF loader."
+    ],
+    "sources": [
+      {"name": "PS5 Upload v12.4.18 release", "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.4.18"},
+      {"name": "PS5 Upload v12.4.19 release", "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.4.19"}
+    ]
+  },
+  {
+    "id": "psbox-v172-instruments-wifi",
+    "date": "2026-11-14",
+    "tag": "Media",
+    "title": "PSBox Cloud Gaming v1.7.2: guitar and drum support for Fortnite Festival, Wi-Fi freeze mitigation",
+    "summary": "PSBox Cloud Gaming v1.7.2 adds Xbox 360 wireless receiver and PS3 instrument support for Fortnite Festival, detects and shortens Wi-Fi freezes automatically, and removes the cloud queue timeout.",
+    "body": [
+      "PSBox Cloud Gaming v1.7.2 by RafaelNGP brings instrument controller support for cloud gaming. An Xbox 360 wireless receiver now registers each guitar, drum kit or controller as its own player (up to four), with a dedicated menu tab for guitar button mapping and optional strum. Overdrive defaults to A as in Fortnite Festival's own controls. PS3 Guitar Hero, Rock Band and DJ Hero instruments work through their USB dongles on both PS5 and PS4. Generic USB controllers now get rumble support on PS5, and a new X-ray mode lets you map buttons on unknown controllers by pressing each one when prompted — the resulting log is all the developer needs to add native support.",
+      "Wi-Fi reliability is significantly improved: the app now detects when Wi-Fi is holding packets and displays the cause on screen, automatically cutting freezes short during light scenes like lobbies and menus — in testing, lobby freezes dropped from 11.6 to 4.8 per minute and became 40 percent shorter. The cloud queue no longer gives up after 18 minutes, waiting as long as needed until you cancel. Gyro aiming is steadier, colour edges are sharper, and hidden games and favourites now follow the signed-in Xbox account across profiles. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {"name": "PSBox Cloud Gaming v1.7.2 release", "url": "https://github.com/RafaelNGP/psbox-cloud-gaming/releases/tag/v1.7.2"}
+    ]
+  },
+  {
     "id": "nor-studio-ps5-nor-editor",
     "date": "2026-11-14",
     "tag": "PC & Linux",
