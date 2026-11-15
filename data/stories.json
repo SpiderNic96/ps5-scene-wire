@@ -1,5 +1,39 @@
 [
   {
+    "id": "godsend-ps5",
+    "date": "2026-11-15",
+    "tag": "Tool",
+    "title": "GODsend PS5: desktop workshop for managing a jailbroken PS5",
+    "summary": "GODsend PS5 is a Rust and Tauri desktop app that connects over FTP to a jailbroken PS5 and brings library management, payload sending, a virtual DualSense, file transfers, game downloads and format conversions into one tool.",
+    "body": [
+      "GODsend PS5 by ghostyshell is a cross-platform desktop workshop — available on macOS, Windows and Linux — that manages a jailbroken PS5 over FTP. It scans the console's installed library from /user/app, /data/homebrew and USB drives, reads PARAM.SFO for titles and versions, and fetches the app icon for each entry. You can add multiple consoles, and the app probes for ftpsrv (port 2121), etaHEN (1337) and standard FTP (21) with LAN discovery across your subnet. ELF and BIN payloads are sent to elfldr on port 9021, and the payload catalogue is fetched at runtime from itsPLK's ps5-payloads-mirror so new payloads appear without an app update. A built-in virtual DualSense connects through the Ghostpad payload on port 6967 at 60 Hz, with keyboard mapping and text macros.",
+      "Installs go to the PS5Upload package queue or the ShadowMount+ homebrew folder, with folder dumps and ELFs also supported. File transfers run through a two-pane local and console browser with progress tracking. Conversions include folder to ISO (ISO9660 plus Joliet with multi-extent files over 4 GiB), ISO to folder, ZIP pack and unpack, and FAT32 splitting. Downloads support Internet Archive search and multi-connection downloads via aria2c. Requires a jailbroken PS5 with an FTP server, elfldr for payloads, and optionally Ghostpad for the virtual controller and ShadowMount+ for image mounting. Built in Rust with a React and TypeScript UI on Tauri 2."
+    ],
+    "sources": [
+      {
+        "name": "GODsend PS5 on GitHub",
+        "url": "https://github.com/ghostyshell/godsend-ps5"
+      }
+    ]
+  },
+  {
+    "id": "ps5-memcard-v043",
+    "date": "2026-11-15",
+    "tag": "Tool",
+    "title": "PS5 Memcard v0.4.3: 3D card icons now animate in the PS5 browser",
+    "summary": "PS5 Memcard v0.4.3 makes the turning 3D card icons work in the PS5's own browser by playing pre-rendered sprite frames at the same speed, since the browser lacks WebGL.",
+    "body": [
+      "PS5 Memcard v0.4.3 by heydemoura addresses the PS5's built-in browser, which has no WebGL support and always showed the 3D card icons as flat static images. The page now pre-renders the same card model into a series of frames and plays them back at the original speed with the card's name on its label. Other browsers that support WebGL still get the real-time 3D cards.",
+      "Still tested on firmware 12.20 with one USB drive. Real game saves (previous versions tested with synthetic data), PS4 saves and two drives at once have not yet been tested on a console. Requires a jailbroken PS5 with an ELF loader (elfldr on port 9021) and a USB drive formatted exFAT or FAT32. Save handling is built on Garlic SaveMgr by earthonion."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Memcard v0.4.3 release",
+        "url": "https://github.com/heydemoura/ps5-memcard/releases/tag/v0.4.3"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v12421-v12422",
     "date": "2026-11-15",
     "tag": "Tool",
