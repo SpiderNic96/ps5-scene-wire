@@ -220,4 +220,6 @@ export const SOURCES = [
   { cat: R, repo: 'KongaTime/Dantes-Inferno-PS5-Port', name: 'Dante\'s Inferno', about: 'Xbox 360 recomp, up to 4K, bring your own disc' },
   { cat: R, repo: 'codemasterv/Soulcalibur-II-HD-PS5', name: 'Soulcalibur II HD Online', about: 'PS3 recomp, 60fps with full audio, bring your own game' },
   { cat: R, repo: 'Vampinity/GreenHatBoy', name: 'Green Hat Boy (OoT)', about: 'Ocarina of Time (Switch 2) via Eglantine, bring your own dump' },
+  { cat: R, repo: 'milh0usec/ac6-ps5recomp', name: 'AC6Recomp PS5', about: 'Ace Combat 6 Xbox 360 recomp, 1440p/60fps, source-only, bring your own disc' },
+  { cat: R, repo: 'codemasterv/Legend-of-Legaia-PS5-Recomp', name: 'Legend of Legaia Recomp', about: 'PS1 PSXRecomp, widescreen and save states, bring your own disc' },
 ];

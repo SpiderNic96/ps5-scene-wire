@@ -1,5 +1,47 @@
 [
   {
+    "id": "ac6recomp-ps5-beta",
+    "date": "2026-11-15",
+    "tag": "Port",
+    "title": "AC6Recomp PS5 v0.1.0-beta.1: Ace Combat 6 runs natively on jailbroken PS5",
+    "summary": "AC6Recomp PS5 is a source-only beta that statically recompiles Ace Combat 6: Fires of Liberation to run natively on a jailbroken PS5 at 1440p/60 fps, with DualSense support and save/load working through Missions 1–3.",
+    "body": [
+      "AC6Recomp PS5 v0.1.0-beta.1 by milh0usec is a PS5 homebrew port of Ace Combat 6: Fires of Liberation, built on the ReXGlue SDK and forked from sal063's AC6_recomp project. The Xbox 360 PowerPC game code is statically recompiled to run natively on the PS5's hardware — no emulation involved. The PS5 platform layer is derived from mcla-recomp and uses PS5_Vulkan for rendering, with native DualSense input and sceAudioOut for audio. In testing on an original PS5 (Fat) on firmware 7.60, the intro, menus, save/load and Missions 1–3 were completed successfully. The recommended profile renders at 2560×1440 internal resolution, outputs at 1080p and targets 60 fps, with a controlled sample averaging 59.8 fps.",
+      "This is a source-only release — no prebuilt binaries, game data or console keys are provided. You need a legally obtained US retail disc image with a specific SHA-256 hash, an x86-64 Arch Linux build host (native or WSL2) with 30 GB of free space, and a jailbroken PS5. The one-command build script handles extraction, validation, codegen, compilation and staging. Full campaign and other firmware/hardware combinations beyond FW 7.60 on the original PS5 are not yet verified."
+    ],
+    "sources": [
+      {
+        "name": "AC6Recomp PS5 v0.1.0-beta.1 release",
+        "url": "https://github.com/milh0usec/ac6-ps5recomp/releases/tag/v0.1.0-beta.1"
+      },
+      {
+        "name": "AC6Recomp PS5 on GitHub",
+        "url": "https://github.com/milh0usec/ac6-ps5recomp"
+      }
+    ]
+  },
+  {
+    "id": "legend-of-legaia-ps5-recomp",
+    "date": "2026-11-15",
+    "tag": "Port",
+    "title": "Legend of Legaia PS5 Recomp: classic PS1 RPG runs natively on jailbroken PS5",
+    "summary": "Legend of Legaia PS5 Recomp by codemasterv brings the PS1 RPG to jailbroken PS5 as a native PSXRecomp static recompilation, with DualSense controls, save states and optional widescreen.",
+    "body": [
+      "Legend of Legaia PS5 Recomp v1.0.0 by codemasterv is a native PS5 build of the classic PS1 RPG Legend of Legaia, created using PSXRecomp static recompilation (title PPSA77068). The game runs as native code on the PS5 rather than through an emulator. DualSense controls are fully mapped — Cross, Circle, Square, Triangle, D-pad and sticks work as expected, Options is Start, and touchpad click combined with other buttons gives save state, load state and FPS readout shortcuts. An optional widescreen mode stretches supported scenes to 16:9 while keeping FMVs and menus at 4:3.",
+      "Install by copying the PPSA folder to /data/homebrew/ via FTP and letting ShadowMountPlus register it. Place your own legally obtained disc image as disc1.bin in /data/legaia/disc/ — the game generates .cue files and game.toml on first launch. Settings live in /data/legaia/ps5_controls.ini. Areas that run slowly on first visit are recorded to overlay_captures.json; feeding those captures back into the build process compiles them as native code for future builds. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "Legend of Legaia PS5 Recomp v1.0.0 release",
+        "url": "https://github.com/codemasterv/Legend-of-Legaia-PS5-Recomp/releases/tag/v1.0.0"
+      },
+      {
+        "name": "Legend of Legaia PS5 Recomp on GitHub",
+        "url": "https://github.com/codemasterv/Legend-of-Legaia-PS5-Recomp"
+      }
+    ]
+  },
+  {
     "id": "ps5-cleanup-v1010",
     "date": "2026-11-15",
     "tag": "Tool",
