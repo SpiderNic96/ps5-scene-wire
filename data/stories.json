@@ -1,5 +1,90 @@
 [
   {
+    "id": "ps5-cleanup-v1010",
+    "date": "2026-11-15",
+    "tag": "Tool",
+    "title": "PS5 Cleanup v1.0.10: single-pass cleanup and Playden Steam game removal",
+    "summary": "PS5 Cleanup v1.0.10 completes all selected deletions in a single run without rebooting in between, and adds support for removing Playden/Steam games, PS3 ISOs and PS5 .pkg game files.",
+    "body": [
+      "PS5 Cleanup v1.0.10 by xXBneutzerNameXx overhauls the deletion workflow so every selected item is cleaned in one pass — no second run and no reboot in between. This covers tiles that ShadowMount, Kraken Mount or PS5 Upload still link to a game folder, and the empty system-area folders that homebrew tiles leave behind. Background programs are stopped before deletion so they cannot recreate what was just removed; FTP, nanoDNS, Payload Manager and the jailbreak itself keep running. A full cleanup ends with a single reboot.",
+      "The update also adds Playden (Steam) game support: Steam titles are detected and removed together with their Playden game-list entries, including data only Playden itself can open (marked in red as a warning). PS3 ISO files and PS5 .pkg game files now show with names and cover art alongside PS4 titles, sorted PS5 → PS4 → PS3. Tiles registered directly in the system app list by tools like TabShifter are cleanly unregistered. If anything remains after cleanup, PS5 Cleanup names it and explains why. Requires a jailbroken PS5 with an ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Cleanup v1.0.10 release",
+        "url": "https://github.com/xXBneutzerNameXx/PS5-Cleanup/releases/tag/v1.0.10"
+      }
+    ]
+  },
+  {
+    "id": "prospero-themes-01000042",
+    "date": "2026-11-15",
+    "tag": "Tool",
+    "title": "Prospero Themes 01.000.042: kstuff and Relapse compatibility fix",
+    "summary": "Prospero Themes 01.000.042 fixes the empty Library and broken USB Import that appeared when running under kstuff or Relapse jailbreaks.",
+    "body": [
+      "Prospero Themes 01.000.042 by Darkatek7 fixes a compatibility issue with the kstuff and Relapse jailbreaks. Under kstuff (seen on FW 11.00 and 13.00) and Relapse (13.20), the console refused the app's folder listings while individual file reads and writes still worked. The app treated the refusal as an empty folder, so the Library showed only the built-in Blue Hour theme and USB Import could not find any theme packs. The folder-reading code has been rewritten to use a method these jailbreaks accept, and if a listing is still refused, the app's file helper (ThemeHelper) handles the folder instead.",
+      "Tested on FW 13.00 with kstuff: version 01.000.041 showed only Blue Hour, while 01.000.042 shows all 32 themes of the test library. Update from the app via System → App update, or extract PPSA90210.zip and copy the PPSA90210 folder to /data/homebrew/ on the console. Your library, backups and settings are preserved. Requires an ELF loader on port 9021 (elfldr) for ThemeHelper."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Themes 01.000.042 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.042"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v12420",
+    "date": "2026-11-15",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.4.20: payload source lists and faster archive extraction",
+    "summary": "PS5 Upload v12.4.20 lets you import a whole list of payloads at once with checksum verification, and significantly speeds up extracting archives — especially multi-part RARs — on the PS5.",
+    "body": [
+      "PS5 Upload v12.4.20 by phantomptr adds Payload sources to Payload Manager. You can now paste the address of a payload list in Payload Manager's format and all its payloads appear in the catalogue at once. Each payload is shown only when the list provides its checksum, and any download whose checksum does not match is refused — preventing tampered payloads from being loaded.",
+      "Archive extraction on the PS5 is also significantly faster in this release: the extractor now writes to the drive in large pieces instead of many small ones, and the RAR decoder itself has been optimised. Multi-part RAR sets benefit the most. Requires a jailbroken PS5 with a web browser or ELF loader."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.4.20 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.4.20"
+      }
+    ]
+  },
+  {
+    "id": "openpsapp-v020",
+    "date": "2026-11-15",
+    "tag": "Tool",
+    "title": "OpenPSApp v0.2.0: cloud sync and companion website",
+    "summary": "OpenPSApp v0.2.0 adds cloud sync that sends your PS5 profile, games, trophies and playtime to a self-hosted companion website, with a custom HTTPS client and QR-code pairing.",
+    "body": [
+      "OpenPSApp v0.2.0 by marcelorsdd adds cloud sync to the offline PlayStation App alternative. On the PS5, Account → Link account shows a code and QR code; confirm it on the companion website and the console automatically sends its profile, games, playtime, trophies and images on startup, every 15 minutes, and within about a minute after any change. One console per account. The sync uses a custom HTTPS client built on Mbed TLS 3.6.7, trusting only the ISRG Root X1 and X2 certificates. Cloud sync is off by default until a server address is set in config.json.",
+      "The release also includes a companion website (in the web/ directory) with sign-in, profile pages, trophy listings, game pages, search and account settings, plus console linking by typed code or camera QR scan. The codebase has been reorganised into npm workspaces with shared contract types, a core logic library, ESLint, Prettier and clang-format. New contributor docs, CI with CodeQL, dependency review, OpenSSF Scorecard and reproducible release artifacts with SHA-256 sums round out the update. Requires a jailbroken PS5 with a compatible payload loader."
+    ],
+    "sources": [
+      {
+        "name": "OpenPSApp v0.2.0 release",
+        "url": "https://github.com/marcelorsdd/OpenPSApp/releases/tag/v0.2.0"
+      }
+    ]
+  },
+  {
+    "id": "winbrew-11-recycle-bin-fix",
+    "date": "2026-11-15",
+    "tag": "PC & Linux",
+    "title": "WinBrew 11 recycle-bin-fix-v1: reliable file recovery and draggable desktop icons",
+    "summary": "WinBrew 11's Recycle Bin fix release makes deleted files appear directly in the bin, adds working restore and permanent delete, and lets you drag desktop icons and select multiple items.",
+    "body": [
+      "WinBrew 11 recycle-bin-fix-v1 by KPKev addresses long-standing Recycle Bin issues on PS5. Deleted files now appear directly in the Recycle Bin instead of being buried inside extra folders. Restore puts a file back at its original location when that path is recorded, you can permanently delete individual items or empty the entire bin after a confirmation prompt, and older items are recovered with safety checks that leave files in place when they cannot be handled safely. The helper stays restricted to WinBrew's recovery locations and user folders.",
+      "Desktop icons can now be moved by dragging, and you can draw a selection box around multiple items. In File Explorer, Triangle goes up a folder and Square goes back. This release keeps Vapor, the existing Counter-Strike 2 and Blender runtimes, and the Notepad and Start menu changes from the previous release. Skyrim Special Edition is currently reported not working. Download the ZIP, SHA256SUMS.txt, INSTALL.md and fix-vapor-install-modes.py from the release. New installations also need the Vapor base kit. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "WinBrew 11 recycle-bin-fix-v1 release",
+        "url": "https://github.com/KPKev/WinBrew-11/releases/tag/recycle-bin-fix-v1"
+      }
+    ]
+  },
+  {
     "id": "patchdl-v0312-v0313",
     "date": "2026-11-14",
     "tag": "Tool",
@@ -10,8 +95,14 @@
       "v0.3.13 is a response to PatchDL being republished under a different name and author (\"Updater Games\") with the original credits stripped. The settings page now ends with an About box showing the copyright, license, a link to the source and where the ELF was built — official builds say \"Built from knutwurst/ps5-patchdl\". PatchDL also adds additional terms under section 7 of the GPL: forks must keep the copyright notices and the attribution in the About box and must identify themselves as a modified version. Send patchdl_0.3.13.elf to your PS5 with your ELF loader."
     ],
     "sources": [
-      {"name": "PatchDL v0.3.12 release", "url": "https://github.com/knutwurst/ps5-patchdl/releases/tag/v0.3.12"},
-      {"name": "PatchDL v0.3.13 release", "url": "https://github.com/knutwurst/ps5-patchdl/releases/tag/v0.3.13"}
+      {
+        "name": "PatchDL v0.3.12 release",
+        "url": "https://github.com/knutwurst/ps5-patchdl/releases/tag/v0.3.12"
+      },
+      {
+        "name": "PatchDL v0.3.13 release",
+        "url": "https://github.com/knutwurst/ps5-patchdl/releases/tag/v0.3.13"
+      }
     ]
   },
   {
@@ -25,8 +116,14 @@
       "Tailscale integration is also improved: pausing Tailscale on a PS5 that is powered off or not responding is no longer lost — the app remembers the pause and applies it as soon as the PS5 answers again, and switching it back on cancels the pending pause. v12.4.19 is a follow-up micro-patch. Requires a jailbroken PS5 with a web browser or ELF loader."
     ],
     "sources": [
-      {"name": "PS5 Upload v12.4.18 release", "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.4.18"},
-      {"name": "PS5 Upload v12.4.19 release", "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.4.19"}
+      {
+        "name": "PS5 Upload v12.4.18 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.4.18"
+      },
+      {
+        "name": "PS5 Upload v12.4.19 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.4.19"
+      }
     ]
   },
   {
@@ -40,7 +137,10 @@
       "Wi-Fi reliability is significantly improved: the app now detects when Wi-Fi is holding packets and displays the cause on screen, automatically cutting freezes short during light scenes like lobbies and menus — in testing, lobby freezes dropped from 11.6 to 4.8 per minute and became 40 percent shorter. The cloud queue no longer gives up after 18 minutes, waiting as long as needed until you cancel. Gyro aiming is steadier, colour edges are sharper, and hidden games and favourites now follow the signed-in Xbox account across profiles. Requires a jailbroken PS5."
     ],
     "sources": [
-      {"name": "PSBox Cloud Gaming v1.7.2 release", "url": "https://github.com/RafaelNGP/psbox-cloud-gaming/releases/tag/v1.7.2"}
+      {
+        "name": "PSBox Cloud Gaming v1.7.2 release",
+        "url": "https://github.com/RafaelNGP/psbox-cloud-gaming/releases/tag/v1.7.2"
+      }
     ]
   },
   {
