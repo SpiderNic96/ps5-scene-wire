@@ -1,5 +1,60 @@
 [
   {
+    "id": "ps5upload-v12421-v12422",
+    "date": "2026-11-15",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.4.21–v12.4.22: console removal, zstd runtime fix for ASTRO BOT hangs",
+    "summary": "PS5 Upload v12.4.22 fixes zstd-packed games (including ASTRO BOT) that hang at startup by updating the ampr-emu-ng runtime, while v12.4.21 adds a button to fully remove PS5Upload from a console.",
+    "body": [
+      "PS5 Upload v12.4.22 by phantomptr addresses a startup hang affecting zstd-packed games such as ASTRO BOT. The cause was the ampr-emu-ng runtime bundled at version 0.3.2 — versions before 0.3.4 hang certain games at launch. New packs now include 0.4.0 or newer, and a new button in Convert lets you update the runtime inside an existing pack. A folder on the PS5 is updated in place; an image is handled through a ShadowMount+ backport folder. The update also adds a check warning when ShadowMount+ replaces a game's libSceAmpr.sprx with one that cannot run zstd packs, and includes an SSH library security update.",
+      "Version 12.4.21 adds a Remove PS5Upload button under Settings › This PS5 that cleanly uninstalls PS5Upload from a console — removing the Minion tile, PS5Upload's own files and loader helper copies while keeping games, saves and other payloads. The Play setup wizard now marks the rest-mode network step as optional (only needed for wake-from-rest-mode), and Payload Manager no longer overwrites PS5Upload's own copy of elfldr when updating the stored helper."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.4.22 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.4.22"
+      },
+      {
+        "name": "PS5 Upload v12.4.21 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.4.21"
+      }
+    ]
+  },
+  {
+    "id": "prosperomgr-v121",
+    "date": "2026-11-15",
+    "tag": "Tool",
+    "title": "ProsperoMgr v1.2.1: payload logos, clearer PKG install and smarter game detection",
+    "summary": "ProsperoMgr v1.2.1 polishes the v1.2 release with logos for payloads and repositories, a multi-select PKG install with a review step, folder-based game detection and better network resilience.",
+    "body": [
+      "ProsperoMgr v1.2.1 by notmaj0r is a polish update on top of the v1.2 release. Install PKG now opens a picker where you tick several packages at once with sizes shown and a Select All per folder. A new review step shows each game's cover, name, title ID, package count and total size, with each package labelled by type (Game, Update or DLC) in colour. Base games install before their updates for real — an update or DLC waits until its base game finishes on the console, and if the base game fails, its updates are skipped with a clear reason while other games carry on.",
+      "Payload Repositories, the Payloads page and the Autoloader timeline now display each project's logo. Games are recognised by what is inside their folder rather than just the folder name, and network changes or disconnections are handled more gracefully. Requires a jailbroken PS5 with a web browser accessible over the local network."
+    ],
+    "sources": [
+      {
+        "name": "ProsperoMgr v1.2.1 release",
+        "url": "https://github.com/notmaj0r/ProsperoMgr/releases/tag/v1.2.1"
+      }
+    ]
+  },
+  {
+    "id": "ps5-memcard-v042",
+    "date": "2026-11-15",
+    "tag": "Tool",
+    "title": "PS5 Memcard v0.4.2: toggle automatic backups and a lighter web UI",
+    "summary": "PS5 Memcard v0.4.2 adds a status-line toggle to pause and resume automatic save copying, and drops web fonts and heavy effects for a much faster page load.",
+    "body": [
+      "PS5 Memcard v0.4.2 by heydemoura lets you turn automatic backup off and on directly from the status line. While auto-backup is paused, no saves are copied by themselves — manual Back Up and Import still work. The setting persists across restarts. The web UI has been significantly lightened: external web fonts are no longer loaded, blurred panels and the animated background are removed, and the page opens and scrolls much faster — including in the PS5's own browser. The turning 3D card icons are kept, redrawn at roughly 30 fps.",
+      "Tested on firmware 12.20 with one USB drive. PS4 saves, real game saves (previous tests used synthetic data) and two drives at once have not yet been tested on a console. Requires a jailbroken PS5 with an ELF loader (elfldr on port 9021) and a USB drive formatted exFAT or FAT32."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Memcard v0.4.2 release",
+        "url": "https://github.com/heydemoura/ps5-memcard/releases/tag/v0.4.2"
+      }
+    ]
+  },
+  {
     "id": "ac6recomp-ps5-beta",
     "date": "2026-11-15",
     "tag": "Port",

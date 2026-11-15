@@ -866,6 +866,14 @@
       ],
       "needs": [],
       "note": "Source-only beta; build from US retail disc on Arch Linux. Missions 1–3 verified on original PS5 (Fat)."
+    },
+    "heydemoura/ps5-memcard": {
+      "tested": [
+        "12.20"
+      ],
+      "needs": [
+        "elfldr"
+      ]
     }
   },
   "unstated": [
@@ -940,7 +948,6 @@
     "griches/PS5_MarioGalaxy",
     "griches/PS5_Quake3e",
     "griches/PS5_SwitchWaker",
-    "heydemoura/ps5-memcard",
     "hollamhide/hollamhide.github.io",
     "itsPLK/ps5-payload-manager",
     "jpemendonca/BlueBird",
