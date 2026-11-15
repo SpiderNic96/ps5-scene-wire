@@ -828,9 +828,10 @@
         "13.60"
       ],
       "needs": [
-        "Eglantine"
+        "Eglantine",
+        "ShadowMountPlus"
       ],
-      "note": "Pre-alpha, no public download. Tested on base PS5 firmware 12.40 and 13.60."
+      "note": "Alpha build. Tested on base PS5 firmware 12.40; 13.x untested with this build (adjust env.txt). PS5 Pro untested."
     },
     "kh-mitya/ghostcontrol-8bitdo": {
       "tested": [

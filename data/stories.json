@@ -1,5 +1,94 @@
 [
   {
+    "id": "ps5sx2-v250",
+    "date": "2026-11-15",
+    "tag": "Emulator",
+    "title": "PS5SX2 2.50: Lossless Scaling frame generation and redesigned settings",
+    "summary": "PS5SX2 2.50 adds a second frame generation method using Lossless Scaling, redesigns the settings sheet with pages and coloured chips, and fixes shelf freezes on fat consoles.",
+    "body": [
+      "PS5SX2 2.50 by Swordpdf introduces Lossless Scaling as a second frame generation option alongside its own. Drop your Lossless.dll (from your copy of Lossless Scaling) into /data/PCSX2/lossless/ and select Picture > Frame gen method > Lossless Scaling in a game's settings. It runs at full size at 4K and steps down to 75% or 50% automatically if the game can't keep up. A cache bug in the GPU driver that caused a watery, warped look on moving parts has been fixed, and the 120 Hz check no longer trips on TVs with variable refresh rates that idle at 48 Hz. The FPS counter now reports generated frames correctly (a 30 fps game shows 60, not 90). The settings sheet has been rebuilt as pages with coloured chips showing whether a value is set for this game, for all games, or left at the default.",
+      "The game database is synced with upstream PCSX2 (12,906 entries). New options include VIF unpacking for games like Mafia, a flat CRT filter, Skipdraw range, game speed control, dithering, EE/VU round modes, HDD image support, USB guitar fret colours and Buzz! buzzers. Leaving a game no longer freezes on fat consoles, and save states have their screenshots again. Games on NFS shares now get home screen tiles via disc helper 171q. Polish, Russian and Ukrainian translations are included. Requires a jailbroken PS5 with ShadowMount+ and elfldr."
+    ],
+    "sources": [
+      {
+        "name": "PS5SX2 2.50 release",
+        "url": "https://github.com/Swordpdf/PS5SX2/releases/tag/vk-285-321"
+      }
+    ]
+  },
+  {
+    "id": "greenhatboy-alpha-t186",
+    "date": "2026-11-15",
+    "tag": "Emulator",
+    "title": "Green Hat Boy Alpha T186: first public alpha of OoT Switch 2 on PS5",
+    "summary": "Green Hat Boy's first alpha is out, letting anyone with a jailbroken base PS5 and the right files play the Switch 2 version of Ocarina of Time through the Eglantine emulator.",
+    "body": [
+      "Green Hat Boy Alpha T186 by Vampinity, GrowingBlackBeans and waveydude is the first public alpha of the project that runs the Switch 2 version of Ocarina of Time on a jailbroken base PS5 via the Eglantine emulator core. This is an early test version — expect crashes and save often. The alpha was tested on a base PS5 on firmware 12.40 only; the PS5 Pro and firmware 13.x are untested (13.x users should change EDEN_GUEST_SWAP_AHEAD_MIB to 2048 in env.txt). Before playing, set the display to Handheld at 1x, as Docked mode is not ready yet.",
+      "Installation requires a jailbroken base PS5, ShadowMountPlus 1.7beta4 or newer, an exFAT USB drive, and your own legally obtained game files. Download the ZIP, extract the PPSA98515 folder into the homebrew directory on the USB drive, and launch through ShadowMountPlus. Saves and in-game settings are stored on the PS5 itself. Users updating from older test builds should delete the old PPSA98515 folder and replace it with the new one, keeping the new env.txt."
+    ],
+    "sources": [
+      {
+        "name": "Green Hat Boy Alpha T186 release",
+        "url": "https://github.com/Vampinity/GreenHatBoy/releases/tag/alpha-t186"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v12423",
+    "date": "2026-11-15",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.4.23: save restore, removal and conversion fixes",
+    "summary": "PS5 Upload v12.4.23 fixes save restoration to another user, the console removal tool, non-English game names in Convert, and several UI issues across Share, Payloads and Play Together.",
+    "body": [
+      "PS5 Upload v12.4.23 by phantomptr is a review of everything changed since 12.4.10, checked with automated tests. Restoring a save to another user now checks compatibility before starting and always puts the other user's own save back if the last step fails — previously it could exit before the restore was safe. The Remove PS5Upload tool now fully removes all files before exiting, fixing a race where the helper could stop early. Convert now handles games with non-English file names of certain lengths that previously couldn't be checked at all.",
+      "The ShadowMount+ emulator check no longer misreads a PS5 that didn't respond as having nothing to warn about, and images already on the newest zstd runtime no longer get a needless backport folder. Share links opened a second time now fill the form correctly. Payload sources no longer fetch once per payload, and each payload shows which source it comes from. Tailscale pauses the PS5 refused are no longer shown as paused. Play Together logs now name the port correctly. Checked with automated tests but not yet tried on a PS5."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.4.23 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.4.23"
+      }
+    ]
+  },
+  {
+    "id": "openpsapp-v030-v031",
+    "date": "2026-11-15",
+    "tag": "Tool",
+    "title": "OpenPSApp v0.3.0–v0.3.1: official server, profile pictures and QR security fix",
+    "summary": "OpenPSApp v0.3.0 launches the companion website at openpsapp.com with zero-config pairing, while v0.3.1 adds Google and Discord profile pictures and moves the pairing code out of server logs.",
+    "body": [
+      "OpenPSApp v0.3.0 by marcelorsdd launches the official companion website at openpsapp.com. The console now connects to this server by default when the server field in config.json is empty, so Link Account works without editing any settings. Privacy Policy and Terms of Service pages are live at /privacy and /terms. Nothing is sent until a profile is explicitly linked. Website dependencies have been updated to Base UI, TanStack Query and React Hook Form, with the test runner moved to Vitest 5.",
+      "Version 0.3.1 adds Google and Discord profile pictures — the website uses whichever account you sign in with. While the console is still sending images, the sync badge and profile page show how many have arrived and display them as they come in. Missing images now show a placeholder instead of a broken icon. A security fix moves the pairing QR code to a URL fragment (/link#code=…) so the code never reaches the server or its logs; older consoles using /link?code=… still work."
+    ],
+    "sources": [
+      {
+        "name": "OpenPSApp v0.3.1 release",
+        "url": "https://github.com/marcelorsdd/OpenPSApp/releases/tag/v0.3.1"
+      },
+      {
+        "name": "OpenPSApp v0.3.0 release",
+        "url": "https://github.com/marcelorsdd/OpenPSApp/releases/tag/v0.3.0"
+      }
+    ]
+  },
+  {
+    "id": "kraken-mount-v020",
+    "date": "2026-11-15",
+    "tag": "Tool",
+    "title": "Kraken Mount v0.2.0: all FPKG formats, 11 languages and ampr-emu-ng auto-updates",
+    "summary": "Kraken Mount v0.2.0 supports all FPKG files including sparse ones, adds a web UI in 11 languages, bundles ampr-emu-ng v0.4.1 with self-updating, and fixes game relinking and startup ordering.",
+    "body": [
+      "Kraken Mount v0.2.0 by quer3q is the first proper versioned release of the PS5 game mounter. All FPKG files are now supported, including sparse ones that failed before. The web UI and notifications are available in 11 languages. ampr-emu-ng v0.4.1 is bundled and the app can now check for ampr-emu-ng updates by itself. A game moved to another drive or folder is relinked without requiring a full rebuild.",
+      "Startup ordering has been improved: Kraken Mount now waits for kstuff to launch and for ShadowMount+ to stop before mounting anything, preventing conflicts. New games also register on setups where only elfldr runs (the /system_ex read-only issue is fixed, thanks to strongt1me). The web UI is lighter, with covers loading the 512x512 icon first and the background photo removed. To update, send kraken-mount.elf once to elfldr on port 9021. Existing caches are kept."
+    ],
+    "sources": [
+      {
+        "name": "Kraken Mount v0.2.0 release",
+        "url": "https://github.com/quer3q/kraken-mount/releases/tag/v0.2.0"
+      }
+    ]
+  },
+  {
     "id": "godsend-ps5",
     "date": "2026-11-15",
     "tag": "Tool",
