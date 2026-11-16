@@ -1,5 +1,39 @@
 [
   {
+    "id": "openpsapp-v032",
+    "date": "2026-11-16",
+    "tag": "Tool",
+    "title": "OpenPSApp v0.3.2: resilient trophy sync and 40 MiB image uploads",
+    "summary": "OpenPSApp v0.3.2 stops a single refused trophy list or image from halting the whole sync and raises the server's image upload limit to 40 MiB for 4K key art.",
+    "body": [
+      "OpenPSApp v0.3.2 by marcelorsdd fixes a sync-stopping bug: previously, one trophy list or image the server refused would abort the entire upload. The console now skips the rejected item and sends the rest, so large libraries finish syncing without manual intervention.",
+      "The server also raises its image upload limit from the previous cap to 40 MiB, which is enough for 4K key art and high-resolution trophy icons. Requires a jailbroken PS5; send the payload through elfldr on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "OpenPSApp v0.3.2 release",
+        "url": "https://github.com/marcelorsdd/OpenPSApp/releases/tag/v0.3.2"
+      }
+    ]
+  },
+  {
+    "id": "kraken-mount-v021",
+    "date": "2026-11-16",
+    "tag": "Tool",
+    "title": "Kraken Mount v0.2.1: FPKG trophy and save support, fixed file permissions",
+    "summary": "Kraken Mount v0.2.1 pulls trophies, save icons and game backgrounds through for FPKG games, and fixes file permissions that prevented ampr-emu-ng from starting zstd-packed titles.",
+    "body": [
+      "Kraken Mount v0.2.1 by quer3q adds proper file access for FPKG games. Some files — save_data.png, pic0/pic1, snd0.at9, trophy files and the encrypted npbind.dat/nptitle.dat — live only in the package's outer container, not in the game image. Kraken Mount now copies them into each game's cache, fixing the CE-107112-2 popup on games whose saves actually worked, missing trophies and missing backgrounds.",
+      "File permissions are also corrected: games and the console's save and trophy services read files under their own user, so Kraken Mount now makes caches, .pkg files with their folders, and folder games readable for them (adding only missing permissions, never removing any). Previously, a .pkg uploaded with restrictive permissions made ampr-emu-ng fall back to LZ4 mode and the game failed to start. To update, send kraken-mount.elf once to elfldr on port 9021. The first start after the update rebuilds every game's cache, which takes a while and needs some free space."
+    ],
+    "sources": [
+      {
+        "name": "Kraken Mount v0.2.1 release",
+        "url": "https://github.com/quer3q/kraken-mount/releases/tag/v0.2.1"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v1251-bugfix",
     "date": "2026-11-16",
     "tag": "Tool",
