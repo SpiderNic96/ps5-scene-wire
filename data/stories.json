@@ -1,5 +1,56 @@
 [
   {
+    "id": "psbox-v175-android-windows",
+    "date": "2026-11-16",
+    "tag": "Media",
+    "title": "PSBox Cloud Gaming v1.7.5: native Android and Windows ports",
+    "summary": "PSBox Cloud Gaming v1.7.5 debuts a native Android port with adaptive touch controls and handheld support, plus a standalone 64-bit Windows portable edition with Vulkan rendering.",
+    "body": [
+      "PSBox Cloud Gaming v1.7.5 by RafaelNGP is the app's biggest multi-platform expansion. The native Android port runs on Vulkan through NDK and SDL3, with hardware-accelerated H.264 video decoding via AMediaCodec for lower heat and longer battery life. It supports 16KB memory page alignment for modern Android 14/15 kernels and handles lifecycle events like background suspension and instant resume natively. A built-in Vulkan touchpad overlay auto-hides when a physical controller is connected, and a Touch Layout Studio lets you reposition and resize virtual buttons and save layouts as JSON profiles. It has been tested on the Anbernic RG 557 and Retroid Pocket handhelds.",
+      "The standalone Windows port ships as a zero-install portable ZIP with a 64-bit Vulkan executable. It supports Xbox, DualSense, DualShock and generic gamepads via SDL3 out of the box, plus full keyboard and mouse navigation. A native crash guard (SEH) provides automated crash diagnostics. On the PS5 side, PSBox requires a jailbroken console with ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "PSBox Cloud Gaming v1.7.5 release",
+        "url": "https://github.com/RafaelNGP/psbox-cloud-gaming/releases/tag/v1.7.5"
+      }
+    ]
+  },
+  {
+    "id": "swanstation-163-hw-renderer",
+    "date": "2026-11-16",
+    "tag": "Emulator",
+    "title": "SwanStationPS5 1.6.3: hardware renderer, RetroAchievements leaderboards and challenge indicators",
+    "summary": "SwanStationPS5 1.6.3 switches to PSSwanStation's hardware renderer to fix corrupt textures at certain resolutions, adds RetroAchievements challenge indicators and leaderboards, and fixes Japanese memory card save titles.",
+    "body": [
+      "SwanStationPS5 1.6.3 by darkxex moves the PS1 emulator to PSSwanStation's hardware renderer, resolving corrupt textures and stray pixels that appeared at some resolutions — Rayman's backgrounds, among others. PGXP, the sprite filter, MMPX, line detection and true colour work are carried over. A new Settings > Graphics > Legacy group exposes the renderer's own options: Accurate Blending, Close Gaps Between Polygons, Exact Lines, HD Texture Blocks and Dump Texture Blocks. The CPU renderer works again after showing a black picture, with its upscale and filter settings marked as CPU only and sharp pixels by default.",
+      "RetroAchievements gains challenge indicators (badges shown in the top right corner during active challenges) and full leaderboard support with a dedicated tab, live timers in hardcore mode, and rank/score notices on submission. CHD disc images now hash correctly so achievements load. Memory card save titles in Japanese kana and common kanji display as written instead of question marks. Requires a jailbroken PS5 with etaHEN and kstuff."
+    ],
+    "sources": [
+      {
+        "name": "SwanStationPS5 1.6.3 release",
+        "url": "https://github.com/darkxex/SwanStationPS5/releases/tag/1.6.3"
+      }
+    ]
+  },
+  {
+    "id": "emby5-v132-cjk-subtitles",
+    "date": "2026-11-16",
+    "tag": "Media",
+    "title": "Emby5 1.3.2: Chinese, Japanese, Korean and Thai subtitle fixes",
+    "summary": "Emby5 1.3.2 fixes broken characters in CJK and Thai subtitles by detecting the text's language and loading the PS5's own fonts, and adds support for non-UTF-8 encoded subtitle files.",
+    "body": [
+      "Emby5 1.3.2 by bornaradusin fixes a long-standing issue with East Asian and Thai subtitle display. Subtitles in Chinese, Japanese, Korean or Thai that have no language tag — such as fansub .ass files named after the film — no longer show broken characters. The app now examines the text itself and loads the PS5's matching system font. Subtitle tracks embedded inside the video container get the same language detection. Three-letter language codes from Emby and Jellyfin servers (chi, jpn, rus and others) are now understood.",
+      "Subtitle files that are not saved as UTF-8 also display correctly. This covers older Chinese encodings (GBK, Big5), Japanese (Shift-JIS), Korean, Cyrillic, Arabic and other legacy encodings in both .srt and .ass formats. The encoding is detected from the file contents automatically. Playback and video decoding are otherwise unchanged. To update, download Emby5-1.3.2.zip, extract the PPSA99515 folder and copy it into /data/homebrew/, merging and overwriting."
+    ],
+    "sources": [
+      {
+        "name": "Emby5 1.3.2 release",
+        "url": "https://github.com/bornaradusin/Emby5/releases/tag/1.3.2"
+      }
+    ]
+  },
+  {
     "id": "ps5sx2-v250",
     "date": "2026-11-15",
     "tag": "Emulator",
