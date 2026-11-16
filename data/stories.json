@@ -1,5 +1,56 @@
 [
   {
+    "id": "ps5upload-v1251-bugfix",
+    "date": "2026-11-16",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.5.1: zstd runtime 0.4.1, any-game packs and patch package browsing",
+    "summary": "PS5 Upload v12.5.1 is a major Convert overhaul with zstd packs for every PS5 game, packs in every image format, on-console conversion from Minion, and debug package mounting via Kraken Mount.",
+    "body": [
+      "PS5 Upload v12.5.1 by phantomptr is a large Convert update. The zstd runtime is updated to ampr-emu-ng 0.4.1, fixing very large games that 0.4.0 refused with index-table errors — Final Fantasy XVI, Demon's Souls, Returnal and God of War Ragnarök among them. Zstd packs now work for any PS5 game, not just AMPR titles, and pack profiles can choose which files stay unpacked. Convert handles every image format, can build images straight from .zip, .7z or .rar archives without extracting first, and can edit an image in place. PS5 update .pkg files can be inspected, browsed and unpacked. A new Unpack option turns LZ4 or zstd packed games back into plain files, and a \"Move source to Trash once verified\" option safely removes the original only after every output byte has been read back.",
+      "The release also lets Minion run conversions directly on the PS5 and adds mounting of debug packages through Kraken Mount instead of installing them. Trophy files (nptitle.dat, npbind.dat) are preserved when unpacking packages. The developer notes this is checked with automated tests but recommends updating from v12.4.23 (which fixed save restoration, console removal and non-English filename issues). Requires a jailbroken PS5 with elfldr for payloads."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.5.1 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.5.1"
+      }
+    ]
+  },
+  {
+    "id": "prospero-themes-01000043",
+    "date": "2026-11-16",
+    "tag": "Tool",
+    "title": "Prospero Themes 01.000.043: robust icon replacement across firmware versions",
+    "summary": "Prospero Themes 01.000.043 fixes system icon replacement when an earlier theme's originals are missing, with a built-in icon catalog covering firmware 10.20 through 13.60.",
+    "body": [
+      "Prospero Themes 01.000.043 by Darkatek7 fixes a long-standing issue where a theme's system icons failed to replace an earlier theme's when the original icon container backup was missing or made from an already-themed container. Previously, every icon an earlier theme had changed was skipped with \"nothing in this theme fits this console\". The app now carries, for each firmware, the position and length of every icon in the original container and falls back to that catalog when the backup is unusable. The built-in catalog covers 17 firmware versions from 10.20 to 13.60; firmware 9.60, 10.01 and 11.20 still need a report from an untouched console to be added.",
+      "Install or update through System → App update from within the app, or extract PPSA90210.zip and copy the PPSA90210 folder to /data/homebrew/ on the console. ShadowMount+ registers it automatically. Settings, backups and your theme library in /data/prospero-themes/ are preserved. ThemeHelper remains at v11 so no console restart is needed. The app requires an ELF loader on port 9021 (elfldr) for its file helper."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Themes 01.000.043 release",
+        "url": "https://github.com/Darkatek7/ProsperoThemes/releases/tag/01.000.043"
+      }
+    ]
+  },
+  {
+    "id": "playden-v0110-community-recipes",
+    "date": "2026-11-16",
+    "tag": "PC & Linux",
+    "title": "Playden v0.11.0: community recipes, 120 Hz VRR and runtime kit 0.28",
+    "summary": "Playden v0.11.0 lets players share and browse game settings without a GitHub account, adds 120 Hz VRR support, per-game DLC toggling, custom presets, and runtime kit 0.28 with 4 GB memory for 32-bit games.",
+    "body": [
+      "Playden v0.11.0 by leolobato is the full release of the community recipes feature. Game settings now lists settings other players shared for a game along with performance notes, and you can share your own with no GitHub account. Games can run at 120 Hz on a VRR display, you can save your own presets, and turn a game's DLC on or off individually. Playden starts faster with many games and preserves your data through a crash.",
+      "Runtime kit 0.28 gives 32-bit games up to 4 GB of memory, lets Project Zomboid load a world again, runs Steam games from Steam's own folder, and fixes Euro Truck Simulator 2 with mods, Metro 2033 Redux, Spider-Man: Web of Shadows, Need for Speed III and more. Updating from 0.6.0 or newer: Playden offers the update on next start and handles both the app and runtime kit (about 495 MB — make sure the console has at least 8 GB free). Games set up with an older runtime kit show \"Runtime kit update available\" and can be batch-updated."
+    ],
+    "sources": [
+      {
+        "name": "Playden v0.11.0 release",
+        "url": "https://github.com/leolobato/playden-ps5/releases/tag/v0.11.0"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v1250-convert-minion",
     "date": "2026-11-16",
     "tag": "Tool",
