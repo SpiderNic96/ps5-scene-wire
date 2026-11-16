@@ -1,5 +1,77 @@
 [
   {
+    "id": "xpsemu-v36-evox-texture-upscaler",
+    "date": "2026-11-16",
+    "tag": "Emulator",
+    "title": "XPSemu v3.6: EvolutionX dashboard, AI texture upscaler and fast loading",
+    "summary": "XPSemu Alpha 3.6 adds EvolutionX (EvoX) dashboard support, a GPU-based AI texture upscaler that doubles texture resolution in real time, and a fast-loading mode that reads discs at PS5 speed.",
+    "body": [
+      "XPSemu Alpha 3.6 by ZiZc3 brings three headline features. A Basic Texture Upscaler makes every game texture twice as big as it loads, with two modes: SGSR for edge-aware upscaling done at once, and ESRGAN which runs the Real-ESRGAN AI model on the PS5 GPU to add detail a plain upscale cannot. ESRGAN shows an SGSR result first and replaces it a moment later. The upscaler is off by default and can be turned on globally or per game — it uses more GPU memory, especially in open-world games. Xbox games only.",
+      "EvolutionX (EvoX) dashboard support lets users who keep their Xbox setup on EvoX start it from System → Xbox Dashboard, with its drive list, game list, settings and trainers working. Fast loading reads game discs at the PS5's full speed instead of an Xbox DVD drive's, though a few timing-sensitive games may freeze with it on. A new Disable Fog option turns off the Xbox's built-in fog for more visibility. The quick menu now groups items and shows all entries at once. Requires kstuff lite and at least ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "XPSemu v3.6 release",
+        "url": "https://github.com/ZiZc3/XPSemu/releases/tag/v3.6"
+      }
+    ]
+  },
+  {
+    "id": "emby5-theme-videos-test",
+    "date": "2026-11-16",
+    "tag": "Media",
+    "title": "Emby5: theme video support in test build",
+    "summary": "A test build of Emby5 adds theme videos that play behind a title's page in place of the backdrop picture, looping quietly while the page is open.",
+    "body": [
+      "Emby5 by bornaradusin has a new test build based on 1.3.2 that adds theme video support. When a film or show has a theme video on your Emby or Jellyfin server, it plays behind the title's page instead of the static backdrop picture, looping while the page is open with its audio kept at theme-music volume. Titles without a theme video look and behave as before and still play their theme music.",
+      "Theme videos can be turned off under Settings → Playback → Theme videos. The server takes them from video files in a title's backdrops folder. HDR theme videos are not shown (their sound still plays) because the menus run in SDR. This is a test build — the developer is collecting feedback before including theme videos in a numbered release. Install by extracting Emby5-theme-videos-test.zip to /data/homebrew/."
+    ],
+    "sources": [
+      {
+        "name": "Emby5 theme videos test release",
+        "url": "https://github.com/bornaradusin/Emby5/releases/tag/theme-videos-test"
+      }
+    ]
+  },
+  {
+    "id": "prosperostore-v1000117-v1000118",
+    "date": "2026-11-16",
+    "tag": "Store",
+    "title": "ProsperoStore v1.000.117–v1.000.118: smarter multi-word search",
+    "summary": "ProsperoStore v1.000.117 broadens search to descriptions, title IDs and categories, while v1.000.118 adds multi-word queries, kind filtering and accent-insensitive matching.",
+    "body": [
+      "ProsperoStore v1.000.117 by darkxex extends the search box beyond name and author: it now also finds apps by their description, title ID and category (for example \"emulators\" or \"pc-ports\"). The catalog index size limit doubles from 4 MiB to 8 MiB, comments from 1 MiB to 2 MiB, and Quick Update and HTTP redirects are handled more reliably.",
+      "v1.000.118 follows with multi-word search: typing \"pc games\" finds the PC game ports, and the search also looks in an app's kind (app, game or tool). Accents are ignored, so \"emulacion\" matches \"Emulación\" while typing the accent still works. Install via Quick Update from within ProsperoStore on a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "ProsperoStore v1.000.118 release",
+        "url": "https://github.com/darkxex/ProsperoStore/releases/tag/v1.000.118"
+      },
+      {
+        "name": "ProsperoStore v1.000.117 release",
+        "url": "https://github.com/darkxex/ProsperoStore/releases/tag/v1.000.117"
+      }
+    ]
+  },
+  {
+    "id": "ps5-playtime-tracker-v101",
+    "date": "2026-11-16",
+    "tag": "Tool",
+    "title": "PS5 Playtime Tracker v1.0.1: clearer pairing and stable console identity",
+    "summary": "PS5 Playtime Tracker v1.0.1 tells users where to enter the pairing code and uses an anonymous hardware hash so a reinstall does not create a duplicate console on the site.",
+    "body": [
+      "PS5 Playtime Tracker v1.0.1 by gowithme-club improves the first-run pairing experience. The notification now reads \"Enter code 123456 at gowithme.club/ps5\" instead of showing only the code, so users know exactly where to go. The payload also sends an anonymous console identifier — a hash of the hardware ID — so that a console paired again after a reinstall stays one console on the site instead of appearing as a duplicate.",
+      "To update, load the new ELF file through Payload Manager or elfldr; the console stays linked to the existing gowithme.club account. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Playtime Tracker v1.0.1 release",
+        "url": "https://github.com/gowithme-club/ps5-playtime-tracker/releases/tag/v1.0.1"
+      }
+    ]
+  },
+  {
     "id": "openpsapp-v032",
     "date": "2026-11-16",
     "tag": "Tool",
