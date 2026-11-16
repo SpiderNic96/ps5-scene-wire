@@ -1,5 +1,60 @@
 [
   {
+    "id": "ps5upload-v1250-convert-minion",
+    "date": "2026-11-16",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.5.0: on-console conversion, zstd runtime 0.4.1 and in-place image editing",
+    "summary": "PS5 Upload v12.5.0 brings most of PS5 Dump Forge's conversion features, a new Minion section for converting games on the PS5 itself, zstd runtime 0.4.1 for very large games, and in-place image editing.",
+    "body": [
+      "PS5 Upload v12.5.0 by phantomptr is a major Convert overhaul built on code from quer3q's PS5 Dump Forge. The zstd runtime is updated to ampr-emu-ng 0.4.1, which fixes very large games that 0.4.0 refused — Final Fantasy XVI, Demon's Souls, Returnal and God of War Ragnarök among them. Zstd packs now work for any PS5 game, not only AMPR titles. LZ4 packs expand to .ffpkg, .ffpfs and game folders, and both LZ4 and zstd packs work inside compressed .ffpfsc images. A new command-line interface lets scripts run conversions and inspections. Convert can also build images straight from .zip, .7z or .rar archives without extracting first, and PS5 update .pkg files can now be inspected and browsed.",
+      "The headline addition is Convert on the PS5 itself through the Minion page: turn a game folder or image already on the console into an .exfat, .ffpkg, .ffpfs or folder — with optional zstd packs — without a computer. Image editing gains Rename, New folder and Apply in place, which writes changes into an .exfat or .ffpkg without making a copy when they fit. An undo journal protects against interrupted writes. Requires a jailbroken PS5 with an FTP server; tested on firmware 13.60."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.5.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.5.0"
+      }
+    ]
+  },
+  {
+    "id": "swanstation-164-165-pgxp-achievements",
+    "date": "2026-11-16",
+    "tag": "Emulator",
+    "title": "SwanStationPS5 1.6.4–1.6.5: deeper PGXP precision and RetroAchievements badge downloads",
+    "summary": "SwanStationPS5 1.6.4 extends PGXP to cover far more of the PSX's arithmetic — fixing stretched polygons in games like Tekken 3 — while 1.6.5 downloads missing achievement badges in the background.",
+    "body": [
+      "SwanStationPS5 1.6.4 by darkxex significantly extends PGXP, the precise-geometry system that eliminates polygon wobble. It now follows shifts, logic operations, additions, comparisons, divisions, partial word loads and stores, and the GTE's matrix and vector operations. This fixes stretched polygons and missing pieces in certain games — Tekken 3's character hair and health bars, for example. The PGXP Depth Clear Threshold range is expanded from 64 to 65 535 (4 096 by default), and per-game thresholds from the game database are applied automatically. Rumble now works the first time you load a quick-resume state, and deleting a game removes every file its cue sheet lists.",
+      "Version 1.6.5 follows thirty minutes later with a RetroAchievements improvement: missing badge pictures are now downloaded in the background while you play, once per game, instead of only when you open the achievements list. The unlock pop-up shows the achievement's own badge in all three styles when the picture is already cached. A new Unlock Sound option plays a notification tone when an achievement unlocks (silent in Nostalgia mode), and interface sounds now mix in parallel so they never cut each other off. Requires a jailbroken PS5 with etaHEN and kstuff."
+    ],
+    "sources": [
+      {
+        "name": "SwanStationPS5 1.6.5 release",
+        "url": "https://github.com/darkxex/SwanStationPS5/releases/tag/1.6.5"
+      },
+      {
+        "name": "SwanStationPS5 1.6.4 release",
+        "url": "https://github.com/darkxex/SwanStationPS5/releases/tag/1.6.4"
+      }
+    ]
+  },
+  {
+    "id": "psbox-v176-touch-hotfix",
+    "date": "2026-11-16",
+    "tag": "Media",
+    "title": "PSBox Cloud Gaming v1.7.6: touch overlay isolated to Android",
+    "summary": "PSBox Cloud Gaming v1.7.6 is a hotfix that strictly isolates the virtual touch controller overlay to Android, keeping PS5, PS4, Linux and Windows builds free of on-screen touch elements.",
+    "body": [
+      "PSBox Cloud Gaming v1.7.6 by RafaelNGP is a quick hotfix following the v1.7.5 multi-platform expansion. It resolves an issue where the virtual touch overlay buttons and top pull-tab could appear on desktop and console builds when playing without a gamepad. The touch overlay code is now exclusively compiled and rendered on Android, so PS5, PS4, Linux and Windows players never see on-screen touch elements.",
+      "This release also carries forward everything from v1.7.5: the native Android port with Vulkan rendering and hardware H.264 decoding, the standalone 64-bit Windows portable edition, and the built-in touch layout editor for smartphones and handhelds. Requires a jailbroken PS5 with ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "PSBox Cloud Gaming v1.7.6 release",
+        "url": "https://github.com/RafaelNGP/psbox-cloud-gaming/releases/tag/v1.7.6"
+      }
+    ]
+  },
+  {
     "id": "psbox-v175-android-windows",
     "date": "2026-11-16",
     "tag": "Media",
