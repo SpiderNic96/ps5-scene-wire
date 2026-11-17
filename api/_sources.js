@@ -149,6 +149,7 @@ export const SOURCES = [
   { cat: P, repo: 'fs0ciety404/ps5-linux-tuning', name: 'ps5-linux-tuning', about: 'System tuning and BT fix for PS5 Linux' },
   { cat: P, repo: 'KPKev/WinBrew-11', name: 'WinBrew 11', about: 'Windows 11-style desktop with Vapor game launcher' },
   { cat: P, repo: 'gmorb/nor-studio', name: 'NOR Studio', about: 'Browser-based PS5 NOR editor, CH341A programmer and UART diagnostics' },
+  { cat: P, repo: 'abrocoma/PS5-Linux-Flasher', name: 'Linux Flasher', about: 'Flash Linux to USB from the PS5 itself' },
 
   // Media and streaming
   { cat: M, repo: 'RafaelNGP/psbox-cloud-gaming', name: 'PSBox Cloud Gaming', about: 'Xbox Cloud Gaming client' },

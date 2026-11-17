@@ -907,6 +907,12 @@
         "Playden"
       ],
       "note": "Runs Windows apps through Wine/Playden on PS5. Owner tested on 13.60."
+    },
+    "abrocoma/PS5-Linux-Flasher": {
+      "tested": [
+        "13.60"
+      ],
+      "note": "Ships with PS5-CachyOS, tested on 13.60."
     }
   },
   "unstated": [
