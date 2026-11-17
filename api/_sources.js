@@ -107,6 +107,8 @@ export const SOURCES = [
   { cat: T, repo: 'kh-mitya/ghostcontrol-8bitdo', name: 'ghostcontrol-8bitdo', about: 'Xbox controllers as virtual DualSense via 8BitDo adapter' },
   { cat: T, repo: 'wnzzer/ps5-wireguard', name: 'ps5-wireguard', about: 'WireGuard VPN peer for jailbroken PS5' },
   { cat: T, repo: 'ghostyshell/godsend-ps5', name: 'GODsend PS5', about: 'Desktop workshop: FTP library, payloads, virtual DualSense and conversions' },
+  { cat: T, repo: 'ItsJokerZz/BetterLAN-Client', name: 'BetterLAN', about: 'System Link over the internet for PS4 and PS5' },
+  { cat: T, repo: 'strongt1me/ps5-medic-ui-tool', name: 'PS5 Medic', about: 'Diagnostic check-up and repair for jailbroken PS5' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },

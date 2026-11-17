@@ -1,5 +1,128 @@
 [
   {
+    "id": "betterlan-ps5-system-link",
+    "date": "2026-11-17",
+    "tag": "Tool",
+    "title": "BetterLAN: System Link over the internet for PS4 and PS5",
+    "summary": "BetterLAN is a payload that makes LAN games think remote players are on your local network, enabling System Link multiplayer over the internet with no port forwarding required.",
+    "body": [
+      "BetterLAN by ItsJokerZz is a payload for PS4 and PS5 that intercepts a game's LAN broadcast traffic, routes it through a relay server, and delivers it back as if the other players are sitting on the same network. It is not tied to a single game: the payload watches which UDP ports the running game opens and works with any title that has LAN or System Link play. When two consoles can reach each other directly the traffic skips the relay for lower latency, and the payload reconnects on its own if the internet drops.",
+      "BetterLAN requires a jailbroken PS4 or PS5 with an ELF loader running. Send the matching ELF file (betterlan-ps4.elf or betterlan-ps5.elf) to the console's ELF loader — port 9090 on PS4, 9021 on PS5. No port forwarding or router setup is needed. The relay dashboard shows each player's NAT type, Wi-Fi signal and router ping, and an on-screen notification warns when your own network is causing lag. Everyone you play with needs to be running BetterLAN too."
+    ],
+    "sources": [
+      {
+        "name": "BetterLAN GitHub",
+        "url": "https://github.com/ItsJokerZz/BetterLAN-Client"
+      }
+    ]
+  },
+  {
+    "id": "ps5-medic-diagnostic-tool",
+    "date": "2026-11-17",
+    "tag": "Tool",
+    "title": "PS5 Medic: plain-language diagnostics and repair for jailbroken PS5",
+    "summary": "PS5 Medic checks over 100 aspects of a jailbroken PS5 setup, explains problems in plain language and repairs what it safely can — with backup and undo.",
+    "body": [
+      "PS5 Medic v0.4.0 by strongt1me is a full-screen PS5 payload that runs a comprehensive check-up on a jailbroken console's homebrew setup. It examines the firmware, jailbreak chain, kstuff, ShadowMount+, plugins, storage, game folders, databases, accounts, Kraken Mount, ampr-emu-ng and start-up logs — over 100 rules in all — and reports each finding with a severity grade and a plain-language explanation of what went wrong and why.",
+      "Where safe, PS5 Medic can repair issues automatically with backup and undo. The app supports firmware 4.00 through 14.10 and runs as a DualSense-controlled TV app. It is available in German, English, French, Italian and Spanish. So far it has been tested on a PS5 Pro with firmware 12.00 and ShadowMount+ 1.7beta12; other configurations are supported but rules are individually marked as confirmed or not yet confirmed."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Medic GitHub",
+        "url": "https://github.com/strongt1me/ps5-medic-ui-tool"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v1260-save-sync",
+    "date": "2026-11-17",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.0: save sync between two PS5s, file copy and local payloads",
+    "summary": "PS5 Upload v12.6.0 adds save synchronisation between two PS5 consoles, the ability to copy .pkg files instead of installing them, and switches to user-supplied payloads.",
+    "body": [
+      "PS5 Upload v12.6.0 by phantomptr introduces save sync between two PS5 consoles. Pair a user on each console, press Check now, and the app shows whether each game's saves are in step, newer on one side, or changed on both. Sync selected copies the newer save across with an automatic backup of the one it replaces, and when you close a game whose save changed the app asks whether to send it to the other PS5. Nothing is ever copied without confirmation, a sleeping console is never woken, and when both sides changed you choose which to keep.",
+      "The release also adds a Copy as file option on the Upload screen: each package can be installed as before or copied to a folder for use with Kraken Mount. When Kraken Mount is running the target folder is filled in automatically. The app no longer downloads payloads on its own — users now supply their own kstuff, ShadowMount+ and other payload files. The Catalog is replaced by a guide linking to each project page with a Send a file… button. The setup wizard asks for the payload files during first run. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.0 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.0"
+      }
+    ]
+  },
+  {
+    "id": "prosperostore-v1000119-v1000120",
+    "date": "2026-11-17",
+    "tag": "Store",
+    "title": "ProsperoStore v1.000.119–v1.000.120: non-PPSA likes and quick search clear",
+    "summary": "ProsperoStore v1.000.119 shows likes and comments for all catalogued apps regardless of title ID prefix, while v1.000.120 lets Circle clear an active search instantly.",
+    "body": [
+      "ProsperoStore v1.000.119 by darkxex extends likes and comments to every app in the catalogue, including those whose title ID does not start with PPSA (for example Playden). Previously these non-standard title IDs were excluded from the social features.",
+      "v1.000.120 follows with a small but useful UX improvement: pressing Circle while a search is active now clears the search text and shows the full catalogue again, instead of requiring users to open the on-screen keyboard and manually delete the text. Install via Quick Update from within ProsperoStore on a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "ProsperoStore v1.000.120 release",
+        "url": "https://github.com/darkxex/ProsperoStore/releases/tag/v1.000.120"
+      },
+      {
+        "name": "ProsperoStore v1.000.119 release",
+        "url": "https://github.com/darkxex/ProsperoStore/releases/tag/v1.000.119"
+      }
+    ]
+  },
+  {
+    "id": "swanstation-166-settings-reset",
+    "date": "2026-11-17",
+    "tag": "Emulator",
+    "title": "SwanStationPS5 1.6.6: tab-scoped settings reset",
+    "summary": "SwanStationPS5 1.6.6 makes holding Triangle reset only the selected settings tab, leaving other tabs and unchanged settings untouched.",
+    "body": [
+      "SwanStationPS5 1.6.6 by darkxex refines the \"reset to defaults\" behaviour in settings. Holding Triangle now resets only the settings on the currently selected tab, and only those that have actually been changed from their defaults. An unchanged setting no longer reacts to the reset gesture — the unlock sound's preview, for example, stays quiet when it was already at default.",
+      "This follows v1.6.5's RetroAchievements background badge download and v1.6.4's achievements pop-up improvements. Install by extracting SwanStationPS5-1.6.6.zip to /data/homebrew/ on a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "SwanStationPS5 1.6.6 release",
+        "url": "https://github.com/darkxex/SwanStationPS5/releases/tag/1.6.6"
+      }
+    ]
+  },
+  {
+    "id": "winbrew-11-blender-shared-files",
+    "date": "2026-11-17",
+    "tag": "PC & Linux",
+    "title": "WinBrew 11 blender-shared-files-v1: Blender shared folders and 5 MiB Notepad",
+    "summary": "WinBrew 11's latest development release gives Blender's Documents and Desktop the same shared folders WinBrew Explorer uses, and raises Notepad's file limit to 5 MiB.",
+    "body": [
+      "WinBrew 11 by KPKev ships blender-shared-files-v1 (PPSA77382 v01.017.000), a development release that connects Blender's Documents and Desktop folders to the same shared folders used by WinBrew Explorer. Existing private Wine folders are retained as *.before-WinBrew during migration. The \"prospero\" name in Wine paths is a virtual Windows user; those Document/Desktop shortcuts lead to WinBrew's actual storage rather than a duplicate copy. Shared Blender files can be sent to the Recycle Bin and permanently deleted through WinBrew's normal flow, and Blender's own file-browser deletion is routed through the same recoverable format.",
+      "Vapor now includes Steam software such as Blender when refreshing the active account's library, and an account change refreshes ownership and metadata. Supported older runtime installations upgrade automatically on Play with no manual repair needed. Notepad now accepts text files up to 5 MiB (5,242,880 bytes) with heap-backed buffers. Opening a Blender project preserves the current workspace instead of restoring saved secondary windows. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "WinBrew 11 blender-shared-files-v1 release",
+        "url": "https://github.com/KPKev/WinBrew-11/releases/tag/blender-shared-files-v1"
+      }
+    ]
+  },
+  {
+    "id": "webkit-autoloader-v080-pre-wobkot",
+    "date": "2026-11-17",
+    "tag": "Loader",
+    "title": "WebKit Autoloader v0.8.0-pre: test build based on wobkot",
+    "summary": "WebKit Autoloader ships a pre-release test build rebased on ufm42's wobkot WebKit exploit, available for early testing on PS5, Linux, macOS and Windows.",
+    "body": [
+      "WebKit Autoloader v0.8.0-pre-627ba8c by itsPLK is a pre-release test build from the wobkot branch, now based on ufm42's wobkot WebKit exploit (commit 84ac4a7). This marks the autoloader's shift to wobkot as its underlying browser exploit, which may improve reliability on certain firmware versions. The build is intended for early testing and may contain bugs or unfinished changes.",
+      "The release includes the PS5 installer payload ELF, plus host tools for Linux/macOS (Python) and Windows (EXE). This is explicitly a pre-release — the developer is collecting feedback via a discussion thread before a stable release. Users who prefer stability should stay on v0.7.1 until testing is complete. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "WebKit Autoloader v0.8.0-pre release",
+        "url": "https://github.com/itsPLK/ps5-webkit-autoloader/releases/tag/v0.8.0-pre-627ba8c"
+      }
+    ]
+  },
+  {
     "id": "xpsemu-v36-evox-texture-upscaler",
     "date": "2026-11-16",
     "tag": "Emulator",

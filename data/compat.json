@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16",
+  "updated": "2026-11-17",
   "about": "Firmware compatibility for the /firmware directory. Only what each project's README or release notes state. range = the developer says it supports these firmwares; tested = firmwares it has actually been run on; only = hard-locked to these firmwares; any = the developer says it isn't tied to a firmware. unstated = tracked apps whose README was checked and names no PS5 firmware (they show as not confirmed). Validate with: node scripts/compat-check.mjs",
   "firmwares": [
     "1.00",
@@ -880,6 +880,19 @@
       "needs": [
         "elfldr"
       ]
+    },
+    "strongt1me/ps5-medic-ui-tool": {
+      "range": [
+        "4.00",
+        "14.10"
+      ],
+      "tested": [
+        "12.00"
+      ],
+      "needs": [
+        "kstuff"
+      ],
+      "note": "Tested on PS5 Pro with FW 12.00 and ShadowMount+ 1.7beta12. Rules individually marked as confirmed or not yet confirmed for other configurations."
     }
   },
   "unstated": [
@@ -895,6 +908,7 @@
     "ChaosTheory1075/mp3-ps5",
     "EchoStretch/kstuff",
     "EchoStretch/kstuff-lite",
+    "ItsJokerZz/BetterLAN-Client",
     "KPKev/WinBrew-11",
     "KongaTime/Dantes-Inferno-PS5-Port",
     "KongaTime/PS5_EdgeOfTimeTitle",
