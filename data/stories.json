@@ -1,5 +1,94 @@
 [
   {
+    "id": "playden-v0120-beta1-online-play",
+    "date": "2026-11-17",
+    "tag": "PC & Linux",
+    "title": "Playden v0.12.0-beta.1: online play through Steam on PS5",
+    "summary": "Playden v0.12.0-beta.1 adds online multiplayer by running Valve's real Steam client beside the game on the PS5, so titles reach official servers, Steam lobbies and your friends list. GOG is added as a second store, and runtime kit 0.29 fixes Unreal Engine 5 games on Direct3D 12.",
+    "body": [
+      "Playden v0.12.0-beta.1 by leolobato introduces experimental online play for Steam games on PS5. When a game is set to Online in its Game Settings, Playden hosts Valve's own unmodified Steam client beside the game inside the PS5 title. The game talks to that client as it would on a Windows PC, so tickets, lobbies, friends, relays and game coordinators all come from Valve's code — official servers, Steam lobbies and your Steam friends work as they do on PC. Online mode is per-game, off by default, and the developer warns that games with Valve Anti-Cheat could get your Steam account banned from that game. This release also adds GOG as a second store, Steam collections in the Library, a regrouped Settings screen, and runtime kit 0.29 which fixes the \"Fatal error!\" crash in Unreal Engine 5 games running on Direct3D 12.",
+      "To try the beta from Playden 0.7.0 or newer, enable Settings > Updates > Beta updates and press Check Now. The update downloads both the app and the new runtime kit 0.29 (around 440 MB) — make sure the console has at least 8 GB of free storage. After updating, Playden offers to migrate existing games to the new runtime kit (about 30 seconds per game, no Steam download needed). New installs should unzip the release into /data/homebrew/ on a jailbroken PS5. Requires a homebrew enabler with ELF loader support."
+    ],
+    "sources": [
+      {
+        "name": "Playden v0.12.0-beta.1 release",
+        "url": "https://github.com/leolobato/playden-ps5/releases/tag/v0.12.0-beta.1"
+      }
+    ]
+  },
+  {
+    "id": "longshot-ps5-launch",
+    "date": "2026-11-17",
+    "tag": "Port",
+    "title": "Longshot for PS5: Ocarina of Time recompiled as a native PS5 title",
+    "summary": "Longshot for PS5 brings the Ocarina of Time static recompilation to the console as a native homebrew title running on Vulkan through Mesa's RADV driver — no emulator involved. Build it from your own copy of the game.",
+    "body": [
+      "Longshot for PS5 by yeistark takes the Longshot project (a static recompilation of The Legend of Zelda: Ocarina of Time originally built for the Nintendo Switch 2) and builds it as a native PS5 homebrew title (PPSA99025). The game's code is translated to C and compiled for the console's CPU, while graphics run on Vulkan through Mesa's RADV driver ported to the PS5. No emulator runs on the console. Performance on a launch PS5 sits at 37–50 fps in most areas, 60 in menus and lighter scenes, and 20–28 in the heaviest locations. AMD FSR 3.1 works for anti-aliasing, and AMD frame generation (2×) is available but off by default due to memory and latency costs.",
+      "The repository does not contain the game or an executable — you build the title on your PC from your own copy using the included build scripts (Windows with WSL 2 or Linux). The first build takes one to two hours. With the --ps5 flag, the title and game file are sent to the console over FTP. The first launch prepares every shader (about 2.5 hours), after which the game starts in 2–3 minutes. An optional pipeline cache download lets areas show complete from the first visit. Tested on a launch PS5 only; Slim should work but the PS5 Pro is untested and may need different memory settings. Source code is on GitHub."
+    ],
+    "sources": [
+      {
+        "name": "Longshot for PS5 GitHub",
+        "url": "https://github.com/yeistark/Longshot_ps5"
+      },
+      {
+        "name": "Longshot for PS5 v0.1.0 beta 1 release",
+        "url": "https://github.com/yeistark/Longshot_ps5/releases/tag/v0.1.0-beta.1"
+      }
+    ]
+  },
+  {
+    "id": "ps5-cleanup-v11-new-interface",
+    "date": "2026-11-17",
+    "tag": "Tool",
+    "title": "PS5 Cleanup v1.1: completely redesigned interface with browser control",
+    "summary": "PS5 Cleanup v1.1 replaces the entire TV interface with a tabbed overview showing drive sizes, tile pictures, and what each delete will do — and adds browser control so you can operate it from your phone or PC.",
+    "body": [
+      "PS5 Cleanup v1.1 by xXBneutzerNameXx is a major visual overhaul of the jailbreak cleanup tool. The TV interface is completely new: a start screen shows the console model, drive pairing status and jailbreak state at a glance, followed by a scanned overview of all storage areas with their sizes. Content is organized into tabs — games, apps, saved data, trophies, screenshots and videos, other, and jailbreak — with tile pictures and sizes for every entry. Games and apps show as expandable blocks whose parts can be picked individually. A new confirmation page shows what will be deleted on the left and what stays on the right, with the total space freed per drive. Type DELETE to confirm, and PS5 Cleanup double-checks the real selection before proceeding.",
+      "The other headline feature is browser control: PS5 Cleanup now shows an address at the bottom of the start screen that you can open on your phone or PC to operate the app remotely. The browser page mirrors everything on the TV. Scanning and deleting show real progress (\"entry x of y\") with an estimated time remaining. Selected programs are closed before deletion, and the warning about ShadowMount games on extended storage is now explicit. As always, the app starts in test mode — nothing is deleted until you switch it off and confirm. Download ps5cleanup_v1.1.elf and load it on a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Cleanup v1.1 release",
+        "url": "https://github.com/xXBneutzerNameXx/PS5-Cleanup/releases/tag/v1.1"
+      }
+    ]
+  },
+  {
+    "id": "browserps5-rc13-hotfix",
+    "date": "2026-11-17",
+    "tag": "Tool",
+    "title": "BrowserPS5 v1.0.0-rc13: hotfix for clean-install crash",
+    "summary": "BrowserPS5 rc13 fixes the \"Game or App Error\" crash that hit every console that had never had an earlier version installed — a missing temporary folder that the developer's test console already had.",
+    "body": [
+      "BrowserPS5 v1.0.0-rc13 by ramalhoboss is a same-day hotfix for the rc12 launch. Users on a clean console (no prior BrowserPS5 install) saw the loading screen and then a \"Game or App Error\" because the engine's temporary folder at /user/homebrew/browserps5/data/tmp did not exist and nothing created it. The developer's test console had the folder from earlier versions, so the problem was invisible during testing. The installer now creates the folder automatically. The browser itself — its engine, title and all features — is byte-for-byte identical to rc12; only the installer changed.",
+      "If you already installed rc12 successfully, rc13 is not needed. If rc12 crashed on your console, download BrowserPS5-1.0.0-rc13.zip, run BrowserPS5.elf through your ELF loader with ShadowMountPlus running, and wait for the \"is installed\" notification. Your favourites, history, settings and logins from rc12 are preserved. As a workaround, creating the /user/homebrew/browserps5/data/tmp folder by hand also makes rc12 work."
+    ],
+    "sources": [
+      {
+        "name": "BrowserPS5 v1.0.0-rc13 release",
+        "url": "https://github.com/ramalhoboss/BrowserPS5/releases/tag/v1.0.0-rc13"
+      }
+    ]
+  },
+  {
+    "id": "ps5-backport-gui-v035-test4",
+    "date": "2026-11-17",
+    "tag": "Tool",
+    "title": "PS5 Backport GUI v0.3.5-test4: Planet Zoo 2 and R-Type Delta HD fixes",
+    "summary": "PS5 Backport GUI v0.3.5-test4 consolidates four testing builds since v0.3.4 with fixes for Planet Zoo 2 crashing on FW 4.03–5.50, R-Type Delta HD losing audio, and improved console log reading.",
+    "body": [
+      "PS5 Backport GUI v0.3.5-test4 by kerrdec97 is a testing build that consolidates everything since 0.3.4 (test1 through test4). Planet Zoo 2 crashed with PRX_NOT_RESOLVED_FUNCTION on firmware 4.03–5.50 because its C library calls a wake-up function those firmware versions lack — the proven fix from Control and three other games is now applied. R-Type Delta HD Boosted lost sound after the title screen because its audio engine requested a 12-channel speaker setup that the console refuses for every backport build; two bytes now request 8-channel (7.1) instead. Console log reading is improved with recognition of saves refused by the console and crashes in secondary game programs. Neither game fix has been tested on a console yet.",
+      "Other fixes include preventing a second restore from starting beside a running one, and GUI improvements for multi-monitor setups. This is a testing build, not a release — download PS5BackportGUI-0.3.5-test4.exe and check it against SHA256SUMS.txt. The program is not signed, so Windows SmartScreen will warn. Report results with your game, firmware and console model on GitHub."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Backport GUI v0.3.5-test4 release",
+        "url": "https://github.com/kerrdec97/PS5-Backport-GUI/releases/tag/v0.3.5-test4"
+      }
+    ]
+  },
+  {
     "id": "browserps5-launch",
     "date": "2026-11-17",
     "tag": "Tool",

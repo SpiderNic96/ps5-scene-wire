@@ -178,6 +178,7 @@ export const SOURCES = [
   { cat: R, repo: 'cherryduck/PS5_EccoDefender', name: 'Ecco the Dolphin: Defender of the Future', about: 'Dreamcast recomp' },
   { cat: R, repo: 'Marice/wave-race-64-ps5', name: 'Wave Race 64 Recompiled', about: 'N64 recomp' },
   { cat: R, repo: 'mshivam019/oot64-ps5', name: 'Ship of Harkinian (Ocarina of Time)', about: 'Ocarina of Time port' },
+  { cat: R, repo: 'yeistark/Longshot_ps5', name: 'Longshot (Ocarina of Time)', about: 'OOT Switch 2 recomp on Vulkan/RADV' },
   { cat: R, repo: 'mshivam019/tmm64-ps5', name: '2 Ship 2 Harkinian (Majora’s Mask)', about: 'Majora’s Mask port' },
   { cat: R, repo: 'mshivam019/la-ps5', name: 'Link’s Awakening', about: 'Link’s Awakening port' },
   { cat: R, repo: 'griches/PS5_Ghostship', name: 'Super Mario 64', about: 'Ghostship port, bring your own ROM' },
