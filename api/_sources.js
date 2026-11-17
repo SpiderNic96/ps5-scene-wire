@@ -110,6 +110,7 @@ export const SOURCES = [
   { cat: T, repo: 'ItsJokerZz/BetterLAN-Client', name: 'BetterLAN', about: 'System Link over the internet for PS4 and PS5' },
   { cat: T, repo: 'strongt1me/ps5-medic-ui-tool', name: 'PS5 Medic', about: 'Diagnostic check-up and repair for jailbroken PS5' },
   { cat: T, repo: 'eudanh/Trofy', name: 'Trofy', about: 'Game library, trophies and capture browser' },
+  { cat: T, repo: 'ramalhoboss/BrowserPS5', name: 'BrowserPS5', about: 'Full web browser with WebKit JIT, tabs, ad blocker and DualSense controls' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },

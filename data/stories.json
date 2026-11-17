@@ -1,5 +1,26 @@
 [
   {
+    "id": "browserps5-launch",
+    "date": "2026-11-17",
+    "tag": "Tool",
+    "title": "BrowserPS5: a full web browser for jailbroken PS5 consoles",
+    "summary": "BrowserPS5 is a native PS5 title that brings a complete WebKit-based browser with tabs, an ad blocker, YouTube up to 2160p, WhatsApp and Telegram, downloads that resume, DualSense controls and 16 themes. Tested on firmware 13.60.",
+    "body": [
+      "BrowserPS5 by ramalhoboss is a native PS5 app (PPSA97024) that installs to the Games tab and runs its own port of WebKit 627.1.7 with the JavaScript JIT enabled. It is not the console's hidden system browser — everything is built in. Features include up to six tabs that stay loaded, private tabs, favorites, history, saved logins, find in page, reading mode, page translation, zoom, an ad blocker built on WebKit content rules, user-script extensions (a Greasy Fork manager is included), a PDF reader, and support for seven languages. YouTube plays up to 2160p with hardware-decoded H.264 and VP9, WhatsApp Web and Telegram Web work with QR linking, and site notifications become real PS5 notifications over your game.",
+      "Downloads use up to eight connections for large files and can pause, resume and survive a browser restart. The DualSense is used throughout — cursor with link magnet, D-pad navigation, radial menus on L2/R2, haptics and light bar — and the touch pad works as a laptop trackpad. Install by sending BrowserPS5.elf to a jailbroken PS5 with an ELF loader on port 9021 and ShadowMountPlus running. Tested on firmware 13.60 only; reports from other firmwares are welcome. Source code is on GitHub under GPL-3.0."
+    ],
+    "sources": [
+      {
+        "name": "BrowserPS5 GitHub",
+        "url": "https://github.com/ramalhoboss/BrowserPS5"
+      },
+      {
+        "name": "BrowserPS5 1.0.0-rc12 release",
+        "url": "https://github.com/ramalhoboss/BrowserPS5/releases/tag/v1.0.0-rc12"
+      }
+    ]
+  },
+  {
     "id": "ps5-linux-flasher-launch",
     "date": "2026-11-17",
     "tag": "PC & Linux",

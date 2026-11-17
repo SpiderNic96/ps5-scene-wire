@@ -913,6 +913,16 @@
         "13.60"
       ],
       "note": "Ships with PS5-CachyOS, tested on 13.60."
+    },
+    "ramalhoboss/BrowserPS5": {
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "elfldr",
+        "ShadowMountPlus"
+      ],
+      "note": "Tested on one PS5 with firmware 13.60 only. The PS5's own keyboard works on 13.60; other firmwares use the browser's built-in keyboard."
     }
   },
   "unstated": [
