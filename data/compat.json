@@ -893,6 +893,20 @@
         "kstuff"
       ],
       "note": "Tested on PS5 Pro with FW 12.00 and ShadowMount+ 1.7beta12. Rules individually marked as confirmed or not yet confirmed for other configurations."
+    },
+    "eudanh/Trofy": {
+      "tested": [
+        "13.60"
+      ]
+    },
+    "KPKev/WinBrew-11": {
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "Playden"
+      ],
+      "note": "Runs Windows apps through Wine/Playden on PS5. Owner tested on 13.60."
     }
   },
   "unstated": [
@@ -909,7 +923,6 @@
     "EchoStretch/kstuff",
     "EchoStretch/kstuff-lite",
     "ItsJokerZz/BetterLAN-Client",
-    "KPKev/WinBrew-11",
     "KongaTime/Dantes-Inferno-PS5-Port",
     "KongaTime/PS5_EdgeOfTimeTitle",
     "KongaTime/The-Darkness-Recomp-PS5",

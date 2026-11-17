@@ -1,5 +1,64 @@
 [
   {
+    "id": "trofy-launch",
+    "date": "2026-11-17",
+    "tag": "Tool",
+    "title": "Trofy: browse your PS5 game library, trophies and captures",
+    "summary": "Trofy is a new PS5 homebrew app that lets you browse your game library, track play time and trophy progress, and revisit screenshots and clips — all from the TV with a controller.",
+    "body": [
+      "Trofy by eudanh is a new PS5 homebrew app designed for the TV and DualSense. It reads the local data on your console and shows your game library with play time, earned trophies with platinum progress, and a gallery of screenshots and video clip previews. A Photo Mode lets you create a shareable view of your collection. You can also hide individual games from the view and statistics. The interface is available in English, Brazilian Portuguese, Spanish and French, following the console language by default.",
+      "Trofy stores its own index, preferences, covers and backgrounds in /data/trofy/ and does not modify game files, saves, captures or trophies. Before opening it, you need an activated local profile — the README links to Prospero Manager for offline activation. It is tested on firmware 13.60; other versions are unverified. Download Trofy.exfat from the GitHub releases and open it with a compatible PS5 homebrew loader."
+    ],
+    "sources": [
+      {
+        "name": "Trofy GitHub",
+        "url": "https://github.com/eudanh/Trofy"
+      },
+      {
+        "name": "Trofy v0.3.42 release",
+        "url": "https://github.com/eudanh/Trofy/releases/tag/v0.3.42"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v1261-v1262-disks-kraken",
+    "date": "2026-11-17",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.1–v12.6.2: every disk in the file browser and Kraken Mount warnings",
+    "summary": "PS5 Upload v12.6.1 shows every mounted disk in the file browser, warns when Kraken Mount needs an update, and fixes frame-rate reading on older firmware.",
+    "body": [
+      "PS5 Upload v12.6.1 by phantomptr brings three changes. The file browser now lists every mounted disk alongside the home folder: other internal disks, USB drives and network shares on Linux, the volumes on a Mac, and every drive letter on Windows. Previously only the home folder was shown. The Kraken Mount cards (Install package and Payloads › On your PS5) now display a warning when Kraken Mount is older than 0.2.1, which is the version that gives a mounted package the save-data image, artwork and trophy files needed for saves and trophies to work with Convert-made packages.",
+      "The release also fixes a frame-rate issue on older firmware — on some consoles (observed on firmware 4.x) the frame count never advanced, causing the frame rate to read 0 and captures to fill with zero rows. The app now detects this and reports that it cannot read the frame rate on that firmware, without keeping rows of zeros. v12.6.2 follows as a quick maintenance release."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.1 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.1"
+      },
+      {
+        "name": "PS5 Upload v12.6.2 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.2"
+      }
+    ]
+  },
+  {
+    "id": "winbrew-11-v1180-vapor-updates",
+    "date": "2026-11-17",
+    "tag": "PC & Linux",
+    "title": "WinBrew 11 v1.18.0: Vapor can now update Playden from inside WinBrew",
+    "summary": "WinBrew 11 v1.18.0 adds in-app Playden backend updates through Vapor, includes Playden 0.11.0 and runtime kit 0.28, and shows real preparation progress when launching games.",
+    "body": [
+      "WinBrew 11 v1.18.0 by KPKev lets Vapor check for and install compatible Playden backend updates without leaving WinBrew. It checks automatically at startup, offers a manual Check Now button, verifies the staged files before applying them, shows a restart dialog, and can roll back to the previous app-and-runtime pair if something goes wrong. This release ships with Playden 0.11.0 and runtime kit 0.28, keeping the WinBrew desktop and scoped CS2 and Blender runtimes intact.",
+      "Game preparation now shows the real setup step name, elapsed time and percentage when available, with an animated indicator for steps of unknown duration. Older prepared titles automatically refresh on launch. The release also includes startup and sign-in fixes for resumed downloads, late library updates and licensed applications, plus generic executable-path handling and DX11 launch fixes discovered while investigating Dungeon Defenders II. This is still a development release — gameplay has not been broadly requalified after the backend migration, and Skyrim's earlier regression remains unresolved. Tested on PS5 firmware 13.60."
+    ],
+    "sources": [
+      {
+        "name": "WinBrew 11 v1.18.0 release",
+        "url": "https://github.com/KPKev/WinBrew-11/releases/tag/v1.18.0"
+      }
+    ]
+  },
+  {
     "id": "betterlan-ps5-system-link",
     "date": "2026-11-17",
     "tag": "Tool",

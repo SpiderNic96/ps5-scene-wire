@@ -109,6 +109,7 @@ export const SOURCES = [
   { cat: T, repo: 'ghostyshell/godsend-ps5', name: 'GODsend PS5', about: 'Desktop workshop: FTP library, payloads, virtual DualSense and conversions' },
   { cat: T, repo: 'ItsJokerZz/BetterLAN-Client', name: 'BetterLAN', about: 'System Link over the internet for PS4 and PS5' },
   { cat: T, repo: 'strongt1me/ps5-medic-ui-tool', name: 'PS5 Medic', about: 'Diagnostic check-up and repair for jailbroken PS5' },
+  { cat: T, repo: 'eudanh/Trofy', name: 'Trofy', about: 'Game library, trophies and capture browser' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },
