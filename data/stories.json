@@ -1,5 +1,60 @@
 [
   {
+    "id": "browserps5-rc15-rc16-video-keyboard-mouse",
+    "date": "2026-11-18",
+    "tag": "Tool",
+    "title": "BrowserPS5 v1.0.0-rc15–rc16: video playback, USB keyboard and mouse",
+    "summary": "BrowserPS5 rc15 fixes in-page video playback (MP4 and WebM files now play from memory) and rc16 adds full USB keyboard and mouse support with standard shortcuts.",
+    "body": [
+      "BrowserPS5 rc15 by ramalhoboss fixes video files embedded in web pages. MP4 files in page players — such as those on the Internet Archive, news sites and forums — stopped with an error because the engine tried to store the file on disk. Video now plays from memory, with seeking, and loads in under six seconds on the Internet Archive. WebM with Vorbis audio also works for the first time, as an FFmpeg Vorbis decoder was added. A failed browser start now closes the app cleanly instead of showing 'Game or App Error', and browser-title.txt logs the console's firmware to help with reports. Both rc15 and rc16 install themselves automatically on consoles running rc14 or later.",
+      "rc16 adds USB keyboard and mouse support. Plugging a mouse into the console moves the cursor, left-clicks, drags, scrolls with the wheel, and uses the side buttons for back/forward. A USB keyboard types into pages and the on-screen keyboard stays hidden while one is plugged in. Standard shortcuts work: F5 or Ctrl+R to reload, Ctrl+T/W to open and close tabs, F6 or Ctrl+L for the address bar, and Alt+arrows for navigation. The layout follows the console's language setting (Portuguese ABNT2 or US). Keystrokes are never written to the logs. An empty file named no-kbm in /data/homebrew/PPSA97024/ disables the feature. rc16 also stops sending unchanged frames to the TV, reducing idle GPU load."
+    ],
+    "sources": [
+      {
+        "name": "BrowserPS5 v1.0.0-rc16 release",
+        "url": "https://github.com/ramalhoboss/BrowserPS5/releases/tag/v1.0.0-rc16"
+      },
+      {
+        "name": "BrowserPS5 v1.0.0-rc15 release",
+        "url": "https://github.com/ramalhoboss/BrowserPS5/releases/tag/v1.0.0-rc15"
+      }
+    ]
+  },
+  {
+    "id": "kraken-mount-v030-saves-dlc-playgo",
+    "date": "2026-11-18",
+    "tag": "Tool",
+    "title": "Kraken Mount v0.3.0: save-data fix, bundled DLC and PlayGo emulators",
+    "summary": "Kraken Mount v0.3.0 fixes disappearing saves, bundles DLC and PlayGo emulators, adds title sounds, and brings USB drive unmounting to the web UI.",
+    "body": [
+      "Kraken Mount v0.3.0 by quer3q fixes a save-data issue that caused saves to disappear or fail to load. The mounter was using a game's own libSceSaveData.native.sprx from its fakelib/ directory, which replaced the console's save module — the library is no longer used. PKG games now always get ampr-emu-ng regardless of the inject_ampr setting, since only ampr-emu-ng can read the game from the .pkg file; the setting now applies to folder games only. The release also bundles drakmor's dlc_emu 0.3 and pgo_stub 0.6 — DLC and PlayGo emulators are added automatically when a game ships a dlc_emu.ini or uses PlayGo, as long as the game doesn't already include a newer copy.",
+      "Games now play their title sound when selected on the home screen. Each USB drive gets an Unmount button in the web UI for safe removal, and game names follow the console's language setting. Scanning skips games still being copied (waiting 10 seconds for file changes to settle), and titles whose source is missing for five minutes are automatically removed from the home screen — the cache is kept so they reappear when the source returns. To update, send kraken-mount.elf to elfldr on port 9021. The first start after updating recomposes every game's fakelib once."
+    ],
+    "sources": [
+      {
+        "name": "Kraken Mount v0.3.0 release",
+        "url": "https://github.com/quer3q/kraken-mount/releases/tag/v0.3.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5-cleanup-v12-firmware-13x-fix",
+    "date": "2026-11-18",
+    "tag": "Tool",
+    "title": "PS5 Cleanup v1.2: deleting on firmware 13.x fixed",
+    "summary": "PS5 Cleanup v1.2 fixes file deletion on firmware 13.x (13.20 and 13.60), where it previously failed with 'Bad file descriptor'.",
+    "body": [
+      "PS5 Cleanup v1.2 by xXBneutzerNameXx fixes a bug where deleting files on firmware 13.x (including 13.20 and 13.60) failed with a 'Bad file descriptor' error. The app now takes every step via the full path — the same approach Playden uses — whenever the console refuses the short path. Deleting on 13.x now works the same as on 12.x. Before anything is removed, the app verifies that the path to every file is accessible, so Sony's saved-data list is never modified unless every delete can go through. Failed deletions now show the real reason in the log instead of a misleading 'deleted' message.",
+      "The share function's temporary file is no longer offered for deletion, and minor corrections were made to the feedback page. To use PS5 Cleanup, download ps5cleanup_v1.2.elf from the GitHub release and launch it through your payload loader or Payload Manager. The browser-based interface is accessible at http://<PS5-IP>:9100 on your local network. Version 1.1 is now marked as outdated."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Cleanup v1.2 release",
+        "url": "https://github.com/xXBneutzerNameXx/PS5-Cleanup/releases/tag/v1.2"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v1268-remote-play-linux-fix",
     "date": "2026-11-18",
     "tag": "Tool",

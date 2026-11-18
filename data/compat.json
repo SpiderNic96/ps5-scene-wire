@@ -641,7 +641,9 @@
     },
     "xXBneutzerNameXx/PS5-Cleanup": {
       "tested": [
-        "12.00"
+        "12.00",
+        "13.20",
+        "13.60"
       ]
     },
     "disco-trooper/hush": {
