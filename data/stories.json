@@ -1,5 +1,39 @@
 [
   {
+    "id": "ps5upload-v1268-remote-play-linux-fix",
+    "date": "2026-11-18",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.8: Remote Play green-band fix on Linux",
+    "summary": "PS5 Upload v12.6.8 fixes a Remote Play bug on Linux where a solid green strip appeared at the bottom of the picture at 1080p.",
+    "body": [
+      "PS5 Upload v12.6.8 by phantomptr fixes a Remote Play rendering issue on Linux. At 1080p, some PCs showed a solid green band covering the bottom of the PS5's picture — part of the menu was hidden behind it. The app now checks that each frame arrived whole and, if it didn't, switches to a drawing method that handles partial frames correctly. The developer notes the fix has not yet been confirmed on an affected PC and asks users who still see the band to file a bug report from the Bug Report page.",
+      "This release is available for Windows, Mac, Linux, Android and iOS. Download the installer for your platform from the GitHub releases page — ARM builds are included for Windows and Linux."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.8 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.8"
+      }
+    ]
+  },
+  {
+    "id": "browserps5-rc14-auto-updates",
+    "date": "2026-11-18",
+    "tag": "Tool",
+    "title": "BrowserPS5 v1.0.0-rc14: automatic updates and pipe-exhaustion crash fix",
+    "summary": "BrowserPS5 rc14 adds automatic self-updating, fixes a pipe-pool exhaustion that stopped all page loads, and improves YouTube navigation and gamepad-as-keyboard support.",
+    "body": [
+      "BrowserPS5 v1.0.0-rc14 by ramalhoboss adds automatic updates — a few seconds into each session the browser checks GitHub for a newer release, downloads the installer in the background (verified against the release's SHA-256), and applies it on the next launch. Users can disable auto-updates by creating an empty file named no-updates in /user/homebrew/browserps5-rn/data. The release also fixes a critical bug where the console's shared pipe-buffer pool ran out of memory, causing every network request to stall and preventing all page loads including the start page. The engine's pipes now use socket pairs instead, bypassing that pool entirely.",
+      "YouTube's television interface now navigates correctly — the ○ button goes back inside YouTube instead of jumping to the browser's start page, and from YouTube's first screen it exits to the browser. The on-screen keyboard no longer opens over a game, and the controller-as-keyboard mode now uses the standard console layout (left stick and D-pad for directions, right stick for the mouse, R2 for click, R3 for Enter). Install by running BrowserPS5.elf through your ELF loader with ShadowMountPlus running. This is the last version that must be installed by hand — future updates will arrive automatically."
+    ],
+    "sources": [
+      {
+        "name": "BrowserPS5 v1.0.0-rc14 release",
+        "url": "https://github.com/ramalhoboss/BrowserPS5/releases/tag/v1.0.0-rc14"
+      }
+    ]
+  },
+  {
     "id": "parallax-browser-v022-keyboard-fix",
     "date": "2026-11-18",
     "tag": "Tool",
