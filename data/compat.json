@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17",
+  "updated": "2026-11-18",
   "about": "Firmware compatibility for the /firmware directory. Only what each project's README or release notes state. range = the developer says it supports these firmwares; tested = firmwares it has actually been run on; only = hard-locked to these firmwares; any = the developer says it isn't tied to a firmware. unstated = tracked apps whose README was checked and names no PS5 firmware (they show as not confirmed). Validate with: node scripts/compat-check.mjs",
   "firmwares": [
     "1.00",
@@ -923,6 +923,22 @@
         "ShadowMountPlus"
       ],
       "note": "Tested on one PS5 with firmware 13.60 only. The PS5's own keyboard works on 13.60; other firmwares use the browser's built-in keyboard."
+    },
+    "lineage-shell/lineage-ps2-for-ps5": {
+      "tested": [
+        "11.40"
+      ],
+      "needs": [
+        "kstuff"
+      ]
+    },
+    "lineage-shell/lineage-ps1-for-ps5": {
+      "tested": [
+        "11.40"
+      ],
+      "needs": [
+        "kstuff"
+      ]
     }
   },
   "unstated": [

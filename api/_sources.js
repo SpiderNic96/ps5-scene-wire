@@ -139,6 +139,8 @@ export const SOURCES = [
   { cat: E, repo: 'heydemoura/EglantinePS5', name: 'EglantinePS5', about: 'Switch 2, based on Eglantine/Eden' },
   { cat: E, repo: 'niakw/ProsperoEden-Encore', name: 'ProsperoEden Encore', about: 'Switch, FW 13.60 focused Eden fork' },
   { cat: E, repo: 'thereal47Ronin/GBAR5', name: 'GBAR5', about: 'Game Boy Advance, based on mGBA' },
+  { cat: E, repo: 'lineage-shell/lineage-ps2-for-ps5', name: 'Lineage PS2', about: 'Authentic PS2 system menu front end for PS5SX2' },
+  { cat: E, repo: 'lineage-shell/lineage-ps1-for-ps5', name: 'Lineage PS1', about: 'Authentic PS1 system menu front end for SwanStationPS5' },
 
   // PC, Linux and Steam
   { cat: P, repo: 'ps5-linux/ps5-linux-loader', name: 'ps5-linux', about: 'Linux loader, low firmware' },

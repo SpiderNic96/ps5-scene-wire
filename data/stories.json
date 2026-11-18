@@ -1,5 +1,81 @@
 [
   {
+    "id": "ps5upload-v1264-trophies-payloads",
+    "date": "2026-11-18",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.4: trophies after offline activation and Payloads overhaul",
+    "summary": "PS5 Upload v12.6.4 fixes trophies that stop recording after offline activation by updating trophy files to the new account, and cleans up the Payloads screen with accurate stop/restart feedback and instant list refreshes.",
+    "body": [
+      "PS5 Upload v12.6.4 by phantomptr fixes a problem where trophies stopped recording after offline activation. Activation creates a new account, but trophy files for games the user already played still referenced the old one, so the console ignored them. The update now patches those files automatically and backs up the originals to /data/ps5upload/backup/trophy/. Users who activated before this version get a Repair trophies option on the Accounts screen that previews the changes before applying them and can be undone. The Payloads screen is also overhauled: a failed Stop now says so instead of reporting success, the Running tab updates immediately after Stop, Launch, Delete or switching consoles, and Launch on an already-running payload is no longer the default button.",
+      "Upload handling is improved too: a folder already on the PS5 now offers Merge (new files added, same-name files replaced, others kept) alongside Replace, and Replace reliably removes the old copy first. A running conversion no longer loses its progress after a clock change and helper update. Save sync prevents pairing a console with itself and respects dismissed prompts. ShadowMount+ and np-fake-signin show which copy will be sent with a Choose file option. Download PS5Upload from the GitHub releases and load it on a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.4 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.4"
+      }
+    ]
+  },
+  {
+    "id": "ps5-playtime-tracker-v110-media-tile",
+    "date": "2026-11-18",
+    "tag": "Tool",
+    "title": "PS5 Playtime Tracker v1.1.0: a gowithme.club tile in Media with QR pairing",
+    "summary": "PS5 Playtime Tracker v1.1.0 adds a tile in the Media section that shows a QR-coded pairing code and, once linked, your latest report and profile — plus cleaner notifications and a 20-minute code timeout.",
+    "body": [
+      "PS5 Playtime Tracker v1.1.0 by gowithme-club adds a home screen tile under Media. The tile shows the pairing code alongside a QR code that opens gowithme.club/ps5 on a phone with the code already filled in. Once the console is linked, the tile switches to showing the last report and the owner's profile as both a link and a QR code. The page follows the console's language setting. Notifications now carry the gowithme.club icon and no longer say \"Debug\".",
+      "The pairing code is now shown for 20 minutes and then expires quietly — previously it repeated every 10 seconds for as long as the payload ran. After the timeout the payload shows \"console is not linked\" and stays silent; loading the payload again or pressing Show code on the tile generates a fresh code. A console removed from the site shows \"console unlinked\" with no new code offered, and a missing network connection is reported clearly. To update, load the new ELF file; the console stays linked and the Media tile appears on first start."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Playtime Tracker v1.1.0 release",
+        "url": "https://github.com/gowithme-club/ps5-playtime-tracker/releases/tag/v1.1.0"
+      }
+    ]
+  },
+  {
+    "id": "lineage-ps2-launch",
+    "date": "2026-11-18",
+    "tag": "Emulator",
+    "title": "Lineage PS2: an authentic PS2 system menu for PS5SX2 on PS5",
+    "summary": "Lineage PS2 is a front end for PS5SX2 that recreates the real PS2 experience — the tower opening, the main menu with the clock, the Browser with memory cards and 3D save icons, and a styled game library. All artwork comes from your own BIOS.",
+    "body": [
+      "Lineage PS2 for PS5 by kurolume is a front end for the PS5SX2 emulator that recreates the PlayStation 2's system interface on the PS5. Open it and you get the tower-based opening (towers grow from your play time), the main menu with the working clock, the Browser with your memory cards and their 3D save icons, the disc in the drive, and System Configuration. A Library shows your games as cases that you can search, sort and favourite — press R3 on a case to flip it and read the back. Every game starts with the \"PlayStation 2\" logo. All artwork, fonts and sounds are drawn from your own BIOS at first launch, so no Sony assets are included in the repository.",
+      "Lineage PS2 supports 16:9 and 4:3 displays, folder-based memory cards with no 8 MB limit, save states alongside memory card saves, and a universal in-game menu triggered by holding L3 + R3. It requires a jailbroken PS5 with kstuff, a way to put homebrew on the home screen (such as ShadowMountPlus), and the PS5SX2 Helper payload. Tested on firmware 11.40. The developer's wider Lineage project aims to bring the same faithful-interface approach to other emulators and eventually PC. Source code and builds are on GitHub."
+    ],
+    "sources": [
+      {
+        "name": "Lineage PS2 for PS5 GitHub",
+        "url": "https://github.com/lineage-shell/lineage-ps2-for-ps5"
+      },
+      {
+        "name": "Lineage PS2 v1.0 release",
+        "url": "https://github.com/lineage-shell/lineage-ps2-for-ps5/releases/tag/v1.0"
+      }
+    ]
+  },
+  {
+    "id": "lineage-ps1-launch",
+    "date": "2026-11-18",
+    "tag": "Emulator",
+    "title": "Lineage PS1: the original PlayStation's menus recreated for SwanStationPS5",
+    "summary": "Lineage PS1 wraps SwanStationPS5 in a front end that recreates the PS1 boot sequence, main menu, memory card management and grey settings screens — all built from your own BIOS.",
+    "body": [
+      "Lineage PS1 for PS5 by kurolume is a front end for SwanStationPS5 that recreates the original PlayStation's system interface. It boots with the Sony and PlayStation screens at their real timing and sound, then gives you the console's blue-light-and-spheres main menu, memory card blocks, the CD Player and the grey settings screens. A Library lets you browse, search, favourite and track play time for your games, with a page for each title showing its discs and save states. The in-game menu, styled as the CD Player, is reached by holding L3 + R3. The logo screens, font and start-up sound come from your own BIOS, with an option to play using the built-in OpenBIOS if you don't have one yet.",
+      "The front end also adds memory card backup and restore and supports both memory card saves and save states. It requires a jailbroken PS5 with kstuff, a way to put homebrew on the home screen (such as ShadowMountPlus), and an app unlocker like etaHEN or LegacyJB. Tested on firmware 11.40. Lineage PS1 is part of the same Lineage project as the PS2 version, sharing the same design language and universal L3 + R3 combo across all releases. Source code and builds are on GitHub."
+    ],
+    "sources": [
+      {
+        "name": "Lineage PS1 for PS5 GitHub",
+        "url": "https://github.com/lineage-shell/lineage-ps1-for-ps5"
+      },
+      {
+        "name": "Lineage PS1 v1.0 release",
+        "url": "https://github.com/lineage-shell/lineage-ps1-for-ps5/releases/tag/v1.0"
+      }
+    ]
+  },
+  {
     "id": "playden-v0120-beta1-online-play",
     "date": "2026-11-17",
     "tag": "PC & Linux",
