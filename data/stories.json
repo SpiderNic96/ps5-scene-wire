@@ -1,5 +1,47 @@
 [
   {
+    "id": "ps5upload-v1265-v1266-save-backup-drive",
+    "date": "2026-11-18",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.5–v12.6.6: save backups on a PS5 drive and 50 Mbps Remote Play",
+    "summary": "PS5 Upload v12.6.5 adds on-console save backups to the M.2 or a USB drive, raises the Remote Play bitrate cap to 50 Mbps, and fixes an Android layout issue with three or more consoles.",
+    "body": [
+      "PS5 Upload v12.6.5 by phantomptr introduces on-console save backups. Under Save Data › Automatic backups › Also keep a copy on a PS5 drive, users can pick the M.2 SSD or a USB drive and every automatic backup is copied there, verified against the original. The copies appear alongside regular backups marked \"On the PS5\" and restore like any other, so a factory reset no longer risks losing save data. Remote Play now supports bitrates up to 50 Mbps (up from 15 Mbps) and shows what the PS5 is actually sending during a stream — higher rates need a fast wired network, and the PS5 may send less than the chosen rate. The Files browser now highlights the folder you came from when navigating back, and arrow keys move between rows.",
+      "An Android layout bug where the app squeezed into a corner with three or more saved consoles is fixed: hidden accessibility labels in the console strip were stretching the page wider than the screen. Docker updates now remove old PS5Upload images automatically instead of piling up about 170 MB per release. v12.6.6 is a quick follow-up fix. Download PS5Upload from the GitHub releases page."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.5 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.5"
+      },
+      {
+        "name": "PS5 Upload v12.6.6 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.6"
+      }
+    ]
+  },
+  {
+    "id": "parallax-browser-v020-v021-self-update",
+    "date": "2026-11-18",
+    "tag": "Tool",
+    "title": "Parallax Browser v0.2.0–v0.2.1: self-updating, persistent bar, and WebGPU",
+    "summary": "Parallax Browser v0.2.0 adds automatic updates from inside the browser, a persistent navigation bar, WebGPU support on the PS5 GPU, and an experimental in-process page mode that doubles performance on heavy sites.",
+    "body": [
+      "Parallax Browser v0.2.0 by rikleigh adds a self-update system: the browser checks for new releases on launch and shows the release notes with Update, What's new and Later options. Downloads happen in the background, and tabs are restored after the restart. The navigation bar — Back, Forward, address, Bookmark and Settings — now stays visible above the page at all times instead of hiding behind a menu, with a full-screen button to dismiss it. Gamepad mode no longer activates by itself; hold △ to enter it and Options to leave. WebGPU is now enabled by default, bringing the newer graphics and GPU compute interface with WGSL shaders, compute pipelines and video-as-texture to the PS5's GPU.",
+      "An experimental \"Pages in the browser process\" option runs pages inside the browser process rather than separate ones, roughly doubling performance on heavy pages and games at the cost of occasional UI pauses on busy sites and no crash isolation. Scrolling no longer slows down on long feeds, 8K HEVC decoding is back on the hardware decoder, and SharedArrayBuffer works for cross-origin-isolated pages. v0.2.1 fixes a permissions issue where /data/ps5webkit couldn't be deleted after removing the browser. Tested on firmware 13.60. Install by copying the PPSA99207 folder to /data/homebrew over FTP and registering it with etaHEN or ShadowMount+."
+    ],
+    "sources": [
+      {
+        "name": "Parallax Browser v0.2.0 release",
+        "url": "https://github.com/rikleigh/parallax-browser/releases/tag/v0.2.0"
+      },
+      {
+        "name": "Parallax Browser v0.2.1 release",
+        "url": "https://github.com/rikleigh/parallax-browser/releases/tag/v0.2.1"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v1264-trophies-payloads",
     "date": "2026-11-18",
     "tag": "Tool",
