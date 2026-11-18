@@ -1,5 +1,39 @@
 [
   {
+    "id": "parallax-browser-v022-keyboard-fix",
+    "date": "2026-11-18",
+    "tag": "Tool",
+    "title": "Parallax Browser v0.2.2: on-screen keyboard fix for all firmwares",
+    "summary": "Parallax Browser v0.2.2 fixes the on-screen keyboard not appearing on firmware versions other than 13.60, so the browser now works correctly on any supported firmware.",
+    "body": [
+      "Parallax Browser v0.2.2 by rikleigh is a fix release for v0.2.1. The on-screen keyboard did not appear on firmware versions other than 13.60. The browser now finds the keyboard through the system the way other homebrew apps do, so it should work on any firmware. This was the first bug report filed against the project.",
+      "Users on v0.2.0 or v0.2.1 can update from inside the browser itself thanks to the self-update feature added in v0.2.0, or install via ProsperoStore once it lists the new version. Manual installation: download parallax-browser-0.2.2.zip from the GitHub release, unpack it, copy the PPSA99207 folder to /data/homebrew on the console over FTP, and register /data/homebrew/PPSA99207 with etaHEN or ShadowMount+. Bookmarks, history, settings and downloads are preserved."
+    ],
+    "sources": [
+      {
+        "name": "Parallax Browser v0.2.2 release",
+        "url": "https://github.com/rikleigh/parallax-browser/releases/tag/v0.2.2"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v1267-send-to-ps5-kraken",
+    "date": "2026-11-18",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.7: send packages directly to Kraken Mount",
+    "summary": "PS5 Upload v12.6.7 adds a Send to PS5 option on game pages, putting packages straight into Kraken Mount's folder for mounting instead of installing.",
+    "body": [
+      "PS5 Upload v12.6.7 by phantomptr adds the ability to send a package to the PS5 as a file. On a game's page, every package now has a Send to PS5 option. When Kraken Mount is running on the PS5 and can mount that package (a PS5 game in a single file), Send to PS5 becomes the main button and places the file directly into Kraken Mount's folder — Install moves to the overflow menu. Otherwise, Install stays first and Send to PS5 as a file is in the overflow menu. Nothing is installed; Kraken Mount picks it up on its next scan.",
+      "Packages hosted on a server or NAS work the same way. This release also re-publishes the fixes from v12.6.6, which could not be published at the time. Download PS5Upload from the GitHub releases page — installers are available for Windows, Mac, Linux, Android and iOS."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.7 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.7"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v1265-v1266-save-backup-drive",
     "date": "2026-11-18",
     "tag": "Tool",
