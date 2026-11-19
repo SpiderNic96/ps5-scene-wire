@@ -111,6 +111,7 @@ export const SOURCES = [
   { cat: T, repo: 'strongt1me/ps5-medic-ui-tool', name: 'PS5 Medic', about: 'Diagnostic check-up and repair for jailbroken PS5' },
   { cat: T, repo: 'eudanh/Trofy', name: 'Trofy', about: 'Game library, trophies and capture browser' },
   { cat: T, repo: 'ramalhoboss/BrowserPS5', name: 'BrowserPS5', about: 'Full web browser with WebKit JIT, tabs, ad blocker and DualSense controls' },
+  { cat: T, repo: '0xFlan/prospero-vault', name: 'Prospero Vault', about: 'On-console FPKG library with Mac-side package building' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },
@@ -232,4 +233,6 @@ export const SOURCES = [
   { cat: R, repo: 'milh0usec/ac6-ps5recomp', name: 'AC6Recomp PS5', about: 'Ace Combat 6 Xbox 360 recomp, 1440p/60fps, source-only, bring your own disc' },
   { cat: R, repo: 'codemasterv/Legend-of-Legaia-PS5-Recomp', name: 'Legend of Legaia Recomp', about: 'PS1 PSXRecomp, widescreen and save states, bring your own disc' },
   { cat: R, repo: 'MyNameIsAwoo/CloneHeroEncore-PS5', name: 'Clone Hero: Encore', about: 'Native PS5 Clone Hero port with local multiplayer' },
+  { cat: R, repo: 'chonzytron/Dead-Space-2-PS5', name: 'Dead Space 2', about: 'Xbox 360 recomp, native 4K 60fps, bring your own disc' },
+  { cat: R, repo: 'KongaTime/The-Nightmare-Before-Christmas-PS5-Port', name: 'The Nightmare Before Christmas: Oogie\'s Revenge', about: 'Xbox recomp, up to 4K, bring your own disc' },
 ];

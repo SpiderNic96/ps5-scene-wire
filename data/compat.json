@@ -950,6 +950,7 @@
     }
   },
   "unstated": [
+    "0xFlan/prospero-vault",
     "0xZ3n0x/BlueV",
     "7tg/sahin",
     "AdamGoodApp/prosperokit",
@@ -967,6 +968,7 @@
     "ChaDea1/Bedlam2-PS5",
     "ChaosTheory1075/mp3-ps5",
     "CHI-GETSU/GTA-SA-PS5-Homebrew",
+    "chonzytron/Dead-Space-2-PS5",
     "codemasterv/Legend-of-Legaia-PS5-Recomp",
     "codemasterv/Soulcalibur-II-HD-PS5",
     "cptlamarca/mk9-ps5",
@@ -1007,6 +1009,7 @@
     "KongaTime/Dantes-Inferno-PS5-Port",
     "KongaTime/PS5_EdgeOfTimeTitle",
     "KongaTime/The-Darkness-Recomp-PS5",
+    "KongaTime/The-Nightmare-Before-Christmas-PS5-Port",
     "KongaTime/Wario-Land-Shake-It-PS5",
     "KongaTime/XBC-Recomp-PS5-Port",
     "lamarkingru/grfs-ps5",

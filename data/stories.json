@@ -1,5 +1,81 @@
 [
   {
+    "id": "dead-space-2-ps5-port",
+    "date": "2026-11-19",
+    "tag": "Port",
+    "title": "Dead Space 2 PS5: Xbox 360 horror classic recompiled at native 4K 60 FPS",
+    "summary": "Dead Space 2 PS5 by chonzytron brings the Xbox 360 version of Visceral's survival horror to the PS5 as a native homebrew app running at 4K resolution and 60 frames per second, built on bifftannen1's full static recompilation.",
+    "body": [
+      "Dead Space 2 PS5 by chonzytron is a native PS5 port of the Xbox 360 version of Dead Space 2, built on bifftannen1's Dead Space 2 Recomp — a static recompilation of all 47,739 functions using the game's own PDB symbols. The port runs at native 4K and 60 FPS with adaptive vsync, up from the original's 720p 30 FPS. It supports Title Update 2, automatic disc switching between both discs, and the Severed DLC. On first start the app prepares your game files on-console from your own disc images and offers to clean up the source packages afterwards.",
+      "Configuration is handled through a ds2.toml file with options for resolution scale (720p, 1440p or native 4K), frame rate (30 or 60), cutscene frame rate, language, intro skip and an FPS counter. DualSense controls are mapped to the Xbox 360 layout with rumble support. The port includes a dedicated GPU submission thread and graphics optimisations for a steady frame rate. Install by copying the PPSA94108 folder to /data/homebrew/ on a jailbroken PS5 and placing your own disc images and title update in the install subfolder. Built on the ReXGlue SDK and elripalda's GTA IV PS5 port work."
+    ],
+    "sources": [
+      {
+        "name": "Dead Space 2 PS5 repository",
+        "url": "https://github.com/chonzytron/Dead-Space-2-PS5"
+      },
+      {
+        "name": "Dead Space 2 PS5 1.0 release",
+        "url": "https://github.com/chonzytron/Dead-Space-2-PS5/releases/tag/Latest"
+      }
+    ]
+  },
+  {
+    "id": "nightmare-before-christmas-ps5-port",
+    "date": "2026-11-19",
+    "tag": "Port",
+    "title": "The Nightmare Before Christmas: Oogie's Revenge comes to PS5 as a native recompiled port",
+    "summary": "KongaTime's Nightmare Before Christmas PS5 Port recompiles the original Xbox version of Oogie's Revenge for PS5 with resolution options up to 4K, widescreen support, DualSense rumble and on-console ISO extraction.",
+    "body": [
+      "The Nightmare Before Christmas PS5 Port by KongaTime brings Oogie's Revenge — the 2004 Xbox action game — to the PS5 as a native recompiled homebrew title (PPSA90030). It builds on Pallypots' Project Oogie and sp00nznet's XboxRecomp. The port includes a controller-operated launcher with Prepare Game, Play Game and Settings options, on-console ISO extraction with a progress bar, and widescreen gameplay, menus and cutscenes. Internal render resolution can be set from 480p up to full 2160p, with enhanced texture filtering and adjustable brightness.",
+      "Audio controls include separate music, dialogue and effects volume. DualSense rumble is supported, and face buttons can be remapped. Install by uploading the PPSA90030 folder to /data/homebrew/ over FTP, placing your own USA original Xbox disc image as Oogie.iso next to the executable, and running Prepare Game on the console. This is KongaTime's third PS5 recompiled port after Dante's Inferno and The Darkness. Requires a jailbroken PS5 with homebrew launcher access and your own copy of the game."
+    ],
+    "sources": [
+      {
+        "name": "The Nightmare Before Christmas PS5 Port repository",
+        "url": "https://github.com/KongaTime/The-Nightmare-Before-Christmas-PS5-Port"
+      },
+      {
+        "name": "V1.0 release",
+        "url": "https://github.com/KongaTime/The-Nightmare-Before-Christmas-PS5-Port/releases/tag/v1.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v12610-fw4x-frame-rate",
+    "date": "2026-11-19",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.10: firmware 4.x game frame rate fix and Tailscale window flash",
+    "summary": "PS5 Upload v12.6.10 fixes game frame rate reporting on firmware 4.x consoles, a squeezed \"Moving\" line on phones, and a command window flashing every 30 seconds on Windows with Tailscale.",
+    "body": [
+      "PS5 Upload v12.6.10 by phantomptr fixes three issues from user reports. Game frame rate on firmware 4.x consoles now works — the console stores the frame count in a different location on this firmware, and the app now reads it there. The fix was checked against a 4.03 bug report showing 60 FPS in a 60 FPS game, though the developer notes it has not yet been tested on a 4.x console directly. On phones, the \"Moving\" status line in Files was squeezed to a few unreadable characters with the speed split across two lines; figures now wrap cleanly and an extra non-functional Resume button under paused items is gone.",
+      "On Windows with Tailscale installed, a black command window briefly flashed on screen every 30 seconds while the app checked for consoles on the Tailscale network. The check now runs in the background. Available on Windows (x64 and ARM), macOS (Apple Silicon and Intel), Linux (x64 and ARM AppImage, deb, rpm), Android and iOS."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.10 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.10"
+      }
+    ]
+  },
+  {
+    "id": "prospero-vault-on-console-fpkg-library",
+    "date": "2026-11-19",
+    "tag": "Tool",
+    "title": "Prospero Vault: on-console FPKG library with Mac-side package building",
+    "summary": "Prospero Vault by 0xFlan is a PS5-native package library that shows your games in a console UI, builds debug FPKGs from dumps on a Mac, and installs them through the PS5's own package installer.",
+    "body": [
+      "Prospero Vault by 0xFlan runs on the PS5 as a single ELF payload and serves a system-app-style interface with an icon rail, a thumbnail grid of your library, and one-tap FPKG building and installation. Unlike mount-based approaches such as Kraken Mount, Prospero Vault creates a real debug FPKG and installs it through Sony's own installer, producing a title that behaves like any other installed game and can be copied to other storage. It supports folders, .exfat, .ffpfsc, .ffpfs, .ffpkg, .gp5 and debug .pkg formats, with resumable verified transfers and DLC and PlayGo support.",
+      "The tool works as a two-part system: the console-side payload scans /data, /user/data and USB drives and serves the UI, while a companion app on a Mac handles the actual package building using fpkg-cli, orbis-pub-cmd, LibProsperoPkg or a custom command. The console pulls the finished package over the local network. Configuration is stored in /data/prospero-vault/config.json. The project includes a preflight diagnostic tool for verifying the setup. Source code is available on GitHub; no pre-built release binaries are published yet."
+    ],
+    "sources": [
+      {
+        "name": "Prospero Vault repository",
+        "url": "https://github.com/0xFlan/prospero-vault"
+      }
+    ]
+  },
+  {
     "id": "clonehero-encore-ps5-alpha-v39",
     "date": "2026-11-19",
     "tag": "Port",
