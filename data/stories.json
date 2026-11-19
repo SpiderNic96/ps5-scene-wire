@@ -1,5 +1,77 @@
 [
   {
+    "id": "clonehero-encore-ps5-alpha-v39",
+    "date": "2026-11-19",
+    "tag": "Port",
+    "title": "Clone Hero: Encore — native PS5 Guitar Hero port with local multiplayer",
+    "summary": "Clone Hero: Encore by MyNameIsAwoo brings the open-source rhythm game to PS5 with up to four local players, five-fret guitar, drums, an integrated song browser, and 60/120 FPS modes.",
+    "body": [
+      "Clone Hero: Encore by MyNameIsAwoo is a native PS5 port of Clone Hero, the open-source Guitar Hero clone. Alpha v.39 supports five-fret guitar and bass, four-lane drums, pro drums and a dedicated five-lane drum layout. Up to four local players can play at once, each with separate profiles, instrument remaps and highway styles. The integrated Encore Browser lets you search for songs with album art, charter information, instrument filters and in-app chart downloads. External song libraries on exFAT USB drives are supported, including nested folders and duplicate-aware USB/console copying.",
+      "The port offers automatic display resolution detection with 60 and 120 FPS modes, timed lyrics, solo accuracy, Star Power, sustain effects and song previews. Direct USB input is supported for compatible rhythm controllers, with guided remapping and a controller keyboard — DualSense text entry uses the PS5 on-screen keyboard. Install by extracting the PPSA99200 folder to /data/homebrew/ for a compatible launcher, by mounting the exFAT image, or by installing the PKG. Requires a PS5 homebrew environment. This is an alpha test release with known issues documented in the repository."
+    ],
+    "sources": [
+      {
+        "name": "Clone Hero: Encore PS5 repository",
+        "url": "https://github.com/MyNameIsAwoo/CloneHeroEncore-PS5"
+      },
+      {
+        "name": "Alpha v.39 release",
+        "url": "https://github.com/MyNameIsAwoo/CloneHeroEncore-PS5/releases/tag/alpha-v39"
+      }
+    ]
+  },
+  {
+    "id": "playden-v0120-beta2-microphone-voice-chat",
+    "date": "2026-11-19",
+    "tag": "PC & Linux",
+    "title": "Playden v0.12.0-beta.2: microphone voice chat and per-game volume",
+    "summary": "Playden v0.12.0-beta.2 adds microphone support for voice chat in Steam games on PS5, per-game volume control, system locale for Japanese titles, and a compatibility filter from the community list.",
+    "body": [
+      "Playden v0.12.0-beta.2 by leolobato adds microphone support so Steam games running on PS5 can use voice chat. Games see the DualSense controller's built-in microphone or a headset plugged into the controller as a standard Windows microphone, and a per-game Sound setting can turn it off. This release also introduces per-game volume (75%, 50%, 25% or muted) without changing the console's volume, and a System Locale option under Compatibility that sets the code page for older Japanese, Chinese, Korean, Russian or Polish games that show garbled text or refuse to start.",
+      "Beta 2 adds a Compatibility filter powered by the community's compatibility list, preserves artwork set with ArtSwap across updates, and makes installs 337 MB smaller thanks to runtime kit 0.31. A DualShock 4 bridged by PoorDS4 now works in both the Playden UI and in games. Chicory: A Colorful Tale and UNBEATABLE can be installed again. This is a beta of alpha software — the developer warns that betas can have new bugs. Updating from 0.7.0 or newer: turn on Settings > Updates > Beta updates and press Check Now."
+    ],
+    "sources": [
+      {
+        "name": "Playden v0.12.0-beta.2 release",
+        "url": "https://github.com/leolobato/playden-ps5/releases/tag/v0.12.0-beta.2"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v1269-upload-speed-fix",
+    "date": "2026-11-19",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.9: upload speed-limit fix and save backup improvements",
+    "summary": "PS5 Upload v12.6.9 fixes uploads getting stuck at 1.5 MiB/s when the mouse wheel accidentally set a speed limit, and overhauls save backup reliability.",
+    "body": [
+      "PS5 Upload v12.6.9 by phantomptr fixes a bug where scrolling the mouse wheel over the upload speed-limit box in Settings could silently set a speed cap without the user noticing, leaving uploads stuck at 1.5 MiB/s. The wheel no longer changes number boxes. While a limit is active, every upload now shows it next to its speed with a \"remove limit\" button. The Set up Play wizard step 2 now accepts any signed-in user (previously it stayed red until the user had an account ID), and the app records what the PS5 answers to help diagnose the game-frame-rate issue on firmware 4.x.",
+      "Save backups received several fixes: backups now work when the computer has a system proxy set, can be switched off or reconfigured while the backup disk is unplugged, and a failed backup to a NAS waits 30 minutes before retrying instead of every minute. Remote Play fixes include better handling of bitrate refusals above 15 Mbps and a thin green line at 1080p on Linux. The cheat system can now list games with a great many cheats and handles damaged cheat files. Available on Windows (x64 and ARM), macOS (Apple Silicon and Intel), Linux (x64 and ARM), Android and iOS."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.9 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.9"
+      }
+    ]
+  },
+  {
+    "id": "browserps5-rc17-keyboard-layouts",
+    "date": "2026-11-19",
+    "tag": "Tool",
+    "title": "BrowserPS5 v1.0.0-rc17: international keyboard layouts",
+    "summary": "BrowserPS5 rc17 adds USB keyboard layouts for the UK, France (AZERTY), Germany (QWERTZ), Spain and Italy, with working dead keys and AltGr characters.",
+    "body": [
+      "BrowserPS5 v1.0.0-rc17 by ramalhoboss adds USB keyboard support for five more country layouts: English (UK), French (AZERTY), German (QWERTZ), Spanish and Italian, joining the existing Portuguese (ABNT2) and US layouts. The layout follows the console's language setting. Dead keys for accents (^ ¨ ´ ` ~) work correctly, AltGr produces its characters (€, @, # and brackets), and Caps Lock gives accented capitals such as Ç, Ñ, Ü and Ö. Keyboard shortcuts follow the physical key — on an AZERTY keyboard, Ctrl+Z is the key marked Z.",
+      "Consoles running rc14, rc15 or rc16 install this release automatically in the background. For a new install or upgrade from rc13 or earlier, download BrowserPS5-1.0.0-rc17.zip, load your jailbreak with an ELF loader on port 9021 (etaHEN starts one) and ShadowMountPlus, and run BrowserPS5.elf once. The new layouts were checked key by key on a PC but not yet with physical international keyboards. Latin American and Canadian French keyboards currently type as US. Tested on firmware 13.60 with etaHEN and ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "BrowserPS5 v1.0.0-rc17 release",
+        "url": "https://github.com/ramalhoboss/BrowserPS5/releases/tag/v1.0.0-rc17"
+      }
+    ]
+  },
+  {
     "id": "browserps5-rc15-rc16-video-keyboard-mouse",
     "date": "2026-11-18",
     "tag": "Tool",

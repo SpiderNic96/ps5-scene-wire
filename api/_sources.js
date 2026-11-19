@@ -231,4 +231,5 @@ export const SOURCES = [
   { cat: R, repo: 'Vampinity/GreenHatBoy', name: 'Green Hat Boy (OoT)', about: 'Ocarina of Time (Switch 2) via Eglantine, bring your own dump' },
   { cat: R, repo: 'milh0usec/ac6-ps5recomp', name: 'AC6Recomp PS5', about: 'Ace Combat 6 Xbox 360 recomp, 1440p/60fps, source-only, bring your own disc' },
   { cat: R, repo: 'codemasterv/Legend-of-Legaia-PS5-Recomp', name: 'Legend of Legaia Recomp', about: 'PS1 PSXRecomp, widescreen and save states, bring your own disc' },
+  { cat: R, repo: 'MyNameIsAwoo/CloneHeroEncore-PS5', name: 'Clone Hero: Encore', about: 'Native PS5 Clone Hero port with local multiplayer' },
 ];
