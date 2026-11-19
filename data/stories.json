@@ -1,5 +1,77 @@
 [
   {
+    "id": "clonehero-encore-beta-10-midi-drums",
+    "date": "2026-11-19",
+    "tag": "Port",
+    "title": "Clone Hero: Encore Beta 1.0: USB MIDI drums, native guitar discovery and 4K 60 FPS",
+    "summary": "Clone Hero: Encore hits its first beta milestone with USB MIDI drum support, native PS4 guitar discovery, 120 FPS mode on PS5 Pro, and an in-game updater — plus a quick 1.0.1 hotfix for the MIDI rollout.",
+    "body": [
+      "Clone Hero: Encore by MyNameIsAwoo reaches Beta 1.0, the first beta release of the native PS5 Guitar Hero clone. The headline feature is USB MIDI drum support: class-compliant USB MIDI 1.0 input with guided setup for 4-Lane Pro and 5-Lane layouts. A native guitar discovery system now checks paired PS4 guitar controllers on standard and special ports, reuses existing handles, and waits for the first input sample before proceeding. The beta also adds an in-game updater so future builds can be installed without manual file copying.",
+      "A quick Beta 1.0.1 hotfix followed the same day, enabling USB MIDI drums with experimental support across the 1.0 beta series and refining the native guitar discovery to avoid closing borrowed handles and repeated failed-probe log messages. The developer notes that RB4 Stratocaster support still needs physical retesting. Clone Hero: Encore supports up to four local players, five-fret guitar and bass, four- and five-lane drums, pro drums, an integrated Encore Browser for downloading songs, and exFAT USB drive libraries. Requires a jailbroken PS5 with homebrew launcher access."
+    ],
+    "sources": [
+      {
+        "name": "Clone Hero: Encore Beta 1.0.1 release",
+        "url": "https://github.com/MyNameIsAwoo/CloneHeroEncore-PS5/releases/tag/beta-v1.0.1"
+      },
+      {
+        "name": "Clone Hero: Encore Beta 1.0 release",
+        "url": "https://github.com/MyNameIsAwoo/CloneHeroEncore-PS5/releases/tag/beta-v1.0"
+      }
+    ]
+  },
+  {
+    "id": "parallax-browser-v023-permissions-fix",
+    "date": "2026-11-19",
+    "tag": "Tool",
+    "title": "Parallax Browser v0.2.3: fixes data folder permissions that blocked startup",
+    "summary": "Parallax Browser v0.2.3 fixes a bug where the browser's data folder was created with wrong permissions, causing missing icons, a broken ad blocker and an installation error on some consoles.",
+    "body": [
+      "Parallax Browser v0.2.3 by rikleigh is a fix release for the WebKit-based PS5 browser. On some consoles, the browser created parts of its data folder (/data/ps5webkit) with permissions the app itself could not write to. This caused an error message on startup saying the browser could not install its files, and left the toolbar icons missing and the ad blocker non-functional. The browser now detects this condition at startup, repairs the folder permissions, and reinstalls its files automatically.",
+      "Users on 0.2.0 or later can update through the browser's built-in self-update feature or through ProsperoStore once it lists the new version. Manual installation is also available by unpacking the release zip and copying the PPSA99207 folder to /data/homebrew over FTP. Bookmarks, history, settings and downloads are preserved across the update. For everything new in the 0.2.x series — including in-browser updates, the redesigned toolbar, WebGPU support and more — see the 0.2.0 release notes."
+    ],
+    "sources": [
+      {
+        "name": "Parallax Browser v0.2.3 release",
+        "url": "https://github.com/rikleigh/parallax-browser/releases/tag/v0.2.3"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v12611-rar-space-check",
+    "date": "2026-11-19",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.11: RAR extraction checks free space before starting",
+    "summary": "PS5 Upload v12.6.11 now refuses to extract a RAR archive that won't fit on the drive before it starts, instead of failing after hours of extraction when the drive fills up.",
+    "body": [
+      "PS5 Upload v12.6.11 by phantomptr addresses a long-standing annoyance with large RAR file extraction. Previously, extracting a multi-part RAR archive that exceeded the available drive space would proceed for hours before failing at 99% with a drive-full error. The app now adds up the total uncompressed file sizes in the archive first — which takes only a few seconds — and tells the user immediately if the drive does not have enough room. This works for non-solid RARs, which are the most common format for game archives; solid RARs are still checked file by file as before.",
+      "The fix was prompted by a user report of a 150 GB multi-part RAR that extracted for over two hours before failing. The developer notes the new check has not yet been tested directly on a console. PS5 Upload is available on Windows (x64 and ARM), macOS (Apple Silicon and Intel), Linux (x64 and ARM via AppImage, deb and rpm), Android and iOS."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.11 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.11"
+      }
+    ]
+  },
+  {
+    "id": "psbox-v177-1440p60-xbox-remote-play",
+    "date": "2026-11-19",
+    "tag": "Media",
+    "title": "PSBox Cloud Gaming v1.7.7: 1440p60 Xbox Remote Play on PS5 and faster sign-in",
+    "summary": "PSBox Cloud Gaming v1.7.7 delivers native 1440p 60 FPS zero-copy Xbox Remote Play on PS5, automatic hardware decoder recovery, and OAuth v2.0 prefilled QR code sign-in across all platforms.",
+    "body": [
+      "PSBox Cloud Gaming v1.7.7 by RafaelNGP brings a major upgrade to Xbox Remote Play (xHome) on PS5. The app now streams at native 1440p 60 FPS using zero-copy hardware decoding by parsing H.264 SPS level, reference frames and coded dimensions to dynamically reconfigure the PS5's video decoder up to Level 5.2, expanding zero-copy video slots from 4 MiB to 8 MiB. This fixes the 'Starting the stream' freeze that occurred when an Xbox Series X was set to 4K 120 Hz output. Automatic hardware decoder recovery via sceVideodec2Reset now handles fatal stream errors so playback recovers on the next keyframe instead of stalling.",
+      "Sign-in is faster across all platforms with OAuth v2.0 and prefilled device codes — scanning the QR code or clicking the browser link now pre-fills the code automatically. Android TV and Nvidia Shield Pro get major stability fixes, 32-bit armeabi-v7a Android TV Box support is new, and Windows gains native D3D11VA hardware decoding priority. Legacy signed-in accounts continue to work without re-authentication. Requires a jailbroken PS5 for the console version."
+    ],
+    "sources": [
+      {
+        "name": "PSBox Cloud Gaming v1.7.7 release",
+        "url": "https://github.com/RafaelNGP/psbox-cloud-gaming/releases/tag/v1.7.7"
+      }
+    ]
+  },
+  {
     "id": "dead-space-2-ps5-port",
     "date": "2026-11-19",
     "tag": "Port",
