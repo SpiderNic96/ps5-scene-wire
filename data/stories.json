@@ -1,5 +1,77 @@
 [
   {
+    "id": "psbox-v180-auto-updates-usb-controllers",
+    "date": "2026-11-19",
+    "tag": "Media",
+    "title": "PSBox Cloud Gaming v1.8.0: in-app auto-updates, USB controller rumble and UI scaling",
+    "summary": "PSBox Cloud Gaming v1.8.0 adds multi-platform in-app auto-updates on PS5, PS4, Linux, Windows and Android, expanded PS5 USB controller support with rumble, dynamic UI scaling for handhelds, and VA-API hardware decoding on Linux.",
+    "body": [
+      "PSBox Cloud Gaming v1.8.0 by RafaelNGP introduces an in-app auto-updater across every platform the app runs on. On PS5 the existing ECDSA-signed updater gains SHA-256 verification. PS4 downloads and verifies the package before sending it to GoldHEN's Package Installer API. Linux AppImage updates swap the binary atomically and restart, Windows extracts to a staging directory and relaunches, and Android exposes the APK through a content provider for the system installer. USB controller support on PS5 is expanded with DualShock 4 wired input including touchpad click zones, Xbox 360 Wireless Receiver and Xbox Wireless Adapter support via XInput/GIP handshake, and generic HID controllers including 8BitDo D-Input and fightsticks. Game rumble now forwards over USB for DualShock 4, Xbox 360 and Xbox One/Series controllers.",
+      "A new Interface & Text Size setting scales the UI to 100%, 115% or 130% with adaptive row heights and padding, making the app much more readable on small handhelds like the Anbernic RG 557 and on smartphones. Settings navigation now wraps around from top to bottom. On PS4, peak memory usage drops by 80–110 MB thanks to a compacted JSON value type and streaming cache writes. Linux gains VA-API hardware video decoding. On-screen touch navigation buttons are now strictly isolated to Android touchscreen devices, keeping console and desktop builds clean. Requires a jailbroken PS5 with homebrew launcher access."
+    ],
+    "sources": [
+      {
+        "name": "PSBox Cloud Gaming v1.8.0 release",
+        "url": "https://github.com/RafaelNGP/psbox-cloud-gaming/releases/tag/v1.8.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v12612-folder-links-extraction-fix",
+    "date": "2026-11-19",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.12: save download links straight to PS5 folders and extraction fix",
+    "summary": "PS5 Upload v12.6.12 lets you save a download link directly into a PS5 folder without installing it, fixes the archive space check from v12.6.11 that did not run on-console, and stops uploads from showing \"Finalizing\" too early.",
+    "body": [
+      "PS5 Upload v12.6.12 by phantomptr adds a new way to get files onto the PS5. In Files, More > Download from a link saves a file into the folder that is open, and on Send, package links now have a \"Save to a PS5 folder\" button next to Install. The file transfers over the local network without being stored on the computer. Links from servers that only send a file in one piece — previously refused everywhere — now work for saving to a PS5 folder, and package installs from them save to the computer first. If one of these downloads is interrupted it restarts from the beginning, and the app warns you before it starts.",
+      "The archive extraction space check added in v12.6.11 did not actually run on the console when extracting into a new folder, which is the most common case — it does now. The PS5 also stops an extraction when the drive runs out of room before the last reserved space is consumed. Uploads no longer show \"Finalizing on PS5\" while data is still being sent after a stop-and-resume. Screens now keep what you were doing when you switch to another console and come back — screenshots, play setup steps, game page lists, shell sessions and search results were all previously reset. Queue and install fixes include retry no longer restarting the whole queue, and an install the PS5 never confirmed is no longer shown as installed."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.12 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.12"
+      }
+    ]
+  },
+  {
+    "id": "clonehero-encore-v150-asset-import-migration",
+    "date": "2026-11-19",
+    "tag": "Port",
+    "title": "Clone Hero: Encore v1.5.0: new repo, original assets removed, user import required",
+    "summary": "Clone Hero: Encore v1.5.0 moves to a new repository, removes all bundled PC artwork, fonts and songs, and adds a first-run asset importer so players supply their own authorized resources via USB.",
+    "body": [
+      "Clone Hero: Encore v1.5.0 by MyNameIsAwoo is a major restructuring of the native PS5 Guitar Hero port. All original PC resource files — artwork, fonts, interface sounds and songs — have been removed from the application packages. Players must now import their own authorized resources using a desktop asset importer tool and an exFAT USB drive. On first launch the game opens a setup screen and guides you through the import with DualSense controls. The importer validates every required file and only activates after completion; a failed or cancelled import preserves whatever working pack was already in place. Imported resources live alongside persistent user data and survive future code updates.",
+      "The project has moved from CloneHeroEncore-PS5 to the new CHEncore-PS5 repository. The old repository now only serves migration updates for existing installations — after updating, the game checks the new address for future releases. Existing songs, profiles, scores and settings are preserved. The release includes new branding, an icon and splash screen using original typography and an open font. Available as a game folder ZIP, exFAT image or native homebrew debug PKG. USB MIDI drums remain experimental. Requires a jailbroken PS5 with homebrew launcher access."
+    ],
+    "sources": [
+      {
+        "name": "CH: Encore v1.5.0 release",
+        "url": "https://github.com/MyNameIsAwoo/CHEncore-PS5/releases/tag/v1.5.0"
+      },
+      {
+        "name": "Migration endpoint on old repo",
+        "url": "https://github.com/MyNameIsAwoo/CloneHeroEncore-PS5/releases/tag/v1.5.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5-medic-v041-localized-dates-new-design",
+    "date": "2026-11-19",
+    "tag": "Tool",
+    "title": "PS5 Medic v0.4.1: localized dates, redesigned home screen and error handling fixes",
+    "summary": "PS5 Medic v0.4.1 localizes date formatting across all five languages, redesigns the home screen with a single status field and three tiles, and fixes DNS timeouts and chunked response handling.",
+    "body": [
+      "PS5 Medic v0.4.1 by strongt1me is a follow-up to v0.4.0 with improvements and corrections. Date formatting is now localized throughout the app and reports: German uses DD.MM.YYYY, French, Italian and Spanish use DD/MM/YYYY, and English keeps YYYY-MM-DD. Evidence timestamps in findings — such as error history counts — also follow the display language. After a successful repair or undo, the completion screen now reminds the user that changes often take effect only after a reboot, since ShadowMount+ and Payload Manager read their settings at startup. The header shows when the displayed check-up ran and its sequence number.",
+      "The home screen has been redesigned with a hex-emblem visual style, glass and glow effects, and a simplified layout: one large status field states the console's condition in a sentence and offers the next step, with three tiles underneath — Games, History and More. Settings now shows only the language selector, and the duplicate rule-update entry has been removed — rule updates are accessed from More. Triangle on the start screen resets the display for a fresh check-up. Error handling fixes include DNS timeouts aborting instead of hanging, chunked HTTP responses ending correctly, large 404 error pages reporting the status instead of a size error, and the QR short report no longer cutting mid-character. Requires a jailbroken PS5 running firmware 4.00 through 14.10."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Medic v0.4.1 release",
+        "url": "https://github.com/strongt1me/ps5-medic-ui-tool/releases/tag/v0.4.1"
+      }
+    ]
+  },
+  {
     "id": "clonehero-encore-beta-10-midi-drums",
     "date": "2026-11-19",
     "tag": "Port",
