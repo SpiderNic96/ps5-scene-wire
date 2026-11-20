@@ -1,5 +1,56 @@
 [
   {
+    "id": "ps5upload-v12615-play-together-self-host",
+    "date": "2026-11-21",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.15: self-hosted Play Together and automatic helper updates",
+    "summary": "PS5 Upload v12.6.15 by phantomptr lets engine users run their own Play Together hub, auto-updates the PS5 helper, speeds up Friends join by a second, and fixes a bug where adding a game copy to the home screen could break the installed game.",
+    "body": [
+      "PS5 Upload v12.6.15 introduces self-hosted Play Together for anyone running the engine (the standalone server for Docker or headless setups). When enabled, the engine runs its own Play Together hub and serves the friends’ pages itself, keeping traffic off the official hub. Custom hub addresses, STUN servers and a new Guest page address setting now survive engine restarts and can be set via environment variables. Friends joining over the internet connect roughly a second faster (down from about 1.4 s to 0.4 s) because the connection builds in parallel with the hub handshake. Update notifications are quieter: a small dot on the Settings tab replaces the full-screen banner, and the PS5 helper now updates itself automatically when the console is idle.",
+      "A notable bug fix prevents adding a dumped game copy to the home screen from breaking the real installed game — previously this could make the PS5 list the legitimate game under Console Storage where it could not start. PS5 Upload is available for Windows (x64 and ARM), macOS (Apple Silicon and Intel), Linux (x64 and ARM AppImage, deb, rpm), Android and iOS (sideloaded). Download the installer or portable archive from the GitHub release page."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.15 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.15"
+      }
+    ]
+  },
+  {
+    "id": "kraken-mount-v031-fw12-registration",
+    "date": "2026-11-21",
+    "tag": "Tool",
+    "title": "Kraken Mount v0.3.1: FW 12+ game registration fixed, faster staging and PlayGo toggle",
+    "summary": "Kraken Mount v0.3.1 by quer3q fixes game registration on firmware 12 and above, adds a per-game PlayGo stub toggle, bundles ampr-emu-ng v0.5.0 and cuts registration time nearly in half.",
+    "body": [
+      "Kraken Mount v0.3.1 fixes game registration on firmware 12 and above: where the per-title install call is missing, each scan pass now stages its titles and registers them with one batch call, showing a single toast. The PlayGo stub — which lets disc-based games run without the full download — can now be turned off per game from the game’s detail page, since titles like Resident Evil Village stay on a black screen with it enabled. Scan improvements include finding games placed directly inside a scan root folder, and a copy in a subfolder no longer takes over a game found at the root. The release bundles ampr-emu-ng v0.5.0.",
+      "Registration is roughly 40% faster: staged sce_sys and appmeta files are now copied 1 MiB at a time, bringing a typical game registration from 36–44 seconds down to about 21 seconds. Every kraken.log line now starts with a timestamp, and cache builds, registrations and slow scan passes log their duration. To update, send kraken-mount.elf once to elfldr on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "Kraken Mount v0.3.1 release",
+        "url": "https://github.com/quer3q/kraken-mount/releases/tag/v0.3.1"
+      }
+    ]
+  },
+  {
+    "id": "webkit-autoloader-v082-fw5xx-fix",
+    "date": "2026-11-21",
+    "tag": "Loader",
+    "title": "WebKit Autoloader v0.8.2: fixes firmware 5.xx rejection in Wobkot adapter",
+    "summary": "WebKit Autoloader v0.8.2 by itsPLK fixes a bug where firmware 5.xx consoles were rejected by the Wobkot adapter before exploitation could begin.",
+    "body": [
+      "WebKit Autoloader v0.8.2 is a bug-fix release that resolves an issue introduced in the v0.8.0 Wobkot migration: firmware 5.xx consoles were incorrectly rejected by the Wobkot adapter before exploitation, even though Relapse support for 5.00, 5.02, 5.10 and 5.50 was added in v0.8.1. The fix ensures the adapter no longer blocks low firmware versions. The release also updates ps5-webkit-remote-loader to commit 073718c (v0.3.1).",
+      "The supported firmware range remains 5.00–13.60. Installation is unchanged: send the installer payload (webkit-autoloader-installer_v0.8.2.elf) to your PS5 through the ELF loader on port 9021, or use the host script available for Windows, macOS, Linux and WSL. Full setup instructions are in the project README."
+    ],
+    "sources": [
+      {
+        "name": "WebKit Autoloader v0.8.2 release",
+        "url": "https://github.com/itsPLK/ps5-webkit-autoloader/releases/tag/v0.8.2"
+      }
+    ]
+  },
+  {
     "id": "webkit-autoloader-v081-fw500",
     "date": "2026-11-20",
     "tag": "Loader",
