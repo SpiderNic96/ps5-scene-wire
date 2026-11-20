@@ -143,6 +143,7 @@ export const SOURCES = [
   { cat: E, repo: 'thereal47Ronin/GBAR5', name: 'GBAR5', about: 'Game Boy Advance, based on mGBA' },
   { cat: E, repo: 'lineage-shell/lineage-ps2-for-ps5', name: 'Lineage PS2', about: 'Authentic PS2 system menu front end for PS5SX2' },
   { cat: E, repo: 'lineage-shell/lineage-ps1-for-ps5', name: 'Lineage PS1', about: 'Authentic PS1 system menu front end for SwanStationPS5' },
+  { cat: E, repo: 'Richie133/fceuxs5', name: 'fceuxs5', about: 'NES and Famicom, based on FCEUX' },
 
   // PC, Linux and Steam
   { cat: P, repo: 'ps5-linux/ps5-linux-loader', name: 'ps5-linux', about: 'Linux loader, low firmware' },

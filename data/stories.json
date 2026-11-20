@@ -1,5 +1,60 @@
 [
   {
+    "id": "fceuxs5-nes-emulator-ps5",
+    "date": "2026-11-20",
+    "tag": "Emulator",
+    "title": "fceuxs5: a native NES and Famicom emulator for PS5",
+    "summary": "fceuxs5 by Richie133 is a full-featured NES and Famicom emulator for jailbroken PS5 consoles, built on the FCEUX core with three selectable interfaces, automatic box-art downloads, CRT shaders and ROM-hack patching.",
+    "body": [
+      "fceuxs5 is a native PS5 homebrew app built on the FCEUX 2.8 core. It supports NES, Famicom, Famicom Disk System, VS. System, UNIF and NES 2.0 ROMs with hundreds of mappers. The emulator ships with three visual interfaces — Channel (a framed game list with box art), Station (a sky-and-hills theme) and Flow (a 3D cover-flow layout) — plus a demo intro and keygen-style menu music. Box art is downloaded automatically from libretro-thumbnails, matched by No-Intro CRC. Eleven CRT shaders, multiple upscaling filters (hq2x/3x, Scale2x/3x, Blargg NTSC), save states, rewind, fast-forward, turbo buttons, button remapping and four-player support round out the feature set.",
+      "Installation requires a jailbroken PS5 running etaHEN or kstuff with a launcher such as ShadowMountPlus or ProsperoStore. Install via the ProsperoStore, or download the zip from GitHub Releases and extract to /data/homebrew/, or send the ELF installer to port 9021. ROMs go in /data/fceuxs5/roms/; IPS, UPS and BPS patches are applied automatically in memory. The app is built with ps5-payload-sdk v0.42 and licensed GPL-3.0-or-later."
+    ],
+    "sources": [
+      {
+        "name": "fceuxs5 GitHub repository",
+        "url": "https://github.com/Richie133/fceuxs5"
+      },
+      {
+        "name": "fceuxs5 v1.0 release",
+        "url": "https://github.com/Richie133/fceuxs5/releases/tag/01.000.000"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v12614-helper-shadowmount-fixes",
+    "date": "2026-11-20",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.14: fixes helper double-start and ShadowMount+ game uninstalls",
+    "summary": "PS5 Upload v12.6.14 fixes a race condition where the PS5 helper would not start when two processes launched it simultaneously, properly detects older helpers, and fixes ShadowMount+ game uninstall interactions.",
+    "body": [
+      "PS5 Upload v12.6.14 by phantomptr fixes three issues. The PS5 helper now recovers when two processes (such as a payload loader and the app itself) start it at the same time: the second copy waits for the first and takes over if it fails, instead of both exiting and leaving no helper running. When an older helper is already running on the PS5, the app now says so and offers to send the new one, instead of reporting the helper as unreachable.",
+      "The update also fixes uninstalling games that ShadowMount+ placed on the home screen: the app no longer tears down ShadowMount+'s own mount, and it warns that ShadowMount+ will re-add the game on its next scan while the image is in a scan folder. The helper now only removes mounts it created itself, never the console's own mounts of installed games. Available on Windows, Mac, Linux, Android and iOS."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.14 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.14"
+      }
+    ]
+  },
+  {
+    "id": "ps5-medic-v045-english-catalog",
+    "date": "2026-11-20",
+    "tag": "Tool",
+    "title": "PS5 Medic v0.4.5: Payload Manager catalog now has English descriptions",
+    "summary": "PS5 Medic v0.4.5 adds English descriptions to the Payload Manager catalog and links the French, Italian and Spanish READMEs to the English documentation.",
+    "body": [
+      "PS5 Medic v0.4.5 by strongt1me is a small follow-up to v0.4.4. The Payload Manager catalog now has English descriptions for all entries, making it easier for non-French-speaking users to browse and select payloads. The French, Italian and Spanish READMEs now also link to the English documentation in docs/en/.",
+      "The app itself is unchanged from v0.4.4 apart from the version number — it still uses ps5-payload-sdk v0.50 with start code covering firmware 1.00 to 14.22. Install by extracting PS5-Medic-UI.zip and copying the PS5MEDIC and FAKE42007 folders to /data/homebrew/ over FTP, or by sending ps5medic-launcher.elf to the ELF loader on port 9021. ShadowMount+ must be running to create the home-screen tile."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Medic v0.4.5 release",
+        "url": "https://github.com/strongt1me/ps5-medic-ui-tool/releases/tag/v0.4.5"
+      }
+    ]
+  },
+  {
     "id": "webkit-autoloader-v080-wobkot",
     "date": "2026-11-20",
     "tag": "Loader",
