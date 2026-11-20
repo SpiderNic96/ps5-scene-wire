@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19",
+  "updated": "2026-11-20",
   "about": "Firmware compatibility for the /firmware directory. Only what each project's README or release notes state. range = the developer says it supports these firmwares; tested = firmwares it has actually been run on; only = hard-locked to these firmwares; any = the developer says it isn't tied to a firmware. unstated = tracked apps whose README was checked and names no PS5 firmware (they show as not confirmed). Validate with: node scripts/compat-check.mjs",
   "firmwares": [
     "1.00",
@@ -66,7 +66,9 @@
     "13.42",
     "13.60",
     "14.00",
-    "14.10"
+    "14.10",
+    "14.20",
+    "14.22"
   ],
   "fpkg": {
     "max": "11.60",
@@ -98,7 +100,7 @@
       "repo": "itsPLK/ps5-webkit-autoloader",
       "name": "WebKit Autoloader",
       "range": [
-        "7.00",
+        "6.00",
         "13.60"
       ],
       "how": "Loads the browser exploit and your payloads automatically."
@@ -885,8 +887,8 @@
     },
     "strongt1me/ps5-medic-ui-tool": {
       "range": [
-        "4.00",
-        "14.10"
+        "1.00",
+        "14.22"
       ],
       "tested": [
         "12.00"
@@ -894,7 +896,7 @@
       "needs": [
         "kstuff"
       ],
-      "note": "Tested on PS5 Pro with FW 12.00 and ShadowMount+ 1.7beta12. Rules individually marked as confirmed or not yet confirmed for other configurations."
+      "note": "v0.4.4 built with SDK 0.50 (start code covers up to 14.22). Tested on PS5 Slim (CFI-2116) at FW 12.00. Range states where SDK and app are meant to run, not full test coverage."
     },
     "eudanh/Trofy": {
       "tested": [
@@ -1019,6 +1021,7 @@
     "LoZazaMastro/TheSimpsonsGame-PS5-Builder",
     "manos555555/PS5-Suite",
     "marcelorsdd/OpenPSApp",
+    "Michele-M-Media/PS3-TO-PS5-LLVM-RPCS3-RECOMPILER",
     "MisterTemaki/beetlepcePS5",
     "MisterTemaki/fbneo-ps5",
     "MisterTemaki/genplusgxPS5",

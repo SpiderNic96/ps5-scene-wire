@@ -1,5 +1,128 @@
 [
   {
+    "id": "webkit-autoloader-v080-wobkot",
+    "date": "2026-11-20",
+    "tag": "Loader",
+    "title": "WebKit Autoloader v0.8.0: migrates to Wobkot, now covers firmware 6.00–13.60",
+    "summary": "WebKit Autoloader v0.8.0 by itsPLK switches from the Poops exploit to ufm42's Wobkot base with Relapse as the preferred exploit, expanding supported firmware to 6.00–13.60 with Poops used automatically as a fallback where appropriate.",
+    "body": [
+      "WebKit Autoloader v0.8.0 by itsPLK is a full migration to Wobkot. The autoloader now uses ufm42's Wobkot base and Relapse implementation as its preferred browser exploit, with Poops used automatically as a fallback where appropriate. This expands the supported firmware range to 6.00–13.60. The previous pre-release test build (v0.8.0-pre) was based on the same wobkot branch and has now reached a stable release.",
+      "Installation uses the same workflow: send the installer payload (webkit-autoloader-installer_v0.8.0.elf) to your PS5 through the ELF loader, or use the host script on Windows, macOS, Linux or WSL to serve it. The autoloader's setup instructions are in the README. Requires a jailbroken PS5 with ELF loader access."
+    ],
+    "sources": [
+      {
+        "name": "WebKit Autoloader v0.8.0 release",
+        "url": "https://github.com/itsPLK/ps5-webkit-autoloader/releases/tag/v0.8.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5-payload-sdk-v050-elfldr-v028",
+    "date": "2026-11-20",
+    "tag": "Tool",
+    "title": "PS5 Payload SDK v0.50 and elfldr v0.28: kernel offsets for firmware 14.20 and 14.22",
+    "summary": "PS5 Payload SDK v0.50 adds kernel offsets for firmwares 14.20 and 14.22, debug mode convenience functions and build fixes. elfldr v0.28 ships the matching ELF loader update.",
+    "body": [
+      "PS5 Payload SDK v0.50 by ps5-payload-dev adds kernel offsets for firmwares 14.20 and 14.22, bringing start code coverage up to the latest firmware Sony has shipped. It also adds convenience functions for enabling debug mode in the kernel module, ensures size_t is defined when including the IOMMU header, and fixes build issues with arguments containing spaces in the Meson build system.",
+      "elfldr v0.28 ships alongside the SDK update as the matching ELF loader release. No standalone changelog was published for this version; it incorporates the SDK v0.50 changes. Apps built against SDK v0.50 — such as PS5 Medic v0.4.4 — gain the firmware 14.20/14.22 start code automatically."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Payload SDK v0.50 release",
+        "url": "https://github.com/ps5-payload-dev/sdk/releases/tag/v0.50"
+      },
+      {
+        "name": "elfldr v0.28 release",
+        "url": "https://github.com/ps5-payload-dev/elfldr/releases/tag/v0.28"
+      }
+    ]
+  },
+  {
+    "id": "ps5-medic-v044-sdk050-fw1422",
+    "date": "2026-11-20",
+    "tag": "Tool",
+    "title": "PS5 Medic v0.4.4: rebuilt with SDK 0.50, firmware range now 1.00–14.22",
+    "summary": "PS5 Medic v0.4.4 by strongt1me is rebuilt with PS5 Payload SDK 0.50 whose start code covers firmwares up to 14.22, extending the stated range from 1.00 to 14.22. Tested on a PS5 Slim (CFI-2116) on firmware 12.00.",
+    "body": [
+      "PS5 Medic v0.4.4 by strongt1me is now built with PS5 Payload SDK 0.50, whose start code covers firmwares up to 14.22. The stated firmware range is 1.00 to 14.22. The SDK 0.50 build was checked on a PS5 Slim (CFI-2116, FW 12.00); no other firmware is explicitly tested, so the range indicates what the SDK and app are meant to run on rather than a full test matrix.",
+      "This follows v0.4.2 and v0.4.3 which were documentation-only updates — translating the project page and README to English and correcting the stated firmware range to 4.00–13.60+. The app itself is unchanged from v0.4.1 aside from the SDK rebuild and updated version number. Install by extracting PS5-Medic-UI.zip and copying the folders to /data/homebrew/ over FTP, or send the launcher ELF to elfldr on port 9021. Requires ShadowMount+ running. Available in English and German."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Medic v0.4.4 release",
+        "url": "https://github.com/strongt1me/ps5-medic-ui-tool/releases/tag/v0.4.4"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v12613-resumed-uploads-fixes",
+    "date": "2026-11-20",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.13: resumed uploads finish faster and dozens of bug fixes",
+    "summary": "PS5 Upload v12.6.13 by phantomptr makes resumed uploads finish much sooner by checking already-written bytes while new data still arrives, and fixes issues with helper conflicts, user deletion, archive scanning and FTP browsing.",
+    "body": [
+      "PS5 Upload v12.6.13 by phantomptr fixes a performance bottleneck with resumed uploads. Previously, after an interrupted upload was resumed, the PS5 checked everything it had written before the interruption only after the last byte arrived, which could take minutes for a large game. It now checks those bytes while the rest of the file is still arriving. Stopping an upload also no longer waits up to 30 seconds while the PS5 calculates free space. Sending the PS5 helper twice at the same moment is handled gracefully — one starts, the other steps aside.",
+      "Other fixes include: deleting a user now reliably deletes the user you picked regardless of ID size, building from large solid RAR or 7z archives no longer hangs without progress, FTP server browsing no longer waits for uploads on the same server, Mesh Drive marks unresponsive PS5s as away, and the package installer no longer lets stalled connections hold slots for hours. Available on Windows, Mac, Linux, Android and iOS. The PS5 helper changes have not been run on a console yet."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.13 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.13"
+      }
+    ]
+  },
+  {
+    "id": "chencore-v152-standalone-builder-calibration",
+    "date": "2026-11-20",
+    "tag": "Port",
+    "title": "Clone Hero: Encore v1.5.2: standalone Windows builder and per-player calibration",
+    "summary": "Clone Hero: Encore v1.5.2 by MyNameIsAwoo replaces the Python-based asset importer with a single standalone Windows executable and adds per-player controller timing calibration with named profiles.",
+    "body": [
+      "Clone Hero: Encore v1.5.2 by MyNameIsAwoo introduces a standalone install builder for Windows. Download CH_Encore_1.5.2_Install_Builder.exe — no Python installation, ZIP extraction or compiler is needed. The builder detects your authorized PC Clone Hero installation, lets you choose game folder, exFAT image or native homebrew PKG output, and builds it. Folder and exFAT creation work offline; PKG creation downloads a pinned, SHA-256-verified packaging tool on first use and caches it locally.",
+      "Per-player controller calibration is new: open your Press Start card and choose Calibrate Controller for a 16-response click test. The suggested timing offset is saved per player and per instrument in named profiles, and Guest changes last only for the session. Offsets affect hit judgments without widening the hit window or shifting shared audio and highway visuals. MIDI pad and cymbal velocity can be recalibrated without remapping the kit. Existing installations update in-game; imported resources, songs, profiles and scores are preserved."
+    ],
+    "sources": [
+      {
+        "name": "Clone Hero: Encore v1.5.2 release",
+        "url": "https://github.com/MyNameIsAwoo/CHEncore-PS5/releases/tag/v1.5.2"
+      }
+    ]
+  },
+  {
+    "id": "openpsapp-v033-profile-fw602-fix",
+    "date": "2026-11-20",
+    "tag": "Tool",
+    "title": "OpenPSApp v0.3.3: profile no longer fails on early firmware playtime databases",
+    "summary": "OpenPSApp v0.3.3 by marcelorsdd fixes an HTTP 500 error when loading the profile on firmware like 6.02 whose playtime database has no playedTimeOnConsole column.",
+    "body": [
+      "OpenPSApp v0.3.3 by marcelorsdd fixes a crash in the Profile view on early firmware versions such as 6.02. These firmwares lack the playedTimeOnConsole column in the playtime database, which caused an HTTP 500 error. OpenPSApp now falls back to the next known column — the total that PSN keeps for each game (gltTotalPlayedTime) — instead of failing. A missing column in the playtime database no longer causes an error at all.",
+      "This is a targeted fix with no other changes. Install by sending the payload to the ELF loader on port 9021. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "OpenPSApp v0.3.3 release",
+        "url": "https://github.com/marcelorsdd/OpenPSApp/releases/tag/v0.3.3"
+      }
+    ]
+  },
+  {
+    "id": "ps3-to-ps5-rpcs3-recompiler",
+    "date": "2026-11-20",
+    "tag": "Emulator",
+    "title": "PS3 TO PS5 LLVM RPCS3 Recompiler: native RPCS3 runtime with disc preparation tools",
+    "summary": "Michele-M-Media's PS3-TO-PS5-LLVM-RPCS3-RECOMPILER boots PS3 disc dumps directly on PS5 using an RPCS3 build with LLVM code generation and native Vulkan, plus a Python disc preparation pipeline.",
+    "body": [
+      "PS3 TO PS5 LLVM RPCS3 RECOMPILER by Michele-M-Media is a new source release that runs PS3 disc dumps on a jailbroken PS5 as a native homebrew title. It uses an RPCS3 build with LLVM for PPU and SPU code generation and the PS5's native Vulkan backend for RSX graphics. The Vulkan implementation includes the interpreter's base pipeline catalogue, parallel shader preparation, shared driver caching, device-checked dynamic states and retry of pending texture uploads. LLVM and Vulkan caches are built locally on first run and reused on later launches.",
+      "A Python preparation tool (prepare_dump.py) stages disc images for the PS5, with support for update and DLC installation through desktop RPCS3 first. This is a separate project from KB-RPCS3 (the other RPCS3 port already on the scene) — it takes a per-title preparation approach rather than a general-purpose frontend. Source code only; no pre-built packages are provided. Compatibility and timing depend on the game and need testing on the target. Requires your own PS3 disc dumps."
+    ],
+    "sources": [
+      {
+        "name": "PS3-TO-PS5-LLVM-RPCS3-RECOMPILER repository",
+        "url": "https://github.com/Michele-M-Media/PS3-TO-PS5-LLVM-RPCS3-RECOMPILER"
+      }
+    ]
+  },
+  {
     "id": "psbox-v180-auto-updates-usb-controllers",
     "date": "2026-11-19",
     "tag": "Media",

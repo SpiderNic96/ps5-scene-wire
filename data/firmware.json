@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-16",
-  "latest": "14.10",
+  "updated": "2026-11-20",
+  "latest": "14.22",
   "axis": { "from": 7, "to": 14.4, "ticks": [7, 8, 9, 10, 11, 12, 13, 14] },
   "coverage": [
     {
@@ -27,8 +27,16 @@
     },
     {
       "version": "14.10",
-      "note": "Latest firmware. No public exploit.",
+      "note": "No public exploit.",
       "story": "firmware-1410"
+    },
+    {
+      "version": "14.20",
+      "note": "No public exploit. SDK 0.50 has kernel offsets."
+    },
+    {
+      "version": "14.22",
+      "note": "Latest firmware. No public exploit. SDK 0.50 has kernel offsets."
     }
   ],
   "footnote": "Older than 7.00? Earlier chains cover those firmwares and aren't shown here."

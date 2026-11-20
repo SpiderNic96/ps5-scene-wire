@@ -121,6 +121,7 @@ export const SOURCES = [
   // Emulators
   { cat: E, repo: 'Swordpdf/PS5SX2', name: 'PS5SX2', about: 'PS2, based on PCSX2' },
   { cat: E, repo: 'kamb205/KB-RPCS3', name: 'KB-RPCS3', about: 'PS3, based on RPCS3' },
+  { cat: E, repo: 'Michele-M-Media/PS3-TO-PS5-LLVM-RPCS3-RECOMPILER', name: 'PS3-TO-PS5 RPCS3 Recompiler', about: 'PS3, per-title LLVM RPCS3 runtime with disc prep tools' },
   { cat: E, repo: 'blackbearreloaded/ProsperoEden', name: 'ProsperoEden', about: 'Switch, based on Eden' },
   { cat: E, repo: 'elripalda/Porpoise-Dolphin-Emulator-for-PS5', name: 'Porpoise', about: 'GameCube and Wii, based on Dolphin' },
   { cat: E, repo: 'premohq/PS5CEMU-HAR', name: 'PS5-ECAM', about: 'Switch, Wii U, 3DS and DS — Eden, Cemu and Azahar' },
