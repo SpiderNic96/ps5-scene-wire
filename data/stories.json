@@ -1,7 +1,96 @@
 [
   {
+    "id": "pokopia-ps5-port-recomp",
+    "date": "2026-11-20",
+    "tag": "Port",
+    "title": "Pokopia PS5 Port: Pokémon Pokopia recompiled for PS5 and PC",
+    "summary": "KongaTime releases a native PS5 recompilation of Pokémon Pokopia (Switch 2, v2.0.1a), built on drakolordx7's pokopia-recomp. A Windows launcher handles the full build-and-install pipeline over FTP.",
+    "body": [
+      "Pokopia PS5 Port by KongaTime recompiles Pokémon Pokopia (Switch 2 version 2.0.1a) to run as a native PS5 homebrew title (PPSA90006) and on Windows. It builds on drakolordx7's pokopia-recomp project. The Windows launcher handles everything: point it at your game dump, enter your PS5's IP address and press Install on PS5. It compiles and signs the title on your PC, generates the shader cache and uploads everything over FTP. The initial build takes hours but can be paused and resumed. Once installed, start the app on PS5, run Prepare Game once, then Play.",
+      "The PC version requires Windows 10/11 64-bit, a Vulkan 1.3 GPU and 16 GB of RAM. F1 opens in-game settings and middle mouse toggles Joy-Con 2 mouse mode for item placement. No game files are included — you need your own copy of version 2.0.1a as an extracted folder or NSP/XCI files with keys. Requires a jailbroken PS5 with FTP access (port 2121)."
+    ],
+    "sources": [
+      {
+        "name": "Pokopia PS5 Port repository",
+        "url": "https://github.com/KongaTime/pokopia-ps5-port"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v12616-v12617-window-backups",
+    "date": "2026-11-20",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.16–12.6.17: window memory, dual backup targets and per-user save folders",
+    "summary": "PS5 Upload v12.6.16 remembers window size and position, lets network share backups also keep a copy on a PS5 drive, and can organise save backups into per-user folders. v12.6.17 is a follow-up hotfix.",
+    "body": [
+      "PS5 Upload v12.6.16 by phantomptr adds three user-facing features. The desktop app now remembers the main window's size, position and maximized state across launches — if the saved screen is no longer connected or the window would not fit, it reopens centred at a size that fits. Network share backups gain a new \"Also keep a copy on a PS5 drive\" option with its own drive picker and retention setting. Each backup run updates both the share and the PS5 drive from the engine, with no computer folder or app window needed; if the share is unreachable the drive still gets its copy. Save backups can now be organised by user into separate folders.",
+      "v12.6.17 is a follow-up hotfix released shortly after. PS5 Upload is available for Windows (x64 and ARM), macOS (Apple Silicon and Intel), Linux (x64 and ARM), Android and iOS (sideloaded via AltStore or Sideloadly). Download from the GitHub release page."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.16 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.16"
+      },
+      {
+        "name": "PS5 Upload v12.6.17 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.17"
+      }
+    ]
+  },
+  {
+    "id": "eglantine-ps5-v1000003-zelda-fireemblem",
+    "date": "2026-11-20",
+    "tag": "Emulator",
+    "title": "EglantinePS5 v1.000.003: Zelda OoT faster, Fire Emblem boots, 250 MiB less memory",
+    "summary": "EglantinePS5 v1.000.003 ports 29 upstream Zelda fixes boosting Ocarina of Time from ~30 to 32–33.5 FPS, gets Fire Emblem: Fortune's Weave booting, fixes Pokopia sky and crashes, and cuts heap use by ~250 MiB.",
+    "body": [
+      "EglantinePS5 v1.000.003 by heydemoura merges 21 pull requests, most porting upstream Eglantine work to the PS5. Zelda: Ocarina of Time gets 29 fixes and speedups — empty GPU submits are skipped, command-list copies and query reports are cheaper, fast-draw paths are faster, and x86-64 JIT code generation is improved — pushing the frame rate from about 30 FPS to 32–33.5 FPS. The dark grid on the water is gone, shader stutter in warm sessions is eliminated (~80 pipelines now build from cache at launch instead of mid-game), and the v2.0.0 update no longer stops after the intro. Asynchronous shader building is now on by default. Fire Emblem: Fortune's Weave boots instead of crashing on a GPU fault, with FSR 3.1 temporal upscaling removing jagged edges around characters.",
+      "Pokémon Pokopia also sees fixes: the sky is no longer black, a GPU hang after 5–20 minutes of play is resolved, and large decoded container parts are cached so launches no longer take 30+ minutes every time. Memory use drops by about 250 MiB of heap (smaller JIT dispatch and GPU page tables, smaller starting descriptor queues) and 4.7 GB less allocation churn per Mario Kart World session. Known issue: Mario Kart World still crashes early due to running out of GPU memory. This is a pre-release. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "EglantinePS5 v1.000.003 release",
+        "url": "https://github.com/heydemoura/EglantinePS5/releases/tag/v1.000.003"
+      }
+    ]
+  },
+  {
+    "id": "parallax-browser-v030-vulkan-rendering",
+    "date": "2026-11-20",
+    "tag": "Tool",
+    "title": "Parallax Browser v0.3.0: everything renders through Vulkan",
+    "summary": "Parallax Browser v0.3.0 by rikleigh moves all rendering — pages, UI, video, WebGL, WebGPU and VR — to ANGLE's Vulkan backend on RADV, dropping ps5-opengl and shrinking the title image by 18 MiB.",
+    "body": [
+      "Parallax Browser v0.3.0 draws everything through Vulkan via ANGLE's Vulkan backend running on RADV, the PS5 port of Mesa's Vulkan driver. The browser no longer uses ps5-opengl. WebGPU and the rest of the browser now share GPU memory directly: WebGPU canvases and video reach the screen without a CPU round trip. importExternalTexture(video) runs at 60 FPS, copyExternalImageToTexture(video) drops from 36 ms to 27 ms at 1080p, and H.264 streams that change size mid-playback now render every frame. A new performance overlay shows GPU time per frame.",
+      "The title image shrinks from 185 MiB to 167 MiB, freeing about 23 MiB for pages. Install from ProsperoStore, accept the in-app update from 0.2.x, or follow INSTALL.txt in the zip. Bookmarks, history and settings carry over. Tested on firmware 13.60 with a DualSense and PS VR2. Requires kstuff and etaHEN, re-run after every reboot. WebXR is not yet supported."
+    ],
+    "sources": [
+      {
+        "name": "Parallax Browser v0.3.0 release",
+        "url": "https://github.com/rikleigh/parallax-browser/releases/tag/v0.3.0"
+      }
+    ]
+  },
+  {
+    "id": "playden-v0120-beta3-workshop-xna",
+    "date": "2026-11-20",
+    "tag": "PC & Linux",
+    "title": "Playden v0.12.0-beta.3: Steam Workshop support, XNA games draw, Cloud save fixes",
+    "summary": "Playden v0.12.0-beta.3 by leolobato adds Steam Workshop item installation, fixes XNA games like TowerFall Ascension drawing on a black screen, repairs corrupted Steam Cloud saves, and gets Fallout: New Vegas running.",
+    "body": [
+      "Playden for PS5 v0.12.0-beta.3 by leolobato introduces Steam Workshop support, letting you install Workshop items for your games. XNA games such as TowerFall Ascension, which previously played music on a black screen, now draw correctly. Corrupted Steam Cloud saves are fixed. Runtime kit 0.32 makes Unity games like Turbo Overkill show up on first start, fixes Killer Instinct's match search, and keeps a button mapped to a key off the game's controller. Fallout: New Vegas and Road Rash: 30th Anniversary Edition now work.",
+      "Other improvements include the ability to skip a Playden version during updates, clearer descriptions of what each Cloud saves choice does, and support for imported games to bring their own title art. This is a beta of alpha software — Playden signs in to your real Steam account and reads and writes your Steam Cloud saves. Enable beta updates in Settings, then check for updates. The runtime kit update (440 MB) takes about 30 seconds per game. Requires a jailbroken PS5 with at least 8 GB of free storage."
+    ],
+    "sources": [
+      {
+        "name": "Playden v0.12.0-beta.3 release",
+        "url": "https://github.com/leolobato/playden-ps5/releases/tag/v0.12.0-beta.3"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v12615-play-together-self-host",
-    "date": "2026-11-21",
+    "date": "2026-11-20",
     "tag": "Tool",
     "title": "PS5 Upload v12.6.15: self-hosted Play Together and automatic helper updates",
     "summary": "PS5 Upload v12.6.15 by phantomptr lets engine users run their own Play Together hub, auto-updates the PS5 helper, speeds up Friends join by a second, and fixes a bug where adding a game copy to the home screen could break the installed game.",
@@ -18,7 +107,7 @@
   },
   {
     "id": "kraken-mount-v031-fw12-registration",
-    "date": "2026-11-21",
+    "date": "2026-11-20",
     "tag": "Tool",
     "title": "Kraken Mount v0.3.1: FW 12+ game registration fixed, faster staging and PlayGo toggle",
     "summary": "Kraken Mount v0.3.1 by quer3q fixes game registration on firmware 12 and above, adds a per-game PlayGo stub toggle, bundles ampr-emu-ng v0.5.0 and cuts registration time nearly in half.",
@@ -35,7 +124,7 @@
   },
   {
     "id": "webkit-autoloader-v082-fw5xx-fix",
-    "date": "2026-11-21",
+    "date": "2026-11-20",
     "tag": "Loader",
     "title": "WebKit Autoloader v0.8.2: fixes firmware 5.xx rejection in Wobkot adapter",
     "summary": "WebKit Autoloader v0.8.2 by itsPLK fixes a bug where firmware 5.xx consoles were rejected by the Wobkot adapter before exploitation could begin.",
