@@ -100,7 +100,7 @@
       "repo": "itsPLK/ps5-webkit-autoloader",
       "name": "WebKit Autoloader",
       "range": [
-        "6.00",
+        "5.00",
         "13.60"
       ],
       "how": "Loads the browser exploit and your payloads automatically."

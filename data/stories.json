@@ -1,5 +1,22 @@
 [
   {
+    "id": "webkit-autoloader-v081-fw500",
+    "date": "2026-11-20",
+    "tag": "Loader",
+    "title": "WebKit Autoloader v0.8.1: Relapse support down to firmware 5.00",
+    "summary": "WebKit Autoloader v0.8.1 by itsPLK adds Relapse support for firmware 5.00, 5.02, 5.10 and 5.50, and updates offsets for 6.00, 6.02, 13.40 and 13.60, expanding the supported range to 5.00–13.60.",
+    "body": [
+      "WebKit Autoloader v0.8.1 follows the v0.8.0 migration to the Wobkot base by extending Relapse exploit support to four additional low firmwares: 5.00, 5.02, 5.10 and 5.50. It also updates the Wobkot dependency to commit 38ad28e and refreshes offsets for firmware 6.00, 6.02, 13.40 and 13.60. The combined result is a supported firmware span of 5.00–13.60, covering nearly every exploitable PS5 firmware.",
+      "Installation is the same as previous versions: send the installer payload (webkit-autoloader-installer_v0.8.1.elf) to your PS5 through the ELF loader, or use the host script available for Windows, macOS, Linux and WSL. Full setup instructions are in the project README."
+    ],
+    "sources": [
+      {
+        "name": "WebKit Autoloader v0.8.1 release",
+        "url": "https://github.com/itsPLK/ps5-webkit-autoloader/releases/tag/v0.8.1"
+      }
+    ]
+  },
+  {
     "id": "fceuxs5-nes-emulator-ps5",
     "date": "2026-11-20",
     "tag": "Emulator",
