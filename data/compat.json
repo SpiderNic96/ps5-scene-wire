@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20",
+  "updated": "2026-11-21",
   "about": "Firmware compatibility for the /firmware directory. Only what each project's README or release notes state. range = the developer says it supports these firmwares; tested = firmwares it has actually been run on; only = hard-locked to these firmwares; any = the developer says it isn't tied to a firmware. unstated = tracked apps whose README was checked and names no PS5 firmware (they show as not confirmed). Validate with: node scripts/compat-check.mjs",
   "firmwares": [
     "1.00",
@@ -949,6 +949,19 @@
         "11.20"
       ],
       "note": "Alpha v.39 tested on base PS5 at firmware 11.20. Firmware 13.00 still needs tester confirmation."
+    },
+    "leobbaroni/ps5-unimount": {
+      "range": [
+        "1.00",
+        "13.60"
+      ],
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "kstuff-lite"
+      ],
+      "note": "Firmware range from ShadowMountPlus 1.7 offset table. Only 13.60 tested."
     }
   },
   "unstated": [

@@ -1,5 +1,56 @@
 [
   {
+    "id": "retroarch-v410-beta4-startup-smb-fixes",
+    "date": "2026-11-21",
+    "tag": "Emulator",
+    "title": "RetroArch v4.1.0-beta-4: startup reliability, SMB freeze fix and .7z over network",
+    "summary": "PS5 RetroArch v4.1.0-beta-4 fixes the launch failure after a quick restart, eliminates SMB freezes, adds .7z archive loading over network shares, and unhides games misidentified as BIOS files.",
+    "body": [
+      "RetroArch v4.1.0-beta-4 by mihawk-99 is a community-driven bugfix release built entirely from contributor pull requests, each tested on a Base PS5. The headline fix is launch reliability: RetroArch no longer closes on launch after a game from EmulationStation or a quick restart. The root cause was a race condition where the app checked its permissions before the Lapy daemon had finished granting them, so a quick relaunch was refused. The elevation client now waits for the grant before checking, and ten consecutive launches plus five restarts ran without failure in testing.",
+      "SMB networking gets three fixes: opening a network share no longer freezes the app (a timeout now prevents indefinite waits), the WebUI's SMB page can save servers on a fresh install (it creates the settings folder itself), and .7z archives load directly over SMB without extracting first. A library bug that hid games whose filenames began like another system's BIOS file is also fixed — matching is now limited to each system's own core. Upgrading from v4.0.0-beta-4: back up your title folder, use the WebUI's Update button or merge the PPSA99169 folder, and restart the console once if a launch failed before the update. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "RetroArch v4.1.0-beta-4 release",
+        "url": "https://github.com/mihawk-99/PS5_RetroArch/releases/tag/v4.1.0-beta-4"
+      }
+    ]
+  },
+  {
+    "id": "linux-flasher-v164-cachyos-735",
+    "date": "2026-11-21",
+    "tag": "PC & Linux",
+    "title": "Linux Flasher v1.6.4: PS5-CachyOS 7.3.5 image update",
+    "summary": "Linux Flasher v1.6.4 updates the bundled PS5-CachyOS preset to version 7.3.5 with the 2026-11-20 image.",
+    "body": [
+      "Linux Flasher v1.6.4 by abrocoma ships an updated PS5-CachyOS preset at version 7.3.5, built from the 2026-11-20 image. Linux Flasher lets you download and flash a Linux image to a USB drive entirely from the PS5 browser — no PC required. The image is verified against its SHA-256 checksum, writes are streamed, and every byte is read back and compared after flashing.",
+      "To use it, place Linux_Flasher.elf on your payload USB drive and load it like any other payload on a jailbroken PS5. After flashing, a home screen tile under Media lets you relaunch without the browser. Source code and builds are on GitHub under GPL-3.0."
+    ],
+    "sources": [
+      {
+        "name": "Linux Flasher v1.6.4 release",
+        "url": "https://github.com/abrocoma/PS5-Linux-Flasher/releases/tag/v1.6.4"
+      }
+    ]
+  },
+  {
+    "id": "unimount-launch",
+    "date": "2026-11-21",
+    "tag": "Tool",
+    "title": "UniMount: unified game-mounting payload merging ShadowMountPlus and Kraken Mount",
+    "summary": "UniMount combines ShadowMountPlus 1.7 and a Kraken Mount backend into a single PS5 payload that mounts game folders, disk images and debug .pkg files, with launch diagnostics and automatic Kraken takeover.",
+    "body": [
+      "UniMount by leobbaroni is a new PS5 payload that unifies ShadowMountPlus and Kraken Mount into a single process. Built on ShadowMountPlus 1.7 for game folder discovery, disk image mounting and home-screen registration, it adds a Kraken Mount backend via a no_std Rust bridge that mounts plaintext debug .pkg files directly — the package is read in place through ampr-emu-ng without extracting. When UniMount starts, it takes over from a running Kraken Mount through its own quit request, releases leftover mounts and adopts registered titles. It also answers on Kraken's API port (8097), so Orbit Store's Kraken integration keeps working.",
+      "New features include automatic .pkg scanning from configured roots, launch diagnostics with stage timelines and native error codes, key-art and launch/close API routes, execute-bit repair for folder games, and a new web interface. It keeps backward compatibility with ShadowMountPlus's process name, data directory, config format and API port 10101. Tested on firmware 13.60 with kstuff-lite 1.11 and PS5 Payload Manager 0.6.3. Requires a jailbroken PS5. Version 0.1.0."
+    ],
+    "sources": [
+      {
+        "name": "UniMount GitHub",
+        "url": "https://github.com/leobbaroni/ps5-unimount"
+      }
+    ]
+  },
+  {
     "id": "ps3-to-ps5-rpcs3-recompiler-v02-120hz-motion",
     "date": "2026-11-21",
     "tag": "Emulator",

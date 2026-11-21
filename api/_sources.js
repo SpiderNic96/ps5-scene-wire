@@ -102,6 +102,7 @@ export const SOURCES = [
   { cat: T, repo: 'Techsociology/ps5_download_manager', name: 'PS5 Download Manager', about: 'Web-based download manager with queues and resume' },
   { cat: T, repo: 'rikleigh/parallax-browser', name: 'Parallax Browser', about: 'WebKit browser with PS VR2 video playback' },
   { cat: T, repo: 'quer3q/kraken-mount', name: 'Kraken Mount', about: 'Minimalist game mounter with compression support' },
+  { cat: T, repo: 'leobbaroni/ps5-unimount', name: 'UniMount', about: 'Unified ShadowMountPlus + Kraken Mount payload' },
   { cat: T, repo: 'B4ckd0orl/Updater-Games', name: 'Updater Games', about: 'Download official game patches from browser' },
   { cat: T, repo: 'jpemendonca/BlueBird', name: 'BlueBird', about: 'Bluetooth speaker and headphone audio via USB adapter' },
   { cat: T, repo: 'kh-mitya/ghostcontrol-8bitdo', name: 'ghostcontrol-8bitdo', about: 'Xbox controllers as virtual DualSense via 8BitDo adapter' },
