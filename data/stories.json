@@ -1,5 +1,73 @@
 [
   {
+    "id": "retroarch-v440-beta4-achievement-widgets",
+    "date": "2026-11-21",
+    "tag": "Emulator",
+    "title": "RetroArch v4.4.0-beta-4: achievement notification widgets and persistent login",
+    "summary": "PS5 RetroArch v4.4.0-beta-4 adds graphical notification widgets that show achievement badges, progress trackers and RetroArch messages on screen, fixes the RetroAchievements login that was lost after closing the app, and separates Naomi 2 into its own system list.",
+    "body": [
+      "PS5 RetroArch v4.4.0-beta-4 by Mihawk-99 introduces graphical notification widgets contributed by Diego (dirrini). Unlocked achievements now display their badge, name and points on screen. A game's achievement count appears at startup, progress trackers sit in the corner during play, and RetroArch's own sign-in and controller notices are drawn the same way. The feature is enabled by default on update. The RetroAchievements login bug is also fixed: the app was forgetting the saved password after sign-in and keeping its token only in memory, so closing RetroArch from the PS5 home screen meant signing in again every time. The account is now saved at the moment you sign in.",
+      "Naomi 2 is now treated as a separate system from Naomi, fixing an issue where a Naomi 2 playlist made the Naomi list disappear in EmulationStation. Each system has its own list in the WebUI too. All changes were tested on a base PS5. To upgrade from v4.3.0-beta-4, back up your title folder and use the WebUI Update button or merge the PPSA99169 folder from the package. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "RetroArch v4.4.0-beta-4 release",
+        "url": "https://github.com/mihawk-99/PS5_RetroArch/releases/tag/v4.4.0-beta-4"
+      }
+    ]
+  },
+  {
+    "id": "retroarch-v430-beta4-store-updates",
+    "date": "2026-11-21",
+    "tag": "Emulator",
+    "title": "RetroArch v4.3.0-beta-4: store update detection and ScreenScraper rate-limit fix",
+    "summary": "PS5 RetroArch v4.3.0-beta-4 fixes content versioning so homebrew stores like ProsperoStore can detect and offer updates, and prevents ScreenScraper from exceeding its one-thread account limit during searches.",
+    "body": [
+      "PS5 RetroArch v4.3.0-beta-4 by Mihawk-99 fixes a long-standing issue where homebrew store apps could never offer RetroArch updates. Every previous release reported the same content version (01.000.000), so stores like ProsperoStore saw every installed copy as current. This release reports 04.003.000, and each future release will raise it again — the build now refuses a version that doesn't increase. The fix was identified by contributor AleksejSg (aleksejsgx), who pointed to the versioning guide. ScreenScraper searches on the scraping page also no longer fire two requests simultaneously when using a one-thread account, as the search now waits for any in-progress scrape job to finish first.",
+      "The graphics driver, SDK and all cores are identical to v4.2.0-beta-4, built from the same revisions. To upgrade, back up your title folder and use the WebUI Update button or merge the PPSA99169 folder from the package. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "RetroArch v4.3.0-beta-4 release",
+        "url": "https://github.com/mihawk-99/PS5_RetroArch/releases/tag/v4.3.0-beta-4"
+      }
+    ]
+  },
+  {
+    "id": "unimount-v011-safe-reload",
+    "date": "2026-11-21",
+    "tag": "Tool",
+    "title": "UniMount v0.1.1: safe hot-reload, launch record fixes and PS5 browser UI",
+    "summary": "UniMount v0.1.1 makes updating and stopping the payload safe while a game is running, fixes launch records that stuck at Starting, and fits the web interface to the PS5 browser viewport.",
+    "body": [
+      "UniMount v0.1.1 by leobbaroni addresses the most dangerous edge case from v0.1.0: loading a new copy of UniMount while a debug .pkg game was running used to remove a library layer under the game, crashing the console when the game closed. A new copy now waits, shows a notification, and takes over once the game is closed. Stop requests during an image or folder game stop UniMount immediately; during a debug .pkg game the stop is deferred until the game closes. Launch records no longer get stuck at Starting — a new copy re-attaches to a running game, and launches UniMount couldn't observe are recorded as Not observed.",
+      "The web interface is resized to fit the PS5 browser's 1540×700 viewport without scrolling, the stage line under the title uses marks and words instead of boxes, and the job strip leaves more room for game names. A new installation guide with requirements, autoload order, scan folders and troubleshooting is included. Known issue: do not force-kill UniMount via PS5 Payload Manager while a debug .pkg game is running — close the game first. Requires a jailbroken PS5 with kstuff-lite."
+    ],
+    "sources": [
+      {
+        "name": "UniMount v0.1.1 release",
+        "url": "https://github.com/leobbaroni/ps5-unimount/releases/tag/v0.1.1"
+      }
+    ]
+  },
+  {
+    "id": "psrdp-ps5-remote-desktop-client",
+    "date": "2026-11-21",
+    "tag": "Tool",
+    "title": "PSrdp: native PS5 remote-desktop client for Windows PCs",
+    "summary": "PSrdp by yecheng770 is a new native PS5 application that turns your console into a large-screen Windows remote desktop, streaming your PC at up to 4K with gamepad and mouse input and real-time audio.",
+    "body": [
+      "PSrdp by yecheng770 is a native PS5 homebrew app that connects to a Windows PC over RDP, turning the console into a couch-friendly remote desktop. It streams at 1080p, 2K or 4K resolution (59.6 fps measured at 1080p on real hardware), with 48 kHz stereo audio piped through the console in real time. Input works via gamepad (left stick for the pointer, L2/R2 for clicks), USB mouse and an on-screen keyboard. The app supports English, Chinese, Japanese, French and Russian, and remembers the last five hosts for quick reconnection. It connects over LAN or via a remote hostname with no cloud middleman.",
+      "PSrdp is designed for documents, code, terminals and everyday desktop work — video playback and game streaming are limited by its bitmap transport, with a GFX line planned to address that. Install by importing the .ffpfs file via your PS5 loader (ShadowMountPlus, etaHEN, etc.). Your Windows PC needs Remote Desktop enabled (Windows Pro). The app is free, open-source under GPL v3, and no credentials are pre-seeded. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "PSrdp GitHub",
+        "url": "https://github.com/yecheng770/PS5-rdp-client"
+      }
+    ]
+  },
+  {
     "id": "retroarch-v420-beta4-vulkan-memory",
     "date": "2026-11-21",
     "tag": "Emulator",

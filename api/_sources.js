@@ -113,6 +113,7 @@ export const SOURCES = [
   { cat: T, repo: 'eudanh/Trofy', name: 'Trofy', about: 'Game library, trophies and capture browser' },
   { cat: T, repo: 'ramalhoboss/BrowserPS5', name: 'BrowserPS5', about: 'Full web browser with WebKit JIT, tabs, ad blocker and DualSense controls' },
   { cat: T, repo: '0xFlan/prospero-vault', name: 'Prospero Vault', about: 'On-console FPKG library with Mac-side package building' },
+  { cat: T, repo: 'yecheng770/PS5-rdp-client', name: 'PSrdp', about: 'Native PS5 RDP client for Windows remote desktop' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },

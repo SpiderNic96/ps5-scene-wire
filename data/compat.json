@@ -962,6 +962,12 @@
         "kstuff-lite"
       ],
       "note": "Firmware range from ShadowMountPlus 1.7 offset table. Only 13.60 tested."
+    },
+    "yecheng770/PS5-rdp-client": {
+      "tested": [
+        "13.42"
+      ],
+      "note": "Verified on FW 13.42 per README."
     }
   },
   "unstated": [
