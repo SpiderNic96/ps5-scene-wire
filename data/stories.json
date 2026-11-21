@@ -1,5 +1,39 @@
 [
   {
+    "id": "webkit-autoloader-v083-wobkot-offsets",
+    "date": "2026-11-21",
+    "tag": "Loader",
+    "title": "WebKit Autoloader v0.8.3: Wobkot update and refreshed offsets for 5.xx–6.50",
+    "summary": "WebKit Autoloader v0.8.3 by itsPLK updates the Wobkot dependency and refreshes exploitation offsets for firmware 5.00, 5.02, 5.10, 5.50, 6.00, 6.02 and 6.50.",
+    "body": [
+      "WebKit Autoloader v0.8.3 updates the bundled Wobkot library to commit 8abe4a9 and ships refreshed offsets for seven firmwares: 5.00, 5.02, 5.10, 5.50, 6.00, 6.02 and 6.50. Wobkot is the WebKit exploitation framework that the autoloader uses to gain initial code execution through the PS5 browser. The updated offsets improve reliability on the affected firmware versions.",
+      "The supported firmware range remains 5.00–13.60. Installation is unchanged: send the installer payload (webkit-autoloader-installer_v0.8.3.elf) to your PS5 through the ELF loader on port 9021, or use the host script available for Windows, macOS, Linux and WSL. Full setup instructions are in the project README."
+    ],
+    "sources": [
+      {
+        "name": "WebKit Autoloader v0.8.3 release",
+        "url": "https://github.com/itsPLK/ps5-webkit-autoloader/releases/tag/v0.8.3"
+      }
+    ]
+  },
+  {
+    "id": "mkw-recomp-ps5-launch",
+    "date": "2026-11-21",
+    "tag": "Port",
+    "title": "MKW-RECOMP-PS5: Mario Kart World recompilation ported to PS5 homebrew",
+    "summary": "MKW-RECOMP-PS5 by Rufidj brings adriadam10's Mario Kart World static recompilation to PS5 as a native homebrew title, running at 1080p and 45–56 FPS in races.",
+    "body": [
+      "MKW-RECOMP-PS5 by Rufidj is an unofficial port of adriadam10's mkw-recomp — the static recompilation of Mario Kart World from Nintendo Switch 2 — to PS5 homebrew. The recompilation translates the game's AArch64 code to C, reimplements NVN2 on Vulkan and translates the SM86 shaders. This port adds the changes needed to run it natively on a PS5 using Mihawk-99's Vulkan stack. The result is playable at 1080p with FSR sharpening: menus, races and sound work, running at about 45–56 FPS. Only Mario Kart World 1.0.0 has been tested so far.",
+      "The repository contains no game data, code or assets from Nintendo or Sony. You need your own legally obtained copy of Mario Kart World dumped from your own Switch 2, a Linux PC with the PS5 toolchain, and a PS5 running a homebrew loader with an FTP server. Build scripts handle cloning upstream repos at pinned commits, applying patches, compiling and deploying to the console. In-game, Create + Options opens a hidden settings menu and L3 + R3 toggles the performance overlay. Licensed under GPL-3.0."
+    ],
+    "sources": [
+      {
+        "name": "MKW-RECOMP-PS5 GitHub",
+        "url": "https://github.com/Rufidj/MKW-RECOMP-PS5"
+      }
+    ]
+  },
+  {
     "id": "retroarch-v410-beta4-startup-smb-fixes",
     "date": "2026-11-21",
     "tag": "Emulator",

@@ -239,4 +239,5 @@ export const SOURCES = [
   { cat: R, repo: 'chonzytron/Dead-Space-2-PS5', name: 'Dead Space 2', about: 'Xbox 360 recomp, native 4K 60fps, bring your own disc' },
   { cat: R, repo: 'KongaTime/The-Nightmare-Before-Christmas-PS5-Port', name: 'The Nightmare Before Christmas: Oogie\'s Revenge', about: 'Xbox recomp, up to 4K, bring your own disc' },
   { cat: R, repo: 'KongaTime/pokopia-ps5-port', name: 'Pokémon Pokopia', about: 'Switch 2 recomp, Vulkan, bring your own copy' },
+  { cat: R, repo: 'Rufidj/MKW-RECOMP-PS5', name: 'Mario Kart World (PS5)', about: 'Switch 2 recomp, 1080p 45-56fps, bring your own dump' },
 ];
