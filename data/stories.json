@@ -1,5 +1,56 @@
 [
   {
+    "id": "retroarch-v420-beta4-vulkan-memory",
+    "date": "2026-11-21",
+    "tag": "Emulator",
+    "title": "RetroArch v4.2.0-beta-4: Vulkan driver update and memory improvements",
+    "summary": "PS5 RetroArch v4.2.0-beta-4 updates the RADV Vulkan driver with better video-memory handling, builds on SDK v0.45 with a heap that returns freed memory, and fixes a PC-FX crash on a missing disc image.",
+    "body": [
+      "PS5 RetroArch v4.2.0-beta-4 by Mihawk-99 brings a Vulkan driver update that touches every core that draws with Vulkan — PPSSPP, Dolphin, Flycast, Mupen64Plus-Next, Azahar, Beetle PSX HW, SwanStation and PS5SX2. Large buffers now fit when memory is fragmented by assembling them from several free pieces, freed memory stays reserved until the GPU finishes the work that used it, available memory is counted correctly across all free ranges, and the mesh-shader scratch area drops from 320 MiB to 128 MiB. The release also moves to the ps5-payload-dev SDK v0.45, whose title heap returns unused memory in 2 MiB steps.",
+      "The PC-FX core no longer crashes RetroArch when a disc image is missing — it now reports the failed load instead. All 34 of 35 cores (Neo Geo CD excluded) were tested on a base PS5 on the new driver without crashes. To upgrade from v4.1.0-beta-4, back up your title folder and use the WebUI Update button or merge the PPSA99169 folder from the package. No games, BIOS files or firmware are included."
+    ],
+    "sources": [
+      {
+        "name": "RetroArch v4.2.0-beta-4 release",
+        "url": "https://github.com/mihawk-99/PS5_RetroArch/releases/tag/v4.2.0-beta-4"
+      }
+    ]
+  },
+  {
+    "id": "xps5-v110-encrypted-chat-dictation",
+    "date": "2026-11-21",
+    "tag": "Media",
+    "title": "XPS5 v1.1.0: encrypted X Chat, offline dictation, Spaces and a PS5 friends list",
+    "summary": "XPS5 v1.1.0 by ramalhoboss adds encrypted X Chat with signature verification, offline voice-to-text dictation via Whisper on the PS5, Spaces playback over your game, and a friends list for X followers.",
+    "body": [
+      "XPS5 v1.1.0 adds encrypted X Chat: conversations open with your X Chat PIN, messages are verified against each sender's key, and new messages arrive over your game. Offline dictation runs OpenAI Whisper entirely on the PS5 — the audio never leaves the console. Spaces play in the background while you browse or game. A friends list shows which X followers are on XPS5, what they are playing and when they were last seen, with options to invite them or join their game. Voice notes (up to 2:20) can be recorded with the DualSense microphone, and phone typing via QR code lets you compose on the TV.",
+      "Other additions include trophy tracking with Grok tips (spoiler-free), shareable stat cards, LFG group posts, HDR screenshot support with Ultra HDR gain maps, Grok-powered post translation, Community Notes, and long-video playback that resumes interrupted downloads. Tested on firmware 13.60 with Relapse and ShadowMountPlus. The installer is 99.9 MiB (includes the dictation model), so v1.0.1's auto-updater cannot pull it — install manually this once by sending XPS5.elf to port 9021."
+    ],
+    "sources": [
+      {
+        "name": "XPS5 v1.1.0 release",
+        "url": "https://github.com/ramalhoboss/XPS5/releases/tag/v1.1.0"
+      }
+    ]
+  },
+  {
+    "id": "parallax-browser-v040-download-manager",
+    "date": "2026-11-21",
+    "tag": "Tool",
+    "title": "Parallax Browser v0.4.0: download manager, file browser and exFAT image builder",
+    "summary": "Parallax Browser v0.4.0 by rikleigh adds a multi-connection download manager, a file browser for internal and USB storage, app installation from archives, and exFAT image creation for ShadowMountPlus.",
+    "body": [
+      "Parallax Browser v0.4.0 adds a download manager that splits files across up to 16 concurrent connections (8 by default), with pause, resume and automatic retry. A GitHub release asset that took 24 seconds now downloads in 14. Finished downloads can be unpacked, installed or turned into an exFAT image directly from the menu. Supported archive formats include ZIP, 7z, RAR and tar (.gz, .bz2, .xz, .zst), including split archives. Before extraction the browser inspects the contents and shows whether an app is already installed.",
+      "A new Files section (R1 past Downloads) gives access to internal storage and USB drives for opening folders, moving, copying, renaming, deleting, creating folders, and saving favourites. Apps can be installed from files, archives unpacked, and exFAT images built for ShadowMountPlus — the image is verified against the original files before it is kept. Requires a jailbroken PS5 on firmware 13.60 with kstuff and etaHEN or elfldr."
+    ],
+    "sources": [
+      {
+        "name": "Parallax Browser v0.4.0 release",
+        "url": "https://github.com/rikleigh/parallax-browser/releases/tag/v0.4.0"
+      }
+    ]
+  },
+  {
     "id": "webkit-autoloader-v083-wobkot-offsets",
     "date": "2026-11-21",
     "tag": "Loader",

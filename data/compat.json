@@ -865,10 +865,10 @@
         "13.60"
       ],
       "needs": [
-        "etaHEN",
+        "Relapse",
         "ShadowMountPlus"
       ],
-      "note": "Tested on firmware 13.60 with etaHEN and ShadowMountPlus."
+      "note": "Tested on firmware 13.60 with Relapse and ShadowMountPlus."
     },
     "milh0usec/ac6-ps5recomp": {
       "tested": [
