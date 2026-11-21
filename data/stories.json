@@ -1,5 +1,22 @@
 [
   {
+    "id": "ps3-to-ps5-rpcs3-recompiler-v02-120hz-motion",
+    "date": "2026-11-21",
+    "tag": "Emulator",
+    "title": "PS3-TO-PS5 RPCS3 Recompiler v0.2: 120 Hz output, DualSense motion and hybrid SPU compilation",
+    "summary": "PS3-TO-PS5 RPCS3 Recompiler v0.2 adds 120 Hz and VRR display profiles, native DualSense motion input mapped to PS3 Sixaxis channels, hybrid SPU compilation combining LLVM and AsmJit, and a local update packer for game updates and DLC.",
+    "body": [
+      "PS3-TO-PS5 RPCS3 Recompiler v0.2 by Michele-M-Media adds several major features to the native PS5 RPCS3 runtime. Display output gains optional 120 Hz and 120 Hz with VRR profiles — the RADV VideoOut patch preserves a successfully requested high-refresh mode when an idle VRR display initially reports a lower rate, and the runtime measures guest frame cadence separately from overlays. Native DualSense motion sampling is added with PS3 Sixaxis channel mapping, enabling vehicle, aiming and motion-based controls in supported titles. A new opt-in hybrid SPU compilation mode pairs LLVM for known code with AsmJit for live cache misses, both using the existing SPU discovery cache for faster subsequent starts.",
+      "Vulkan pipeline warmup is now parallelized with a bounded pending queue, and validation is expanded for supported R32 render targets and blend states. A local update packer lets you stage game updates and DLC, retaining empty files and original names with SHA-256 verification before staging. This is a source release — no pre-built packages are provided, and you need your own PS3 disc dumps. The source kit is checked against pinned RPCS3 and PS5 Mesa revisions, but new titles require per-game hardware testing."
+    ],
+    "sources": [
+      {
+        "name": "PS3-TO-PS5 RPCS3 Recompiler v0.2 release",
+        "url": "https://github.com/Michele-M-Media/PS3-TO-PS5-LLVM-RPCS3-RECOMPILER/releases/tag/v0.2"
+      }
+    ]
+  },
+  {
     "id": "pokopia-ps5-port-recomp",
     "date": "2026-11-20",
     "tag": "Port",
