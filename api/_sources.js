@@ -95,6 +95,7 @@ export const SOURCES = [
   { cat: T, repo: 'SpiderNic96/LegoToypad-VirtualToypadPS5-Homebrew', name: 'LEGO Dimensions Virtual Toy Pad', about: 'Play LEGO Dimensions without the physical Toy Pad' },
   { cat: T, repo: 'SpiderNic96/VirtualInfinityPortal-PS5', name: 'Virtual Infinity Portal', about: 'Play Disney Infinity without the physical base' },
   { cat: T, repo: 'Gl0ttis/ps5-tls-verify', name: 'ps5-tls-verify', about: 'Toggleable TLS certificate override for lab testing' },
+  { cat: T, repo: 'Gl0ttis/ps5-mcp', name: 'ps5-mcp', about: 'MCP server payload for remote console control and diagnostics' },
   { cat: T, repo: 'Phynix88/ps5-hass-payload', name: 'PS5 Home Assistant Bridge', about: 'Standalone Home Assistant bridge with TV pairing' },
   { cat: T, repo: 'gowithme-club/ps5-playtime-tracker', name: 'PS5 Playtime Tracker', about: 'Playtime and trophy tracker for gowithme.club' },
   { cat: T, repo: 'heydemoura/ps5-memcard', name: 'PS5 Memcard', about: 'Automatic save mirroring to USB drives' },

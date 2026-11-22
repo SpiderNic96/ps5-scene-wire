@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21",
+  "updated": "2026-11-22",
   "about": "Firmware compatibility for the /firmware directory. Only what each project's README or release notes state. range = the developer says it supports these firmwares; tested = firmwares it has actually been run on; only = hard-locked to these firmwares; any = the developer says it isn't tied to a firmware. unstated = tracked apps whose README was checked and names no PS5 firmware (they show as not confirmed). Validate with: node scripts/compat-check.mjs",
   "firmwares": [
     "1.00",
@@ -968,6 +968,15 @@
         "13.42"
       ],
       "note": "Verified on FW 13.42 per README."
+    },
+    "Gl0ttis/ps5-mcp": {
+      "tested": [
+        "13.20"
+      ],
+      "needs": [
+        "elfldr"
+      ],
+      "note": "SceShellUI offsets discovered at runtime; developer says build has no firmware-specific addresses."
     }
   },
   "unstated": [

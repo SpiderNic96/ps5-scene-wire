@@ -1,5 +1,56 @@
 [
   {
+    "id": "ps5-mcp-remote-console-control",
+    "date": "2026-11-22",
+    "tag": "Tool",
+    "title": "ps5-mcp: control your jailbroken PS5 from any MCP client",
+    "summary": "A new payload by Gl0ttis turns your PS5 into an MCP server, letting Claude Code, Claude Desktop, Cursor and other MCP clients drive and inspect the console directly over the network.",
+    "body": [
+      "ps5-mcp is a payload for jailbroken PS5 consoles that turns the console itself into an MCP server. Once loaded via elfldr, any MCP client on the same network can interact with the console without a bridge or stdio. Tools include a system-wide virtual DualSense with button presses, holds, stick and trigger input and timed sequences; native 4K screenshot capture from the compositor in around 200 ms; a process table with threads, memory maps and open files; a kernel-log ring buffer with regex filters and wait-for-pattern; and the ability to launch or close titles and start ELF payloads with captured output.",
+      "The server listens on the LAN with no authentication, so it should only be used on trusted networks. Connect it with a single command such as \"claude mcp add --transport http ps5 http://<console-ip>:7165/mcp\". Requires a jailbroken PS5 with an ELF loader (elfldr or any payload manager). This is from the same developer behind ps5-tls-verify."
+    ],
+    "sources": [
+      {
+        "name": "ps5-mcp on GitHub",
+        "url": "https://github.com/Gl0ttis/ps5-mcp"
+      }
+    ]
+  },
+  {
+    "id": "ps5-cleanup-v13-leftovers-cleanup",
+    "date": "2026-11-22",
+    "tag": "Tool",
+    "title": "PS5 Cleanup v1.3: leftover cleanup, real app names and faster drawing",
+    "summary": "The \"Clean up everything\" mode now removes leftover folders, unclear content and backup copies. Data folders are attributed to the correct program, deleted games get properly removed from Sony's database, and the UI draws about twice as fast.",
+    "body": [
+      "PS5 Cleanup v1.3 expands the \"Clean up everything\" feature to cover leftover folders with unclear content, merely suspected folders and backup copies left by other tools. Data folders are now attributed to the program that created them rather than a tool that only reads them, and anything that belongs to a program is listed under Apps even if the app is no longer installed. If a tile is missing, the name is pulled from Sony's title list instead of showing \"unknown name\". Games deleted via FTP or a file manager are properly removed from Sony's database, and PS4Mount games are unmounted before removal.",
+      "The UI draws roughly twice as fast (35–50 ms instead of 80 ms), and the result page now shows pictures of deleted tiles. The updater in v1.2 may place the new file next to the old one instead of replacing it; from v1.3 on this is fixed. Requires a jailbroken PS5 with an ELF loader. The app starts in test mode by default — nothing is deleted until you switch test mode off and confirm."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Cleanup v1.3 release",
+        "url": "https://github.com/xXBneutzerNameXx/PS5-Cleanup/releases/tag/v1.3"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v12621-ampr-convert-fix",
+    "date": "2026-11-22",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.21: AMPR conversion fixes and clearer Workshop choices",
+    "summary": "The Workshop's Convert dialog now groups asset packs with their emulator, only offers combinations that actually start, and prevents games from ending up with an incompatible emulator.",
+    "body": [
+      "PS5 Upload v12.6.21 reworks the AMPR choices in the Workshop's Convert dialog. The asset pack selection and emulator options are now grouped together under Asset packs, and only combinations that will actually launch are offered. zstd packs are always paired with the emulator that reads zstd, and LZ4 packs always get ampr_emu 0.4.2.1, preventing the mismatch that caused some converted games to close at startup. The engine also corrects this for \"Add the AMPR emulator\" on games already in packs, and the \"Rebuild AMPR index\" option is hidden for LZ4 packs where it does not apply.",
+      "Available for Windows, macOS, Linux, Android and iOS. Updating from v12.6.20 is recommended as this release fixes a compatibility issue that could cause converted games to fail to launch. Download the installer for your platform from the release page."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.21 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.21"
+      }
+    ]
+  },
+  {
     "id": "retroarch-v470-beta4-achievement-sounds",
     "date": "2026-11-22",
     "tag": "Emulator",
