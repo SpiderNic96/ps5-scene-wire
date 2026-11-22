@@ -1,5 +1,56 @@
 [
   {
+    "id": "dantes-inferno-v130-instant-setup",
+    "date": "2026-11-23",
+    "tag": "Port",
+    "title": "Dante's Inferno v1.3.0: instant setup from disc image, correct Title Update 2 accepted",
+    "summary": "Dante's Inferno PS5 Port v1.3.0 plays straight from your Xbox 360 ISO with no hour-long copy step, accepts the official Title Update 2 as downloaded, and gives clear error messages when files don't match.",
+    "body": [
+      "Dante's Inferno PS5 Port v1.3.0 by KongaTime removes the game's biggest pain point: the initial data copy. Earlier versions copied the disc's 5.6 GB into a gamedata folder, and because the PS5 throttles app writes after the first 1.5 GB the process took close to an hour. The game now plays straight from the ISO in the dump folder — Prepare Game finishes in seconds. Title Update 2 also works as downloaded: drop the package in the tu folder under any file name and the launcher picks the right one. You no longer need to extract it with Velocity or rename it to default.xexp. The official TU2 from Xbox Live is now accepted; earlier versions rejected it.",
+      "If a file doesn't match, the launcher now says why: wrong media ID, wrong title update number, not a Dante's Inferno update, or a disc with the wrong region. Existing saves, settings and installed DLC carry over from v1.2.1. To switch from the old setup and free about 6 GB, put the ISO in dump and the Title Update in tu, delete the gamedata folder, and run Prepare Game. Requires a jailbroken PS5 with ShadowMount+ and your own Xbox 360 disc image."
+    ],
+    "sources": [
+      {
+        "name": "Dante's Inferno v1.3.0 release",
+        "url": "https://github.com/KongaTime/Dantes-Inferno-PS5-Port/releases/tag/v1.3.0"
+      }
+    ]
+  },
+  {
+    "id": "unimount-v013-tile-waitfix",
+    "date": "2026-11-23",
+    "tag": "Tool",
+    "title": "UniMount v0.1.3: its own home-screen tile and multiple-load fix",
+    "summary": "UniMount v0.1.3 adds a dedicated tile under Media with its own icon, and fixes a state where loading UniMount repeatedly while a game was open could leave no active copy running.",
+    "body": [
+      "UniMount v0.1.3 by leobbaroni gives UniMount its own home-screen tile under Media, replacing the ShadowMount+ and Kraken Mount tiles it previously borrowed. The tile opens the web interface in the console browser. Only one waiting copy is kept: loading UniMount again while a game is open now replaces the previous waiting copy instead of stacking extras.",
+      "If UniMount was stopped while a copy is waiting for an open app, the waiting copy now displays a notification naming the open app and telling you to close it. It starts by itself once the app is closed. On v0.1.2, loading UniMount multiple times in this scenario left several waiting copies with none active, causing every game to fail with CE-105773-3. Install via PS5 Payload Manager by adding the repository URL, or send the ELF to your ELF loader. Requires kstuff-lite."
+    ],
+    "sources": [
+      {
+        "name": "UniMount v0.1.3 release",
+        "url": "https://github.com/leobbaroni/ps5-unimount/releases/tag/v0.1.3"
+      }
+    ]
+  },
+  {
+    "id": "nasbridge-v070-beta",
+    "date": "2026-11-23",
+    "tag": "Tool",
+    "title": "NASBridge v0.7.0-beta.1: first test build since the stable v0.6.0",
+    "summary": "NASBridge v0.7.0-beta.1 is the first test build since the stable v0.6.0 release. The developer has not published a detailed changelog; install by sending the ELF to your PS5.",
+    "body": [
+      "NASBridge v0.7.0-beta.1 by J7mbo is a new test build of the PS5 NAS game browser. This is the first release since v0.6.0 went stable in October. The developer has not published a detailed changelog for this beta, listing only the full commit range since v0.6.0.",
+      "Install by sending NASBridge-0.7.0.elf to your PS5 ELF loader on port 9021. Requires ShadowMountPlus 1.7beta6-fix2 or newer. NASBridge browses games on a NAS over WebDAV or SMB, copies them to internal storage or USB, and registers them on the home screen automatically. As a beta it may contain new bugs — the previous stable release (v0.6.0) is still available."
+    ],
+    "sources": [
+      {
+        "name": "NASBridge v0.7.0-beta.1 release",
+        "url": "https://github.com/J7mbo/nasbridge-ps5/releases/tag/v0.7.0-beta.1"
+      }
+    ]
+  },
+  {
     "id": "ps5-mcp-remote-console-control",
     "date": "2026-11-22",
     "tag": "Tool",
