@@ -1,5 +1,77 @@
 [
   {
+    "id": "retroarch-v470-beta4-achievement-sounds",
+    "date": "2026-11-22",
+    "tag": "Emulator",
+    "title": "RetroArch v4.7.0-beta-4: achievement sounds and large-library WebUI fix",
+    "summary": "PS5 RetroArch v4.7.0-beta-4 fixes the WebUI timing out on large libraries, stops WebUI settings from overriding console changes, adds achievement unlock sounds, and fixes DOSBox Pure on SMB shares.",
+    "body": [
+      "PS5 RetroArch v4.7.0-beta-4 by Mihawk-99 addresses four community-reported issues. The WebUI, which timed out with large libraries because it checked up to 80 artwork paths per game, now reads each artwork folder once — cutting response time from 10.8 seconds to under a second on a 15,283-game library. Settings saved from the WebUI no longer override what you set on the console: a WebUI value is now applied once and then becomes RetroArch's own setting, so a volume change on the console stays.",
+      "Achievement unlock sounds now play — no previous release included RetroArch's sound files, so unlocks were silent. The sound is enabled by default on update and can be turned off in Settings → Achievements → Appearance → Unlock Sound. Menu sounds are included too. DOSBox Pure games on SMB shares also now launch correctly. To upgrade, back up your title folder and use the WebUI Update button or merge the PPSA99169 folder from the package. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "RetroArch v4.7.0-beta-4 release",
+        "url": "https://github.com/mihawk-99/PS5_RetroArch/releases/tag/v4.7.0-beta-4"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v12618-v12620-backup-progress",
+    "date": "2026-11-22",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.18–v12.6.20: backup progress tracking and resumable backups",
+    "summary": "PS5 Upload v12.6.19 adds real-time backup progress with per-game state, resumable backups after interruptions, and PS5 folder backup for emulator saves — with v12.6.18 and v12.6.20 fixing a helper crash and a follow-up issue.",
+    "body": [
+      "PS5 Upload v12.6.19 by phantomptr introduces backup progress tracking: both backup cards now show a Backup progress button displaying saves transferred, speed, time remaining, and each game's state across the network share, PS5 drive and PC. After a crash, disconnect or closed app, the card shows where it stopped and offers Continue backup to pick up only what's left. A new \"Also back up these folders on the PS5\" option lets you include folders where emulators and ports store their saves (such as under /data), zipped with every backup.",
+      "Version v12.6.18 disables automatic PS5 helper updates after two consoles crashed when the app replaced a running helper by itself — sending the helper manually still works. Version v12.6.20 is a follow-up fix. Available on Windows, Mac, Linux, Android and iOS. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.19 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.19"
+      },
+      {
+        "name": "PS5 Upload v12.6.18 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.18"
+      }
+    ]
+  },
+  {
+    "id": "parallax-browser-v041-launcher-integration",
+    "date": "2026-11-22",
+    "tag": "Tool",
+    "title": "Parallax Browser v0.4.1: homebrew launcher integration and download management",
+    "summary": "Parallax Browser v0.4.1 routes app installs through your running homebrew launcher (ShadowMountPlus, Kraken Mount or TITAN-CORE), adds a Downloads settings tab, and fixes the Clear cache feature.",
+    "body": [
+      "Parallax Browser v0.4.1 by rikleigh integrates with the homebrew launcher already running on your console. When installing an app, the browser detects whether ShadowMountPlus, Kraken Mount or TITAN-CORE is active and moves the app into the drive's homebrew folder so the launcher places it on the home screen automatically. ShadowMountPlus adds the app when you return to the home screen; Kraken Mount and TITAN-CORE add it after you close the browser. If no launcher is running, the browser installs the app directly as before. exFAT images are only offered when ShadowMountPlus or TITAN-CORE is running, since Kraken Mount cannot mount them.",
+      "Settings now includes a Downloads tab showing the download folder with a Change button that opens the Files app, and the Clear cache feature is fixed. If the launcher already has another copy of an app elsewhere, you are prompted to delete it first to avoid conflicts. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "Parallax Browser v0.4.1 release",
+        "url": "https://github.com/rikleigh/parallax-browser/releases/tag/v0.4.1"
+      }
+    ]
+  },
+  {
+    "id": "fceuxs5-v11-in-game-settings",
+    "date": "2026-11-22",
+    "tag": "Emulator",
+    "title": "fceuxs5 v1.1: in-game settings overlay and flicker reduction",
+    "summary": "fceuxs5 v1.1 adds a settings overlay accessible by pressing the touchpad during gameplay, removes the NES 8-sprite-per-line limit to reduce flicker, and adds a frame-blending option for steady sprites.",
+    "body": [
+      "fceuxs5 v1.1 by Richie133 adds an in-game settings overlay for the PS5 NES emulator. Press the touchpad during a game to open Settings over the action — shader changes appear live behind the menu. Touch again or press Circle to return to the game. The overlay can be disabled in Settings → Controls. The NES's 8-sprites-per-line limit is now removed by default, eliminating the sprite flicker in games like Super Mario Bros. 3 where enemies and items would blink out on busy scanlines.",
+      "A new Flicker reduction (blend frames) option in Settings → Emulation mixes each frame with the one before, so games that intentionally blink sprites every other frame show them steady instead. The Select button moves to L1, and R1 now handles Famicom Disk System disk-side switching and VS. System coin insertion. Settings from v1.0 migrate automatically. Install via Settings → Updates in the app, by extracting the zip to /data/homebrew/, or by sending the ELF to your loader on port 9021. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "fceuxs5 v1.1 release",
+        "url": "https://github.com/Richie133/fceuxs5/releases/tag/01.001.000"
+      }
+    ]
+  },
+  {
     "id": "retroarch-v460-beta4-ozone-menu",
     "date": "2026-11-22",
     "tag": "Emulator",
