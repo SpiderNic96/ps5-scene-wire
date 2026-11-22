@@ -1,5 +1,124 @@
 [
   {
+    "id": "retroarch-v460-beta4-ozone-menu",
+    "date": "2026-11-22",
+    "tag": "Emulator",
+    "title": "RetroArch v4.6.0-beta-4: Ozone menu and working Update button",
+    "summary": "PS5 RetroArch v4.6.0-beta-4 adds the Ozone menu as a third interface option alongside XMB and RGUI, and fixes the WebUI Update button that previously failed to install downloaded releases.",
+    "body": [
+      "PS5 RetroArch v4.6.0-beta-4 by Mihawk-99 brings the Ozone menu to PS5 — a sidebar-and-list interface with eleven colour themes, joining XMB and RGUI as a third menu option. XMB remains the default; switch via Settings → Drivers → Menu on the console or Settings → Interface → Console menu style in the WebUI. The WebUI QR code currently appears only in XMB and RGUI; Ozone support for it is planned.",
+      "The WebUI Update button, which previously downloaded a new release and then silently did nothing, is now fully functional. Three separate faults blocked it: verification crashed on start, the background service forgot the update after restarting, and every package was rejected as invalid due to an empty content folder check. From this release on, the WebUI can download, verify and install updates by itself. To upgrade, back up your title folder and use the now-working WebUI Update button or merge the PPSA99169 folder from the package. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "RetroArch v4.6.0-beta-4 release",
+        "url": "https://github.com/mihawk-99/PS5_RetroArch/releases/tag/v4.6.0-beta-4"
+      }
+    ]
+  },
+  {
+    "id": "retroarch-v450-beta4-community-prs",
+    "date": "2026-11-22",
+    "tag": "Emulator",
+    "title": "RetroArch v4.5.0-beta-4: eleven community pull requests and zipped game support",
+    "summary": "PS5 RetroArch v4.5.0-beta-4 merges eleven community contributions including USB drive title detection, EmulationStation zip launch support, SMB artwork streaming, and an offline PC media helper.",
+    "body": [
+      "PS5 RetroArch v4.5.0-beta-4 by Mihawk-99 is a community-driven release merging eleven pull requests. Contributor bobrass adds USB drive title detection for the Lapy service, stops EmulationStation rescanning the library on game exit, brings an upstream Opera CD streaming fix, and adds per-playlist system views. juliansuperai contributes faster EmulationStation startup and experimental artwork streaming from SMB shares. rabits makes the PC media helper work offline so a console without internet can use it. jorgemakerdev fixes startup on consoles with differently numbered sandbox folders, and mohammednabarawy handles mounts that report their own device.",
+      "Phononenom adds three new core calls for hardcore mode detection, the savestate folder path, and per-controller speaker output. DSkywalk contributes an Amstrad CPC core build script (core not yet included). Zipped games now launch directly from EmulationStation. To upgrade from v4.4.0-beta-4, back up your title folder and use the WebUI Update button or merge the PPSA99169 folder from the package. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "RetroArch v4.5.0-beta-4 release",
+        "url": "https://github.com/mihawk-99/PS5_RetroArch/releases/tag/v4.5.0-beta-4"
+      }
+    ]
+  },
+  {
+    "id": "rpcs3-recompiler-v03-background-spu",
+    "date": "2026-11-22",
+    "tag": "Emulator",
+    "title": "PS3-TO-PS5 RPCS3 Recompiler v0.3: background SPU compilation and Vulkan warmup",
+    "summary": "PS3-TO-PS5 RPCS3 Recompiler v0.3 adds background SPU compilation that runs new blocks through an interpreter while LLVM compiles in the background, Vulkan MSAA warmup, and PS3 firmware 4.xx compatibility work.",
+    "body": [
+      "PS3-TO-PS5 RPCS3 Recompiler v0.3 by Michele-M-Media introduces background SPU compilation via the --spu-async profile. New SPU blocks run through the x86-64 interpreter while a low-priority LLVM worker compiles them, promoting completed blocks and reusing existing caches. The LLVM and AsmJit hybrid profile from v0.2 remains available. Vulkan improvements include proper texture slot population, validated image and sampler updates, and MSAA warmup that retains up to 32 measured pipeline states for supported variants. Frame queue diagnostics now report command submission, presentation and buffer retirement times for slow frames.",
+      "PS3 firmware 4.xx compatibility work makes the native motion API optional, with an import audit that checks a candidate title against known builds and local firmware samples. A title cache maintenance feature lets users clear a disc cache with a marker file. PS5 presentation assets now accept 4K BC7 DDS menu and launch images. This is a source release — no game files, firmware or console binaries are included. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "PS3-TO-PS5 RPCS3 Recompiler v0.3 release",
+        "url": "https://github.com/Michele-M-Media/PS3-TO-PS5-LLVM-RPCS3-RECOMPILER/releases/tag/v0.3"
+      }
+    ]
+  },
+  {
+    "id": "playden-v0120-beta4-controller-layouts",
+    "date": "2026-11-22",
+    "tag": "PC & Linux",
+    "title": "Playden v0.12.0-beta.4: custom controller layouts, GTA IV and GTA V via Rockstar launcher",
+    "summary": "Playden v0.12.0-beta.4 adds per-game controller layout mapping with saveable templates, gets Grand Theft Auto IV and GTA V Legacy running through Rockstar launcher sign-in, and includes runtime kit 0.35 with a performance overlay.",
+    "body": [
+      "Playden for PS5 v0.12.0-beta.4 by leolobato introduces per-game custom controller layouts. Every button, stick and trigger can be remapped to a different input directly on the PS5, and layouts can be saved as reusable templates. Grand Theft Auto IV and Grand Theft Auto V Legacy now run through Rockstar Games Social Club — sign in to your Rockstar account when prompted. Runtime kit 0.35 adds a performance overlay showing frame times on Direct3D 8–12 and OpenGL games, and fixes Slay the Spire, Order of the Sinking Star and Fahrenheit Remastered.",
+      "Other improvements include updating a game's last played date on each session so Continue Playing on the PS5 Home screen stays in order, and reserving only an update's changed files on the drive instead of the full download. This is beta software — Playden signs in to your real Steam account and reads and writes your Steam Cloud saves. Enable beta updates in Settings, then check for updates. The runtime kit update (433 MB) takes about 30 seconds per game. Requires a jailbroken PS5 with at least 8 GB free."
+    ],
+    "sources": [
+      {
+        "name": "Playden v0.12.0-beta.4 release",
+        "url": "https://github.com/leolobato/playden-ps5/releases/tag/v0.12.0-beta.4"
+      }
+    ]
+  },
+  {
+    "id": "psrdp-v1723-final-bitmap",
+    "date": "2026-11-22",
+    "tag": "Tool",
+    "title": "PSrdp v1.7.23: final bitmap-render release with conflict-free title ID",
+    "summary": "PSrdp v1.7.23 is the final release of the bitmap-render line, switching to conflict-free title ID PPSA90042 and adding an author signature on the home screen, with the GFX line for video streaming planned next.",
+    "body": [
+      "PSrdp v1.7.23 by yecheng770 is marked as the final release of the bitmap-render line. It delivers full 1920×1080 desktop streaming at approximately 59.6 fps with 48 kHz stereo audio, gamepad pointer and keyboard input, and in-app configuration without needing the browser. The title ID changes from PPSA90210 to the conflict-free PPSA90042, as the previous ID was already used by another homebrew app. An author signature with the project repository URL now appears on the home screen.",
+      "The known limitation remains: static bitmap transport handles documents, office apps and terminal work well, but cannot play video smoothly. The upcoming GFX line is planned to address video and game streaming. Install by importing the .ffpfs file via your PS5 loader (ShadowMountPlus, etaHEN, etc.). The default RDP port is 3389 and no credentials are pre-seeded. Built from the open-source tree in the repository under GPL v3. Requires a jailbroken PS5 with Windows Pro Remote Desktop enabled on the PC."
+    ],
+    "sources": [
+      {
+        "name": "PSrdp v1.7.23 release",
+        "url": "https://github.com/yecheng770/PS5-rdp-client/releases/tag/v1.7.23"
+      }
+    ]
+  },
+  {
+    "id": "emby5-v134-shuffle-collections",
+    "date": "2026-11-22",
+    "tag": "Media",
+    "title": "Emby5 1.3.4: episode shuffle and collection links on film pages",
+    "summary": "Emby5 1.3.4 adds an episode Shuffle button on show pages that plays through a series in random order, and an optional \"Included in\" section on film pages showing which collections a film belongs to.",
+    "body": [
+      "Emby5 1.3.4 by bornaradusin adds episode shuffling: a Shuffle button on each show page starts a random episode and continues through the series in random order, skipping specials (season 0) while keeping season and episode numbers visible in the player. Film pages gain an optional \"Included in\" section above \"More like this\" that lists the collections a film belongs to, with each one tappable to open. Because Emby and Jellyfin servers can't report collection membership directly, the first film page opened fetches the collection list once in the background (a few seconds on a large library, cached for ten minutes).",
+      "The \"Included in\" feature is off by default — enable it under Settings › Playback › Show \"Included in\" on film pages. Playback and video decoding are unchanged from 1.3.3. To update, download Emby5-1.3.4.zip, extract the PPSA99515 folder and copy it into /data/homebrew/, merging and overwriting existing files. Requires a jailbroken PS5 with an Emby or Jellyfin server."
+    ],
+    "sources": [
+      {
+        "name": "Emby5 1.3.4 release",
+        "url": "https://github.com/bornaradusin/Emby5/releases/tag/1.3.4"
+      }
+    ]
+  },
+  {
+    "id": "unimount-v012-crash-fix",
+    "date": "2026-11-22",
+    "tag": "Tool",
+    "title": "UniMount v0.1.2: fixes console crash after force-killed payload",
+    "summary": "UniMount v0.1.2 fixes the console crash that occurred when UniMount was killed during a debug .pkg game and then reloaded, by recording and adopting orphaned mounts from a previous instance.",
+    "body": [
+      "UniMount v0.1.2 by leobbaroni fixes the crash-on-reload scenario from v0.1.1. When UniMount was force-killed while a debug .pkg game was running and then loaded again, closing the game would take the console down. UniMount now writes a record of its mounts and directories for each running game. A new instance that starts while that game is running and finds no live UniMount checks the record against the console's mount table, adopts the game, waits for it to close, and releases the mounts properly.",
+      "The known limitation remains: if UniMount is killed during a debug .pkg game and the game is closed before UniMount is reloaded, the console still crashes. After a kill, reload UniMount first, then close the game. Updating UniMount by loading the new version remains safe. Tested on firmware 13.60 with kstuff-lite 1.11. Install via PS5 Payload Manager by adding the repository URL and enabling \"Multiple sources\". Requires a jailbroken PS5 with kstuff-lite."
+    ],
+    "sources": [
+      {
+        "name": "UniMount v0.1.2 release",
+        "url": "https://github.com/leobbaroni/ps5-unimount/releases/tag/v0.1.2"
+      }
+    ]
+  },
+  {
     "id": "retroarch-v440-beta4-achievement-widgets",
     "date": "2026-11-21",
     "tag": "Emulator",
