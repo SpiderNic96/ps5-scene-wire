@@ -1,5 +1,56 @@
 [
   {
+    "id": "nimbus-ps5-live-earth",
+    "date": "2026-11-23",
+    "tag": "Tool",
+    "title": "Nimbus: live Earth viewer for PS5 with real-time weather, flights and satellites",
+    "summary": "Nimbus turns a jailbroken PS5 into a live globe with real-time weather layers, live ADS-B flights, satellite tracking, Google Earth-style zoom and DualSense controls.",
+    "body": [
+      "Nimbus by MasterShivnath007 is a native PS5 homebrew app that renders a live Earth with day/night terminator, city lights, clouds, atmosphere and a physical sun/moon sky computed from UTC. It supports continuous orbital-to-street zoom using streamed satellite tiles, Open-Meteo weather layers (temperature, humidity, pressure with isobars, animated wind and tropical cyclones), live ADS-B aircraft tracking with callsigns and altitude, and CelesTrak satellite TLEs with orbit paths and next-pass prediction.",
+      "The app is built for the DualSense: left stick to orbit, R2 to zoom, Cross to dive to a city, L1/R1 to cycle between Earth, Flights and Satellites modes, and D-pad to switch weather layers and map styles. It includes 34 cinematic Discover destinations, a home-city picker, and a screensaver mode. Install by placing the PPSA42716 folder at your native-title path and launching with your loader. Note: the developer states this build has not yet been tested on PS5 hardware."
+    ],
+    "sources": [
+      {
+        "name": "Nimbus PS5 repository",
+        "url": "https://github.com/MasterShivnath007/nimbus-ps5"
+      }
+    ]
+  },
+  {
+    "id": "webkit-autoloader-v084-relapse-3xx-4xx",
+    "date": "2026-11-23",
+    "tag": "Loader",
+    "title": "WebKit Autoloader v0.8.4: Relapse support expanded down to firmware 3.00",
+    "summary": "WebKit Autoloader v0.8.4 adds Relapse support for eight more firmware versions (3.00, 3.10, 3.20, 4.00, 4.02, 4.03, 4.50 and 4.51), expanding the autoloader's supported range to 3.00–13.60.",
+    "body": [
+      "WebKit Autoloader v0.8.4 by itsPLK extends Relapse exploit support to firmware versions 3.00, 3.10, 3.20, 4.00, 4.02, 4.03, 4.50 and 4.51. Combined with existing support, the autoloader now covers firmware 3.00 through 13.60 — the widest range yet. The update also includes an updated Wobkot dependency (commit 452046e).",
+      "WebKit Autoloader uses the PS5's built-in web browser to load exploits and payloads automatically. It's available as an installer payload for the PS5, a Python host script for Linux, macOS and WSL, and a Windows executable. Requires a jailbreak-capable firmware and elfldr."
+    ],
+    "sources": [
+      {
+        "name": "WebKit Autoloader v0.8.4 release",
+        "url": "https://github.com/itsPLK/ps5-webkit-autoloader/releases/tag/v0.8.4"
+      }
+    ]
+  },
+  {
+    "id": "parallax-browser-v042-install-packages-auto-connections",
+    "date": "2026-11-23",
+    "tag": "Tool",
+    "title": "Parallax Browser v0.4.2: install downloaded packages and images, password-protected archives",
+    "summary": "Parallax Browser v0.4.2 can install downloaded .pkg, .fpkg and .exfat images directly, unpack password-protected archives, make UFS2 images, and uses auto-scaling connections for faster downloads.",
+    "body": [
+      "Parallax Browser v0.4.2 by rikleigh adds package and image installation: a finished .exfat, .ffpkg or .pkg download can be installed from the browser. The dialog shows the app's name, title ID, version and icon before installing. ExFAT images go to the drive's homebrew folder for ShadowMountPlus or TITAN-CORE to mount, while .pkg files go to the console's own installer. The release also adds UFS2 image (.ffpkg) creation, ported from PS5 Dump Forge, for ShadowMountPlus 1.7 and later.",
+      "Password-protected ZIP, RAR4 and RAR5 archives can now be unpacked (7-Zip passwords are not yet supported). Downloads use a new auto-connection system by default, starting with 8 connections and scaling up to 32 as long as each step makes the download faster — this significantly speeds up sites that throttle individual connections. Connections that finish early also take over remaining work from slower ones, so the last few percent no longer crawl."
+    ],
+    "sources": [
+      {
+        "name": "Parallax Browser v0.4.2 release",
+        "url": "https://github.com/rikleigh/parallax-browser/releases/tag/v0.4.2"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v12622-v12623-queue-streaming-upload-checks",
     "date": "2026-11-23",
     "tag": "Tool",
