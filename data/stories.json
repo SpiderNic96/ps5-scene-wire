@@ -1,5 +1,26 @@
 [
   {
+    "id": "ps5upload-v12622-v12623-queue-streaming-upload-checks",
+    "date": "2026-11-23",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.22–v12.6.23: upload verification progress and queue streaming",
+    "summary": "PS5 Upload v12.6.22 shows real-time progress during the PS5's post-upload file check with estimated time remaining, and v12.6.23 makes Add to queue stream packages instead of copying them first.",
+    "body": [
+      "PS5 Upload v12.6.22 by phantomptr addresses the long wait after large uploads. The PS5 reads back every uploaded file to verify it, and on 70–160 GB games this took minutes with no feedback. The app now shows “Checking on PS5: X of Y” with the time left, and a resumed upload skips re-checking the portion the PS5 had already verified. The release also adds a Clear all button in the notification bell and includes a security update for the url library (RUSTSEC-2026-0592).",
+      "Version v12.6.23 follows with three more changes: Add to queue now streams packages to the PS5 instead of copying them first, matching the main Upload & Install button; Windows shows a clear message when Smart App Control or an app-control policy blocks the engine from starting; and Docker containers report at startup which folders they cannot access, with the chown command to fix it. The Payloads tab also now lists your own saved payloads first. Available on Windows, macOS, Linux, Android and iOS."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.23 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.23"
+      },
+      {
+        "name": "PS5 Upload v12.6.22 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.22"
+      }
+    ]
+  },
+  {
     "id": "dantes-inferno-v130-instant-setup",
     "date": "2026-11-23",
     "tag": "Port",
