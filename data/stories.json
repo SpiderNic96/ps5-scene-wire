@@ -1,5 +1,22 @@
 [
   {
+    "id": "ps5upload-v12625-ftp-resume-ssh-security",
+    "date": "2026-11-23",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.25: FTP download resume and SSH security update",
+    "summary": "PS5 Upload v12.6.25 makes FTP downloads from servers resume automatically after a dropped connection and updates its SSH library to fix a known RSA timing weakness.",
+    "body": [
+      "PS5 Upload v12.6.25 by phantomptr fixes server-based FTP downloads that drop mid-file. Previously a cut connection failed with \"ended early on the server\" (or \"short remote read\" during a PS5 stream) instead of continuing. The app now signs in again and picks up from the byte where it stopped. Stopping a server-folder copy while the file list is still loading also cancels immediately — it used to reconnect to the server first, which delayed the stop and could produce a sign-in error. Stop now takes effect between empty files too, and servers that report impossible file sizes no longer crash the size count.",
+      "On the security side, the SSH library used for SFTP servers is updated to the release that patches a known RSA timing weakness (RUSTSEC-2023-0071), and a cookie library has been updated to its own fixed version. Available on Windows, macOS, Linux, Android and iOS from the GitHub releases page."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.25 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.25"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v12624-play-together-queue-fix",
     "date": "2026-11-23",
     "tag": "Tool",
