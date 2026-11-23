@@ -977,6 +977,16 @@
         "elfldr"
       ],
       "note": "SceShellUI offsets discovered at runtime; developer says build has no firmware-specific addresses."
+    },
+    "morpheus302/PS5_Grapnel": {
+      "tested": [
+        "12.60"
+      ],
+      "needs": [
+        "elfldr",
+        "ShadowMountPlus"
+      ],
+      "note": "Early, PS5 Pro untested; memory and frame rate issues in crowded areas."
     }
   },
   "unstated": [
@@ -1071,8 +1081,11 @@
     "quer3q/kraken-mount",
     "Richie133/fceuxs5",
     "Rufidj/MKW-RECOMP-PS5",
+    "slashbot28/Buzz-USB-drivers-for-PS5",
+    "slashbot28/Kinect-driver-for-PS5",
     "Starter-ps5/Common-FPS-for-PS5",
     "stupiditytries/StremiBrew",
+    "SulphurS16/Regaliant",
     "SvenGDK/Prospero-Explorer",
     "Techsociology/ps5_download_manager",
     "TheCriicom/omega-dashboard",

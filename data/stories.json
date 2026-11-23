@@ -1,5 +1,90 @@
 [
   {
+    "id": "rpcs3-recompiler-v04-vulkan-audio-title-prep",
+    "date": "2026-11-23",
+    "tag": "Emulator",
+    "title": "PS3-TO-PS5 RPCS3 Recompiler v0.4: Vulkan pipeline fixes, audio improvements and title preparation overhaul",
+    "summary": "PS3-TO-PS5 RPCS3 Recompiler v0.4 backports upstream RPCS3 fixes for Vulkan render passes, SPU module initialisation and RSX event retries, improves audio buffering, and overhauls the title preparation workflow with disc-key matching, DLC and patch guides.",
+    "body": [
+      "PS3-TO-PS5 RPCS3 Recompiler v0.4 by Michele-M-Media brings a round of RPCS3 upstream backports. Vulkan pipeline state is now preserved across compatible render passes, queued RSX events are retried on failure, and upstream fixes for SPU module initialisation, MFC reservation ordering, DMA lock ownership and legacy save-data callbacks are incorporated. Source patches for ordered asynchronous RADV submission, swapchain buffer reuse and corrected timed waits are included, along with queue and descriptor timing logs for diagnosing slow submissions.",
+      "Audio handling is improved: full PCM blocks are preserved under mixer backpressure and short playback gaps are softened with adjacent real audio. Title preparation now fits custom icons into an opaque 512×512 layout, validates 4K BC7 backgrounds, preserves localised compilation artwork, and stages a verified UPDATE.BIN with its matching local manifest. A new guide covers disc-key matching, region checks, DLC pack selection and patch enablement. Build dependencies and title data are supplied locally. Requires a jailbroken PS5 with elfldr."
+    ],
+    "sources": [
+      {
+        "name": "PS3-TO-PS5 RPCS3 Recompiler v0.4 release",
+        "url": "https://github.com/Michele-M-Media/PS3-TO-PS5-LLVM-RPCS3-RECOMPILER/releases/tag/v0.4"
+      }
+    ]
+  },
+  {
+    "id": "ps5-grapnel-ocarina-of-time-recomp",
+    "date": "2026-11-23",
+    "tag": "Port",
+    "title": "Grapnel: Ocarina of Time (Switch 2 recomp) ported to PS5 via Longshot",
+    "summary": "Grapnel ports Longshot's static recompilation of Ocarina of Time (Switch 2) to the jailbroken PS5. The game runs natively on Vulkan through RADV — no emulator involved — but performance and memory are still being worked on.",
+    "body": [
+      "Grapnel by morpheus302 is a PS5 port of Longshot, the static recompilation of The Legend of Zelda: Ocarina of Time from its Switch 2 release. The game's code is translated to C, compiled for the PS5's processor, and rendered on Vulkan through the RADV Mesa driver (mihawk-99/PS5_Mesa). No emulator is involved. The build runs on your own PC from your own copy of the game — the repository contains no game code, game data or keys.",
+      "The port is early and published so others can contribute. It has been tested on one base PS5 on firmware 12.60 — the PS5 Pro has not been tried. Castle Town runs at about 32 fps with stutter on roughly 15–25% of frames; elsewhere it is smoother. First-start shader compilation can cause crashes in crowded areas until the cache fills (a PC-side shader prep step takes about 15 minutes to avoid this). Long sessions of 20–25 minutes can run out of memory on area transitions. The game logs and self-closes safely rather than crashing the console. Requires a jailbroken PS5 with elfldr and ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "Grapnel PS5 repository",
+        "url": "https://github.com/morpheus302/PS5_Grapnel"
+      }
+    ]
+  },
+  {
+    "id": "regaliant-demons-souls-pc-port",
+    "date": "2026-11-23",
+    "tag": "PC & Linux",
+    "title": "Regaliant: unofficial Demon's Souls (PS5) PC port with Vulkan, DLSS and ultrawide",
+    "summary": "Regaliant runs the PS5 version of Demon's Souls natively on Windows via reimplemented system libraries and Vulkan — no CPU emulation. Supports DLSS, ultrawide, HDR and in-game PC settings from your own copy of the game.",
+    "body": [
+      "Regaliant by SulphurS16 is an unofficial Windows PC port of Bluepoint's PS5 remake of Demon's Souls (PPSA01341, version 01.007.000). The game's own x86-64 code runs directly on the PC's processor — PS5 system libraries are reimplemented for Windows and graphics run on Vulkan. A PC settings tab is added to the game's own settings screen with windowed, borderless and exclusive fullscreen modes, resolution and monitor selection, 16:9 through 32:9 aspect ratios without stretching, and HDR output through the game's own HDR mode.",
+      "NVIDIA DLSS upscaling is supported. The port requires the game's executable and two libraries decrypted from your own copy. This is an early release with active development on the project's Discord server. Not affiliated with Sony, Bluepoint Games or FromSoftware."
+    ],
+    "sources": [
+      {
+        "name": "Regaliant repository",
+        "url": "https://github.com/SulphurS16/Regaliant"
+      }
+    ]
+  },
+  {
+    "id": "kinect-driver-ps5-hand-tracking",
+    "date": "2026-11-23",
+    "tag": "Tool",
+    "title": "Kinect Driver for PS5: Xbox 360 Kinect v1 hand tracking on jailbroken PS5",
+    "summary": "A userland port of libfreenect brings the Xbox 360 Kinect v1 to jailbroken PS5 — a bridge payload streams depth frames and hand tracking data over localhost to homebrew apps.",
+    "body": [
+      "Kinect Driver for PS5 by slashbot28 is a userland USB driver and hand-tracking bridge for the Xbox 360 Kinect v1 sensor on jailbroken PS5. Because PS5 homebrew apps can't access the USB stack directly, the project uses a standalone bridge payload (kinect_bridge.elf) loaded via elfldr that talks to the Kinect through a PS5 port of libfreenect with libSceUsbd as the transport layer. The bridge streams 640×480 depth frames, performs real-time dual-hand and motion tracking, and serves tracking data plus a 160×120 camera preview over localhost TCP/UDP to any PS5 homebrew app.",
+      "A C++ client library (kinect_tracker.hpp/cpp) is included for homebrew developers to connect to the bridge with calibration support. The repo also ships a ready-to-install PS5 app (PPSA99002) built with native Vulkan that demonstrates the Kinect input alongside Buzz controller support. The Kinect is a userland driver only — it does not register as a system camera for retail games. Requires a jailbroken PS5 with elfldr."
+    ],
+    "sources": [
+      {
+        "name": "Kinect Driver for PS5 repository",
+        "url": "https://github.com/slashbot28/Kinect-driver-for-PS5"
+      }
+    ]
+  },
+  {
+    "id": "buzz-usb-drivers-ps5",
+    "date": "2026-11-23",
+    "tag": "Tool",
+    "title": "Buzz! USB Drivers for PS5: use Sony Buzz quiz controllers on jailbroken PS5",
+    "summary": "A standalone PS5 payload brings Sony's wired and wireless Buzz! quiz controllers to homebrew apps — the bridge reads all four handsets over USB, controls LEDs, and forwards button states over localhost UDP.",
+    "body": [
+      "Buzz! USB Drivers for PS5 by slashbot28 provides a standalone payload (buzz_bridge.elf) that enables Sony's PlayStation Buzz! wired (054C:0002) and wireless (054C:1000) USB quiz controllers on a jailbroken PS5. The payload runs outside the app sandbox via elfldr, reads all four Buzz handsets, controls their LEDs, and forwards button states to homebrew apps over localhost UDP.",
+      "A C client library (buzz_usb.h/c) handles HID report parsing, LED control reports and ScePadData mapping, letting homebrew developers integrate Buzz controllers into their own apps. Deployment is a single netcat command to send the payload to elfldr. Requires a jailbroken PS5 with elfldr running on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "Buzz! USB Drivers for PS5 repository",
+        "url": "https://github.com/slashbot28/Buzz-USB-drivers-for-PS5"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v12625-ftp-resume-ssh-security",
     "date": "2026-11-23",
     "tag": "Tool",

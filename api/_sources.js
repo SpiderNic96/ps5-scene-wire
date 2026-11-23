@@ -116,6 +116,8 @@ export const SOURCES = [
   { cat: T, repo: '0xFlan/prospero-vault', name: 'Prospero Vault', about: 'On-console FPKG library with Mac-side package building' },
   { cat: T, repo: 'yecheng770/PS5-rdp-client', name: 'PSrdp', about: 'Native PS5 RDP client for Windows remote desktop' },
   { cat: T, repo: 'MasterShivnath007/nimbus-ps5', name: 'Nimbus', about: 'Live Earth viewer with weather, flights and satellites' },
+  { cat: T, repo: 'slashbot28/Kinect-driver-for-PS5', name: 'Kinect Driver', about: 'Xbox 360 Kinect v1 USB driver and hand tracking bridge' },
+  { cat: T, repo: 'slashbot28/Buzz-USB-drivers-for-PS5', name: 'Buzz! USB Drivers', about: 'Sony Buzz quiz controller driver and LED bridge' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },
@@ -159,6 +161,7 @@ export const SOURCES = [
   { cat: P, repo: 'fs0ciety404/ps5-linux-tuning', name: 'ps5-linux-tuning', about: 'System tuning and BT fix for PS5 Linux' },
   { cat: P, repo: 'KPKev/WinBrew-11', name: 'WinBrew 11', about: 'Windows 11-style desktop with Vapor game launcher' },
   { cat: P, repo: 'gmorb/nor-studio', name: 'NOR Studio', about: 'Browser-based PS5 NOR editor, CH341A programmer and UART diagnostics' },
+  { cat: P, repo: 'SulphurS16/Regaliant', name: 'Regaliant', about: 'Unofficial Demon\'s Souls (PS5) PC port on Vulkan' },
   { cat: P, repo: 'abrocoma/PS5-Linux-Flasher', name: 'Linux Flasher', about: 'Flash Linux to USB from the PS5 itself' },
 
   // Media and streaming
@@ -188,6 +191,7 @@ export const SOURCES = [
   { cat: R, repo: 'Marice/wave-race-64-ps5', name: 'Wave Race 64 Recompiled', about: 'N64 recomp' },
   { cat: R, repo: 'mshivam019/oot64-ps5', name: 'Ship of Harkinian (Ocarina of Time)', about: 'Ocarina of Time port' },
   { cat: R, repo: 'yeistark/Longshot_ps5', name: 'Longshot (Ocarina of Time)', about: 'OOT Switch 2 recomp on Vulkan/RADV' },
+  { cat: R, repo: 'morpheus302/PS5_Grapnel', name: 'Grapnel (Ocarina of Time)', about: 'OOT Switch 2 Longshot recomp ported to PS5' },
   { cat: R, repo: 'mshivam019/tmm64-ps5', name: '2 Ship 2 Harkinian (Majora’s Mask)', about: 'Majora’s Mask port' },
   { cat: R, repo: 'mshivam019/la-ps5', name: 'Link’s Awakening', about: 'Link’s Awakening port' },
   { cat: R, repo: 'griches/PS5_Ghostship', name: 'Super Mario 64', about: 'Ghostship port, bring your own ROM' },
