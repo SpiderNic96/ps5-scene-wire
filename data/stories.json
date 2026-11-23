@@ -1,5 +1,22 @@
 [
   {
+    "id": "ps5upload-v12624-play-together-queue-fix",
+    "date": "2026-11-23",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.24: Play Together overlay fix and queue streaming",
+    "summary": "PS5 Upload v12.6.24 fixes a Play Together overlay that could stay on screen for an entire session, and makes queue-then-stream install actually start the package.",
+    "body": [
+      "PS5 Upload v12.6.24 fixes an issue where the Play Together prompt (\"Press PS, then pick Quick Play on the TV\") could remain stuck over a friend's game for the entire session. The app only detected a friend selection through the PS then Cross button sequence, so a pick made any other way left the overlay permanently visible in full screen. The overlay now auto-hides after 30 seconds at most, matching the behavior of other on-screen buttons.",
+      "The update also fixes a bug where adding a package to the upload queue with Add to queue and then sending it with Stream & install would add it to the waiting row but never start it — that now works correctly. Two Remote Play messages that referenced another app by name have been corrected. Available on Windows (x64 and ARM), macOS (Apple Silicon and Intel), Linux (AppImage, .deb, .rpm for x64 and ARM), Android and iOS."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.24 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.24"
+      }
+    ]
+  },
+  {
     "id": "nimbus-ps5-live-earth",
     "date": "2026-11-23",
     "tag": "Tool",
