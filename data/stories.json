@@ -1,5 +1,56 @@
 [
   {
+    "id": "ps5upload-v12626-cheats-remote-play",
+    "date": "2026-11-24",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.26: PS4 cheats and Remote Play without a jailbreak",
+    "summary": "PS5 Upload v12.6.26 fixes PS4 game cheats that never found the game’s code, and lets a stock (non-jailbroken) PS5 use Remote Play for the first time.",
+    "body": [
+      "PS5 Upload v12.6.26 by phantomptr fixes cheats for PS4 games. The app was looking for each game’s code at the wrong address, so every cheat switch answered “the game’s code is not loaded yet.” It now reads the PS4 game’s own code map. As before, a cheat whose expected bytes don’t match the running version of the game is refused, so a cheat for one patch level cannot corrupt another.",
+      "Remote Play now works on a PS5 that is not jailbroken. The Set Up screen detects when the helper payload is not running and opens pairing directly with the PIN shown on the PS5, with a note on how to enter the account ID. Play Together (starting a game from the app) and console checks still require the helper. Available on Windows, Mac, Linux, Android and iOS."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.26 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.26"
+      }
+    ]
+  },
+  {
+    "id": "regaliant-v012-rtx50-subgroup-fix",
+    "date": "2026-11-24",
+    "tag": "PC & Linux",
+    "title": "Regaliant v0.1.2: RTX 50-series shader fix and VRAM reporting workaround",
+    "summary": "Regaliant v0.1.2 fixes black shapes and stretched geometry on RTX 50-series GPUs by enforcing subgroup convergence in translated shaders, and works around a Windows VRAM over-report that caused stutter.",
+    "body": [
+      "Regaliant v0.1.2 by SulphurS16 addresses the rendering problems reported on RTX 50-series GPUs (and potentially AMD and Intel cards). The game’s translated shaders now explicitly tell the driver to keep each group of shader threads together after they diverge. RTX 40-series cards did this on their own, but RTX 50-series cards did not, which caused black shapes, stretched geometry or a near-black picture in areas like the opening tunnel. The fix also applies to AMD and Intel GPUs.",
+      "A second fix works around Windows reporting more video memory in use by other programs than the graphics card actually has (for example, 38 GB in use on a 12 GB card). Previously this caused the game to halve its texture memory, leading to stutter and repeated shader preparation restarts. The log now also names the programs holding the most video memory. The launcher’s Open Logs button selects the newest session’s folder, and quick-check logs go to a separate checks folder."
+    ],
+    "sources": [
+      {
+        "name": "Regaliant v0.1.2 release",
+        "url": "https://github.com/SulphurS16/Regaliant/releases/tag/v0.1.2"
+      }
+    ]
+  },
+  {
+    "id": "chiaki4ps5-remote-play-on-ps5",
+    "date": "2026-11-24",
+    "tag": "Media",
+    "title": "chiaki4ps5: Remote Play from PS5 to PS5 with frame generation",
+    "summary": "chiaki4ps5 is a new homebrew app that streams one PS5 to another jailbroken PS5, with FSR3 frame generation (30 to 60 fps), picture filters and full DualSense support.",
+    "body": [
+      "chiaki4ps5 by Valevixi is a port of chiaki-ng, the open-source PlayStation Remote Play client, that runs natively on a jailbroken PS5. It streams a second PS5 at up to 1080p using HEVC or H.264 (10–50 Mbps) and draws through Vulkan via RADV. Its headline feature is FSR3 frame generation based on ps5-framegen by Swordpdf, which doubles a 30 fps stream to 60 fps. A fix in this port keeps characters from breaking up during fast camera turns. Picture filters for detail restore, deband, sharpening and colour boost are included.",
+      "The app installs as a folder title under /data/homebrew/ and appears on the PS5 home screen. It supports DualSense buttons, sticks, triggers, touchpad, motion and rumble. Multiple PSN profiles can be saved, and the account ID can be filled in from the signed-in account. Requires a jailbroken PS5 with a homebrew loader that registers folder titles (such as ShadowMountPlus) and a second PS5 with Remote Play enabled, ideally both on a wired network."
+    ],
+    "sources": [
+      {
+        "name": "chiaki4ps5 on GitHub",
+        "url": "https://github.com/Valevixi/chiaki4ps5"
+      }
+    ]
+  },
+  {
     "id": "ps5sx2-v260-radv-driver",
     "date": "2026-11-24",
     "tag": "Emulator",
@@ -37,11 +88,11 @@
     "id": "eglantine-ps5-v1000004",
     "date": "2026-11-24",
     "tag": "Emulator",
-    "title": "EglantinePS5 v1.000.004: new pre-release of the Switch 2 emulator for PS5",
-    "summary": "EglantinePS5 v1.000.004 is a new pre-release build of the unofficial Eden/Eglantine Switch 2 emulator port for jailbroken PS5. Detailed release notes have not been published.",
+    "title": "EglantinePS5 v1.000.004: swap store and memory fixes stabilise Mario Kart World",
+    "summary": "EglantinePS5 v1.000.004 adds a swap store on the PS5’s storage, compresses idle memory and batches ASTC texture conversion, fixing Mario Kart World sessions that ended within minutes on a PS5 Pro.",
     "body": [
-      "EglantinePS5 v1.000.004 by heydemoura is the latest pre-release of the unofficial PS5 port of Eglantine, a Switch 2-capable fork of the Eden emulator. The build follows v1.000.003, which brought Zelda: Ocarina of Time performance improvements, Fire Emblem booting and a 250 MiB memory reduction. Specific changes in v1.000.004 have not been detailed in the release notes.",
-      "EglantinePS5 runs on the PS5’s Vulkan stack via RADV (Mihawk’s Mesa driver) and supports video, audio, controller input and saves. Local-wireless multiplayer through Eden rooms is experimental. Requires a jailbroken PS5."
+      "EglantinePS5 v1.000.004 by heydemoura fixes Mario Kart World crashing within minutes on a PS5 Pro. Two causes are addressed: the game changed its render resolution every frame after a single late frame, filling graphics memory, so the fixed GPU clock is now applied by default; and long sessions need more memory than the console has, which a new swap store handles. Idle game memory that nothing has touched and that does not compress is paged out to /data/eglantineps5/cache/swap/ (8 GiB cap, kept between sessions), with writes capped at 1 GiB at once and 8 GiB per hour to spare the storage. Untouched memory is managed in 64 KiB pieces—zero-filled pieces take nothing, compressible ones stay compressed in RAM, and only the rest goes to storage.",
+      "Large ASTC texture arrays are now converted a few layers at a time (the largest took 560 MiB of GPU memory at once; it now takes about 63 MiB). JIT code caches can grow to 320 MiB per core (up from 96–160 MiB) and allocate in 2 MiB steps. Graphics allocations wait up to 4 seconds for memory to come back instead of giving up after 20 ms. In testing, all five 30-minute Mario Kart World sessions completed at about 31 fps, where they previously ended within minutes. An experimental BC7 texture store is also included. Requires a jailbroken PS5."
     ],
     "sources": [
       {
