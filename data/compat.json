@@ -994,6 +994,14 @@
         "13.60"
       ],
       "note": "Single ELF payload; resolution depends on display and firmware."
+    },
+    "DeLFuS77/maxpack-ps5": {
+      "tested": [
+        "13.60"
+      ],
+      "needs": [
+        "elfldr"
+      ]
     }
   },
   "unstated": [
@@ -1101,6 +1109,7 @@
     "ps5-payload-dev/sdk",
     "ps5-payload-dev/websrv",
     "quer3q/kraken-mount",
+    "rimidalv333/longshot-oberon",
     "slashbot28/Buzz-USB-drivers-for-PS5",
     "slashbot28/Kinect-driver-for-PS5",
     "stupiditytries/StremiBrew",
