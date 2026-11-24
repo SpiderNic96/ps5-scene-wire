@@ -1,5 +1,119 @@
 [
   {
+    "id": "savage-wind-ps5-botw-recomp",
+    "date": "2026-11-24",
+    "tag": "Port",
+    "title": "Savage Wind PS5: Breath of the Wild recompiled for PS5",
+    "summary": "Savage Wind PS5 brings The Legend of Zelda: Breath of the Wild to the jailbroken PS5 as a native recompilation built on the Savage Wind Recomp project, with Vulkan rendering through RADV.",
+    "body": [
+      "Savage Wind PS5 by waite1209rec recompiles The Legend of Zelda: Breath of the Wild (Switch, version 1.9.0) into a native PS5 homebrew title (BOTW00001). The game's code is statically recompiled and compiled for the PS5's CPU, with graphics rendered through Vulkan on the RADV Mesa driver. The project builds on the upstream Savage Wind Recomp by Revivedx. A Windows builder with a GUI handles the entire build process: point it at your game dump (folder, NSP, XCI or NSZ), keys and an output folder and it produces the PS5 title. The setup script downloads the required toolchain (LongshotPS5Builder v0.1.5) automatically.",
+      "You need your own dumped copy of the game at version 1.9.0, with the update applied. The builder accepts dump folders, .nsp, .nsz and .xci files, and merges the update's RomFS with the base game automatically. Python 3.10 or later with tkinter is required for the builder. No game files are included in the repository. Copy the built BOTW00001 folder to /data/homebrew/ on the console and register it with ShadowMountPlus. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "Savage Wind PS5 on GitHub",
+        "url": "https://github.com/waite1209rec/botw-recomp-ps5"
+      },
+      {
+        "name": "Savage Wind PS5 v0.1 release",
+        "url": "https://github.com/waite1209rec/botw-recomp-ps5/releases/tag/v0.1"
+      }
+    ]
+  },
+  {
+    "id": "tron-evolution-ps5-port",
+    "date": "2026-11-24",
+    "tag": "Port",
+    "title": "Tron: Evolution PS5 Port: Xbox 360 recomp with native Vulkan renderer at 60 fps",
+    "summary": "Tron: Evolution PS5 Port by KongaTime recompiles the Xbox 360 game with a native Vulkan renderer, delivering 60 fps at 1440p with PlayStation button prompts, achievements and ISO-based playback on PS5.",
+    "body": [
+      "Tron: Evolution PS5 Port by KongaTime runs the Xbox 360 version of Tron: Evolution on a jailbroken PS5 through a native Vulkan renderer rather than GPU emulation, eliminating white flashes and reaching 60 fps at 1440p (with a 4K option). The game plays directly from your Xbox 360 disc ISO — nothing is extracted or copied to the console. PlayStation button prompts replace Xbox icons throughout the game's menus and combo list (fixed in v1.0.1). Achievements unlock as on the Xbox 360 and are saved between sessions with a Tron-styled popup. A settings menu offers resolution, frame rate, brightness, anti-aliasing (SMAA), shadow quality and button icon choices.",
+      "Download Tron.Evolution.PS5.Port.V1.0.1.zip from the GitHub release, extract the PPSA90120 folder to /data/homebrew/ and register it with ShadowMountPlus. Place your Disney Tron: Evolution (USA/Europe) Xbox 360 disc ISO in PPSA90120/dump/. The game reads from the ISO directly, so leave it in place. Alternatively you can extract game files to PPSA90120/gamedata/ with default.xex at the root. No game files are included. Requires a jailbroken PS5 with ShadowMountPlus."
+    ],
+    "sources": [
+      {
+        "name": "Tron: Evolution PS5 Port on GitHub",
+        "url": "https://github.com/KongaTime/Tron-Evolution-PS5-Port"
+      },
+      {
+        "name": "V1.0.1 release",
+        "url": "https://github.com/KongaTime/Tron-Evolution-PS5-Port/releases/tag/v1.0.1"
+      }
+    ]
+  },
+  {
+    "id": "cannonball-ps5-outrun",
+    "date": "2026-11-24",
+    "tag": "Port",
+    "title": "CannonBall PS5: OutRun arcade engine ported natively to PS5",
+    "summary": "CannonBall PS5 brings the enhanced OutRun arcade engine to PS5 as a native homebrew app with 60 fps gameplay, widescreen support, DualSense analog controls and persistent high scores.",
+    "body": [
+      "CannonBall PS5 by JJBurtenshaw is a native PS5 port of CannonBall, the enhanced open-source OutRun engine by Chris White. The port runs at 1080p and 60 fps using optimized software rendering, with widescreen and hi-res graphics modes. It includes Original and Enhanced gameplay modes, Continuous Mode and Time Trial Mode. DualSense analog controls map steering, acceleration and braking to the sticks and triggers, with both manual and automatic transmission options. The touchpad pauses the game, and settings and high scores persist between sessions.",
+      "Developed and tested on firmware 13.40 with ShadowMountPlus 1.7 Beta 12. Download the release ZIP, place your own OutRun arcade ROM files in PPSA98537/roms/, transfer the PPSA98537 folder to /data/homebrew/ on the PS5 and register the application with ShadowMountPlus. ROM files are not included. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "CannonBall PS5 on GitHub",
+        "url": "https://github.com/JJBurtenshaw/CannonBall-PS5"
+      },
+      {
+        "name": "CannonBall PS5 v1.0.0 release",
+        "url": "https://github.com/JJBurtenshaw/CannonBall-PS5/releases/tag/v1.0.0"
+      }
+    ]
+  },
+  {
+    "id": "grapnel-v020-windows-builder-microphone",
+    "date": "2026-11-24",
+    "tag": "Port",
+    "title": "Grapnel v0.2.0: Windows builder and DualSense microphone ocarina",
+    "summary": "Grapnel v0.2.0 adds a step-by-step Windows builder for the Ocarina of Time PS5 recomp, plays the in-game ocarina through the DualSense microphone, and delivers identical builds to Linux.",
+    "body": [
+      "Grapnel v0.2.0 by morpheus302 adds a Windows builder for the Ocarina of Time PS5 recomp. The builder runs in a six-step window on Windows 10 and 11 (64-bit): select your game, configure options, check your PC, build the game, prepare shaders and optionally upload to the console over FTP. The Windows build produces a byte-for-byte identical eboot.bin and shader cache to the Linux builder (57,210 shader keys, same contents). The bundled LLVM 19.1.7 compiles 22–31% faster than WinLibs. Step 6 uploads the title to the console's FTP server, backing up saves first and resuming interrupted transfers.",
+      "The in-game ocarina can now be played into the DualSense's microphone (player 1, on by default) when the game's microphone option is enabled. Audio stays on the console — nothing is sent or recorded — and the controller's mute button cuts it. Set HOOKSHOT_PS5_MIC=0 in /data/grapnel/hookshot_env.txt to disable it. Shader preparation now shows a reliable time estimate. Linux fixes include builds working without git installed, shader preparation compiled for any x86-64-v3 processor, and a timeout for silent preparations. Tested on firmware 12.60. Requires a jailbroken PS5 with elfldr."
+    ],
+    "sources": [
+      {
+        "name": "Grapnel v0.2.0 release",
+        "url": "https://github.com/morpheus302/PS5_Grapnel/releases/tag/v0.2.0"
+      }
+    ]
+  },
+  {
+    "id": "pokopia-ps5-port-v12-nup-compressed-shaders",
+    "date": "2026-11-24",
+    "tag": "Port",
+    "title": "Pokopia PS5 Port v1.2: play from a single .nup file, 60% smaller shader upload",
+    "summary": "Pokopia PS5 Port v1.2 lets you play Pokémon Pokopia on PS5 straight from a single .nup file without unpacking, and compresses the shader upload from 40.5 GB to 11 GB.",
+    "body": [
+      "Pokopia PS5 Port v1.2 by KongaTime adds .nup file support — a single decrypted file containing the game and its update. On the PS5 page of the launcher, press \"Pick a .nup\" and the file is sent to the console; the game reads its data directly from the .nup without unpacking anything. If you already have a PS5 set up, you can also copy the .nup into /data/homebrew/PPSA90006/dump/ manually. The launcher's Game files page also accepts a .nup for the PC version, unpacking it into dump/ (about 7 GB, pausable).",
+      "The shader upload is now compressed into one packed file: 11 GB instead of 40.5 GB in roughly 99,000 individual files. A full first install sends about 18 GB instead of 47 GB. Packing takes about 3 minutes and every shader in the pack is identical to the original. Updating from 1.0 or 1.1 requires running Install on PS5 again to rebuild the title for .nup and compressed shader support. The old loose shaders and romfs/ folder can be removed over FTP to free about 47 GB. No game files are included. Requires a jailbroken PS5 with FTP running."
+    ],
+    "sources": [
+      {
+        "name": "Pokopia PS5 Port v1.2 release",
+        "url": "https://github.com/KongaTime/pokopia-ps5-port/releases/tag/v1.2"
+      }
+    ]
+  },
+  {
+    "id": "regaliant-v014-rtx50-nan-fix",
+    "date": "2026-11-24",
+    "tag": "PC & Linux",
+    "title": "Regaliant v0.1.4: RTX 50-series black picture fully fixed",
+    "summary": "Regaliant v0.1.4 fully resolves the mostly black picture on RTX 50-series GPUs by handling NaN vertex positions that the driver skipped, confirmed working on an RTX 5090.",
+    "body": [
+      "Regaliant v0.1.4 by SulphurS16 fixes the remaining black picture issue on RTX 50-series graphics cards. The game places \"not a number\" positions in unused draw slots so the GPU discards them, and the port moves those positions out of view. RTX 50-series drivers were allowed to skip that check, causing black shapes and streaks across the screen from the first tunnel onward. The game's shaders now explicitly tell the driver to enforce the check on RTX 50-series, AMD and Intel cards. Confirmed working on an RTX 5090. On RTX 50-series cards the launcher prepares shaders once more; RTX 40-series and older cards keep their existing prepared shaders.",
+      "Download Regaliant-0.1.4.zip, unzip it and start regaliant-launcher.exe. The game runs your own copy of Demon's Souls (PS5, PPSA01341 version 01.007.000) — no game files are included. No CPU emulation: the game's x86-64 code runs directly on the PC processor with reimplemented PS5 system libraries and Vulkan graphics. The launcher handles game file checks, shader preparation, save backups and display settings."
+    ],
+    "sources": [
+      {
+        "name": "Regaliant v0.1.4 release",
+        "url": "https://github.com/SulphurS16/Regaliant/releases/tag/v0.1.4"
+      }
+    ]
+  },
+  {
     "id": "maxpack-ps5-console-stage1",
     "date": "2026-11-24",
     "tag": "Tool",
