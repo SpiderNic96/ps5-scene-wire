@@ -1,5 +1,73 @@
 [
   {
+    "id": "ps5sx2-v260-radv-driver",
+    "date": "2026-11-24",
+    "tag": "Emulator",
+    "title": "PS5SX2 2.60: RADV graphics driver, 10x resolution and Rock Band 4 guitars",
+    "summary": "PS5SX2 2.60 replaces its custom Vulkan driver with RADV (Mesa), gaining texture barriers, geometry shaders and GPU-side copies. The shelf UI is cleaned up, resolution goes up to 10x, and Rock Band 4 guitar peripherals are supported.",
+    "body": [
+      "PS5SX2 2.60 by Swordpdf switches the PS2 emulator’s graphics stack from ps5vk, a minimal Vulkan driver that lacked many GPU features PCSX2 uses, to RADV — Mesa’s full Vulkan driver for AMD GPUs, based on Mihawk-99’s PS5 port with additional fixes. RADV gives PS5SX2 texture barriers, geometry shaders, BC textures and GPU-side image copies that ps5vk could not provide. Custom patches reduce CPU spin-waits by switching to sleeps, record command lists on a separate thread, clear new GPU memory faster to cut hitches, and switch the TV between 60 Hz and 120 Hz depending on whether frame generation is active.",
+      "The shelf UI no longer leaves a lingering selection box or flashes it as a solid block when backing out, and the game list clears properly during game loads. Resolution now goes up to 10x (roughly 6K). Rock Band 4 guitars — PDP Riffmaster, CRKD Gibson SG, Mad Catz Stratocaster and PDP Jaguar — are recognised with frets, strum, whammy and tilt-based star power. Shadow Hearts no longer hangs. PS5SX2 no longer bundles OpenPS2BIOS; a BIOS dumped from your own PS2 is required. Requires a jailbroken PS5 with elfldr."
+    ],
+    "sources": [
+      {
+        "name": "PS5SX2 2.60 release",
+        "url": "https://github.com/Swordpdf/PS5SX2/releases/tag/vk-285-329"
+      }
+    ]
+  },
+  {
+    "id": "regaliant-v011-zar-controllers-dpi",
+    "date": "2026-11-24",
+    "tag": "PC & Linux",
+    "title": "Regaliant v0.1.1: .zar compression, PlayStation controllers and RTX 50-series fix",
+    "summary": "Regaliant v0.1.1 lets Demon’s Souls run from a compressed .zar archive (54 GB vs 82 GB), adds native DualSense and DUALSHOCK 4 support without Steam Input, and fixes black rendering on RTX 50-series GPUs.",
+    "body": [
+      "Regaliant v0.1.1 by SulphurS16 adds .zar archive support to the unofficial Demon’s Souls PC port. The game can now run from a single compressed .zar file that is about two thirds the size of the full game folder (54 GB instead of 82 GB in testing). The launcher’s Game page offers “Compress to .zar…” to build an archive from the game folder and “.zar file…” to choose an existing one. Load times and frame rate from the archive match or beat the uncompressed folder.",
+      "PlayStation controllers — DualSense, DualSense Edge and DUALSHOCK 4 over USB or Bluetooth — now work directly without Steam Input, with the game’s own PlayStation button prompts, vibration and light bar. All connected controllers play together as a single pad. Display scaling above 100% on Windows (such as 175% at 4K) no longer causes the picture to cover only the top-left of the window. Every compute shader now uses its portable form, fixing black tunnels reported on RTX 50-series GPUs where faster shader variants had only been verified on RTX 40-series hardware."
+    ],
+    "sources": [
+      {
+        "name": "Regaliant v0.1.1 release",
+        "url": "https://github.com/SulphurS16/Regaliant/releases/tag/v0.1.1"
+      }
+    ]
+  },
+  {
+    "id": "eglantine-ps5-v1000004",
+    "date": "2026-11-24",
+    "tag": "Emulator",
+    "title": "EglantinePS5 v1.000.004: new pre-release of the Switch 2 emulator for PS5",
+    "summary": "EglantinePS5 v1.000.004 is a new pre-release build of the unofficial Eden/Eglantine Switch 2 emulator port for jailbroken PS5. Detailed release notes have not been published.",
+    "body": [
+      "EglantinePS5 v1.000.004 by heydemoura is the latest pre-release of the unofficial PS5 port of Eglantine, a Switch 2-capable fork of the Eden emulator. The build follows v1.000.003, which brought Zelda: Ocarina of Time performance improvements, Fire Emblem booting and a 250 MiB memory reduction. Specific changes in v1.000.004 have not been detailed in the release notes.",
+      "EglantinePS5 runs on the PS5’s Vulkan stack via RADV (Mihawk’s Mesa driver) and supports video, audio, controller input and saves. Local-wireless multiplayer through Eden rooms is experimental. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "EglantinePS5 v1.000.004 release",
+        "url": "https://github.com/heydemoura/EglantinePS5/releases/tag/v1.000.004"
+      }
+    ]
+  },
+  {
+    "id": "unimount-v014-store-mount-fix",
+    "date": "2026-11-24",
+    "tag": "Tool",
+    "title": "UniMount v0.1.4: fixes packages from store apps ending up installed instead of mounted",
+    "summary": "UniMount v0.1.4 fixes PS5 packages downloaded by a store app such as Orbit Store being installed rather than mounted, and adds a diagnosis for the CE-109297-8 error that follows.",
+    "body": [
+      "UniMount v0.1.4 by leobbaroni fixes a bug where PS5 debug packages downloaded through a store app (such as Orbit Store) were never mounted by UniMount because the store app itself counted as a running app, triggering UniMount’s wait logic. The automatic mount now only pauses while a game is starting or closing, and never rebuilds the title that is already running. On v0.1.3, a package downloaded through Orbit Store would sit unmounted until the user installed it through the store’s own Install button, causing every subsequent launch to fail with CE-109297-8.",
+      "A new diagnostic in the game’s Diagnostics screen now shows “Installed debug package” with recovery steps instead of “unknown” when this error is detected. If a game is already in this state, the fix involves moving app.pkg to /data/homebrew/ with a file manager, then removing and re-adding it through UniMount’s Library. Install or update through PS5 Payload Manager with the repository URL in the release notes. Requires a jailbroken PS5 with etaHEN or equivalent."
+    ],
+    "sources": [
+      {
+        "name": "UniMount v0.1.4 release",
+        "url": "https://github.com/leobbaroni/ps5-unimount/releases/tag/v0.1.4"
+      }
+    ]
+  },
+  {
     "id": "rpcs3-recompiler-v04-vulkan-audio-title-prep",
     "date": "2026-11-23",
     "tag": "Emulator",
