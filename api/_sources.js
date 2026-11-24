@@ -118,6 +118,7 @@ export const SOURCES = [
   { cat: T, repo: 'MasterShivnath007/nimbus-ps5', name: 'Nimbus', about: 'Live Earth viewer with weather, flights and satellites' },
   { cat: T, repo: 'slashbot28/Kinect-driver-for-PS5', name: 'Kinect Driver', about: 'Xbox 360 Kinect v1 USB driver and hand tracking bridge' },
   { cat: T, repo: 'slashbot28/Buzz-USB-drivers-for-PS5', name: 'Buzz! USB Drivers', about: 'Sony Buzz quiz controller driver and LED bridge' },
+  { cat: T, repo: 'Edigax/PS5Rec', name: 'PS5Rec', about: 'Native screen and audio recorder with web dashboard' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },

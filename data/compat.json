@@ -987,6 +987,13 @@
         "ShadowMountPlus"
       ],
       "note": "Early, PS5 Pro untested; memory and frame rate issues in crowded areas."
+    },
+    "Edigax/PS5Rec": {
+      "range": [
+        "3.20",
+        "13.60"
+      ],
+      "note": "Single ELF payload; resolution depends on display and firmware."
     }
   },
   "unstated": [

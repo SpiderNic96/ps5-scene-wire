@@ -1,5 +1,56 @@
 [
   {
+    "id": "kraken-mount-v032-auto-update-playden",
+    "date": "2026-11-24",
+    "tag": "Tool",
+    "title": "Kraken Mount v0.3.2: in-app updates, Playden support and crash reports",
+    "summary": "Kraken Mount v0.3.2 adds self-updating from the web UI, Playden integration for hiding and excluding titles, library search, and game crash logging with one-click issue reports.",
+    "body": [
+      "Kraken Mount v0.3.2 by quer3q adds in-app updates: at start the payload checks GitHub for a newer release and the web UI offers an Update button, which downloads the new ELF and starts it through elfldr (not while a game is running). The release also ships a payloads.json for ps5-payload-manager, so you can install and update Kraken Mount from there. Playden support lets folders be excluded from scanning, titles can be removed from the home screen while keeping the folder, /api/state shows each title's status, and a per-game switch turns the overlay off for folder-based games. The API follows ShadowMount+'s /api/v1 on port 8097.",
+      "The library gains search by name or title ID, a Play button in the game sheet, and compact drive chips that filter the grid by drive. A crash report feature logs each game crash with its timestamp and process, and the game sheet shows the last crash with a Report button that copies the text for a GitHub issue. Apps that start a second ELF on exit now work from a pkg, and closing a game no longer hangs or powers the console off. System fonts are now visible to homebrew apps in /preinst/common/font. The FW 12+ tile registration issue is fixed, the web UI reconnects after rest mode, and ampr-emu-ng v0.5.1 is bundled. Send kraken-mount.elf once to elfldr (port 9021) to update."
+    ],
+    "sources": [
+      {
+        "name": "Kraken Mount v0.3.2 release",
+        "url": "https://github.com/quer3q/kraken-mount/releases/tag/v0.3.2"
+      }
+    ]
+  },
+  {
+    "id": "chiaki4ps5-v11-new-ui-4k",
+    "date": "2026-11-24",
+    "tag": "Media",
+    "title": "chiaki4ps5 v1.1: chiaki-ng look, 1440p/4K and decoder options",
+    "summary": "chiaki4ps5 v1.1 redesigns the interface to match chiaki-ng's dark theme, adds 1440p and 4K resolution (beta), offers multiple decoder modes, and auto-retries when a previous session lingers.",
+    "body": [
+      "chiaki4ps5 v1.1 by Valevixi overhauls the interface to match chiaki-ng's look: a dark theme with a blue accent, each profile displayed as a console row with PS5 art, and a toolbar with Add Profile, Console IP and Help. Adding and editing profiles, the on-screen keyboard, PIN linking, connecting and error dialogs are all redesigned in the chiaki-ng style. Resolution now goes up to 1440p and 4K (both marked beta), since PS5 Remote Play officially tops out at 1080p and the console may still send 1080p at higher settings.",
+      "A new Decoder option in the in-stream menu offers Low Latency (default), Fast and Fastest modes. Fast and Fastest decode frames side by side for more speed at the cost of a little extra delay. The app auto-retries when the console is finishing a previous session, eliminating the 'Remote Play is already in use' error. To update, download chiaki4ps5-v1.1.zip, close the app on the PS5, copy the PPSA48766 folder to /data/homebrew/ and refresh your homebrew loader. Profiles and settings carry over."
+    ],
+    "sources": [
+      {
+        "name": "chiaki4ps5 v1.1 release",
+        "url": "https://github.com/Valevixi/chiaki4ps5/releases/tag/chiaki4ps5-v1.1"
+      }
+    ]
+  },
+  {
+    "id": "ps5rec-native-screen-recorder",
+    "date": "2026-11-24",
+    "tag": "Tool",
+    "title": "PS5Rec: native PS5 screen and audio recorder with web dashboard",
+    "summary": "PS5Rec by Edigax is a new payload that records PS5 gameplay directly to MP4 with synchronized AAC audio, features a live web dashboard for streaming, recording and downloading clips — no capture card needed.",
+    "body": [
+      "PS5Rec by Edigax is a native PS5 payload that captures gameplay and screen output directly into MP4 files with synchronized 48 kHz stereo AAC-LC audio. It records hardware H.264 video and encodes audio in real time using VisualOn AAC-LC, muxing them together with minimp4. Recordings are saved to the console's internal storage at /data/pbs/recordings/. The payload supports 720p, 1080p, 1440p and 2160p capture depending on your display and firmware. It is compatible with PS5 firmware 3.20 through 13.60.",
+      "PS5Rec includes an embedded web dashboard accessible from any browser on port 9999 (falls back to 10000 if busy). The dashboard provides a live low-latency screen preview, one-click start/stop recording, real-time frame and bitrate stats, an in-browser video player for recorded clips, and direct download of MP4 files. Built on the PBS-Payload screen-capture research by Seregonwar. Send ps5rec.elf to your PS5's ELF loader (port 9020 or 9021) to run it. Single binary, no external tools required."
+    ],
+    "sources": [
+      {
+        "name": "PS5Rec on GitHub",
+        "url": "https://github.com/Edigax/PS5Rec"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v12626-cheats-remote-play",
     "date": "2026-11-24",
     "tag": "Tool",
