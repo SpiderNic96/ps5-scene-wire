@@ -1,5 +1,128 @@
 [
   {
+    "id": "playden-v0120-beta5-opengl-uncharted",
+    "date": "2026-11-25",
+    "tag": "PC & Linux",
+    "title": "Playden v0.12.0-beta.5: OpenGL games, Uncharted starts, and post-launch controllers",
+    "summary": "Beta 5 adds OpenGL game recognition for Ren'Py, MonoGame, ScummVM and Godot titles, ships runtime kit 0.36 with AMD GPU Services so Uncharted: Legacy of Thieves Collection starts, and lets controllers connect after a game launches.",
+    "body": [
+      "Playden v0.12.0-beta.5 recognises games that draw with OpenGL and starts them on the OpenGL renderer: Ren'Py visual novels, MonoGame games such as Stardew Valley, packaged ScummVM games such as Myst: Masterpiece Edition, and Godot games made with the Compatibility renderer all now launch correctly. Unreal Engine 3 games no longer mistakenly start their Lightmass tool instead of the game, and Left 4 Dead 2 downloads its Steam Workshop add-ons. The new runtime kit 0.36 includes a built-in AMD GPU Services library, which lets Uncharted: Legacy of Thieves Collection start, and supports controllers that connect after a game has already launched.",
+      "Beta 5 also installs Visual C++ MFC and PhysX redistributables from Steam's own depots, helping more older games find the libraries they need. The home screen now lands on the game you played last. This is a beta of alpha software — new bugs are possible. Playden runs PC and Linux games on a jailbroken PS5 through Proton and Wine."
+    ],
+    "sources": [
+      {
+        "name": "Playden v0.12.0-beta.5 release",
+        "url": "https://github.com/leolobato/playden-ps5/releases/tag/v0.12.0-beta.5"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v12627-ps4-addon-title-id",
+    "date": "2026-11-25",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.27: PS4 add-ons with different title IDs, readable file names on mobile",
+    "summary": "PS4 add-ons now install even when their title ID differs from the game's, long file names wrap properly on phone screens, and Remote Play disconnect messages are explained in plain words.",
+    "body": [
+      "PS5 Upload v12.6.27 fixes a long-standing issue where PS4 add-ons with a different title ID from the game (such as Dead or Alive 5 Last Round, whose add-ons use CUSA01601 while the game is CUSA01778) were refused with \"the base game is not on this PS5\". The app no longer checks add-ons for a matching base game — the PS5 itself decides whether to install them. Updates are still validated. On narrow screens, long file and folder names now wrap onto up to three lines with the type and size below, instead of being truncated.",
+      "When Remote Play ends because something else took over — a controller was used at the console, another device started streaming, or the PS5 was turned off — the app now explains the reason in plain words and tells you to press Start to resume. Server connection edits made during sign-in now take effect immediately. Available on Windows, Mac, Linux, Android and iOS."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.27 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.27"
+      }
+    ]
+  },
+  {
+    "id": "ps5sx2-v261-performance",
+    "date": "2026-11-25",
+    "tag": "Emulator",
+    "title": "PS5SX2 2.61: performance improvements",
+    "summary": "PS5SX2 2.61 (build vk-285-345) brings performance improvements to the PS2 emulator for jailbroken PS5.",
+    "body": [
+      "PS5SX2 2.61 (build vk-285-345) delivers performance improvements to the PS2 emulator running on jailbroken PS5 consoles. The release follows the major 2.60 update that introduced the RADV graphics driver, 10x resolution scaling and Rock Band 4 guitar controller support.",
+      "Download PS5SX2-vk-285-345.zip and use the built-in installer or System Update feature within the app. The installer ELF (v1.5) and disc helper are unchanged from previous releases. Requires a jailbroken PS5 with etaHEN or a compatible loader."
+    ],
+    "sources": [
+      {
+        "name": "PS5SX2 2.61 release",
+        "url": "https://github.com/Swordpdf/PS5SX2/releases/tag/vk-285-345"
+      }
+    ]
+  },
+  {
+    "id": "regaliant-v015-dlss-startup-fix",
+    "date": "2026-11-25",
+    "tag": "PC & Linux",
+    "title": "Regaliant v0.1.5: DLSS startup crash fixed, shader fault recovery",
+    "summary": "Regaliant v0.1.5 fixes crashes caused by custom DLSS libraries and adds recovery when a graphics driver crashes during shader compilation.",
+    "body": [
+      "Regaliant v0.1.5 fixes a crash that prevented the game from starting for players who placed their own DLSS file (nvngx_dlss.dll) in the upscalers folder with an incompatible version. DLSS is now tested in a short pre-check before the game loads; if the check fails, the game starts without DLSS and the log explains why. On PCs without an NVIDIA driver, DLSS is not loaded at all. The check runs again automatically whenever the DLSS files or Regaliant itself changes.",
+      "When a graphics driver crashes while compiling one of the game's shaders, the fault is now caught and handled instead of ending the game. Regaliant is an early unofficial PC port of Demon's Souls (PS5) that runs the game's own program from your copy of the game files. Nothing of the game is included."
+    ],
+    "sources": [
+      {
+        "name": "Regaliant v0.1.5 release",
+        "url": "https://github.com/SulphurS16/Regaliant/releases/tag/v0.1.5"
+      }
+    ]
+  },
+  {
+    "id": "grapnel-v022-extension-disk-file-validation",
+    "date": "2026-11-25",
+    "tag": "Port",
+    "title": "Grapnel v0.2.1–0.2.2: extension disk install, compressed shaders, file validation fix",
+    "summary": "Grapnel 0.2.1 adds PS5 extension disk installation and compressed shader caching for longer play sessions, while 0.2.2 fixes game file validation for dumps whose update sits under the base title.",
+    "body": [
+      "Grapnel v0.2.1 lets you install Ocarina of Time on the PS5's extension disk (/mnt/ext1) alongside the internal storage, with the builder handling the placement automatically. It requires ShadowMountPlus 1.7beta4 or newer. Shader caching has been reworked to keep shaders compressed in memory, freeing about 290 MB — a tester reported sessions running 36 minutes straight, up from about 25 before. The Windows shader preparation is more resilient to memory faults, and a new Linux command-line toolchain (0.3.1) is included.",
+      "Grapnel v0.2.2 fixes a file validation issue where some game dumps were rejected at step 1 with \"not the right game or version\", even though they contained the correct update (v131072). The problem affected dumps that store the update under the base game's title ID (0400486024DEC000) rather than the update's own ID. Both releases use the same Linux toolchain. Build your PS5 title from your own Ocarina of Time Switch dump using the Windows GUI or Linux CLI — no game files are included."
+    ],
+    "sources": [
+      {
+        "name": "Grapnel v0.2.2 release",
+        "url": "https://github.com/morpheus302/PS5_Grapnel/releases/tag/v0.2.2"
+      },
+      {
+        "name": "Grapnel v0.2.1 release",
+        "url": "https://github.com/morpheus302/PS5_Grapnel/releases/tag/v0.2.1"
+      }
+    ]
+  },
+  {
+    "id": "longshot-oberon-v110-sprint-menu-fix",
+    "date": "2026-11-25",
+    "tag": "Port",
+    "title": "Longshot Oberon v1.1.0: L3 sprint, menu reload fix, water reflection fix",
+    "summary": "Longshot Oberon v1.1.0 adds the game's built-in sprint on L3, fixes a bug where closing menus reloaded the world, and stops water reflections from flashing in long sessions.",
+    "body": [
+      "Longshot Oberon v1.1.0 adds sprint on L3 — the game's own fast run, toggled with a single press — ported from upstream Longshot. Closing the item, map or quest-log menus no longer reloads the entire world, and a save stuck at night after the first adult night now runs its clock again. Water reflections no longer flash during long play sessions thanks to a fixed light cap.",
+      "Performance is improved through faster mutex lookups on the game's threads and a re-recorded renderer profile (PGO) on the current code. Build changes let a moved build folder keep its compiled files. Longshot Oberon recompiles Ocarina of Time (Switch 2, v131072) to run natively on the base PS5 as title PPSA93339. You need your own game dump, a 64-bit Linux PC or Windows with WSL2, and a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "Longshot Oberon v1.1.0 release",
+        "url": "https://github.com/rimidalv333/longshot-oberon/releases/tag/v1.1.0"
+      }
+    ]
+  },
+  {
+    "id": "perfect-eye-v140-controller-speaker-rumble",
+    "date": "2026-11-25",
+    "tag": "Port",
+    "title": "Perfect Eye v1.4.0: DualSense speaker sounds, per-gun rumble, in-app updates from 1.2.0+",
+    "summary": "Perfect Eye v1.4.0 plays sound effects through the DualSense speaker, adds per-weapon rumble patterns, fades between screens, and can self-update from any version 1.2.0 or later.",
+    "body": [
+      "Perfect Eye v1.4.0 uses the DualSense controller's speaker for in-game sound effects: a tick when you check GoldenEye's watch, a chime on item pickups, a clack on reloads, and a click when firing an empty gun (toggle via PS5 Settings). Each weapon now has its own rumble pattern — shotguns and launchers kick hard, the Magnum gives a sharp jolt, and automatics buzz while firing. Explosions rumble harder the closer they are. Screen transitions now fade to black instead of cutting, and the first-start conversion screen shows a wider progress bar with a time estimate.",
+      "From version 1.2.0 through 1.3.6, the in-app updater downloads and installs 1.4.0 automatically — start either tile and press Update Now when prompted. From 1.0.0 or 1.1.0, install manually via FTP. A missing or wrong ROM now shows an on-screen explanation instead of silently closing. Perfect Eye runs Perfect Dark and GoldenEye 007 as two native PS5 home screen tiles from your own N64 ROMs on a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "Perfect Eye v1.4.0 release",
+        "url": "https://github.com/thesmokesession-bit/perfect-eye/releases/tag/v1.4.0"
+      }
+    ]
+  },
+  {
     "id": "savage-wind-ps5-botw-recomp",
     "date": "2026-11-24",
     "tag": "Port",
