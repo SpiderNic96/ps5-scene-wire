@@ -1,5 +1,39 @@
 [
   {
+    "id": "maxpack-ps5-v101-security-update",
+    "date": "2026-11-26",
+    "tag": "Tool",
+    "title": "MaxPack v1.0.1: security update verifies ampr-emu-ng downloads by SHA-256",
+    "summary": "MaxPack for the console v1.0.1 hardens the ampr-emu-ng self-update path: the libSceAmpr.sprx library that every game loads is now installed only after its SHA-256 matches the hash published in the release's SHA256SUMS file.",
+    "body": [
+      "MaxPack for the console v1.0.1 by DeLFuS77 is a security-focused update. Every game launched through MaxPack loads a library called libSceAmpr.sprx (part of the ampr-emu-ng component). Until now the auto-update for that library only checked the file's size and that it was a valid module. Starting with v1.0.1, MaxPack also downloads the release's SHA256SUMS and installs the library only when its SHA-256 hash matches the one published there. Nothing is downloaded until the console's \"Check secure connections\" TLS test has passed.",
+      "To update, use the Update button in the MaxPack web UI or send the new maxpack.elf to the ELF loader on port 9021. Downloads can be verified with `gh attestation verify maxpack.elf -R DeLFuS77/maxpack-ps5`, which proves the binary was built by the repository's CI workflow from tag v1.0.1. Requires a jailbroken PS5 with elfldr."
+    ],
+    "sources": [
+      {
+        "name": "MaxPack v1.0.1 release",
+        "url": "https://github.com/DeLFuS77/maxpack-ps5/releases/tag/v1.0.1"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v12630-maintenance",
+    "date": "2026-11-26",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.30: maintenance build",
+    "summary": "PS5 Upload v12.6.30 is a quick follow-up to the v12.6.29 feature release. No changelog was published; the build appeared roughly three hours after v12.6.29.",
+    "body": [
+      "PS5 Upload v12.6.30 by phantomptr landed a few hours after the v12.6.29 release that removed the fPKG \"won't start\" warning and improved landscape layout on phones. The v12.6.30 tag carries no changelog, indicating a minor build or hotfix. Users who already updated to v12.6.29 can grab v12.6.30 from the GitHub releases page; the same platform packages are available for Windows, macOS, Linux, Android and iOS.",
+      "PS5 Upload is a cross-platform companion app that sends files, fake packages and saves to a jailbroken PS5 over the local network. It runs on Windows (x64 and ARM), macOS (Apple Silicon and Intel), Linux (x64 and ARM AppImage, .deb, .rpm), Android and iOS (unsigned IPA via AltStore or Sideloadly)."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.30 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.30"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v12628-v12629-fpkg-1360-saves",
     "date": "2026-11-25",
     "tag": "Tool",
