@@ -1,5 +1,77 @@
 [
   {
+    "id": "ps5upload-v12628-v12629-fpkg-1360-saves",
+    "date": "2026-11-25",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.28–v12.6.29: fPKG games now acknowledged up to 13.60, save and UI fixes",
+    "summary": "PS5 Upload drops its fPKG startup warning for firmware 11.61–13.60 after a November 2026 kstuff build added fake-package support to 13.60. The two releases also fix save handling, landscape phone layout and Play Together rendering.",
+    "body": [
+      "PS5 Upload v12.6.28 and v12.6.29 recognise that fake-package (fPKG) PS5 games now launch on firmware up to 13.60. According to the release notes, a kstuff build released in November 2026 extended fake-package support to that firmware. The app no longer warns that an installed fPKG game will not start on 11.61, 12.xx or 13.xx, and Convert once again suggests a package for PS5 games on 13.60. If a launch still fails on 11.61–13.60, the app now explains that the game needs the November 2026 kstuff and prompts the user to load it.",
+      "Other fixes across the two releases include a landscape phone layout that no longer cuts file names to nothing (rows now wrap the same way as portrait), a bug where using a received save deleted the file, and a failed backup zip no longer deleting the file chosen for replacement. Play Together now shows the full picture on Windows PCs that previously zoomed into the top-left corner. Save backup times are displayed in the device's local time zone, and EglantinePS5 Switch saves are now included in automatic backups. The cheats engine no longer writes the wrong byte count into the payload, and the PS5 helper avoids a crash when removing its temporary directory on exiting a game."
+    ],
+    "sources": [
+      {
+        "name": "v12.6.29 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.29"
+      },
+      {
+        "name": "v12.6.28 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.28"
+      }
+    ]
+  },
+  {
+    "id": "kraken-mount-v040-install-redesign",
+    "date": "2026-11-25",
+    "tag": "Tool",
+    "title": "Kraken Mount v0.4.0: install fPKG games to the console, redesigned UI and backports for installed games",
+    "summary": "Kraken Mount's biggest update adds direct fPKG game installation from the Library, shows natively installed games, applies backports to them, and ships a redesigned web UI with dark and light themes.",
+    "body": [
+      "Kraken Mount v0.4.0 adds an Install feature that lets you install an fPKG game directly to the PS5 from its game sheet in the Library. A new Install tab lists the patch and DLC .pkg files found in the scan roots, with a queue and results view. Games already installed on the console (from /user/app and extended storage) now appear in the Library as well. An installed copy takes priority over the same title's fPKG or folder, so a natively installed game no longer gets the pkg's ampr-emu-ng injected. With the ampr_installed setting off (the default), an installed game runs the system's own libSceAmpr.sprx.",
+      "Backports now apply to installed games too: placing libraries in backports/<TITLE_ID>* redirects them into the game's /app0 at each launch without touching the installation itself. A new Backports screen lists the backport folders, and Hidden lists hidden games with an Unhide button. The web UI has been redesigned with a collapsible sidebar, dark and light themes, three colour schemes (abyss, ember, moss) and a language selector. Title sound is now preserved after leaving a game, fixing an issue where the home-screen tile's background music dropped out. To update, use the Update button in the web UI or send kraken-mount.elf to elfldr on port 9021."
+    ],
+    "sources": [
+      {
+        "name": "Kraken Mount v0.4.0 release",
+        "url": "https://github.com/quer3q/kraken-mount/releases/tag/v0.4.0"
+      }
+    ]
+  },
+  {
+    "id": "regaliant-v016-shader-driver-fix",
+    "date": "2026-11-25",
+    "tag": "PC & Linux",
+    "title": "Regaliant v0.1.6: shader crash fix and dual-GPU selection for Demon's Souls PC port",
+    "summary": "The Demon's Souls (PS5) PC port fixes a shader compilation crash seen with NVIDIA driver 621.40, picks the correct GPU when Vulkan lists a card twice, and retries when another program holds needed memory.",
+    "body": [
+      "Regaliant v0.1.6 fixes a crash during shader preparation that showed as \"crashed (status 0x80000003)\" on NVIDIA's driver 621.40. The game runs under its own helper process, which the graphics driver counted as a debugger and broke on a debug break while compiling a shader. The helper now continues past these breaks, and if a shader still fails it is skipped for that step and the log names it. On PCs where Vulkan lists the same graphics card twice (for example through the Windows OpenCL/OpenGL/Vulkan Compatibility Pack), the game now selects the card's native driver instead of the compatibility entry that could fail with \"vkCreateDevice: Extension specified does not exist\".",
+      "When another program holds part of the memory the game needs (status 10), Regaliant now retries for a moment before giving up. If it still cannot start, a file in the logs folder names the process holding the memory, viewable from the launcher's Open Logs button. No CPU emulation is involved — the game's own x86-64 code runs directly on the processor. Regaliant requires your own decrypted copy of Demon's Souls (PS5, PPSA01341 01.007.000). The first launch prepares shaders in the background for about an hour on a fast PC."
+    ],
+    "sources": [
+      {
+        "name": "Regaliant v0.1.6 release",
+        "url": "https://github.com/SulphurS16/Regaliant/releases/tag/v0.1.6"
+      }
+    ]
+  },
+  {
+    "id": "ps5-xbox360-wireless-receiver",
+    "date": "2026-11-25",
+    "tag": "Tool",
+    "title": "PS5 Xbox 360 Wireless Receiver: use wireless Xbox 360 controllers and guitars on PS5",
+    "summary": "A new open-source ELF payload lets you plug a Microsoft Xbox 360 PC Wireless Gaming Receiver into a jailbroken PS5 and connect up to four wireless Xbox 360 controllers or Guitar Hero guitars.",
+    "body": [
+      "PS5-Xbox360-Wireless-Receiver is a new ELF payload that adds support for the Microsoft Xbox 360 PC Wireless Gaming Receiver (and third-party USB clones) on jailbroken PS5. It connects up to four wireless Xbox 360 controllers or guitars simultaneously, mapping their inputs to PS5 button equivalents through PoorDS4's libScePad bridge. The payload works with PS5X360 (Xbox 360 emulator), Porpoise/Dolphin (Wii and GameCube emulator) and native PS5 games, and supports hot-plug, rumble forwarding and simultaneous DualSense use.",
+      "A separate Guitar Hero mode ELF (Xbox360Receiver-guitar.elf) remaps fret buttons to strum-gated inputs designed for playing Guitar Hero in gamepad-mode emulators like PS5X360, with built-in menu shortcuts so you do not need to switch back to the DualSense. Additional payloads print status and cleanly stop the background process. Send the .elf files to elfldr on port 9021. The project is built with ps5-payload-dev/sdk and licensed under GPL-3.0."
+    ],
+    "sources": [
+      {
+        "name": "PS5-Xbox360-Wireless-Receiver on GitHub",
+        "url": "https://github.com/slashbot28/PS5-Xbox360-Wireless-Receiver"
+      }
+    ]
+  },
+  {
     "id": "frequency-remaster-ps5-ps2-recomp",
     "date": "2026-11-25",
     "tag": "Port",

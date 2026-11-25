@@ -120,6 +120,7 @@ export const SOURCES = [
   { cat: T, repo: 'slashbot28/Buzz-USB-drivers-for-PS5', name: 'Buzz! USB Drivers', about: 'Sony Buzz quiz controller driver and LED bridge' },
   { cat: T, repo: 'Edigax/PS5Rec', name: 'PS5Rec', about: 'Native screen and audio recorder with web dashboard' },
   { cat: T, repo: 'DeLFuS77/maxpack-ps5', name: 'MaxPack', about: 'Mount, install and play compressed .p5z games' },
+  { cat: T, repo: 'slashbot28/PS5-Xbox360-Wireless-Receiver', name: 'Xbox 360 Wireless Receiver', about: 'Wireless Xbox 360 controller and guitar driver for PS5' },
 
   // Homebrew stores
   { cat: S, repo: 'blackbearreloaded/ProsperoStore', name: 'ProsperoStore', about: 'Store for the homebrew.page catalog' },
