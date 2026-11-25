@@ -254,4 +254,5 @@ export const SOURCES = [
   { cat: R, repo: 'waite1209rec/botw-recomp-ps5', name: 'Savage Wind PS5 (Breath of the Wild)', about: 'BotW Switch recomp for PS5, Vulkan RADV, bring your own dump' },
   { cat: R, repo: 'KongaTime/Tron-Evolution-PS5-Port', name: 'Tron: Evolution', about: 'Xbox 360 recomp, native Vulkan 60fps, bring your own disc' },
   { cat: R, repo: 'JJBurtenshaw/CannonBall-PS5', name: 'CannonBall (OutRun)', about: 'Enhanced OutRun engine port, 1080p 60fps, bring your own ROMs' },
+  { cat: R, repo: 'thesmokesession-bit/frequency-remaster', name: 'Frequency Remaster', about: 'FreQuency (PS2) recomp, 4K 120fps with online play, bring your own disc' },
 ];

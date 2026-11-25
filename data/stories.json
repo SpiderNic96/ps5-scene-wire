@@ -1,5 +1,47 @@
 [
   {
+    "id": "frequency-remaster-ps5-ps2-recomp",
+    "date": "2026-11-25",
+    "tag": "Port",
+    "title": "Frequency Remaster: FreQuency (PS2) rebuilt natively for PS5 with 4K, online play and DualSense",
+    "summary": "The 2001 Harmonix rhythm game FreQuency has been reconstructed from the resonance decompilation and compiled natively for PS5 and Linux — 4K at 120 fps, 5.1 spatial sound, free online multiplayer, practice mode, and signed automatic updates.",
+    "body": [
+      "Frequency Remaster takes the C/C++ code produced by the resonance project's reconstruction of FreQuency (PS2, 2001) and compiles it natively for x86-64 on PS5 and Linux. The two custom PS2 chips the game used for graphics and audio are recreated with code from the Play! emulator and drawn through Vulkan on the PS5. The result runs at 4K resolution (up to 6× the PS2's native output) at 120 fps on a 120 Hz TV, with 16:9 widescreen, 16× anisotropic filtering, 8-bit colour, and optional FXAA, bloom and CRT filters. Audio is 5.1 surround with a spatial mix that plays each instrument from its position in the tunnel.",
+      "The game supports DualSense features including light bar colours synced to the beat, adaptive-trigger clicks and beat rumble. Free online play for up to four players uses a three-word room code with no account required, and local multiplayer supports four controllers. A practice mode adds slow-down, bar loops, no-fail and a watch mode. Two hidden on-disc songs are now playable, and there are replays, 25 achievements and a friends scoreboard. Signed automatic updates are built in. You need your own copy of FreQuency (USA). Tested on firmware 13.60 with etaHEN."
+    ],
+    "sources": [
+      {
+        "name": "Frequency Remaster on GitHub",
+        "url": "https://github.com/thesmokesession-bit/frequency-remaster"
+      },
+      {
+        "name": "Latest release",
+        "url": "https://github.com/thesmokesession-bit/frequency-remaster/releases/tag/frequency-ps5-2026-11-24"
+      }
+    ]
+  },
+  {
+    "id": "grapnel-v023-v024-shader-compat",
+    "date": "2026-11-25",
+    "tag": "Port",
+    "title": "Grapnel v0.2.3–v0.2.4: shader preparation works on low-memory and older PCs",
+    "summary": "The Ocarina of Time builder now finishes shader preparation on PCs with little free memory and on older processors (pre-Skylake Intel, pre-Ryzen AMD), and rejects compressed game dumps immediately instead of after an hour of building.",
+    "body": [
+      "Grapnel v0.2.3 fixes the shader preparation step failing on PCs with less than about 5 GB of free memory. The builder previously used the console's memory rules, which restart a stalled compile — useless on a PC. It now lets programs wait for others to finish and adjusts the number of parallel compiles to the memory available, using the Windows page file for the rest. On a test PC with 3.5 GB available the preparation took about an hour instead of 15 minutes, but produced the same shader cache. The builder also now rejects game dumps with compressed files at step 1 instead of building for an hour before the console fails to read them.",
+      "Grapnel v0.2.4 fixes a crash in the shader preparation on older processors — Intel before 6th generation (Skylake) and AMD before Ryzen — where the driver used an instruction (CLFLUSHOPT) those CPUs do not support. The PC driver now uses CLFLUSH, which every x86-64 processor has, with no performance penalty. The builder window and dialogs now show the version in their titles. Both updates use the same 57,210-key shader cache as before. Requires a jailbroken PS5; the Grapnel builder runs on Windows and Linux."
+    ],
+    "sources": [
+      {
+        "name": "Grapnel v0.2.4 release",
+        "url": "https://github.com/morpheus302/PS5_Grapnel/releases/tag/v0.2.4"
+      },
+      {
+        "name": "Grapnel v0.2.3 release",
+        "url": "https://github.com/morpheus302/PS5_Grapnel/releases/tag/v0.2.3"
+      }
+    ]
+  },
+  {
     "id": "playden-v0120-beta5-opengl-uncharted",
     "date": "2026-11-25",
     "tag": "PC & Linux",
