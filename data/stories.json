@@ -1,5 +1,94 @@
 [
   {
+    "id": "outrunners-ps5-arcade-port",
+    "date": "2026-11-25",
+    "tag": "Port",
+    "title": "OutRunners PS5: Sega's 1993 arcade racer ported natively to PS5",
+    "summary": "A native PS5 port of Sega's 1993 arcade racing game OutRunners — DualSense controls, local two-player, persistent settings and automatic ROM extraction — from the developer of the CannonBall OutRun port.",
+    "body": [
+      "OutRunners-PS5 v1.0.0 by JJBurtenshaw is a native PS5 port of Sega's 1993 arcade racing game OutRunners, based on the decompilation and native port by Sebastian Toyos. It runs with optimized software rendering and framebuffer output, with DualSense analog controls mapping steering, acceleration and braking to the sticks and triggers. The port supports local two-player, in-game options, vibration, an FPS display toggle and persistent settings that save between sessions. On first launch the app extracts and prepares the game assets from the ROM automatically.",
+      "To install, download OutRunners-PS5-v1.0.0.zip and copy the PPSA98538 folder to /data/homebrew/ on your PS5. Place your own legally obtained OutRunners World ROM set (orunners.zip) alongside eboot.bin. Refresh your ShadowMountPlus mounts and launch from the PS5 dashboard. The release has been tested on physical PS5 hardware. Network multiplayer has not been qualified on PS5 and cross-firmware compatibility has not been established."
+    ],
+    "sources": [
+      {
+        "name": "OutRunners-PS5 on GitHub",
+        "url": "https://github.com/JJBurtenshaw/OutRunners-PS5"
+      },
+      {
+        "name": "v1.0.0 release",
+        "url": "https://github.com/JJBurtenshaw/OutRunners-PS5/releases/tag/v1.0.0"
+      }
+    ]
+  },
+  {
+    "id": "longshot-oberon-v120-pipeline-performance",
+    "date": "2026-11-25",
+    "tag": "Port",
+    "title": "Longshot Oberon v1.2.0: no more glowing pop-in, 2-3× faster first start and premade profiles",
+    "summary": "The Ocarina of Time recomp ships a prebuilt pipeline list that eliminates first-time shader pop-in, cuts the initial build from ~2 h 50 min to ~1 h 25 min on a base PS5, and adds ten ready-made settings profiles.",
+    "body": [
+      "Longshot Oberon v1.2.0 ships a prebuilt pipeline list — Longshot's own tour of every map, actor and cutscene plus 126 player-contributed lists — so the first start builds all pipelines before the title screen. The bright-white pop-in that previously showed Link's house, Kaepora, Ganondorf's horse and other scenes loading for the first time is eliminated, reducing per-frame missed draws from up to 990 to zero. The first build is 2-3× faster on a base PS5 (about 1 hour 25 minutes, down from 2 hours 50 minutes without the list), thanks to batched writes, 12 worker threads and disabling the driver's disk cache during preparation.",
+      "Ten premade profiles are included for handheld, docked 1080p and 1440p setups, with or without FSR upscaling and frame generation, ranging from a safe handheld 30 fps to a risky native 1440p configuration. Copy the desired settings file as longshot_env.txt into the title folder. Other fixes include eliminating the light flash on area transitions (the reflection cube is now redrawn fully after a load) and cutting pipeline-cache memory from 454 MB to 107 MB with a new pack format."
+    ],
+    "sources": [
+      {
+        "name": "Longshot Oberon v1.2.0 release",
+        "url": "https://github.com/rimidalv333/longshot-oberon/releases/tag/v1.2.0"
+      }
+    ]
+  },
+  {
+    "id": "regaliant-v017-ultrawide-dlss-driver-crash-fix",
+    "date": "2026-11-25",
+    "tag": "PC & Linux",
+    "title": "Regaliant v0.1.7: fixes 21:9/32:9 crash and DLSS/FSR/XeSS after restart",
+    "summary": "The Demon's Souls PC port fixes a crash with ultrawide aspect ratios and Cinematic mode, fixes upscalers not working after a game restart, and fixes a graphics driver crash seconds after DLSS started.",
+    "body": [
+      "Regaliant v0.1.7 fixes a crash that occurred with 21:9 or 32:9 aspect ratios in Cinematic visual mode — and persisted on every subsequent start (issue #20). At widths wider than 16:9 the game now renders at most 1,512 lines to stay within render-target bounds. DLSS, FSR and XeSS no longer stop working after restarting the game: the Anti-Aliasing setting was showing the upscaler name but the game fell back to its own TAA. The chosen upscaler now takes over as soon as it is ready.",
+      "A graphics driver crash that appeared a few seconds after DLSS started has been fixed (the game gave the upscaler the wrong command buffer when combining two batches of work). This likely also fixes the game closing without a message when FSR was enabled (issue #5). Shader preparation now always uses the game's own TAA regardless of the saved upscaler setting. Motion Blur Fix choices have been renamed from On/Off to No Blur, Reduced Blur and Game's Blur, since \"Off\" actually enabled the game's full motion blur. Requires your own decrypted copy of Demon's Souls (PS5, PPSA01341 01.007.000)."
+    ],
+    "sources": [
+      {
+        "name": "Regaliant v0.1.7 release",
+        "url": "https://github.com/SulphurS16/Regaliant/releases/tag/v0.1.7"
+      }
+    ]
+  },
+  {
+    "id": "grapnel-v025-compressed-dumps-corruption-check",
+    "date": "2026-11-25",
+    "tag": "Port",
+    "title": "Grapnel v0.2.5: compressed dumps and corrupted file detection for Ocarina of Time",
+    "summary": "The Grapnel builder now handles compressed game dumps that previously caused an instant crash on the PS5, and scans every file for corruption before building.",
+    "body": [
+      "Grapnel v0.2.5 adds support for compressed dumps. Some dump tools store about 40,588 of the game's files in a compressed format the PS5 cannot read, causing the game to crash with CE-108255-1 as soon as Play was pressed. The builder now detects this, checks available disk space, and creates a normal copy of the game file on the PC (about 25.3 GB, a few minutes on an SSD). The copy is read back and verified file by file. The original dump is not modified.",
+      "A new corruption check at step 1 compares every file in the dump against known-good checksums (under a second, nothing re-read; the builder carries only file names and checksums, no game content). Corrupted files are listed with what they are — texture, terrain, voice, setting — and what can happen where the game uses them. Users can continue the build despite corruption; the fix is a fresh dump. Download the Windows builder from the GitHub release; Linux users use the unchanged grapnel-toolchain-0.3.3."
+    ],
+    "sources": [
+      {
+        "name": "Grapnel v0.2.5 release",
+        "url": "https://github.com/morpheus302/PS5_Grapnel/releases/tag/v0.2.5"
+      }
+    ]
+  },
+  {
+    "id": "linux-flasher-v165-cachyos-preset",
+    "date": "2026-11-25",
+    "tag": "PC & Linux",
+    "title": "Linux Flasher v1.6.5: PS5-CachyOS 7.3.5 image update (2026-11-25)",
+    "summary": "Linux Flasher v1.6.5 ships an updated PS5-CachyOS preset at version 7.3.5 built from the 2026-11-25 image.",
+    "body": [
+      "Linux Flasher v1.6.5 by abrocoma updates the bundled PS5-CachyOS preset to version 7.3.5, now built from the 2026-11-25 image. Linux Flasher lets you download and flash a Linux image to a USB drive entirely from the PS5 browser — no PC required. The image is verified against its SHA-256 checksum, writes are streamed, and every byte is read back and compared after flashing.",
+      "To use it, place Linux_Flasher.elf on your payload USB drive and load it like any other payload on a jailbroken PS5. After flashing, a home screen tile under Media lets you relaunch without the browser. Source code and builds are on GitHub under GPL-3.0."
+    ],
+    "sources": [
+      {
+        "name": "Linux Flasher v1.6.5 release",
+        "url": "https://github.com/abrocoma/PS5-Linux-Flasher/releases/tag/v1.6.5"
+      }
+    ]
+  },
+  {
     "id": "maxpack-ps5-v101-security-update",
     "date": "2026-11-26",
     "tag": "Tool",
