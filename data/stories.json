@@ -1,5 +1,56 @@
 [
   {
+    "id": "ps5upload-v12631-rename-stream-unpack",
+    "date": "2026-11-26",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.31: rename packages before install, stream fix and in-place unpack",
+    "summary": "PS5 Upload v12.6.31 lets you rename a fake package before installing it, fixes stream-and-install stalling at 0%, and can free archive space while unpacking when disk space is tight.",
+    "body": [
+      "PS5 Upload v12.6.31 by phantomptr adds the ability to rename a fake package before installing it. Select a package and edit its Name on the PS5 field — the name is changed inside the package in place, without rebuilding it, and verified afterwards. Packages signed by Sony, split packages and packages on a server are refused. Stream-and-install no longer sits at 0% in silence: before it starts the app checks that the PS5 can reach the computer, and if it cannot — or the console never fetches any of the package — the install stops with the likely cause (most often the computer's firewall) and offers Retry via upload.",
+      "A new dangerous option can free an archive's disk space while it unpacks, for drives that do not have room for both the archive and the unpacked game at once. A .zip is freed file by file, a .7z block by block, and a multi-part .rar part by part; other archives are deleted once unpacked and checked. The archive is permanently deleted, so if anything fails you keep only what was unpacked so far. The Convert page on the PS5 now also has the unpack options, and .pkg files are labelled as FPKG (fake packages). Available on Windows, Mac, Linux and Android."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.31 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.31"
+      }
+    ]
+  },
+  {
+    "id": "totk-ps5-recomp-native-port",
+    "date": "2026-11-26",
+    "tag": "Port",
+    "title": "TOTK PS5 Recomp: native Tears of the Kingdom port with FSR 3.1, trophies and mod browser",
+    "summary": "A native PS5 port of The Legend of Zelda: Tears of the Kingdom using static recompilation, with AMD FSR 3.1.5 frame generation, 38 PS5 trophies, DualSense controls and a built-in GameBanana mod browser.",
+    "body": [
+      "TOTK PS5 Recomp by Cloudiny is a native PlayStation 5 port of The Legend of Zelda: Tears of the Kingdom (v1.4.3) built via static AArch64-to-x86_64 recompilation with direct Vulkan rendering on Mesa RADV. It runs at 1440p or 1080p at up to 120 Hz with AMD FSR 3.1.5 frame generation using per-object motion vectors, delivering 45–60 FPS at 1440p 120 Hz on a base PS5. The port includes native DualSense controls with PlayStation button prompts, 38 native PS5 trophies (17 Bronze, 12 Silver, 8 Gold, 1 Platinum), automatic per-user save isolation, native VP9 cutscene decoding and a built-in GameBanana mod browser for downloading and staging mods over FTP.",
+      "The project ships as an all-in-one bilingual (Spanish and English) Linux AppImage builder at around 153 MiB. You supply your own legally dumped copy of the game (.xci/.nsp plus prod.keys, or extracted exefs and romfs). The builder extracts, recompiles and deploys to PS5 over FTP with safe prefix enforcement. No proprietary game data is included in the repository. The project requires a jailbroken PS5 with Linux capabilities and has been benchmarked on firmware 13.40."
+    ],
+    "sources": [
+      {
+        "name": "totk-ps5-recomp on GitHub",
+        "url": "https://github.com/Cloudiny/totk-ps5-recomp"
+      }
+    ]
+  },
+  {
+    "id": "ps5-native-app-boilerplate-template",
+    "date": "2026-11-26",
+    "tag": "Tool",
+    "title": "PS5 Native App Boilerplate: C++20 template for building PS5 homebrew apps",
+    "summary": "A complete starter template for building native PS5 homebrew applications in C++20, with no proprietary SDK required, verified on firmware 6.02 and 12.70.",
+    "body": [
+      "PS5 Native App Boilerplate by BlackBearRevived is a GitHub template repository for building modern C++20 homebrew applications for PlayStation 5 from Linux, WSL or Windows. The template is a complete graphical Hello World skeleton: create a repository from it, edit src/main.cpp and build a deployable title. It uses LLVM for linking and includes a project-owned C++ converter that emits PS5 metadata and the development FSELF. The public SDK and static zlib are fetched on demand — no proprietary Sony SDK files or runtime modules are required. The runtime shim is source-reproducible and independently authored.",
+      "The template supports recursive read-only asset packaging, replaceable icons, 4K BC7 backgrounds and ATRAC9 selection audio. It includes an optional update checker against the homebrew.page catalogue and an optional sandbox elevation example using Lapy JB Daemon. A companion ps5-homebrew-ui repository provides an OpenGL-based UI kit with reusable components built on the same template. The project has been verified on firmware 6.02 and 12.70. It is licensed under GPL-3.0-or-later."
+    ],
+    "sources": [
+      {
+        "name": "ps5-native-app-boilerplate on GitHub",
+        "url": "https://github.com/BlackBearRevived/ps5-native-app-boilerplate"
+      }
+    ]
+  },
+  {
     "id": "grapnel-v026-avx2-clock-fix",
     "date": "2026-11-26",
     "tag": "Port",
