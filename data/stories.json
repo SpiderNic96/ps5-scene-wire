@@ -1,5 +1,39 @@
 [
   {
+    "id": "grapnel-v026-avx2-clock-fix",
+    "date": "2026-11-26",
+    "tag": "Port",
+    "title": "Grapnel v0.2.6: PCs without AVX2 can now build, adult night clock fix",
+    "summary": "The Ocarina of Time builder no longer requires AVX2 on the PC, so older Celeron and Pentium machines can prepare the game for PS5. A save stuck during the first adult night's time lock also works again.",
+    "body": [
+      "Grapnel v0.2.6 by morpheus302 removes the AVX2 processor requirement from the PC builder. Shader preparation previously needed AVX2 (available on most PCs since 2013–2015), and on older or low-end processors — some Celeron and Pentium models — the build stopped with exit code 3221225501. The builder now checks the processor at step 3: without AVX2 it defers shader preparation to the PS5 console itself, which handles it at first launch in about an hour. Step 6 also preserves the console's own shader cache across updates, fixing an issue where an update deleted the cache while the console still believed its shaders were ready.",
+      "A gameplay fix restores the clock during the first adult night in Hyrule Field. A save left outside the field during the time lock could never advance past 20:00, with the Sun's Song doing nothing. The game's flag is now cleared correctly (Longshot #2298). To update, unpack the new Windows builder into a new folder and keep your output folder. Linux users continue with grapnel-toolchain-0.3.3, unchanged since v0.2.4."
+    ],
+    "sources": [
+      {
+        "name": "Grapnel v0.2.6 release",
+        "url": "https://github.com/morpheus302/PS5_Grapnel/releases/tag/v0.2.6"
+      }
+    ]
+  },
+  {
+    "id": "emby5-v135-continue-watching-season-posters",
+    "date": "2026-11-26",
+    "tag": "Media",
+    "title": "Emby5 v1.3.5: Continue Watching on Home and season posters",
+    "summary": "Emby5 v1.3.5 fixes Continue Watching and Next Up rows on non-standard home screens and adds an optional poster-based season picker on show pages.",
+    "body": [
+      "Emby5 v1.3.5 by bornaradusin fixes Continue Watching and Next Up on home screens that use a non-standard layout. A home section that merges Continue Watching with Next Up, or one added by a server plugin, previously showed neither row in Emby5. The app now recognises such sections and displays Continue Watching there, followed by Next Up when the layout has no separate Next Up section.",
+      "A new option lets you browse a show's seasons by poster instead of name: each season is shown as a poster card (falling back to the show's poster when the season has none) with its name underneath. The feature is off by default — enable it under Settings › Playback › Show seasons as posters. Navigation, the Options menu and the episode list work the same as the name-based picker. Playback and video decoding are unchanged. To update, download Emby5-1.3.5.zip, extract the PPSA99515 folder and copy it into /data/homebrew/, merging and overwriting existing files."
+    ],
+    "sources": [
+      {
+        "name": "Emby5 v1.3.5 release",
+        "url": "https://github.com/bornaradusin/Emby5/releases/tag/1.3.5"
+      }
+    ]
+  },
+  {
     "id": "outrunners-ps5-arcade-port",
     "date": "2026-11-25",
     "tag": "Port",
