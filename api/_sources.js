@@ -136,6 +136,7 @@ export const SOURCES = [
   { cat: E, repo: 'premohq/PS5CEMU-HAR', name: 'PS5-ECAM', about: 'Switch, Wii U, 3DS and DS — Eden, Cemu and Azahar' },
   { cat: E, repo: 'mortaljinx/Seedee5', name: 'Seedee5', about: 'Philips CD-i, based on MAME SAME_CDI' },
   { cat: E, repo: 'BrinooTk/PS5X360', name: 'PS5X360', about: 'Xbox 360, based on Xenia' },
+  { cat: E, repo: 'ZiZc3/XPS360', name: 'XPS360', about: 'Xbox 360, based on Xenia Edge' },
   { cat: E, repo: 'ZiZc3/XPSemu', name: 'XPSemu', about: 'Original Xbox, based on xemu' },
   { cat: E, repo: 'mihawk-99/PS5_RetroArch', name: 'RetroArch', about: 'Multi-system, includes GBA' },
   { cat: E, repo: 'TheRealRetro/mupen64plus-ps5', name: 'mupen64plus', about: 'Nintendo 64' },

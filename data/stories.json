@@ -1,5 +1,73 @@
 [
   {
+    "id": "xps360-xbox-360-emulator-xenia-edge",
+    "date": "2026-11-26",
+    "tag": "Emulator",
+    "title": "XPS360: Xbox 360 emulator for PS5 built on Xenia Edge",
+    "summary": "ZiZc3 releases XPS360, a native PS5 app that runs Xbox 360 games by compiling their PowerPC code into PS5-native code via the Xenia Edge engine, with DualSense haptics, achievements and an Xbox 360 dashboard.",
+    "body": [
+      "XPS360 by ZiZc3 is a new Xbox 360 emulator for jailbroken PS5, built on the Xenia Edge engine. Unlike traditional emulation, XPS360 compiles each game's PowerPC code into native PS5 code and caches it, so from the second launch onward the game runs natively from its first frame. Graphics are rendered through Vulkan. The app includes three Xbox 360 home screen styles (Metro, NXE and Blades), box art with play time tracking, achievements presented as PS5 trophies or Xbox 360 pop-ups, an in-game Guide, and support for up to four profiles and four players.",
+      "Features include DualSense HD haptics and adaptive triggers, anti-aliasing options (FXAA, SMAA, CAS sharpening, FSR 1 upscaling), per-game patches for 60 FPS and widescreen, plus cheats, DLC and title update support. Requires a PS5 with kstuff running and ShadowMountPlus. Install by copying the PPSA93442 folder to /data/homebrew/ and placing games in /data/xps360/games/ or using the built-in Add Games option. Licensed under GPL-3.0."
+    ],
+    "sources": [
+      {
+        "name": "XPS360 on GitHub",
+        "url": "https://github.com/ZiZc3/XPS360"
+      }
+    ]
+  },
+  {
+    "id": "ps5-playtime-tracker-v130-co-op-update-check",
+    "date": "2026-11-26",
+    "tag": "Tool",
+    "title": "PS5 Playtime Tracker v1.3.0: local co-op tracking and update notifications",
+    "summary": "PS5 Playtime Tracker 1.3.0 tracks every signed-in profile during local co-op, stops counting background games as played, and shows in-app update notifications when a newer version is out.",
+    "body": [
+      "PS5 Playtime Tracker v1.3.0 by gowithme-club brings three improvements. When a newer release is available, the tile footer shows an \"Update to X.Y.Z\" link in green and a notification fires once per version. Games left loaded in the background (after returning to the home screen, switching games or switching users) are no longer counted as played — the payload now follows the system's own record of active play. Previously, a copy of the payload started after a user switch could credit the loaded game to the wrong user.",
+      "Local co-op tracking is now supported: every profile signed in on the console gets the game credited, each from the moment they joined, and \"playing now\" shows all of them. Before, only the profile that started the game received credit. To update, load the new ELF file; the console stays linked to your existing gowithme.club account. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Playtime Tracker v1.3.0 release",
+        "url": "https://github.com/gowithme-club/ps5-playtime-tracker/releases/tag/v1.3.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5-playtime-tracker-v120-tile-redesign",
+    "date": "2026-11-26",
+    "tag": "Tool",
+    "title": "PS5 Playtime Tracker v1.2.0: redesigned tile with per-profile stats and welcome screen",
+    "summary": "PS5 Playtime Tracker 1.2.0 adds a branded home screen tile background, a first-run welcome screen, per-profile stats on linked consoles, and Russian-language notifications.",
+    "body": [
+      "PS5 Playtime Tracker v1.2.0 by gowithme-club redesigns the home screen tile with a branded background showing the gowithme.club platforms, Telegram and Discord. A first-run welcome screen with an animated diagram explains what the service does, then leads into pairing. Once linked, the tile shows the gowithme.club profile of whoever is signed in on the console — hours, games and trophies — rather than always showing the console owner's stats. Each additional profile on the console can link separately via a code on the tile.",
+      "Notifications are reorganized with the news in the large line and context in the small one above it. Pressing PS on a notification opens the tile page. Russian-language notifications are shown when the console language is set to Russian. An unlinked console no longer repeats the pairing code every 10 seconds — instead, two reminders at startup and after two minutes direct users to the tile. To update, load the new ELF file; the console stays linked. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Playtime Tracker v1.2.0 release",
+        "url": "https://github.com/gowithme-club/ps5-playtime-tracker/releases/tag/v1.2.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5-mcp-v101-network-recovery",
+    "date": "2026-11-26",
+    "tag": "Tool",
+    "title": "ps5-mcp v1.0.1: recovers MCP listener after network reset",
+    "summary": "ps5-mcp 1.0.1 fixes a bug where the MCP server stopped accepting connections after the PS5's network link dropped and reconnected.",
+    "body": [
+      "ps5-mcp v1.0.1 by Gl0ttis fixes a bug that left the MCP listener dead after a network reset on the PS5. When the console's network connection dropped — whether from a cable unplug, Wi-Fi roam or router reboot — the MCP server did not re-bind its socket, so no MCP client could connect until the payload was reloaded. The listener now recovers automatically.",
+      "ps5-mcp turns a jailbroken PS5 into an MCP server that any MCP client on the same network (Claude Code, Claude Desktop, Cursor and others) can drive directly. Tools include virtual DualSense input, native 4K screenshot capture, process inspection, kernel-log filtering and the ability to launch or close titles and ELF payloads. Requires elfldr on a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "ps5-mcp v1.0.1 release",
+        "url": "https://github.com/Gl0ttis/ps5-mcp/releases/tag/v1.0.1"
+      }
+    ]
+  },
+  {
     "id": "regaliant-v018-4k-rendering-rtx50-fixes",
     "date": "2026-11-27",
     "tag": "PC & Linux",
