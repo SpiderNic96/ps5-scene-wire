@@ -1,5 +1,56 @@
 [
   {
+    "id": "regaliant-v018-4k-rendering-rtx50-fixes",
+    "date": "2026-11-27",
+    "tag": "PC & Linux",
+    "title": "Regaliant v0.1.8: fixes 4K rendering, RTX 50-series white specks and DLSS crashes",
+    "summary": "Regaliant 0.1.8 fixes washed-out ghosting at 4K Render Scale 100%, white specks on RTX 50-series GPUs, the character preview appearing in a corner when using non-16:9 or scaled resolutions, a memory leak on settings changes, and DLSS crashes on startup.",
+    "body": [
+      "Regaliant 0.1.8 is the latest build of the unofficial PC port of Demon's Souls (PS5). The headline fix addresses a washed-out, too-bright picture with ghosting and black blotches at Render Scale 100% on 4K screens — two of the game's render targets shared one compression block and Regaliant sometimes only cleared one. White specks in the sky on RTX 50-series cards are also fixed (the game's shader handling of invalid numbers differed from the console). The character preview in character creation and equipment menus now renders correctly at non-16:9 aspect ratios and custom render scales.",
+      "Additionally, changing Render Scale, Visual Mode or switching window/fullscreen no longer leaks up to ~1 GB of render images in VRAM, which caused increasing stuttering. DLSS crashes on startup are handled more gracefully — a failing DLSS file is skipped and the game falls back to its own TAA. A 'status 10' crash on PCs where Windows places thread stacks in the game's required memory range is also resolved. Requires your own copy of the PS5 game files. Available on GitHub."
+    ],
+    "sources": [
+      {
+        "name": "Regaliant v0.1.8 release",
+        "url": "https://github.com/SulphurS16/Regaliant/releases/tag/v0.1.8"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v12632-storage-saves-mesh-fixes",
+    "date": "2026-11-27",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.32: accurate free-space display, safer saves and Mesh Drive fixes",
+    "summary": "PS5 Upload 12.6.32 fixes free-space reporting across all screens, prevents save writes while a game is running, hardens Play Together against abuse, and resolves several Mesh Drive synchronization issues.",
+    "body": [
+      "PS5 Upload 12.6.32 fixes a long-standing issue where the Files screen showed incorrect free space (e.g. 98 GiB when 163 GiB was actually available) because each screen kept its own stale copy of the drive list. All screens now share one list that refreshes on demand, after jobs complete, and when switching views. Free space is displayed in GiB everywhere and only counts space you can actually write to. The Collection screen now detects cut-short or still-copying packages and leaves them alone during Organize.",
+      "Save data is never written while its game is running, and a console that can't report what's running is treated as busy. Upload & Install prevents renaming packages with unfinished installs. Play Together hardens against several exploits — expired links can't reach the host, kicked phones can't rejoin, and guest floods are rate-limited. Mesh Drive fixes prevent links from undoing each other's changes on three or more consoles, and a newer file is never overwritten by an older copy during failover. Available for Windows, Mac, Linux, Android and iOS."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.32 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.32"
+      }
+    ]
+  },
+  {
+    "id": "nasbridge-v070-ffpfsc-stable",
+    "date": "2026-11-27",
+    "tag": "Tool",
+    "title": "NASBridge v0.7.0: stable release adds .ffpfsc game support",
+    "summary": "NASBridge 0.7.0 is the first stable release since v0.6.0, adding support for reading .ffpfsc games in the library.",
+    "body": [
+      "NASBridge 0.7.0 by J7mbo graduates from beta to stable. The main addition is support for .ffpfsc games in the NAS library — these are PS5 game files in a specific format that NASBridge can now browse alongside standard packages. This follows the v0.7.0-beta.1 test build released earlier.",
+      "Install by sending NASBridge-0.7.0.elf to your PS5's ELF loader on port 9021; a notification confirms when it's installed. Requires ShadowMountPlus 1.7beta6-fix2 or newer. NASBridge browses games on a NAS over WebDAV or SMB, copies them to internal storage or USB, and registers them on the home screen automatically."
+    ],
+    "sources": [
+      {
+        "name": "NASBridge v0.7.0 release",
+        "url": "https://github.com/J7mbo/nasbridge-ps5/releases/tag/v0.7.0"
+      }
+    ]
+  },
+  {
     "id": "emby5-v136-continue-watching-emby410",
     "date": "2026-11-26",
     "tag": "Media",
