@@ -1,5 +1,56 @@
 [
   {
+    "id": "playden-v0120-stable-online-gog-controller-layouts",
+    "date": "2026-11-27",
+    "tag": "PC & Linux",
+    "title": "Playden v0.12.0: stable release brings online play, GOG games and controller layouts",
+    "summary": "Playden 0.12.0 graduates from beta with online Steam multiplayer, GOG as a second game store, remappable controller layouts shareable as community recipes, microphone support and runtime kit 0.36 fixing Unreal Engine 5 and Unity games.",
+    "body": [
+      "Playden v0.12.0 by leolobato is the stable release that merges every beta since 0.12.0-beta.1. The headline addition is online play: enabling it per game in Game Settings runs Valve's Steam client alongside the game, signed in as you, so official servers, Steam lobbies and friend invites all work. The developer warns that games with non-Valve anti-cheat won't work and that Valve Anti-Cheat could ban the account from that specific game. GOG arrives as a second store — sign in through a phone-based web flow and your GOG library appears next to Steam, with installs, updates, DLC and saves managed the same way. Controller layouts let you remap any button, stick or trigger to other buttons, keys, the mouse or nothing, configured on the PS5 and shareable as community recipes. Games can also use the DualSense microphone for voice chat, and Steam Workshop items are now supported.",
+      "Runtime kit 0.36 fixes Unreal Engine 5 games on Direct3D 12 and Unity titles stuck on their first loading spinner. Games that need the Rockstar Games Launcher (such as GTA IV and GTA V) can now run experimentally. Updating from 0.6.0 or newer happens automatically through the app; fresh installs copy the FAKE77031 folder to /data/homebrew/. Requires a jailbroken PS5 with etaHEN or kstuff."
+    ],
+    "sources": [
+      {
+        "name": "Playden v0.12.0 release",
+        "url": "https://github.com/leolobato/playden-ps5/releases/tag/v0.12.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v12639-play-together-game-uninstall",
+    "date": "2026-11-27",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.39: Play Together safety fix and game file cleanup on uninstall",
+    "summary": "PS5 Upload v12.6.39 stops a friend's controller from ending your Remote Play session, lets you show or hide the on-screen controller from the stream bar, and can delete a game's files when you uninstall it.",
+    "body": [
+      "PS5 Upload v12.6.39 by phantomptr fixes a Play Together edge case where a friend's controller connecting would end your Remote Play session. The PS5 would ask who was using the new controller with your user pre-selected, and pressing X moved your user to them, kicking you from the stream. The app now holds back a friend's plain X until they move off your user, and their page warns them not to pick it; if the PS5 still ends your stream that way, the app restarts it automatically. The on-screen controller overlay can now be shown or hidden from a button on the stream bar (desktop) or the stream menu (mobile), rather than buried in Settings. Disk images on a network share now show their real title and cover art, and several copies of one game are listed as a single entry.",
+      "Uninstall gains the option to delete a game's files: for a game played from a folder or disk image it asks whether to keep or remove the files (showing their size) and only deletes after the uninstall succeeds. Games the PS5 refuses to launch no longer restart the console's menu — the app stops and explains the refusal code instead. The Workshop now clarifies what it builds and notes that a53_ppr applies only to firmware up to 11.40. Available for Windows, macOS, Linux, Android and iOS."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.39 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.39"
+      }
+    ]
+  },
+  {
+    "id": "regaliant-v019-auto-updater-upscaling-fix",
+    "date": "2026-11-27",
+    "tag": "PC & Linux",
+    "title": "Regaliant v0.1.9: auto-updater, working upscaling and performance overlay",
+    "summary": "Regaliant 0.1.9 adds an auto-updater with rollback, makes DLSS, FSR and XeSS actually upscale instead of only smoothing edges, and puts a performance overlay in the corner.",
+    "body": [
+      "Regaliant v0.1.9 by SulphurS16, the unofficial Demon's Souls (PS5) PC port, adds an auto-updater that checks for new releases at every launcher start. When an update is available, pressing Update downloads and verifies it, then restarts the launcher — saves, settings and prepared shaders are kept. Until a full game session of the new version finishes normally, Roll Back puts the previous version back. DLSS, FSR and XeSS now genuinely upscale the image: a new Upscaling row on the PC tab sets how far below screen resolution the game renders (Quality, Balanced, Performance, Ultra Performance), and the upscaler fills in to full resolution. Previously the upscalers only smoothed edges at the game's own render size, giving no performance benefit. A bug that tanked the frame rate after changing render scale or upscaler settings multiple times is also fixed.",
+      "A Performance Overlay in Graphics & Display shows frame rate with 1% and 0.1% lows, CPU thread load, GPU usage, clock speed and VRAM. DLSS startup crashes on PCs with an RTX 5080 alongside integrated graphics should be resolved — NVIDIA's anti-debug code no longer sees the game's helper process. The uninstaller no longer uses a hidden self-delete command that antivirus programs flagged as malware, and the launcher can now download NVIDIA's DLSS file directly from NVIDIA's SDK on GitHub. Saves from other programs can be imported through a new Saves page. Requires decrypted PS5 game files."
+    ],
+    "sources": [
+      {
+        "name": "Regaliant v0.1.9 release",
+        "url": "https://github.com/SulphurS16/Regaliant/releases/tag/v0.1.9"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v12637-v12638-restore-games-rar-passwords",
     "date": "2026-11-27",
     "tag": "Tool",
