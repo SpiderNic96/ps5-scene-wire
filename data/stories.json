@@ -1,5 +1,56 @@
 [
   {
+    "id": "longshot-oberon-v200-windows-builder",
+    "date": "2026-11-27",
+    "tag": "Port",
+    "title": "Longshot Oberon v2.0.0: native Windows builder and tuned defaults",
+    "summary": "Longshot Oberon v2.0.0 can now be built on plain Windows without WSL, ships the docked 1080p FSR profile as default, adds PerfCombo shadows at 200 m draw distance, and averages 46.7 fps unlocked on a base PS5.",
+    "body": [
+      "Longshot Oberon v2.0.0 by rimidalv333 — the Ocarina of Time Switch 2 recomp tuned for the base PS5 — ships a native Windows builder that carries LLVM 18.1.8, Python 3.12 and all build helpers in the release zip. Nothing is installed on the PC, and it produces a byte-identical eboot.bin to a Linux build from the same game file. The game file (oot.nup) can now live inside the title folder so the title and the game are one folder to copy over. No path arguments are needed: drop oot.nup next to build.cmd and run it.",
+      "PerfCombo is now the default shadow mod, drawing sun shadows out to 200 m with two cascades and fading NPC shadows at 13–16 m. The shipped longshot_env.txt is the docked 1080p FSR-upscaled locked-30 profile (profile 2b). On a base PS5, unlocked frame rate averages 46.7 fps (up from ~45 on v1.2.0) with frames over 40 ms down from ~16 to 9.9 per thousand. Memory use dropped — lowest free 646 MB with no emergencies, and draw cost fell to 8.4 µs per draw. Very rare crashes entering busy areas are fixed. To update, unpack the new builder into a new folder and keep your output folder."
+    ],
+    "sources": [
+      {
+        "name": "Longshot Oberon v2.0.0 release",
+        "url": "https://github.com/rimidalv333/longshot-oberon/releases/tag/v2.0.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v12640-v12642-play-together-go-live",
+    "date": "2026-11-27",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.40–v12.6.42: Play Together full screen on iPhone and Go live in Docker",
+    "summary": "PS5 Upload v12.6.40–v12.6.42 brings full-screen Play Together on iPhones and iPads, saves host switches between sessions, adds landscape full screen in browsers, and fixes Go live streaming from Docker on ARM and x86.",
+    "body": [
+      "PS5 Upload v12.6.40 by phantomptr brings full screen back to the Play Together guest page and controller page on iPhones and iPads — iOS browsers can't use the standard full-screen API, so the page fills itself and explains how to get a truly full experience by adding it to the Home Screen. v12.6.41 saves all Play Together host switches (Block PS & Create, friend-on-Player-1, player count) between sessions and across restarts. Turning a phone sideways now triggers full screen in a browser too, with Android hiding its bars and iOS folding Safari's as far as it allows. Each PS button press a friend makes is logged with whether it reached the PS5. Web pages added to a phone's Home Screen also behave as standalone apps.",
+      "v12.6.42 fixes Go live streaming from the Docker image. Docker Desktop makes every visitor appear as the host computer itself, so the engine refused devices listed in PS5UPLOAD_ALLOW_IP. The engine now lets those devices through for both Go live and Play Together host controls. The Docker image carries the certificates and libraries ffmpeg needs, running on ARM (Apple Silicon, NAS boxes) and x86. When Go live is refused, the panel now says why instead of a generic error. Available for Windows, macOS, Linux, Android and iOS."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.42 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.42"
+      }
+    ]
+  },
+  {
+    "id": "nasbridge-v080-beta2-kstuff-requirement",
+    "date": "2026-11-27",
+    "tag": "Tool",
+    "title": "NASBridge v0.8.0-beta.2: now requires kstuff for package installs",
+    "summary": "NASBridge v0.8.0-beta.2 adds a kstuff requirement (v1.15-dr-test3 or newer) for installing games from packages on firmware 13.60. Folder and image games still work without it.",
+    "body": [
+      "NASBridge v0.8.0-beta.2 by J7mbo is the second test build of the PS5 NAS game browser since v0.7.0 went stable. The key change from beta.1 is an explicit requirement for kstuff v1.15-dr-test3 or newer, loaded before NASBridge, for games installed from packages — without it the PS5's built-in installer refuses the package. Folder-based and image-based games do not need kstuff and continue to work as before.",
+      "Still requires ShadowMountPlus 1.7beta6-fix2 or newer. Install by sending NASBridge-0.8.0.elf to the ELF loader on port 9021; a notification confirms when it is installed. Tested on firmware 13.60. As a beta it may contain new bugs — the previous stable release (v0.7.0) is still available for those who prefer stability."
+    ],
+    "sources": [
+      {
+        "name": "NASBridge v0.8.0-beta.2 release",
+        "url": "https://github.com/J7mbo/nasbridge-ps5/releases/tag/v0.8.0-beta.2"
+      }
+    ]
+  },
+  {
     "id": "playden-v0120-stable-online-gog-controller-layouts",
     "date": "2026-11-27",
     "tag": "PC & Linux",
