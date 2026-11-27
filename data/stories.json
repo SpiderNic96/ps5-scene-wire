@@ -1,5 +1,39 @@
 [
   {
+    "id": "kraken-mount-v042-game-images-background-scan",
+    "date": "2026-11-28",
+    "tag": "Tool",
+    "title": "Kraken Mount v0.4.2: new game image formats and background scanning",
+    "summary": "Kraken Mount now mounts .exfat, .ffpkg, .ffpfs and .ffpfsc game images and keeps scanning while a homebrew title is running.",
+    "body": [
+      "Kraken Mount v0.4.2 adds support for four more game image formats — .exfat, .ffpkg, .ffpfs and .ffpfsc — so titles stored in any of those containers can be mounted and launched directly. The ampr-emu-ng switch has been extended to plain folders, and the scan now keeps running in the background while a homebrew title is open, which means launchers such as Playden see newly added games on the home screen without having to close the current game first.",
+      "The ShadowMount+ API gains two new endpoints: games/info returns details for a single title (used by RecompStore's installer), and games/fakelib can disable libraries for a title before it appears in the library. A bug where a title uninstalled outside Kraken Mount was not re-registered until a restart has also been fixed. Send kraken-mount.elf to elfldr (port 9021) or use the web UI's Update button to install. Requires elfldr."
+    ],
+    "sources": [
+      {
+        "name": "GitHub release",
+        "url": "https://github.com/quer3q/kraken-mount/releases/tag/v0.4.2"
+      }
+    ]
+  },
+  {
+    "id": "vox-launcher-v110-refreshed-build",
+    "date": "2026-11-28",
+    "tag": "Tool",
+    "title": "VoX Launcher v1.1.0: refreshed build with screenshot gallery",
+    "summary": "VoX Launcher v1.1.0 is a maintenance release that rebuilds the payload from the current source and bundles the README screenshot gallery.",
+    "body": [
+      "VoX Launcher v1.1.0 rebuilds the vox-launcher.elf payload from the latest source and ships it alongside the full project archive. The release also bundles the README screenshot gallery so users can preview the web dashboard's Payloads, File Explorer, System, Settings, Processes and eVoX Store screens before loading the ELF.",
+      "VoX Launcher is a single-file PS5 payload that runs a lightweight HTTP server on the console and serves a full web interface on port 8095. From any phone, PC or the console's own browser you can manage payloads, browse files, install .pkg packages, view live processes and schedule boot tasks. Send vox-launcher.elf to elfldr (port 9021) or add it to your auto-start list. Requires elfldr."
+    ],
+    "sources": [
+      {
+        "name": "GitHub release",
+        "url": "https://github.com/VoxDon3/vox-launcher/releases/tag/v1.1.0"
+      }
+    ]
+  },
+  {
     "id": "longshot-oberon-v200-windows-builder",
     "date": "2026-11-27",
     "tag": "Port",
