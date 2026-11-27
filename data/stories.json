@@ -1,5 +1,94 @@
 [
   {
+    "id": "ps5upload-v12634-v12636-payload-sources-two-panes",
+    "date": "2026-11-27",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.34–v12.6.36: custom payload sources and two-pane file browser",
+    "summary": "PS5 Upload 12.6.34 brings back custom payload sources from GitHub, Gitea or Forgejo, adds a two-pane file browser on wide screens, and fixes convert and copy-check issues. v12.6.35 and v12.6.36 follow with phone UI polish and a hotfix.",
+    "body": [
+      "PS5 Upload v12.6.34 by phantomptr re-introduces custom payload sources. In the Payloads section you can add a GitHub, Gitea or Forgejo project that publishes payload files (such as kstuff.elf), pick the file once, and its card shows the installed release, flags newer versions, and offers Download, Update and Send to PS5 — nothing happens automatically. The built-in list remains as a guide. The Files screen gains a Two Panes toggle on wide displays: keep the PS5 on one side and a computer, server or second console on the other, and copy or move between them. Copy and move from the PS5 to a saved server is also new. Convert no longer marks a running build \"Interrupted\" when the page is closed — the build continues and the reopened page picks it up. Games' Check the copy progress now counts both reads accurately instead of jumping to 100% while still reading.",
+      "v12.6.35 widens text fields on phones so New folder, Rename and Go to path dialogs no longer squeeze the input, and fixes a Convert edge case where closing the page within seconds of starting a build lost track of it. v12.6.36 is a small hotfix with no published changelog. Available for Windows, macOS, Linux, Android and iOS from the GitHub releases page."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.34 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.34"
+      },
+      {
+        "name": "PS5 Upload v12.6.36 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.36"
+      }
+    ]
+  },
+  {
+    "id": "parallax-browser-v050-in-process-pages-popup-blocker",
+    "date": "2026-11-27",
+    "tag": "Tool",
+    "title": "Parallax Browser v0.5.0: in-process pages for faster web games and pop-up blocking",
+    "summary": "Parallax Browser 0.5.0 runs pages in the browser's own process again for up to 2× faster web games, blocks pop-ups with a notice, and adds hold-X to open links in a new tab.",
+    "body": [
+      "Parallax Browser v0.5.0 by rikleigh moves page rendering back into the browser's own process by default, giving pages more of the PS5's CPU. Web games and heavy pages run up to twice as fast. The trade-off is that a crashing page takes the browser with it and pages are no longer isolated from each other — users who prefer the safer approach can switch back in Settings → Advanced → Processes. Pop-ups are now blocked with a notice when a page tries to open a window without user interaction; per-site exceptions can be allowed in Settings → Ads & privacy → Pop-ups. Holding X on a link for 0.6 seconds opens it in a new tab, which also works on links inside frames that normally block window.open.",
+      "Other quality-of-life changes: holding O shows a progress bar to close the browser (tabs are saved), O's Back action on a page fires on release instead of press, and the splash screen now stays visible until the first page frame renders rather than showing a black screen. Safer browsing mode always runs pages in their own process regardless of the new default. Install or update via ProsperoStore or by following INSTALL.txt in the release zip. Requires a jailbroken PS5 with kstuff."
+    ],
+    "sources": [
+      {
+        "name": "Parallax Browser v0.5.0 release",
+        "url": "https://github.com/rikleigh/parallax-browser/releases/tag/v0.5.0"
+      }
+    ]
+  },
+  {
+    "id": "ps5-medic-v050-controller-test-backport-detection",
+    "date": "2026-11-27",
+    "tag": "Tool",
+    "title": "PS5 Medic v0.5.0: controller diagnostics, expanded backport detection and new settings",
+    "summary": "PS5 Medic 0.5.0 adds a DualSense controller test tile (buttons, sticks, drift, triggers, touchpad, motion), broader backport detection, three new system checks, and a full settings screen.",
+    "body": [
+      "PS5 Medic v0.5.0 by strongt1me adds a controller test as its own tile on the start page. It reads buttons, sticks (including drift and full-circle movement), L2/R2 pressure, touchpad and motion sensors without sending anything to the controller. A battery level display is built in but stays empty on firmware 12.00. Backport detection is expanded to catch plain-ELF eboot.bin files, modules in sce_module, half-installed backports, fakelib markers, and .pkg games mounted by Kraken Mount. Three new checks detect two fan controllers running at the same time, a console clock that is clearly wrong (which also breaks rule downloads), and leftover content such as add-ons, updates or licences without their parent game.",
+      "A new Settings screen (More → Settings) lets you change text size, contrast, time zone, check-up at start, rule download and local network test toggles, and rule source. Automatic repairs now also cover program files without execute permission (CE-107750-0, 0666→0777 with undo) and leftover self-test markers. Ships with 107 rules (2026.11.59). Tested on FW 12.00. Install by extracting PS5-Medic-UI.zip and copying PS5MEDIC and FAKE42007 folders to /data/homebrew/ over FTP, or by sending ps5medic-launcher.elf to the ELF loader on port 9021. ShadowMount+ must be running."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Medic v0.5.0 release",
+        "url": "https://github.com/strongt1me/ps5-medic-ui-tool/releases/tag/v0.5.0"
+      }
+    ]
+  },
+  {
+    "id": "nasbridge-v080-beta1-test-build",
+    "date": "2026-11-27",
+    "tag": "Tool",
+    "title": "NASBridge v0.8.0-beta.1: new test build after stable v0.7.0",
+    "summary": "NASBridge v0.8.0-beta.1 is the first test build since the v0.7.0 stable release. The developer has not published a detailed changelog.",
+    "body": [
+      "NASBridge v0.8.0-beta.1 by J7mbo is a new test build of the PS5 NAS game browser. It arrives shortly after v0.7.0 went stable with .ffpfsc game support. The release tag covers the full commit range from v0.7.0 to v0.8.0-beta.1 but includes no detailed changelog, so the specific changes in this beta are not yet documented.",
+      "Install by sending NASBridge-0.8.0.elf to your PS5's ELF loader on port 9021; a notification confirms when it is installed. Requires ShadowMountPlus 1.7beta6-fix2 or newer. NASBridge browses games on a NAS over WebDAV or SMB, copies them to internal storage or USB, and registers them on the home screen automatically. As a beta, it may contain new bugs — the previous stable release (v0.7.0) is still available."
+    ],
+    "sources": [
+      {
+        "name": "NASBridge v0.8.0-beta.1 release",
+        "url": "https://github.com/J7mbo/nasbridge-ps5/releases/tag/v0.8.0-beta.1"
+      }
+    ]
+  },
+  {
+    "id": "kraken-mount-v041-game-launch-fix-shadowmount-api",
+    "date": "2026-11-27",
+    "tag": "Tool",
+    "title": "Kraken Mount v0.4.1: game launch fix and ShadowMount+ API compatibility",
+    "summary": "Kraken Mount 0.4.1 fixes installed games not launching properly with ampr-emu-ng and real ppr patch, adds ShadowMount+ API compatibility on port 10101, and brings a close-game API, QR code setup and new color schemes.",
+    "body": [
+      "Kraken Mount v0.4.1 by quer3q fixes a critical issue where installed games were not properly launching and working with both ampr-emu-ng and the real ppr patch (users should also grab the newest kstuff version by drakmor). Kraken Mount now also answers ShadowMount+'s API on 127.0.0.1:10101, so apps that only know ShadowMount+ — such as Playden and RecompStore — can discover and work with Kraken Mount without any changes on their side. A new close-game API endpoint is also available.",
+      "The Settings page gains a QR code of the console's address for quick phone access to the web UI, plus six additional color schemes. The UI has bigger text and controls and a cleaner game detail sheet. To update, use the Update button in the web UI or send kraken-mount.elf to the ELF loader on port 9021. Requires a jailbroken PS5."
+    ],
+    "sources": [
+      {
+        "name": "Kraken Mount v0.4.1 release",
+        "url": "https://github.com/quer3q/kraken-mount/releases/tag/v0.4.1"
+      }
+    ]
+  },
+  {
     "id": "xps360-xbox-360-emulator-xenia-edge",
     "date": "2026-11-26",
     "tag": "Emulator",
