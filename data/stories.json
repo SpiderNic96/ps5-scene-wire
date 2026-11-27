@@ -1,5 +1,26 @@
 [
   {
+    "id": "ps5upload-v12637-v12638-restore-games-rar-passwords",
+    "date": "2026-11-27",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.37–v12.6.38: restore vanished games and password-protected RAR extraction",
+    "summary": "PS5 Upload v12.6.38 can restore fake-package games that disappeared from the home screen after Rebuild Database and extract password-protected RAR archives on the PS5. v12.6.37 fixes upload activity tracking after closing the page.",
+    "body": [
+      "PS5 Upload v12.6.38 by phantomptr tackles a common headache: fake-package games that vanish from the PS5 home screen after a Rebuild Database. The app now detects games still on their drive but missing from the home screen, shows a 'Not on the PS5's home screen' label on the game's page, and offers 'Restore to home screen' — or 'Restore all' in the Games section for every affected title. The PS5's own installer takes the package back from the drive, so nothing is re-downloaded. Your database is backed up first, and if the PS5 won't take a game the files are put back. Pressing Play on a missing game no longer tries increasingly aggressive launch methods that could restart the console's menu — it now stops within seconds and points you to Restore. This release also adds password-protected RAR archive extraction on the PS5, covering new and old RAR formats, multi-part sets and archives with hidden file lists.",
+      "v12.6.37 fixes the Activity page so that an upload still running after you close the browser page shows as running when you return, instead of appearing as 'Interrupted' alongside a duplicate entry. Available for Windows, macOS, Linux, Android and iOS from the GitHub releases page."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.38 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.38"
+      },
+      {
+        "name": "PS5 Upload v12.6.37 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.37"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v12634-v12636-payload-sources-two-panes",
     "date": "2026-11-27",
     "tag": "Tool",
