@@ -1,5 +1,60 @@
 [
   {
+    "id": "galaxydog-ps5-starfox-recomp",
+    "date": "2026-11-28",
+    "tag": "Port",
+    "title": "Galaxydog PS5: Star Fox (Switch 2) recompiled for PlayStation 5",
+    "summary": "Galaxydog PS5 brings Star Fox from the Nintendo Switch 2 to the PS5 as a native homebrew application, built on your PC from your own copy of the game.",
+    "body": [
+      "Galaxydog PS5 by Noentiendosw2 is a static recompilation of Star Fox (Nintendo Switch 2, update 2.0.0) that runs natively on the PS5. Based on SerenityG4K's SpaceAnimalsRecomp PC project and built using Mihawk-99's PS5 Vulkan and Mesa tools, the port plays the full game from start to finish at 1080p, 1440p (recommended) or 4K with DualSense rumble, full sound, saving and all game languages. Shader preparation takes about 2–3 minutes on first start, after which subsequent launches are fast.",
+      "The release includes a one-window Windows builder that bundles LLVM 18.1.8 and Python 3.12 — no WSL or Linux tools to install. Place your own oot.nup game file next to build.cmd and run it. Linux builds are also supported. Tested so far on a base PS5 Slim on firmware 13.00 with kstuff, ShadowMountPlus and elfldr. No game files are included in the repository."
+    ],
+    "sources": [
+      {
+        "name": "Galaxydog PS5 repository",
+        "url": "https://github.com/Noentiendosw2/Galaxydog-ps5"
+      }
+    ]
+  },
+  {
+    "id": "parallax-browser-v051-video-decode-fix-memory",
+    "date": "2026-11-28",
+    "tag": "Tool",
+    "title": "Parallax Browser v0.5.1: video decode reset, crash fix and smoother pointer",
+    "summary": "Parallax Browser 0.5.1 fixes videos that warped and smeared, crashes when scrolling image-heavy pages, and a pointer that crawled on busy pages.",
+    "body": [
+      "Parallax Browser v0.5.1 by rikleigh fixes a video decoding issue present since hardware decoding was added. The PS5's VP9 decoder could silently start skipping frames, causing the picture to jump, smear and show blocks in the wrong places for the rest of the video. The browser now detects this and resets the decoder at the next keyframe — there may be a brief glitch of a few seconds, then playback continues normally. Sites that watch for dropped frames also kept videos at lower quality, which this fix addresses.",
+      "Scrolling a page full of images no longer crashes the browser on consoles with less free memory — areas that cannot be drawn are shown a moment later instead. Pages now draw from a larger pool of the PS5's memory rather than the browser's own smaller pool, and the DualSense pointer stays smooth on busy pages instead of crawling or freezing during pauses. The ad blocker's site-specific fixes work with uBO Lite's latest filter-list format. Install via the in-app update page or from ProsperoStore."
+    ],
+    "sources": [
+      {
+        "name": "Parallax Browser v0.5.1 release",
+        "url": "https://github.com/rikleigh/parallax-browser/releases/tag/v0.5.1"
+      }
+    ]
+  },
+  {
+    "id": "ps5upload-v12645-v12646-save-sync-install-cleanup",
+    "date": "2026-11-28",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.45–v12.6.46: save-time fix, install cleanup and drive space check",
+    "summary": "PS5 Upload v12.6.45 fixes save backup times showing UTC instead of the console's time zone, and v12.6.46 frees space immediately after deleting installed packages and adds a drive space audit.",
+    "body": [
+      "PS5 Upload v12.6.45 by phantomptr fixes save backup times that showed UTC instead of the console's local time on some consoles. Minion now reads the time zone the way the PS5's own clock does and falls back to the old method when it cannot. If times still look wrong, a manual UTC offset can be set in Settings → Time zone. Play Together adds better diagnostics: when a friend's controller does nothing on the 'Who's using this controller?' screen, the helper log now shows whether the PS5 accepted or refused the controller input. The error message for 0x80B2 install errors is now in plain language in every supported language.",
+      "PS5 Upload v12.6.46 fixes package space management: deleting a package right after installing it now gives its space back immediately. Previously the installer held the package open for about 10 minutes after the PS5 finished reading it, keeping the space used even after deletion. A new 'Clean up' feature under Check compares the space a drive reports as used with what its files actually take, showing how much space no file accounts for. Save sync no longer stops working until a restart when you pressed Send while its once-a-minute check was running. Available for Windows, macOS, Linux, Android and iOS."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.45 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.45"
+      },
+      {
+        "name": "PS5 Upload v12.6.46 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.46"
+      }
+    ]
+  },
+  {
     "id": "ps5upload-v12643-v12644-archive-selection-workshop-limits",
     "date": "2026-11-28",
     "tag": "Tool",

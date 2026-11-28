@@ -259,6 +259,7 @@ export const SOURCES = [
   { cat: R, repo: 'JJBurtenshaw/OutRunners-PS5', name: 'OutRunners', about: 'Sega 1993 arcade racer port, two-player, DualSense, bring your own ROMs' },
   { cat: R, repo: 'thesmokesession-bit/frequency-remaster', name: 'Frequency Remaster', about: 'FreQuency (PS2) recomp, 4K 120fps with online play, bring your own disc' },
   { cat: R, repo: 'Cloudiny/totk-ps5-recomp', name: 'TOTK PS5 Recomp', about: 'Tears of the Kingdom native recomp, FSR 3.1.5, trophies, bring your own dump' },
+  { cat: R, repo: 'Noentiendosw2/Galaxydog-ps5', name: 'Galaxydog PS5 (Star Fox)', about: 'Star Fox Switch 2 recomp, up to 4K, bring your own copy' },
 
   // Developer tools
   { cat: T, repo: 'BlackBearRevived/ps5-native-app-boilerplate', name: 'PS5 Native App Boilerplate', about: 'C++20 template for building PS5 homebrew apps' },
