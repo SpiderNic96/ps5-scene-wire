@@ -1,5 +1,43 @@
 [
   {
+    "id": "ps5upload-v12643-v12644-archive-selection-workshop-limits",
+    "date": "2026-11-28",
+    "tag": "Tool",
+    "title": "PS5 Upload v12.6.43–v12.6.44: pick files from archives and Workshop size guard",
+    "summary": "PS5 Upload v12.6.43 lets you choose which files to install from a .zip, .7z, .rar or tar archive, stops the Workshop from building a fake package the PS5 can’t open, and fixes Restore to home screen reliability. v12.6.44 is a follow-up hotfix.",
+    "body": [
+      "PS5 Upload v12.6.43 by phantomptr adds selective archive installation. When a .zip, .7z, .rar or tar holds several packages or folders (a game, its update and add-ons), “Choose files…” lists everything inside with checkboxes so only what you tick is installed, uploaded or unpacked. Packages inside a .zip show their game name, version and type. Extract on the PS5 can also leave out items the same way. The Workshop gains a size guard: before any work, it checks whether the PS5 will accept the resulting fake package (under 450 GiB on firmware 13.x, 256 GiB on 7–10) and refuses too-large builds with a reason and a “Make a game image instead” button. The AMPR emulator can now be omitted from a game that is not in asset packs when the check says it is safe.",
+      "Restore to home screen is more reliable: a failed restore no longer blocks the batch — the unfinished copy is cleaned up and Restore All moves on. The room check now counts what the PS5’s internal storage really uses (about 1.2× the package plus 1 GiB), which was likely the cause of restores failing near the end of a long run. Remote Play pairing setup gets tighter checks: the offline sign-in step only ticks once the account is really signed in, and the stream now shows “PS5 sent N fps” and “N skipped here”. Large cheat tables that failed with a “patch bytes exceed helper limit” error now split safely. v12.6.44 is a small follow-up hotfix. Available for Windows, macOS, Linux, Android and iOS."
+    ],
+    "sources": [
+      {
+        "name": "PS5 Upload v12.6.43 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.43"
+      },
+      {
+        "name": "PS5 Upload v12.6.44 release",
+        "url": "https://github.com/phantomptr/ps5upload/releases/tag/v12.6.44"
+      }
+    ]
+  },
+  {
+    "id": "maxpack-ps5-v110-send-from-pc-verify",
+    "date": "2026-11-28",
+    "tag": "Tool",
+    "title": "MaxPack v1.1.0: send games from the PC and verify .p5z on the console",
+    "summary": "MaxPack for the console v1.1.0 adds a PC-to-console transfer with a pairing code and automatic SHA-256 verification, plus on-console .p5z integrity checks.",
+    "body": [
+      "MaxPack for the console v1.1.0 by DeLFuS77 introduces two headline features. Send games from the PC lets you push a .p5z archive straight from MaxPack on the PC to any drive on the console with “maxpack send”. Enable it in the console’s web UI under Settings → Receive games from the PC, which shows a six-digit pairing code on the console’s screen. The transfer is verified on arrival: the console checks each volume and loose file against the SHA-256 the .p5z was written with, and a copy that does not match stays aside as a “.maxpack-recv” file. A send that is cut short can be resumed by running the same command again, even after a console restart.",
+      "The second addition is on-console verification. A .p5z game’s sheet now offers Verify quickly (reads the file at drive speed, checking volumes against SHA-256) and Verify fully (also unpacks every file, like “maxpack verify” on the PC). The result is kept with its date, and a damaged file suggests repairing with PAR2 data or copying it again. MaxPack is based on Kraken Mount and plays compressed .p5z games in place, often 40–70% smaller than the original. Tested on firmware 13.60. Requires a jailbroken PS5 with elfldr."
+    ],
+    "sources": [
+      {
+        "name": "MaxPack v1.1.0 release",
+        "url": "https://github.com/DeLFuS77/maxpack-ps5/releases/tag/v1.1.0"
+      }
+    ]
+  },
+  {
     "id": "kraken-mount-v042-game-images-background-scan",
     "date": "2026-11-28",
     "tag": "Tool",
